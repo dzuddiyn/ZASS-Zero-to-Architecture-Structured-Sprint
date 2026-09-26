@@ -2,6 +2,11 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.13] — 2026-09-27
+
+- Added copy-ready post-upload prompts: Bahasa Melayu in ZASSEMPOI and README, with a matching English prompt in ZASSEMPOI_EN.
+- Prompts preserve the conversational-first response order and explicit LOCK, COMMIT GITHUB, and architecture-confirmation safeguards.
+
 ## [v0.1.12] — 2026-09-27
 
 - Updated ZASS IDEA SEMPOI in Malay and English: AI responds conversationally before its compact ZASSEMPOI UPDATE, then shows file status and the visual action footer.

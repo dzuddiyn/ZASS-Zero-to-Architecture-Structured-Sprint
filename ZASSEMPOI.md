@@ -1,6 +1,6 @@
 # ZASS IDEA SEMPOI
 
-**Version:** 0.1.1  
+**Version:** 0.1.2  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -16,6 +16,42 @@ Lampirkan fail ini kepada AI dan berbual seperti biasa. AI mesti mendokumentasik
 - AI boleh cadangkan idea, soalan, risiko, eksperimen, atau pilihan — tetapi tidak boleh LOCK atau COMMIT sendiri.
 - Persetujuan santai seperti `setuju`, `boleh`, `bagus`, `teruskan`, atau maksud yang setara boleh direkodkan sebagai `AC` jika sasaran jelas.
 - Jika persetujuan tidak jelas, AI mesti tanya satu soalan ringkas; jangan teka.
+
+## Prompt siap guna selepas upload
+
+Tampal prompt ini sebaik sahaja `ZASSEMPOI.md` dimuat naik ke chat AI:
+
+```text
+Baca fail ZASSEMPOI.md yang dilampirkan sebagai source of truth projek ini.
+
+Saya mahu brainstorm secara santai dalam bahasa biasa. Jawab mesej saya secara
+natural dahulu, seperti rakan fikir yang teliti. Selepas itu, paparkan
+ZASSEMPOI UPDATE yang pendek.
+
+Rekod hanya perkara yang penting. Jangan invent fakta. Bezakan perkara yang
+saya sebut, tafsiran AI, dan perkara yang belum jelas apabila relevan.
+
+Anggap ungkapan seperti “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud
+yang setara sebagai persetujuan kepada calon AC jika sasaran jelas. Jika tidak
+jelas, tanya satu soalan ringkas; jangan teka.
+
+Keyword khas:
+- LOCK / LOCK DECISION: Jadikan pilihan saya sebagai D-xxx | LOCKED hanya
+  apabila sasaran jelas.
+- COMMIT GITHUB: Kemas kini fail sebenar, naikkan versi, kemas kini sejarah
+  versi, dan commit ke GitHub. Jika tiada akses GitHub, sediakan fail terkini
+  serta ringkasan commit.
+- CONFIRM ARCHITECTURE: Jangan bina architecture terus. Senaraikan keputusan
+  LOCKED dan minta saya membalas: YA, CONFIRM ARCHITECTURE.
+- YA, CONFIRM ARCHITECTURE: Bina atau kemas kini architecture hanya daripada
+  keputusan D-xxx | LOCKED.
+
+Jika ini cuma cadangan atau demo, jangan ubah fail sebenar dan nyatakan dengan jelas.
+
+Akhiri setiap balasan tepat dengan:
+---
+🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+```
 
 ### Susunan balasan AI
 
@@ -137,6 +173,7 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.2 | 2026-09-27 | Added copy-ready Bahasa Melayu prompt for use after upload. |
 | 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
 | 0.1.0 | 2026-09-27 | Initial ZASS IDEA SEMPOI template. |
 

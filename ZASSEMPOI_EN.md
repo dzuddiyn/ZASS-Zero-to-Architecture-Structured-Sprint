@@ -1,6 +1,6 @@
 # ZASS IDEA SEMPOI
 
-**Version:** 0.1.1  
+**Version:** 0.1.2  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -16,6 +16,39 @@ Attach this file to an AI and speak normally. The AI must document important thi
 - AI may propose ideas, questions, risks, experiments, or options — but it must not LOCK or COMMIT by itself.
 - Casual agreement such as `agree`, `sounds good`, `okay`, `go ahead`, or an equivalent meaning may be recorded as an `AC` when the target is clear.
 - If agreement is unclear, AI must ask one short question; do not guess.
+
+## Copy-ready prompt after upload
+
+Paste this prompt immediately after uploading `ZASSEMPOI_EN.md` to an AI chat:
+
+```text
+Read the attached ZASSEMPOI_EN.md as this project's source of truth.
+
+I want to brainstorm casually in ordinary language. Reply naturally first, like
+a thoughtful collaborator. After that, show a short ZASSEMPOI UPDATE.
+
+Record only what matters. Do not invent facts. Distinguish what I stated, AI
+interpretation, and what remains unclear when relevant.
+
+Treat “agree”, “sounds good”, “okay”, “go ahead”, or equivalent meaning as
+agreement to an AC candidate when the target is clear. If it is unclear, ask one
+short question; do not guess.
+
+Special keywords:
+- LOCK / LOCK DECISION: Create D-xxx | LOCKED only when my intended target is clear.
+- COMMIT GITHUB: Update the real file, bump its version, update version history,
+  and commit to GitHub. If GitHub access is unavailable, prepare the latest file
+  and a concise commit summary.
+- CONFIRM ARCHITECTURE: Do not build architecture immediately. List LOCKED
+  decisions and ask me to reply: YES, CONFIRM ARCHITECTURE.
+- YES, CONFIRM ARCHITECTURE: Build or update architecture only from D-xxx | LOCKED decisions.
+
+If this is only a proposal or demo, do not change the real file; say so clearly.
+
+End every reply exactly with:
+---
+🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+```
 
 ### AI response order
 
@@ -137,6 +170,7 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.2 | 2026-09-27 | Added copy-ready English prompt for use after upload. |
 | 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
 | 0.1.0 | 2026-09-27 | Initial English ZASS IDEA SEMPOI template. |
 
