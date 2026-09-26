@@ -193,19 +193,40 @@ Contoh:
 > Do not change LOCKED decisions.  
 > Return findings, contradictions, risks, experiments and candidate decisions only.
 
-Contoh metodologi / perspektif:
+Kaedah atau perspektif yang boleh digunakan:
 
-- Industrial / C4 / arc42 / ATAM
-- Academic / DSRM / GQM
-- Hacker / failure injection / assumption breaking
-- Security
-- Cost
-- Maintainability
-- Operations
-- Scalability
-- Crazy / unconstrained brainstorming
-- User-experience / workflow
-- Single-maintainer perspective
+| Kaedah | Ulasan ringkas |
+|---|---|
+| **Industrial / C4 / arc42 / ATAM** | Susun komponen, tanggungjawab, aliran dan trade-off; nilai sama ada reka bentuk memenuhi kualiti operasi sebenar. |
+| **Academic / DSRM / GQM** | Tukar idea menjadi masalah, soalan, kaedah, ukuran dan bukti; pastikan tuntutan boleh diuji atau dipertahankan. |
+| **Hacker / failure injection / assumption breaking** | Pecahkan andaian sistem secara kreatif: input pelik, keadaan luar jangka, gangguan rangkaian dan urutan tindakan yang salah. |
+| **Security / threat modelling** | Kenal pasti aset penting, pihak yang boleh menyerang, laluan serangan, kesan kerosakan dan kawalan yang perlu diwujudkan. |
+| **Abuse / Scammer mindset** | Bayangkan pengguna berniat mengambil kesempatan: tuntutan palsu, akaun berganda atau manipulasi harga; rekod pencegahan, bukan trik. |
+| **Cost / unit economics** | Kira kos membina, menjalankan dan menyelenggara; kenal pasti kos tersembunyi, had bajet dan titik pulang modal. |
+| **Maintainability** | Nilai sama ada seorang manusia masa depan boleh membaca, membaiki, menaik taraf dan memulihkan sistem tanpa pencipta asal. |
+| **Operations / reliability** | Fokus kepada kerja harian: pemantauan, alert, handover, backup, recovery, kapasiti dan apa berlaku apabila manusia tidak tersedia. |
+| **Scalability** | Uji apa berubah apabila pengguna, data, arahan atau integrasi meningkat sepuluh hingga seratus kali ganda. |
+| **Crazy / unconstrained brainstorming** | Tangguhkan had teknologi, kos dan kebiasaan sementara; cari kemungkinan luar jangka sebelum menapisnya melalui constraints sebenar. |
+| **User-experience / workflow** | Ikut perjalanan pengguna dari niat hingga hasil; cari kekeliruan, langkah berlebihan, keputusan berisiko dan titik menunggu. |
+| **Single-maintainer perspective** | Nilai semuanya melalui mata seorang penjaga sistem: masa, tenaga, kemahiran, dokumentasi, kos dan risiko keletihan. |
+| **Artist / emotional experience** | Nilai rasa pengalaman: adakah sistem memberi lega, yakin, seronok, tenang atau bermakna kepada manusia yang menggunakannya? |
+| **First-principles thinking** | Pecahkan andaian kepada fakta asas; bina semula pilihan daripada apa yang benar-benar diperlukan, bukan amalan biasa. |
+| **Systems thinking** | Lihat gelung sebab-akibat, kesan sampingan, kelewatan dan pihak berkaitan; elak membaiki satu bahagian sambil merosakkan yang lain. |
+| **Product / market lens** | Tanya siapa pengguna sanggup guna, masalah apa cukup sakit, apa alternatifnya dan sebab mereka memilih penyelesaian ini. |
+| **Legal / compliance lens** | Semak kewajipan undang-undang, privasi data, rekod, persetujuan, liabiliti dan syarat industri sebelum kos pembaikan meningkat. |
+| **Ethics / harm lens** | Cari siapa mungkin terjejas, dipinggirkan atau dirugikan; tetapkan batas keputusan walaupun pilihan itu kelihatan menguntungkan. |
+| **Accessibility / inclusion lens** | Uji sama ada pengguna dengan kemampuan, bahasa, peranti, internet atau literasi berbeza masih boleh menggunakan sistem dengan selamat. |
+| **Data / evidence lens** | Tentukan data yang perlu dipercayai, sumbernya, kualitinya, siapa boleh mengubahnya dan bagaimana audit membuktikan kebenaran. |
+| **Privacy / trust lens** | Minimakan data yang dikumpul; jelas tentang tujuan, akses, tempoh simpanan dan cara pengguna mendapatkan semula kawalan. |
+| **Resilience / offline lens** | Bayangkan internet, AI provider atau integrasi hilang; tentukan fungsi minimum, queue, retry dan pemulihan apabila sambungan kembali. |
+| **Red team / adversarial review** | Cari kelemahan melalui peranan pihak yang bermusuh, tetapi hasilkan hanya risiko, bukti dan cadangan kawalan pertahanan. |
+| **Reverse planning / pre-mortem** | Anggap projek gagal setahun kemudian; senaraikan sebab paling munasabah dan bina tindakan awal untuk mengurangkannya. |
+| **Analogy / cross-domain lens** | Pinjam corak daripada hospital, bank, kilang, permainan atau kebun untuk mencari penyelesaian yang belum terfikir. |
+| **Minimal viable experiment** | Elak debat panjang dengan mencipta ujian paling kecil yang boleh menolak atau menyokong andaian utama. |
+| **Future-back / scenario planning** | Bayangkan beberapa masa depan yang munasabah; semak sama ada keputusan hari ini masih berguna apabila keadaan berubah. |
+| **Stakeholder / conflict lens** | Petakan siapa mendapat manfaat, siapa menanggung kerja atau risiko, dan konflik kepentingan yang perlu diurus awal. |
+
+Untuk **Abuse / Scammer mindset**, output mestilah risiko, bukti, pengesanan dan kawalan pencegahan. Jangan merekod langkah bypass, penipuan atau monetisasi haram.
 
 Methodology tidak mempunyai kuasa untuk mengubah architecture secara langsung.
 
