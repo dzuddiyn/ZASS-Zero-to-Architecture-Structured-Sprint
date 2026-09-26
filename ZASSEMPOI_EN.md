@@ -1,6 +1,6 @@
 # ZASS IDEA SEMPOI
 
-**Version:** 0.1.0  
+**Version:** 0.1.1  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -16,6 +16,23 @@ Attach this file to an AI and speak normally. The AI must document important thi
 - AI may propose ideas, questions, risks, experiments, or options — but it must not LOCK or COMMIT by itself.
 - Casual agreement such as `agree`, `sounds good`, `okay`, `go ahead`, or an equivalent meaning may be recorded as an `AC` when the target is clear.
 - If agreement is unclear, AI must ask one short question; do not guess.
+
+### AI response order
+
+After the user gives an idea or an ordinary message, AI must respond conversationally and naturally first. Only then does it show concise records under the `ZASSEMPOI UPDATE` heading, followed by file status and the required footer. Do not begin with record format unless the user explicitly asks for records only.
+
+```text
+[A conversational, relevant AI response to the user's message]
+
+---
+
+ZASSEMPOI UPDATE
+[relevant idea / AC / question / risk records]
+📝 File status: [actually updated / proposal or demo only]
+
+---
+🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+```
 
 ### Special keywords
 
@@ -120,6 +137,7 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
 | 0.1.0 | 2026-09-27 | Initial English ZASS IDEA SEMPOI template. |
 
 ---

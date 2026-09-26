@@ -1,6 +1,6 @@
 # ZASS IDEA SEMPOI
 
-**Version:** 0.1.0  
+**Version:** 0.1.1  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -16,6 +16,23 @@ Lampirkan fail ini kepada AI dan berbual seperti biasa. AI mesti mendokumentasik
 - AI boleh cadangkan idea, soalan, risiko, eksperimen, atau pilihan — tetapi tidak boleh LOCK atau COMMIT sendiri.
 - Persetujuan santai seperti `setuju`, `boleh`, `bagus`, `teruskan`, atau maksud yang setara boleh direkodkan sebagai `AC` jika sasaran jelas.
 - Jika persetujuan tidak jelas, AI mesti tanya satu soalan ringkas; jangan teka.
+
+### Susunan balasan AI
+
+Selepas pengguna memberi idea atau mesej biasa, AI mesti menjawab secara santai dan natural terlebih dahulu. Selepas itu sahaja, AI memaparkan rekod ringkas di bawah tajuk `ZASSEMPOI UPDATE`, diikuti status fail dan footer wajib. Jangan mulakan balasan dengan format rekod kecuali pengguna memang meminta rekod sahaja.
+
+```text
+[Respons AI santai dan relevan kepada mesej pengguna]
+
+---
+
+ZASSEMPOI UPDATE
+[rekod idea / AC / soalan / risiko yang relevan]
+📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
+
+---
+🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+```
 
 ### Keyword khas
 
@@ -120,6 +137,7 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
 | 0.1.0 | 2026-09-27 | Initial ZASS IDEA SEMPOI template. |
 
 ---

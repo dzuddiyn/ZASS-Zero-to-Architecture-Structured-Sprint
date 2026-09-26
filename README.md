@@ -11,7 +11,7 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 ## Two ways to start
 
 - [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
-- [`ZASSEMPOI.md`](ZASSEMPOI.md) — **ZASS IDEA SEMPOI**, a lighter conversational template: normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
+- [`ZASSEMPOI.md`](ZASSEMPOI.md) — **ZASS IDEA SEMPOI**, a lighter conversational template: AI responds naturally first, then captures the relevant record; normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
 - [`ZASSEMPOI_EN.md`](ZASSEMPOI_EN.md) — the English companion template for the same lighter conversational workflow.
 
 ## Get started in 3 steps
