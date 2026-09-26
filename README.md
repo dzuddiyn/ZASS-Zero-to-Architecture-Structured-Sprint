@@ -120,7 +120,7 @@ Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 d
 ### C. Blast dari satu perspektif
 
 ```text
-ZASS IDEA
+ZASSS
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
@@ -213,16 +213,20 @@ For **Abuse / Scammer mindset**, output must remain limited to risks, evidence, 
 
 ## Default next action
 
-Every `ZASS IDEA` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It ends with the project owner's choice:
+Every `ZASSS` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It ends with the project owner's choice:
 
 `PARK` — save the idea with no active work.  
 `PROCEED` — choose the next review, experiment, decision, or build activity.  
 `PIVOT` — record a new candidate direction based on evidence.
 
+### Naming
+
+**ZASS** is the framework's official name. **ZASSS** is the action that opens and explores an idea. `Victim-Abuser Red Team` is the ZASS preset name; use **Abuse Red Teaming** or **Product Safety Red Teaming** when explaining the method outside ZASS.
+
 ### Three Minds review preset
 
 - **Engineer** — feasibility, modules, data, cost, constraints, and technical tests.
 - **Artist** — human journey, language, story, and emotional experience.
-- **Victim / Abuse Red Team** — human harm, misuse, detection signals, and preventive controls.
+- **Victim-Abuser Red Team** — human harm, misuse, detection signals, and preventive controls.
 
 Use it with: `ZASS REVIEW — Method: Three Minds`.
