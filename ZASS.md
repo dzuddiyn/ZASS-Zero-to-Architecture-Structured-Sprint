@@ -288,7 +288,7 @@ AI mesti menutup cadangan ini dengan soalan yang jelas:
 
 **👉 NEXT STEP — PARK, PROCEED, atau PIVOT?**
 
-- **PARK** — AI masukkan rekod itu dalam `ZASS.md`; pemilik projek menyimpannya di GitHub, Notion, atau tempat pilihan dan berhenti setakat itu.
+- **PARK** — AI masukkan rekod itu dalam `ZASS.md`; simpan di GitHub/Notion, selamat dan sedia diteruskan pada bila-bila masa.
 - **PROCEED** — AI jalankan `ZASS REVIEW`, contohnya **Engineer + Artist + Victim-Abuser Red Team**, atau terus perincikan ujian Hari 1.
 - **PIVOT** — AI cari penggunaan atau arah lain bagi idea dan bahan mentah asal dahulu, bukan terus membina arah lama.
 
