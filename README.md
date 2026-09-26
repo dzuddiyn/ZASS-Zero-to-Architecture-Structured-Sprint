@@ -8,6 +8,11 @@
 
 ZASS is a Markdown framework for developing raw ideas into tested options, decisions locked by the project owner, and traceable architecture. It works across ChatGPT, Gemini, Claude, Perplexity, and other AI models. AI helps explore and organize; the project owner makes the decisions.
 
+## Two ways to start
+
+- [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
+- [`ZASSEMPOI.md`](ZASSEMPOI.md) — **ZASS IDEA SEMPOI**, a lighter conversational template: normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
+
 ## Get started in 3 steps
 
 1. Copy [`ZASS.md`](ZASS.md) into a new project folder. Keep one main ZASS file per project.

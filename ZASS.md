@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.9 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
+**Version:** 0.1.10 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26

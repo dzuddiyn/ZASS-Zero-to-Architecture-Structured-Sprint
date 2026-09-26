@@ -2,6 +2,11 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.10] — 2026-09-27
+
+- Added `ZASSEMPOI.md`, the ZASS IDEA SEMPOI conversational template with agreement-to-AC capture, explicit LOCK/COMMIT safeguards, and an architecture confirmation gate.
+- Added links explaining when to choose the full ZASS template or the lighter ZASS IDEA SEMPOI mode.
+
 ## [v0.1.9] — 2026-09-27
 
 - Replaced the subtle blank-line spacing between PARK, PROCEED, and PIVOT with visible Markdown separators for reliable visual grouping.
