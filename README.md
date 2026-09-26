@@ -217,11 +217,13 @@ After AI actually updates the ZASS file, it should state: **“ZASS has been upd
 
 ## Default next action
 
-Every `ZASSS` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It then asks the project owner to choose:
+Every `ZASSS` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It must end by asking:
 
-`PARK` — save the idea with no active work.  
-`PROCEED` — choose the next review, experiment, decision, or build activity.  
-`PIVOT` — record a new candidate direction based on evidence.
+**👉 NEXT STEP — PARK, PROCEED, or PIVOT?**
+
+- `PARK` — AI records it in `ZASS.md`; the owner saves it on GitHub, Notion, or another chosen place and stops there.
+- `PROCEED` — AI runs a `ZASS REVIEW` (for example, **Engineer + Artist + Victim-Abuser Red Team**) or expands the Day 1 test.
+- `PIVOT` — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
 
 ### Naming
 
