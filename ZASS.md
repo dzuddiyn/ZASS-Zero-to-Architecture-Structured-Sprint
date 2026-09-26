@@ -968,7 +968,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASS IDEA
 
-Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT 3-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
+Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT 3-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PARK, PROCEED atau PIVOT.
 
 ### ZASS REVIEW
 
