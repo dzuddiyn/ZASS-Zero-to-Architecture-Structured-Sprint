@@ -191,19 +191,40 @@ Example:
 > Do not change LOCKED decisions.  
 > Return findings, contradictions, risks, experiments, and candidate decisions only.
 
-Possible methodologies or perspectives:
+Methods and perspectives you can use:
 
-- Industrial / C4 / arc42 / ATAM
-- Academic / DSRM / GQM
-- Hacker / failure injection / assumption breaking
-- Security
-- Cost
-- Maintainability
-- Operations
-- Scalability
-- Crazy / unconstrained brainstorming
-- User experience / workflow
-- Single-maintainer perspective
+| Method | Brief review |
+|---|---|
+| **Industrial / C4 / arc42 / ATAM** | Structure components, responsibilities, flows, and trade-offs; assess whether the design meets real operational quality requirements. |
+| **Academic / DSRM / GQM** | Turn an idea into a problem, questions, method, measures, and evidence; ensure claims can be tested or defended. |
+| **Hacker / failure injection / assumption breaking** | Break system assumptions creatively through unusual inputs, unexpected conditions, network loss, and incorrect action sequences. |
+| **Security / threat modelling** | Identify important assets, possible attackers, attack paths, damage impact, and the controls that need to exist. |
+| **Abuse / Scammer mindset** | Imagine users seeking unfair advantage through false claims, duplicate accounts, or price manipulation; record prevention, not tricks. |
+| **Cost / unit economics** | Calculate build, running, and maintenance costs; identify hidden costs, budget limits, and the break-even point. |
+| **Maintainability** | Assess whether a future person can read, repair, upgrade, and recover the system without relying on its original creator. |
+| **Operations / reliability** | Focus on daily work: monitoring, alerts, handover, backup, recovery, capacity, and what happens when people are unavailable. |
+| **Scalability** | Test what changes when users, data, instructions, or integrations grow by ten to one hundred times. |
+| **Crazy / unconstrained brainstorming** | Temporarily suspend limits of technology, cost, and convention; find unexpected possibilities before filtering through real constraints. |
+| **User-experience / workflow** | Follow the user journey from intent to outcome; find confusion, unnecessary steps, risky decisions, and waiting points. |
+| **Single-maintainer perspective** | Assess everything through one system caretaker's time, energy, skills, documentation, cost, and risk of exhaustion. |
+| **Artist / emotional experience** | Assess the felt experience: does the system make people feel relief, confidence, enjoyment, calm, or meaning? |
+| **First-principles thinking** | Break assumptions into basic facts; rebuild options from what is truly needed instead of customary practice. |
+| **Systems thinking** | Examine feedback loops, side effects, delays, and related parties; avoid fixing one part while damaging another. |
+| **Product / market lens** | Ask who will willingly use it, which problem hurts enough, the alternatives available, and why people would choose this solution. |
+| **Legal / compliance lens** | Check legal duties, data privacy, records, consent, liability, and industry requirements before remediation becomes expensive. |
+| **Ethics / harm lens** | Find who may be harmed, excluded, or disadvantaged; set decision boundaries even when an option appears profitable. |
+| **Accessibility / inclusion lens** | Test whether people with different abilities, languages, devices, connectivity, or literacy can still use the system safely. |
+| **Data / evidence lens** | Define which data must be trusted, its source and quality, who can change it, and how audit proves truth. |
+| **Privacy / trust lens** | Minimize collected data; make purpose, access, retention, and the user's ability to regain control clear. |
+| **Resilience / offline lens** | Imagine loss of internet, AI providers, or integrations; define minimum function, queues, retries, and recovery after return. |
+| **Red team / adversarial review** | Search for weaknesses from an opposing party's perspective, but produce only risks, evidence, and defensive controls. |
+| **Reverse planning / pre-mortem** | Assume the project failed a year later; list likely reasons and create early actions to reduce them. |
+| **Analogy / cross-domain lens** | Borrow patterns from hospitals, banks, factories, games, or farms to find solutions not yet considered. |
+| **Minimal viable experiment** | Avoid long debate by creating the smallest test that can reject or support the central assumption. |
+| **Future-back / scenario planning** | Imagine several plausible futures; check whether today's decision remains useful as conditions change. |
+| **Stakeholder / conflict lens** | Map who benefits, who carries work or risk, and conflicts of interest that need early management. |
+
+For **Abuse / Scammer mindset**, output must remain limited to risks, evidence, detection, and preventive controls. Do not record bypass, deception, or illegal monetization steps.
 
 A methodology has no authority to change architecture directly.
 
