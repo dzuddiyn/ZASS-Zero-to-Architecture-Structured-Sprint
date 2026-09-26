@@ -286,7 +286,7 @@ AI must close this proposal with a clear question:
 
 **👉 NEXT STEP — PARK, PROCEED, or PIVOT?**
 
-- **PARK** — AI records it in `ZASS.md`; the project owner saves it on GitHub, Notion, or another chosen place and stops there.
+- **PARK** — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
 - **PROCEED** — AI runs a `ZASS REVIEW`, for example **Engineer + Artist + Victim-Abuser Red Team**, or expands the Day 1 test.
 - **PIVOT** — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
 
