@@ -211,9 +211,13 @@ For **Abuse / Scammer mindset**, output must remain limited to risks, evidence, 
 
 ---
 
+## Status after an update
+
+After AI actually updates the ZASS file, it should state: **“ZASS has been updated in the ZASS format and is ready for structured brainstorming.”** If it only proposes changes, it must say that the file has not yet been updated.
+
 ## Default next action
 
-Every `ZASSS` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It ends with the project owner's choice:
+Every `ZASSS` and `ZASS REVIEW` ends with a **Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It then asks the project owner to choose:
 
 `PARK` — save the idea with no active work.  
 `PROCEED` — choose the next review, experiment, decision, or build activity.  
