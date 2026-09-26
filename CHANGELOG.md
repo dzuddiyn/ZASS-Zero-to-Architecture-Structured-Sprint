@@ -2,6 +2,11 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.5] — 2026-09-27
+
+- Added lightweight evidence fields for experiments, early warning signals for risks, and decision drivers/consequences/revisit triggers with visual icons.
+- Added a one-sentence problem framing and optional Cynefin, DACI, Design Sprint, and Wardley Mapping guidance without adding mandatory states.
+
 ## [v0.1.4] — 2026-09-27
 
 - Added a reusable prompt that requires atomic commits, visible version bumps, and factual changelog entries for owner-locked changes.

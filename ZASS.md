@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.4 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
+**Version:** 0.1.5 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -299,6 +299,48 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
 - **PARK** — AI masukkan rekod itu dalam `ZASS.md`; simpan di GitHub/Notion, selamat dan sedia diteruskan pada bila-bila masa.
 - **PROCEED** — AI cadangkan `ZASS REVIEW` yang paling sesuai dengan idea semasa. Nyatakan **Method**, **Scope**, **Focus**, dan satu sebab ringkas mengapa review itu relevan; AI juga boleh perincikan tindakan esok jika itu langkah yang lebih sesuai.
 - **PIVOT** — AI cari penggunaan atau arah lain bagi idea dan bahan mentah asal dahulu, bukan terus membina arah lama.
+
+
+## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN
+
+Tambahan ini menjadikan ZASS lebih tajam tanpa menambah state atau ID baharu. Ia digunakan apabila ada eksperimen, risiko, atau candidate decision; jangan isi medan dengan fakta rekaan.
+
+**Masalah yang sedang diuji:** [satu ayat calon tentang masalah pengguna/operasi yang mahu disahkan].
+
+### Rekod eksperimen (`E-xxx`)
+
+```text
+🔗 Goal/Question tested: [GOAL atau Q-xxx]
+🧠 Assumption: [perkara yang dianggap benar]
+🎯 Pass/fail signal: [bukti atau ambang yang menentukan hasil]
+👀 Observed result: [apa yang benar-benar berlaku / PENDING]
+📚 Learning: [apa yang diketahui selepas hasil diperhatikan / PENDING]
+➡️ Impact: PARK / PROCEED / PIVOT — [alasan]
+```
+
+### Rekod risiko (`R-xxx`)
+
+```text
+🚨 Early warning signal: [tanda awal risiko mula berlaku]
+```
+
+### Rekod keputusan (`D-xxx`)
+
+```text
+🧭 Decision drivers: [kriteria yang benar-benar penting]
+🗂️ Options considered: [pilihan yang dibandingkan]
+✅ Decision: [pilihan pemilik / PENDING jika belum diputuskan]
+🔄 Consequences: [apa yang berubah atau perlu diterima]
+🔁 Revisit trigger: [bukti atau keadaan yang memerlukan semakan semula]
+```
+
+Untuk projek berpasukan sahaja, AI boleh mencadangkan peranan **DACI** (Driver, Approver, Contributors, Informed). Ia pilihan; pemilik projek kekal pihak yang LOCK keputusan dalam ZASS.
+
+### Mode pilihan, bukan aliran wajib
+
+- **Cynefin triage** — pilih cara kerja mengikut sifat isu: jelas → checklist; rumit → analisis pakar; kompleks → eksperimen kecil; kacau-bilau → stabilkan dahulu.
+- **Design Sprint mode** — gunakan apabila cabaran pengguna sudah jelas dan pasukan mahu prototype serta uji dengan pengguna dalam masa singkat.
+- **Wardley Mapping** — gunakan di luar output default bagi projek besar yang mempunyai banyak komponen, kebergantungan, vendor, atau keputusan build-vs-buy.
 
 ---
 

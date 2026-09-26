@@ -18,7 +18,13 @@ You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, s
 
 ## Versioning
 
-Each owner-locked template update is one logical Git commit covering every affected file. Record the change in [`CHANGELOG.md`](CHANGELOG.md), bump the visible version, and tag meaningful releases (for example, `v0.1.4`). Commits preserve detailed history; tags mark stable versions that are easy to return to.
+Each owner-locked template update is one logical Git commit covering every affected file. Record the change in [`CHANGELOG.md`](CHANGELOG.md), bump the visible version, and tag meaningful releases (for example, `v0.1.5`). Commits preserve detailed history; tags mark stable versions that are easy to return to.
+
+## Evidence and decision discipline
+
+ZASS v0.1.5 adds lightweight evidence fields without new states or IDs: a one-sentence **problem being tested**, an experiment's **assumption**, **pass/fail signal**, **observed result**, **learning**, and **PARK / PROCEED / PIVOT impact**. Risks can carry an **early warning signal**; decisions can record drivers, alternatives, consequences, and a revisit trigger.
+
+Cynefin triage, DACI roles, Design Sprint mode, and Wardley Mapping remain optional tools for the right context—not default ceremony.
 
 ## Prompt for AI commits
 
@@ -38,10 +44,10 @@ Whenever you make a change that I LOCK and ask you to commit:
    - MAJOR (`v1.0.0`) only for a breaking change to the basic workflow.
 4. Update `CHANGELOG.md` with the new version, date, and a concise factual summary.
 5. Update the same visible version in `ZASS.md`, `ZASS_EN.md`, and `README.md` where shown.
-6. Use a clear commit message, for example: `Release ZASS v0.1.4`.
+6. Use a clear commit message, for example: `Release ZASS v0.1.5`.
 7. After committing, report the new version, commit SHA, changed files, and changelog summary.
 8. Do not change LOCKED decisions or baselines without my explicit instruction.
-9. If I ask to publish a GitHub release, create a matching tag, for example `v0.1.4`.
+9. If I ask to publish a GitHub release, create a matching tag, for example `v0.1.5`.
 
 Do not commit when I only ask for a demo, suggestion, or review. Wait for an explicit
 instruction such as “LOCK dan COMMIT”.
@@ -61,7 +67,7 @@ instruction such as “LOCK dan COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.1.4.
+**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.1.5.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -97,7 +103,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.4.
+**Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.5.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 

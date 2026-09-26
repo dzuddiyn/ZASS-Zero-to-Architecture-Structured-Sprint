@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.4 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
+**Version:** 0.1.5 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -297,6 +297,48 @@ AI must then close the output with a clear question:
 - **PARK** — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
 - **PROCEED** — AI recommends the `ZASS REVIEW` best suited to the current idea. State its **Method**, **Scope**, **Focus**, and one short reason it is relevant; AI may instead expand tomorrow's action when that is the better next move.
 - **PIVOT** — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
+
+
+## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE
+
+These additions sharpen ZASS without adding states or IDs. Use them when there is an experiment, risk, or candidate decision; never fill fields with invented facts.
+
+**Problem being tested:** [one candidate sentence about the user or operational problem to validate].
+
+### Experiment record (`E-xxx`)
+
+```text
+🔗 Goal/Question tested: [GOAL or Q-xxx]
+🧠 Assumption: [what is being treated as true]
+🎯 Pass/fail signal: [evidence or threshold that determines the result]
+👀 Observed result: [what actually happened / PENDING]
+📚 Learning: [what is known after observing the result / PENDING]
+➡️ Impact: PARK / PROCEED / PIVOT — [reason]
+```
+
+### Risk record (`R-xxx`)
+
+```text
+🚨 Early warning signal: [sign that the risk is beginning to occur]
+```
+
+### Decision record (`D-xxx`)
+
+```text
+🧭 Decision drivers: [criteria that truly matter]
+🗂️ Options considered: [alternatives compared]
+✅ Decision: [owner choice / PENDING when not yet decided]
+🔄 Consequences: [what changes or must be accepted]
+🔁 Revisit trigger: [evidence or condition requiring review]
+```
+
+For multi-owner projects only, AI may suggest **DACI** roles (Driver, Approver, Contributors, Informed). It is optional; the project owner remains the party that LOCKS decisions in ZASS.
+
+### Optional modes, not mandatory flow
+
+- **Cynefin triage** — match work to the issue: clear → checklist; complicated → expert analysis; complex → small experiment; chaotic → stabilize first.
+- **Design Sprint mode** — use when the user challenge is clear and a team wants to prototype and test quickly.
+- **Wardley Mapping** — use outside the default output for large projects with many components, dependencies, vendors, or build-vs-buy choices.
 
 ---
 
