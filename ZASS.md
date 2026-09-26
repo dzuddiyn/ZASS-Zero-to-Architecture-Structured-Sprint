@@ -86,7 +86,7 @@ Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 d
 ### C. Blast dari satu perspektif
 
 ```text
-ZASS BLAST
+ZASS IDEA
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
@@ -154,7 +154,7 @@ Tidak perlu fikir teknologi atau architecture dahulu.
 
 Contoh arahan kepada AI:
 
-> ZASS BLAST. Baca ZASS.md. Jangan ubah LOCKED decisions. Cari idea, kemungkinan, persoalan, risiko dan alternatif yang belum diteroka.
+> ZASS IDEA. Baca ZASS.md. Jangan ubah LOCKED decisions. Cari idea, kemungkinan, persoalan, risiko dan alternatif yang belum diteroka.
 
 ---
 
@@ -229,6 +229,54 @@ Kaedah atau perspektif yang boleh digunakan:
 Untuk **Abuse / Scammer mindset**, output mestilah risiko, bukti, pengesanan dan kawalan pencegahan. Jangan merekod langkah bypass, penipuan atau monetisasi haram.
 
 Methodology tidak mempunyai kuasa untuk mengubah architecture secara langsung.
+
+## PRESET REVIEW — 3-OTAK
+
+Gunakan preset ini apabila idea memerlukan tiga sudut yang saling melengkapi:
+
+| Peranan | Soalan utama | Hasil yang dicari |
+|---|---|---|
+| **Engineer** | Bolehkah ia dibina, dijaga dan dijalankan dalam constraints sebenar? | Keperluan, modul, data, kos, had dan ujian teknikal. |
+| **Artist** | Bagaimanakah pengalaman itu dirasa oleh manusia? | Journey, bahasa, cerita, rasa yakin, lega, seronok atau bermakna. |
+| **Victim / Abuse Red Team** | Siapa boleh keliru, tercedera atau mengambil kesempatan, dan bagaimana dikesan? | Risiko, kesan manusia, evidence, detection signal dan preventive control. |
+
+Contoh arahan:
+
+```text
+ZASS REVIEW
+Method: 3-Otak
+Scope: [idea atau bahagian projek]
+Run Engineer, Artist, and Victim / Abuse Red Team perspectives.
+Do not change LOCKED decisions.
+Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
+```
+
+## OUTPUT DEFAULT — CADANGAN TINDAKAN 3 HARI
+
+Selepas setiap `ZASS IDEA` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
+
+```text
+NEXT 3-DAY ACTION PROPOSAL
+
+Day 1 — Verify the problem
+Output: [bukti / contoh pengguna / data kecil]
+
+Day 2 — Test one critical assumption
+Output: [hasil ujian yang boleh dinilai]
+
+Day 3 — Make a visible prototype or decision
+Output: [demo kecil / keputusan / alasan untuk PARK]
+
+Cost: RM___
+Time: ___ jam
+Stop rule: Jika [syarat], PARK atau PIVOT.
+
+NEXT STEP — PARK, PROCEED, atau PIVOT?
+```
+
+- **PARK** — simpan idea dalam fail ZASS yang sama tanpa kerja aktif. Kekalkan sebagai `RAW`, atau gunakan `DEFERRED` jika sengaja mahu menilai semula kemudian.
+- **PROCEED** — pengguna memilih langkah seterusnya yang dicadangkan: review lanjut, eksperimen, keputusan, atau kerja binaan.
+- **PIVOT** — ubah arah berdasarkan bukti. Rekod calon arah baharu dan alasannya; jangan padam atau menulis semula keputusan terdahulu secara senyap.
 
 ---
 
@@ -918,9 +966,9 @@ The engineering source of truth must not live only inside an AI conversation.
 
 These are optional human-readable conventions, not software commands. The owner may use ordinary language instead; AI resolves the relevant entries and maintains IDs.
 
-### ZASS BLAST
+### ZASS IDEA
 
-Explore new possibilities without modifying LOCKED decisions.
+Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT 3-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
 
 ### ZASS REVIEW
 
