@@ -67,3 +67,108 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
 **Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.2.
+
+## PROMPT SIAP GUNA — RUJUKAN PILIHAN
+
+Prompt di bawah membantu apabila bertukar AI, mahu review yang tepat, atau AI tersalah faham. Abang tidak wajib menyalinnya untuk penggunaan harian. Ubah bahagian dalam `[ ]` sahaja jika perlu.
+
+### A. Sembang bebas → kemas kini ZASS projek
+
+```text
+Baca ZASS.md terkini untuk projek [NAMA PROJEK]. Extract perbincangan kita ke dalam format ZASS.
+Jangan invent fakta yang saya tak beri. Tandakan setiap perkara yang relevan sebagai
+EXPLICIT (saya nyatakan), INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN.
+Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS,
+CONSTRAINTS, idea baharu, soalan dan risiko. Jangan overwrite maklumat sedia ada
+tanpa menunjukkan percanggahan. Jangan ubah LOCKED decisions.
+Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
+Jika ini projek baharu, namakan fail ZASS_[NAMA_PROJEK].md.
+Jika projek ini sudah ada fail ZASS, kemas kini fail yang sama; jangan cipta v2/final.
+Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
+```
+
+Contoh nama projek baharu: `ZASS_Produk_Jus_TimunHalia.md`. Satu projek mempunyai satu fail ZASS utama; sejarah perubahan disimpan oleh Git. Lampirkan atau beri AI kandungan fail terkini setiap kali bertukar chat/model. Salinan dalam chat bukan versi autoritatif.
+
+### B. Saya sudah ada idea berstruktur → tampal dan minta AI semak
+
+```text
+RAW IDEA
+Produk minuman berasaskan timun + halia menggunakan timun reject.
+
+WHY I WANT THIS
+- Kurangkan waste timun.
+- Cari produk value-added.
+
+GOALS
+- Produk mudah dihasilkan.
+- Boleh diuji pada skala kecil.
+
+NON-GOALS
+- Belum mahu bina kilang besar.
+
+CONSTRAINTS
+- Modal awal rendah.
+- Shelf life belum diketahui.
+
+Masukkan ke ZASS projek ini. Anggap contoh di atas sebagai input idea sahaja,
+bukan keputusan LOCKED. Tandakan fakta EXPLICIT, tafsiran INFERRED, dan perkara
+UNKNOWN sebagai soalan. Jangan invent angka atau spesifikasi.
+```
+
+Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 di bawah secara automatik. Jika idea baru masih dalam projek yang sama, minta AI mencadangkan pindaan pada fail sedia ada, menjaga ID dan keputusan terdahulu.
+
+### C. Blast dari satu perspektif
+
+```text
+ZASS BLAST
+Mode: Industrial product thinking
+Scope: RAW IDEA
+Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
+```
+
+### D. Review idea yang masih awal
+
+```text
+ZASS REVIEW
+Method: Constraints + Quality Attributes
+Scope: RAW IDEA / Whole system
+Focus: [contoh: kos, pengguna, penyelenggaraan]
+Do not modify LOCKED decisions.
+Return only: findings, contradictions, risks, questions, candidate experiments,
+and candidate decisions.
+```
+
+### E. Review sasaran khusus
+
+```text
+ZASS REVIEW
+Method: Hacker / assumption breaking
+Scope: [terangkan topik, bahagian, atau ID jika tahu]
+Goal: Cari failure mode, hidden assumption dan edge case.
+Focus: [contoh: input berulang, rangkaian terputus, salah izin]
+Do not modify LOCKED decisions.
+Return only:
+- findings
+- contradictions
+- risks
+- questions
+- candidate experiments
+- candidate decisions
+```
+
+Jika mahu, skop boleh ditulis secara biasa, contohnya “proses approval claim”. AI yang mencari ID sebenar dalam fail. `Scope: AC-001, AC-005–AC-011` hanya sesuai jika calon itu sudah direkodkan. `ATAM` lebih berguna untuk menilai candidate architecture yang cukup matang; pada tahap idea mentah gunakan BLAST atau review constraints dahulu.
+
+`AC` bermaksud **calon cara sistem dibina**; `D` bermaksud **perkara yang abang putuskan** selepas menimbang pilihan. Butiran ID untuk AI ada di hujung fail.
+
+Sebelum menyimpan pindaan AI, semak `diff`: apa yang ditambah, dibuang atau diubah; khususnya ID, fakta EXPLICIT/INFERRED, dan keputusan LOCKED.
+
+### Melalui telefon sahaja
+
+**Untuk edit ringkas dengan aplikasi GitHub Mobile:** pasang aplikasi GitHub rasmi dan log masuk. Buka repository → **Browse code** → buka fail ZASS projek → menu **⋯** di penjuru kanan atas → **Edit File** → ubah teks → **Commit**. Pilih branch yang sedang dibuka jika mahu perubahan terus pada branch itu. Commit dalam aplikasi sudah menyimpan perubahan pada GitHub; tiada `git push` tambahan. Semak nama branch sebelum commit.
+
+**Untuk fail baharu yang AI hasilkan:** buka `github.com` dalam pelayar telefon → repository → **Add file → Upload files** → pilih `.md` yang dimuat turun → commit. Pastikan nama dan folder betul. Jika ZASS untuk projek itu sudah wujud, jangan upload satu lagi fail versi baharu; buka fail sedia ada dan kemas kini kandungannya selepas membandingkan perubahan.
+
+Sebelum sesi AI seterusnya, buka atau muat turun versi terkini dari repo. Jika PC mempunyai salinan repo, jalankan `git pull` di PC sebelum menyunting lagi. Pindaan besar pada fail panjang lebih mudah disemak di PC.
+
+Jika pilihan GitHub sukar kelihatan pada skrin kecil, cuba **Desktop site** dalam menu pelayar. Jangan letakkan rahsia, kata laluan atau token dalam ZASS yang akan di-commit.
+
