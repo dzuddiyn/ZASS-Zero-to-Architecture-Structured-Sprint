@@ -251,6 +251,14 @@ Do not change LOCKED decisions.
 Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
 ```
 
+## STATUS AFTER AN UPDATE
+
+After AI has actually updated entries in the ZASS file, it must state:
+
+> **ZASS has been updated in the ZASS format and is ready for structured brainstorming.**
+
+If AI has only shown a proposed change and has not updated the file, it must state that clearly and must not claim that the file has been updated.
+
 ## DEFAULT OUTPUT — NEXT 3-DAY ACTION PROPOSAL
 
 After every `ZASSS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
@@ -269,7 +277,7 @@ Output: [small demo / decision / reason to PARK]
 
 Cost: RM___
 Time: ___ hours
-Stop rule: If [condition], PARK or PIVOT.
+Stop rule: Stop the proposed action if [condition].
 
 NEXT STEP — PARK, PROCEED, or PIVOT?
 ```
