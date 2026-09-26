@@ -270,18 +270,12 @@ Tomorrow — Verify one critical assumption
 Action: [one smallest action that can be taken tomorrow]
 Output: [evidence / answer / small evaluable data point]
 
-Cost: RM___
-Time: ___ hours
-Stop rule: Stop the action if [condition].
+💰 Cost: RM___
+⏱️ Time: ___ hours
+🛑 Stop rule: Stop the action if [condition].
 ```
 
-```text
-## 🗺️ LONG VIEW
-
-Real problem → small evidence → short test → choose direction → owner LOCKS → build → operate & improve
-
-Weak evidence / high risk → PARK or PIVOT
-```
+------------------------
 
 After the next-day proposal, AI must provide a short, readable response space:
 
@@ -297,6 +291,8 @@ After the next-day proposal, AI must provide a short, readable response space:
 ```
 
 This summary must be clearly presented as AI advice, not a decision; it may not modify any `LOCKED` decision or invent facts.
+
+------------------------
 
 AI must then close the output with a clear question:
 
