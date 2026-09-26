@@ -272,18 +272,12 @@ Esok — Sahkan satu andaian paling kritikal
 Tindakan: [satu tindakan paling kecil yang boleh dibuat esok]
 Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
-Cost: RM___
-Time: ___ jam
-Stop rule: Hentikan tindakan jika [syarat].
+💰 Cost: RM___
+⏱️ Time: ___ jam
+🛑 Stop rule: Hentikan tindakan jika [syarat].
 ```
 
-```text
-## 🗺️ PANDANGAN JAUH
-
-Masalah sebenar → bukti kecil → ujian ringkas → pilih arah → pemilik LOCK → bina → jalankan & baiki
-
-Bukti lemah / risiko tinggi → PARK atau PIVOT
-```
+------------------------
 
 Selepas cadangan tindakan esok, AI mesti memberi ruang respons yang pendek dan mudah dibaca:
 
@@ -299,6 +293,8 @@ Selepas cadangan tindakan esok, AI mesti memberi ruang respons yang pendek dan m
 ```
 
 Rumusan ini mesti jelas sebagai cadangan AI, bukan keputusan; ia tidak boleh mengubah mana-mana `LOCKED` decision atau mencipta fakta.
+
+------------------------
 
 AI mesti kemudian menutup output dengan soalan yang jelas:
 
