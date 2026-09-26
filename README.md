@@ -16,6 +16,10 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 
 You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, statuses, and links between entries. See **Daily Use** near the top of [`ZASS.md`](ZASS.md) for simple instructions and optional prompts. The template's user guide is currently in Malay; the framework can be used in any language.
 
+## Versioning
+
+Each owner-locked template update is one logical Git commit covering every affected file. Record the change in [`CHANGELOG.md`](CHANGELOG.md), bump the visible version, and tag meaningful releases (for example, `v0.1.3`). Commits preserve detailed history; tags mark stable versions that are easy to return to.
+
 ## The ZASS flow
 
 `Explore freely → Challenge assumptions → Compare options → Test when needed → Owner decides → Lock → Build architecture`
@@ -30,7 +34,7 @@ You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, s
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.1.2.
+**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.1.3.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -66,7 +70,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.2.
+**Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.3.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 
