@@ -2,6 +2,10 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.7] — 2026-09-27
+
+- Made PARK confirmations dynamic: actual updates name the saved idea and its ZASS records, recommend GitHub or Notion for durable history and future project work, and distinguish proposals from saved records.
+
 ## [v0.1.6] — 2026-09-27
 
 - Made the default NEXT STEP prompts more scannable with PARK 🅿️, PROCEED ▶️, and PIVOT 🔄 icons.
