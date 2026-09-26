@@ -86,7 +86,7 @@ This is **not actual project content** and does not automatically fill sections 
 ### C. Blast from one perspective
 
 ```text
-ZASS IDEA
+ZASSS
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Find possibilities, questions, and risks. Label them as candidates; do not LOCK decisions.
@@ -152,7 +152,7 @@ Do not think about technology or architecture yet.
 
 Example instruction to AI:
 
-> ZASS IDEA. Read ZASS.md. Do not change LOCKED decisions. Find ideas, possibilities, questions, risks, and alternatives that have not yet been explored.
+> ZASSS. Read ZASS.md. Do not change LOCKED decisions. Find ideas, possibilities, questions, risks, and alternatives that have not yet been explored.
 
 ---
 
@@ -232,11 +232,13 @@ A methodology has no authority to change architecture directly.
 
 Use this preset when an idea needs three complementary perspectives:
 
+**External name:** when describing this method outside ZASS, use **Abuse Red Teaming** or **Product Safety Red Teaming**. `Victim-Abuser Red Team` is the ZASS-specific preset name.
+
 | Role | Core question | Output sought |
 |---|---|---|
 | **Engineer** | Can this be built, maintained, and operated within the real constraints? | Requirements, modules, data, cost, limits, and technical tests. |
 | **Artist** | How will this experience feel to a human being? | Journey, language, story, confidence, relief, enjoyment, or meaning. |
-| **Victim / Abuse Red Team** | Who could be confused, harmed, or exploit the system, and how would that be detected? | Risks, human impact, evidence, detection signals, and preventive controls. |
+| **Victim-Abuser Red Team** | Who could be confused, harmed, or exploit the system, and how would that be detected? | Risks, human impact, evidence, detection signals, and preventive controls. |
 
 Example instruction:
 
@@ -244,14 +246,14 @@ Example instruction:
 ZASS REVIEW
 Method: Three Minds
 Scope: [idea or project area]
-Run Engineer, Artist, and Victim / Abuse Red Team perspectives.
+Run Engineer, Artist, and Victim-Abuser Red Team perspectives.
 Do not change LOCKED decisions.
 Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
 ```
 
 ## DEFAULT OUTPUT — NEXT 3-DAY ACTION PROPOSAL
 
-After every `ZASS IDEA` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
+After every `ZASSS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
 
 ```text
 NEXT 3-DAY ACTION PROPOSAL
@@ -964,7 +966,7 @@ The engineering source of truth must not live only inside an AI conversation.
 
 These are optional human-readable conventions, not software commands. The owner may use ordinary language instead; AI resolves the relevant entries and maintains IDs.
 
-### ZASS IDEA
+### ZASSS
 
 Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT 3-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
 
