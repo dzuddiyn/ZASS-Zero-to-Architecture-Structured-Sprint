@@ -263,6 +263,19 @@ If AI has only shown a proposed change and has not updated the file, it must sta
 
 After every `ZASSS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
 
+AI must provide a short, readable response space before the next-day action proposal:
+
+```text
+## ✨ AI SUMMARY AND SUGGESTIONS
+
+[AI writes 1–3 short natural paragraphs freely. It may summarize findings, connect patterns
+it notices, or offer creative suggestions clearly labeled as candidates.]
+```
+
+This summary must be clearly presented as AI advice, not a decision; it may not modify any `LOCKED` decision or invent facts.
+
+------------------------
+
 ```text
 ## 🧭 NEXT-DAY ACTION PROPOSAL
 
@@ -277,29 +290,12 @@ Output: [evidence / answer / small evaluable data point]
 
 ------------------------
 
-After the next-day proposal, AI must provide a short, readable response space:
-
-```text
-## ✨ AI SUMMARY — What matters most now
-
-[AI writes a free-form summary grounded in the ZASSS or ZASS REVIEW results.]
-
-🌱 Most promising opportunity: [direction worth attention]
-🧩 Still unclear: [most important assumption or question]
-⚠️ Do not do yet: [action to avoid until there is evidence]
-💡 AI's small suggestion: [lightest worthwhile next move]
-```
-
-This summary must be clearly presented as AI advice, not a decision; it may not modify any `LOCKED` decision or invent facts.
-
-------------------------
-
 AI must then close the output with a clear question:
 
 **👉 NEXT STEP — PARK, PROCEED, or PIVOT?**
 
 - **PARK** — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
-- **PROCEED** — AI recommends the `ZASS REVIEW` best suited to the current idea. State its **Method**, **Scope**, **Focus**, and one short reason it is relevant; AI may instead expand the Day 1 test when that is the better next move.
+- **PROCEED** — AI recommends the `ZASS REVIEW` best suited to the current idea. State its **Method**, **Scope**, **Focus**, and one short reason it is relevant; AI may instead expand tomorrow's action when that is the better next move.
 - **PIVOT** — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
 
 ---
