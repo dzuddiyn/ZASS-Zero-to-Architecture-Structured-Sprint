@@ -86,7 +86,7 @@ Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 d
 ### C. Blast dari satu perspektif
 
 ```text
-ZASS IDEA
+ZASSS
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
@@ -154,7 +154,7 @@ Tidak perlu fikir teknologi atau architecture dahulu.
 
 Contoh arahan kepada AI:
 
-> ZASS IDEA. Baca ZASS.md. Jangan ubah LOCKED decisions. Cari idea, kemungkinan, persoalan, risiko dan alternatif yang belum diteroka.
+> ZASSS. Baca ZASS.md. Jangan ubah LOCKED decisions. Cari idea, kemungkinan, persoalan, risiko dan alternatif yang belum diteroka.
 
 ---
 
@@ -234,11 +234,13 @@ Methodology tidak mempunyai kuasa untuk mengubah architecture secara langsung.
 
 Gunakan preset ini apabila idea memerlukan tiga sudut yang saling melengkapi:
 
+**Nama luaran:** apabila menerangkan kaedah ini kepada pihak luar, gunakan **Abuse Red Teaming** atau **Product Safety Red Teaming**. `Victim-Abuser Red Team` ialah nama preset khas ZASS.
+
 | Peranan | Soalan utama | Hasil yang dicari |
 |---|---|---|
 | **Engineer** | Bolehkah ia dibina, dijaga dan dijalankan dalam constraints sebenar? | Keperluan, modul, data, kos, had dan ujian teknikal. |
 | **Artist** | Bagaimanakah pengalaman itu dirasa oleh manusia? | Journey, bahasa, cerita, rasa yakin, lega, seronok atau bermakna. |
-| **Victim / Abuse Red Team** | Siapa boleh keliru, tercedera atau mengambil kesempatan, dan bagaimana dikesan? | Risiko, kesan manusia, evidence, detection signal dan preventive control. |
+| **Victim-Abuser Red Team** | Siapa boleh keliru, tercedera atau mengambil kesempatan, dan bagaimana dikesan? | Risiko, kesan manusia, evidence, detection signal dan preventive control. |
 
 Contoh arahan:
 
@@ -246,14 +248,14 @@ Contoh arahan:
 ZASS REVIEW
 Method: 3-Otak
 Scope: [idea atau bahagian projek]
-Run Engineer, Artist, and Victim / Abuse Red Team perspectives.
+Run Engineer, Artist, and Victim-Abuser Red Team perspectives.
 Do not change LOCKED decisions.
 Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
 ```
 
 ## OUTPUT DEFAULT — CADANGAN TINDAKAN 3 HARI
 
-Selepas setiap `ZASS IDEA` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
+Selepas setiap `ZASSS` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
 
 ```text
 NEXT 3-DAY ACTION PROPOSAL
@@ -966,7 +968,7 @@ The engineering source of truth must not live only inside an AI conversation.
 
 These are optional human-readable conventions, not software commands. The owner may use ordinary language instead; AI resolves the relevant entries and maintains IDs.
 
-### ZASS IDEA
+### ZASSS
 
 Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT 3-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PARK, PROCEED atau PIVOT.
 
