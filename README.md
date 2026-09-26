@@ -258,11 +258,11 @@ Every `ZASSS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary
 
 It then asks:
 
-**👉 NEXT STEP — PARK, PROCEED, or PIVOT?**
+**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
 
-- `PARK` — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
-- `PROCEED` — AI proposes the idea-specific `ZASS REVIEW` with its method, scope, focus, and reason, or expands the Day 1 test when that is more useful.
-- `PIVOT` — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
+- `PARK 🅿️` — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
+- `PROCEED ▶️` — AI recommends only the relevant next action: **🧪 experiment**, **🔍 ZASS REVIEW**, **🛠️ mini-prototype**, **⚖️ candidate decision**, **🔒 LOCK** (owner decision only), or **📦 COMMIT** (only after “LOCK dan COMMIT”).
+- `PIVOT 🔄` — AI preserves the earlier candidates and suggests a **🔀 pivot candidate** that addresses the same underlying problem.
 
 ### Naming
 

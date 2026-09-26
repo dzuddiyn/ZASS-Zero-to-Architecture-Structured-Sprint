@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.5 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
+**Version:** 0.1.6 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -292,11 +292,18 @@ Output: [evidence / answer / small evaluable data point]
 
 AI must then close the output with a clear question:
 
-**👉 NEXT STEP — PARK, PROCEED, or PIVOT?**
+**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
 
-- **PARK** — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
-- **PROCEED** — AI recommends the `ZASS REVIEW` best suited to the current idea. State its **Method**, **Scope**, **Focus**, and one short reason it is relevant; AI may instead expand tomorrow's action when that is the better next move.
-- **PIVOT** — AI looks first for another use or direction for the original idea and raw material instead of building the old direction.
+- **PARK 🅿️** — AI records it in `ZASS.md`; save it in GitHub or Notion so it is safe and ready to continue at any time.
+- **PROCEED ▶️** — AI recommends only the most relevant next action from these choices:
+  - **🧪 Run an experiment** — test an assumption or `E-xxx` with small evidence.
+  - **🔍 ZASS REVIEW** — state the **Method**, **Scope**, **Focus**, and a short reason.
+  - **🛠️ Build a mini-prototype** — create a small artifact or simulation to test.
+  - **⚖️ Propose a decision** — compare options, evidence, and trade-offs in `D-xxx`; it is not LOCKED.
+  - **🔒 LOCK a decision** — only when the owner states the decision clearly.
+  - **📦 COMMIT to GitHub** — only after the explicit instruction **“LOCK dan COMMIT”**; save one traceable versioned commit.
+- **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
+  - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
 
 
 ## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE

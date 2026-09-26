@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.5 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
+**Version:** 0.1.6 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -294,11 +294,18 @@ Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
 AI mesti kemudian menutup output dengan soalan yang jelas:
 
-**👉 NEXT STEP — PARK, PROCEED, atau PIVOT?**
+**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, atau PIVOT 🔄?**
 
-- **PARK** — AI masukkan rekod itu dalam `ZASS.md`; simpan di GitHub/Notion, selamat dan sedia diteruskan pada bila-bila masa.
-- **PROCEED** — AI cadangkan `ZASS REVIEW` yang paling sesuai dengan idea semasa. Nyatakan **Method**, **Scope**, **Focus**, dan satu sebab ringkas mengapa review itu relevan; AI juga boleh perincikan tindakan esok jika itu langkah yang lebih sesuai.
-- **PIVOT** — AI cari penggunaan atau arah lain bagi idea dan bahan mentah asal dahulu, bukan terus membina arah lama.
+- **PARK 🅿️** — AI masukkan rekod itu dalam `ZASS.md`; simpan di GitHub/Notion, selamat dan sedia diteruskan pada bila-bila masa.
+- **PROCEED ▶️** — AI mencadangkan hanya langkah yang paling relevan daripada pilihan berikut:
+  - **🧪 Jalankan eksperimen** — uji andaian atau `E-xxx` dengan bukti kecil.
+  - **🔍 ZASS REVIEW** — nyatakan **Method**, **Scope**, **Focus**, dan sebab ringkas.
+  - **🛠️ Bina mini-prototype** — hasilkan artefak atau simulasi kecil untuk diuji.
+  - **⚖️ Cadangkan keputusan** — banding pilihan, bukti dan trade-off dalam `D-xxx`; belum LOCK.
+  - **🔒 LOCK keputusan** — hanya apabila pemilik menyatakan keputusan dengan jelas.
+  - **📦 COMMIT ke GitHub** — hanya selepas arahan jelas **“LOCK dan COMMIT”**; simpan satu commit ber-versi yang boleh dijejak.
+- **PIVOT 🔄** — AI mencari arah lain yang masih menyelesaikan masalah asal dan mengekalkan calon terdahulu dalam rekod.
+  - **🔀 Cadangan pivot:** [arah alternatif yang sesuai dengan evidence semasa].
 
 
 ## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN

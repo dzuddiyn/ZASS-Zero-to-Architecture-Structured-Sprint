@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.6] — 2026-09-27
+
+- Made the default NEXT STEP prompts more scannable with PARK 🅿️, PROCEED ▶️, and PIVOT 🔄 icons.
+- Expanded PROCEED into context-selected actions: experiment, review, mini-prototype, candidate decision, owner LOCK, or GitHub commit.
+- Clarified that LOCK requires an explicit owner decision and COMMIT requires the explicit instruction “LOCK dan COMMIT”; added a visible pivot-candidate prompt.
+
 ## [v0.1.5] — 2026-09-27
 
 - Added lightweight evidence fields for experiments, early warning signals for risks, and decision drivers/consequences/revisit triggers with visual icons.
