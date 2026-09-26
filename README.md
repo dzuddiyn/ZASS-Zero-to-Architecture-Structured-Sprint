@@ -217,7 +217,7 @@ After AI actually updates the ZASS file, it should state: **“ZASS has been upd
 
 ## Default next action
 
-Every `ZASSS` and `ZASS REVIEW` includes a **🧭 Next 3-Day Action Proposal**: a small plan that states the expected output, cost, time, and stop rule. It is followed by a short **✨ AI Summary**—opportunity, uncertainty, caution, and the lightest useful move. This remains advice, not a decision.
+Every `ZASSS` and `ZASS REVIEW` includes a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, cost, time, and stop rule. It then shows a compact **🗺️ Long View** flow: `real problem → small evidence → short test → choose direction → owner LOCKS → build → operate & improve`. Weak evidence or high risk leads to `PARK` or `PIVOT`. A short **✨ AI Summary** follows; it remains advice, not a decision.
 
 It then asks:
 
