@@ -217,7 +217,7 @@ After AI actually updates the ZASS file, it should state: **“ZASS has been upd
 
 ## Default next action
 
-Every `ZASSS` and `ZASS REVIEW` includes a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, **💰 cost**, **⏱️ time**, and **🛑 stop rule**. A short **✨ AI Summary** follows; it remains advice, not a decision. A visual separator keeps the action, summary, and next-step choice easy to scan.
+Every `ZASSS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary and Suggestions**: 1–3 short natural paragraphs that may summarize findings, connect patterns, or offer clearly-labelled candidate ideas. It remains advice, not a decision. This is followed by a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, **💰 cost**, **⏱️ time**, and **🛑 stop rule**. Visual separators keep the summary, action, and next-step choice easy to scan.
 
 It then asks:
 
