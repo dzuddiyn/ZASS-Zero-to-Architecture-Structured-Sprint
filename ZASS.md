@@ -250,7 +250,7 @@ Method: 3-Otak
 Scope: [idea atau bahagian projek]
 Run Engineer, Artist, and Victim-Abuser Red Team perspectives.
 Do not change LOCKED decisions.
-Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
+Return findings, contradictions, risks, candidate decisions, and the NEXT-DAY ACTION PROPOSAL.
 ```
 
 ## MAKLUM BALAS SELEPAS KEMAS KINI
@@ -261,28 +261,31 @@ Selepas AI benar-benar mengemas kini entri dalam fail ZASS, ia mesti memaklumkan
 
 Jika AI hanya menunjukkan cadangan dan belum mengemas kini fail, ia mesti menyatakan perkara itu dengan jelas dan tidak mendakwa fail sudah dikemas kini.
 
-## OUTPUT DEFAULT — CADANGAN TINDAKAN 3 HARI
+## OUTPUT DEFAULT — CADANGAN TINDAKAN ESOK
 
 Selepas setiap `ZASSS` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
 
 ```text
-## 🧭 NEXT 3-DAY ACTION PROPOSAL
+## 🧭 NEXT-DAY ACTION PROPOSAL
 
-Day 1 — Verify the problem
-Output: [bukti / contoh pengguna / data kecil]
-
-Day 2 — Test one critical assumption
-Output: [hasil ujian yang boleh dinilai]
-
-Day 3 — Make a visible prototype or decision
-Output: [demo kecil / keputusan / alasan untuk PARK]
+Esok — Sahkan satu andaian paling kritikal
+Tindakan: [satu tindakan paling kecil yang boleh dibuat esok]
+Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
 Cost: RM___
 Time: ___ jam
-Stop rule: Hentikan cadangan tindakan jika [syarat].
+Stop rule: Hentikan tindakan jika [syarat].
 ```
 
-Selepas pelan tiga hari, AI mesti memberi ruang respons yang pendek dan mudah dibaca:
+```text
+## 🗺️ PANDANGAN JAUH
+
+Masalah sebenar → bukti kecil → ujian ringkas → pilih arah → pemilik LOCK → bina → jalankan & baiki
+
+Bukti lemah / risiko tinggi → PARK atau PIVOT
+```
+
+Selepas cadangan tindakan esok, AI mesti memberi ruang respons yang pendek dan mudah dibaca:
 
 ```text
 ## ✨ RUMUSAN AI — Apa yang paling penting sekarang
@@ -995,7 +998,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASSS
 
-Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT 3-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PARK, PROCEED atau PIVOT.
+Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PARK, PROCEED atau PIVOT.
 
 ### ZASS REVIEW
 
