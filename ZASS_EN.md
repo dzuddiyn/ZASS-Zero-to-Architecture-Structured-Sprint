@@ -248,7 +248,7 @@ Method: Three Minds
 Scope: [idea or project area]
 Run Engineer, Artist, and Victim-Abuser Red Team perspectives.
 Do not change LOCKED decisions.
-Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
+Return findings, contradictions, risks, candidate decisions, and the NEXT-DAY ACTION PROPOSAL.
 ```
 
 ## STATUS AFTER AN UPDATE
@@ -259,28 +259,31 @@ After AI has actually updated entries in the ZASS file, it must state:
 
 If AI has only shown a proposed change and has not updated the file, it must state that clearly and must not claim that the file has been updated.
 
-## DEFAULT OUTPUT — NEXT 3-DAY ACTION PROPOSAL
+## DEFAULT OUTPUT — NEXT-DAY ACTION PROPOSAL
 
 After every `ZASSS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
 
 ```text
-## 🧭 NEXT 3-DAY ACTION PROPOSAL
+## 🧭 NEXT-DAY ACTION PROPOSAL
 
-Day 1 — Verify the problem
-Output: [evidence / user example / small data sample]
-
-Day 2 — Test one critical assumption
-Output: [an evaluable test result]
-
-Day 3 — Make a visible prototype or decision
-Output: [small demo / decision / reason to PARK]
+Tomorrow — Verify one critical assumption
+Action: [one smallest action that can be taken tomorrow]
+Output: [evidence / answer / small evaluable data point]
 
 Cost: RM___
 Time: ___ hours
-Stop rule: Stop the proposed action if [condition].
+Stop rule: Stop the action if [condition].
 ```
 
-After the three-day plan, AI must provide a short, readable response space:
+```text
+## 🗺️ LONG VIEW
+
+Real problem → small evidence → short test → choose direction → owner LOCKS → build → operate & improve
+
+Weak evidence / high risk → PARK or PIVOT
+```
+
+After the next-day proposal, AI must provide a short, readable response space:
 
 ```text
 ## ✨ AI SUMMARY — What matters most now
@@ -993,7 +996,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASSS
 
-Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT 3-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
+Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
 
 ### ZASS REVIEW
 
