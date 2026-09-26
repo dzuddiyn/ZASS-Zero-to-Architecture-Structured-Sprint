@@ -261,7 +261,9 @@ It then asks:
 **👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
 
 - `PARK 🅿️` — After an actual file update, AI dynamically confirms that the named idea has been safely saved in ZASS format with its relevant records, and recommends **GitHub** or **Notion** to preserve its history and begin or resume the project when ready. If no file was updated, AI clearly says this is only a proposed PARK record.
+
 - `PROCEED ▶️` — AI recommends only the relevant next action: **🧪 experiment**, **🔍 ZASS REVIEW**, **🛠️ mini-prototype**, **⚖️ candidate decision**, **🔒 LOCK** (owner decision only), or **📦 COMMIT** (only after “LOCK dan COMMIT”).
+
 - `PIVOT 🔄` — AI preserves the earlier candidates and suggests a **🔀 pivot candidate** that addresses the same underlying problem.
 
 ### Naming

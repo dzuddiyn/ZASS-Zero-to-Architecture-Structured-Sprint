@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.7 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
+**Version:** 0.1.8 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -295,6 +295,7 @@ AI must then close the output with a clear question:
 **👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
 
 - **PARK 🅿️** — After AI has actually updated the file, state dynamically that **[idea name/summary]** has been safely saved in ZASS format, including relevant records. Recommend **GitHub** or **Notion** as the best place to preserve the idea's history and start or resume the project when the owner is ready. If the file has not been updated, clearly state that this is only a proposed PARK record.
+
 - **PROCEED ▶️** — AI recommends only the most relevant next action from these choices:
   - **🧪 Run an experiment** — test an assumption or `E-xxx` with small evidence.
   - **🔍 ZASS REVIEW** — state the **Method**, **Scope**, **Focus**, and a short reason.
@@ -302,6 +303,7 @@ AI must then close the output with a clear question:
   - **⚖️ Propose a decision** — compare options, evidence, and trade-offs in `D-xxx`; it is not LOCKED.
   - **🔒 LOCK a decision** — only when the owner states the decision clearly.
   - **📦 COMMIT to GitHub** — only after the explicit instruction **“LOCK dan COMMIT”**; save one traceable versioned commit.
+
 - **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
   - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
 

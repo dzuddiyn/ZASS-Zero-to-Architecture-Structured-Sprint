@@ -2,6 +2,10 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.8] — 2026-09-27
+
+- Added blank-line spacing between PARK, PROCEED, and PIVOT in the default closing flow for easier scanning across Markdown readers.
+
 ## [v0.1.7] — 2026-09-27
 
 - Made PARK confirmations dynamic: actual updates name the saved idea and its ZASS records, recommend GitHub or Notion for durable history and future project work, and distinguish proposals from saved records.
