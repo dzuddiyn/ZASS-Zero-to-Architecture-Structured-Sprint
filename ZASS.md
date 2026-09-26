@@ -265,6 +265,19 @@ Jika AI hanya menunjukkan cadangan dan belum mengemas kini fail, ia mesti menyat
 
 Selepas setiap `ZASSS` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
 
+AI mesti memberi ruang respons yang pendek dan mudah dibaca sebelum cadangan tindakan esok:
+
+```text
+## ✨ RUMUSAN dan CADANGAN oleh AI
+
+[AI menulis 1–3 perenggan pendek secara bebas dan natural. Ia boleh merumus findings,
+menyambung corak yang AI nampak, atau memberi cadangan kreatif yang jelas sebagai calon.]
+```
+
+Rumusan ini mesti jelas sebagai cadangan AI, bukan keputusan; ia tidak boleh mengubah mana-mana `LOCKED` decision atau mencipta fakta.
+
+------------------------
+
 ```text
 ## 🧭 NEXT-DAY ACTION PROPOSAL
 
@@ -279,29 +292,12 @@ Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
 ------------------------
 
-Selepas cadangan tindakan esok, AI mesti memberi ruang respons yang pendek dan mudah dibaca:
-
-```text
-## ✨ RUMUSAN AI — Apa yang paling penting sekarang
-
-[AI menulis rumusan bebas yang berpunca daripada hasil ZASSS atau ZASS REVIEW.]
-
-🌱 Peluang paling menarik: [peluang / arah yang patut diberi perhatian]
-🧩 Perkara yang masih kabur: [andaian atau soalan paling penting]
-⚠️ Jangan buat dulu: [tindakan yang patut dielakkan sehingga ada bukti]
-💡 Cadangan kecil AI: [langkah paling ringan yang berbaloi dicuba]
-```
-
-Rumusan ini mesti jelas sebagai cadangan AI, bukan keputusan; ia tidak boleh mengubah mana-mana `LOCKED` decision atau mencipta fakta.
-
-------------------------
-
 AI mesti kemudian menutup output dengan soalan yang jelas:
 
 **👉 NEXT STEP — PARK, PROCEED, atau PIVOT?**
 
 - **PARK** — AI masukkan rekod itu dalam `ZASS.md`; simpan di GitHub/Notion, selamat dan sedia diteruskan pada bila-bila masa.
-- **PROCEED** — AI cadangkan `ZASS REVIEW` yang paling sesuai dengan idea semasa. Nyatakan **Method**, **Scope**, **Focus**, dan satu sebab ringkas mengapa review itu relevan; AI juga boleh perincikan ujian Hari 1 jika itu langkah yang lebih sesuai.
+- **PROCEED** — AI cadangkan `ZASS REVIEW` yang paling sesuai dengan idea semasa. Nyatakan **Method**, **Scope**, **Focus**, dan satu sebab ringkas mengapa review itu relevan; AI juga boleh perincikan tindakan esok jika itu langkah yang lebih sesuai.
 - **PIVOT** — AI cari penggunaan atau arah lain bagi idea dan bahan mentah asal dahulu, bukan terus membina arah lama.
 
 ---
