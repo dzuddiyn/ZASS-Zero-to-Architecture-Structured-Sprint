@@ -2,6 +2,10 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.9] — 2026-09-27
+
+- Replaced the subtle blank-line spacing between PARK, PROCEED, and PIVOT with visible Markdown separators for reliable visual grouping.
+
 ## [v0.1.8] — 2026-09-27
 
 - Added blank-line spacing between PARK, PROCEED, and PIVOT in the default closing flow for easier scanning across Markdown readers.
