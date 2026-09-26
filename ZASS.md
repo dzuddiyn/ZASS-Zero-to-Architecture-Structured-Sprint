@@ -281,12 +281,16 @@ Cost: RM___
 Time: ___ jam
 Stop rule: Hentikan cadangan tindakan jika [syarat].
 
-NEXT STEP — PARK, PROCEED, atau PIVOT?
+👉 NEXT STEP — PARK, PROCEED, atau PIVOT?
 ```
 
-- **PARK** — simpan idea dalam fail ZASS yang sama tanpa kerja aktif. Kekalkan sebagai `RAW`, atau gunakan `DEFERRED` jika sengaja mahu menilai semula kemudian.
-- **PROCEED** — pengguna memilih langkah seterusnya yang dicadangkan: review lanjut, eksperimen, keputusan, atau kerja binaan.
-- **PIVOT** — ubah arah berdasarkan bukti. Rekod calon arah baharu dan alasannya; jangan padam atau menulis semula keputusan terdahulu secara senyap.
+AI mesti menutup cadangan ini dengan soalan yang jelas:
+
+**👉 NEXT STEP — PARK, PROCEED, atau PIVOT?**
+
+- **PARK** — AI masukkan rekod itu dalam `ZASS.md`; pemilik projek menyimpannya di GitHub, Notion, atau tempat pilihan dan berhenti setakat itu.
+- **PROCEED** — AI jalankan `ZASS REVIEW`, contohnya **Engineer + Artist + Victim-Abuser Red Team**, atau terus perincikan ujian Hari 1.
+- **PIVOT** — AI cari penggunaan atau arah lain bagi idea dan bahan mentah asal dahulu, bukan terus membina arah lama.
 
 ---
 
