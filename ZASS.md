@@ -253,6 +253,14 @@ Do not change LOCKED decisions.
 Return findings, contradictions, risks, candidate decisions, and the NEXT 3-DAY ACTION PROPOSAL.
 ```
 
+## MAKLUM BALAS SELEPAS KEMAS KINI
+
+Selepas AI benar-benar mengemas kini entri dalam fail ZASS, ia mesti memaklumkan:
+
+> **ZASS telah dikemas kini mengikut format ZASS dan sedia untuk brainstorming berstruktur.**
+
+Jika AI hanya menunjukkan cadangan dan belum mengemas kini fail, ia mesti menyatakan perkara itu dengan jelas dan tidak mendakwa fail sudah dikemas kini.
+
 ## OUTPUT DEFAULT — CADANGAN TINDAKAN 3 HARI
 
 Selepas setiap `ZASSS` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
@@ -271,7 +279,7 @@ Output: [demo kecil / keputusan / alasan untuk PARK]
 
 Cost: RM___
 Time: ___ jam
-Stop rule: Jika [syarat], PARK atau PIVOT.
+Stop rule: Hentikan cadangan tindakan jika [syarat].
 
 NEXT STEP — PARK, PROCEED, atau PIVOT?
 ```
