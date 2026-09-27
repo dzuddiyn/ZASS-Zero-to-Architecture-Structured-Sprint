@@ -2,10 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.15] — 2026-09-27
+
+- Removed the remaining legacy brand mention from the active changelog so all active documentation now uses ZASSIMPLE.
+
 ## [v0.1.14] — 2026-09-27
 
-- Renamed the lightweight conversational mode from ZASSEMPOI to ZASSIMPLE across its files, prompts, response-update label, footer, README, and change history.
-- Replaced `ZASSEMPOI.md` and `ZASSEMPOI_EN.md` with `ZASSIMPLE.md` and `ZASSIMPLE_EN.md`.
+- Renamed the lightweight conversational mode to ZASSIMPLE across its files, prompts, response-update label, footer, README, and change history.
+- Replaced the legacy template filename pair with `ZASSIMPLE.md` and `ZASSIMPLE_EN.md`.
 
 ## [v0.1.13] — 2026-09-27
 
