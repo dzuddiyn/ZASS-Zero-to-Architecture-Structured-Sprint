@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.4  
+**Version:** 0.1.5  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -39,6 +39,9 @@ an AC when the target is clear; otherwise ask one short question.
 LOCK / LOCK DECISION locks my clear choice as D-xxx. COMMIT updates the actual
 file, version, and version history, then commits to GitHub; if access is
 unavailable, prepare the file and commit summary.
+AI may prepare a working-version architecture draft without confirming it.
+Once the draft covers purpose, main flow, main components, and relevant LOCKED
+decisions, present “Ready to confirm?” with any remaining critical assumptions.
 CONFIRM ARCHITECTURE first lists D-xxx | LOCKED and asks for final confirmation.
 Build architecture only after YES, CONFIRM ARCHITECTURE, using LOCKED decisions.
 
@@ -154,7 +157,9 @@ Locked by: Project Owner
 
 **Status:** PENDING CONFIRMATION
 
-Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It must come from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+AI may prepare a working-version architecture draft such as `Draft 0.1` without changing the status of confirmed architecture. The draft covers purpose, main flow, main components, and relevant `D-xxx | LOCKED` decisions. Critical assumptions remain explicitly open rather than silently becoming decisions.
+
+**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to confirm?”** together with any remaining critical assumptions. The owner may request a specific revision or start the `CONFIRM ARCHITECTURE` gate. Architecture becomes confirmed only after `YES, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
 
 <!--
 ### Confirmed architecture
@@ -169,6 +174,7 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.5 | 2026-09-27 | Allow working-version architecture drafts; require a “Ready to confirm?” gate with critical assumptions. |
 | 0.1.4 | 2026-09-27 | Show ZASSIMPLE UPDATE and AI suggestion only on a ZASS command; require the new footer on every reply and use COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready English prompt for use after upload. |

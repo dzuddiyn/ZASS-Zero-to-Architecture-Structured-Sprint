@@ -2,6 +2,11 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.17] — 2026-09-27
+
+- Locked ZASSIMPLE's architecture-draft completion rule: drafts may use working versions, and AI must ask “Ready to confirm?” after covering purpose, main flow, main components, and relevant LOCKED decisions, while listing open critical assumptions.
+- Updated Malay and English templates and README; confirmation still requires the existing two-step gate.
+
 ## [v0.1.16] — 2026-09-27
 
 - Locked ZASSIMPLE's conversational flow: ordinary replies omit the update block; intentional `ZASS` or `ZASS!!` shows relevant records, a contextual AI suggestion not yet AC, and actual file status.

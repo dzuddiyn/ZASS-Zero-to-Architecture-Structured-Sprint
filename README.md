@@ -39,7 +39,7 @@ Akhiri setiap balasan tepat dengan:
 [🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
-Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md).
+Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk confirm?”** bersama andaian kritikal sebelum pintu pengesahan.
 
 ## Get started in 3 steps
 

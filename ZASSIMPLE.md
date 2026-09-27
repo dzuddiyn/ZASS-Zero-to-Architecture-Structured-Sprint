@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.4  
+**Version:** 0.1.5  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -39,8 +39,11 @@ boleh menjadi AC jika sasaran jelas; jika tidak, tanya satu soalan ringkas.
 LOCK / LOCK DECISION hanya mengunci pilihan saya yang jelas sebagai D-xxx.
 COMMIT mengemas kini fail sebenar, versi dan sejarah versi, lalu commit ke
 GitHub; jika tiada akses, sediakan fail serta ringkasan commit.
-CONFIRM ARCHITECTURE mula-mula menyenaraikan D-xxx | LOCKED dan meminta
-pengesahan akhir. Bina architecture hanya selepas YA, CONFIRM ARCHITECTURE
+AI boleh menyediakan draf architecture berversi kerja tanpa mengesahkannya.
+Apabila draf menjawab tujuan, aliran utama, komponen utama, dan keputusan
+LOCKED berkaitan, bentangkan “Sedia untuk confirm?” bersama andaian kritikal
+yang masih terbuka. CONFIRM ARCHITECTURE mula-mula menyenaraikan D-xxx |
+LOCKED dan meminta pengesahan akhir. Bina architecture hanya selepas YA, CONFIRM ARCHITECTURE
 dan hanya daripada keputusan yang LOCKED.
 
 Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
@@ -155,7 +158,9 @@ Locked by: Project Owner
 
 **Status:** PENDING CONFIRMATION
 
-Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`. Ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan andaian AI atau sekadar `AC`.
+AI boleh menyediakan draf architecture dengan versi kerja seperti `Draft 0.1`, tanpa mengubah status architecture yang telah disahkan. Draf menjelaskan tujuan, aliran utama, komponen utama dan keputusan `D-xxx | LOCKED` yang berkaitan. Andaian kritikal ditandakan sebagai terbuka, bukan dijadikan keputusan secara senyap.
+
+**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Sedia untuk confirm?”** bersama andaian kritikal yang masih terbuka. Pemilik boleh meminta pindaan khusus atau memulakan pintu `CONFIRM ARCHITECTURE`. Hanya selepas `YA, CONFIRM ARCHITECTURE` architecture menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
 
 <!--
 ### Confirmed architecture
@@ -170,6 +175,7 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.5 | 2026-09-27 | Benarkan draf architecture berversi kerja; tetapkan aturan tamat “Sedia untuk confirm?” dan andaian kritikal. |
 | 0.1.4 | 2026-09-27 | Tunjuk ZASSIMPLE UPDATE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready Bahasa Melayu prompt for use after upload. |
