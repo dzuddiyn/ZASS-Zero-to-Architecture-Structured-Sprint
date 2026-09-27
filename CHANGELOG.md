@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.18] — 2026-09-27
+
+- Replaced `ZASSS` with intentional `ZASS` / `ZASS!!` for full idea exploration; ordinary replies stay conversational with the shared footer.
+- Unified full ZASS and ZASSIMPLE on `DRAFT ARCH`, proactive draft/BUILD suggestions, and a `BUILD ARCHITECTURE` confirmation gate ending with `YA, CONFIRM ARCHITECTURE`.
+- Updated both language templates, README, and release versions without changing the full ZASS meaning of `AC`.
+
 ## [v0.1.17] — 2026-09-27
 
 - Locked ZASSIMPLE's architecture-draft completion rule: drafts may use working versions, and AI must ask “Ready to confirm?” after covering purpose, main flow, main components, and relevant LOCKED decisions, while listing open critical assumptions.

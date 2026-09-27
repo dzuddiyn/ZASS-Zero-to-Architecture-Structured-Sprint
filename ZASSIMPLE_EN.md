@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.5  
+**Version:** 0.1.6  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -39,17 +39,18 @@ an AC when the target is clear; otherwise ask one short question.
 LOCK / LOCK DECISION locks my clear choice as D-xxx. COMMIT updates the actual
 file, version, and version history, then commits to GitHub; if access is
 unavailable, prepare the file and commit summary.
-AI may prepare a working-version architecture draft without confirming it.
-Once the draft covers purpose, main flow, main components, and relevant LOCKED
-decisions, present “Ready to confirm?” with any remaining critical assumptions.
-CONFIRM ARCHITECTURE first lists D-xxx | LOCKED and asks for final confirmation.
-Build architecture only after YES, CONFIRM ARCHITECTURE, using LOCKED decisions.
+AI may suggest DRAFT ARCH when decisions are clear enough, even if I did not
+request it. DRAFT ARCH creates only a working-version draft.
+Once the draft covers purpose, main flow, main components, and relevant
+LOCKED decisions, suggest “Ready to BUILD ARCHITECTURE?” with remaining
+critical assumptions. BUILD ARCHITECTURE lists D-xxx | LOCKED and asks for
+final confirmation; confirm architecture only after YA, CONFIRM ARCHITECTURE.
 
 Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
 
 End every reply exactly with:
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 ### AI response order
@@ -66,7 +67,7 @@ On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records, an AI 
 💡 ZASS suggestion, not yet AC: [contextual idea or question]
 📝 File status: [actually updated / proposal or demo only]
 
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 ### Special keywords
@@ -78,22 +79,23 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | `ZASS` or `ZASS!!` | AI shows concise records and a contextual ZASS suggestion that is not yet AC, only when intentionally commanded. |
 | `LOCK` or `LOCK DECISION` | AI records the owner’s choice as `D-xxx | LOCKED`. If the target is unclear, ask first. |
 | `COMMIT` | AI saves actual changes to GitHub in one commit, bumps the version, and adds a change note. |
-| `CONFIRM ARCHITECTURE` | AI **does not** build architecture immediately. It lists LOCKED decisions and asks for final confirmation. |
-| `YES, CONFIRM ARCHITECTURE` | AI builds or updates architecture only from `D-xxx | LOCKED` decisions. |
+| `DRAFT ARCH` | AI prepares/revises a working-version draft; it may suggest this when decisions are clear enough without confirming it. |
+| `BUILD ARCHITECTURE` | AI reviews the draft and LOCKED decisions, then asks for final confirmation; it does not build immediately. |
+| `YA, CONFIRM ARCHITECTURE` | AI builds or updates architecture only from `D-xxx | LOCKED` decisions. |
 
-For `CONFIRM ARCHITECTURE`, AI must first reply:
+For `BUILD ARCHITECTURE`, AI must first reply:
 
 ```text
-⚠️ CONFIRM ARCHITECTURE requested.
+⚠️ BUILD ARCHITECTURE requested. Confirmation review:
 
 Architecture will use these LOCKED decisions:
 - [D-xxx ...]
 
-Decisions not yet LOCKED:
+Critical assumptions and decisions not yet LOCKED:
 - [if any]
 
 Do you really want to confirm and create/update the architecture?
-Reply: YES, CONFIRM ARCHITECTURE
+Reply: YA, CONFIRM ARCHITECTURE
 ```
 
 ### Required AI footer
@@ -101,7 +103,7 @@ Reply: YES, CONFIRM ARCHITECTURE
 Every AI reply in this project must end with:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 This footer reminds the owner of available commands; it never triggers one.
@@ -157,9 +159,9 @@ Locked by: Project Owner
 
 **Status:** PENDING CONFIRMATION
 
-AI may prepare a working-version architecture draft such as `Draft 0.1` without changing the status of confirmed architecture. The draft covers purpose, main flow, main components, and relevant `D-xxx | LOCKED` decisions. Critical assumptions remain explicitly open rather than silently becoming decisions.
+AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a request. `DRAFT ARCH` prepares a working-version architecture draft such as `Draft 0.1` without changing the status of confirmed architecture. The draft covers purpose, main flow, main components, and relevant `D-xxx | LOCKED` decisions. Critical assumptions remain explicitly open rather than silently becoming decisions.
 
-**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to confirm?”** together with any remaining critical assumptions. The owner may request a specific revision or start the `CONFIRM ARCHITECTURE` gate. Architecture becomes confirmed only after `YES, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to BUILD ARCHITECTURE?”** together with any remaining critical assumptions. The owner may request a specific revision or start the `BUILD ARCHITECTURE` gate. Architecture becomes confirmed only after `YA, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
 
 <!--
 ### Confirmed architecture
@@ -174,6 +176,7 @@ AI may prepare a working-version architecture draft such as `Draft 0.1` without 
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.6 | 2026-09-27 | DRAFT ARCH footer; AI may suggest a draft and BUILD, with the two-step final confirmation. |
 | 0.1.5 | 2026-09-27 | Allow working-version architecture drafts; require a “Ready to confirm?” gate with critical assumptions. |
 | 0.1.4 | 2026-09-27 | Show ZASSIMPLE UPDATE and AI suggestion only on a ZASS command; require the new footer on every reply and use COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |

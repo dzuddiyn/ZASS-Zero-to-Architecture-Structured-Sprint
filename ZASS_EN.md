@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.17 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
+**Version:** 0.1.18 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -33,6 +33,20 @@ Give the AI the **latest ZASS file for the project**, then speak normally. You d
 | You want architecture | “Are the important decisions ready to build the architecture? If not, tell me what is blocking it.” |
 
 The AI must find the relevant entries, manage IDs and states behind the scenes, and ask for clarification if “this” could refer to more than one decision. **Only an explicit instruction from the project owner can LOCK a decision.** Before writing or committing, AI must show a summary of changes, including any conflict with locked decisions.
+
+## FULL ZASS RESPONSE MODE
+
+Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
+
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `LOCK DECISION`, `COMMIT`, and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
+
+End **every** AI reply with:
+
+```text
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
+```
+
+The footer is a reminder, never an automatic command. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
 
 ## READY-TO-USE PROMPTS — OPTIONAL REFERENCE
 
@@ -86,7 +100,7 @@ This is **not actual project content** and does not automatically fill sections 
 ### C. Blast from one perspective
 
 ```text
-ZASSS
+ZASS
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Find possibilities, questions, and risks. Label them as candidates; do not LOCK decisions.
@@ -152,7 +166,7 @@ Do not think about technology or architecture yet.
 
 Example instruction to AI:
 
-> ZASSS. Read ZASS.md. Do not change LOCKED decisions. Find ideas, possibilities, questions, risks, and alternatives that have not yet been explored.
+> ZASS. Read ZASS.md. Do not change LOCKED decisions. Find ideas, possibilities, questions, risks, and alternatives that have not yet been explored.
 
 ---
 
@@ -261,7 +275,7 @@ If AI has only shown a proposed change and has not updated the file, it must sta
 
 ## DEFAULT OUTPUT — NEXT-DAY ACTION PROPOSAL
 
-After every `ZASSS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
+After every `ZASS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
 
 AI must provide a short, readable response space before the next-day action proposal:
 
@@ -453,15 +467,13 @@ This prevents future AI from repeatedly suggesting ideas that have already been 
 
 ---
 
-## 9. Generate architecture only when READY
+## 9. Draft first, confirm architecture when READY
 
-Architecture may be generated only when `ARCHITECTURE READINESS = READY`.
+`DRAFT ARCH` produces a working-version architecture draft even before readiness is READY. Base it on LOCKED decisions, goals, constraints, workflows, and known risks; label assumptions and ARCHITECTURE BLOCKERS. Never silently introduce major decisions.
 
-Example instruction:
+Once the draft covers purpose, main flow, main components, and relevant LOCKED decisions, AI must ask **“Ready to BUILD ARCHITECTURE?”** and list remaining critical assumptions. AI may also suggest `DRAFT ARCH` earlier when decisions are sufficiently clear.
 
-> ZASS ARCHITECT. Generate architecture strictly from LOCKED decisions, goals, constraints, workflows, and known risks. Return ARCHITECTURE BLOCKER for unresolved major assumptions.
-
-Architecture may not silently introduce new major decisions.
+`BUILD ARCHITECTURE` starts the confirmation gate rather than immediately building: show the draft, LOCKED decisions, ARCHITECTURE READINESS status, critical assumptions, and impact. If NOT READY, explain blockers to confirmation. If READY, ask for the exact reply `YA, CONFIRM ARCHITECTURE`. Only after that reply is architecture confirmed from LOCKED decisions and owner-accepted context.
 
 ---
 
@@ -908,7 +920,7 @@ Use experiments when discussion alone cannot resolve a decision.
 
 # 18. ARCHITECTURE READINESS
 
-Architecture generation is allowed only when:
+Confirmed architecture is allowed only when:
 
 - [ ] Core problem is clear
 - [ ] Primary users are known
@@ -930,9 +942,9 @@ Architecture generation is allowed only when:
 
 # 19. ARCHITECTURE GENERATION INSTRUCTION
 
-When Architecture Readiness = READY:
+When Architecture Readiness = READY and the owner replies `YA, CONFIRM ARCHITECTURE` after the BUILD gate:
 
-Generate architecture using ONLY:
+Confirm architecture using ONLY:
 
 1. Goals
 2. Constraints
@@ -1041,7 +1053,7 @@ The engineering source of truth must not live only inside an AI conversation.
 
 These are optional human-readable conventions, not software commands. The owner may use ordinary language instead; AI resolves the relevant entries and maintains IDs.
 
-### ZASSS
+### ZASS
 
 Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
 
@@ -1061,9 +1073,13 @@ Return unresolved decision candidates and their trade-offs.
 
 The project owner approves and locks a decision.
 
-### ZASS ARCHITECT
+### DRAFT ARCH
 
-Generate architecture from the authoritative locked state.
+Prepare or revise a working-version architecture draft from the authoritative locked state. This does not confirm it.
+
+### BUILD ARCHITECTURE
+
+Show the draft, readiness, LOCKED decisions, and open critical assumptions. If READY, request `YA, CONFIRM ARCHITECTURE` before confirming.
 
 ### ZASS AUDIT
 

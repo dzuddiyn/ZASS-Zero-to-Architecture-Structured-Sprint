@@ -11,7 +11,7 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 ## Two ways to start
 
 - [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
-- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
+- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and the draft/build confirmation gate remain explicit safeguards.
 - [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
 
 ## Prompt ZASSIMPLE selepas upload
@@ -32,14 +32,18 @@ contoh atau demo bukan arahan.
 Persetujuan yang jelas boleh jadi AC. LOCK / LOCK DECISION mengunci pilihan
 saya sebagai D-xxx. COMMIT mengemas kini fail, versi dan sejarah versi,
 lalu commit ke GitHub (atau sediakan fail dan ringkasan jika tiada akses).
-CONFIRM ARCHITECTURE menyenaraikan keputusan LOCKED dan meminta saya
-membalas YA, CONFIRM ARCHITECTURE sebelum membina architecture daripadanya.
+AI boleh cadangkan DRAFT ARCH apabila keputusan cukup jelas. DRAFT ARCH hanya
+menghasilkan draf. Selepas draf mencukupi, AI cadangkan BUILD ARCHITECTURE;
+arahan itu menyemak keputusan LOCKED dan meminta balasan YA, CONFIRM
+ARCHITECTURE sebelum mengesahkan architecture.
 
 Akhiri setiap balasan tepat dengan:
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
-Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk confirm?”** bersama andaian kritikal sebelum pintu pengesahan.
+Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal sebelum pintu pengesahan.
+
+Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PARK / PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
 
 ## Get started in 3 steps
 
@@ -190,7 +194,7 @@ Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 d
 ### C. Blast dari satu perspektif
 
 ```text
-ZASSS
+ZASS
 Mode: Industrial product thinking
 Scope: RAW IDEA
 Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
@@ -287,7 +291,7 @@ After AI actually updates the ZASS file, it should state: **“ZASS has been upd
 
 ## Default next action
 
-Every `ZASSS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary and Suggestions**: 1–3 short natural paragraphs that may summarize findings, connect patterns, or offer clearly-labelled candidate ideas. It remains advice, not a decision. This is followed by a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, **💰 cost**, **⏱️ time**, and **🛑 stop rule**. Visual separators keep the summary, action, and next-step choice easy to scan.
+Every `ZASS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary and Suggestions**: 1–3 short natural paragraphs that may summarize findings, connect patterns, or offer clearly-labelled candidate ideas. It remains advice, not a decision. This is followed by a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, **💰 cost**, **⏱️ time**, and **🛑 stop rule**. Visual separators keep the summary, action, and next-step choice easy to scan.
 
 It then asks:
 
@@ -305,7 +309,7 @@ It then asks:
 
 ### Naming
 
-**ZASS** is the framework's official name. **ZASSS** is the action that opens and explores an idea. `Victim-Abuser Red Team` is the ZASS preset name; use **Abuse Red Teaming** or **Product Safety Red Teaming** when explaining the method outside ZASS.
+**ZASS** is the framework's official name. **ZASS** is the action that opens and explores an idea. `Victim-Abuser Red Team` is the ZASS preset name; use **Abuse Red Teaming** or **Product Safety Red Teaming** when explaining the method outside ZASS.
 
 ### Three Minds review preset
 

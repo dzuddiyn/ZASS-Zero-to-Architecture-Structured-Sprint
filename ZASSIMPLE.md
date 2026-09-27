@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.5  
+**Version:** 0.1.6  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -39,18 +39,19 @@ boleh menjadi AC jika sasaran jelas; jika tidak, tanya satu soalan ringkas.
 LOCK / LOCK DECISION hanya mengunci pilihan saya yang jelas sebagai D-xxx.
 COMMIT mengemas kini fail sebenar, versi dan sejarah versi, lalu commit ke
 GitHub; jika tiada akses, sediakan fail serta ringkasan commit.
-AI boleh menyediakan draf architecture berversi kerja tanpa mengesahkannya.
+AI boleh mencadangkan DRAFT ARCH apabila keputusan cukup jelas, walaupun
+saya belum memintanya. DRAFT ARCH menghasilkan draf berversi kerja sahaja.
 Apabila draf menjawab tujuan, aliran utama, komponen utama, dan keputusan
-LOCKED berkaitan, bentangkan “Sedia untuk confirm?” bersama andaian kritikal
-yang masih terbuka. CONFIRM ARCHITECTURE mula-mula menyenaraikan D-xxx |
-LOCKED dan meminta pengesahan akhir. Bina architecture hanya selepas YA, CONFIRM ARCHITECTURE
-dan hanya daripada keputusan yang LOCKED.
+LOCKED berkaitan, cadangkan “Sedia untuk BUILD ARCHITECTURE?” bersama andaian
+kritikal yang masih terbuka. BUILD ARCHITECTURE menyenaraikan D-xxx | LOCKED
+dan meminta pengesahan akhir; bina architecture yang disahkan hanya selepas
+YA, CONFIRM ARCHITECTURE.
 
 Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
 
 Akhiri setiap balasan tepat dengan:
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 ### Susunan balasan AI
@@ -67,7 +68,7 @@ Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 ### Keyword khas
@@ -79,18 +80,19 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 | `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
 | `LOCK` atau `LOCK DECISION` | AI jadikan pilihan pemilik sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya dahulu. |
 | `COMMIT` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
-| `CONFIRM ARCHITECTURE` | AI **tidak** terus membina architecture. AI senaraikan keputusan LOCKED dan minta pengesahan akhir. |
+| `DRAFT ARCH` | AI sediakan/pinda draf berversi kerja; boleh dicadangkan apabila keputusan cukup jelas tanpa mengesahkannya. |
+| `BUILD ARCHITECTURE` | AI semak draf dan keputusan LOCKED, kemudian minta pengesahan akhir; tidak membina terus. |
 | `YA, CONFIRM ARCHITECTURE` | AI bina atau kemas kini architecture hanya daripada keputusan `D-xxx | LOCKED`. |
 
-Untuk `CONFIRM ARCHITECTURE`, AI mesti menjawab dahulu:
+Untuk `BUILD ARCHITECTURE`, AI mesti menjawab dahulu:
 
 ```text
-⚠️ CONFIRM ARCHITECTURE diminta.
+⚠️ BUILD ARCHITECTURE diminta. Semakan pengesahan:
 
 Architecture akan menggunakan keputusan LOCKED berikut:
 - [D-xxx ...]
 
-Keputusan yang masih belum LOCK:
+Andaian kritikal dan keputusan yang masih belum LOCK:
 - [jika ada]
 
 Betul mahu sahkan dan hasilkan/update architecture?
@@ -102,7 +104,7 @@ Balas: YA, CONFIRM ARCHITECTURE
 Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
 ```
 
 Footer ini ialah peringatan pengguna, bukan arahan automatik.
@@ -158,9 +160,9 @@ Locked by: Project Owner
 
 **Status:** PENDING CONFIRMATION
 
-AI boleh menyediakan draf architecture dengan versi kerja seperti `Draft 0.1`, tanpa mengubah status architecture yang telah disahkan. Draf menjelaskan tujuan, aliran utama, komponen utama dan keputusan `D-xxx | LOCKED` yang berkaitan. Andaian kritikal ditandakan sebagai terbuka, bukan dijadikan keputusan secara senyap.
+AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum diminta. `DRAFT ARCH` menyediakan draf architecture dengan versi kerja seperti `Draft 0.1`, tanpa mengubah status architecture yang telah disahkan. Draf menjelaskan tujuan, aliran utama, komponen utama dan keputusan `D-xxx | LOCKED` yang berkaitan. Andaian kritikal ditandakan sebagai terbuka, bukan dijadikan keputusan secara senyap.
 
-**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Sedia untuk confirm?”** bersama andaian kritikal yang masih terbuka. Pemilik boleh meminta pindaan khusus atau memulakan pintu `CONFIRM ARCHITECTURE`. Hanya selepas `YA, CONFIRM ARCHITECTURE` architecture menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
+**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal yang masih terbuka. Pemilik boleh meminta pindaan khusus atau memulakan pintu `BUILD ARCHITECTURE`. Hanya selepas `YA, CONFIRM ARCHITECTURE` architecture menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
 
 <!--
 ### Confirmed architecture
@@ -175,6 +177,7 @@ AI boleh menyediakan draf architecture dengan versi kerja seperti `Draft 0.1`, t
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.6 | 2026-09-27 | Footer DRAFT ARCH; AI boleh mencadangkan draf dan BUILD, dengan pengesahan akhir dua langkah. |
 | 0.1.5 | 2026-09-27 | Benarkan draf architecture berversi kerja; tetapkan aturan tamat “Sedia untuk confirm?” dan andaian kritikal. |
 | 0.1.4 | 2026-09-27 | Tunjuk ZASSIMPLE UPDATE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
