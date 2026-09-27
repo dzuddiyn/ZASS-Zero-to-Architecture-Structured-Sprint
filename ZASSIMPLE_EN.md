@@ -46,7 +46,7 @@ Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
 
 End every reply exactly with:
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### AI response order
@@ -63,7 +63,7 @@ On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records, an AI 
 💡 ZASS suggestion, not yet AC: [contextual idea or question]
 📝 File status: [actually updated / proposal or demo only]
 
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Special keywords
@@ -98,7 +98,7 @@ Reply: YES, CONFIRM ARCHITECTURE
 Every AI reply in this project must end with:
 
 ```text
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 This footer reminds the owner of available commands; it never triggers one.
