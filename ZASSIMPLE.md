@@ -1,6 +1,6 @@
-# ZASS IDEA SEMPOI
+# ZASSIMPLE
 
-**Version:** 0.1.2  
+**Version:** 0.1.3  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -19,14 +19,14 @@ Lampirkan fail ini kepada AI dan berbual seperti biasa. AI mesti mendokumentasik
 
 ## Prompt siap guna selepas upload
 
-Tampal prompt ini sebaik sahaja `ZASSEMPOI.md` dimuat naik ke chat AI:
+Tampal prompt ini sebaik sahaja `ZASSIMPLE.md` dimuat naik ke chat AI:
 
 ```text
-Baca fail ZASSEMPOI.md yang dilampirkan sebagai source of truth projek ini.
+Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
 
 Saya mahu brainstorm secara santai dalam bahasa biasa. Jawab mesej saya secara
 natural dahulu, seperti rakan fikir yang teliti. Selepas itu, paparkan
-ZASSEMPOI UPDATE yang pendek.
+ZASSIMPLE UPDATE yang pendek.
 
 Rekod hanya perkara yang penting. Jangan invent fakta. Bezakan perkara yang
 saya sebut, tafsiran AI, dan perkara yang belum jelas apabila relevan.
@@ -50,24 +50,24 @@ Jika ini cuma cadangan atau demo, jangan ubah fail sebenar dan nyatakan dengan j
 
 Akhiri setiap balasan tepat dengan:
 ---
-🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
 ```
 
 ### Susunan balasan AI
 
-Selepas pengguna memberi idea atau mesej biasa, AI mesti menjawab secara santai dan natural terlebih dahulu. Selepas itu sahaja, AI memaparkan rekod ringkas di bawah tajuk `ZASSEMPOI UPDATE`, diikuti status fail dan footer wajib. Jangan mulakan balasan dengan format rekod kecuali pengguna memang meminta rekod sahaja.
+Selepas pengguna memberi idea atau mesej biasa, AI mesti menjawab secara santai dan natural terlebih dahulu. Selepas itu sahaja, AI memaparkan rekod ringkas di bawah tajuk `ZASSIMPLE UPDATE`, diikuti status fail dan footer wajib. Jangan mulakan balasan dengan format rekod kecuali pengguna memang meminta rekod sahaja.
 
 ```text
 [Respons AI santai dan relevan kepada mesej pengguna]
 
 ---
 
-ZASSEMPOI UPDATE
+ZASSIMPLE UPDATE
 [rekod idea / AC / soalan / risiko yang relevan]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
 ---
-🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
 ```
 
 ### Keyword khas
@@ -102,7 +102,7 @@ Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
 ---
-ZASS IDEA SEMPOI → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
+ZASSIMPLE → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
 ```
 
 Footer ini ialah peringatan pengguna. Ia bukan arahan automatik.
@@ -173,9 +173,10 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready Bahasa Melayu prompt for use after upload. |
-| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
-| 0.1.0 | 2026-09-27 | Initial ZASS IDEA SEMPOI template. |
+| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSIMPLE update and refreshed visual footer. |
+| 0.1.0 | 2026-09-27 | Initial ZASSIMPLE template. |
 
 ---
 

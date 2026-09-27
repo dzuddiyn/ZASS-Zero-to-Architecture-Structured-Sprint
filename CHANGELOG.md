@@ -2,25 +2,30 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.14] — 2026-09-27
+
+- Renamed the lightweight conversational mode from ZASSEMPOI to ZASSIMPLE across its files, prompts, response-update label, footer, README, and change history.
+- Replaced `ZASSEMPOI.md` and `ZASSEMPOI_EN.md` with `ZASSIMPLE.md` and `ZASSIMPLE_EN.md`.
+
 ## [v0.1.13] — 2026-09-27
 
-- Added copy-ready post-upload prompts: Bahasa Melayu in ZASSEMPOI and README, with a matching English prompt in ZASSEMPOI_EN.
+- Added copy-ready post-upload prompts: Bahasa Melayu in ZASSIMPLE and README, with a matching English prompt in ZASSIMPLE_EN.
 - Prompts preserve the conversational-first response order and explicit LOCK, COMMIT GITHUB, and architecture-confirmation safeguards.
 
 ## [v0.1.12] — 2026-09-27
 
-- Updated ZASS IDEA SEMPOI in Malay and English: AI responds conversationally before its compact ZASSEMPOI UPDATE, then shows file status and the visual action footer.
+- Updated ZASSIMPLE in Malay and English: AI responds conversationally before its compact ZASSIMPLE UPDATE, then shows file status and the visual action footer.
 - Updated the footer to use icons and visible -- separators for LOCK DECISION, COMMIT GITHUB, and CONFIRM ARCHITECTURE.
 
 ## [v0.1.11] — 2026-09-27
 
-- Added `ZASSEMPOI_EN.md`, an English companion for the ZASS IDEA SEMPOI conversational template.
+- Added `ZASSIMPLE_EN.md`, an English companion for the ZASSIMPLE conversational template.
 - Added the English template link to the README.
 
 ## [v0.1.10] — 2026-09-27
 
-- Added `ZASSEMPOI.md`, the ZASS IDEA SEMPOI conversational template with agreement-to-AC capture, explicit LOCK/COMMIT safeguards, and an architecture confirmation gate.
-- Added links explaining when to choose the full ZASS template or the lighter ZASS IDEA SEMPOI mode.
+- Added `ZASSIMPLE.md`, the ZASSIMPLE conversational template with agreement-to-AC capture, explicit LOCK/COMMIT safeguards, and an architecture confirmation gate.
+- Added links explaining when to choose the full ZASS template or the lighter ZASSIMPLE mode.
 
 ## [v0.1.9] — 2026-09-27
 

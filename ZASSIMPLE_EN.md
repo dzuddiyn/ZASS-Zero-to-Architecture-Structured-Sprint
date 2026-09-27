@@ -1,6 +1,6 @@
-# ZASS IDEA SEMPOI
+# ZASSIMPLE
 
-**Version:** 0.1.2  
+**Version:** 0.1.3  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -19,13 +19,13 @@ Attach this file to an AI and speak normally. The AI must document important thi
 
 ## Copy-ready prompt after upload
 
-Paste this prompt immediately after uploading `ZASSEMPOI_EN.md` to an AI chat:
+Paste this prompt immediately after uploading `ZASSIMPLE_EN.md` to an AI chat:
 
 ```text
-Read the attached ZASSEMPOI_EN.md as this project's source of truth.
+Read the attached ZASSIMPLE_EN.md as this project's source of truth.
 
 I want to brainstorm casually in ordinary language. Reply naturally first, like
-a thoughtful collaborator. After that, show a short ZASSEMPOI UPDATE.
+a thoughtful collaborator. After that, show a short ZASSIMPLE UPDATE.
 
 Record only what matters. Do not invent facts. Distinguish what I stated, AI
 interpretation, and what remains unclear when relevant.
@@ -47,24 +47,24 @@ If this is only a proposal or demo, do not change the real file; say so clearly.
 
 End every reply exactly with:
 ---
-🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
 ```
 
 ### AI response order
 
-After the user gives an idea or an ordinary message, AI must respond conversationally and naturally first. Only then does it show concise records under the `ZASSEMPOI UPDATE` heading, followed by file status and the required footer. Do not begin with record format unless the user explicitly asks for records only.
+After the user gives an idea or an ordinary message, AI must respond conversationally and naturally first. Only then does it show concise records under the `ZASSIMPLE UPDATE` heading, followed by file status and the required footer. Do not begin with record format unless the user explicitly asks for records only.
 
 ```text
 [A conversational, relevant AI response to the user's message]
 
 ---
 
-ZASSEMPOI UPDATE
+ZASSIMPLE UPDATE
 [relevant idea / AC / question / risk records]
 📝 File status: [actually updated / proposal or demo only]
 
 ---
-🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
 ```
 
 ### Special keywords
@@ -99,7 +99,7 @@ Every AI reply in this project must end with:
 
 ```text
 ---
-ZASS IDEA SEMPOI → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
+ZASSIMPLE → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
 ```
 
 This footer is a reminder for the owner. It is not an automatic instruction.
@@ -170,9 +170,10 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready English prompt for use after upload. |
-| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSEMPOI update and refreshed visual footer. |
-| 0.1.0 | 2026-09-27 | Initial English ZASS IDEA SEMPOI template. |
+| 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSIMPLE update and refreshed visual footer. |
+| 0.1.0 | 2026-09-27 | Initial English ZASSIMPLE template. |
 
 ---
 

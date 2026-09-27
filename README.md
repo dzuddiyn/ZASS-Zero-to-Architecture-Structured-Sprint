@@ -11,17 +11,17 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 ## Two ways to start
 
 - [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
-- [`ZASSEMPOI.md`](ZASSEMPOI.md) — **ZASS IDEA SEMPOI**, a lighter conversational template: AI responds naturally first, then captures the relevant record; normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
-- [`ZASSEMPOI_EN.md`](ZASSEMPOI_EN.md) — the English companion template for the same lighter conversational workflow.
+- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally first, then captures the relevant record; normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
+- [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
 
-## Prompt ZASS IDEA SEMPOI selepas upload
+## Prompt ZASSIMPLE selepas upload
 
-Selepas upload [`ZASSEMPOI.md`](ZASSEMPOI.md) ke chat AI, tampal prompt ini:
+Selepas upload [`ZASSIMPLE.md`](ZASSIMPLE.md) ke chat AI, tampal prompt ini:
 
 ```text
-Baca fail ZASSEMPOI.md yang dilampirkan sebagai source of truth projek ini.
+Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
 Saya mahu brainstorm secara santai dalam bahasa biasa. Jawab secara natural dahulu,
-kemudian tunjukkan ZASSEMPOI UPDATE yang pendek. Jangan invent fakta.
+kemudian tunjukkan ZASSIMPLE UPDATE yang pendek. Jangan invent fakta.
 
 Anggap “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud setara sebagai AC jika
 sasaran jelas; jika tidak, tanya satu soalan ringkas. LOCK / LOCK DECISION hanya
@@ -33,10 +33,10 @@ D-xxx | LOCKED.
 Jika ini cuma cadangan atau demo, jangan ubah fail sebenar dan nyatakan dengan jelas.
 Akhiri setiap balasan tepat dengan:
 ---
-🧠 ZASS IDEA SEMPOI → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
 ```
 
-Versi English tersedia dalam [`ZASSEMPOI_EN.md`](ZASSEMPOI_EN.md).
+Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md).
 
 ## Get started in 3 steps
 
