@@ -47,7 +47,7 @@ Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
 
 Akhiri setiap balasan tepat dengan:
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Susunan balasan AI
@@ -64,7 +64,7 @@ Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Keyword khas
@@ -99,7 +99,7 @@ Balas: YA, CONFIRM ARCHITECTURE
 Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
-[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 Footer ini ialah peringatan pengguna, bukan arahan automatik.
