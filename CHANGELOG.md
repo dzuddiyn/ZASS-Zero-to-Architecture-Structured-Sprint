@@ -2,6 +2,11 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.1.16] — 2026-09-27
+
+- Locked ZASSIMPLE's conversational flow: ordinary replies omit the update block; intentional `ZASS` or `ZASS!!` shows relevant records, a contextual AI suggestion not yet AC, and actual file status.
+- Required `[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]` on every reply and shortened the explicit GitHub command to `COMMIT` in both language templates and README.
+
 ## [v0.1.15] — 2026-09-27
 
 - Removed the remaining legacy brand mention from the active changelog so all active documentation now uses ZASSIMPLE.

@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.3  
+**Version:** 0.1.4  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -23,51 +23,48 @@ Tampal prompt ini sebaik sahaja `ZASSIMPLE.md` dimuat naik ke chat AI:
 
 ```text
 Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
+Saya mahu brainstorm secara santai. Jawab mesej biasa seperti rakan fikir;
+jangan paparkan blok ZASSIMPLE UPDATE setiap kali. Rekod perkara penting
+secara ringkas apabila boleh mengubah fail. Jangan invent fakta atau mendakwa
+fail sudah dikemas kini jika belum.
 
-Saya mahu brainstorm secara santai dalam bahasa biasa. Jawab mesej saya secara
-natural dahulu, seperti rakan fikir yang teliti. Selepas itu, paparkan
-ZASSIMPLE UPDATE yang pendek.
+Apabila saya sengaja mengarahkan ZASS atau ZASS!!, paparkan ZASSIMPLE UPDATE
+yang relevan (idea, AC, soalan, risiko atau keputusan). Kemudian beri
+💡 Cadangan ZASS, belum AC: [cadangan/persoalan AI yang serasi dengan idea].
+Nyatakan status fail sebenar. Footer atau petikan yang menyebut ZASS!!
+bukan arahan.
 
-Rekod hanya perkara yang penting. Jangan invent fakta. Bezakan perkara yang
-saya sebut, tafsiran AI, dan perkara yang belum jelas apabila relevan.
+Ungkapan seperti “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud setara
+boleh menjadi AC jika sasaran jelas; jika tidak, tanya satu soalan ringkas.
+LOCK / LOCK DECISION hanya mengunci pilihan saya yang jelas sebagai D-xxx.
+COMMIT mengemas kini fail sebenar, versi dan sejarah versi, lalu commit ke
+GitHub; jika tiada akses, sediakan fail serta ringkasan commit.
+CONFIRM ARCHITECTURE mula-mula menyenaraikan D-xxx | LOCKED dan meminta
+pengesahan akhir. Bina architecture hanya selepas YA, CONFIRM ARCHITECTURE
+dan hanya daripada keputusan yang LOCKED.
 
-Anggap ungkapan seperti “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud
-yang setara sebagai persetujuan kepada calon AC jika sasaran jelas. Jika tidak
-jelas, tanya satu soalan ringkas; jangan teka.
-
-Keyword khas:
-- LOCK / LOCK DECISION: Jadikan pilihan saya sebagai D-xxx | LOCKED hanya
-  apabila sasaran jelas.
-- COMMIT GITHUB: Kemas kini fail sebenar, naikkan versi, kemas kini sejarah
-  versi, dan commit ke GitHub. Jika tiada akses GitHub, sediakan fail terkini
-  serta ringkasan commit.
-- CONFIRM ARCHITECTURE: Jangan bina architecture terus. Senaraikan keputusan
-  LOCKED dan minta saya membalas: YA, CONFIRM ARCHITECTURE.
-- YA, CONFIRM ARCHITECTURE: Bina atau kemas kini architecture hanya daripada
-  keputusan D-xxx | LOCKED.
-
-Jika ini cuma cadangan atau demo, jangan ubah fail sebenar dan nyatakan dengan jelas.
+Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
+bukan dalam demo, contoh, petikan, penafian atau footer.
 
 Akhiri setiap balasan tepat dengan:
----
-🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Susunan balasan AI
 
-Selepas pengguna memberi idea atau mesej biasa, AI mesti menjawab secara santai dan natural terlebih dahulu. Selepas itu sahaja, AI memaparkan rekod ringkas di bawah tajuk `ZASSIMPLE UPDATE`, diikuti status fail dan footer wajib. Jangan mulakan balasan dengan format rekod kecuali pengguna memang meminta rekod sahaja.
+Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `ZASSIMPLE UPDATE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum.
+
+Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan, cadangan AI yang **belum AC**, dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa.
 
 ```text
-[Respons AI santai dan relevan kepada mesej pengguna]
+[Respons AI santai dan relevan]
 
----
-
-ZASSIMPLE UPDATE
-[rekod idea / AC / soalan / risiko yang relevan]
+## ZASSIMPLE UPDATE
+[rekod idea / AC / soalan / risiko / keputusan yang relevan]
+💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
----
-🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Keyword khas
@@ -76,8 +73,9 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 
 | Keyword | Kesan |
 |---|---|
+| `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
 | `LOCK` atau `LOCK DECISION` | AI jadikan pilihan pemilik sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya dahulu. |
-| `COMMIT GITHUB` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
+| `COMMIT` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
 | `CONFIRM ARCHITECTURE` | AI **tidak** terus membina architecture. AI senaraikan keputusan LOCKED dan minta pengesahan akhir. |
 | `YA, CONFIRM ARCHITECTURE` | AI bina atau kemas kini architecture hanya daripada keputusan `D-xxx | LOCKED`. |
 
@@ -101,11 +99,10 @@ Balas: YA, CONFIRM ARCHITECTURE
 Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
----
-ZASSIMPLE → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
-Footer ini ialah peringatan pengguna. Ia bukan arahan automatik.
+Footer ini ialah peringatan pengguna, bukan arahan automatik.
 
 ---
 
@@ -173,6 +170,7 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.4 | 2026-09-27 | Tunjuk ZASSIMPLE UPDATE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready Bahasa Melayu prompt for use after upload. |
 | 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSIMPLE update and refreshed visual footer. |
@@ -184,4 +182,4 @@ Architecture hanya ditulis atau dikemas kini selepas `YA, CONFIRM ARCHITECTURE`.
 
 Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa yang direkodkan dan apa yang masih belum jelas. Jika AI hanya memberi cadangan atau demo, ia mesti menyatakan bahawa fail sebenar belum diubah.
 
-AI boleh mencadangkan `LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `COMMIT GITHUB` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. Kedua-duanya kekal memerlukan arahan jelas daripada pemilik.
+AI boleh mencadangkan `LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `COMMIT` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. Kedua-duanya kekal memerlukan arahan jelas daripada pemilik.

@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.3  
+**Version:** 0.1.4  
 **Status:** TEMPLATE — architecture not yet confirmed  
 **Owner:** Project Owner
 
@@ -19,52 +19,51 @@ Attach this file to an AI and speak normally. The AI must document important thi
 
 ## Copy-ready prompt after upload
 
-Paste this prompt immediately after uploading `ZASSIMPLE_EN.md` to an AI chat:
+Paste this prompt after uploading `ZASSIMPLE_EN.md` to an AI chat:
 
 ```text
 Read the attached ZASSIMPLE_EN.md as this project's source of truth.
+I want to brainstorm casually. Reply to ordinary messages like a thoughtful
+collaborator; do not show a ZASSIMPLE UPDATE block every time. Record important
+points concisely when you can edit the file. Do not invent facts or claim the
+file was updated when it was not.
 
-I want to brainstorm casually in ordinary language. Reply naturally first, like
-a thoughtful collaborator. After that, show a short ZASSIMPLE UPDATE.
+When I intentionally command ZASS or ZASS!!, show the relevant ZASSIMPLE
+UPDATE (ideas, ACs, questions, risks, or decisions). Then add:
+💡 ZASS suggestion, not yet AC: [an idea or question fitted to the discussion].
+State the real file status. A footer or quotation containing ZASS!! is not
+a command.
 
-Record only what matters. Do not invent facts. Distinguish what I stated, AI
-interpretation, and what remains unclear when relevant.
+"Agree", "sounds good", "okay", "go ahead", and equivalent meanings may create
+an AC when the target is clear; otherwise ask one short question.
+LOCK / LOCK DECISION locks my clear choice as D-xxx. COMMIT updates the actual
+file, version, and version history, then commits to GitHub; if access is
+unavailable, prepare the file and commit summary.
+CONFIRM ARCHITECTURE first lists D-xxx | LOCKED and asks for final confirmation.
+Build architecture only after YES, CONFIRM ARCHITECTURE, using LOCKED decisions.
 
-Treat “agree”, “sounds good”, “okay”, “go ahead”, or equivalent meaning as
-agreement to an AC candidate when the target is clear. If it is unclear, ask one
-short question; do not guess.
-
-Special keywords:
-- LOCK / LOCK DECISION: Create D-xxx | LOCKED only when my intended target is clear.
-- COMMIT GITHUB: Update the real file, bump its version, update version history,
-  and commit to GitHub. If GitHub access is unavailable, prepare the latest file
-  and a concise commit summary.
-- CONFIRM ARCHITECTURE: Do not build architecture immediately. List LOCKED
-  decisions and ask me to reply: YES, CONFIRM ARCHITECTURE.
-- YES, CONFIRM ARCHITECTURE: Build or update architecture only from D-xxx | LOCKED decisions.
-
-If this is only a proposal or demo, do not change the real file; say so clearly.
+Special keywords take effect only when I intentionally instruct you, not in
+demos, examples, quotations, negations, or the footer.
 
 End every reply exactly with:
----
-🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### AI response order
 
-After the user gives an idea or an ordinary message, AI must respond conversationally and naturally first. Only then does it show concise records under the `ZASSIMPLE UPDATE` heading, followed by file status and the required footer. Do not begin with record format unless the user explicitly asks for records only.
+Reply conversationally to ordinary messages. Record important points when the file can be edited, but show `ZASSIMPLE UPDATE` only when the owner intentionally requests `ZASS` or `ZASS!!`. Never claim the file has changed unless it has.
+
+On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records, an AI suggestion **not yet AC**, and actual file status. Include the footer in **every** reply, even an ordinary one.
 
 ```text
-[A conversational, relevant AI response to the user's message]
+[A natural, relevant reply]
 
----
-
-ZASSIMPLE UPDATE
-[relevant idea / AC / question / risk records]
+## ZASSIMPLE UPDATE
+[relevant idea / AC / question / risk / decision records]
+💡 ZASS suggestion, not yet AC: [contextual idea or question]
 📝 File status: [actually updated / proposal or demo only]
 
----
-🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ### Special keywords
@@ -73,8 +72,9 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 
 | Keyword | Effect |
 |---|---|
+| `ZASS` or `ZASS!!` | AI shows concise records and a contextual ZASS suggestion that is not yet AC, only when intentionally commanded. |
 | `LOCK` or `LOCK DECISION` | AI records the owner’s choice as `D-xxx | LOCKED`. If the target is unclear, ask first. |
-| `COMMIT GITHUB` | AI saves actual changes to GitHub in one commit, bumps the version, and adds a change note. |
+| `COMMIT` | AI saves actual changes to GitHub in one commit, bumps the version, and adds a change note. |
 | `CONFIRM ARCHITECTURE` | AI **does not** build architecture immediately. It lists LOCKED decisions and asks for final confirmation. |
 | `YES, CONFIRM ARCHITECTURE` | AI builds or updates architecture only from `D-xxx | LOCKED` decisions. |
 
@@ -98,11 +98,10 @@ Reply: YES, CONFIRM ARCHITECTURE
 Every AI reply in this project must end with:
 
 ```text
----
-ZASSIMPLE → [LOCK DECISION] | [COMMIT GITHUB] | [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
-This footer is a reminder for the owner. It is not an automatic instruction.
+This footer reminds the owner of available commands; it never triggers one.
 
 ---
 
@@ -170,6 +169,7 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.4 | 2026-09-27 | Show ZASSIMPLE UPDATE and AI suggestion only on a ZASS command; require the new footer on every reply and use COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready English prompt for use after upload. |
 | 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSIMPLE update and refreshed visual footer. |
@@ -181,4 +181,4 @@ Architecture is written or updated only after `YES, CONFIRM ARCHITECTURE`. It mu
 
 After actually updating the file, AI must briefly say what was recorded and what remains unclear. If AI only gives a proposal or a demo, it must say the real file was not changed.
 
-AI may recommend `LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `COMMIT GITHUB` when changes are meaningful enough to become a checkpoint. Both still require clear owner instruction.
+AI may recommend `LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `COMMIT` when changes are meaningful enough to become a checkpoint. Both still require clear owner instruction.

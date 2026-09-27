@@ -11,7 +11,7 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 ## Two ways to start
 
 - [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
-- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally first, then captures the relevant record; normal agreement becomes an agreed candidate, while `LOCK`, `COMMIT GITHUB`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
+- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and `CONFIRM ARCHITECTURE` remain explicit safeguards.
 - [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
 
 ## Prompt ZASSIMPLE selepas upload
@@ -20,20 +20,23 @@ Selepas upload [`ZASSIMPLE.md`](ZASSIMPLE.md) ke chat AI, tampal prompt ini:
 
 ```text
 Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
-Saya mahu brainstorm secara santai dalam bahasa biasa. Jawab secara natural dahulu,
-kemudian tunjukkan ZASSIMPLE UPDATE yang pendek. Jangan invent fakta.
+Brainstorm dengan saya secara santai. Jawab mesej biasa secara natural tanpa
+blok ZASSIMPLE UPDATE. Rekod perkara penting apabila boleh mengubah fail,
+tetapi jangan dakwa fail sudah dikemas kini jika belum. Jangan invent fakta.
 
-Anggap “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud setara sebagai AC jika
-sasaran jelas; jika tidak, tanya satu soalan ringkas. LOCK / LOCK DECISION hanya
-mengunci D-xxx apabila sasaran jelas. COMMIT GITHUB mengemas kini fail sebenar,
-versi, sejarah versi, dan GitHub. CONFIRM ARCHITECTURE mesti meminta pengesahan
-akhir; bina architecture hanya selepas YA, CONFIRM ARCHITECTURE dan hanya daripada
-D-xxx | LOCKED.
+Jika saya sengaja arahkan ZASS atau ZASS!!, jawab secara natural dahulu,
+kemudian tunjuk ZASSIMPLE UPDATE, 💡 Cadangan ZASS, belum AC yang sesuai
+dengan perbincangan, dan status fail sebenar. Sebutan dalam footer, petikan,
+contoh atau demo bukan arahan.
 
-Jika ini cuma cadangan atau demo, jangan ubah fail sebenar dan nyatakan dengan jelas.
+Persetujuan yang jelas boleh jadi AC. LOCK / LOCK DECISION mengunci pilihan
+saya sebagai D-xxx. COMMIT mengemas kini fail, versi dan sejarah versi,
+lalu commit ke GitHub (atau sediakan fail dan ringkasan jika tiada akses).
+CONFIRM ARCHITECTURE menyenaraikan keputusan LOCKED dan meminta saya
+membalas YA, CONFIRM ARCHITECTURE sebelum membina architecture daripadanya.
+
 Akhiri setiap balasan tepat dengan:
----
-🧠 ZASSIMPLE → 🔒 [LOCK DECISION] -- 📦 [COMMIT GITHUB] -- 🏗️ [CONFIRM ARCHITECTURE]
+[🧠 ZASS!!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md).
