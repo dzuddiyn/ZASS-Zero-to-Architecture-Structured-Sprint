@@ -1,6 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.2.0 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
+**Version:** 0.2.1 (laporan pilot AI sync dan Google dashboard ditambah; baseline keputusan v0.1 kekal)
+
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26

@@ -14,6 +14,10 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 - [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and the draft/build confirmation gate remain explicit safeguards.
 - [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
 
+## AI sync and visual dashboard pilot
+
+[`ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`](ZASS_AI_SYNC_GOOGLE_DASHBOARD.md) records the approved full-ZASS-first pilot design for commit-like AI synchronization and attractive Google dashboards. GitHub remains authoritative; Google Sheets, Google Sites, and Notion are downstream mirrors. The report defines the confirmation gate, sync receipt, structured projection, security controls, failure behavior, implementation phases, and acceptance criteria. It is a design report, not a claim that the integration is already operational.
+
 ## Prompt ZASSIMPLE selepas upload
 
 Selepas upload [`ZASSIMPLE.md`](ZASSIMPLE.md) ke chat AI, tampal prompt ini:
@@ -108,7 +112,7 @@ instruction such as “LOCK dan COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.2.0.
+**Status:** ZASS baseline v0.1 is locked; documentation release v0.2.1 adds the full-ZASS AI sync and Google dashboard pilot design without changing baseline authority rules.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -144,7 +148,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; panduan pengguna dalam template telah dikemas kini ke v0.1.5.
+**Status:** ZASS baseline v0.1 dikunci; dokumentasi semasa ialah v0.2.1.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 

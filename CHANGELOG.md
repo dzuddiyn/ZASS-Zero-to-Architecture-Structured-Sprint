@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.2.1] — 2026-09-28
+
+- Added `ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`, a full-ZASS-first pilot design for commit-like AI synchronization, Google Sheets projection, Google Sites presentation, and optional Notion mirroring.
+- Preserved GitHub as the authoritative ZASS/ACTION PLAN record and defined mirrors, confirmation gates, real sync receipts, structured commit events, security controls, failure behavior, implementation phases, and acceptance criteria.
+- Added the report to README and synchronized visible documentation versions without changing the locked ZASS baseline authority rules.
+
 ## [v0.2.0] — 2026-09-28
 
 - Added optional ACTION_PLAN companion templates in Malay and English for persistent execution/progress state in active ZASS projects.
