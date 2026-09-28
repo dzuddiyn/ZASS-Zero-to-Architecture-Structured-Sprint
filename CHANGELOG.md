@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS AI Sync report v0.2] — 2026-09-28
+
+- Locked the implementation order: full ZASS → ACTION PLAN → complete read-only Notion mirror, followed by version/progress/failure testing and stabilization of confirmation and factual sync receipts.
+- Deferred compact dashboards, Google Sheets, and Google Sites until the complete ACTION PLAN mirror is stable.
+- Reserved reuse of the proven pattern for ZASSELECTION before confirming its separate Google Sheets / Google Sites architecture candidate.
+- Updated the pilot phases, acceptance criteria, first-pilot exclusions, current decision status, and README summary without claiming the integration is already built.
+
 ## [ZASSELECTION v0.1.0] — 2026-09-28
 
 - Added `ZASSELECTION.md` and `ZASSELECTION_EN.md` as a separate selection method without replacing ZASSIMPLE or producing architecture.

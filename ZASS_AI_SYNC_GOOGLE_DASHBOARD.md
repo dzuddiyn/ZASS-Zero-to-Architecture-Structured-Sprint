@@ -1,10 +1,10 @@
 # ZASS AI Sync and Google Dashboard
 
-**Status:** Approved pilot design for review and implementation
+**Status:** Locked implementation order; pilot not yet built
 
 **Pilot scope:** Full ZASS workflow first
 
-**Document version:** 0.1
+**Document version:** 0.2
 
 **Date:** 2026-09-28
 
@@ -40,7 +40,7 @@ This design does not treat AI memory, chat history, Google Sheets, Google Sites,
 | Git commit history | **Authoritative history** | Version, author, timestamp, diff, rollback, and audit trail |
 | Google Sheets | Mirror / structured projection | Machine-readable records, progress calculations, filters, and dashboard data |
 | Google Sites | Read-only presentation | Attractive owner dashboard built from Google data |
-| Notion | Read-only mirror | Comfortable operational reading and optional project overview |
+| Notion | Read-only mirror | Phase A mirror of the complete `ACTION_PLAN.md`; compact dashboard deferred |
 | AI chat | Working space | Exploration, review, drafting, and proposed changes only |
 
 If any mirror conflicts with GitHub, **GitHub wins**. Do not edit the same authoritative project state independently in GitHub, Sheets, and Notion.
@@ -65,7 +65,7 @@ Gemini API function calling can select a function and prepare its arguments, but
 
 ---
 
-## 4. Recommended full-ZASS pilot architecture
+## 4. Locked full-ZASS pilot architecture
 
 ```text
 AI discussion
@@ -79,14 +79,11 @@ Owner confirmation
 GitHub authoritative commit
     ↓
 GitHub Actions
-    ├──→ Google Sheets structured mirror
-    │       ↓
-    │    Google Sites dashboard
-    │
-    └──→ Notion read-only mirror
+    ↓
+Notion read-only mirror of the complete ACTION_PLAN.md
 ```
 
-The authoritative commit happens once. Downstream mirrors must derive from that commit rather than accepting unrelated edits from separate AI calls.
+The first pilot mirrors the complete `ACTION_PLAN.md`, not a compact dashboard. The authoritative commit happens once. Notion must derive from that commit rather than accepting unrelated edits. A compact dashboard, Google Sheets projection, and Google Sites display are deferred until the full-file Notion mirror is stable.
 
 ### Why GitHub comes first
 
@@ -308,15 +305,9 @@ If embedded Sheets looks too much like a spreadsheet, use Apps Script HTML Servi
 
 ## 10. Notion mirror
 
-Notion remains optional and read-only for this design.
+Notion is the locked Phase A presentation target and remains read-only. It mirrors the **complete `ACTION_PLAN.md`** as a readable operational page. A compact project overview or selected-field dashboard is deferred until the complete-file mirror is stable.
 
-It may mirror:
-
-- `ACTION_PLAN.md` as a readable operational page;
-- a project overview generated from the same source commit; or
-- selected dashboard fields.
-
-Do not manually update authoritative decisions in Notion. Every mirror should show its GitHub source commit or last-sync timestamp.
+Do not manually update project state or authoritative decisions in Notion. The mirror must show or retain traceability to its GitHub source commit and last-sync timestamp. If Notion and GitHub differ, GitHub wins and the Notion page is stale.
 
 ---
 
@@ -395,50 +386,55 @@ DISABLED
 
 ---
 
-## 14. Pilot phases
+## 14. Locked implementation order
 
 ### Phase 0 — Document and fixture
 
-- Confirm the mirror schema.
 - Choose one real ZASS project as the test fixture.
-- Define the existing Zero-to-Architecture calculation precisely.
+- Confirm that the project contains the current `ZASS.md` and an adopted `ACTION_PLAN.md`.
+- Confirm the ZERO → ARCHITECTURE snapshot contract and version fields.
 - Create a non-sensitive test repository or branch if required.
 
-### Phase 1 — GitHub to Google Sheets
+### Phase 1 — Full ZASS to ACTION PLAN to Notion
 
 ```text
 GitHub push to main
-→ workflow reads ZASS.md/ACTION_PLAN.md
-→ structured projection generated
-→ Google Sheets updated
+→ GitHub Actions reads ACTION_PLAN.md
+→ complete Markdown file is mirrored
+→ Notion read-only page is updated
 → sync receipt recorded
 ```
 
-No Google Sites and no Gemini API yet.
+GitHub remains authoritative. Phase 1 does not build Google Sheets, Google Sites, a compact dashboard, two-way sync, or Gemini processing.
 
-### Phase 2 — Google Sites dashboard
+### Phase 2 — Test the mirror contract
 
-- Build the owner-facing overview.
-- Display source commit and last-sync health prominently.
-- Verify mobile readability.
+- Test template-version handling.
+- Test the ZERO → ARCHITECTURE progress snapshot.
+- Test success, stale, failure, retry, and unavailable-Notion behavior.
+- Confirm the complete Notion page matches the source `ACTION_PLAN.md`.
+- Confirm GitHub remains sufficient when Notion is unavailable or deleted.
 
-### Phase 3 — Chat-to-GitHub write action
+### Phase 3 — Stabilize confirmation and receipts
 
 - Add a write-capable Action/tool.
 - Implement SYNC PREVIEW → CONFIRM SYNC.
 - Require a real commit SHA before reporting success.
-- Test conflict, stale version, duplicate request, and authentication failures.
+- Report authoritative commit success separately from Notion mirror success.
+- Test conflict, stale version, duplicate request, authentication failure, and partial failure.
 
-### Phase 4 — Notion mirror
+### Phase 4 — Reuse the proven pattern for ZASSELECTION
 
-- Add only after GitHub → Sheets is stable.
-- Preserve GitHub authority and show source commit.
+- Reuse confirmation gates, factual receipts, idempotency, failure states, and version checks.
+- Do not copy the ZASS authority boundary: ZASSELECTION has its own candidate authority model.
+- Keep ZASSELECTION method behavior separate from storage architecture.
 
-### Phase 5 — Optional raw-input intelligence
+### Phase 5 — Confirm ZASSELECTION Google architecture
 
-- Google Form captures raw input.
-- Gemini API structures it as a candidate.
-- Candidate remains `PENDING REVIEW` until accepted.
+- Decide whether Google Sheets Event Log becomes ZASSELECTION authority.
+- Confirm Google Sites as read-only Decision Card presentation if appropriate.
+- Confirm the write-capable integration, authentication, privacy model, and revision rules.
+- Build only after the ZASSELECTION architecture candidate passes review.
 
 ---
 
@@ -449,12 +445,13 @@ The pilot passes only if:
 - [ ] one owner-confirmed operation creates one atomic Git commit;
 - [ ] the AI returns the real commit SHA;
 - [ ] LOCKED decisions are not changed silently;
-- [ ] the Google Sheet shows the same source commit;
+- [ ] Notion mirrors the complete `ACTION_PLAN.md`, not an independently edited summary;
+- [ ] the mirror exposes or can be traced to the same source commit;
 - [ ] repeated delivery does not duplicate records;
 - [ ] a failed mirror does not damage GitHub state;
 - [ ] a stale mirror is visibly marked;
 - [ ] no secret appears in repository files or workflow logs;
-- [ ] the dashboard is readable on a phone;
+- [ ] the complete Notion mirror is readable on a phone;
 - [ ] GitHub alone remains sufficient to reconstruct project state;
 - [ ] rollback to an earlier Git commit can rebuild the mirror;
 - [ ] the AI never claims sync success when its write tool is unavailable.
@@ -464,6 +461,8 @@ The pilot passes only if:
 ## 16. What not to build in the first pilot
 
 - Two-way Notion ↔ GitHub synchronization.
+- A compact Notion dashboard before the complete ACTION PLAN mirror is stable.
+- Google Sheets or Google Sites as part of the first ZASS pilot.
 - Manual editing of authoritative decisions in Google Sheets.
 - Automatic architecture confirmation.
 - AI-generated percentages without fixed criteria.
@@ -496,30 +495,33 @@ Do not merge these authority rules accidentally. Reuse the sync protocol, receip
 
 ---
 
-## 18. Recommended first implementation decision
+## 18. Locked first implementation decision
 
-Start with one-way synchronization:
+Start with the complete ACTION PLAN mirror:
 
 ```text
+ZASS.md = decision and architecture authority
+        ↓
+ZERO → ARCHITECTURE score
+        ↓
+ACTION_PLAN.md = complete execution state and score snapshot
+        ↓
 GitHub authoritative commit
 → GitHub Actions
-→ Google Sheets mirror
-→ Google Sites dashboard
+→ Notion complete read-only mirror
 ```
 
-This proves the schema, dashboard, security boundary, and rebuild behavior before adding direct write access from an AI chat.
+This proves version handling, progress snapshots, failure behavior, mirror accuracy, and rebuild behavior before adding a compact dashboard or reusing the pattern elsewhere.
 
-After that path is stable, add:
+The locked implementation sequence is:
 
-```text
-AI Action
-→ SYNC PREVIEW
-→ owner CONFIRM SYNC
-→ GitHub commit
-→ existing mirror pipeline
-```
+1. Build the full-ZASS → ACTION PLAN → Notion pilot.
+2. Test version handling, progress snapshot, failure behavior, and mirror accuracy.
+3. Stabilize owner confirmation and factual sync receipts.
+4. Reuse the proven pattern for ZASSELECTION.
+5. Confirm the Google Sheets / Google Sites architecture for ZASSELECTION only afterward.
 
-This order prevents an attractive dashboard from becoming a second, conflicting project authority.
+This order prevents an attractive dashboard or second storage system from becoming a conflicting authority before the basic synchronization contract is proven.
 
 ---
 
@@ -540,4 +542,4 @@ This order prevents an attractive dashboard from becoming a second, conflicting 
 
 ## 20. Current decision status
 
-The research direction and full-ZASS-first pilot are owner-approved. This document records the proposed implementation architecture. It does not yet claim that the integration, dashboard, Action, or automation has been built or tested.
+The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. This document does not claim that the integration, dashboard, Action, or automation has been built or tested.

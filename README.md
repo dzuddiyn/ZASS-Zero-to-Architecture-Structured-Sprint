@@ -24,7 +24,7 @@ Use **Quick Selection** for small, reversible choices with at most three options
 
 ## AI sync and visual dashboard pilot
 
-[`ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`](ZASS_AI_SYNC_GOOGLE_DASHBOARD.md) records the approved full-ZASS-first pilot design for commit-like AI synchronization and attractive Google dashboards. GitHub remains authoritative; Google Sheets, Google Sites, and Notion are downstream mirrors. The report defines the confirmation gate, sync receipt, structured projection, security controls, failure behavior, implementation phases, and acceptance criteria. It is a design report, not a claim that the integration is already operational.
+[`ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`](ZASS_AI_SYNC_GOOGLE_DASHBOARD.md) records the locked full-ZASS-first implementation order. Phase A mirrors the complete `ACTION_PLAN.md` from GitHub to Notion as read-only; compact dashboards, Google Sheets, and Google Sites are deferred until that mirror is stable. The report defines authority, confirmation, receipts, failure behavior, phases, and acceptance criteria. It is a design report, not a claim that the integration is already operational.
 
 ## Prompt ZASSIMPLE selepas upload
 
