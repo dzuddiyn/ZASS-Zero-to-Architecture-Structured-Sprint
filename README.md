@@ -33,8 +33,8 @@ Jangan overwrite maklumat sedia ada tanpa menunjukkan percanggahan.
 Jangan ubah LOCKED decisions. Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
 Jika ini projek baharu, namakan fail ZASS_[nama_projek].md.
 Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
-ini akan menjadi sebagai source of truth projek ini. beri rumusan dulu.
-jangan commit tanpa kebenaran.
+format dan file ini akan menjadi sebagai metodologi dan source of truth projek ini.
+Beri rumusan dulu. Jangan commit tanpa kebenaran.
 ```
 
 Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal sebelum pintu pengesahan.
