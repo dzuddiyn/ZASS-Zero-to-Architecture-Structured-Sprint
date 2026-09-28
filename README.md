@@ -23,9 +23,17 @@ https:/github.com/xxxx , ini adalah git untuk projek ini. Baca;
 
 ZASSIMPLE.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE.md)
 ATAU
-ZASS.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md)
+ZASS.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md).
 
-. Extract perbincangan kita ke dalam format ZASS. Jangan invent fakta yang saya tak beri. Tandakan setiap perkara yang relevan sebagai EXPLICIT (saya nyatakan), INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN. Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS, CONSTRAINTS, idea baharu, soalan dan risiko. Jangan overwrite maklumat sedia ada tanpa menunjukkan percanggahan. Jangan ubah LOCKED decisions. Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan. Jika ini projek baharu, namakan fail ZASS_[nama_projek].md. Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya. ini akan menjadi sebagai source of truth projek ini. beri rumusan dulu.
+Extract perbincangan kita ke dalam format ZASS. Jangan invent fakta yang saya tak beri.
+Tandakan setiap perkara yang relevan sebagai EXPLICIT (saya nyatakan),
+INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN.
+Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS, CONSTRAINTS, idea baharu, soalan dan risiko.
+Jangan overwrite maklumat sedia ada tanpa menunjukkan percanggahan.
+Jangan ubah LOCKED decisions. Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
+Jika ini projek baharu, namakan fail ZASS_[nama_projek].md.
+Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
+ini akan menjadi sebagai source of truth projek ini. beri rumusan dulu.
 jangan commit tanpa kebenaran.
 ```
 
