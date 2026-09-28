@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.18 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
+**Version:** 0.2.0 (simplified owner guide; baseline decisions v0.1 remain unchanged)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -47,6 +47,38 @@ End **every** AI reply with:
 ```
 
 The footer is a reminder, never an automatic command. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
+
+## ACTION PLAN — MOVE WORK WITHOUT CREATING A SECOND DECISION LEDGER
+
+Use `ACTION_PLAN.md` for a project with multi-step work or progress that must survive across sessions. It is optional; small ideas and existing projects containing only `ZASS.md` remain valid.
+
+| File | Authority |
+|---|---|
+| `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirements, readiness, and decision change. |
+| `ACTION_PLAN.md` | Current execution/progress state: focus, actions, experiment execution, evidence, results, blockers, lessons, completed work, and PARKED work. |
+| `ARCHITECTURE.md` | An architecture representation derived from confirmed ZASS state. It is needed only when architecture is built. |
+
+`ACTION_PLAN.md` cannot LOCK or alter ZASS decisions, determine architecture, or turn a PASS experiment into a decision automatically.
+
+```text
+ZASS: Q-xxx / R-xxx / candidate / E-xxx need
+                  ↓
+ACTION_PLAN: execute action or E-xxx
+                  ↓
+evidence: PASS / FAIL / INCONCLUSIVE / BLOCKED
+                  ↓
+ZASS FEED
+                  ↓
+ZASS REVIEW → DECIDE / LOCK / REJECT / TEST MORE / PIVOT
+```
+
+Keep the same `E-xxx` ID when an experiment originates in ZASS. ZASS owns the experiment's purpose and evidence requirement; ACTION_PLAN records execution, evidence, and result. `ZASS FEED` returns mature findings for evaluation; it never creates an automatic decision.
+
+**States do not mix:** ZASS uses discovery/decision states such as `RAW → CANDIDATE → TESTING → DECIDED → LOCKED`. ACTION_PLAN uses execution states: `OPEN`, `NEXT`, `ACTIVE`, `BLOCKED`, `DONE`, `PARKED`, `CANCELLED`. ACTION_PLAN experiments use `PLANNED`, `READY`, `RUNNING`, `PASS`, `FAIL`, `INCONCLUSIVE`, `BLOCKED`, `CANCELLED`.
+
+Copy `ACTION_PLAN_TEMPLATE.md` to `ACTION_PLAN.md` in the project repository when execution becomes ongoing. Use `ACTION_PLAN_TEMPLATE_EN.md` for an English project. Do not create `progress.md`, `tasks.md`, `tasks.json`, or another to-do file as an additional authority at the same time.
+
+**AI behavior:** In ordinary conversation, AI mentions or updates only the relevant action; do not display the entire template. When the owner says `ZASS`, AI consults relevant execution evidence when ACTION_PLAN exists and never treats ACTION_PLAN status as a LOCKED decision. When the owner asks for `ACTION PLAN` or an equivalent, return current focus, P0/P1, ACTIVE/NEXT actions, experiments, blockers, recent learning, and relevant ZASS FEED.
 
 ## READY-TO-USE PROMPTS — OPTIONAL REFERENCE
 
@@ -324,6 +356,8 @@ AI must then close the output with a clear question:
 
 - **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
   - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
+
+If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` updates or creates one appropriate action; `PARK` moves it to PARKED; `PIVOT` records the changed direction. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
 
 
 ## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE
@@ -898,7 +932,7 @@ Items preventing architecture freeze.
 
 # 17. EXPERIMENTS / EVIDENCE
 
-Use experiments when discussion alone cannot resolve a decision.
+Use experiments when discussion alone cannot resolve a decision. If `ACTION_PLAN.md` exists, it executes the same `E-xxx` and stores live evidence/result; bring mature findings back through ZASS FEED for review.
 
 ## E-001 — [Experiment title]
 
@@ -1024,7 +1058,8 @@ If a LOCKED decision must change:
 PROJECT/
 │
 ├── ZASS.md
-├── ARCHITECTURE.md
+├── ACTION_PLAN.md        ← optional; live execution/progress state
+├── ARCHITECTURE.md       ← only after architecture is built
 ├── README.md
 │
 ├── docs/
@@ -1060,6 +1095,10 @@ Capture and explore a raw idea without modifying LOCKED decisions. Return the NE
 ### ZASS REVIEW
 
 Challenge the project using a named methodology or perspective.
+
+### ACTION PLAN
+
+Show or update relevant execution state: current focus, P0/P1 priorities, ACTIVE/NEXT actions, experiments, blockers, recent lessons, and ZASS FEED. This command never LOCKS a decision.
 
 ### ZASS CHALLENGE
 

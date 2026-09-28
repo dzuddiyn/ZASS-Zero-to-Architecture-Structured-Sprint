@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.1.18 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
+**Version:** 0.2.0 (panduan pengguna dipermudah; baseline keputusan v0.1 kekal)  
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
@@ -47,6 +47,38 @@ Akhiri **setiap** balasan AI dengan:
 ```
 
 Footer ialah peringatan, bukan arahan automatik. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
+
+## ACTION PLAN — GERAKKAN KERJA TANPA MENJADI DECISION LEDGER KEDUA
+
+Gunakan `ACTION_PLAN.md` untuk projek yang mempunyai kerja berbilang langkah atau perlu menyimpan progress antara sesi. Ia pilihan; projek idea kecil atau projek lama yang hanya mempunyai `ZASS.md` kekal sah.
+
+| Fail | Authority |
+|---|---|
+| `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirement, readiness dan perubahan keputusan. |
+| `ACTION_PLAN.md` | Execution/progress state semasa: fokus, aksi, pelaksanaan eksperimen, bukti, hasil, blocker, lesson, kerja siap dan kerja PARKED. |
+| `ARCHITECTURE.md` | Representasi architecture yang berasal daripada state ZASS yang telah disahkan. Ia hanya diperlukan apabila architecture dibina. |
+
+`ACTION_PLAN.md` tidak boleh LOCK atau mengubah keputusan ZASS, menentukan architecture, atau menjadikan eksperimen PASS sebagai keputusan secara automatik.
+
+```text
+ZASS: Q-xxx / R-xxx / candidate / E-xxx need
+                  ↓
+ACTION_PLAN: execute action or E-xxx
+                  ↓
+evidence: PASS / FAIL / INCONCLUSIVE / BLOCKED
+                  ↓
+ZASS FEED
+                  ↓
+ZASS REVIEW → DECIDE / LOCK / REJECT / TEST MORE / PIVOT
+```
+
+Gunakan ID `E-xxx` yang sama apabila eksperimen datang daripada ZASS. ZASS memegang tujuan dan requirement evidence eksperimen; ACTION_PLAN merekod pelaksanaan, bukti dan hasil. `ZASS FEED` membawa finding matang kembali untuk dinilai, bukan mencipta decision automatik.
+
+**State tidak bercampur:** ZASS menggunakan state discovery/decision seperti `RAW → CANDIDATE → TESTING → DECIDED → LOCKED`. ACTION_PLAN menggunakan state execution: `OPEN`, `NEXT`, `ACTIVE`, `BLOCKED`, `DONE`, `PARKED`, `CANCELLED`. Eksperimen ACTION_PLAN menggunakan `PLANNED`, `READY`, `RUNNING`, `PASS`, `FAIL`, `INCONCLUSIVE`, `BLOCKED`, `CANCELLED`.
+
+Salin `ACTION_PLAN_TEMPLATE.md` menjadi `ACTION_PLAN.md` dalam repo projek apabila execution mula berpanjangan. Guna `ACTION_PLAN_TEMPLATE_EN.md` jika projek menggunakan English. Jangan cipta serentak `progress.md`, `tasks.md`, `tasks.json` atau todo lain sebagai authority tambahan.
+
+**AI behaviour:** Dalam sembang biasa, AI hanya menyebut atau mengemas kini action yang relevan; jangan paparkan seluruh templat. Apabila pengguna berkata `ZASS`, AI rujuk bukti execution yang relevan jika ACTION_PLAN wujud, dan jangan anggap status ACTION_PLAN sebagai LOCKED decision. Apabila pengguna meminta `ACTION PLAN` atau maksud setara, tunjuk current focus, P0/P1, action ACTIVE/NEXT, eksperimen, blocker, recent learning dan ZASS FEED yang berkaitan.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 
@@ -326,6 +358,8 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
 
 - **PIVOT 🔄** — AI mencari arah lain yang masih menyelesaikan masalah asal dan mengekalkan calon terdahulu dalam rekod.
   - **🔀 Cadangan pivot:** [arah alternatif yang sesuai dengan evidence semasa].
+
+Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` mengemas kini atau mencipta satu action yang sesuai; `PARK` memindahkannya ke PARKED; `PIVOT` merekod perubahan arah. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
 
 
 ## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN
@@ -900,7 +934,7 @@ Items preventing architecture freeze.
 
 # 17. EXPERIMENTS / EVIDENCE
 
-Use experiments when discussion alone cannot resolve a decision.
+Use experiments when discussion alone cannot resolve a decision. If `ACTION_PLAN.md` exists, it executes the same `E-xxx` and stores live evidence/result; bring mature findings back through ZASS FEED for review.
 
 ## E-001 — [Experiment title]
 
@@ -1026,7 +1060,8 @@ If a LOCKED decision must change:
 PROJECT/
 │
 ├── ZASS.md
-├── ARCHITECTURE.md
+├── ACTION_PLAN.md        ← optional; live execution/progress state
+├── ARCHITECTURE.md       ← only after architecture is built
 ├── README.md
 │
 ├── docs/
@@ -1062,6 +1097,10 @@ Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT-DA
 ### ZASS REVIEW
 
 Challenge the project using a named methodology or perspective.
+
+### ACTION PLAN
+
+Show or update the relevant execution state: current focus, P0/P1 priorities, ACTIVE/NEXT actions, experiments, blockers, recent lessons and ZASS FEED. This command never LOCKS a decision.
 
 ### ZASS CHALLENGE
 

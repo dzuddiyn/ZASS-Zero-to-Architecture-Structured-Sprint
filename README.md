@@ -49,6 +49,14 @@ Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, 
 
 You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, statuses, and links between entries. See **Daily Use** near the top of [`ZASS.md`](ZASS.md) for simple instructions and optional prompts. The template's user guide is currently in Malay; the framework can be used in any language.
 
+## ACTION PLAN for active projects
+
+For an active project with multi-step execution, copy [`ACTION_PLAN_TEMPLATE.md`](ACTION_PLAN_TEMPLATE.md) into that project as `ACTION_PLAN.md`. It records current focus, priorities, next actions, experiments, evidence, blockers, lessons, completed work, parked work, and findings ready for ZASS review.
+
+ZASS remains the authority for discovery, decisions, LOCKED state, experiment requirements, readiness, and architecture. ACTION_PLAN records the live execution state. It uses the same `E-xxx` ID for an experiment that originated in ZASS, then returns mature results through **ZASS FEED** for review.
+
+`ACTION_PLAN.md` is optional. A project containing only `ZASS.md` remains valid. Do not keep parallel task authorities by default. If a project adopts GitHub Issues/Projects, Jira, Linear, or another execution backend, name that backend as the execution authority; dashboards such as Notion should mirror it by default.
+
 ## Versioning
 
 Each owner-locked template update is one logical Git commit covering every affected file. Record the change in [`CHANGELOG.md`](CHANGELOG.md), bump the visible version, and tag meaningful releases (for example, `v0.1.5`). Commits preserve detailed history; tags mark stable versions that are easy to return to.
@@ -100,7 +108,7 @@ instruction such as “LOCK dan COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.1.5.
+**Status:** ZASS baseline v0.1 is locked; the template's user guide was updated to v0.2.0.
 
 ---------------------------------------------------------------------------------------------------------
 

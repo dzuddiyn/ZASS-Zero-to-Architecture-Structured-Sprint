@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.2.0] — 2026-09-28
+
+- Added optional ACTION_PLAN companion templates in Malay and English for persistent execution/progress state in active ZASS projects.
+- Defined the authority boundary: ZASS owns discovery, decisions, LOCKED state, experiment requirements, readiness, and architecture; ACTION_PLAN owns live execution, evidence, blockers, lessons, and progress.
+- Added the ZASS ↔ ACTION_PLAN workflow, shared E-xxx experiment identity, ZASS FEED, action and experiment states, NEXT-DAY integration, AI behavior, project structure, and ACTION PLAN command.
+- Existing projects with only ZASS.md remain valid.
+
 ## [v0.1.18] — 2026-09-27
 
 - Replaced `ZASSS` with intentional `ZASS` / `ZASS!!` for full idea exploration; ordinary replies stay conversational with the shared footer.
