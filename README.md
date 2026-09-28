@@ -19,26 +19,14 @@ ZASS is a Markdown framework for developing raw ideas into tested options, decis
 Selepas upload [`ZASSIMPLE.md`](ZASSIMPLE.md) ke chat AI, tampal prompt ini:
 
 ```text
-Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
-Brainstorm dengan saya secara santai. Jawab mesej biasa secara natural tanpa
-blok ZASSIMPLE UPDATE. Rekod perkara penting apabila boleh mengubah fail,
-tetapi jangan dakwa fail sudah dikemas kini jika belum. Jangan invent fakta.
+https:/github.com/xxxx , ini adalah git untuk projek ini. Baca;
 
-Jika saya sengaja arahkan ZASS atau ZASS!!, jawab secara natural dahulu,
-kemudian tunjuk ZASSIMPLE UPDATE, 💡 Cadangan ZASS, belum AC yang sesuai
-dengan perbincangan, dan status fail sebenar. Sebutan dalam footer, petikan,
-contoh atau demo bukan arahan.
+ZASSIMPLE.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE.md)
+ATAU
+ZASS.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md)
 
-Persetujuan yang jelas boleh jadi AC. LOCK / LOCK DECISION mengunci pilihan
-saya sebagai D-xxx. COMMIT mengemas kini fail, versi dan sejarah versi,
-lalu commit ke GitHub (atau sediakan fail dan ringkasan jika tiada akses).
-AI boleh cadangkan DRAFT ARCH apabila keputusan cukup jelas. DRAFT ARCH hanya
-menghasilkan draf. Selepas draf mencukupi, AI cadangkan BUILD ARCHITECTURE;
-arahan itu menyemak keputusan LOCKED dan meminta balasan YA, CONFIRM
-ARCHITECTURE sebelum mengesahkan architecture.
-
-Akhiri setiap balasan tepat dengan:
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
+. Extract perbincangan kita ke dalam format ZASS. Jangan invent fakta yang saya tak beri. Tandakan setiap perkara yang relevan sebagai EXPLICIT (saya nyatakan), INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN. Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS, CONSTRAINTS, idea baharu, soalan dan risiko. Jangan overwrite maklumat sedia ada tanpa menunjukkan percanggahan. Jangan ubah LOCKED decisions. Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan. Jika ini projek baharu, namakan fail ZASS_[nama_projek].md. Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya. ini akan menjadi sebagai source of truth projek ini. beri rumusan dulu.
+jangan commit tanpa kebenaran.
 ```
 
 Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal sebelum pintu pengesahan.
