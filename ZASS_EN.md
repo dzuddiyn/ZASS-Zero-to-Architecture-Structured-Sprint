@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.2.1 (AI sync and Google dashboard pilot report added; baseline decisions v0.1 remain unchanged)
+**Version:** 0.3.1 (ZERO → ARCHITECTURE snapshot for ACTION PLAN locked; baseline decisions v0.1 remain unchanged)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,15 +39,30 @@ The AI must find the relevant entries, manage IDs and states behind the scenes, 
 
 Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
 
-An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `LOCK DECISION`, `COMMIT`, and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `LOCK`, `COMMIT GIT`, and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 
 End **every** AI reply with:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
+[🧠 ZASS !!]--[▶️ PROCEED]--[🔄 PIVOT]--[🅿️ PARK]--[🔒 LOCK]--[📦 COMMIT GIT]
+
+🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
+
+⬆️ UPDATE ZASS? now v0.2.1 / latest v0.3.0
 ```
 
-The footer is a reminder, never an automatic command. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
+The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, and versions with the actual state. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
+
+Footer command meanings:
+
+- `ZASS!!` — run full exploration using the ZASS format.
+- `PROCEED` — select and perform the most suitable next action for the current state.
+- `PIVOT` — suggest an alternative direction based on current weaknesses, evidence, or constraints.
+- `PARK` — record the idea safely and stop active work at that point.
+- `LOCK` — lock only the explicitly stated decision; do not treat the whole discussion as locked.
+- `COMMIT GIT` — after changes are authorized, update affected files, version, and changelog as one atomic commit, push to GitHub when access is available, then report the real SHA. Never report success before the commit or push actually occurs.
+
+When the user intentionally issues `ZASS` or `ZASS!!`, compare the project file version with the latest official repository version when access is available. If they differ, show `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. If current, show `✅ ZASS UP TO DATE — v<version>`. If checking is unavailable, show `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; never invent a version number.
 
 ## ACTION PLAN — MOVE WORK WITHOUT CREATING A SECOND DECISION LEDGER
 
@@ -60,6 +75,8 @@ Use `ACTION_PLAN.md` for a project with multi-step work or progress that must su
 | `ARCHITECTURE.md` | An architecture representation derived from confirmed ZASS state. It is needed only when architecture is built. |
 
 `ACTION_PLAN.md` cannot LOCK or alter ZASS decisions, determine architecture, or turn a PASS experiment into a decision automatically.
+
+`ZERO → ARCHITECTURE` is officially calculated and recorded in `ZASS.md`. When `ACTION_PLAN.md` is used, it stores a **snapshot** of that official value for execution and dashboards; it never calculates, raises, or lowers the score itself. Every score change must update ZASS and the ACTION PLAN snapshot in the same atomic commit. Use `Source: ZASS.md v<version> — same Git commit`; do not try to write that commit's SHA into the file because the SHA exists only after commit creation. GitHub Actions reads the real SHA from the commit event and adds it to a mirror such as Notion.
 
 ```text
 ZASS: Q-xxx / R-xxx / candidate / E-xxx need
@@ -955,7 +972,40 @@ Use experiments when discussion alone cannot resolve a decision. If `ACTION_PLAN
 
 # 18. ARCHITECTURE READINESS
 
-Confirmed architecture is allowed only when:
+`ZERO → ARCHITECTURE` measures how mature an idea is for architecture. It does **not** measure coding progress, execution progress, or total project completion.
+
+Use this transparent score:
+
+| Criterion | Weight |
+|---|---:|
+| Purpose or problem is clear | 10% |
+| Users/stakeholders and desired outcomes are clear | 10% |
+| Scope and non-goals are clear | 10% |
+| Important constraints and quality attributes are known | 10% |
+| Options and trade-offs have been compared | 10% |
+| Critical assumptions are closed or have experiments | 15% |
+| Major risks have been addressed | 10% |
+| Main system flow is clear | 10% |
+| Key decisions are `LOCKED` | 10% |
+| No critical architecture blocker remains | 5% |
+
+Score each criterion as `0 = absent`, `0.5 = partial`, or `1 = complete`, then multiply by its weight. AI must give a short reason for the score and name the main blockers; do not create false precision or increase the score merely because the discussion is long.
+
+Statuses:
+
+| Score | Status |
+|---:|---|
+| 0–19% | `RAW` |
+| 20–39% | `EXPLORING` |
+| 40–59% | `SHAPING` |
+| 60–69% | `DECIDING` |
+| 70–84% | `READY FOR DRAFT ARCH` |
+| 85–99% + a draft exists and is under review | `DRAFT ARCH UNDER REVIEW` |
+| 100% | `ARCHITECTURE CONFIRMED` |
+
+At 70% or above, AI must **suggest** an architecture draft but must not create it automatically. Status does not advance to `DRAFT ARCH UNDER REVIEW` merely because the score reaches 85%; a draft must actually exist and be under review. A score of 100% is allowed only after the two-step confirmation gate is complete and the owner replies exactly `YA, CONFIRM ARCHITECTURE`.
+
+In addition to the score, confirmed architecture is allowed only when:
 
 - [ ] Core problem is clear
 - [ ] Primary users are known
@@ -969,7 +1019,11 @@ Confirmed architecture is allowed only when:
 - [ ] Major candidate architectures have been resolved or intentionally deferred
 - [ ] Known blockers are documented
 
-**Readiness:**
+**ZERO → ARCHITECTURE score:**
+
+`[░░░░░░░░░░] 0% — RAW`
+
+**Readiness gate:**
 
 `NOT READY / READY`
 

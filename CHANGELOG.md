@@ -2,6 +2,29 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION v0.1.0] — 2026-09-28
+
+- Added `ZASSELECTION.md` and `ZASSELECTION_EN.md` as a separate selection method without replacing ZASSIMPLE or producing architecture.
+- Locked Quick and Deep Selection, MUST-HAVE filtering before optional scoring, evidence/feeling separation, cheapest tie-breakers, clear AI recommendations, owner-only `SELECT`, and rationale/consequence/revisit records.
+- Added the selection footer and copy-ready post-upload prompts in Malay and English.
+- Added `ZASSELECTION_DATA_SYNC_ARCHITECTURE.md` as a separate, unconfirmed supporting design for a future Google Sheets event log, Apps Script direct sync, Google Sites Decision Cards, security controls, and acceptance criteria.
+- Updated README method navigation while keeping ZASS and ZASSELECTION version lines independent.
+
+## [v0.3.1] — 2026-09-28
+
+- Added the ZERO → ARCHITECTURE snapshot block to the Malay and English ACTION PLAN templates.
+- Kept ZASS authoritative for score calculation while ACTION PLAN stores only one progress/status snapshot, source version, assessment date, next gated threshold, and critical blockers.
+- Required ZASS and its ACTION PLAN snapshot to change in the same atomic commit; GitHub Actions supplies the real event SHA to read-only mirrors rather than attempting to embed a commit's own SHA in that commit.
+- Clarified that `DRAFT ARCH UNDER REVIEW` requires an actual draft under review, not merely a numeric score of 85%.
+
+## [v0.3.0] — 2026-09-28
+
+- Replaced the full-ZASS footer with `ZASS!! / PROCEED / PIVOT / PARK / LOCK / COMMIT GIT` and defined each command's scope.
+- Added a weighted, evidence-explained ZERO → ARCHITECTURE readiness score, visible progress bar, status bands, and a 70% threshold for suggesting—but not automatically creating—an architecture draft.
+- Reserved 100% for architecture confirmed through the existing two-step gate and exact `YA, CONFIRM ARCHITECTURE` response.
+- Added factual template-version checks on intentional `ZASS` / `ZASS!!`, including current, mismatch, and unavailable states without invented version numbers.
+- Updated the Malay and English full templates and README; ZASSIMPLE remains unchanged.
+
 ## [v0.2.1] — 2026-09-28
 
 - Added `ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`, a full-ZASS-first pilot design for commit-like AI synchronization, Google Sheets projection, Google Sites presentation, and optional Notion mirroring.

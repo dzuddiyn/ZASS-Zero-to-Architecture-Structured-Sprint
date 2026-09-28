@@ -15,6 +15,20 @@
 - **Architecture status:** [not started / draft / confirmed reference]
 - **Rule:** ZASS remains authoritative for questions, risks, candidates, decisions, LOCKED decisions, and architecture readiness.
 
+## 🏗️ ZERO → ARCHITECTURE SNAPSHOT
+
+- **Progress:** [░░░░░░░░░░] 0%
+- **Status:** RAW
+- **Source:** `ZASS.md` v[version] — same Git commit
+- **Last assessed:** [YYYY-MM-DD]
+- **Next threshold:** 20% — EXPLORING
+
+**Critical blockers:**
+
+- None currently identified.
+
+> This snapshot copies the official score from ZASS; ACTION_PLAN does not calculate it. Update ZASS and this snapshot in the same atomic commit. GitHub Actions obtains the real SHA from the commit event for mirrors such as Notion.
+
 ## 1. PROJECT SNAPSHOT
 
 | Milestone / outcome | Status | Progress / evidence | Related ZASS IDs |
@@ -114,3 +128,5 @@
 ## AI OPERATING RULE
 
 When updating this file, preserve ZASS authority. Do not silently change a LOCKED decision or architecture. Do not turn PASS into a decision automatically. Avoid duplicate actions: update the existing related action, experiment, PARKED item, or ZASS FEED entry when one already exists.
+
+Use only one `Progress` value and one `Status` in the ZERO → ARCHITECTURE snapshot. `Next threshold` must name the next percentage and status. If there is no blocker, write `None currently identified`. Do not change the snapshot merely because an ordinary task is complete; change it only after a ZASS assessment. `DRAFT ARCH UNDER REVIEW` requires an actual draft under review, not the number 85% alone.

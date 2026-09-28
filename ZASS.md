@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.2.1 (laporan pilot AI sync dan Google dashboard ditambah; baseline keputusan v0.1 kekal)
+**Version:** 0.3.1 (snapshot ZERO → ARCHITECTURE untuk ACTION PLAN dikunci; baseline keputusan v0.1 kekal)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,15 +39,30 @@ AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir,
 
 Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
 
-Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PARK / PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. Arahan `LOCK DECISION`, `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
+Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PARK / PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. Arahan `LOCK`, `COMMIT GIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
 
 Akhiri **setiap** balasan AI dengan:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
+[🧠 ZASS !!]--[▶️ PROCEED]--[🔄 PIVOT]--[🅿️ PARK]--[🔒 LOCK]--[📦 COMMIT GIT]
+
+🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
+
+⬆️ UPDATE ZASS? now v0.2.1 / latest v0.3.0
 ```
 
-Footer ialah peringatan, bukan arahan automatik. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
+Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status dan versi contoh dengan keadaan sebenar. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
+
+Maksud arahan footer:
+
+- `ZASS!!` — jalankan penerokaan penuh mengikut format ZASS.
+- `PROCEED` — pilih dan jalankan tindakan seterusnya yang paling sesuai dengan keadaan semasa.
+- `PIVOT` — cadangkan arah alternatif berdasarkan kelemahan, bukti atau kekangan semasa.
+- `PARK` — rekod idea dengan selamat dan hentikan proses aktif setakat itu.
+- `LOCK` — kunci hanya keputusan yang dinyatakan dengan jelas; jangan anggap seluruh perbincangan telah dikunci.
+- `COMMIT GIT` — selepas perubahan dibenarkan, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub apabila akses tersedia, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
+
+Apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`, bandingkan versi fail projek dengan versi terkini repo rasmi jika akses tersedia. Jika berlainan, paparkan `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. Jika sama, paparkan `✅ ZASS UP TO DATE — v<version>`. Jika semakan tidak boleh dibuat, paparkan `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; jangan reka nombor versi.
 
 ## ACTION PLAN — GERAKKAN KERJA TANPA MENJADI DECISION LEDGER KEDUA
 
@@ -60,6 +75,8 @@ Gunakan `ACTION_PLAN.md` untuk projek yang mempunyai kerja berbilang langkah ata
 | `ARCHITECTURE.md` | Representasi architecture yang berasal daripada state ZASS yang telah disahkan. Ia hanya diperlukan apabila architecture dibina. |
 
 `ACTION_PLAN.md` tidak boleh LOCK atau mengubah keputusan ZASS, menentukan architecture, atau menjadikan eksperimen PASS sebagai keputusan secara automatik.
+
+`ZERO → ARCHITECTURE` dikira dan direkod secara rasmi dalam `ZASS.md`. Jika `ACTION_PLAN.md` digunakan, ia menyimpan **snapshot** nilai rasmi itu untuk execution dan dashboard; ia tidak mengira, menaikkan atau menurunkan skor sendiri. Setiap perubahan skor mesti mengemas kini ZASS dan snapshot ACTION PLAN dalam commit atomik yang sama. Gunakan `Source: ZASS.md v<version> — same Git commit`; jangan cuba menulis SHA commit itu ke dalam fail kerana SHA hanya wujud selepas commit. GitHub Actions mengambil SHA sebenar daripada event commit dan menambahkannya pada mirror seperti Notion.
 
 ```text
 ZASS: Q-xxx / R-xxx / candidate / E-xxx need
@@ -957,7 +974,40 @@ Use experiments when discussion alone cannot resolve a decision. If `ACTION_PLAN
 
 # 18. ARCHITECTURE READINESS
 
-Confirmed architecture is allowed only when:
+`ZERO → ARCHITECTURE` mengukur kematangan idea untuk dijadikan architecture. Ia **bukan** ukuran kemajuan coding, execution atau keseluruhan projek.
+
+Gunakan skor telus berikut:
+
+| Kriteria | Berat |
+|---|---:|
+| Tujuan atau masalah jelas | 10% |
+| Pengguna/stakeholder dan hasil yang dikehendaki jelas | 10% |
+| Scope dan non-goals jelas | 10% |
+| Constraints dan quality attributes penting diketahui | 10% |
+| Pilihan serta trade-off telah dibandingkan | 10% |
+| Andaian kritikal telah ditutup atau mempunyai eksperimen | 15% |
+| Risiko utama telah ditangani | 10% |
+| Aliran utama sistem jelas | 10% |
+| Keputusan utama sudah `LOCKED` | 10% |
+| Tiada blocker architecture yang kritikal | 5% |
+
+Nilai setiap kriteria sebagai `0 = belum ada`, `0.5 = separa`, atau `1 = lengkap`, kemudian darabkan dengan beratnya. AI mesti menyatakan sebab ringkas bagi markah dan blocker utama; jangan cipta ketepatan palsu atau menaikkan markah kerana perbincangan panjang.
+
+Status:
+
+| Skor | Status |
+|---:|---|
+| 0–19% | `RAW` |
+| 20–39% | `EXPLORING` |
+| 40–59% | `SHAPING` |
+| 60–69% | `DECIDING` |
+| 70–84% | `READY FOR DRAFT ARCH` |
+| 85–99% + draf wujud dan sedang direview | `DRAFT ARCH UNDER REVIEW` |
+| 100% | `ARCHITECTURE CONFIRMED` |
+
+Apabila skor mencapai sekurang-kurangnya 70%, AI mesti **mencadangkan** draf architecture tetapi tidak membinanya secara automatik. Status tidak naik kepada `DRAFT ARCH UNDER REVIEW` hanya kerana skor mencapai 85%; draf mesti benar-benar wujud dan sedang direview. Skor 100% hanya diberi selepas pintu pengesahan dua langkah selesai dan pemilik menjawab tepat `YA, CONFIRM ARCHITECTURE`.
+
+Selain skor, confirmed architecture dibenarkan hanya apabila:
 
 - [ ] Core problem is clear
 - [ ] Primary users are known
@@ -971,7 +1021,11 @@ Confirmed architecture is allowed only when:
 - [ ] Major candidate architectures have been resolved or intentionally deferred
 - [ ] Known blockers are documented
 
-**Readiness:**
+**ZERO → ARCHITECTURE score:**
+
+`[░░░░░░░░░░] 0% — RAW`
+
+**Readiness gate:**
 
 `NOT READY / READY`
 

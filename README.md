@@ -8,11 +8,19 @@
 
 ZASS is a Markdown framework for developing raw ideas into tested options, decisions locked by the project owner, and traceable architecture. It works across ChatGPT, Gemini, Claude, Perplexity, and other AI models. AI helps explore and organize; the project owner makes the decisions.
 
-## Two ways to start
+## Choose a method
 
 - [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
 - [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and the draft/build confirmation gate remain explicit safeguards.
 - [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
+- [`ZASSELECTION.md`](ZASSELECTION.md) — **ZASSELECTION v0.1.0**, a separate Quick/Deep method for turning a dilemma into an explainable human selection. It does not replace ZASSIMPLE and does not produce architecture.
+- [`ZASSELECTION_EN.md`](ZASSELECTION_EN.md) — the English companion for the selection method.
+
+## ZASSELECTION
+
+ZASSELECTION separates `MUST-HAVES`, preferences, evidence, unknowns, cost, risk, feelings, reversibility, and human impact. Options failing a mandatory condition are eliminated before optional scoring. AI must recommend when evidence is sufficient, but only the owner may issue `SELECT`. The final record preserves rationale, consequences, confidence, and a revisit trigger.
+
+Use **Quick Selection** for small, reversible choices with at most three options and three primary criteria. Use **Deep Selection** for expensive, hard-to-reverse, high-impact, or uncertain decisions. The data model, Google Sheets event-log candidate, Google Sites display, Apps Script sync protocol, security controls, and acceptance criteria are kept separate in [`ZASSELECTION_DATA_SYNC_ARCHITECTURE.md`](ZASSELECTION_DATA_SYNC_ARCHITECTURE.md); that document is supporting design, not confirmed architecture.
 
 ## AI sync and visual dashboard pilot
 
@@ -45,6 +53,8 @@ Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architec
 
 Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PARK / PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
 
+Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / PARK / LOCK / COMMIT GIT` dan progress bar **ZERO → ARCHITECTURE**. Skor itu mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
+
 ## Get started in 3 steps
 
 1. Copy [`ZASS.md`](ZASS.md) into a new project folder. Keep one main ZASS file per project.
@@ -58,6 +68,8 @@ You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, s
 For an active project with multi-step execution, copy [`ACTION_PLAN_TEMPLATE.md`](ACTION_PLAN_TEMPLATE.md) into that project as `ACTION_PLAN.md`. It records current focus, priorities, next actions, experiments, evidence, blockers, lessons, completed work, parked work, and findings ready for ZASS review.
 
 ZASS remains the authority for discovery, decisions, LOCKED state, experiment requirements, readiness, and architecture. ACTION_PLAN records the live execution state. It uses the same `E-xxx` ID for an experiment that originated in ZASS, then returns mature results through **ZASS FEED** for review.
+
+ACTION_PLAN may also carry a read-only **ZERO → ARCHITECTURE snapshot** copied from the official ZASS assessment. ZASS calculates and owns the score; ACTION_PLAN stores one `Progress`, one `Status`, the source ZASS version, assessment date, next gated threshold, and critical blockers. Both files change in the same atomic commit. GitHub Actions supplies that commit's real SHA to downstream read-only mirrors such as Notion; the Markdown snapshot does not attempt to predict its own commit SHA.
 
 `ACTION_PLAN.md` is optional. A project containing only `ZASS.md` remains valid. Do not keep parallel task authorities by default. If a project adopts GitHub Issues/Projects, Jira, Linear, or another execution backend, name that backend as the execution authority; dashboards such as Notion should mirror it by default.
 
@@ -112,7 +124,7 @@ instruction such as “LOCK dan COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; documentation release v0.2.1 adds the full-ZASS AI sync and Google dashboard pilot design without changing baseline authority rules.
+**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.1 adds the authoritative ZERO → ARCHITECTURE snapshot contract between ZASS, ACTION PLAN, GitHub Actions, and read-only mirrors without changing baseline authority rules.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -148,7 +160,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; dokumentasi semasa ialah v0.2.1.
+**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.1. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 

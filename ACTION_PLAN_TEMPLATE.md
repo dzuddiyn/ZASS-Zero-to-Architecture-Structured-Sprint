@@ -15,6 +15,20 @@
 - **Architecture status:** [not started / draft / confirmed reference]
 - **Rule:** ZASS kekal authoritative untuk questions, risks, candidates, decisions, LOCKED decisions dan architecture readiness.
 
+## 🏗️ ZERO → ARCHITECTURE SNAPSHOT
+
+- **Progress:** [░░░░░░░░░░] 0%
+- **Status:** RAW
+- **Source:** `ZASS.md` v[version] — same Git commit
+- **Last assessed:** [YYYY-MM-DD]
+- **Next threshold:** 20% — EXPLORING
+
+**Critical blockers:**
+
+- None currently identified.
+
+> Snapshot ini menyalin skor rasmi daripada ZASS; ACTION_PLAN tidak mengiranya. Kemas kini ZASS dan snapshot ini dalam commit atomik yang sama. GitHub Actions mengambil SHA sebenar daripada event commit untuk mirror seperti Notion.
+
 ## 1. PROJECT SNAPSHOT
 
 | Milestone / outcome | Status | Progress / evidence | Related ZASS IDs |
@@ -114,3 +128,5 @@
 ## AI OPERATING RULE
 
 Apabila mengemas kini fail ini, kekalkan authority ZASS. Jangan ubah LOCKED decision atau architecture secara senyap. Jangan jadikan PASS sebagai decision secara automatik. Elakkan duplicate action: kemas kini action, experiment, PARKED item atau ZASS FEED yang sudah berkaitan.
+
+Gunakan satu nilai `Progress` dan satu `Status` sahaja dalam ZERO → ARCHITECTURE snapshot. `Next threshold` mesti menyatakan peratus dan status seterusnya. Jika tiada blocker, tulis `None currently identified`. Jangan ubah snapshot kerana task biasa selesai; ubah hanya selepas penilaian ZASS. Status `DRAFT ARCH UNDER REVIEW` memerlukan draf sebenar yang sedang direview, bukan angka 85% sahaja.
