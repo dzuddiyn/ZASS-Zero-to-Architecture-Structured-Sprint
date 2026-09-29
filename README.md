@@ -1,354 +1,477 @@
-# ZASS — Zero-to-Architecture Structured Sprint
+# ZASS
+## Zero-to-Architecture Structured Sprint
 
-**A structured brainstorming method**
+> **Think once. Keep the decisions. Continue with any AI.**
 
-**Blast an idea. Let AI organize it. Save its evolution on GitHub.**
+AI is great at thinking with you.
 
-> **Don't shortcut thinking; eliminate repeated thinking.**
+The problem starts when you change chats, change models, return a week later, or ask another AI to continue the same project.
 
-ZASS is a Markdown framework for developing raw ideas into tested options, decisions locked by the project owner, and traceable architecture. It works across ChatGPT, Gemini, Claude, Perplexity, and other AI models. AI helps explore and organize; the project owner makes the decisions.
+You repeat the context. Old decisions return. Rejected ideas come back. AI suggestions get mistaken for decisions. Architecture slowly drifts away from what you actually agreed.
 
-## Choose a method
+**ZASS gives your project a memory outside the AI.**
 
-- [`ZASS.md`](ZASS.md) — the full structured framework for evidence, experiments, decisions, and traceable architecture.
-- [`ZASSIMPLE.md`](ZASSIMPLE.md) — **ZASSIMPLE**, a lighter conversational template: AI responds naturally; an intentional `ZASS` or `ZASS!!` shows the structured update and contextual AI suggestion. Clear agreement becomes an agreed candidate, while `LOCK`, `COMMIT`, and the draft/build confirmation gate remain explicit safeguards.
-- [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md) — the English companion template for the same lighter conversational workflow.
-- [`ZASSELECTION.md`](ZASSELECTION.md) — **ZASSELECTION v0.1.0**, a separate Quick/Deep method for turning a dilemma into an explainable human selection. It does not replace ZASSIMPLE and does not produce architecture.
-- [`ZASSELECTION_EN.md`](ZASSELECTION_EN.md) — the English companion for the selection method.
-
-## ZASSELECTION
-
-ZASSELECTION separates `MUST-HAVES`, preferences, evidence, unknowns, cost, risk, feelings, reversibility, and human impact. Options failing a mandatory condition are eliminated before optional scoring. AI must recommend when evidence is sufficient, but only the owner may issue `SELECT`. The final record preserves rationale, consequences, confidence, and a revisit trigger.
-
-Use **Quick Selection** for small, reversible choices with at most three options and three primary criteria. Use **Deep Selection** for expensive, hard-to-reverse, high-impact, or uncertain decisions. The data model, Google Sheets event-log candidate, Google Sites display, Apps Script sync protocol, security controls, and acceptance criteria are kept separate in [`ZASSELECTION_DATA_SYNC_ARCHITECTURE.md`](ZASSELECTION_DATA_SYNC_ARCHITECTURE.md); that document is supporting design, not confirmed architecture.
-
-## AI sync and visual dashboard pilot
-
-[`ZASS_AI_SYNC_GOOGLE_DASHBOARD.md`](ZASS_AI_SYNC_GOOGLE_DASHBOARD.md) records the locked full-ZASS-first implementation order. Phase A mirrors the complete `ACTION_PLAN.md` from GitHub to Notion as read-only; compact dashboards, Google Sheets, and Google Sites are deferred until that mirror is stable. The report defines authority, confirmation, receipts, failure behavior, phases, and acceptance criteria. It is a design report, not a claim that the integration is already operational.
-
-## Prompt ZASSIMPLE selepas upload
-
-Selepas upload [`ZASSIMPLE.md`](ZASSIMPLE.md) ke chat AI, tampal prompt ini:
+It keeps the important thinking, decisions, evidence, and architecture in portable Markdown — with humans retaining control over what becomes authoritative.
 
 ```text
-https:/github.com/xxxx , ini adalah git untuk projek ini. Baca;
-
-ZASSIMPLE.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE.md)
-ATAU
-ZASS.md (https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md).
-
-Extract perbincangan kita ke dalam format ZASS. Jangan invent fakta yang saya tak beri.
-Tandakan setiap perkara yang relevan sebagai EXPLICIT (saya nyatakan),
-INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN.
-Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS, CONSTRAINTS, idea baharu, soalan dan risiko.
-Jangan overwrite maklumat sedia ada tanpa menunjukkan percanggahan.
-Jangan ubah LOCKED decisions. Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
-Jika ini projek baharu, namakan fail ZASS_[nama_projek].md.
-Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
-format dan file ini akan menjadi sebagai metodologi perbincangan dan source of truth projek ini.
-Beri rumusan dulu. Jangan commit tanpa kebenaran.
+Think anywhere
+      ↓
+Capture what matters
+      ↓
+Human-approved decisions
+      ↓
+GitHub Source of Truth
+      ↓
+Continue with any AI
 ```
 
-Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal sebelum pintu pengesahan.
+**Any AI can think. One trusted writer saves. GitHub remembers.**
 
-Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
+---
 
-Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / COMMIT` dan progress bar **ZERO → ARCHITECTURE**. Dalam ZASS penuh, `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. `COMMIT` bermaksud commit dan push perubahan yang telah diluluskan ke GitHub source of truth. Skor ZERO → ARCHITECTURE mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
+# Start ZASS your way
 
-## Complete example
+You do not need to learn the whole framework before using it.
 
-A complete end-to-end teaching fixture is available in [examples/01-small-farm-planner/](examples/01-small-farm-planner/README.md). It shows how a raw idea becomes questions, options, owner-approved LOCKED decisions, an ACTION PLAN, and a confirmed architecture without treating AI suggestions as decisions.
+## 1. Just brainstorm — zero setup
 
-Recommended reading order:
+Already discussing an idea somewhere else?
 
-1. [Example README](examples/01-small-farm-planner/README.md)
-2. [Walkthrough](examples/01-small-farm-planner/WALKTHROUGH.md)
-3. [Project ZASS](examples/01-small-farm-planner/ZASS.md)
-4. [ACTION_PLAN](examples/01-small-farm-planner/ACTION_PLAN.md)
-5. [ARCHITECTURE](examples/01-small-farm-planner/ARCHITECTURE.md)
+Keep going. No setup required.
 
-> The example is a **fictional teaching fixture**. It demonstrates ZASS mechanics and traceability; it is not validated product research or implementation advice.
-
-## Get started in 3 steps
-
-1. Copy [`ZASS.md`](ZASS.md) into a new project folder. Keep one main ZASS file per project.
-2. Give the latest file to an AI and describe your idea in ordinary language. For example: **“I have an idea for a cucumber and ginger drink. Brainstorm with me, then capture the important points in ZASS. Separate what I stated from your inferences and what we still don't know.”**
-3. Review the AI's summary of proposed changes. Save the latest version on GitHub so the next session or AI model can read the same decisions.
-
-You don't need to memorize IDs such as `I-001` or `D-001`. The AI manages IDs, statuses, and links between entries. See **Daily Use** near the top of [`ZASS.md`](ZASS.md) for simple instructions and optional prompts. The template's user guide is currently in Malay; the framework can be used in any language.
-
-## ACTION PLAN for active projects
-
-For an active project with multi-step execution, copy [`ACTION_PLAN_TEMPLATE.md`](ACTION_PLAN_TEMPLATE.md) into that project as `ACTION_PLAN.md`. It records current focus, priorities, next actions, experiments, evidence, blockers, lessons, completed work, parked work, and findings ready for ZASS review.
-
-ZASS remains the authority for discovery, decisions, LOCKED state, experiment requirements, readiness, and architecture. ACTION_PLAN records the live execution state. It uses the same `E-xxx` ID for an experiment that originated in ZASS, then returns mature results through **ZASS FEED** for review.
-
-ACTION_PLAN may also carry a read-only **ZERO → ARCHITECTURE snapshot** copied from the official ZASS assessment. ZASS calculates and owns the score; ACTION_PLAN stores one `Progress`, one `Status`, the source ZASS version, assessment date, next gated threshold, and critical blockers. Both files change in the same atomic commit. GitHub Actions supplies that commit's real SHA to downstream read-only mirrors such as Notion; the Markdown snapshot does not attempt to predict its own commit SHA.
-
-`ACTION_PLAN.md` is optional. A project containing only `ZASS.md` remains valid. Do not keep parallel task authorities by default. If a project adopts GitHub Issues/Projects, Jira, Linear, or another execution backend, name that backend as the execution authority; dashboards such as Notion should mirror it by default.
-
-## Versioning
-
-Each owner-locked template update is one logical Git commit covering every affected file. Record the change in [`CHANGELOG.md`](CHANGELOG.md), bump the visible version, and tag meaningful releases (for example, `v0.1.5`). Commits preserve detailed history; tags mark stable versions that are easy to return to.
-
-## Evidence and decision discipline
-
-ZASS keeps lightweight evidence fields without requiring new states for every finding: a one-sentence **problem being tested**, an experiment's **assumption**, **pass/fail signal**, **observed result**, **learning**, and **DEFER / PROCEED / PIVOT impact**. Risks can carry an **early warning signal**; decisions can record drivers, alternatives, consequences, and a revisit trigger.
-
-ZASS v0.3.3 also treats **Architecture Readiness** and **Evidence Confidence** as separate axes. A project can be structurally ready for a confirmed architecture while empirical validation is still `UNVALIDATED` or `LOW`; this distinction must remain visible rather than being hidden behind the readiness percentage.
-
-Cynefin triage, DACI roles, Design Sprint mode, and Wardley Mapping remain optional tools for the right context—not default ceremony.
-
-## Prompt for AI commits
-
-Use this prompt with another AI chat that will update this repository:
+When something becomes worth preserving:
 
 ```text
-Read the latest `ZASS.md`, `ZASS_EN.md`, `README.md`, and `CHANGELOG.md`
-in this repository before changing anything.
-
-Whenever you make a change that I LOCK and ask you to commit:
-
-1. Treat every affected file as one logical change.
-2. Update all related files in ONE atomic Git commit, not one commit per file.
-3. Bump the visible ZASS version:
-   - PATCH (`v0.1.x`) for fixes, clarifications, or small template changes.
-   - MINOR (`v0.x.0`) for a meaningful new capability or flow.
-   - MAJOR (`v1.0.0`) only for a breaking change to the basic workflow.
-4. Update `CHANGELOG.md` with the new version, date, and a concise factual summary.
-5. Update the same visible version in `ZASS.md`, `ZASS_EN.md`, and `README.md` where shown.
-6. Use a clear commit message, for example: `Release ZASS v0.1.5`.
-7. After committing, report the new version, commit SHA, changed files, and changelog summary.
-8. Do not change LOCKED decisions or baselines without my explicit instruction.
-9. If I ask to publish a GitHub release, create a matching tag, for example `v0.1.5`.
-
-Do not commit when I only ask for a demo, suggestion, or review. Wait for an explicit
-instruction such as “COMMIT”.
+useful conversation
+       ↓
+copy / paste
+       ↓
+trusted GitHub-writer AI
+       ↓
+ZASS
+       ↓
+review / decide
+       ↓
+COMMIT
 ```
 
-## The ZASS flow
+**Start structured, or start messy. ZASS can capture it later.**
 
-`Explore freely → Challenge assumptions → Compare options → Test when needed → Owner decides → Lock → Build architecture`
+---
 
-- AI suggestions are **candidates**, not decisions.
-- Agreement between AI models is not evidence. Disagreement becomes a question, experiment, or trade-off to resolve.
-- Only the project owner can authorize a decision to become **LOCKED**. In full ZASS, `PROCEED` is that approval for any proposed lock not explicitly rejected or changed.
-- Locked decisions must never be changed silently.
-- Architecture is generated when critical decisions and readiness conditions are satisfied.
+## 2. Public project — paste the link
 
-## Using this file
+If your ZASS project is public, paste the repository URL into another AI that can read public links.
 
-The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
-
-**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.3 removes the Full-ZASS PARK command while retaining the PARKED state, and separates Evidence Confidence from Architecture Readiness.
-
----------------------------------------------------------------------------------------------------------
-
-
-
-# ZASS — Zero-to-Architecture Structured Sprint
-
-just BLAST an IDEA, AI & GitHub save it!
-
-**Bukan potong fikir; potong ulang fikir.**
-
-ZASS ialah rangka kerja Markdown untuk mematangkan idea mentah menjadi pilihan yang diuji, keputusan yang dikunci oleh pemilik projek, dan architecture yang boleh dijejak. Ia boleh dibawa antara ChatGPT, Gemini, Claude, Perplexity dan AI lain. AI membantu meneroka dan menyusun; pemilik projek menentukan keputusan.
-
-## Mula dalam 3 langkah
-
-1. Salin [`ZASS.md`](ZASS.md) ke folder projek baharu. Gunakan satu fail ZASS utama bagi setiap projek.
-2. Berikan fail terkini itu kepada AI dan cerita idea dalam bahasa biasa. Contoh: **“Aku ada idea untuk produk jus timun halia. Tolong brainstorm, kemudian susun isi penting dalam ZASS. Bezakan fakta, tafsiran dan perkara yang belum diketahui.”**
-3. Semak ringkasan perubahan yang AI cadangkan. Simpan versi terkini dalam GitHub supaya sesi atau model AI seterusnya membaca keputusan yang sama.
-
-Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, status dan hubungan antara entri. Lihat bahagian **Cara Guna Harian** di atas fail [`ZASS.md`](ZASS.md) untuk contoh arahan ringkas dan prompt pilihan.
-
-## Aliran ZASS
-
-`Idea bebas → Cabar andaian → Banding pilihan → Uji bila perlu → Pemilik putuskan → Lock → Bina architecture`
-
-- Cadangan AI ialah **calon**, bukan keputusan.
-- Persetujuan beberapa AI bukan bukti; perbezaan pandangan menjadi soalan, eksperimen atau trade-off.
-- Hanya pemilik projek boleh membenarkan keputusan menjadi **LOCKED**. Dalam ZASS penuh, `PROCEED` menjadi approval itu bagi cadangan LOCK yang tidak dibantah atau diubah.
-- Keputusan terkunci tidak boleh diubah secara senyap.
-- Architecture dijana apabila keputusan penting dan syarat kesediaan telah dipenuhi.
-
-## Cara guna fail ini
-
-Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
-
-**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.3. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
-
-## PROMPT SIAP GUNA — RUJUKAN PILIHAN
-
-Prompt di bawah membantu apabila bertukar AI, mahu review yang tepat, atau AI tersalah faham. Abang tidak wajib menyalinnya untuk penggunaan harian. Ubah bahagian dalam `[ ]` sahaja jika perlu.
-
-### A. Sembang bebas → kemas kini ZASS projek
+Example:
 
 ```text
-Baca ZASS.md terkini untuk projek [NAMA PROJEK]. Extract perbincangan kita ke dalam format ZASS.
-Jangan invent fakta yang saya tak beri. Tandakan setiap perkara yang relevan sebagai
-EXPLICIT (saya nyatakan), INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN.
-Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS,
-CONSTRAINTS, idea baharu, soalan dan risiko. Jangan overwrite maklumat sedia ada
-tanpa menunjukkan percanggahan. Jangan ubah LOCKED decisions.
-Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
-Jika ini projek baharu, namakan fail ZASS_[NAMA_PROJEK].md.
-Jika projek ini sudah ada fail ZASS, kemas kini fail yang sama; jangan cipta v2/final.
-Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
+Read this public ZASS project first:
+
+[PROJECT URL]
+
+Treat the repository as the Source of Truth.
+Respect all existing LOCKED decisions.
+
+Continue brainstorming with me naturally.
+Challenge assumptions and surface useful ideas, questions,
+risks and alternatives, but do not silently change LOCKED decisions.
+
+At the end of the session, export a Markdown handoff
+containing useful findings and proposed changes.
+
+The handoff is NOT the Source of Truth.
 ```
 
-Contoh nama projek baharu: `ZASS_Produk_Jus_TimunHalia.md`. Satu projek mempunyai satu fail ZASS utama; sejarah perubahan disimpan oleh Git. Lampirkan atau beri AI kandungan fail terkini setiap kali bertukar chat/model. Salinan dalam chat bukan versi autoritatif.
-
-### B. Saya sudah ada idea berstruktur → tampal dan minta AI semak
+Bring the resulting `ZASS_HANDOFF.md` back to your trusted writer.
 
 ```text
-RAW IDEA
-Produk minuman berasaskan timun + halia menggunakan timun reject.
-
-WHY I WANT THIS
-- Kurangkan waste timun.
-- Cari produk value-added.
-
-GOALS
-- Produk mudah dihasilkan.
-- Boleh diuji pada skala kecil.
-
-NON-GOALS
-- Belum mahu bina kilang besar.
-
-CONSTRAINTS
-- Modal awal rendah.
-- Shelf life belum diketahui.
-
-Masukkan ke ZASS projek ini. Anggap contoh di atas sebagai input idea sahaja,
-bukan keputusan LOCKED. Tandakan fakta EXPLICIT, tafsiran INFERRED, dan perkara
-UNKNOWN sebagai soalan. Jangan invent angka atau spesifikasi.
+Another AI
+    ↓
+brainstorm / challenge / review
+    ↓
+ZASS_HANDOFF.md
+    ↓
+trusted writer checks latest repo
+    ↓
+human approval
+    ↓
+COMMIT
 ```
 
-Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 di bawah secara automatik. Jika idea baru masih dalam projek yang sama, minta AI mencadangkan pindaan pada fail sedia ada, menjaga ID dan keputusan terdahulu.
+---
 
-### C. Blast dari satu perspektif
+## 3. CLI — fastest structured start
+
+The official ZASS CLI onboarding path is being prepared.
+
+Target experience:
+
+```bash
+npm create zass@latest my-project
+```
+
+Target minimal project:
+
+```text
+my-project/
+├── ZASSIMPLE.md
+├── README.md
+└── .gitignore
+```
+
+ZASSIMPLE is the default. No method-selection wizard.
+
+> **CLI implementation is not released yet.**
+
+---
+
+## 4. File — start now
+
+Download or copy:
+
+**[ZASSIMPLE.md](ZASSIMPLE.md)**
+
+Give it to your AI and talk normally.
+
+You do not need to fill forms or memorize IDs.
+
+When you want the conversation organized, say:
 
 ```text
 ZASS
-Mode: Industrial product thinking
-Scope: RAW IDEA
-Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
 ```
 
-### D. Review idea yang masih awal
+When a decision is final:
 
 ```text
-ZASS REVIEW
-Method: Constraints + Quality Attributes
-Scope: RAW IDEA / Whole system
-Focus: [contoh: kos, pengguna, penyelenggaraan]
-Do not modify LOCKED decisions.
-Return only: findings, contradictions, risks, questions, candidate experiments,
-and candidate decisions.
+LOCK DECISION
 ```
 
-### E. Review sasaran khusus
+When approved project state should be saved:
 
 ```text
-ZASS REVIEW
-Method: Hacker / assumption breaking
-Scope: [terangkan topik, bahagian, atau ID jika tahu]
-Goal: Cari failure mode, hidden assumption dan edge case.
-Focus: [contoh: input berulang, rangkaian terputus, salah izin]
-Do not modify LOCKED decisions.
-Return only:
-- findings
-- contradictions
-- risks
-- questions
-- candidate experiments
-- candidate decisions
+COMMIT
 ```
-
-Jika mahu, skop boleh ditulis secara biasa, contohnya “proses approval claim”. AI yang mencari ID sebenar dalam fail. `Scope: AC-001, AC-005–AC-011` hanya sesuai jika calon itu sudah direkodkan. `ATAM` lebih berguna untuk menilai candidate architecture yang cukup matang; pada tahap idea mentah gunakan BLAST atau review constraints dahulu.
-
-`AC` bermaksud **calon cara sistem dibina**; `D` bermaksud **perkara yang abang putuskan** selepas menimbang pilihan. Butiran ID untuk AI ada di hujung fail.
-
-Sebelum menyimpan pindaan AI, semak `diff`: apa yang ditambah, dibuang atau diubah; khususnya ID, fakta EXPLICIT/INFERRED, dan keputusan LOCKED.
-
-### Melalui telefon sahaja
-
-**Untuk edit ringkas dengan aplikasi GitHub Mobile:** pasang aplikasi GitHub rasmi dan log masuk. Buka repository → **Browse code** → buka fail ZASS projek → menu **⋯** di penjuru kanan atas → **Edit File** → ubah teks → **Commit**. Pilih branch yang sedang dibuka jika mahu perubahan terus pada branch itu. Commit dalam aplikasi sudah menyimpan perubahan pada GitHub; tiada `git push` tambahan. Semak nama branch sebelum commit.
-
-**Untuk fail baharu yang AI hasilkan:** buka `github.com` dalam pelayar telefon → repository → **Add file → Upload files** → pilih `.md` yang dimuat turun → commit. Pastikan nama dan folder betul. Jika ZASS untuk projek itu sudah wujud, jangan upload satu lagi fail versi baharu; buka fail sedia ada dan kemas kini kandungannya selepas membandingkan perubahan.
-
-Sebelum sesi AI seterusnya, buka atau muat turun versi terkini dari repo. Jika PC mempunyai salinan repo, jalankan `git pull` di PC sebelum menyunting lagi. Pindaan besar pada fail panjang lebih mudah disemak di PC.
-
-Jika pilihan GitHub sukar kelihatan pada skrin kecil, cuba **Desktop site** dalam menu pelayar. Jangan letakkan rahsia, kata laluan atau token dalam ZASS yang akan di-commit.
 
 ---
 
-## Brainstorming Methods and Perspectives
+# The core idea
 
-| Method | Brief review |
+ZASS separates three things that AI conversations often blur together:
+
+```text
+AI suggestion
+      ≠
+Owner decision
+      ≠
+Git change
+```
+
+AI can propose.
+
+Humans decide.
+
+Git records what actually became project state.
+
+A suggestion never becomes a decision merely because an AI wrote it. A decision never becomes a Git change merely because someone discussed it.
+
+---
+
+# From idea to architecture
+
+```text
+RAW IDEA
+    ↓
+EXPLORE
+    ↓
+QUESTIONS / RISKS / OPTIONS
+    ↓
+TEST when needed
+    ↓
+HUMAN DECISION
+    ↓
+LOCKED
+    ↓
+DRAFT ARCHITECTURE
+    ↓
+REVIEW
+    ↓
+YA, CONFIRM ARCHITECTURE
+    ↓
+CONFIRMED ARCHITECTURE
+```
+
+ZASS does not ask AI to invent architecture first and justify it later.
+
+Architecture must follow the decisions that were actually accepted.
+
+---
+
+# A 2-minute example
+
+You start naturally:
+
+```text
+I want to build a simple app that helps small farmers
+remember daily crop tasks.
+```
+
+Ask:
+
+```text
+ZASS
+```
+
+The AI organizes what matters:
+
+```text
+Idea
+Goals
+Unknowns
+Risks
+Options
+Possible decisions
+```
+
+After discussion, you choose:
+
+```text
+Use a PWA for v0.1.
+Keep data local.
+Provide export/import backup.
+```
+
+Those choices become explicit project decisions.
+
+Later:
+
+```text
+DRAFT ARCH
+```
+
+ZASS builds a working architecture draft from what is known and LOCKED.
+
+Before final confirmation:
+
+```text
+BUILD ARCHITECTURE
+```
+
+The AI shows the decisions, assumptions, and blockers being used.
+
+Only the project owner can finally confirm:
+
+```text
+YA, CONFIRM ARCHITECTURE
+```
+
+A complete fictional walkthrough is available here:
+
+**[Small Farm Planner example](examples/01-small-farm-planner/README.md)**
+
+---
+
+# ZASSIMPLE first. Full ZASS when needed.
+
+Most projects should start with **ZASSIMPLE**.
+
+Use it while you are mainly figuring out:
+
+> **What should I build?**
+
+Move to **Full ZASS** when you increasingly need to explain or prove:
+
+> **Why should it be built this way?**
+
+Full ZASS becomes useful when:
+
+- important decisions depend on each other;
+- evidence or experiments are needed;
+- several architecture options have meaningful trade-offs;
+- privacy, security, money, data loss, or operational risk matters;
+- decision history becomes difficult to track conversationally.
+
+You do not migrate because a project becomes “big”.
+
+You migrate because the **decision complexity** becomes important.
+
+**Start here:** [ZASSIMPLE.md](ZASSIMPLE.md)  
+**English ZASSIMPLE:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
+**Full method:** [ZASS.md](ZASS.md)  
+**English Full method:** [ZASS_EN.md](ZASS_EN.md)
+
+---
+
+# When the problem is choosing
+
+Sometimes you do not need architecture.
+
+You simply need to make a difficult choice.
+
+That is what **ZASSELECTION** is for.
+
+It separates:
+
+```text
+must-haves
+preferences
+evidence
+unknowns
+cost
+risk
+feelings
+reversibility
+human impact
+```
+
+AI may compare and recommend. Only the human selects.
+
+**[ZASSELECTION.md](ZASSELECTION.md)**  
+**[ZASSELECTION_EN.md](ZASSELECTION_EN.md)**
+
+---
+
+# Architecture readiness is not evidence confidence
+
+ZASS keeps these separate.
+
+```text
+Architecture Readiness
+= Are we clear enough to build the architecture?
+
+Evidence Confidence
+= How strongly is the project supported by observed evidence?
+```
+
+A project can have:
+
+```text
+Architecture Readiness: 100%
+Evidence Confidence: LOW
+```
+
+That means the architecture is internally clear enough to confirm, but important real-world assumptions may still need validation.
+
+ZASS currently uses:
+
+```text
+UNVALIDATED
+LOW
+MEDIUM
+HIGH
+```
+
+for Evidence Confidence.
+
+---
+
+# One Source of Truth
+
+For a Git-backed ZASS project:
+
+> **GitHub is the Source of Truth.**
+
+Not the chat. Not AI memory. Not whichever model you used last.
+
+```text
+GitHub
+  ↑
+trusted writer
+  ↑
+human approval
+  ↑
+ideas from any AI
+```
+
+This makes cross-AI work practical.
+
+Different AI tools do not all need the same integrations. They only need a way to understand the project state and return useful thinking.
+
+---
+
+# What ZASS is not
+
+ZASS is not:
+
+- an AI model;
+- a project-management replacement;
+- a requirement to document every thought;
+- a voting system between multiple AIs;
+- permission for AI to silently change earlier decisions.
+
+ZASS is a **decision-control layer for AI-assisted work**.
+
+Its job is simple:
+
+> **Preserve the thinking that matters, keep decisions human-controlled, and make the resulting architecture traceable.**
+
+---
+
+# Current methods
+
+| Need | Use |
 |---|---|
-| **Industrial / C4 / arc42 / ATAM** | Structure components, responsibilities, flows, and trade-offs; assess whether the design meets real operational quality requirements. |
-| **Academic / DSRM / GQM** | Turn an idea into a problem, questions, method, measures, and evidence; ensure claims can be tested or defended. |
-| **Hacker / failure injection / assumption breaking** | Break system assumptions creatively through unusual inputs, unexpected conditions, network loss, and incorrect action sequences. |
-| **Security / threat modelling** | Identify important assets, possible attackers, attack paths, damage impact, and the controls that need to exist. |
-| **Abuse / Scammer mindset** | Imagine users seeking unfair advantage through false claims, duplicate accounts, or price manipulation; record prevention, not tricks. |
-| **Cost / unit economics** | Calculate build, running, and maintenance costs; identify hidden costs, budget limits, and the break-even point. |
-| **Maintainability** | Assess whether a future person can read, repair, upgrade, and recover the system without relying on its original creator. |
-| **Operations / reliability** | Focus on daily work: monitoring, alerts, handover, backup, recovery, capacity, and what happens when people are unavailable. |
-| **Scalability** | Test what changes when users, data, instructions, or integrations grow by ten to one hundred times. |
-| **Crazy / unconstrained brainstorming** | Temporarily suspend limits of technology, cost, and convention; find unexpected possibilities before filtering through real constraints. |
-| **User-experience / workflow** | Follow the user journey from intent to outcome; find confusion, unnecessary steps, risky decisions, and waiting points. |
-| **Single-maintainer perspective** | Assess everything through one system caretaker's time, energy, skills, documentation, cost, and risk of exhaustion. |
-| **Artist / emotional experience** | Assess the felt experience: does the system make people feel relief, confidence, enjoyment, calm, or meaning? |
-| **First-principles thinking** | Break assumptions into basic facts; rebuild options from what is truly needed instead of customary practice. |
-| **Systems thinking** | Examine feedback loops, side effects, delays, and related parties; avoid fixing one part while damaging another. |
-| **Product / market lens** | Ask who will willingly use it, which problem hurts enough, the alternatives available, and why people would choose this solution. |
-| **Legal / compliance lens** | Check legal duties, data privacy, records, consent, liability, and industry requirements before remediation becomes expensive. |
-| **Ethics / harm lens** | Find who may be harmed, excluded, or disadvantaged; set decision boundaries even when an option appears profitable. |
-| **Accessibility / inclusion lens** | Test whether people with different abilities, languages, devices, connectivity, or literacy can still use the system safely. |
-| **Data / evidence lens** | Define which data must be trusted, its source and quality, who can change it, and how audit proves truth. |
-| **Privacy / trust lens** | Minimize collected data; make purpose, access, retention, and the user's ability to regain control clear. |
-| **Resilience / offline lens** | Imagine loss of internet, AI providers, or integrations; define minimum function, queues, retries, and recovery after return. |
-| **Red team / adversarial review** | Search for weaknesses from an opposing party's perspective, but produce only risks, evidence, and defensive controls. |
-| **Reverse planning / pre-mortem** | Assume the project failed a year later; list likely reasons and create early actions to reduce them. |
-| **Analogy / cross-domain lens** | Borrow patterns from hospitals, banks, factories, games, or farms to find solutions not yet considered. |
-| **Minimal viable experiment** | Avoid long debate by creating the smallest test that can reject or support the central assumption. |
-| **Future-back / scenario planning** | Imagine several plausible futures; check whether today's decision remains useful as conditions change. |
-| **Stakeholder / conflict lens** | Map who benefits, who carries work or risk, and conflicts of interest that need early management. |
+| Start casually and preserve important decisions | **ZASSIMPLE** |
+| Deep decision / evidence / architecture governance | **Full ZASS** |
+| Choose between alternatives | **ZASSELECTION** |
+| Track persistent implementation work | **ACTION PLAN** |
 
-For **Abuse / Scammer mindset**, output must remain limited to risks, evidence, detection, and preventive controls. Do not record bypass, deception, or illegal monetization steps.
+You normally do **not** need all of them at the beginning.
 
 ---
 
-## Status after an update
+# Current status
 
-After AI actually updates the ZASS file, it should state: **“ZASS has been updated in the ZASS format and is ready for structured brainstorming.”** If it only proposes changes, it must say that the file has not yet been updated.
+**Full ZASS:** v0.3.3  
+**ZASSIMPLE:** v0.1.6  
+**ZASSELECTION:** v0.1.0
 
-## Default next action
+Current Full-ZASS commands:
 
-Every `ZASS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary and Suggestions**: 1–3 short natural paragraphs that may summarize findings, connect patterns, or offer clearly-labelled candidate ideas. It remains advice, not a decision. This is followed by a **🧭 Next-Day Action Proposal**: one small action for tomorrow with its expected output, **💰 cost**, **⏱️ time**, and **🛑 stop rule**. Visual separators keep the summary, action, and next-step choice easy to scan.
+```text
+ZASS!!
+PROCEED
+PIVOT
+COMMIT
+```
 
-It then asks:
-
-**👉 NEXT STEP — PROCEED ▶️ or PIVOT 🔄?**
+`PARKED` remains a project state, but `PARK` is no longer a Full-ZASS command.
 
 ---
 
-- `PROCEED ▶️` — the owner accepts and continues every proposal in the latest ZASS mapping that was not explicitly rejected or changed. Proposals clearly marked for LOCK become LOCKED; PROCEED itself does not commit or push. `COMMIT` then commits and pushes the approved changes to the GitHub source of truth.
+# Learn more
+
+Detailed documentation is moving to the **GitHub Wiki** so this README can remain a fast landing page.
+
+The Wiki/reference layer will contain:
+
+- Full ZASS guide
+- ZASSIMPLE guide
+- ZASSELECTION guide
+- architecture workflow
+- ZERO → ARCHITECTURE
+- Evidence Confidence
+- ACTION PLAN
+- cross-AI handoff
+- advanced review methods
+- diagrams and infographics
+- implementation and integration notes
+
+Until that migration is complete, the authoritative method files remain in this repository.
 
 ---
 
-- `PIVOT 🔄` — AI preserves the earlier candidates and suggests a **🔀 pivot candidate** that addresses the same underlying problem.
+# The principle
 
-### Naming
+> **Don't shortcut thinking. Eliminate repeated thinking.**
 
-**ZASS** is the framework's official name. **ZASS** is the action that opens and explores an idea. `Victim-Abuser Red Team` is the ZASS preset name; use **Abuse Red Teaming** or **Product Safety Red Teaming** when explaining the method outside ZASS.
+Think freely.
 
-### Three Minds review preset
+Let AI challenge you.
 
-- **Engineer** — feasibility, modules, data, cost, constraints, and technical tests.
-- **Artist** — human journey, language, story, and emotional experience.
-- **Victim-Abuser Red Team** — human harm, misuse, detection signals, and preventive controls.
+Keep the useful state.
 
-Use it with: `ZASS REVIEW — Method: Three Minds`.
+Make the decision yourself.
+
+Then let architecture follow what you actually decided.

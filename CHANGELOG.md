@@ -4,6 +4,7 @@ All notable changes to ZASS are recorded here.
 
 ## [v0.3.3] — 2026-09-30
 
+- Implemented the new lightweight root README landing page and locked the **Start ZASS Your Way** presentation order as **Just Brainstorm → Public Project → CLI → File**; this is a presentation change only and does not change onboarding authority semantics.
 - Removed the dedicated Full-ZASS `PARK` command and footer action; the Full-ZASS command surface is now `ZASS!! / PROCEED / PIVOT / COMMIT`. The `PARKED` state remains available for deferred execution/history.
 - Locked the semantic separation `AI suggestion ≠ Owner decision ≠ Git change` without requiring a new mandatory response layout.
 - Added qualitative **Evidence Confidence** (`UNVALIDATED / LOW / MEDIUM / HIGH`) as a separate axis from ZERO → ARCHITECTURE readiness; the readiness formula is unchanged and 100% readiness does not imply empirical validation.

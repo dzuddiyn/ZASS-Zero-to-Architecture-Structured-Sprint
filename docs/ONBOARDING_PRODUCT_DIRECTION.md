@@ -349,18 +349,22 @@ Suggested section:
 ```text
 START ZASS YOUR WAY
 
-① CLI
-   Start a new project instantly.
+① JUST BRAINSTORM
+   Think anywhere. Bring the useful parts back later.
 
-② FILE
-   Bring ZASSIMPLE.md to your AI.
-
-③ PUBLIC LINK
+② PUBLIC LINK
    Give any AI your public ZASS project URL.
 
-④ JUST BRAINSTORM
-   Think anywhere. Bring the useful parts back later.
+③ CLI
+   Start a new project instantly.
+
+④ FILE
+   Bring ZASSIMPLE.md to your AI.
 ```
+
+**LOCKED presentation order:** Ad-hoc brainstorm → Public project link → CLI → Manual file.
+
+This ordering is a landing-page presentation decision. It does not change the validity or authority rules of any onboarding path.
 
 All four paths converge on:
 
@@ -475,7 +479,7 @@ The root README should prioritize:
 
 1. the user pain / value proposition;
 2. the simple ZASS mental model;
-3. the four official onboarding paths;
+3. the four official onboarding paths, presented as **Just Brainstorm → Public Project → CLI → File**;
 4. a short practical demo;
 5. the complete example;
 6. links into Wiki/reference material for deeper concepts.
