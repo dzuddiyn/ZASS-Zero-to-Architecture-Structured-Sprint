@@ -53,7 +53,7 @@ Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architec
 
 Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PARK / PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
 
-Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / PARK / LOCK / COMMIT GIT` dan progress bar **ZERO → ARCHITECTURE**. Skor itu mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
+Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / PARK / COMMIT` dan progress bar **ZERO → ARCHITECTURE**. Dalam ZASS penuh, `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. `COMMIT` bermaksud commit dan push perubahan yang telah diluluskan ke GitHub source of truth. Skor ZERO → ARCHITECTURE mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
 
 ## Get started in 3 steps
 
@@ -107,7 +107,7 @@ Whenever you make a change that I LOCK and ask you to commit:
 9. If I ask to publish a GitHub release, create a matching tag, for example `v0.1.5`.
 
 Do not commit when I only ask for a demo, suggestion, or review. Wait for an explicit
-instruction such as “LOCK dan COMMIT”.
+instruction such as “COMMIT”.
 ```
 
 ## The ZASS flow
@@ -116,7 +116,7 @@ instruction such as “LOCK dan COMMIT”.
 
 - AI suggestions are **candidates**, not decisions.
 - Agreement between AI models is not evidence. Disagreement becomes a question, experiment, or trade-off to resolve.
-- Only the project owner can explicitly **LOCK** a decision.
+- Only the project owner can authorize a decision to become **LOCKED**. In full ZASS, `PROCEED` is that approval for any proposed lock not explicitly rejected or changed.
 - Locked decisions must never be changed silently.
 - Architecture is generated when critical decisions and readiness conditions are satisfied.
 
@@ -124,7 +124,7 @@ instruction such as “LOCK dan COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.1 adds the authoritative ZERO → ARCHITECTURE snapshot contract between ZASS, ACTION PLAN, GitHub Actions, and read-only mirrors without changing baseline authority rules.
+**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.2 folds proposed LOCK approval into PROCEED and defines COMMIT as commit + push, while preserving the baseline authority rules.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -152,7 +152,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 - Cadangan AI ialah **calon**, bukan keputusan.
 - Persetujuan beberapa AI bukan bukti; perbezaan pandangan menjadi soalan, eksperimen atau trade-off.
-- Hanya pemilik projek boleh **LOCK** keputusan secara jelas.
+- Hanya pemilik projek boleh membenarkan keputusan menjadi **LOCKED**. Dalam ZASS penuh, `PROCEED` menjadi approval itu bagi cadangan LOCK yang tidak dibantah atau diubah.
 - Keputusan terkunci tidak boleh diubah secara senyap.
 - Architecture dijana apabila keputusan penting dan syarat kesediaan telah dipenuhi.
 
@@ -160,7 +160,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.1. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
+**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.2. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 
@@ -321,7 +321,7 @@ It then asks:
 
 ---
 
-- `PROCEED ▶️` — AI recommends only the relevant next action: **🧪 experiment**, **🔍 ZASS REVIEW**, **🛠️ mini-prototype**, **⚖️ candidate decision**, **🔒 LOCK** (owner decision only), or **📦 COMMIT** (only after “LOCK dan COMMIT”).
+- `PROCEED ▶️` — the owner accepts and continues every proposal in the latest ZASS mapping that was not explicitly rejected or changed. Proposals clearly marked for LOCK become LOCKED; PROCEED itself does not commit or push. `COMMIT` then commits and pushes the approved changes to the GitHub source of truth.
 
 ---
 

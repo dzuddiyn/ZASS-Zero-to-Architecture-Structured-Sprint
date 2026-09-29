@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.1 (snapshot ZERO → ARCHITECTURE untuk ACTION PLAN dikunci; baseline keputusan v0.1 kekal)
+**Version:** 0.3.2 (PROCEED menyerap approval LOCK yang dicadangkan; COMMIT = commit + push; baseline keputusan v0.1 kekal)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,16 +39,16 @@ AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir,
 
 Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
 
-Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PARK / PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. Arahan `LOCK`, `COMMIT GIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
+Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PARK / PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
 
 Akhiri **setiap** balasan AI dengan:
 
 ```text
-[🧠 ZASS !!]--[▶️ PROCEED]--[🔄 PIVOT]--[🅿️ PARK]--[🔒 LOCK]--[📦 COMMIT GIT]
+[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [🅿️ PARK] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.2.1 / latest v0.3.0
+⬆️ UPDATE ZASS? now v0.3.1 / latest v0.3.2
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status dan versi contoh dengan keadaan sebenar. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
@@ -56,11 +56,10 @@ Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus,
 Maksud arahan footer:
 
 - `ZASS!!` — jalankan penerokaan penuh mengikut format ZASS.
-- `PROCEED` — pilih dan jalankan tindakan seterusnya yang paling sesuai dengan keadaan semasa.
+- `PROCEED` — terima dan teruskan semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik. Jika ZASS jelas mencadangkan sesuatu keputusan untuk LOCK, PROCEED ialah approval pemilik untuk menjadikannya LOCKED. PROCEED tidak commit atau push.
 - `PIVOT` — cadangkan arah alternatif berdasarkan kelemahan, bukti atau kekangan semasa.
 - `PARK` — rekod idea dengan selamat dan hentikan proses aktif setakat itu.
-- `LOCK` — kunci hanya keputusan yang dinyatakan dengan jelas; jangan anggap seluruh perbincangan telah dikunci.
-- `COMMIT GIT` — selepas perubahan dibenarkan, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub apabila akses tersedia, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
+- `COMMIT` — selepas perubahan diluluskan melalui PROCEED atau arahan pemilik yang setara, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
 
 Apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`, bandingkan versi fail projek dengan versi terkini repo rasmi jika akses tersedia. Jika berlainan, paparkan `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. Jika sama, paparkan `✅ ZASS UP TO DATE — v<version>`. Jika semakan tidak boleh dibuat, paparkan `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; jangan reka nombor versi.
 
@@ -369,8 +368,8 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
   - **🔍 ZASS REVIEW** — nyatakan **Method**, **Scope**, **Focus**, dan sebab ringkas.
   - **🛠️ Bina mini-prototype** — hasilkan artefak atau simulasi kecil untuk diuji.
   - **⚖️ Cadangkan keputusan** — banding pilihan, bukti dan trade-off dalam `D-xxx`; belum LOCK.
-  - **🔒 LOCK keputusan** — hanya apabila pemilik menyatakan keputusan dengan jelas.
-  - **📦 COMMIT ke GitHub** — hanya selepas arahan jelas **“LOCK dan COMMIT”**; simpan satu commit ber-versi yang boleh dijejak.
+  - **▶️ PROCEED** — pemilik menerima semua cadangan ZASS yang tidak dibantah atau diubah; cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
+  - **📦 COMMIT** — commit dan push perubahan yang telah diluluskan ke GitHub sebagai satu commit ber-versi yang boleh dijejak; laporkan SHA sebenar hanya selepas push berjaya.
 
 ---
 
@@ -1165,9 +1164,13 @@ Attack assumptions, edge cases, failure modes and contradictions.
 
 Return unresolved decision candidates and their trade-offs.
 
-### LOCK D-XXX
+### PROCEED
 
-Project owner approves and locks a decision.
+Pemilik projek meluluskan semua cadangan dalam pemetaan ZASS terakhir yang tidak dibantah atau diubah. Mana-mana cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
+
+### COMMIT
+
+Commit perubahan yang telah diluluskan sebagai satu commit atomik ber-versi dan push ke GitHub source of truth. Laporkan kejayaan hanya selepas push berjaya dan pulangkan commit SHA sebenar.
 
 ### DRAFT ARCH
 

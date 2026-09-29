@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.1 (ZERO → ARCHITECTURE snapshot for ACTION PLAN locked; baseline decisions v0.1 remain unchanged)
+**Version:** 0.3.2 (PROCEED absorbs approval of proposed LOCK transitions; COMMIT = commit + push; baseline decisions v0.1 remain unchanged)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,16 +39,16 @@ The AI must find the relevant entries, manage IDs and states behind the scenes, 
 
 Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
 
-An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `LOCK`, `COMMIT GIT`, and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` accepts every proposal from the latest ZASS mapping that the owner has not rejected or changed, including proposed LOCK transitions; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 
 End **every** AI reply with:
 
 ```text
-[🧠 ZASS !!]--[▶️ PROCEED]--[🔄 PIVOT]--[🅿️ PARK]--[🔒 LOCK]--[📦 COMMIT GIT]
+[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [🅿️ PARK] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.2.1 / latest v0.3.0
+⬆️ UPDATE ZASS? now v0.3.1 / latest v0.3.2
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, and versions with the actual state. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
@@ -56,11 +56,10 @@ The footer is a reminder, never an automatic command. Replace the example progre
 Footer command meanings:
 
 - `ZASS!!` — run full exploration using the ZASS format.
-- `PROCEED` — select and perform the most suitable next action for the current state.
+- `PROCEED` — accept and continue every proposal from the latest ZASS mapping that the owner has not rejected or changed. If ZASS clearly proposes a decision for LOCK, PROCEED is the owner's approval to make it LOCKED. PROCEED does not commit or push.
 - `PIVOT` — suggest an alternative direction based on current weaknesses, evidence, or constraints.
 - `PARK` — record the idea safely and stop active work at that point.
-- `LOCK` — lock only the explicitly stated decision; do not treat the whole discussion as locked.
-- `COMMIT GIT` — after changes are authorized, update affected files, version, and changelog as one atomic commit, push to GitHub when access is available, then report the real SHA. Never report success before the commit or push actually occurs.
+- `COMMIT` — after changes are approved through PROCEED or an equivalent owner instruction, update affected files, version, and changelog as one atomic commit, push to GitHub, then report the real SHA. Never report success before the commit and push actually occur.
 
 When the user intentionally issues `ZASS` or `ZASS!!`, compare the project file version with the latest official repository version when access is available. If they differ, show `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. If current, show `✅ ZASS UP TO DATE — v<version>`. If checking is unavailable, show `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; never invent a version number.
 
@@ -367,8 +366,8 @@ AI must then close the output with a clear question:
   - **🔍 ZASS REVIEW** — state the **Method**, **Scope**, **Focus**, and a short reason.
   - **🛠️ Build a mini-prototype** — create a small artifact or simulation to test.
   - **⚖️ Propose a decision** — compare options, evidence, and trade-offs in `D-xxx`; it is not LOCKED.
-  - **🔒 LOCK a decision** — only when the owner states the decision clearly.
-  - **📦 COMMIT to GitHub** — only after the explicit instruction **“LOCK dan COMMIT”**; save one traceable versioned commit.
+  - **▶️ PROCEED** — the owner accepts every ZASS proposal not explicitly rejected or changed; proposals clearly marked for LOCK become LOCKED. PROCEED does not commit or push.
+  - **📦 COMMIT** — commit and push approved changes to GitHub as one traceable versioned commit; report the real SHA only after the push succeeds.
 
 ---
 
@@ -1163,9 +1162,13 @@ Attack assumptions, edge cases, failure modes, and contradictions.
 
 Return unresolved decision candidates and their trade-offs.
 
-### LOCK D-XXX
+### PROCEED
 
-The project owner approves and locks a decision.
+The project owner approves every proposal in the latest ZASS mapping that was not explicitly rejected or changed. Any proposal clearly marked for LOCK becomes LOCKED. PROCEED does not commit or push.
+
+### COMMIT
+
+Commit the approved changes as one atomic versioned commit and push them to the GitHub source of truth. Report success only after the push succeeds and return the real commit SHA.
 
 ### DRAFT ARCH
 

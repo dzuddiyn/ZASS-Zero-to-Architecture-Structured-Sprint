@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.2] — 2026-09-29
+
+- Folded full-ZASS owner approval for proposed LOCK transitions into `PROCEED`: all proposals in the latest ZASS mapping are accepted unless the owner explicitly rejects or changes them.
+- Removed the separate LOCK command from the full-ZASS footer; the footer is now `[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [🅿️ PARK] -- [📦 COMMIT]`.
+- Defined full-ZASS `COMMIT` as one atomic versioned commit followed by a push to the GitHub source of truth; `PROCEED` never commits or pushes.
+- Kept ZASSIMPLE, ZASSELECTION, ACTION PLAN, architecture readiness, and the existing architecture confirmation gate unchanged.
+
 ## [ZASS AI Sync report v0.2] — 2026-09-28
 
 - Locked the implementation order: full ZASS → ACTION PLAN → complete read-only Notion mirror, followed by version/progress/failure testing and stabilization of confirmation and factual sync receipts.
