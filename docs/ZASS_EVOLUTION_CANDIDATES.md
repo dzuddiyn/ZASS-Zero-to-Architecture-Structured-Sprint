@@ -298,14 +298,14 @@ Use one **write-capable main client** to persist approved ZASS state, while othe
 
 Simple user mental model:
 
-\`\`\`text
+```text
 Main = save
 Others = explore
-\`\`\`
+```
 
 More precise architecture wording:
 
-\`\`\`text
+```text
 GitHub repository = Source of Truth
 
 Write-capable Main AI / client
@@ -322,7 +322,7 @@ Other AI tools
         └── return useful ideas or structured proposed deltas
                          │
                          └── back to Main for review / approval / persistence
-\`\`\`
+```
 
 The **Main App is not the Source of Truth**. GitHub remains the Source of Truth. The Main App is a trusted writer or gateway.
 
@@ -338,7 +338,7 @@ This may be easier for new users than requiring every AI platform to support Git
 
 ### Candidate workflow
 
-\`\`\`text
+```text
 1. Main reads latest project state from GitHub.
 2. User works normally in Main or another AI.
 3. For counter-brainstorming, give another AI the latest ZASS/ZASSIMPLE file.
@@ -347,11 +347,11 @@ This may be easier for new users than requiring every AI platform to support Git
 6. Run ZASS / review the delta.
 7. Owner approves through the method's normal approval semantics.
 8. COMMIT persists the approved change to GitHub.
-\`\`\`
+```
 
 For full ZASS, this can look like:
 
-\`\`\`text
+```text
 Other AI idea
 → Main
 → ZASS!!
@@ -359,9 +359,9 @@ Other AI idea
 → PROCEED
 → COMMIT
 → GitHub Source of Truth
-\`\`\`
+```
 
-For ZASSIMPLE, approval must continue to follow ZASSIMPLE semantics rather than importing full-ZASS \`PROCEED\`.
+For ZASSIMPLE, approval must continue to follow ZASSIMPLE semantics rather than importing full-ZASS `PROCEED`.
 
 ### Why this candidate matters
 
@@ -417,7 +417,7 @@ Prefer:
 
 Then show:
 
-\`\`\`text
+```text
 Claude / Gemini / Meta / ChatGPT / Other AI
                  ↓
         ideas / challenges / review
@@ -426,7 +426,7 @@ Claude / Gemini / Meta / ChatGPT / Other AI
                  ↓
               GitHub
           Source of Truth
-\`\`\`
+```
 
 Names are illustrative only; the architecture is capability-based.
 
@@ -461,7 +461,7 @@ Test with one real project:
 
 ### Relationship to existing candidates
 
-CR-008 complements the onboarding direction in \`docs/ONBOARDING_PRODUCT_DIRECTION.md\`.
+CR-008 complements the onboarding direction in `docs/ONBOARDING_PRODUCT_DIRECTION.md`.
 
 It also aligns with the broader portability principle:
 
