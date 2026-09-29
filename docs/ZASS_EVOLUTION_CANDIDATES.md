@@ -282,3 +282,189 @@ Use this file as the default holding area for future ZASS evolution ideas.
 New ideas may be appended as `CR-xxx` entries.
 
 They remain candidates until the project owner explicitly approves a change through the appropriate ZASS decision process.
+
+
+---
+
+## CR-008 — One Writer, Many Brainstormers
+
+**Status:** TEST  
+**Source:** External Meta AI review  
+**Scope:** Cross-AI workflow, onboarding mental model, GitHub persistence
+
+### Core idea
+
+Use one **write-capable main client** to persist approved ZASS state, while other AI tools can be used freely for exploration without needing direct GitHub write access.
+
+Simple user mental model:
+
+\`\`\`text
+Main = save
+Others = explore
+\`\`\`
+
+More precise architecture wording:
+
+\`\`\`text
+GitHub repository = Source of Truth
+
+Write-capable Main AI / client
+        │
+        ├── reads latest project state
+        ├── reviews proposed changes
+        ├── applies owner-approved changes
+        └── COMMIT → GitHub
+
+Other AI tools
+        │
+        ├── receive latest ZASS/ZASSIMPLE file or relevant context
+        ├── brainstorm / challenge / counter-review
+        └── return useful ideas or structured proposed deltas
+                         │
+                         └── back to Main for review / approval / persistence
+\`\`\`
+
+The **Main App is not the Source of Truth**. GitHub remains the Source of Truth. The Main App is a trusted writer or gateway.
+
+### Candidate onboarding phrase
+
+> **One AI saves. Any AI can think.**
+
+Alternative:
+
+> **Main = persist. Others = explore.**
+
+This may be easier for new users than requiring every AI platform to support GitHub write access.
+
+### Candidate workflow
+
+\`\`\`text
+1. Main reads latest project state from GitHub.
+2. User works normally in Main or another AI.
+3. For counter-brainstorming, give another AI the latest ZASS/ZASSIMPLE file.
+4. Other AI returns ideas, questions, risks, contradictions, or proposed changes.
+5. Bring the useful result back to Main.
+6. Run ZASS / review the delta.
+7. Owner approves through the method's normal approval semantics.
+8. COMMIT persists the approved change to GitHub.
+\`\`\`
+
+For full ZASS, this can look like:
+
+\`\`\`text
+Other AI idea
+→ Main
+→ ZASS!!
+→ owner review
+→ PROCEED
+→ COMMIT
+→ GitHub Source of Truth
+\`\`\`
+
+For ZASSIMPLE, approval must continue to follow ZASSIMPLE semantics rather than importing full-ZASS \`PROCEED\`.
+
+### Why this candidate matters
+
+Potential benefits:
+
+- removes the requirement that every AI must have GitHub integration;
+- keeps cross-AI brainstorming portable;
+- gives solo builders one simple persistence rule;
+- reduces platform-specific onboarding complexity;
+- preserves one authoritative project state;
+- makes copy/paste a valid fallback rather than a failure mode.
+
+### Capability classes instead of hard-coded app promises
+
+Do not make the core method depend on a permanent list of app names.
+
+Classify tools by capability:
+
+#### A. WRITE-CAPABLE
+
+Can read the current project and write approved changes back to the GitHub Source of Truth.
+
+#### B. READ / BRAINSTORM
+
+Can consume the current Markdown state and return analysis or candidate changes, but does not need repository write access.
+
+#### C. MANUAL BRIDGE
+
+No direct repository integration is required. The user can move the latest Markdown file or structured output between tools manually.
+
+App-specific capability tables may exist in documentation, but they should be treated as **time-sensitive implementation guidance**, not core ZASS semantics.
+
+### Current platform-reality note
+
+External reviews may overstate or understate what individual AI apps can do. Product capabilities, plan requirements, mobile surfaces, permissions, and write support change frequently.
+
+Therefore:
+
+- verify app capabilities from current official documentation before publishing a compatibility claim;
+- prefer capability-based wording in the main README;
+- keep any named-app matrix in a separate, refreshable document;
+- never make ZASS correctness depend on a particular vendor integration.
+
+### Candidate README positioning
+
+Instead of:
+
+> Choose an AI platform that supports ZASS.
+
+Prefer:
+
+> Use any AI to think. Use one trusted writer to save approved decisions.
+
+Then show:
+
+\`\`\`text
+Claude / Gemini / Meta / ChatGPT / Other AI
+                 ↓
+        ideas / challenges / review
+                 ↓
+         trusted write-capable client
+                 ↓
+              GitHub
+          Source of Truth
+\`\`\`
+
+Names are illustrative only; the architecture is capability-based.
+
+### Validation experiment
+
+Test with one real project:
+
+1. Maintain authoritative state in GitHub.
+2. Use one write-capable Main client.
+3. Use at least two other AI tools with no assumed write access.
+4. Give each the latest project Markdown.
+5. Return selected findings to Main.
+6. Persist only owner-approved changes.
+7. Check whether any context, LOCKED decision, provenance, or intent is lost.
+
+### Pass signals
+
+- user does not need every AI to integrate with GitHub;
+- switching AI does not require retelling the project;
+- only one authoritative project state exists;
+- unapproved external-AI suggestions never silently enter the Source of Truth;
+- manual copy/paste remains usable when integrations fail;
+- the workflow remains understandable to a solo builder without learning connector architecture.
+
+### Failure signals
+
+- users confuse the Main App with the Source of Truth;
+- multiple AI tools create competing authoritative copies;
+- stale files cause decisions to regress;
+- copy/paste strips provenance or decision status;
+- users assume named app capabilities that are no longer true.
+
+### Relationship to existing candidates
+
+CR-008 complements the onboarding direction in \`docs/ONBOARDING_PRODUCT_DIRECTION.md\`.
+
+It also aligns with the broader portability principle:
+
+> **Do not require every AI to understand the repository or have write access.**
+
+This candidate does not change current ZASS or ZASSIMPLE semantics.
