@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.3 (PARK command dibuang; PARKED state kekal; Evidence Confidence dipisahkan daripada Architecture Readiness)
+**Version:** 0.3.4 (PROCEED meluluskan hanya proposal set yang disenaraikan secara eksplisit; productization focus dikunci)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,7 +39,7 @@ AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir,
 
 Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
 
-Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
+Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` meluluskan **hanya** proposal set yang disenaraikan secara eksplisit dalam pemetaan ZASS terakhir di bawah `PROPOSED FOR PROCEED`. Item yang tidak disenaraikan tidak diluluskan. Jika set berubah, bercanggah, atau tidak jelas, AI mesti paparkan semula set sebelum PROCEED. Proposal yang jelas ditanda untuk LOCK menjadi LOCKED; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
 
 Akhiri **setiap** balasan AI dengan:
 
@@ -48,7 +48,7 @@ Akhiri **setiap** balasan AI dengan:
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.3.2 / latest v0.3.3
+⬆️ UPDATE ZASS? now v0.3.3 / latest v0.3.4
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status dan versi contoh dengan keadaan sebenar. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
@@ -56,7 +56,7 @@ Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus,
 Maksud arahan footer:
 
 - `ZASS!!` — jalankan penerokaan penuh mengikut format ZASS.
-- `PROCEED` — terima dan teruskan semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik. Jika ZASS jelas mencadangkan sesuatu keputusan untuk LOCK, PROCEED ialah approval pemilik untuk menjadikannya LOCKED. PROCEED tidak commit atau push.
+- `PROCEED` — luluskan tepat proposal set yang dipaparkan di bawah `PROPOSED FOR PROCEED` dalam pemetaan ZASS terakhir. Item lain tidak termasuk. Jika set berubah atau ambigu, AI mesti paparkan semula set sebelum bertindak. Proposal yang ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
 - `PIVOT` — cadangkan arah alternatif berdasarkan kelemahan, bukti atau kekangan semasa.
 - `COMMIT` — selepas perubahan diluluskan melalui PROCEED atau arahan pemilik yang setara, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
 
@@ -356,6 +356,14 @@ Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
 AI mesti kemudian menutup output dengan soalan yang jelas:
 
+Sebelum menawarkan `PROCEED`, AI mesti menunjukkan set yang akan diluluskan:
+
+```text
+PROPOSED FOR PROCEED
+- [ID / tindakan / perubahan]
+- [ID / tindakan / perubahan]
+```
+
 **👉 NEXT STEP — PROCEED ▶️ atau PIVOT 🔄?**
 
 - **PROCEED ▶️** — AI mencadangkan hanya langkah yang paling relevan daripada pilihan berikut:
@@ -363,7 +371,7 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
   - **🔍 ZASS REVIEW** — nyatakan **Method**, **Scope**, **Focus**, dan sebab ringkas.
   - **🛠️ Bina mini-prototype** — hasilkan artefak atau simulasi kecil untuk diuji.
   - **⚖️ Cadangkan keputusan** — banding pilihan, bukti dan trade-off dalam `D-xxx`; belum LOCK.
-  - **▶️ PROCEED** — pemilik menerima semua cadangan ZASS yang tidak dibantah atau diubah; cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
+  - **▶️ PROCEED** — pemilik menerima tepat item dalam `PROPOSED FOR PROCEED`; item yang tidak disenaraikan tidak diluluskan. Cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. Jika proposal set berubah atau ambigu, paparkan semula set dahulu. PROCEED tidak commit atau push.
   - **📦 COMMIT** — commit dan push perubahan yang telah diluluskan ke GitHub sebagai satu commit ber-versi yang boleh dijejak; laporkan SHA sebenar hanya selepas push berjaya.
 
 ---
@@ -371,7 +379,7 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
 - **PIVOT 🔄** — AI mencari arah lain yang masih menyelesaikan masalah asal dan mengekalkan calon terdahulu dalam rekod.
   - **🔀 Cadangan pivot:** [arah alternatif yang sesuai dengan evidence semasa].
 
-Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` mengemas kini atau mencipta satu action yang sesuai; `PIVOT` merekod perubahan arah. Jika pemilik secara biasa meminta kerja ditangguh atau dihentikan, action boleh dipindahkan ke state `PARKED`; tiada command `PARK` khusus. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
+Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` hanya mengemas kini atau mencipta action yang disenaraikan dalam `PROPOSED FOR PROCEED`; `PIVOT` merekod perubahan arah. Jika pemilik secara biasa meminta kerja ditangguh atau dihentikan, action boleh dipindahkan ke state `PARKED`; tiada command `PARK` khusus. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
 
 
 ## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN
@@ -1186,7 +1194,7 @@ Return unresolved decision candidates and their trade-offs.
 
 ### PROCEED
 
-Pemilik projek meluluskan semua cadangan dalam pemetaan ZASS terakhir yang tidak dibantah atau diubah. Mana-mana cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
+Pemilik projek meluluskan **tepat** proposal set yang disenaraikan di bawah `PROPOSED FOR PROCEED` dalam pemetaan ZASS terakhir. Item yang tidak disenaraikan tidak diluluskan. Mana-mana proposal yang jelas ditanda untuk LOCK menjadi LOCKED. Jika proposal set telah berubah, bercanggah atau ambigu sejak pemetaan itu, AI mesti memaparkan set baharu dan menunggu arahan PROCEED sekali lagi. PROCEED tidak commit atau push.
 
 ### COMMIT
 

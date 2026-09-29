@@ -101,9 +101,9 @@ COMMIT
 
 ---
 
-## 3. CLI — fastest structured start
+## 3. CLI — coming soon
 
-The official ZASS CLI onboarding path is being prepared.
+**Status: Specification locked — implementation pending.**
 
 Target experience:
 
@@ -122,7 +122,7 @@ my-project/
 
 ZASSIMPLE is the default. No method-selection wizard.
 
-> **CLI implementation is not released yet.**
+> **The CLI is not released yet. The command above is the locked target UX, not a currently available package.**
 
 ---
 
@@ -423,9 +423,10 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**Full ZASS:** v0.3.3  
+**Full ZASS:** v0.3.4  
 **ZASSIMPLE:** v0.1.6  
-**ZASSELECTION:** v0.1.0
+**ZASSELECTION:** v0.1.0  
+**License:** not selected yet — owner decision pending
 
 Current Full-ZASS commands:
 
@@ -435,6 +436,8 @@ PROCEED
 PIVOT
 COMMIT
 ```
+
+`PROCEED` approves exactly the explicitly listed `PROPOSED FOR PROCEED` set from the latest ZASS mapping. It does not approve unlisted suggestions and does not commit or push.
 
 `PARKED` remains a project state, but `PARK` is no longer a Full-ZASS command.
 

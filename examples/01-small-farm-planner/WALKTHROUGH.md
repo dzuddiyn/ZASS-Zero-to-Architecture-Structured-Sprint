@@ -1,6 +1,6 @@
 # Walkthrough — From Raw Idea to Confirmed Architecture
 
-This is a compact **fictional conversation trace** showing how full ZASS v0.3.2 is intended to feel.
+This is a compact **fictional conversation trace** showing how full ZASS v0.3.4 is intended to feel.
 
 It is not a transcript of real research and does not invent empirical evidence.
 
@@ -67,16 +67,26 @@ The AI proposes:
 
 These are still proposals until owner approval.
 
+Before PROCEED, ZASS presents the exact approval set:
+
+    PROPOSED FOR PROCEED
+    - D-001 → LOCK
+    - D-002 → LOCK
+    - D-003 → LOCK
+    - D-004 → LOCK
+
 ## 5. Owner uses PROCEED
 
 **Owner**
 
     PROCEED
 
-In full ZASS v0.3.2:
+In full ZASS v0.3.4:
 
-- every unopposed proposal in the latest ZASS mapping is approved;
-- proposed LOCK transitions become LOCKED;
+- exactly the items listed in `PROPOSED FOR PROCEED` are approved;
+- unlisted suggestions are not approved;
+- listed proposed LOCK transitions become LOCKED;
+- if the set changes, ZASS must show a new set before another PROCEED;
 - no Git commit happens yet.
 
 ## 6. Persist approved state

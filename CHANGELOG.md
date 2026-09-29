@@ -2,6 +2,17 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.4] — 2026-09-30
+
+- Tightened Full-ZASS `PROCEED`: it now approves exactly the explicitly listed `PROPOSED FOR PROCEED` set from the latest mapping; unlisted suggestions are excluded, and a changed or ambiguous set must be shown again before approval.
+- Locked a temporary methodology feature freeze with productization priority: **Consistency → Validator → Automation → Real-world evidence**.
+- Locked one shared validation-engine direction: future local CLI validation and GitHub Actions must both use `zass check` rather than maintain duplicate rule implementations.
+- Removed the placeholder Hello-World GitHub Actions workflow; a real workflow will return when it can execute the shared validator.
+- Clarified CLI presentation as **Specification locked — implementation pending**; the target `npm create zass@latest my-project` command is not presented as an already released package.
+- Updated the Small Farm Planner teaching fixture to Full ZASS v0.3.4 semantics and made its lack of empirical validation explicit with `Evidence Confidence: UNVALIDATED`.
+- Locked the direction to slim Full `ZASS.md` by moving long-form reference/manual material to Wiki/docs while preserving the portable single-file project-state default.
+- Recorded license selection as an explicit open owner decision; no license was added or implied in this release.
+
 ## [v0.3.3] — 2026-09-30
 
 - Implemented the new lightweight root README landing page and locked the **Start ZASS Your Way** presentation order as **Just Brainstorm → Public Project → CLI → File**; this is a presentation change only and does not change onboarding authority semantics.

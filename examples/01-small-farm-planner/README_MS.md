@@ -1,6 +1,6 @@
 # Contoh 01 — Small Farm Planner
 
-**Kaedah:** Full ZASS v0.3.2  
+**Kaedah:** Full ZASS v0.3.4  
 **Jenis:** Fixture pengajaran fiksyen  
 **Tujuan:** Menunjukkan aliran penuh idea → keputusan → architecture.
 
@@ -41,7 +41,7 @@ Contoh ini menunjukkan bagaimana ZASS memisahkan:
 
 **Cadangan AI bukan keputusan.** AI boleh mencadangkan PWA, native Android atau chat bot, tetapi semuanya kekal calon sehingga diluluskan pemilik.
 
-**PROCEED ialah approval pemilik dalam full ZASS.** Pemilik membantah atau mengubah perkara yang tidak dipersetujui dahulu. Kemudian PROCEED menerima baki cadangan; proposed LOCK yang tidak dibantah menjadi LOCKED.
+**PROCEED ialah approval pemilik dalam full ZASS.** ZASS mesti memaparkan set `PROPOSED FOR PROCEED` terlebih dahulu. PROCEED meluluskan tepat item yang disenaraikan; item tersenarai yang ditanda untuk LOCK menjadi LOCKED.
 
 **COMMIT berasingan daripada approval.** Ia menyimpan state yang telah diluluskan ke GitHub.
 

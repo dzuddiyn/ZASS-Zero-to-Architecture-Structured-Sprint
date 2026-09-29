@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.3 (PARK command removed; PARKED state retained; Evidence Confidence separated from Architecture Readiness)
+**Version:** 0.3.4 (PROCEED approves only an explicitly listed proposal set; productization focus locked)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,7 +39,7 @@ The AI must find the relevant entries, manage IDs and states behind the scenes, 
 
 Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
 
-An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` accepts every proposal from the latest ZASS mapping that the owner has not rejected or changed, including proposed LOCK transitions; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` approves **only** the proposal set explicitly listed in the latest ZASS mapping under `PROPOSED FOR PROCEED`. Unlisted items are not approved. If the set changes, conflicts, or becomes ambiguous, AI must show the set again before PROCEED. Proposals clearly marked for LOCK become LOCKED; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 
 End **every** AI reply with:
 
@@ -48,7 +48,7 @@ End **every** AI reply with:
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.3.2 / latest v0.3.3
+⬆️ UPDATE ZASS? now v0.3.3 / latest v0.3.4
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, and versions with the actual state. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
@@ -56,7 +56,7 @@ The footer is a reminder, never an automatic command. Replace the example progre
 Footer command meanings:
 
 - `ZASS!!` — run full exploration using the ZASS format.
-- `PROCEED` — accept and continue every proposal from the latest ZASS mapping that the owner has not rejected or changed. If ZASS clearly proposes a decision for LOCK, PROCEED is the owner's approval to make it LOCKED. PROCEED does not commit or push.
+- `PROCEED` — approve exactly the proposal set shown under `PROPOSED FOR PROCEED` in the latest ZASS mapping. Other items are excluded. If the set changes or is ambiguous, AI must show it again before acting. Proposals marked for LOCK become LOCKED. PROCEED does not commit or push.
 - `PIVOT` — suggest an alternative direction based on current weaknesses, evidence, or constraints.
 - `COMMIT` — after changes are approved through PROCEED or an equivalent owner instruction, update affected files, version, and changelog as one atomic commit, push to GitHub, then report the real SHA. Never report success before the commit and push actually occur.
 
@@ -354,6 +354,14 @@ Output: [evidence / answer / small evaluable data point]
 
 AI must then close the output with a clear question:
 
+Before offering `PROCEED`, AI must show the exact set that will be approved:
+
+```text
+PROPOSED FOR PROCEED
+- [ID / action / change]
+- [ID / action / change]
+```
+
 **👉 NEXT STEP — PROCEED ▶️ or PIVOT 🔄?**
 
 - **PROCEED ▶️** — AI recommends only the most relevant next action from these choices:
@@ -361,7 +369,7 @@ AI must then close the output with a clear question:
   - **🔍 ZASS REVIEW** — state the **Method**, **Scope**, **Focus**, and a short reason.
   - **🛠️ Build a mini-prototype** — create a small artifact or simulation to test.
   - **⚖️ Propose a decision** — compare options, evidence, and trade-offs in `D-xxx`; it is not LOCKED.
-  - **▶️ PROCEED** — the owner accepts every ZASS proposal not explicitly rejected or changed; proposals clearly marked for LOCK become LOCKED. PROCEED does not commit or push.
+  - **▶️ PROCEED** — the owner accepts exactly the items in `PROPOSED FOR PROCEED`; unlisted items are not approved. Proposals clearly marked for LOCK become LOCKED. If the proposal set changes or is ambiguous, show the set again first. PROCEED does not commit or push.
   - **📦 COMMIT** — commit and push approved changes to GitHub as one traceable versioned commit; report the real SHA only after the push succeeds.
 
 ---
@@ -369,7 +377,7 @@ AI must then close the output with a clear question:
 - **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
   - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
 
-If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` updates or creates one appropriate action; `PIVOT` records the changed direction. If the owner naturally asks to defer or stop work, the action may move to the `PARKED` state; there is no dedicated `PARK` command. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
+If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` only updates or creates actions listed in `PROPOSED FOR PROCEED`; `PIVOT` records the changed direction. If the owner naturally asks to defer or stop work, the action may move to the `PARKED` state; there is no dedicated `PARK` command. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
 
 
 ## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE
@@ -1184,7 +1192,7 @@ Return unresolved decision candidates and their trade-offs.
 
 ### PROCEED
 
-The project owner approves every proposal in the latest ZASS mapping that was not explicitly rejected or changed. Any proposal clearly marked for LOCK becomes LOCKED. PROCEED does not commit or push.
+The project owner approves **exactly** the proposal set listed under `PROPOSED FOR PROCEED` in the latest ZASS mapping. Unlisted items are not approved. Any proposal clearly marked for LOCK becomes LOCKED. If the proposal set has changed, conflicts, or is ambiguous since that mapping, AI must display the new set and wait for PROCEED again. PROCEED does not commit or push.
 
 ### COMMIT
 

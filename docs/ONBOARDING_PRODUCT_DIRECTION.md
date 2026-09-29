@@ -488,6 +488,101 @@ Detailed framework explanation, extended command/reference material, long-form m
 
 **Implementation note:** this decision is LOCKED now. The actual Wiki migration and root README rewrite are separate implementation work and must not be claimed complete until they are actually performed.
 
+## L-PROD-001 — Methodology feature freeze during productization
+
+**Decision:** Core ZASS methodology is temporarily feature-frozen.
+
+Do not add new methods, command families, ledgers, or governance layers unless a critical defect or real field evidence justifies the change.
+
+Locked focus order:
+
+```text
+Consistency
+→ Validator
+→ Automation
+→ Real-world evidence
+```
+
+Presentation fixes, consistency fixes, validator implementation, automation, and evidence gathering may continue during the freeze.
+
+---
+
+## L-PROCEED-001 — PROCEED approves an exact proposal set
+
+**Decision:** In Full ZASS, `PROCEED` is not a blank approval of everything recently discussed.
+
+Before offering `PROCEED`, AI must show:
+
+```text
+PROPOSED FOR PROCEED
+- [explicit item]
+- [explicit item]
+```
+
+`PROCEED` approves exactly that set. Unlisted suggestions are not approved.
+
+If the set changes, conflicts, or becomes ambiguous, AI must show the revised set and wait for a new `PROCEED`.
+
+A listed proposed LOCK may become LOCKED through PROCEED. PROCEED never commits or pushes.
+
+---
+
+## L-VALID-001 — One validation engine
+
+**Decision:** Future local validation and GitHub CI must share one validation engine.
+
+Target architecture:
+
+```text
+zass check
+    ├── local CLI
+    └── GitHub Action
+```
+
+Do not maintain a separate set of validation rules directly inside GitHub Actions if the same rules belong in `zass check`.
+
+The placeholder Hello-World workflow is removed now. A real workflow should be added when it can call the shared validator.
+
+---
+
+## L-DOC-002 — Slim Full ZASS state without fragmenting project authority
+
+**Decision:** Full `ZASS.md` should evolve toward project operating rules + project state, while long manuals, prompt libraries, review-method explanations, mobile instructions, and extended reference material move to Wiki/docs.
+
+This does **not** authorize splitting normal project state into many mandatory files. The portable single project ZASS file remains the default unless scale-out evidence justifies otherwise.
+
+---
+
+## L-LICENSE-001 — License requires explicit owner selection
+
+**Decision:** Do not add or imply a repository license automatically.
+
+License selection remains an **OPEN owner decision**. Until the owner selects one, documentation may state that no license has been selected.
+
+---
+
+## Locked productization roadmap
+
+**P0 — consistency / cleanup**
+- remove the placeholder `.github/workflows/blank.yml`;
+- align the teaching fixture with current Full ZASS semantics/version;
+- make CLI specification-vs-release status explicit;
+- tighten PROCEED semantics;
+- keep license selection open for explicit owner choice.
+
+**P1 — implementation layer**
+- slim long-form Full-ZASS reference material into Wiki/docs without fragmenting project state;
+- specify `zass check`;
+- build the `zass check` MVP;
+- add a GitHub Action that runs the same validator.
+
+**P2 — field evidence**
+- use ZASS on multiple real projects;
+- collect evidence on context repetition, decision drift, repeated rejected ideas, hidden assumptions, AI corrections, and time-to-decision;
+- publish case studies only from documented real usage.
+
+---
+
 # Decision status
 
 The following are LOCKED as of 2026-09-30:
@@ -499,5 +594,10 @@ The following are LOCKED as of 2026-09-30:
 - `L-ONB-005` — Public-project cross-AI handoff
 - `L-CLI-001` — CLI is an official onboarding mechanism with minimal ZASSIMPLE default
 - `L-DOC-001` — Root README is the lightweight landing page; long-form README content and detailed infographics move to GitHub Wiki/reference material
+- `L-PROD-001` — Methodology feature freeze during productization
+- `L-PROCEED-001` — PROCEED approves only the explicitly listed proposal set
+- `L-VALID-001` — Local CLI and GitHub Action share one validation engine
+- `L-DOC-002` — Slim Full ZASS reference material without fragmenting project authority
+- `L-LICENSE-001` — License requires explicit owner selection; selection remains open
 
 This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.

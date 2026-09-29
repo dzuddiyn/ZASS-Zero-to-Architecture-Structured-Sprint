@@ -277,6 +277,8 @@ The core differentiation to protect is:
 
 ## Register Policy
 
+**Current productization freeze:** core methodology is feature-frozen while consistency, validator implementation, automation, and real-world evidence take priority. New methodology candidates may still be recorded, but they should not be promoted without a critical defect or field evidence.
+
 Use this file as the default holding area for future ZASS evolution ideas.
 
 New ideas may be appended as `CR-xxx` entries.
@@ -497,7 +499,7 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — IMPLEMENTATION CANDIDATE  
+**Status:** ACCEPTED — IMPLEMENTATION PRIORITY  
 **Source:** External Copilot UX/automation review  
 **Decision date:** 2026-09-30
 
@@ -617,7 +619,7 @@ Related method change in v0.3.3:
 
 ## CR-014 — Real-world Case Studies
 
-**Status:** ACCEPTED — EVIDENCE PRIORITY  
+**Status:** ACCEPTED — FIELD EVIDENCE PRIORITY  
 **Source:** External Copilot review  
 **Decision date:** 2026-09-30
 

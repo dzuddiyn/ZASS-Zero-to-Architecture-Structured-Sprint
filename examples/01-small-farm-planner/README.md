@@ -1,6 +1,6 @@
 # Example 01 — Small Farm Planner
 
-**Method:** Full ZASS v0.3.2  
+**Method:** Full ZASS v0.3.4  
 **Type:** Fictional teaching fixture  
 **Purpose:** Show the complete idea → decision → architecture lifecycle.
 
@@ -45,7 +45,7 @@ The AI may propose a PWA, native Android app, or chat bot. Those stay candidates
 
 ### PROCEED is owner approval in full ZASS
 
-In this example, the owner rejects or edits anything they disagree with, then uses PROCEED. Unopposed proposals explicitly marked for LOCK become LOCKED.
+In this example, ZASS first shows an explicit `PROPOSED FOR PROCEED` set. The owner reviews that set, then uses PROCEED. Only the listed proposals are approved; listed proposals marked for LOCK become LOCKED.
 
 PROCEED does not commit or push.
 

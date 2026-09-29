@@ -1,7 +1,7 @@
 # ZASS — Small Farm Planner
 
 **Project:** Small Farm Planner  
-**ZASS method:** v0.3.2  
+**ZASS method:** v0.3.4  
 **Example status:** ARCHITECTURE CONFIRMED — FICTIONAL TEACHING FIXTURE  
 **Authority:** This file is the decision/readiness authority for this example.
 
@@ -165,7 +165,7 @@ AC-001 best matches the explicit v0.1 constraints. AC-002 and AC-003 are deferre
 
 # 13. LOCKED DECISIONS
 
-> In the walkthrough, these were proposed for LOCK, reviewed by the fictional owner, and accepted through PROCEED.
+> In the walkthrough, these were listed explicitly under `PROPOSED FOR PROCEED`, reviewed by the fictional owner, and accepted through PROCEED.
 
 - **L-001 / D-001 — LOCKED:** v0.1 is a PWA.
 - **L-002 / D-002 — LOCKED:** v0.1 is local-only; no account/cloud sync.
@@ -218,6 +218,8 @@ Planned post-architecture experiments:
 | No critical architecture blocker | 5/5 | no unresolved contradiction blocks v0.1 |
 
 **ZERO → ARCHITECTURE:** [██████████] 100% — ARCHITECTURE CONFIRMED
+
+**Evidence Confidence:** UNVALIDATED — this teaching fixture intentionally invents no empirical experiment results; E-001, E-002 and E-003 remain planned validation loops.
 
 ### Confirmation record
 
