@@ -1,112 +1,36 @@
-# ZASS Onboarding & Productization Direction
+# ZASS Onboarding & Productization Baseline
 
-**Status:** CANDIDATE — NOT LOCKED  
-**Scope:** Onboarding, CLI bootstrap, README simplification  
-**Purpose:** Reduce first-use friction for solo builders
-
-> This document records a candidate product/onboarding direction for field testing. It does not change ZASS, ZASSIMPLE, or ZASSELECTION semantics.
-
-## Problem
-
-Current onboarding can ask a new user to understand ZASS, ZASSIMPLE, ZASSELECTION, and several supporting concepts before they experience the core benefit.
-
-Candidate hypothesis:
-
-> Users should experience the benefit first, then learn the framework.
-
-Primary pain:
-
-> Stop repeating the same project context to every AI.
-
-## Candidate Direction
-
-Default onboarding should begin with **ZASSIMPLE**.
-
-New users should not need to choose a method before starting.
-
-Proposed experience:
-
-```text
-Idea
-→ Start ZASS
-→ Talk naturally
-→ AI records important state
-→ Continue with another AI using the same file
-```
-
-Full ZASS becomes available when decision complexity, evidence, risks, trade-offs, or architecture dependencies increase.
-
-ZASSELECTION is introduced when the primary problem is choosing between alternatives.
-
-## Candidate CLI
-
-Possible command:
-
-```bash
-npm create zass@latest my-project
-```
-
-Alternative:
-
-```bash
-npx create-zass@latest my-project
-```
-
-Default generated project:
-
-```text
-my-project/
-├── ZASSIMPLE.md
-├── README.md
-└── .gitignore
-```
-
-The initial CLI should not ask the user to choose between ZASS methods.
-
-Default:
-
-- English
-- ZASSIMPLE
-- minimal project structure
-
-## Generated README
-
-Keep the generated project README extremely short.
-
-The user only needs to know:
-
-1. Give `ZASSIMPLE.md` to an AI.
-2. Talk normally.
-3. Use `ZASS` when the conversation should be organized.
-4. Use `LOCK DECISION` for a final decision.
-5. Use `COMMIT` when approved state should be saved.
-6. Give the same file to another AI to continue.
-
-## README Product Positioning
-
-Lead with the problem, not the methodology.
-
-Candidate headline:
+**Status:** LOCKED BASELINE  
+**Locked by:** Project Owner  
+**Locked date:** 2026-09-30  
+**Scope:** Landing page, onboarding, cross-AI handoff, CLI bootstrap  
+**Implementation status:** README/CLI implementation may follow separately; the decisions in this document are authoritative unless the owner explicitly revises them.
 
 > **Think once. Keep the decisions. Continue with any AI.**
 
-Alternative:
+Supporting mental model:
 
-> **Stop repeating your project to every AI.**
+> **Any AI can think. One trusted writer saves. GitHub remembers.**
 
-Suggested onboarding order:
+## Purpose
 
-1. Pain / value proposition
-2. Simple 4-step visual
-3. Start command
-4. 2-minute demo
-5. Complete example
-6. How it works
-7. When to move from ZASSIMPLE to Full ZASS
-8. ZASSELECTION
-9. Advanced documentation
+ZASS onboarding must reduce first-use friction. A new user should experience the value before learning the full framework.
 
-## Hero Mental Model
+The landing experience should lead with the user's problem:
+
+> Stop repeating the same project context to every AI.
+
+ZASS is not introduced first as a catalogue of methods. The default path is to start with **ZASSIMPLE**, work naturally, persist approved state deliberately, and reveal advanced methods only when needed.
+
+---
+
+# LOCKED DECISIONS
+
+## L-ONB-001 — Problem-first onboarding
+
+**Decision:** The ZASS landing page and primary onboarding are problem-first, not framework-first.
+
+The user should first understand the benefit:
 
 ```text
 RAW IDEA
@@ -115,98 +39,276 @@ EXPLORE WITH AI
     ↓
 HUMAN-APPROVED DECISIONS
     ↓
-TRACEABLE ARCHITECTURE
+TRACEABLE PROJECT STATE / ARCHITECTURE
 ```
 
-Supporting idea:
+Default onboarding begins with **ZASSIMPLE**. New users are not required to choose between ZASS, ZASSIMPLE, ZASSELECTION, ACTION PLAN, or advanced methods before starting.
 
-> **Same file. Same decisions. Different AI.**
+**Primary positioning:**
 
-## 2-Minute Demo Candidate
+> **Think once. Keep the decisions. Continue with any AI.**
 
-### 0:00–0:20 — Raw idea
+Useful supporting line:
 
-Example:
+> **Start structured, or start messy. ZASS can capture it later.**
 
-> “Cucumber-ginger juice from rejected cucumbers.”
+---
 
-### 0:20–0:55 — Organize the discussion
+## L-ONB-002 — GitHub is the Source of Truth
 
-User says:
+**Decision:** GitHub remains the authoritative persistent Source of Truth for a Git-backed ZASS project.
+
+A "Main App" or trusted writer is **not** the Source of Truth. It is a write-capable client/gateway that:
+
+1. reads the latest authoritative project state;
+2. reviews proposed changes;
+3. applies only owner-approved changes; and
+4. persists them to GitHub through `COMMIT`.
+
+Other AI tools may be used freely for exploration, challenge, review, or brainstorming without needing write access.
+
+Simple mental model:
 
 ```text
-ZASS
+Other AI tools = explore / challenge / brainstorm
+                         ↓
+                  trusted writer
+                         ↓
+                owner approval
+                         ↓
+                      COMMIT
+                         ↓
+             GitHub = Source of Truth
 ```
 
-AI organizes:
+Core rule:
 
-- RAW IDEA
-- WHY
-- GOALS
-- QUESTIONS
-- RISKS
+> **One AI/client saves. Any AI can think.**
 
-### 0:55–1:20 — Lock a clear decision
+The method must not depend on any specific vendor. App capabilities may change over time; named compatibility guidance is implementation documentation, not core ZASS semantics.
 
-User answers several questions, then issues:
+---
 
-```text
-LOCK DECISION
+## L-ONB-003 — Four official onboarding paths
+
+**Decision:** ZASS has four valid onboarding/entry paths. All four must converge on the same principles: preserve project state, respect LOCKED decisions, require human approval, and persist authoritative changes deliberately.
+
+### 1. CLI — fastest structured start
+
+Target user experience:
+
+```bash
+npm create zass@latest my-project
 ```
 
-A clear decision becomes:
+Then work from the generated ZASSIMPLE project.
+
+### 2. Manual file — portable start
+
+Download or copy `ZASSIMPLE.md`, give it to an AI, and begin talking normally.
+
+### 3. Public link — existing public ZASS project
+
+For a public ZASS project, paste the public project/repository URL into an AI that can read the link.
+
+Ask the AI to:
+
+- study the current project state;
+- respect existing LOCKED decisions;
+- continue brainstorming naturally;
+- surface ideas, questions, risks, contradictions, and alternatives;
+- export a Markdown handoff at the end of the session.
+
+The handoff is a proposal, not the Source of Truth.
+
+### 4. Ad-hoc brainstorm — zero setup
+
+Start anywhere, even without ZASS.
+
+Brainstorm casually in any AI. When something becomes worth keeping:
 
 ```text
-D-001 | LOCKED
+useful brainstorm
+      ↓
+copy / paste
+      ↓
+trusted GitHub-writer AI/client
+      ↓
+ZASS review
+      ↓
+human approval
+      ↓
+COMMIT
+      ↓
+GitHub Source of Truth
 ```
 
-### 1:20–1:45 — Move to another AI
+The user does not need to begin with ZASS in order to benefit from ZASS later.
 
-Give the same `ZASSIMPLE.md` to another AI.
+---
 
-Prompt:
+## L-ONB-004 — Progressive disclosure
+
+**Decision:** Advanced complexity must not block first use.
+
+The following are introduced only when relevant:
+
+- Full ZASS;
+- ZASSELECTION;
+- ACTION PLAN;
+- evidence/experiment discipline;
+- review methods;
+- ZERO → ARCHITECTURE scoring;
+- architecture governance;
+- sync/integration details.
+
+The landing page should first help the user **start**, then explain deeper capabilities.
+
+ZASSIMPLE remains appropriate while the user is mainly discovering **what to build**.
+
+Full ZASS becomes appropriate when the project must explain, test, or preserve **why it should be built that way**, especially when decisions become interdependent, evidence becomes necessary, architecture options have meaningful trade-offs, or decision traceability becomes difficult.
+
+---
+
+## L-ONB-005 — Public-project cross-AI handoff
+
+**Decision:** Public-link brainstorming is an official cross-AI workflow.
+
+Canonical flow:
 
 ```text
-Continue this project.
-```
-
-The new AI should continue from the project state without requiring the project story to be repeated.
-
-### 1:45–2:00 — Draft architecture
-
-Show:
-
-```text
-DRAFT ARCH
-```
-
-Then explain the final confirmation gate:
-
-```text
-BUILD ARCHITECTURE
+PUBLIC ZASS PROJECT
         ↓
-YA, CONFIRM ARCHITECTURE
+paste public project URL into another AI
+        ↓
+AI studies current state
+        ↓
+AI respects existing LOCKED decisions
+        ↓
+brainstorm / challenge / explore
+        ↓
+export Markdown handoff
+        ↓
+trusted writer compares against latest Source of Truth
+        ↓
+owner review / approval
+        ↓
+COMMIT
+        ↓
+GitHub Source of Truth
 ```
 
-## ZASSIMPLE → Full ZASS Boundary
+### Handoff artifact
 
-Stay with ZASSIMPLE while discovering **what to build**.
+Preferred default filename:
 
-Move to Full ZASS when the project must explain or prove **why it should be built that way**.
+```text
+ZASS_HANDOFF.md
+```
 
-Strong migration triggers:
+Recommended structure:
 
-- decisions become interdependent;
-- evidence or experiments are needed;
-- multiple architecture candidates require trade-off analysis;
-- privacy, security, money, data-loss, or operational risk becomes significant;
-- decision traceability becomes difficult to maintain conversationally.
+```text
+Source project:
+[public project URL]
 
-The project size alone is not the trigger. The important factor is **decision complexity**.
+Source revision:
+[commit SHA if known]
 
-## Candidate Security Default
+Existing LOCKED decisions respected:
+- ...
 
-Generated `.gitignore` should ignore common secret files:
+New ideas:
+- ...
+
+Questions:
+- ...
+
+Risks:
+- ...
+
+Suggested candidates:
+- ...
+
+Possible contradictions:
+- ...
+
+Proposed changes:
+- ...
+
+Status:
+HANDOFF ONLY — NOT SOURCE OF TRUTH
+```
+
+A handoff must never silently replace the current authoritative `ZASS.md` or `ZASSIMPLE.md`.
+
+The trusted writer must compare the handoff against the **latest** repository state before applying it. This protects against stale external-AI sessions reintroducing old state or overriding newer LOCKED decisions.
+
+### Copy-ready public-link prompt
+
+```text
+Read this public ZASS project first:
+
+[PROJECT URL]
+
+Treat the repository as the Source of Truth.
+Respect all existing LOCKED decisions.
+
+Continue brainstorming with me naturally.
+Challenge assumptions and surface useful ideas, questions,
+risks and alternatives, but do not silently change LOCKED decisions.
+
+At the end of this session, export a Markdown handoff containing
+the useful findings and proposed changes.
+
+The handoff is NOT the Source of Truth.
+It will be reviewed by the project's trusted writer before commit.
+```
+
+For **Full ZASS**, a returned handoff can enter:
+
+```text
+handoff
+→ ZASS!!
+→ owner review
+→ PROCEED
+→ COMMIT
+```
+
+For **ZASSIMPLE**, keep ZASSIMPLE semantics. Do not import Full-ZASS `PROCEED`; use normal ZASSIMPLE agreement / `LOCK DECISION` / `COMMIT` behavior.
+
+---
+
+## L-CLI-001 — CLI is an official onboarding mechanism
+
+**Decision:** The CLI is a first-class official onboarding path for ZASS.
+
+Target command:
+
+```bash
+npm create zass@latest my-project
+```
+
+Target default output:
+
+```text
+my-project/
+├── ZASSIMPLE.md
+├── README.md
+└── .gitignore
+```
+
+Locked default behavior:
+
+- generate **ZASSIMPLE**, not Full ZASS;
+- English default;
+- minimal project structure;
+- no method-selection question during the basic path;
+- no backend or complex configuration;
+- generated README is short and action-oriented;
+- generated `.gitignore` ignores common secret files.
+
+Suggested baseline `.gitignore`:
 
 ```gitignore
 .env
@@ -217,40 +319,158 @@ Generated `.gitignore` should ignore common secret files:
 *.pem
 ```
 
-Documentation must also state:
+Documentation must also warn:
 
 > Never place passwords, API keys, tokens, or sensitive personal data inside tracked ZASS Markdown files.
 
-A `.gitignore` does not protect secrets already pasted into a tracked file.
+The CLI implementation may be built later. The **CLI onboarding mechanism and minimal default behavior are LOCKED now**.
 
-## Validation Before LOCK
+If the exact npm package name is technically unavailable at publication time, changing the command requires an explicit owner decision; do not silently substitute another command.
 
-Do not make this direction official yet.
+---
 
-Test through real usage first.
+# Landing / README order
 
-Suggested experiment:
+The README implementation should follow this order unless the owner explicitly changes it:
 
-1. Build the smallest `create-zass` prototype.
-2. Give it to a new user without explaining ZASS.
-3. Measure whether they can start a project and continue it in a second AI without help.
-4. Record confusion and friction.
-5. Revise onboarding.
-6. Only then consider LOCKING the direction.
+1. Pain / value proposition
+2. Simple visual mental model
+3. **Start ZASS Your Way** — the four onboarding paths
+4. 2-minute practical demo
+5. Complete example
+6. How ZASS works
+7. When ZASSIMPLE becomes too small
+8. Full ZASS
+9. ZASSELECTION
+10. Advanced/reference material
 
-## Candidate Success Signals
+Suggested section:
 
-- A new user starts without reading advanced documentation.
-- A new user understands the core ZASS value within a few minutes.
-- No method-selection question is required at first use.
-- The same project file can be handed to another AI successfully.
-- The user understands the distinction between conversation and LOCKED decisions.
-- Advanced complexity remains discoverable without blocking onboarding.
+```text
+START ZASS YOUR WAY
 
-## Decision Status
+① CLI
+   Start a new project instantly.
 
-No decision in this document is LOCKED.
+② FILE
+   Bring ZASSIMPLE.md to your AI.
 
-This document records a **candidate product/onboarding direction** for field testing.
+③ PUBLIC LINK
+   Give any AI your public ZASS project URL.
 
-Git history preserves this proposal without making it part of the locked ZASS baseline.
+④ JUST BRAINSTORM
+   Think anywhere. Bring the useful parts back later.
+```
+
+All four paths converge on:
+
+```text
+CLI ───────────────┐
+Manual file ───────┤
+Public project ────┤
+Ad-hoc brainstorm ─┘
+         ↓
+   ZASS project state
+         ↓
+ Human-approved decisions
+         ↓
+    trusted writer
+         ↓
+       COMMIT
+         ↓
+ GitHub Source of Truth
+```
+
+---
+
+# Generated project README baseline
+
+The CLI-generated project README should stay intentionally short.
+
+Minimum concepts:
+
+1. Give `ZASSIMPLE.md` to an AI.
+2. Talk normally.
+3. Use `ZASS` when you want the discussion organized.
+4. Use `LOCK DECISION` when a clear decision should become authoritative.
+5. Use `COMMIT` when approved project state should be persisted.
+6. Give the same project state to another AI and continue without retelling the project.
+
+Advanced methodology belongs in the main ZASS repository/documentation, not in the generated project's first screen.
+
+---
+
+# 2-minute demo baseline
+
+The primary demo should show the benefit rather than teach framework theory.
+
+Suggested flow:
+
+### 0:00–0:20 — raw idea
+
+> "Cucumber-ginger juice from rejected cucumbers."
+
+### 0:20–0:55 — organize
+
+User intentionally says:
+
+```text
+ZASS
+```
+
+Show the AI organizing useful state such as RAW IDEA, WHY, GOALS, QUESTIONS, and RISKS.
+
+### 0:55–1:20 — human decision
+
+Answer a few questions and explicitly lock a clear decision.
+
+### 1:20–1:45 — cross-AI continuity
+
+Move the current project state to another AI and say:
+
+```text
+Continue this project.
+```
+
+Demonstrate that the project does not need to be retold.
+
+### 1:45–2:00 — architecture direction
+
+Show `DRAFT ARCH`, then briefly show the final confirmation path:
+
+```text
+BUILD ARCHITECTURE
+        ↓
+YA, CONFIRM ARCHITECTURE
+```
+
+Do not portray architecture as automatically confirmed merely because another AI read the file.
+
+---
+
+# Security and state integrity
+
+The four onboarding paths must preserve these invariants:
+
+- GitHub is the Source of Truth for a Git-backed project.
+- External AI output is proposal material until reviewed.
+- LOCKED decisions cannot be changed silently.
+- A stale handoff cannot overwrite newer authoritative state.
+- App/vendor names are not architecture dependencies.
+- Secrets and sensitive personal data should not be committed into tracked ZASS Markdown.
+- Manual copy/paste is a valid fallback, not a workflow failure.
+
+---
+
+# Decision status
+
+The following are LOCKED as of 2026-09-30:
+
+- `L-ONB-001` — Problem-first onboarding
+- `L-ONB-002` — GitHub is the Source of Truth; trusted writer persists
+- `L-ONB-003` — Four official onboarding paths
+- `L-ONB-004` — Progressive disclosure
+- `L-ONB-005` — Public-project cross-AI handoff
+- `L-CLI-001` — CLI is an official onboarding mechanism with minimal ZASSIMPLE default
+
+This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.

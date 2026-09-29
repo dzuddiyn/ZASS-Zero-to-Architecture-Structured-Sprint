@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [Onboarding baseline] — 2026-09-30
+
+- LOCKED problem-first onboarding with ZASSIMPLE as the default first-use method and progressive disclosure for Full ZASS, ZASSELECTION, ACTION PLAN, and advanced governance.
+- LOCKED GitHub as the Source of Truth with one trusted write-capable client for persistence while any AI may be used for brainstorming, challenge, or review.
+- LOCKED four official entry paths: CLI, manual ZASSIMPLE file, public-project link handoff, and zero-setup ad-hoc brainstorming returned to a trusted writer.
+- LOCKED public-project cross-AI handoff through a non-authoritative `ZASS_HANDOFF.md` that must be compared with the latest repository state before approved changes are committed.
+- LOCKED the CLI as an official onboarding mechanism with target command `npm create zass@latest my-project` and a minimal `ZASSIMPLE.md + README.md + .gitignore` default.
+- Promoted CR-008 “One Writer, Many Brainstormers” from TEST to ACCEPTED.
+- Method version remains v0.3.2 in this commit; this baseline records onboarding/productization decisions and does not alter core ZASS or ZASSIMPLE decision semantics. README and CLI implementation remain separate follow-up work.
+
 ## [v0.3.2] — 2026-09-29
 
 - Folded full-ZASS owner approval for proposed LOCK transitions into `PROCEED`: all proposals in the latest ZASS mapping are accepted unless the owner explicitly rejects or changes them.

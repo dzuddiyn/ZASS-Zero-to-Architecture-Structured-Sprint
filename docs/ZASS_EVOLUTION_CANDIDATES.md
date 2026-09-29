@@ -288,7 +288,7 @@ They remain candidates until the project owner explicitly approves a change thro
 
 ## CR-008 — One Writer, Many Brainstormers
 
-**Status:** TEST  
+**Status:** ACCEPTED  
 **Source:** External Meta AI review  
 **Scope:** Cross-AI workflow, onboarding mental model, GitHub persistence
 
@@ -467,4 +467,4 @@ It also aligns with the broader portability principle:
 
 > **Do not require every AI to understand the repository or have write access.**
 
-This candidate does not change current ZASS or ZASSIMPLE semantics.
+This candidate has been promoted into the LOCKED onboarding baseline. See `docs/ONBOARDING_PRODUCT_DIRECTION.md`, especially `L-ONB-002`, `L-ONB-003`, and `L-ONB-005`. Core ZASS and ZASSIMPLE decision semantics remain unchanged.
