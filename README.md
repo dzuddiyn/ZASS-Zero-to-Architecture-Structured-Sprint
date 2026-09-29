@@ -55,6 +55,20 @@ Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, 
 
 Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / PARK / COMMIT` dan progress bar **ZERO → ARCHITECTURE**. Dalam ZASS penuh, `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. `COMMIT` bermaksud commit dan push perubahan yang telah diluluskan ke GitHub source of truth. Skor ZERO → ARCHITECTURE mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
 
+## Complete example
+
+A complete end-to-end teaching fixture is available in [examples/01-small-farm-planner/](examples/01-small-farm-planner/README.md). It shows how a raw idea becomes questions, options, owner-approved LOCKED decisions, an ACTION PLAN, and a confirmed architecture without treating AI suggestions as decisions.
+
+Recommended reading order:
+
+1. [Example README](examples/01-small-farm-planner/README.md)
+2. [Walkthrough](examples/01-small-farm-planner/WALKTHROUGH.md)
+3. [Project ZASS](examples/01-small-farm-planner/ZASS.md)
+4. [ACTION_PLAN](examples/01-small-farm-planner/ACTION_PLAN.md)
+5. [ARCHITECTURE](examples/01-small-farm-planner/ARCHITECTURE.md)
+
+> The example is a **fictional teaching fixture**. It demonstrates ZASS mechanics and traceability; it is not validated product research or implementation advice.
+
 ## Get started in 3 steps
 
 1. Copy [`ZASS.md`](ZASS.md) into a new project folder. Keep one main ZASS file per project.
