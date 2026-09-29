@@ -51,9 +51,9 @@ Beri rumusan dulu. Jangan commit tanpa kebenaran.
 
 Versi English tersedia dalam [`ZASSIMPLE_EN.md`](ZASSIMPLE_EN.md). Draf architecture boleh diberi versi kerja; setelah tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan dijelaskan, AI membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal sebelum pintu pengesahan.
 
-Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PARK / PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
+Dalam ZASS penuh, arahan sengaja `ZASS` atau `ZASS!!` membuka penerokaan penuh, rumusan, tindakan esok dan PROCEED / PIVOT. Mesej biasa menerima balasan natural dengan footer yang sama; `ZASS REVIEW` tetap menjalankan kaedah review tersendiri.
 
-Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / PARK / COMMIT` dan progress bar **ZERO → ARCHITECTURE**. Dalam ZASS penuh, `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. `COMMIT` bermaksud commit dan push perubahan yang telah diluluskan ke GitHub source of truth. Skor ZERO → ARCHITECTURE mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
+Footer ZASS penuh kini menunjukkan arahan `ZASS!! / PROCEED / PIVOT / COMMIT` dan progress bar **ZERO → ARCHITECTURE**. Dalam ZASS penuh, `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. `COMMIT` bermaksud commit dan push perubahan yang telah diluluskan ke GitHub source of truth. Skor ZERO → ARCHITECTURE mengukur architecture readiness, bukan kemajuan coding. Pada 70% atau lebih AI mencadangkan draf architecture; architecture hanya mencapai 100% selepas pintu pengesahan dan balasan tepat `YA, CONFIRM ARCHITECTURE`. Arahan sengaja `ZASS` turut menyemak versi template apabila repo rasmi boleh dicapai dan mesti menyatakan jika semakan tidak tersedia.
 
 ## Complete example
 
@@ -93,7 +93,9 @@ Each owner-locked template update is one logical Git commit covering every affec
 
 ## Evidence and decision discipline
 
-ZASS v0.1.5 adds lightweight evidence fields without new states or IDs: a one-sentence **problem being tested**, an experiment's **assumption**, **pass/fail signal**, **observed result**, **learning**, and **PARK / PROCEED / PIVOT impact**. Risks can carry an **early warning signal**; decisions can record drivers, alternatives, consequences, and a revisit trigger.
+ZASS keeps lightweight evidence fields without requiring new states for every finding: a one-sentence **problem being tested**, an experiment's **assumption**, **pass/fail signal**, **observed result**, **learning**, and **DEFER / PROCEED / PIVOT impact**. Risks can carry an **early warning signal**; decisions can record drivers, alternatives, consequences, and a revisit trigger.
+
+ZASS v0.3.3 also treats **Architecture Readiness** and **Evidence Confidence** as separate axes. A project can be structurally ready for a confirmed architecture while empirical validation is still `UNVALIDATED` or `LOW`; this distinction must remain visible rather than being hidden behind the readiness percentage.
 
 Cynefin triage, DACI roles, Design Sprint mode, and Wardley Mapping remain optional tools for the right context—not default ceremony.
 
@@ -138,7 +140,7 @@ instruction such as “COMMIT”.
 
 The `ZASS.md` in this repository is a **base template**, not a shared decision record for every project. For a new project, copy it into that project's repository (for example, `Kerani-Core/ZASS.md` or `ZASS_Cucumber_Ginger_Drink.md`). Keep updating **the same project file** as the discussion evolves; Git preserves its history. Don't rely on AI memory or chat as the only record.
 
-**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.2 folds proposed LOCK approval into PROCEED and defines COMMIT as commit + push, while preserving the baseline authority rules.
+**Status:** ZASS baseline v0.1 is locked; documentation release v0.3.3 removes the Full-ZASS PARK command while retaining the PARKED state, and separates Evidence Confidence from Architecture Readiness.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -174,7 +176,7 @@ Abang tidak perlu menghafal kod seperti `I-001` atau `D-001`. AI mengurus ID, st
 
 Fail `ZASS.md` dalam repo ini ialah **template asas**, bukan rekod keputusan untuk semua projek. Untuk projek baharu, salin fail tersebut ke repo projek berkenaan (contohnya `Kerani-Core/ZASS.md` atau `ZASS_Produk_Jus_TimunHalia.md`). Kemas kini **fail projek yang sama** sepanjang perbincangan; Git menyimpan sejarah versinya. Jangan jadikan memori AI atau chat sebagai satu-satunya rekod.
 
-**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.2. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
+**Status:** ZASS baseline v0.1 dikunci; dokumentasi ZASS semasa ialah v0.3.3. ZASSELECTION v0.1.0 ialah method berasingan dan tidak menggantikan ZASSIMPLE.
 
 ## PROMPT SIAP GUNA — RUJUKAN PILIHAN
 
@@ -329,9 +331,7 @@ Every `ZASS` and `ZASS REVIEW` starts its closing section with **✨ AI Summary 
 
 It then asks:
 
-**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
-
-- `PARK 🅿️` — After an actual file update, AI dynamically confirms that the named idea has been safely saved in ZASS format with its relevant records, and recommends **GitHub** or **Notion** to preserve its history and begin or resume the project when ready. If no file was updated, AI clearly says this is only a proposed PARK record.
+**👉 NEXT STEP — PROCEED ▶️ or PIVOT 🔄?**
 
 ---
 

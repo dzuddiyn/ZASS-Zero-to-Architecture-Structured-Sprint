@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.3] — 2026-09-30
+
+- Removed the dedicated Full-ZASS `PARK` command and footer action; the Full-ZASS command surface is now `ZASS!! / PROCEED / PIVOT / COMMIT`. The `PARKED` state remains available for deferred execution/history.
+- Locked the semantic separation `AI suggestion ≠ Owner decision ≠ Git change` without requiring a new mandatory response layout.
+- Added qualitative **Evidence Confidence** (`UNVALIDATED / LOW / MEDIUM / HIGH`) as a separate axis from ZERO → ARCHITECTURE readiness; the readiness formula is unchanged and 100% readiness does not imply empirical validation.
+- Recorded the Small Farm Planner teaching fixture as a PASS test for the readiness-vs-confidence distinction: it has confirmed architecture readiness while empirical validation experiments remain planned.
+- Accepted future implementation candidates for `zass check / status / diff` and an optional machine-readable `.zass/` layer; rejected the proposed mandatory “one primary action per response” rule.
+- Accepted real-world case studies as an evidence priority for future method evolution.
+- Locked `L-DOC-001`: the root README will become a lightweight landing/onboarding page, while the previous long-form README material and detailed infographics move to GitHub Wiki/reference material. The Wiki migration itself is not claimed complete in this commit.
+
 ## [Onboarding baseline] — 2026-09-30
 
 - LOCKED problem-first onboarding with ZASSIMPLE as the default first-use method and progressive disclosure for Full ZASS, ZASSELECTION, ACTION PLAN, and advanced governance.

@@ -462,6 +462,28 @@ The four onboarding paths must preserve these invariants:
 
 ---
 
+
+---
+
+## L-DOC-001 — Root README is the landing page; long-form material moves to Wiki
+
+**Decision:** The root `README.md` becomes a lightweight, problem-first, onboarding-first landing page.
+
+The previous long-form README material and detailed infographics are retained as reference material in the GitHub Wiki rather than competing with first-use onboarding.
+
+The root README should prioritize:
+
+1. the user pain / value proposition;
+2. the simple ZASS mental model;
+3. the four official onboarding paths;
+4. a short practical demo;
+5. the complete example;
+6. links into Wiki/reference material for deeper concepts.
+
+Detailed framework explanation, extended command/reference material, long-form method guidance, and detailed infographics belong in the Wiki/reference layer.
+
+**Implementation note:** this decision is LOCKED now. The actual Wiki migration and root README rewrite are separate implementation work and must not be claimed complete until they are actually performed.
+
 # Decision status
 
 The following are LOCKED as of 2026-09-30:
@@ -472,5 +494,6 @@ The following are LOCKED as of 2026-09-30:
 - `L-ONB-004` — Progressive disclosure
 - `L-ONB-005` — Public-project cross-AI handoff
 - `L-CLI-001` — CLI is an official onboarding mechanism with minimal ZASSIMPLE default
+- `L-DOC-001` — Root README is the lightweight landing page; long-form README content and detailed infographics move to GitHub Wiki/reference material
 
 This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.

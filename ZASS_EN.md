@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.2 (PROCEED absorbs approval of proposed LOCK transitions; COMMIT = commit + push; baseline decisions v0.1 remain unchanged)
+**Version:** 0.3.3 (PARK command removed; PARKED state retained; Evidence Confidence separated from Architecture Readiness)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,16 +39,16 @@ The AI must find the relevant entries, manage IDs and states behind the scenes, 
 
 Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
 
-An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PARK / PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` accepts every proposal from the latest ZASS mapping that the owner has not rejected or changed, including proposed LOCK transitions; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` accepts every proposal from the latest ZASS mapping that the owner has not rejected or changed, including proposed LOCK transitions; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 
 End **every** AI reply with:
 
 ```text
-[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [🅿️ PARK] -- [📦 COMMIT]
+[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.3.1 / latest v0.3.2
+⬆️ UPDATE ZASS? now v0.3.2 / latest v0.3.3
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, and versions with the actual state. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
@@ -58,7 +58,6 @@ Footer command meanings:
 - `ZASS!!` — run full exploration using the ZASS format.
 - `PROCEED` — accept and continue every proposal from the latest ZASS mapping that the owner has not rejected or changed. If ZASS clearly proposes a decision for LOCK, PROCEED is the owner's approval to make it LOCKED. PROCEED does not commit or push.
 - `PIVOT` — suggest an alternative direction based on current weaknesses, evidence, or constraints.
-- `PARK` — record the idea safely and stop active work at that point.
 - `COMMIT` — after changes are approved through PROCEED or an equivalent owner instruction, update affected files, version, and changelog as one atomic commit, push to GitHub, then report the real SHA. Never report success before the commit and push actually occur.
 
 When the user intentionally issues `ZASS` or `ZASS!!`, compare the project file version with the latest official repository version when access is available. If they differ, show `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. If current, show `✅ ZASS UP TO DATE — v<version>`. If checking is unavailable, show `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; never invent a version number.
@@ -355,11 +354,7 @@ Output: [evidence / answer / small evaluable data point]
 
 AI must then close the output with a clear question:
 
-**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, or PIVOT 🔄?**
-
-- **PARK 🅿️** — After AI has actually updated the file, state dynamically that **[idea name/summary]** has been safely saved in ZASS format, including relevant records. Recommend **GitHub** or **Notion** as the best place to preserve the idea's history and start or resume the project when the owner is ready. If the file has not been updated, clearly state that this is only a proposed PARK record.
-
----
+**👉 NEXT STEP — PROCEED ▶️ or PIVOT 🔄?**
 
 - **PROCEED ▶️** — AI recommends only the most relevant next action from these choices:
   - **🧪 Run an experiment** — test an assumption or `E-xxx` with small evidence.
@@ -374,7 +369,7 @@ AI must then close the output with a clear question:
 - **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
   - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
 
-If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` updates or creates one appropriate action; `PARK` moves it to PARKED; `PIVOT` records the changed direction. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
+If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` updates or creates one appropriate action; `PIVOT` records the changed direction. If the owner naturally asks to defer or stop work, the action may move to the `PARKED` state; there is no dedicated `PARK` command. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
 
 
 ## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE
@@ -391,7 +386,7 @@ These additions sharpen ZASS without adding states or IDs. Use them when there i
 🎯 Pass/fail signal: [evidence or threshold that determines the result]
 👀 Observed result: [what actually happened / PENDING]
 📚 Learning: [what is known after observing the result / PENDING]
-➡️ Impact: PARK / PROCEED / PIVOT — [reason]
+➡️ Impact: DEFER / PROCEED / PIVOT — [reason]
 ```
 
 ### Risk record (`R-xxx`)
@@ -611,6 +606,8 @@ AI may NOT:
 - Hide trade-offs or unresolved assumptions
 
 Only the project owner may change a decision to `LOCKED`.
+
+**Separation philosophy:** `AI suggestion ≠ Owner decision ≠ Git change`. An AI suggestion remains a candidate until the owner decides; a decision becomes actual Git state only after the change is successfully saved/committed. Never claim that any layer has happened when it has not.
 
 Decision states:
 
@@ -1026,6 +1023,29 @@ In addition to the score, confirmed architecture is allowed only when:
 
 `NOT READY / READY`
 
+### EVIDENCE CONFIDENCE — a separate axis
+
+`Architecture Readiness` answers: **is the project clear enough to build or confirm an architecture?**
+
+`Evidence Confidence` answers: **how strongly are the important assumptions, risks, and decisions supported by observed evidence?**
+
+The two axes **must not be conflated**. `100% Architecture Readiness` does not mean the product or architecture has been empirically validated.
+
+Use these qualitative labels, without a second percentage:
+
+- `UNVALIDATED` — no observed empirical evidence for relevant critical assumptions.
+- `LOW` — evidence is limited or indirect, or major critical assumptions remain untested.
+- `MEDIUM` — relevant evidence exists but coverage or real-world validation is incomplete.
+- `HIGH` — strong direct evidence covers the relevant critical assumptions and major risks.
+
+During an intentional `ZASS` / `ZASS!!` readiness review, and during `BUILD ARCHITECTURE`, report Evidence Confidence with a short reason when relevant evidence is available. Never invent evidence.
+
+An architecture may be `CONFIRMED` with low Evidence Confidence when the readiness requirements and confirmation gate have been satisfied; the low confidence and remaining validation loops must stay visible.
+
+**Evidence Confidence:**
+
+`UNVALIDATED / LOW / MEDIUM / HIGH`
+
 ---
 
 # 19. ARCHITECTURE GENERATION INSTRUCTION
@@ -1144,7 +1164,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASS
 
-Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT-DAY ACTION PROPOSAL and ask whether to PARK, PROCEED, or PIVOT.
+Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT-DAY ACTION PROPOSAL and ask whether to PROCEED or PIVOT.
 
 ### ZASS REVIEW
 

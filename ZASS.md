@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.2 (PROCEED menyerap approval LOCK yang dicadangkan; COMMIT = commit + push; baseline keputusan v0.1 kekal)
+**Version:** 0.3.3 (PARK command dibuang; PARKED state kekal; Evidence Confidence dipisahkan daripada Architecture Readiness)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -39,16 +39,16 @@ AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir,
 
 Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
 
-Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PARK / PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
+Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` menerima semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik, termasuk LOCK yang dicadangkan; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
 
 Akhiri **setiap** balasan AI dengan:
 
 ```text
-[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [🅿️ PARK] -- [📦 COMMIT]
+[🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 
-⬆️ UPDATE ZASS? now v0.3.1 / latest v0.3.2
+⬆️ UPDATE ZASS? now v0.3.2 / latest v0.3.3
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status dan versi contoh dengan keadaan sebenar. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
@@ -58,7 +58,6 @@ Maksud arahan footer:
 - `ZASS!!` — jalankan penerokaan penuh mengikut format ZASS.
 - `PROCEED` — terima dan teruskan semua cadangan daripada pemetaan ZASS terakhir yang tidak dibantah atau diubah oleh pemilik. Jika ZASS jelas mencadangkan sesuatu keputusan untuk LOCK, PROCEED ialah approval pemilik untuk menjadikannya LOCKED. PROCEED tidak commit atau push.
 - `PIVOT` — cadangkan arah alternatif berdasarkan kelemahan, bukti atau kekangan semasa.
-- `PARK` — rekod idea dengan selamat dan hentikan proses aktif setakat itu.
 - `COMMIT` — selepas perubahan diluluskan melalui PROCEED atau arahan pemilik yang setara, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
 
 Apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`, bandingkan versi fail projek dengan versi terkini repo rasmi jika akses tersedia. Jika berlainan, paparkan `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. Jika sama, paparkan `✅ ZASS UP TO DATE — v<version>`. Jika semakan tidak boleh dibuat, paparkan `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; jangan reka nombor versi.
@@ -357,11 +356,7 @@ Output: [bukti / jawapan / data kecil yang boleh dinilai]
 
 AI mesti kemudian menutup output dengan soalan yang jelas:
 
-**👉 NEXT STEP — PARK 🅿️, PROCEED ▶️, atau PIVOT 🔄?**
-
-- **PARK 🅿️** — Selepas AI benar-benar mengemas kini fail, nyatakan secara dinamik bahawa idea **[nama/ringkasan idea]** telah disimpan dengan selamat dalam format ZASS, termasuk rekod yang relevan. Cadangkan **GitHub** atau **Notion** sebagai tempat terbaik untuk menyimpan sejarah idea dan memulakan atau menyambung projek apabila pemilik bersedia. Jika fail belum dikemas kini, nyatakan dengan jelas bahawa ini hanya cadangan rekod PARK.
-
----
+**👉 NEXT STEP — PROCEED ▶️ atau PIVOT 🔄?**
 
 - **PROCEED ▶️** — AI mencadangkan hanya langkah yang paling relevan daripada pilihan berikut:
   - **🧪 Jalankan eksperimen** — uji andaian atau `E-xxx` dengan bukti kecil.
@@ -376,7 +371,7 @@ AI mesti kemudian menutup output dengan soalan yang jelas:
 - **PIVOT 🔄** — AI mencari arah lain yang masih menyelesaikan masalah asal dan mengekalkan calon terdahulu dalam rekod.
   - **🔀 Cadangan pivot:** [arah alternatif yang sesuai dengan evidence semasa].
 
-Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` mengemas kini atau mencipta satu action yang sesuai; `PARK` memindahkannya ke PARKED; `PIVOT` merekod perubahan arah. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
+Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` mengemas kini atau mencipta satu action yang sesuai; `PIVOT` merekod perubahan arah. Jika pemilik secara biasa meminta kerja ditangguh atau dihentikan, action boleh dipindahkan ke state `PARKED`; tiada command `PARK` khusus. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
 
 
 ## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN
@@ -393,7 +388,7 @@ Tambahan ini menjadikan ZASS lebih tajam tanpa menambah state atau ID baharu. Ia
 🎯 Pass/fail signal: [bukti atau ambang yang menentukan hasil]
 👀 Observed result: [apa yang benar-benar berlaku / PENDING]
 📚 Learning: [apa yang diketahui selepas hasil diperhatikan / PENDING]
-➡️ Impact: PARK / PROCEED / PIVOT — [alasan]
+➡️ Impact: DEFER / PROCEED / PIVOT — [alasan]
 ```
 
 ### Rekod risiko (`R-xxx`)
@@ -613,6 +608,8 @@ AI may NOT:
 - Hide trade-offs or unresolved assumptions
 
 Only the project owner may change a decision to `LOCKED`.
+
+**Falsafah pemisahan:** `AI suggestion ≠ Owner decision ≠ Git change`. Cadangan AI kekal calon sehingga pemilik membuat keputusan; keputusan hanya menjadi state Git sebenar selepas perubahan berjaya disimpan/di-commit. Jangan mendakwa mana-mana lapisan telah berlaku jika ia belum berlaku.
 
 Decision states:
 
@@ -1028,6 +1025,29 @@ Selain skor, confirmed architecture dibenarkan hanya apabila:
 
 `NOT READY / READY`
 
+### EVIDENCE CONFIDENCE — paksi berasingan
+
+`Architecture Readiness` menjawab: **adakah projek cukup jelas untuk membina atau mengesahkan architecture?**
+
+`Evidence Confidence` menjawab: **sejauh mana andaian, risiko dan keputusan penting disokong oleh bukti yang diperhatikan?**
+
+Kedua-duanya **tidak boleh dicampurkan**. `100% Architecture Readiness` tidak bermaksud produk atau architecture telah tervalidasi secara empirikal.
+
+Gunakan label kualitatif berikut, tanpa peratus kedua:
+
+- `UNVALIDATED` — tiada bukti empirikal diperhatikan untuk andaian kritikal yang relevan.
+- `LOW` — bukti masih sedikit, tidak langsung, atau andaian kritikal utama belum diuji.
+- `MEDIUM` — terdapat bukti relevan tetapi coverage atau validation dunia sebenar masih tidak lengkap.
+- `HIGH` — bukti langsung yang kuat meliputi andaian kritikal dan risiko utama yang relevan.
+
+Semasa arahan sengaja `ZASS` / `ZASS!!` yang menilai readiness, dan semasa `BUILD ARCHITECTURE`, laporkan Evidence Confidence bersama sebab ringkas apabila evidence berkaitan tersedia. Jangan reka evidence.
+
+Architecture boleh berstatus `CONFIRMED` dengan Evidence Confidence yang rendah jika syarat readiness dan pintu pengesahan telah dipenuhi; status confidence yang rendah mesti kekal kelihatan bersama validation loops yang masih terbuka.
+
+**Evidence Confidence:**
+
+`UNVALIDATED / LOW / MEDIUM / HIGH`
+
 ---
 
 # 19. ARCHITECTURE GENERATION INSTRUCTION
@@ -1146,7 +1166,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASS
 
-Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PARK, PROCEED atau PIVOT.
+Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PROCEED atau PIVOT.
 
 ### ZASS REVIEW
 

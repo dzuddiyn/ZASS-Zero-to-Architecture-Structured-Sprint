@@ -468,3 +468,169 @@ It also aligns with the broader portability principle:
 > **Do not require every AI to understand the repository or have write access.**
 
 This candidate has been promoted into the LOCKED onboarding baseline. See `docs/ONBOARDING_PRODUCT_DIRECTION.md`, especially `L-ONB-002`, `L-ONB-003`, and `L-ONB-005`. Core ZASS and ZASSIMPLE decision semantics remain unchanged.
+
+
+---
+
+## CR-009 — Suggestion / Decision / Git Change Separation
+
+**Status:** ACCEPTED — LOCKED PHILOSOPHY  
+**Source:** External Copilot UX review + Project Owner decision  
+**Decision date:** 2026-09-30
+
+Locked principle:
+
+```text
+AI suggestion ≠ Owner decision ≠ Git change
+```
+
+This is a semantic invariant, not a mandatory three-box UI. Current ZASS already follows the same authority separation; v0.3.3 makes the principle explicit.
+
+- AI suggestions are candidates.
+- The owner decides and authorizes LOCKED state.
+- Git state changes only after an actual successful save/commit.
+- AI must never claim that a later layer occurred when it did not.
+
+No additional field or mandatory response block is required.
+
+---
+
+## CR-010 — `zass check / status / diff` Validator
+
+**Status:** ACCEPTED — IMPLEMENTATION CANDIDATE  
+**Source:** External Copilot UX/automation review  
+**Decision date:** 2026-09-30
+
+Accepted direction for the future CLI:
+
+```bash
+zass check
+zass status
+zass diff
+```
+
+Potential MVP checks:
+
+- duplicate or malformed IDs;
+- broken references;
+- unauthorized changes to LOCKED decisions;
+- architecture references to invalid or superseded decisions;
+- stale ZASS ↔ ACTION_PLAN readiness snapshots;
+- unresolved critical placeholders;
+- likely secrets or sensitive values committed by mistake.
+
+The CLI onboarding baseline remains minimal. Validator commands are follow-up implementation work, not onboarding prerequisites.
+
+---
+
+## CR-011 — Machine-readable `.zass/` Layer
+
+**Status:** ACCEPTED — EXPLORATION / IMPLEMENTATION CANDIDATE  
+**Source:** External Copilot UX/automation review  
+**Decision date:** 2026-09-30
+
+Candidate machine-only layer:
+
+```text
+.zass/
+├── config.yml
+└── schema.yml
+```
+
+Purpose:
+
+- give CLI / GitHub Actions a stable machine-readable contract;
+- keep human interaction centered on Markdown;
+- avoid forcing users to read automation configuration during onboarding.
+
+Example candidate fields:
+
+```yaml
+version: 1
+language: en
+approval_mode: explicit
+source_of_truth: github
+```
+
+Do not make `.zass/` mandatory until the validator/automation design proves that it adds value.
+
+---
+
+## CR-012 — Architecture Readiness ≠ Evidence Confidence
+
+**Status:** ACCEPTED CONCEPT — TEST PASS  
+**Source:** External Copilot review + in-repo fixture test  
+**Test date:** 2026-09-30
+
+### Test
+
+The existing `examples/01-small-farm-planner/ZASS.md` fixture reports:
+
+```text
+ZERO → ARCHITECTURE: 100% — ARCHITECTURE CONFIRMED
+```
+
+while explicitly stating that no empirical experiment result is invented, with offline, backup-recovery, and real-user usability experiments still planned.
+
+### Result
+
+**PASS.** The fixture demonstrates that:
+
+```text
+100% Architecture Readiness
+≠
+100% empirical validation
+```
+
+Therefore ZASS v0.3.3 adds **Evidence Confidence** as a separate qualitative axis:
+
+```text
+UNVALIDATED
+LOW
+MEDIUM
+HIGH
+```
+
+No second percentage is introduced. The existing ZERO → ARCHITECTURE formula remains unchanged.
+
+---
+
+## CR-013 — One Primary Action Per Response
+
+**Status:** REJECTED  
+**Source:** External Copilot UX review  
+**Decision date:** 2026-09-30
+
+Reason:
+
+- existing ZASS already provides contextual next-action guidance;
+- a new mandatory UX rule is unnecessary;
+- the owner prefers to simplify the command surface directly instead.
+
+Related method change in v0.3.3:
+
+- remove the Full-ZASS `PARK` command;
+- keep `PROCEED`, `PIVOT`, and `COMMIT`;
+- retain `PARKED` as an internal/history state.
+
+---
+
+## CR-014 — Real-world Case Studies
+
+**Status:** ACCEPTED — EVIDENCE PRIORITY  
+**Source:** External Copilot review  
+**Decision date:** 2026-09-30
+
+Teaching fixtures show mechanics, not proven real-world value.
+
+Future ZASS evaluation should use several real projects and observe useful signals such as:
+
+- how often project context must be retold to another AI;
+- repeated debates or resurfacing of already rejected ideas;
+- hidden assumptions discovered before implementation;
+- unauthorized or unexplained decision drift;
+- time from raw idea to an owner-approved decision;
+- time for another AI or maintainer to understand the current project state;
+- factual corrections required after AI-generated claims.
+
+Case-study evidence should guide future method changes before new ceremony is added.
