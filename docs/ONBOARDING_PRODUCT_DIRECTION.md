@@ -26,13 +26,13 @@ New users should not need to choose a method before starting.
 
 Proposed experience:
 
-\`\`\`text
+```text
 Idea
 → Start ZASS
 → Talk naturally
 → AI records important state
 → Continue with another AI using the same file
-\`\`\`
+```
 
 Full ZASS becomes available when decision complexity, evidence, risks, trade-offs, or architecture dependencies increase.
 
@@ -42,24 +42,24 @@ ZASSELECTION is introduced when the primary problem is choosing between alternat
 
 Possible command:
 
-\`\`\`bash
+```bash
 npm create zass@latest my-project
-\`\`\`
+```
 
 Alternative:
 
-\`\`\`bash
+```bash
 npx create-zass@latest my-project
-\`\`\`
+```
 
 Default generated project:
 
-\`\`\`text
+```text
 my-project/
 ├── ZASSIMPLE.md
 ├── README.md
 └── .gitignore
-\`\`\`
+```
 
 The initial CLI should not ask the user to choose between ZASS methods.
 
@@ -75,11 +75,11 @@ Keep the generated project README extremely short.
 
 The user only needs to know:
 
-1. Give \`ZASSIMPLE.md\` to an AI.
+1. Give `ZASSIMPLE.md` to an AI.
 2. Talk normally.
-3. Use \`ZASS\` when the conversation should be organized.
-4. Use \`LOCK DECISION\` for a final decision.
-5. Use \`COMMIT\` when approved state should be saved.
+3. Use `ZASS` when the conversation should be organized.
+4. Use `LOCK DECISION` for a final decision.
+5. Use `COMMIT` when approved state should be saved.
 6. Give the same file to another AI to continue.
 
 ## README Product Positioning
@@ -108,7 +108,7 @@ Suggested onboarding order:
 
 ## Hero Mental Model
 
-\`\`\`text
+```text
 RAW IDEA
     ↓
 EXPLORE WITH AI
@@ -116,7 +116,7 @@ EXPLORE WITH AI
 HUMAN-APPROVED DECISIONS
     ↓
 TRACEABLE ARCHITECTURE
-\`\`\`
+```
 
 Supporting idea:
 
@@ -134,9 +134,9 @@ Example:
 
 User says:
 
-\`\`\`text
+```text
 ZASS
-\`\`\`
+```
 
 AI organizes:
 
@@ -150,25 +150,25 @@ AI organizes:
 
 User answers several questions, then issues:
 
-\`\`\`text
+```text
 LOCK DECISION
-\`\`\`
+```
 
 A clear decision becomes:
 
-\`\`\`text
+```text
 D-001 | LOCKED
-\`\`\`
+```
 
 ### 1:20–1:45 — Move to another AI
 
-Give the same \`ZASSIMPLE.md\` to another AI.
+Give the same `ZASSIMPLE.md` to another AI.
 
 Prompt:
 
-\`\`\`text
+```text
 Continue this project.
-\`\`\`
+```
 
 The new AI should continue from the project state without requiring the project story to be repeated.
 
@@ -176,17 +176,17 @@ The new AI should continue from the project state without requiring the project 
 
 Show:
 
-\`\`\`text
+```text
 DRAFT ARCH
-\`\`\`
+```
 
 Then explain the final confirmation gate:
 
-\`\`\`text
+```text
 BUILD ARCHITECTURE
         ↓
 YA, CONFIRM ARCHITECTURE
-\`\`\`
+```
 
 ## ZASSIMPLE → Full ZASS Boundary
 
@@ -206,22 +206,22 @@ The project size alone is not the trigger. The important factor is **decision co
 
 ## Candidate Security Default
 
-Generated \`.gitignore\` should ignore common secret files:
+Generated `.gitignore` should ignore common secret files:
 
-\`\`\`gitignore
+```gitignore
 .env
 .env.*
 !.env.example
 .secrets/
 *.key
 *.pem
-\`\`\`
+```
 
 Documentation must also state:
 
 > Never place passwords, API keys, tokens, or sensitive personal data inside tracked ZASS Markdown files.
 
-A \`.gitignore\` does not protect secrets already pasted into a tracked file.
+A `.gitignore` does not protect secrets already pasted into a tracked file.
 
 ## Validation Before LOCK
 
@@ -231,7 +231,7 @@ Test through real usage first.
 
 Suggested experiment:
 
-1. Build the smallest \`create-zass\` prototype.
+1. Build the smallest `create-zass` prototype.
 2. Give it to a new user without explaining ZASS.
 3. Measure whether they can start a project and continue it in a second AI without help.
 4. Record confusion and friction.
