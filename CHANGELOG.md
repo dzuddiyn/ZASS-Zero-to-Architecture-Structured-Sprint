@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 Work handoff] — 2026-09-30
+
+- Locked a copy-ready ChatGPT Work implementation prompt in `docs/WORK_PROMPT_CR010.md`.
+- The prompt constrains Work to CR-010 v0.1 only: local Node.js `zass check`, fixture-driven tests, conservative validation, no npm publishing, no GitHub Actions, and no methodology expansion.
+- Added explicit pre-edit HEAD/worktree checks, test-before-commit requirements, real-project validation, compact final reporting, and a stop rule preventing automatic progression to v0.2.
+- Full ZASS remains **v0.3.5**; this is an implementation handoff artifact, not a method-semantics change.
+
 ## [CR-010 implementation plan] — 2026-09-30
 
 - Locked the step-by-step `zass check` implementation plan in `docs/CR010_ZASS_CHECK_SPEC.md`.
