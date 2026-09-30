@@ -103,7 +103,7 @@ COMMIT
 
 ## 3. CLI — coming soon
 
-**Status: Specification locked — implementation pending.**
+**Bootstrap status: Specification locked — implementation pending.**
 
 Target experience:
 
@@ -122,7 +122,9 @@ my-project/
 
 ZASSIMPLE is the default. No method-selection wizard.
 
-> **The CLI is not released yet. The command above is the locked target UX, not a currently available package.**
+> **The project-bootstrap CLI is not released yet. The command above is the locked target UX, not a currently available package.**
+>
+> **Developer validator:** CR-010 `zass check` v0.1 is implemented locally under [`cli/`](cli/README.md). It is not published to npm; use `npm link` for local development.
 
 ---
 

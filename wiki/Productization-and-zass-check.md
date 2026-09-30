@@ -46,7 +46,7 @@ The first validator command is:
 zass check
 ```
 
-**Status:** implementation specification locked; MVP implementation pending.
+**Status:** local v0.1 MVP implemented under `cli/`; not published to npm.
 
 The command contract is defined in:
 
@@ -60,7 +60,7 @@ A ready-to-use Work handoff prompt is available at:
 
 The first validator is intentionally small.
 
-It should check:
+It checks:
 
 1. project-file discovery;
 2. duplicate IDs;
@@ -83,7 +83,7 @@ Not in v0.1:
 ## Planned phases
 
 ```text
-v0.1  current-file validator
+v0.1  current-file validator — IMPLEMENTED
 
 v0.2  Git-aware LOCKED drift
 
@@ -119,3 +119,9 @@ Future evaluation should observe real-project signals such as:
 - time another AI or maintainer needs to understand the project state.
 
 Teaching fixtures demonstrate mechanics, not efficacy.
+
+## v0.1 verification
+
+Before commit, the implementation passed 10/10 automated tests, `npm link` worked, and `zass check` returned 0 errors / 0 warnings against the Small Farm Planner teaching project.
+
+CR-010 v0.2 has not started.

@@ -2,6 +2,15 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 v0.1] — 2026-09-30
+
+- Implemented the first local Node.js `zass check` validator under `cli/`.
+- Added Z000–Z005 checks for required `ZASS.md` discovery, duplicate IDs, malformed IDs, broken local references, Evidence Confidence pairing, and high-signal possible-secret warnings with redacted output.
+- Added fixture-driven tests for valid, duplicate-ID, malformed-ID, missing-evidence, broken-reference, possible-secret, missing-ZASS, CLI exit-code, and repeated-reference behavior; **10/10 tests passed** before commit.
+- Verified `npm link` and the linked `zass check` command against the Small Farm Planner teaching project with **0 errors / 0 warnings**.
+- Kept npm publication, `zass status`, `zass diff`, Git-aware LOCKED drift, ACTION_PLAN snapshot consistency, remote URL validation, `.zass/schema.yml`, and GitHub Actions out of scope.
+- Full ZASS remains **v0.3.5**; CR-010 v0.2 is not started.
+
 ## [Wiki source] — 2026-09-30
 
 - Generated a version-controlled Wiki source under `wiki/` with Home, Quick Start, ZASSIMPLE, Full ZASS, Architecture & Evidence, ACTION PLAN, Cross-AI Handoff, ZASSELECTION, Advanced Reviews, Productization/`zass check`, Bahasa Melayu, Infographics, and `_Sidebar` pages.

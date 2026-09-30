@@ -1,6 +1,6 @@
 # CR-010 — `zass check` Implementation Specification
 
-**Status:** LOCKED IMPLEMENTATION PLAN  
+**Status:** LOCKED IMPLEMENTATION PLAN — v0.1 IMPLEMENTED  
 **Date:** 2026-09-30  
 **Owner:** Project Owner  
 **Scope:** First productized validator for ZASS
@@ -247,3 +247,19 @@ The agent should:
 3. run tests locally;
 4. show the diff and test result;
 5. avoid npm publication or GitHub Action setup unless that phase has been explicitly authorized.
+
+
+## 9. v0.1 implementation receipt
+
+Implemented under `cli/` on 2026-09-30 without changing Full ZASS method semantics.
+
+Verification performed before commit:
+
+- Node.js built-in test runner: **10/10 tests passed**;
+- syntax checks passed for CLI, source, rules, and tests;
+- `npm link`: **worked** in the implementation environment;
+- linked `zass check` against `examples/01-small-farm-planner`: **0 errors, 0 warnings**;
+- secret-warning output redacts the matching value;
+- no npm publication, GitHub Action, `zass status`, `zass diff`, Git-aware LOCKED drift, or ACTION_PLAN snapshot drift was added.
+
+CR-010 v0.2 is **not started**. The owner can review v0.1 behavior before authorizing the next phase.
