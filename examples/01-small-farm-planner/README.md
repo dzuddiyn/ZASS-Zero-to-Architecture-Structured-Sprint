@@ -1,6 +1,6 @@
 # Example 01 — Small Farm Planner
 
-**Method:** Full ZASS v0.3.4  
+**Method:** Full ZASS v0.3.5  
 **Type:** Fictional teaching fixture  
 **Purpose:** Show the complete idea → decision → architecture lifecycle.
 

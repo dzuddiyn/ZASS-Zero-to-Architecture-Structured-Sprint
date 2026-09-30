@@ -595,6 +595,17 @@ HIGH
 
 No second percentage is introduced. The existing ZERO → ARCHITECTURE formula remains unchanged.
 
+### Locked display rule — v0.3.5
+
+Evidence Confidence must be displayed when:
+
+1. a real/current `ZERO → ARCHITECTURE` assessment is shown;
+2. `DRAFT ARCH` readiness is evaluated;
+3. `BUILD ARCHITECTURE` is run; or
+4. architecture is `CONFIRMED` while validation/experiments remain open.
+
+Static documentation examples do not trigger this requirement. When no observed empirical evidence exists for the relevant critical assumptions, report `UNVALIDATED`; never invent evidence.
+
 ---
 
 ## CR-013 — One Primary Action Per Response

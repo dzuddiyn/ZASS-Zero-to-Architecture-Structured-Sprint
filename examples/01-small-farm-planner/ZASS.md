@@ -1,7 +1,7 @@
 # ZASS — Small Farm Planner
 
 **Project:** Small Farm Planner  
-**ZASS method:** v0.3.4  
+**ZASS method:** v0.3.5  
 **Example status:** ARCHITECTURE CONFIRMED — FICTIONAL TEACHING FIXTURE  
 **Authority:** This file is the decision/readiness authority for this example.
 

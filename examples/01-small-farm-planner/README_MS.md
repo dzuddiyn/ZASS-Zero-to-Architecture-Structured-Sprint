@@ -1,6 +1,6 @@
 # Contoh 01 — Small Farm Planner
 
-**Kaedah:** Full ZASS v0.3.4  
+**Kaedah:** Full ZASS v0.3.5  
 **Jenis:** Fixture pengajaran fiksyen  
 **Tujuan:** Menunjukkan aliran penuh idea → keputusan → architecture.
 

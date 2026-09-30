@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.4 (PROCEED approves only an explicitly listed proposal set; productization focus locked)
+**Version:** 0.3.5 (Evidence Confidence must be shown at defined architecture-assessment points)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -47,11 +47,12 @@ End **every** AI reply with:
 [🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
+🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.3 / latest v0.3.4
+⬆️ UPDATE ZASS? now v0.3.4 / latest v0.3.5
 ```
 
-The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, and versions with the actual state. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
+The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
 
 Footer command meanings:
 
@@ -1046,7 +1047,16 @@ Use these qualitative labels, without a second percentage:
 - `MEDIUM` — relevant evidence exists but coverage or real-world validation is incomplete.
 - `HIGH` — strong direct evidence covers the relevant critical assumptions and major risks.
 
-During an intentional `ZASS` / `ZASS!!` readiness review, and during `BUILD ARCHITECTURE`, report Evidence Confidence with a short reason when relevant evidence is available. Never invent evidence.
+**Evidence Confidence must be displayed** whenever any of these conditions applies:
+
+1. A `ZERO → ARCHITECTURE` score is shown as a real/current project assessment.
+2. Readiness for `DRAFT ARCH` is being evaluated.
+3. `BUILD ARCHITECTURE` is run.
+4. Architecture is already `CONFIRMED` while validation or experiments are still running / incomplete.
+
+When displayed, include a short reason grounded in evidence that actually exists. If there is no observed empirical evidence for the relevant critical assumptions, use `UNVALIDATED`. Never invent evidence.
+
+If `ZERO → ARCHITECTURE` appears only as a static documentation/template example rather than a real project assessment, this mandatory display rule does not apply.
 
 An architecture may be `CONFIRMED` with low Evidence Confidence when the readiness requirements and confirmation gate have been satisfied; the low confidence and remaining validation loops must stay visible.
 

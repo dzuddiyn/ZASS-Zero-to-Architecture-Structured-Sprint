@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.5] — 2026-09-30
+
+- Locked mandatory **Evidence Confidence** display rules for Full ZASS: show it whenever a real ZERO → ARCHITECTURE assessment is shown, DRAFT ARCH readiness is evaluated, BUILD ARCHITECTURE runs, or confirmed architecture still has open validation/experiments.
+- Updated the Full-ZASS footer example to pair Architecture Readiness with Evidence Confidence when reporting current project state.
+- Clarified that static documentation/template examples are exempt from the mandatory pairing rule and that evidence must never be invented.
+- Updated the Small Farm Planner teaching fixture references to Full ZASS v0.3.5; its `Evidence Confidence: UNVALIDATED` remains intentional because its empirical validation loops are still only planned.
+
 ## [Repository license] — 2026-09-30
 
 - Owner explicitly selected the **MIT License** for the ZASS repository.

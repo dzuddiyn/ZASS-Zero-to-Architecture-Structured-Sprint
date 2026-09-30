@@ -364,6 +364,8 @@ HIGH
 
 for Evidence Confidence.
 
+In Full ZASS, Evidence Confidence is mandatory whenever a real `ZERO → ARCHITECTURE` assessment is shown, DRAFT ARCH readiness is evaluated, BUILD ARCHITECTURE runs, or a confirmed architecture still has open validation/experiments.
+
 ---
 
 # One Source of Truth
@@ -423,7 +425,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**Full ZASS:** v0.3.4  
+**Full ZASS:** v0.3.5  
 **ZASSIMPLE:** v0.1.6  
 **ZASSELECTION:** v0.1.0  
 **License:** [MIT](LICENSE)

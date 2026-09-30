@@ -1,6 +1,6 @@
 # Walkthrough — From Raw Idea to Confirmed Architecture
 
-This is a compact **fictional conversation trace** showing how full ZASS v0.3.4 is intended to feel.
+This is a compact **fictional conversation trace** showing how full ZASS v0.3.5 is intended to feel.
 
 It is not a transcript of real research and does not invent empirical evidence.
 
@@ -81,7 +81,7 @@ Before PROCEED, ZASS presents the exact approval set:
 
     PROCEED
 
-In full ZASS v0.3.4:
+In full ZASS v0.3.5:
 
 - exactly the items listed in `PROPOSED FOR PROCEED` are approved;
 - unlisted suggestions are not approved;

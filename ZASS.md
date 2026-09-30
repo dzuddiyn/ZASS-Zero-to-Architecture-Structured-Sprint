@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.4 (PROCEED meluluskan hanya proposal set yang disenaraikan secara eksplisit; productization focus dikunci)
+**Version:** 0.3.5 (Evidence Confidence wajib dipaparkan bersama assessment architecture pada titik yang ditetapkan)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -47,11 +47,12 @@ Akhiri **setiap** balasan AI dengan:
 [🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
+🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
 
-⬆️ UPDATE ZASS? now v0.3.3 / latest v0.3.4
+⬆️ UPDATE ZASS? now v0.3.4 / latest v0.3.5
 ```
 
-Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status dan versi contoh dengan keadaan sebenar. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
+Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
 
 Maksud arahan footer:
 
@@ -1048,7 +1049,16 @@ Gunakan label kualitatif berikut, tanpa peratus kedua:
 - `MEDIUM` — terdapat bukti relevan tetapi coverage atau validation dunia sebenar masih tidak lengkap.
 - `HIGH` — bukti langsung yang kuat meliputi andaian kritikal dan risiko utama yang relevan.
 
-Semasa arahan sengaja `ZASS` / `ZASS!!` yang menilai readiness, dan semasa `BUILD ARCHITECTURE`, laporkan Evidence Confidence bersama sebab ringkas apabila evidence berkaitan tersedia. Jangan reka evidence.
+**Evidence Confidence wajib dipaparkan** apabila salah satu keadaan berikut berlaku:
+
+1. `ZERO → ARCHITECTURE` score dipaparkan sebagai assessment sebenar/current project state.
+2. Readiness untuk `DRAFT ARCH` sedang dinilai.
+3. `BUILD ARCHITECTURE` dijalankan.
+4. Architecture sudah `CONFIRMED` tetapi validation atau experiment masih berjalan / belum selesai.
+
+Apabila dipaparkan, sertakan sebab ringkas berdasarkan evidence yang benar-benar tersedia. Jika tiada bukti empirikal diperhatikan untuk andaian kritikal yang relevan, gunakan `UNVALIDATED`. Jangan reka evidence.
+
+Jika `ZERO → ARCHITECTURE` hanya muncul sebagai contoh statik dalam dokumentasi/template dan bukan assessment projek sebenar, rule paparan wajib ini tidak terpakai.
 
 Architecture boleh berstatus `CONFIRMED` dengan Evidence Confidence yang rendah jika syarat readiness dan pintu pengesahan telah dipenuhi; status confidence yang rendah mesti kekal kelihatan bersama validation loops yang masih terbuka.
 

@@ -12,7 +12,7 @@ The documentation example is complete. Future work would be a real prototype and
 
 - **Progress:** 100%
 - **Status:** ARCHITECTURE CONFIRMED
-- **Source:** ZASS.md using ZASS v0.3.4 — same Git commit
+- **Source:** ZASS.md using ZASS v0.3.5 — same Git commit
 - **Critical blockers:** none for the documented v0.1 architecture
 
 ## Priority actions
