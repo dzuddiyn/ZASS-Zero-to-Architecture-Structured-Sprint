@@ -499,7 +499,7 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — IMPLEMENTATION PLAN LOCKED  
+**Status:** ACCEPTED — v0.1 IMPLEMENTED / v0.2 PLAN LOCKED — NOT STARTED  
 **Source:** External Copilot UX/automation review + Project Owner decision  
 **Decision date:** 2026-09-30
 
@@ -522,11 +522,14 @@ The first MVP is intentionally small:
 - Evidence Confidence pairing;
 - likely secret/sensitive-value warnings.
 
-Deferred until the check engine is stable:
+v0.1 is implemented. The next validator phase is specified separately:
+
+- [`docs/CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md) — **LOCKED PLAN, NOT STARTED**
+
+Still deferred beyond v0.2:
 
 - `zass status`;
 - `zass diff`;
-- Git-aware LOCKED-decision drift;
 - ACTION_PLAN snapshot consistency;
 - GitHub Action integration;
 - npm publication.

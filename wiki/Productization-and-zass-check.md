@@ -85,7 +85,7 @@ Not in v0.1:
 ```text
 v0.1  current-file validator — IMPLEMENTED
 
-v0.2  Git-aware LOCKED drift
+v0.2  Git-aware LOCKED drift — PLAN LOCKED / NOT STARTED
 
 v0.3  ACTION_PLAN consistency
 
@@ -124,4 +124,4 @@ Teaching fixtures demonstrate mechanics, not efficacy.
 
 Before commit, the implementation passed 10/10 automated tests, `npm link` worked, and `zass check` returned 0 errors / 0 warnings against the Small Farm Planner teaching project.
 
-CR-010 v0.2 has not started.
+CR-010 v0.2 has not started. Its locked plan compares `HEAD:ZASS.md` with the working tree, adds Z100 for unavailable Git history and Z101 for silent LOCKED-decision drift, recognizes only an explicit `Supersedes: D-xxx` replacement path, and uses temporary Git repositories for automated tests. Implementation remains gated by real-project v0.1 field checks.

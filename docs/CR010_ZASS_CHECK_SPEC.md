@@ -262,4 +262,4 @@ Verification performed before commit:
 - secret-warning output redacts the matching value;
 - no npm publication, GitHub Action, `zass status`, `zass diff`, Git-aware LOCKED drift, or ACTION_PLAN snapshot drift was added.
 
-CR-010 v0.2 is **not started**. The owner can review v0.1 behavior before authorizing the next phase.
+CR-010 v0.2 is **not started**. Its implementation plan is now LOCKED in [`CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md). Implementation remains gated by v0.1 field testing on real projects.

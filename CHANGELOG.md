@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 v0.2 plan] — 2026-10-01
+
+- Locked the CR-010 v0.2 **Git-aware LOCKED drift** implementation plan in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`.
+- Kept the user command surface unchanged: v0.2 extends `zass check` rather than adding a new command.
+- Planned read-only Git discovery, `HEAD:ZASS.md` comparison, deterministic LOCKED-decision extraction/normalization, Z100 warning behavior, and Z101 errors for silent LOCKED modification/removal.
+- Locked explicit `Supersedes: D-xxx` as the deterministic v0.2 replacement relation; old decision history must be preserved.
+- Locked temporary-Git automated fixtures instead of committed nested `.git/` fixtures.
+- Kept ACTION_PLAN consistency, `zass status`, `zass diff`, GitHub Actions, npm publication, mandatory `.zass/schema.yml`, and AI semantic comparison out of v0.2.
+- v0.2 implementation is **NOT STARTED** and remains gated by v0.1 field testing on 1–2 real ZASS projects. Full ZASS remains **v0.3.5**.
+
 ## [ZASSIMPLE v0.1.7] — 2026-10-01
 
 - Required a **CURRENT SELECTION MATRIX** whenever the owner deliberately commands `ZASS` or `ZASS!!` in ZASSIMPLE.
