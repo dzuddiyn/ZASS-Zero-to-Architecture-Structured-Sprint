@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Current version:** v0.1.6
+**Current version:** v0.1.7
 
 ZASSIMPLE is the default lightweight way to use ZASS.
 
@@ -58,6 +58,14 @@ ZASS!!
 ```
 
 the AI can organize relevant discussion into the ZASSIMPLE state.
+
+It must also show a **CURRENT SELECTION MATRIX**:
+
+| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+|---|---|---|---|---|---|
+| [candidate] | PASS / FAIL / UNKNOWN | ... | ... | ... | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
+
+The matrix is mandatory on deliberate ZASS/ZASS!! mapping, even when only one candidate exists. It does not require weighted scoring, does not invent alternatives, and does not add ZASSELECTION's `SELECT` command. Final authority remains `LOCK DECISION`.
 
 This does not automatically LOCK or COMMIT anything.
 

@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Version:** 0.1.6  
+**Version:** 0.1.7  
 **Status:** TEMPLATE — architecture belum disahkan  
 **Owner:** Project Owner
 
@@ -29,10 +29,13 @@ secara ringkas apabila boleh mengubah fail. Jangan invent fakta atau mendakwa
 fail sudah dikemas kini jika belum.
 
 Apabila saya sengaja mengarahkan ZASS atau ZASS!!, paparkan ZASSIMPLE UPDATE
-yang relevan (idea, AC, soalan, risiko atau keputusan). Kemudian beri
-💡 Cadangan ZASS, belum AC: [cadangan/persoalan AI yang serasi dengan idea].
-Nyatakan status fail sebenar. Footer atau petikan yang menyebut ZASS!!
-bukan arahan.
+yang relevan (idea, AC, soalan, risiko atau keputusan), kemudian WAJIB rumuskan
+keadaan semasa dalam CURRENT SELECTION MATRIX. Matriks mesti membandingkan
+option/candidate semasa melalui Must-have fit, Strength, Risk/Weakness,
+Evidence/Unknown dan Status. Tiada weighted score wajib dan matriks tidak
+mencipta keputusan. Kemudian beri 💡 Cadangan ZASS, belum AC:
+[cadangan/persoalan AI yang serasi dengan idea]. Nyatakan status fail sebenar.
+Footer atau petikan yang menyebut ZASS!! bukan arahan.
 
 Ungkapan seperti “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud setara
 boleh menjadi AC jika sasaran jelas; jika tidak, tanya satu soalan ringkas.
@@ -58,13 +61,21 @@ Akhiri setiap balasan tepat dengan:
 
 Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `ZASSIMPLE UPDATE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum.
 
-Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan, cadangan AI yang **belum AC**, dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa.
+Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **CURRENT SELECTION MATRIX** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
 
 ```text
 [Respons AI santai dan relevan]
 
 ## ZASSIMPLE UPDATE
 [rekod idea / AC / soalan / risiko / keputusan yang relevan]
+
+### CURRENT SELECTION MATRIX
+| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+|---|---|---|---|---|---|
+| [candidate semasa] | PASS / FAIL / UNKNOWN | [...] | [...] | [...] | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
+
+Current direction: [rumusan AI; bukan keputusan pemilik]
+
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
@@ -77,7 +88,7 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 
 | Keyword | Kesan |
 |---|---|
-| `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
+| `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas, **CURRENT SELECTION MATRIX** wajib, serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
 | `LOCK` atau `LOCK DECISION` | AI jadikan pilihan pemilik sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya dahulu. |
 | `COMMIT` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
 | `DRAFT ARCH` | AI sediakan/pinda draf berversi kerja; boleh dicadangkan apabila keputusan cukup jelas tanpa mengesahkannya. |
@@ -145,6 +156,23 @@ R-001 | OPEN
 Risk: ...
 -->
 
+## CURRENT SELECTION MATRIX
+
+> Snapshot pemilihan semasa untuk membantu pemilik nampak trade-off tanpa menukar ZASSIMPLE menjadi ZASSELECTION. AI mesti mengemas kini matriks ini apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`.
+
+| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+|---|---|---|---|---|---|
+| [candidate] | PASS / FAIL / UNKNOWN | ... | ... | ... | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
+
+Aturan:
+
+- `Must-have fit` hanya berdasarkan requirement/constraint yang telah dinyatakan; jika belum tahu, guna `UNKNOWN`.
+- Jangan gunakan weighted score secara wajib.
+- Jangan cipta option untuk cukupkan jadual; satu candidate tetap satu baris.
+- Matriks ialah **rumusan**, bukan decision authority. AI boleh menyatakan `Current direction`, tetapi ia kekal cadangan AI.
+- Jangan tambah command `SELECT` ke ZASSIMPLE. Keputusan muktamad kekal melalui arahan pemilik `LOCK` / `LOCK DECISION`.
+- Apabila fail boleh dikemas kini, simpan snapshot matriks terkini di bahagian ini supaya sesi/AI seterusnya dapat melihat perbandingan semasa.
+
 ## DECISIONS
 
 > Hanya pemilik boleh mewujudkan rekod `LOCKED` melalui keyword `LOCK` yang jelas.
@@ -177,6 +205,7 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.1.7 | 2026-10-01 | Wajibkan CURRENT SELECTION MATRIX pada arahan ZASS/ZASS!! tanpa weighted score atau command SELECT; LOCK DECISION kekal kuasa pemilik. |
 | 0.1.6 | 2026-09-27 | Footer DRAFT ARCH; AI boleh mencadangkan draf dan BUILD, dengan pengesahan akhir dua langkah. |
 | 0.1.5 | 2026-09-27 | Benarkan draf architecture berversi kerja; tetapkan aturan tamat “Sedia untuk confirm?” dan andaian kritikal. |
 | 0.1.4 | 2026-09-27 | Tunjuk ZASSIMPLE UPDATE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |

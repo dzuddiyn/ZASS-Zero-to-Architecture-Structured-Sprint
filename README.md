@@ -428,7 +428,7 @@ You normally do **not** need all of them at the beginning.
 # Current status
 
 **Full ZASS:** v0.3.5  
-**ZASSIMPLE:** v0.1.6  
+**ZASSIMPLE:** v0.1.7  
 **ZASSELECTION:** v0.1.0  
 **License:** [MIT](LICENSE)
 

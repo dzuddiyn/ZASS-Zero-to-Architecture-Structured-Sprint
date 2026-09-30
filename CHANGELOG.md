@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE v0.1.7] — 2026-10-01
+
+- Required a **CURRENT SELECTION MATRIX** whenever the owner deliberately commands `ZASS` or `ZASS!!` in ZASSIMPLE.
+- Locked the matrix columns as Option/Candidate, Must-have fit, Strength, Risk/Weakness, Evidence/Unknown, and Status.
+- Kept the matrix lightweight: no mandatory weighted score, no invented alternatives, and one candidate may appear as one row.
+- Preserved ZASSIMPLE authority semantics: the matrix and `Current direction` are summaries/suggestions; no `SELECT` command is added, and final decisions still require owner `LOCK` / `LOCK DECISION`.
+- Full ZASS remains **v0.3.5**.
+
 ## [CR-010 v0.1] — 2026-09-30
 
 - Implemented the first local Node.js `zass check` validator under `cli/`.
