@@ -24,7 +24,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 
 ## P1 — Implementation layer
 
-- Slim long-form Full-ZASS reference/manual content into Wiki/docs while preserving one portable project-state file by default.
+- Generate the versioned Wiki/reference source under `wiki/`. **DONE**
+- Publish that source to the separate GitHub Wiki repository, then continue slimming long-form Full-ZASS manual/reference content while preserving one portable project-state file by default. **NEXT**
 - Specify `zass check`. **DONE — locked in `docs/CR010_ZASS_CHECK_SPEC.md`**
 - Build the `zass check` MVP. **NEXT — Work handoff prompt locked in `docs/WORK_PROMPT_CR010.md`**
 - Add a GitHub Action that runs the same validator.

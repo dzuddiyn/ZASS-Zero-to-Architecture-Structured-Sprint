@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [Wiki source] — 2026-09-30
+
+- Generated a version-controlled Wiki source under `wiki/` with Home, Quick Start, ZASSIMPLE, Full ZASS, Architecture & Evidence, ACTION PLAN, Cross-AI Handoff, ZASSELECTION, Advanced Reviews, Productization/`zass check`, Bahasa Melayu, Infographics, and `_Sidebar` pages.
+- Updated the root README to link directly to the Wiki source.
+- Added `docs/WIKI_PUBLISHING.md` describing how to publish the versioned source into GitHub's separate `.wiki.git` repository.
+- The archived infographic page records the four existing v0.3.2 visual assets as historical references and warns that current v0.3.5 semantics override them.
+- Full ZASS remains **v0.3.5**; this is documentation/productization work, not a method-semantics change.
+
 ## [CR-010 Work handoff] — 2026-09-30
 
 - Locked a copy-ready ChatGPT Work implementation prompt in `docs/WORK_PROMPT_CR010.md`.

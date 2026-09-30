@@ -447,23 +447,25 @@ COMMIT
 
 # Learn more
 
-Detailed documentation is moving to the **GitHub Wiki** so this README can remain a fast landing page.
+The long-form Wiki/reference source is now versioned in this repository:
 
-The Wiki/reference layer will contain:
+**[Open the ZASS Wiki source](wiki/Home.md)**
 
-- Full ZASS guide
-- ZASSIMPLE guide
-- ZASSELECTION guide
-- architecture workflow
-- ZERO → ARCHITECTURE
-- Evidence Confidence
+It includes:
+
+- Quick Start
+- ZASSIMPLE
+- Full ZASS
+- Architecture Readiness + Evidence Confidence
 - ACTION PLAN
 - cross-AI handoff
+- ZASSELECTION
 - advanced review methods
-- diagrams and infographics
-- implementation and integration notes
+- productization and `zass check`
+- Bahasa Melayu summary
+- historical infographic index
 
-Until that migration is complete, the authoritative method files remain in this repository.
+GitHub Wiki publication is a separate publishing step because GitHub stores Wiki pages in a separate `.wiki.git` repository. The authoritative method files remain in this main repository.
 
 ---
 

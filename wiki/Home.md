@@ -1,0 +1,90 @@
+# ZASS Wiki
+
+> **Think once. Keep the decisions. Continue with any AI.**
+
+ZASS — Zero-to-Architecture Structured Sprint — is a decision-control layer for AI-assisted work.
+
+It helps preserve useful thinking across chats and AI tools while keeping authority clear:
+
+```text
+AI explores possibilities
+        ↓
+Human reviews and decides
+        ↓
+LOCKED decisions
+        ↓
+GitHub Source of Truth
+        ↓
+Architecture follows decisions
+```
+
+The core invariant is:
+
+```text
+AI suggestion ≠ Owner decision ≠ Git change
+```
+
+## Start here
+
+- [Quick Start](Quick-Start.md) — begin with almost no setup.
+- [ZASSIMPLE](ZASSIMPLE.md) — the default lightweight method.
+- [Full ZASS](Full-ZASS.md) — decision, evidence, risk and architecture governance.
+- [Architecture & Evidence](Architecture-and-Evidence.md) — ZERO → ARCHITECTURE and Evidence Confidence.
+- [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
+- [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
+- [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
+- [Advanced Reviews](Advanced-Reviews.md) — optional lenses for challenging an idea.
+- [Productization & zass check](Productization-and-zass-check.md) — current tooling roadmap.
+- [Infographics](Infographics.md) — archived visual references.
+- [Bahasa Melayu](Bahasa-Melayu.md) — ringkasan BM.
+
+## Current versions
+
+| Component | Current state |
+|---|---|
+| Full ZASS | v0.3.5 |
+| ZASSIMPLE | v0.1.6 |
+| ZASSELECTION | v0.1.0 |
+| `zass check` | Specification locked; implementation pending |
+| CLI bootstrap | Specification locked; not released |
+| License | MIT |
+
+## Which method should I use?
+
+| Need | Use |
+|---|---|
+| Start casually and preserve important decisions | **ZASSIMPLE** |
+| Deep decision/evidence/architecture governance | **Full ZASS** |
+| Choose between alternatives | **ZASSELECTION** |
+| Track persistent implementation work | **ACTION PLAN** |
+
+Most users should start with **ZASSIMPLE**, not Full ZASS.
+
+## Source of Truth
+
+For a Git-backed project:
+
+> **GitHub is the Source of Truth.**
+
+Chat history, AI memory and handoff files are working context. They do not silently override the repository.
+
+A practical operating rule:
+
+> **Any AI can think. One trusted writer saves. GitHub remembers.**
+
+## Current productization focus
+
+Core methodology is temporarily feature-frozen while work focuses on:
+
+```text
+Consistency
+→ Validator
+→ Automation
+→ Real-world evidence
+```
+
+The authoritative method files remain in the main repository. This Wiki is the long-form reference and onboarding layer.
+
+---
+
+Repository: [ZASS-Zero-to-Architecture-Structured-Sprint](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint)
