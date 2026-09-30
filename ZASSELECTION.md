@@ -1,250 +1,510 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.1.0  
-**Status:** METHOD BASELINE LOCKED  
+**Version:** 0.2.0  
+**Status:** UX FLOW LOCKED  
 **Owner:** User / Decision Owner  
-**Locked date:** 2026-09-28
+**Locked date:** 2026-10-01
 
 > **Banyak pilihan, satu keputusan yang boleh diterangkan.**
 
-ZASSELECTION ialah kaedah perbincangan berstruktur bersama AI untuk membantu pengguna yang sukar membuat pilihan. Ia memisahkan syarat wajib, preferences, fakta, perasaan, kos, risiko dan perkara belum diketahui sebelum AI memberi cadangan dan pemilik membuat `SELECT`.
+ZASSELECTION ialah kaedah pemilihan bersama AI untuk membanding pilihan, mengemas kini Matriks Pemilihan apabila maklumat baharu muncul, memberi recommendation yang ringkas, dan membenarkan manusia membuat pilihan akhir.
 
-ZASSELECTION ialah kaedah **berasingan**. Ia bukan pengganti ZASSIMPLE, tidak menghasilkan architecture dan tidak menggunakan `DRAFT ARCH` atau `ZERO → ARCHITECTURE`.
+Prinsip utama:
+
+> **AI compares. AI recommends. Human selects.**
+
+ZASSELECTION mesti kekal mudah di permukaan. Complexity seperti parsing, versioning, event log, sync dan persistence ialah tanggungjawab sistem, bukan pengguna.
 
 ---
 
-## 1. Kegunaan ZASSELECTION
+## 1. Satu fail method
 
-Contoh keputusan:
-
-- Pilih rumah sewa.
-- Pilih komputer atau telefon.
-- Banding tawaran kerja.
-- Pilih software, AI atau langganan.
-- Tentukan antara membaiki, membeli atau menangguhkan.
-- Pilih idea projek yang patut diteruskan.
-- Pilihan peribadi yang melibatkan fakta, perasaan, kos dan risiko.
-
-ZASSELECTION bukan pengganti nasihat profesional perubatan, undang-undang atau kewangan. AI membantu menilai; manusia membuat keputusan.
-
-## 2. Kedudukan dalam keluarga ZASS
-
-| Method | Tujuan |
-|---|---|
-| `ZASS` | Idea mentah → keputusan → architecture |
-| `ZASSIMPLE` | Perjalanan idea → architecture secara santai dan conversational |
-| `ZASSELECTION` | Dilema → perbandingan → pilihan yang boleh diterangkan |
-
-Jika ZASS menemukan pilihan yang sukar, pilihan itu boleh dihantar kepada ZASSELECTION. Hasil ZASSELECTION kembali ke ZASS sebagai **candidate decision**, bukan keputusan `LOCKED` secara automatik.
-
-## 3. Aliran kerja
+Pengguna hanya perlu satu fail method:
 
 ```text
-Dilema mentah
-→ Pilih QUICK atau DEEP
-→ Jelaskan keputusan sebenar
-→ Tetapkan MUST-HAVE
-→ Bezakan keperluan dan preferences
-→ Senaraikan pilihan
-→ Semak bukti, kos, risiko dan perasaan
-→ Singkir pilihan yang gagal MUST-HAVE
-→ Shortlist
-→ Cari tie-breaker jika pilihan hampir sama
-→ Cadangan AI
-→ Pemilik SELECT
-→ Rekod alasan, akibat dan revisit trigger
-→ SAVE / SYNC
+ZASSELECTION.md
 ```
 
-## 4. Dua tahap pemilihan
+Jangan paksa pengguna memahami atau mengurus banyak fail arahan untuk menjalankan method.
 
-### Quick Selection
+Fail teknikal lain boleh wujud di implementation layer pada masa depan, tetapi ia tidak menjadi sebahagian daripada pengalaman penggunaan biasa.
 
-Gunakan untuk keputusan kecil atau mudah diterbalikkan:
+---
 
-- maksimum tiga pilihan;
-- maksimum tiga kriteria utama;
-- kesan kewangan dan manusia rendah;
-- maklumat utama sudah tersedia;
-- cadangan terus dan ringkas.
+## 2. Tiga button wajib
 
-### Deep Selection
-
-Gunakan apabila keputusan mahal, sukar dibatalkan, melibatkan manusia secara besar atau mempunyai terlalu banyak perkara belum diketahui:
-
-- constraints dan `MUST-HAVE`;
-- weighted criteria jika benar-benar membantu;
-- risiko dan worst-case;
-- kos sebenar;
-- reversibility;
-- evidence dan perkara belum diketahui;
-- head, heart dan human impact;
-- revisit trigger.
-
-AI memilih tahap berdasarkan kesan keputusan. Jika tidak pasti, mulakan dengan Quick Selection dan naikkan kepada Deep hanya apabila ada sebab jelas. Pengguna boleh meminta `QUICK SELECTION` atau `DEEP SELECTION` pada bila-bila masa.
-
-## 5. Disiplin maklumat
-
-Bezakan perkara penting sebagai:
-
-- `EXPLICIT` — pengguna menyatakannya;
-- `EVIDENCE` — disokong sumber, pemerhatian atau data;
-- `INFERRED` — tafsiran AI yang perlu disahkan;
-- `UNKNOWN` — belum diketahui dan mungkin mengubah keputusan.
-
-Perasaan pengguna ialah input sah, tetapi bukan fakta. Markah angka bersifat pilihan dan tidak boleh digunakan untuk menghasilkan ketepatan palsu.
-
-## 6. Aturan penilaian
-
-1. Tetapkan `MUST-HAVE` dahulu.
-2. Singkir pilihan yang jelas gagal syarat wajib sebelum weighted scoring.
-3. Bezakan keperluan daripada perkara yang hanya disukai.
-4. Gunakan weighted criteria hanya jika ia menjelaskan trade-off.
-5. Jika dua pilihan hampir sama, cari **tie-breaker paling murah**.
-6. Jika keputusan mudah diterbalikkan, jangan terlalu lama menganalisis.
-7. Untuk keputusan sukar diterbalikkan, tingkatkan evidence, risk review dan pre-mortem.
-8. Skor tinggi dengan evidence lemah mesti dilabel sebagai keyakinan rendah.
-
-### Must-have result
-
-- `PASS`
-- `FAIL`
-- `UNKNOWN`
-
-### Confidence
-
-- `LOW` — terlalu banyak unknown;
-- `MEDIUM` — maklumat utama ada tetapi sebahagian andaian belum diuji;
-- `HIGH` — must-have, evidence dan trade-off utama cukup jelas.
-
-### Reversibility
-
-- `EASY TO REVERSE`
-- `COSTLY TO REVERSE`
-- `HARD TO REVERSE`
-
-## 7. Lens pilihan
-
-AI memilih lens yang benar-benar relevan; jangan jalankan semuanya secara ritual:
-
-- **Practical fit** — adakah pilihan menyelesaikan keperluan sebenar?
-- **Cost and effort** — harga, masa, pembelajaran, operasi dan penyelenggaraan.
-- **Emotional fit** — yakin, tenang, bangga, tertekan atau serabut.
-- **Risk and regret** — kegagalan dan penyesalan yang paling mungkin.
-- **Victim-Abuser Red Team** — manipulasi, eksploitasi, lock-in dan kos tersembunyi.
-- **Accessibility and inclusion** — kesesuaian dengan kemampuan dan keadaan sebenar.
-- **Maintainability** — bolehkah pilihan diteruskan tanpa pergantungan berlebihan?
-- **Pre-mortem** — bayangkan keputusan gagal; cari puncanya.
-- **Opportunity cost** — apa yang dilepaskan apabila pilihan ini dipilih?
-
-## 8. Bentuk respons apabila pengguna berkata `ZASS`
-
-```md
-## ZASSELECTION
-
-🔎 Mode: QUICK / DEEP
-
-🎯 Decision:
-[apa yang sebenarnya perlu dipilih]
-
-🚧 Must-have:
-[syarat yang tidak boleh gagal]
-
-💭 Preferences:
-[perkara yang disukai tetapi boleh dikompromi]
-
-🗂️ Options:
-- Option A
-- Option B
-- Option C
-
-🚫 Eliminated:
-[pilihan yang gagal MUST-HAVE dan sebabnya; sembunyikan jika tiada]
-
-⚖️ Important trade-offs:
-[perbezaan yang benar-benar mengubah pilihan]
-
-❓ Unknowns:
-[perkara yang masih boleh mengubah keputusan]
-
-🤖 AI recommendation:
-[pilihan, alasan dan tahap keyakinan]
-
-👉 NEXT STEP — COMPARE MORE, TEST, SELECT, PARK, atau REFRAME?
-```
-
-Jika hanya `ZASSELECTION.md` diberikan kepada AI, arahan sengaja `ZASS` atau `ZASS!!` membuka ZASSELECTION. Jika `ZASS.md` dan `ZASSELECTION.md` berada dalam konteks yang sama, gunakan arahan jelas `ZASSELECTION`.
-
-## 9. Peraturan respons AI
-
-- Balas secara natural dahulu sebelum memaparkan struktur.
-- Kenal pasti keputusan sebenar; jangan terus membanding jika soalan masih kabur.
-- Tanya satu soalan penting pada satu masa apabila maklumat tidak cukup.
-- Jangan menambah terlalu banyak pilihan tanpa sebab.
-- Pertimbangkan `DO NOTHING`, `PARK`, alternatif sementara atau ujian kecil apabila relevan.
-- Berikan recommendation apabila evidence mencukupi; jangan sekadar berkata “terpulang kepada anda”.
-- Nyatakan sebab recommendation dan tahap keyakinan.
-- Bezakan recommendation AI daripada selection pengguna.
-- Hanya pengguna boleh membuat `SELECT` akhir.
-- Jangan mendakwa keputusan telah disimpan atau disync tanpa write tool dan receipt sebenar.
-
-## 10. Arahan pengguna
-
-- `ZASS` / `ZASS!!` — jalankan ZASSELECTION penuh apabila fail ini ialah method aktif.
-- `QUICK SELECTION` — gunakan pemilihan ringkas.
-- `DEEP SELECTION` — gunakan pemilihan mendalam.
-- `COMPARE MORE` — perdalam perbandingan yang relevan.
-- `TEST` — cari tie-breaker atau eksperimen paling murah.
-- `SELECT [pilihan]` — rekod keputusan akhir pengguna.
-- `PARK` — simpan dilema tanpa membuat keputusan.
-- `REFRAME` — ubah soalan kerana dilema asal mungkin tersalah bentuk.
-- `REVISIT` — buka kembali keputusan apabila trigger berlaku.
-- `SAVE` / `SYNC` — simpan melalui authority yang dikonfigurasi.
-
-`SELECT` ialah pintu keputusan manusia. ZASSELECTION tidak memerlukan pintu `LOCK` tambahan. Keputusan lama tidak boleh ditukar secara senyap; gunakan `REVISIT` dan rekod sebab perubahan.
-
-## 11. Footer
-
-Akhiri setiap balasan dengan:
+Interface ZASSELECTION mesti sentiasa mempunyai tiga tindakan utama:
 
 ```text
-[🧠 ZASS!!]--[⚖️ COMPARE]--[🧪 TEST]--[✅ SELECT]--[🅿️ PARK]--[🔄 REFRAME]--[💾 SAVE]
+[ REVIEW ]      [ SAVE ]      [ HISTORY ]
 ```
 
-Footer ialah peringatan, bukan arahan automatik. `SAVE` boleh dipaparkan sebagai `SYNC` apabila integrasi write-capable benar-benar tersedia.
+Tiada button method lain diperlukan untuk aliran utama.
 
-## 12. Decision record minimum
+---
 
-Selepas `SELECT`, rekod sekurang-kurangnya:
+## 3. REVIEW
 
-```md
-## DECISION RECORD
+`REVIEW` mempunyai dua tingkah laku.
 
-Decision: [apa yang dipilih]
-Selected option: [pilihan]
-Reason: [sebab utama]
-Consequences: [kesan yang diterima]
-Confidence: LOW / MEDIUM / HIGH
-Revisit trigger: [keadaan untuk nilai semula]
-Selected by: [owner]
-Selected at: [date]
-```
+### 3.1 REVIEW dengan input, soalan atau option baharu
 
-Pilihan yang ditolak dan sebabnya boleh disimpan supaya AI tidak mengulang cadangan lama tanpa evidence baharu.
+Jika pengguna memberi maklumat baharu kemudian memilih `REVIEW`:
 
-## 13. Prompt selepas upload
+1. baca input baharu;
+2. bandingkan dengan data dan Matriks Pemilihan semasa;
+3. tambah atau kemas kini option yang berkaitan;
+4. kemas kini markah hanya apabila evidence atau maklumat baharu memberi sebab;
+5. paparkan Matriks Pemilihan terkini;
+6. beri ayat ringkas untuk setiap option, sasaran sekitar 10 perkataan;
+7. beri AI Recommendation semasa;
+8. tanya `Your selection?`.
+
+Aliran:
 
 ```text
-Baca ZASSELECTION.md dan gunakan ia sebagai method pemilihan aktif untuk chat ini.
-Balas secara natural dahulu. Apabila saya berkata ZASS, ZASS!! atau ZASSELECTION,
-pilih Quick Selection atau Deep Selection berdasarkan kesan keputusan.
-Bezakan MUST-HAVE, preferences, evidence, inference, unknown, kos, risiko dan perasaan.
-Singkir pilihan yang gagal MUST-HAVE sebelum scoring. Beri recommendation yang jelas
-apabila evidence mencukupi, tetapi hanya saya boleh membuat SELECT akhir.
-Jangan hasilkan architecture atau DRAFT ARCH. Jangan dakwa SAVE/SYNC berjaya tanpa
-write tool dan receipt sebenar.
+NEW INPUT
+    ↓
+[ REVIEW ]
+    ↓
+compare with current data
+    ↓
+update current matrix
+    ↓
+AI Recommendation
+    ↓
+Your selection?
 ```
 
-## 14. Boundary architecture
+Setiap option baharu mesti dinilai terhadap matrix yang sama. Jangan memulakan analisis baru dari kosong kecuali keputusan yang dinilai memang berubah.
 
-Kaedah ini menetapkan pengalaman pemilihan dan rekod minimum sahaja. Data model, Google Sheets authority, Google Sites dashboard, Apps Script endpoint, direct AI sync, authentication dan event log diterangkan berasingan dalam `ZASSELECTION_DATA_SYNC_ARCHITECTURE.md`. Ia tidak menjadi sebahagian daripada method baseline sehingga architecture itu diuji dan disahkan.
+### 3.2 REVIEW tanpa input baharu
+
+Jika pengguna hanya memilih atau menyebut `REVIEW` tanpa input atau soalan baharu, maksudnya ialah **re-view**.
+
+Sistem mesti:
+
+- baca state semasa yang telah disimpan;
+- papar semula Matriks Pemilihan semasa;
+- papar AI Recommendation semasa;
+- tanya `Your selection?`;
+- jangan cipta evidence baharu;
+- jangan ubah markah hanya kerana review dibuat sekali lagi.
+
+Aliran:
+
+```text
+[ REVIEW ]
+(no new input)
+    ↓
+load saved current state
+    ↓
+show current matrix
+    ↓
+show current AI Recommendation
+    ↓
+Your selection?
+```
+
+---
+
+## 4. Matriks Pemilihan
+
+Matriks ialah paparan utama perbandingan.
+
+Contoh:
+
+| Criteria | Weight | Option A | Option B | Option C |
+|---|---:|---:|---:|---:|
+| Performance | 30% | 7 | 9 | 8 |
+| Upgrade | 20% | 8 | 9 | 7 |
+| Battery | 15% | 9 | 7 | 8 |
+| Price | 35% | 7 | 8 | 8 |
+| **TOTAL** | **100%** | **7.55** | **8.35** | **7.80** |
+
+Di bawah matrix, setiap option hanya memerlukan sebab pendek.
+
+Contoh:
+
+```text
+Option A — Battery bagus, tetapi prestasi dan value sederhana.
+Option B — Paling seimbang untuk prestasi, upgrade dan harga.
+Option C — Seimbang, tetapi ruang upgrade lebih terhad.
+```
+
+Elakkan karangan panjang kecuali pengguna meminta penjelasan lanjut.
+
+Jika option baharu muncul:
+
+```text
+Option D detected
+    ↓
+add to current matrix
+    ↓
+score against existing criteria
+    ↓
+update totals
+    ↓
+update recommendation if necessary
+```
+
+Matlamatnya ialah **potong ulang fikir**, bukan mengulangi analisis penuh setiap kali option baharu muncul.
+
+---
+
+## 5. AI Recommendation
+
+Selepas setiap REVIEW, paparkan:
+
+```text
+AI Recommendation:
+Option X
+
+Why:
+[ayat pendek]
+
+Your selection?
+```
+
+Recommendation AI dan pilihan pengguna mesti sentiasa dipisahkan.
+
+```text
+AI Recommendation ≠ Your Selection
+```
+
+AI boleh mengubah recommendation apabila evidence atau option berubah.
+
+AI tidak boleh menukar pilihan pengguna secara automatik.
+
+---
+
+## 6. User membuat pilihan
+
+Jika selepas soalan `Your selection?` pengguna menjawab secara eksplisit, contohnya:
+
+```text
+Laptop B
+```
+
+jawapan itu dianggap sebagai pilihan akhir semasa.
+
+Sistem mesti terus commit pilihan tersebut tanpa meminta pengguna menekan SAVE sekali lagi.
+
+Paparkan:
+
+```text
+✓ Pilihan anda telah disimpan.
+
+Laptop kerja → Laptop B
+```
+
+Aliran:
+
+```text
+Your selection?
+    ↓
+user explicitly chooses Option B
+    ↓
+COMMIT
+    ↓
+Pilihan anda telah disimpan.
+```
+
+---
+
+## 7. Jika pengguna belum memilih
+
+Jika pengguna tidak menjawab `Your selection?` dan sebaliknya terus bertanya, memberi evidence atau menambah option:
+
+- jangan paksa pilihan;
+- kekalkan current selection sebagai belum diputuskan;
+- simpan keadaan aktif dalam **Working State**;
+- teruskan perbincangan;
+- apabila REVIEW dibuat, kemas kini matrix semasa.
+
+Contoh:
+
+```text
+Your selection?
+    ↓
+"Bagaimana kalau ada Laptop D?"
+    ↓
+keep Working State
+    ↓
+add Laptop D
+    ↓
+[ REVIEW ]
+    ↓
+update matrix
+    ↓
+AI Recommendation
+    ↓
+Your selection?
+```
+
+Working State ialah state sementara sesi aktif. Ia tidak boleh bergantung pada long-term memory sesuatu platform AI sebagai satu-satunya storage.
+
+---
+
+## 8. SAVE
+
+`SAVE` ialah explicit manual commit untuk keadaan semasa.
+
+### Jika sudah ada Your Selection
+
+Commit:
+
+- pilihan pengguna;
+- Matriks Pemilihan semasa;
+- AI Recommendation semasa;
+- data penting yang membentuk keputusan.
+
+Status:
+
+```text
+COMMITTED SELECTION
+```
+
+### Jika belum ada Your Selection
+
+Tetap commit:
+
+- maklumat semasa;
+- option semasa;
+- Matriks Pemilihan semasa;
+- AI Recommendation semasa.
+
+Tetapi jangan cipta pilihan palsu.
+
+Status:
+
+```text
+UNFINISHED / DRAFT
+```
+
+Aliran:
+
+```text
+[ SAVE ]
+   │
+   ├── Your Selection exists
+   │       ↓
+   │   COMMITTED SELECTION
+   │
+   └── no selection
+           ↓
+       UNFINISHED / DRAFT
+```
+
+SAVE membolehkan pengguna berhenti pada bila-bila masa dan sambung kemudian tanpa kehilangan kerja.
+
+---
+
+## 9. HISTORY
+
+`HISTORY` membuka:
+
+```text
+MY SELECTIONS HISTORY
+
+Laptop kerja          → Laptop B
+AI subscription       → ChatGPT Plus
+Software citation     → Mendeley
+Rumah Kulai           → Taman Putri unit A
+PC baru               → Draft
+```
+
+History mesti kekal ringkas. Ia bukan dashboard kompleks.
+
+Jika pengguna membuka selection yang telah selesai:
+
+```text
+Laptop kerja
+
+Selected:
+Laptop B
+
+AI Recommendation:
+Laptop B
+
+Score:
+8.35 / 10
+
+[ VIEW MATRIX ]
+[ REOPEN SELECTION ]
+
+[ REVIEW ]   [ SAVE ]   [ HISTORY ]
+```
+
+Jika pengguna membuka draft:
+
+```text
+PC baru
+
+Status:
+UNFINISHED
+
+Current AI Recommendation:
+RTX 4060 build
+
+Your Selection:
+Not selected
+
+[ REOPEN SELECTION ]
+```
+
+---
+
+## 10. REOPEN SELECTION
+
+`REOPEN SELECTION` memulihkan state keputusan lama:
+
+- criteria;
+- weights jika digunakan;
+- option;
+- scores;
+- matrix;
+- recommendation;
+- selection terdahulu jika ada.
+
+Kemudian pengguna boleh memberi option atau evidence baharu dan menjalankan REVIEW semula.
+
+Keputusan lama tidak boleh dipadam atau ditukar secara senyap.
+
+Reopen bermaksud:
+
+```text
+restore old state
+    ↓
+accept new input
+    ↓
+[ REVIEW ]
+    ↓
+update matrix
+    ↓
+new AI Recommendation
+    ↓
+Your selection?
+```
+
+---
+
+## 11. Current State dan committed history
+
+ZASSELECTION membezakan dua jenis state:
+
+### Working State
+
+State sementara semasa sesi pemilihan masih berjalan.
+
+Contoh:
+
+```text
+Current decision: Pilih laptop kerja
+Current options: A, B, C, D
+Current recommendation: B
+Your Selection: Not selected
+```
+
+### Committed State
+
+Snapshot yang telah disimpan melalui:
+
+- pilihan eksplisit pengguna; atau
+- `SAVE`.
+
+Committed State masuk ke history.
+
+Draft yang disimpan juga masuk ke history tetapi mesti ditanda jelas sebagai `Draft` atau `UNFINISHED`.
+
+---
+
+## 12. Surface UX yang LOCKED
+
+Aliran utama:
+
+```text
+                    ZASSELECTION
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+       REVIEW           SAVE          HISTORY
+          │              │              │
+          │              │              └─→ My Selections History
+          │              │
+          │              ├─ selection exists
+          │              │      → commit decision
+          │              │
+          │              └─ no selection
+          │                     → commit DRAFT
+          │
+          ├─ new input exists
+          │      ↓
+          │   compare with current data
+          │      ↓
+          │   update matrix
+          │
+          └─ no new input
+                 ↓
+              re-view
+                 ↓
+          show current matrix
+                 ↓
+          AI Recommendation
+                 ↓
+          Your selection?
+                 │
+           ┌─────┴─────┐
+           │           │
+        choose       continue
+           │           │
+         commit     Working State
+```
+
+---
+
+## 13. Locked UX principles
+
+The following decisions are LOCKED for ZASSELECTION v0.2.0:
+
+1. User-facing method uses one main method file: `ZASSELECTION.md`.
+2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
+3. REVIEW with new input compares against existing data and updates the current matrix.
+4. REVIEW without new input means re-view and must show the saved current matrix without inventing changes.
+5. Every new option is added to the existing selection matrix.
+6. Explanations per option should normally be short, around 10 words.
+7. Every review ends with AI Recommendation followed by `Your selection?`.
+8. AI Recommendation and Your Selection are separate concepts.
+9. An explicit user selection auto-commits immediately.
+10. After auto-commit, show `Pilihan anda telah disimpan.`.
+11. SAVE manually commits the current state.
+12. SAVE without a user selection stores an `UNFINISHED / DRAFT` selection.
+13. HISTORY opens `My Selections History`.
+14. History remains simple and allows a previous selection or draft to be reopened.
+15. REOPEN restores the previous matrix/state and continues comparison instead of starting from zero.
+16. Working State must not rely solely on a platform AI's long-term memory.
+17. Backend complexity must remain hidden from the normal user path.
+
+Core UX principle:
+
+> **Complexity belongs in the protocol, not in the user's path.**
+
+---
+
+## 14. Repository and persistence boundary
+
+ZASSELECTION is intended to live in its own dedicated repository, separate from Full ZASS.
+
+The dedicated repository is the Source of Truth for:
+
+- ZASSELECTION method;
+- implementation code;
+- schema if implementation requires one.
+
+Selection records and history may use a persistence backend such as Google Sheets, but that implementation detail must not complicate the three-button user experience.
+
+The current method file remains portable Markdown so it can be read by different AI systems.
+
+Portable methodology does not imply portable automation.
+
+> **AI produces meaning. System owns transport. Owner owns the decision. History preserves the record.**
