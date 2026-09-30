@@ -553,11 +553,11 @@ This does **not** authorize splitting normal project state into many mandatory f
 
 ---
 
-## L-LICENSE-001 — License requires explicit owner selection
+## L-LICENSE-001 — MIT License
 
-**Decision:** Do not add or imply a repository license automatically.
+**Decision:** The repository uses the **MIT License**.
 
-License selection remains an **OPEN owner decision**. Until the owner selects one, documentation may state that no license has been selected.
+The owner explicitly selected MIT on 2026-09-30. The root `LICENSE` file is authoritative for reuse terms. This licensing decision does not change ZASS method semantics.
 
 ---
 
@@ -598,6 +598,6 @@ The following are LOCKED as of 2026-09-30:
 - `L-PROCEED-001` — PROCEED approves only the explicitly listed proposal set
 - `L-VALID-001` — Local CLI and GitHub Action share one validation engine
 - `L-DOC-002` — Slim Full ZASS reference material without fragmenting project authority
-- `L-LICENSE-001` — License requires explicit owner selection; selection remains open
+- `L-LICENSE-001` — Repository license is MIT
 
 This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.

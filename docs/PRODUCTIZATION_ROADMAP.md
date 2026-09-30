@@ -20,7 +20,7 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Align the Small Farm Planner teaching fixture with the current Full ZASS version and PROCEED semantics. **DONE in v0.3.4**
 - Make CLI specification-vs-release status explicit. **DONE in v0.3.4**
 - Tighten PROCEED to approve exactly an explicitly listed proposal set. **DONE in v0.3.4**
-- Select a repository license. **OPEN — owner decision required**
+- Select a repository license. **DONE — MIT License**
 
 ## P1 — Implementation layer
 
@@ -55,8 +55,8 @@ zass check
 
 The GitHub Action should call the same validation engine rather than duplicate its rules.
 
-## Open owner decision — license
+## Repository license
 
-No repository license is selected in this roadmap.
+**LOCKED: MIT License.**
 
-The owner must explicitly choose the license before a LICENSE file is added or reuse rights are claimed.
+The MIT License applies to this repository. Reuse, modification, distribution, and commercial use are permitted subject to the terms in the root `LICENSE` file.

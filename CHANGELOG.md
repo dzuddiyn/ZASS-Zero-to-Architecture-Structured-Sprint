@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [Repository license] — 2026-09-30
+
+- Owner explicitly selected the **MIT License** for the ZASS repository.
+- Added the root `LICENSE` file and updated README/productization documentation accordingly.
+- Full ZASS method version remains **v0.3.4** because this is a repository licensing/productization change, not a method-semantics change.
+
 ## [v0.3.4] — 2026-09-30
 
 - Tightened Full-ZASS `PROCEED`: it now approves exactly the explicitly listed `PROPOSED FOR PROCEED` set from the latest mapping; unlisted suggestions are excluded, and a changed or ambiguous set must be shown again before approval.

@@ -426,7 +426,7 @@ You normally do **not** need all of them at the beginning.
 **Full ZASS:** v0.3.4  
 **ZASSIMPLE:** v0.1.6  
 **ZASSELECTION:** v0.1.0  
-**License:** not selected yet — owner decision pending
+**License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:
 
