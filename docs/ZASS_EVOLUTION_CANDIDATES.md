@@ -499,29 +499,39 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — IMPLEMENTATION PRIORITY  
-**Source:** External Copilot UX/automation review  
+**Status:** ACCEPTED — IMPLEMENTATION PLAN LOCKED  
+**Source:** External Copilot UX/automation review + Project Owner decision  
 **Decision date:** 2026-09-30
 
-Accepted direction for the future CLI:
+The implementation sequence is now locked in:
+
+- [`docs/CR010_ZASS_CHECK_SPEC.md`](CR010_ZASS_CHECK_SPEC.md)
+
+First implementation command:
 
 ```bash
 zass check
-zass status
-zass diff
 ```
 
-Potential MVP checks:
+The first MVP is intentionally small:
 
-- duplicate or malformed IDs;
-- broken references;
-- unauthorized changes to LOCKED decisions;
-- architecture references to invalid or superseded decisions;
-- stale ZASS ↔ ACTION_PLAN readiness snapshots;
-- unresolved critical placeholders;
-- likely secrets or sensitive values committed by mistake.
+- project-file discovery;
+- duplicate IDs;
+- malformed IDs;
+- broken local references;
+- Evidence Confidence pairing;
+- likely secret/sensitive-value warnings.
 
-The CLI onboarding baseline remains minimal. Validator commands are follow-up implementation work, not onboarding prerequisites.
+Deferred until the check engine is stable:
+
+- `zass status`;
+- `zass diff`;
+- Git-aware LOCKED-decision drift;
+- ACTION_PLAN snapshot consistency;
+- GitHub Action integration;
+- npm publication.
+
+Local CLI and GitHub Actions must eventually use the same validation engine. The CLI onboarding baseline remains minimal; validator tooling is productization work, not an onboarding prerequisite.
 
 ---
 

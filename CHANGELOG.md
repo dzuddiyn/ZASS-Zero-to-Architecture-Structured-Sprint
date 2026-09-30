@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 implementation plan] — 2026-09-30
+
+- Locked the step-by-step `zass check` implementation plan in `docs/CR010_ZASS_CHECK_SPEC.md`.
+- Defined the first MVP as local Node.js CLI + project discovery + duplicate/malformed IDs + local-reference checks + Evidence Confidence pairing + defensive secret-pattern warnings.
+- Deferred Git-aware LOCKED drift, ACTION_PLAN consistency, `zass status`, `zass diff`, npm publication, and GitHub Actions until the earlier validator phase is stable.
+- Locked a fixture-driven stop rule and one shared validation engine for local CLI and future GitHub Actions.
+- Full ZASS method remains **v0.3.5**; this commit records productization implementation steps rather than changing method semantics.
+
 ## [v0.3.5] — 2026-09-30
 
 - Locked mandatory **Evidence Confidence** display rules for Full ZASS: show it whenever a real ZERO → ARCHITECTURE assessment is shown, DRAFT ARCH readiness is evaluated, BUILD ARCHITECTURE runs, or confirmed architecture still has open validation/experiments.

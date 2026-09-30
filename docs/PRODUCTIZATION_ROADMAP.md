@@ -25,8 +25,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 ## P1 — Implementation layer
 
 - Slim long-form Full-ZASS reference/manual content into Wiki/docs while preserving one portable project-state file by default.
-- Specify `zass check`.
-- Build the `zass check` MVP.
+- Specify `zass check`. **DONE — locked in `docs/CR010_ZASS_CHECK_SPEC.md`**
+- Build the `zass check` MVP. **NEXT**
 - Add a GitHub Action that runs the same validator.
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.
