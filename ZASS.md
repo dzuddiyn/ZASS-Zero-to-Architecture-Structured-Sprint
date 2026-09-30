@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.5 (Evidence Confidence wajib dipaparkan bersama assessment architecture pada titik yang ditetapkan)
+**Version:** 0.3.6 (ZASS Convergence Loop dikunci; research selepas candidate terbentuk)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -11,6 +11,8 @@
 > **ZASS Principle #2 — Fikir bebas. Rekod keputusan. Kunci yang pasti. Bina dari yang terkunci.**
 >
 > **ZASS Principle #3 — AI menghasilkan kemungkinan. Evidence menguji. Manusia memutuskan. Architecture mematuhi keputusan.**
+>
+> **ZASS Principle #4 — Tangkap luas, tumpu dengan sengaja: jangan tapis idea terlalu awal. Bentuk candidate dahulu, kemudian research hanya soalan yang boleh mengubah pilihan; silang evidence, LOCK keputusan, dan biarkan architecture muncul daripada keputusan itu.**
 
 ---
 
@@ -35,6 +37,67 @@ Berikan AI **fail ZASS projek terkini**, kemudian bercakap seperti biasa. Abang 
 
 AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir, serta meminta kepastian jika arahan “ini” merujuk lebih daripada satu keputusan. **Hanya arahan jelas daripada pemilik projek boleh LOCK keputusan.** Sebelum menulis atau commit, AI tunjukkan ringkasan perubahan termasuk apa-apa percanggahan dengan keputusan terkunci.
 
+## ZASS CONVERGENCE LOOP
+
+ZASS tidak perlu memaksa setiap idea menjadi keputusan ketika idea itu muncul. Tangkap dahulu idea, constraint, risk, evidence dan LOCKED decision yang relevan; kemudian cari **convergence** apabila bahan sudah cukup untuk membentuk candidate yang coherent.
+
+> **Research dibuat selepas candidate terbentuk, bukan semasa idea baru dikumpul.**
+
+Canonical loop:
+
+```text
+CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHITECTURE
+```
+
+Expanded working flow:
+
+```text
+LAMBAK IDEA
+    ↓
+CAPTURE
+jangan tapis terlalu awal
+    ↓
+MATRIX
+satukan idea + constraint + risk + evidence + LOCK lama
+    ↓
+MATCH
+cari idea yang saling melengkapi
+    ↓
+SYNTHESIZE
+bentuk 2–3 candidate yang coherent apabila berguna
+    ↓
+SHORTLIST
+buang candidate yang gagal must-have / constraint
+    ↓
+DEEP RESEARCH
+research hanya soalan yang boleh mengubah pilihan
+    ↓
+CROSS-CHECK
+official docs + existing projects + real limitation + evidence
+    ↓
+UPDATE MATRIX
+apa yang research sahkan / patahkan?
+    ↓
+LOCK DECISIONS
+    ↓
+DRAFT ARCH
+    ↓
+BUILD ARCHITECTURE
+```
+
+Aturan convergence:
+
+- **CAPTURE luas, jangan tapis terlalu awal.** Idea AI, idea pemilik, constraint, risk, evidence, hasil test dan LOCK lama boleh dikumpulkan dahulu dengan provenance/status yang jelas.
+- **MATCH sebelum memilih.** Cari idea yang saling melengkapi; candidate terbaik boleh menjadi gabungan beberapa idea, bukan semestinya satu idea yang “menang”.
+- **SYNTHESIZE candidate yang coherent.** Bentuk beberapa candidate hanya apabila bahan mencukupi; jangan cipta alternatif palsu untuk cukupkan bilangan.
+- **SHORTLIST melalui must-have dan constraint.** Candidate yang jelas gagal syarat wajib tidak perlu dibawa ke deep research.
+- **RESEARCH mesti tajam.** Research hanya persoalan yang hasilnya boleh mengubah shortlist, trade-off atau keputusan. Jangan research semua teknologi sebelum candidate terbentuk.
+- **CROSS-CHECK sebelum LOCK.** Silangkan candidate dengan official capability/docs, existing project/pattern, known limitation dan evidence sebenar.
+- **UPDATE MATRIX selepas research.** Finding research kembali ke matrix/candidate state dahulu; ia tidak terus mengubah architecture.
+- **Human LOCK sebelum architecture.** Research memberi evidence; manusia membuat keputusan; architecture dibina daripada keputusan yang benar-benar LOCKED.
+
+Trigger untuk beralih daripada CAPTURE kepada convergence bukan bilangan idea tertentu. Triggernya ialah apabila bahan sudah cukup untuk membentuk sekurang-kurangnya satu candidate yang coherent dan ada persoalan evidence tertentu yang boleh mengubah keputusan.
+
 ## MOD BALASAN ZASS PENUH
 
 Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
@@ -49,7 +112,7 @@ Akhiri **setiap** balasan AI dengan:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
 
-⬆️ UPDATE ZASS? now v0.3.4 / latest v0.3.5
+⬆️ UPDATE ZASS? now v0.3.5 / latest v0.3.6
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.

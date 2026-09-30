@@ -180,6 +180,38 @@ A suggestion never becomes a decision merely because an AI wrote it. A decision 
 
 ---
 
+# ZASS Convergence Loop
+
+> **Capture broadly, converge deliberately. Form candidates first; research only what can change the choice.**
+
+```text
+CAPTURE
+  ↓
+MATCH
+  ↓
+SYNTHESIZE
+  ↓
+RESEARCH
+  ↓
+CROSS-CHECK
+  ↓
+LOCK
+  ↓
+ARCHITECTURE
+```
+
+The practical rule is simple:
+
+> **Research follows candidate formation, not idea capture.**
+
+ZASS can collect many raw ideas, constraints, risks, evidence, test results and existing LOCKED decisions without forcing an early choice. Once enough material exists, it matches complementary ideas, synthesizes coherent candidates, removes candidates that fail must-haves, and researches only the questions that can actually change the shortlist or decision.
+
+Research findings return to the candidate/matrix state first. They do not jump directly into architecture. The owner still LOCKs decisions; architecture follows what was genuinely decided.
+
+**[Read the full Convergence Loop guide](wiki/Convergence-Loop.md)**
+
+---
+
 # From idea to architecture
 
 ```text
@@ -427,7 +459,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**Full ZASS:** v0.3.5  
+**Full ZASS:** v0.3.6  
 **ZASSIMPLE:** v0.1.7  
 **ZASSELECTION:** v0.1.0  
 **License:** [MIT](LICENSE)

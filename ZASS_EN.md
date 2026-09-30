@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.5 (Evidence Confidence must be shown at defined architecture-assessment points)
+**Version:** 0.3.6 (ZASS Convergence Loop locked; research follows candidate formation)
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -11,6 +11,8 @@
 > **ZASS Principle #2 — Think freely. Record decisions. Lock what is certain. Build from what is locked.**
 >
 > **ZASS Principle #3 — AI produces possibilities. Evidence tests them. Humans decide. Architecture follows the decisions.**
+>
+> **ZASS Principle #4 — Capture broadly, converge deliberately: do not filter ideas too early. Form candidates first, then research only questions that can change the choice; cross-check evidence, LOCK decisions, and let architecture emerge from those decisions.**
 
 ---
 
@@ -35,6 +37,67 @@ Give the AI the **latest ZASS file for the project**, then speak normally. You d
 
 The AI must find the relevant entries, manage IDs and states behind the scenes, and ask for clarification if “this” could refer to more than one decision. **Only an explicit instruction from the project owner can LOCK a decision.** Before writing or committing, AI must show a summary of changes, including any conflict with locked decisions.
 
+## ZASS CONVERGENCE LOOP
+
+ZASS does not need to force every new idea into a decision when it appears. First capture relevant ideas, constraints, risks, evidence, and LOCKED decisions; then look for **convergence** once enough material exists to form coherent candidates.
+
+> **Research follows candidate formation, not idea capture.**
+
+Canonical loop:
+
+```text
+CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHITECTURE
+```
+
+Expanded working flow:
+
+```text
+IDEA DUMP
+    ↓
+CAPTURE
+do not filter too early
+    ↓
+MATRIX
+combine ideas + constraints + risks + evidence + existing LOCKs
+    ↓
+MATCH
+find ideas that reinforce or complement one another
+    ↓
+SYNTHESIZE
+form 2–3 coherent candidates when useful
+    ↓
+SHORTLIST
+remove candidates that fail must-haves / constraints
+    ↓
+DEEP RESEARCH
+research only questions that can change the choice
+    ↓
+CROSS-CHECK
+official docs + existing projects + real limitations + evidence
+    ↓
+UPDATE MATRIX
+what did research confirm or break?
+    ↓
+LOCK DECISIONS
+    ↓
+DRAFT ARCH
+    ↓
+BUILD ARCHITECTURE
+```
+
+Convergence rules:
+
+- **Capture broadly; do not filter too early.** Owner ideas, AI ideas, constraints, risks, evidence, test results, and existing LOCKs may be collected first with clear provenance/status.
+- **MATCH before choosing.** Look for complementary ideas; the strongest candidate may be a synthesis of several ideas rather than a single “winner”.
+- **SYNTHESIZE coherent candidates.** Form multiple candidates only when the material supports them; do not invent alternatives merely to fill a list.
+- **SHORTLIST using must-haves and constraints.** A candidate that clearly fails a mandatory condition does not need deep research.
+- **Keep RESEARCH sharp.** Research only questions whose answers can change the shortlist, trade-off, or decision. Do not research every technology before candidates exist.
+- **CROSS-CHECK before LOCK.** Compare candidates with official capabilities/docs, existing projects/patterns, known limitations, and real evidence.
+- **UPDATE THE MATRIX after research.** Research findings return to the matrix/candidate state first; they do not directly rewrite architecture.
+- **Human LOCK before architecture.** Research supplies evidence; humans decide; architecture is built from genuinely LOCKED decisions.
+
+The trigger to move from CAPTURE into convergence is not a fixed number of ideas. The trigger is enough material to form at least one coherent candidate plus a specific evidence question whose answer could change the decision.
+
 ## FULL ZASS RESPONSE MODE
 
 Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
@@ -49,7 +112,7 @@ End **every** AI reply with:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.4 / latest v0.3.5
+⬆️ UPDATE ZASS? now v0.3.5 / latest v0.3.6
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.

@@ -2,6 +2,17 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.6] — 2026-10-01
+
+- Locked **ZASS Principle #4 — ZASS Convergence Loop**: capture broadly, converge deliberately; form candidates before deep research, research only questions that can change the choice, cross-check evidence, then LOCK before architecture.
+- Locked the canonical loop: `CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHITECTURE`.
+- Added the expanded flow through MATRIX, SHORTLIST, DEEP RESEARCH, UPDATE MATRIX, DRAFT ARCH, and BUILD ARCHITECTURE.
+- Locked the rule **Research follows candidate formation, not idea capture** to reduce premature technology rabbit holes.
+- Clarified that the strongest candidate may synthesize several ideas; research findings return to the matrix/candidate state before owner decisions change.
+- Added the Convergence Loop prominently to the README and Wiki, including a dedicated `wiki/Convergence-Loop.md` page.
+- Added no new command or mandatory ZASS state; the authority invariant remains `AI suggestion ≠ Owner decision ≠ Git change`.
+- Synced the Wiki Home status table with current ZASSIMPLE v0.1.7, ZASSELECTION v0.2.0, and local `zass check` v0.1 implementation.
+
 ## [CR-010 v0.2 plan] — 2026-10-01
 
 - Locked the CR-010 v0.2 **Git-aware LOCKED drift** implementation plan in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`.

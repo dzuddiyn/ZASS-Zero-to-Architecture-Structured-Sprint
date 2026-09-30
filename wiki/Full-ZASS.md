@@ -1,6 +1,6 @@
 # Full ZASS
 
-**Current version:** v0.3.5
+**Current version:** v0.3.6
 
 Full ZASS is the deeper decision-control method for projects where decisions, evidence, risks and architecture interact.
 
@@ -9,6 +9,18 @@ Core principles:
 > **Don't shortcut thinking; eliminate repeated thinking.**
 
 > **AI produces possibilities. Evidence tests them. Humans decide. Architecture follows the decisions.**
+
+> **Capture broadly, converge deliberately. Form candidates first; research only what can change the choice.**
+
+## ZASS Convergence Loop
+
+```text
+CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHITECTURE
+```
+
+Research follows candidate formation, not idea capture. Capture ideas, constraints, risks, evidence and existing LOCKs without filtering too early; match complementary ideas; synthesize coherent candidates; shortlist against must-haves; research only decision-changing uncertainties; cross-check against real capabilities and evidence; update the matrix/candidate state; then let the owner LOCK decisions before architecture.
+
+See [ZASS Convergence Loop](Convergence-Loop.md) for the expanded workflow.
 
 ## Mental model
 

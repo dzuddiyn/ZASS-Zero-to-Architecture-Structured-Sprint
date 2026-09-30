@@ -29,6 +29,7 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [Quick Start](Quick-Start.md) — begin with almost no setup.
 - [ZASSIMPLE](ZASSIMPLE.md) — the default lightweight method.
 - [Full ZASS](Full-ZASS.md) — decision, evidence, risk and architecture governance.
+- [ZASS Convergence Loop](Convergence-Loop.md) — capture broadly, form candidates, then research and cross-check before LOCK.
 - [Architecture & Evidence](Architecture-and-Evidence.md) — ZERO → ARCHITECTURE and Evidence Confidence.
 - [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
@@ -38,14 +39,26 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [Infographics](Infographics.md) — archived visual references.
 - [Bahasa Melayu](Bahasa-Melayu.md) — ringkasan BM.
 
+## ZASS Convergence Loop
+
+> **Capture broadly, converge deliberately. Form candidates first; research only what can change the choice.**
+
+```text
+CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHITECTURE
+```
+
+Research follows candidate formation, not idea capture. Research findings return to the matrix/candidate state before the owner LOCKs decisions and architecture is built.
+
+[Read the full Convergence Loop guide](Convergence-Loop.md).
+
 ## Current versions
 
 | Component | Current state |
 |---|---|
-| Full ZASS | v0.3.5 |
-| ZASSIMPLE | v0.1.6 |
-| ZASSELECTION | v0.1.0 |
-| `zass check` | Specification locked; implementation pending |
+| Full ZASS | v0.3.6 |
+| ZASSIMPLE | v0.1.7 |
+| ZASSELECTION | v0.2.0 |
+| `zass check` | Local v0.1 implemented; v0.2 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |
 

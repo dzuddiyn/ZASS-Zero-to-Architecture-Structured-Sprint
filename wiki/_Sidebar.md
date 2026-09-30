@@ -4,6 +4,7 @@
 - [Quick Start](Quick-Start.md)
 - [ZASSIMPLE](ZASSIMPLE.md)
 - [Full ZASS](Full-ZASS.md)
+- [ZASS Convergence Loop](Convergence-Loop.md)
 - [Architecture & Evidence](Architecture-and-Evidence.md)
 - [ACTION PLAN](ACTION-PLAN.md)
 - [Cross-AI Handoff](Cross-AI-Handoff.md)
