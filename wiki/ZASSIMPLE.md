@@ -8,7 +8,7 @@ ZASSIMPLE is the default lightweight way to use ZASS.
 
 ## How it feels
 
-Attach the current `ZASSIMPLE.md` to an AI and talk normally.
+Attach the current `ZASSIMPLE_EN.md` to an AI and talk normally.
 
 You do not need to:
 
@@ -117,5 +117,7 @@ When evidence, architecture trade-offs and traceability become important, migrat
 
 Authoritative template:
 
-- [ZASSIMPLE.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE.md)
-- [ZASSIMPLE_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE_EN.md)
+- [ZASSIMPLE_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_EN.md) — default
+- [ZASSIMPLE_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md) — Bahasa Melayu
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

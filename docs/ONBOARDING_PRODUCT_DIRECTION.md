@@ -105,7 +105,7 @@ Then work from the generated ZASSIMPLE project.
 
 ### 2. Manual file — portable start
 
-Download or copy `ZASSIMPLE.md`, give it to an AI, and begin talking normally.
+Download or copy `ZASSIMPLE_EN.md`, give it to an AI, and begin talking normally.
 
 ### 3. Public link — existing public ZASS project
 
@@ -240,7 +240,7 @@ Status:
 HANDOFF ONLY — NOT SOURCE OF TRUTH
 ```
 
-A handoff must never silently replace the current authoritative `ZASS.md` or `ZASSIMPLE.md`.
+A handoff must never silently replace the current authoritative `ZASS.md`, `ZASSIMPLE_EN.md`, or `ZASSIMPLE_MY.md`.
 
 The trusted writer must compare the handoff against the **latest** repository state before applying it. This protects against stale external-AI sessions reintroducing old state or overriding newer LOCKED decisions.
 
@@ -293,7 +293,7 @@ Target default output:
 
 ```text
 my-project/
-├── ZASSIMPLE.md
+├── ZASSIMPLE_EN.md
 ├── README.md
 └── .gitignore
 ```
@@ -359,7 +359,7 @@ START ZASS YOUR WAY
    Start a new project instantly.
 
 ④ FILE
-   Bring ZASSIMPLE.md to your AI.
+   Bring ZASSIMPLE_EN.md to your AI.
 ```
 
 **LOCKED presentation order:** Ad-hoc brainstorm → Public project link → CLI → Manual file.
@@ -393,7 +393,7 @@ The CLI-generated project README should stay intentionally short.
 
 Minimum concepts:
 
-1. Give `ZASSIMPLE.md` to an AI.
+1. Give `ZASSIMPLE_EN.md` to an AI.
 2. Talk normally.
 3. Use `ZASS` when you want the discussion organized.
 4. Use `LOCK DECISION` when a clear decision should become authoritative.
@@ -601,3 +601,5 @@ The following are LOCKED as of 2026-09-30:
 - `L-LICENSE-001` — Repository license is MIT
 
 This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

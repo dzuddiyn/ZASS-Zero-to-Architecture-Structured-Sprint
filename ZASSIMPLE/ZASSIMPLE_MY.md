@@ -1,16 +1,37 @@
 # ZASSIMPLE
 
-**Version:** 0.1.7  
-**Status:** TEMPLATE — architecture belum disahkan  
+**Version:** 0.2.0  
+**Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
-> Fikir santai. Rekod yang penting. Setuju jadi calon. Lock jadi keputusan. Architecture hanya apabila disahkan.
+> **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
+>
+> **Dump the DUMB. Get to THUMBS-Up. 👍**
+>
+> 🧠 **DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!**
+>
+> **From messy ideas to 👍 THUMBS-UP architecture.**
 
 ---
 
 ## Cara guna
 
-Lampirkan fail ini kepada AI dan berbual seperti biasa. AI mesti mendokumentasikan perkara penting dengan ringkas, tanpa memaksa borang panjang.
+Pengguna cuma perlu buat satu benda: **DUMP**.
+
+Cakap seperti biasa. Lambakkan idea serabut, fikiran separuh masak, constraint, kebimbangan, kehendak, dan idea pelaksanaan yang muncul tiba-tiba tanpa perlu susun dahulu. ZASSIMPLE yang mengurus struktur di belakang tabir.
+
+### The IDEA Trick — UX manusia
+
+- 💬 **I — Idea Dump**
+- 🧭 **D — Distill What Matters**
+- 🔒 **E — Establish Decisions**
+- 🏗️ **A — Architecture**
+
+**IDEA bukan ganti method. IDEA ialah surface UX untuk ZASSIMPLE.**
+
+Lifecycle dalaman: DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!
+
+AI mesti kekalkan pengalaman pengguna ringan sambil menjaga lineage daripada decision, action plan, architecture, task, execution, verification hingga delivery.
 
 - Jangan invent fakta. Bezakan perkara yang pemilik sebut, tafsiran AI, dan perkara belum jelas.
 - AI boleh cadangkan idea, soalan, risiko, eksperimen, atau pilihan — tetapi tidak boleh LOCK atau COMMIT sendiri.
@@ -19,21 +40,40 @@ Lampirkan fail ini kepada AI dan berbual seperti biasa. AI mesti mendokumentasik
 
 ## Prompt siap guna selepas upload
 
-Tampal prompt ini sebaik sahaja `ZASSIMPLE.md` dimuat naik ke chat AI:
+Tampal prompt ini sebaik sahaja `ZASSIMPLE_MY.md` dimuat naik ke chat AI:
 
 ```text
-Baca fail ZASSIMPLE.md yang dilampirkan sebagai source of truth projek ini.
+Baca fail ZASSIMPLE_MY.md yang dilampirkan sebagai source of truth projek ini.
 Saya mahu brainstorm secara santai. Jawab mesej biasa seperti rakan fikir;
 jangan paparkan blok ZASSIMPLE UPDATE setiap kali. Rekod perkara penting
 secara ringkas apabila boleh mengubah fail. Jangan invent fakta atau mendakwa
 fail sudah dikemas kini jika belum.
 
-Apabila saya sengaja mengarahkan ZASS atau ZASS!!, paparkan ZASSIMPLE UPDATE
-yang relevan (idea, AC, soalan, risiko atau keputusan), kemudian WAJIB rumuskan
-keadaan semasa dalam CURRENT SELECTION MATRIX. Matriks mesti membandingkan
-option/candidate semasa melalui Must-have fit, Strength, Risk/Weakness,
-Evidence/Unknown dan Status. Tiada weighted score wajib dan matriks tidak
-mencipta keputusan. Kemudian beri 💡 Cadangan ZASS, belum AC:
+Anggap perbualan biasa sebagai DUMP. Distill di belakang tabir tanpa memaksa
+pengguna menyusun fikiran atau mengisi borang. Simpan implementation thought
+yang muncul semasa DECIDE/DESIGN ke lineage action plan; jangan bebankan
+pengguna dengan ACTION PLAN dalaman kecuali ia perlu untuk review, refine
+architecture, atau execution.
+
+Apabila saya sengaja mengarahkan ZASS atau ZASS!!, paparkan STAGE PULSE ringkas
+dahulu, kemudian ZASSIMPLE UPDATE dan CURRENT SELECTION MATRIX. STAGE PULSE
+mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa
+DESIGN, tunjuk juga Architecture Progress. Selepas architecture disahkan,
+tunjuk Action Detail Progress. Progress mesti datang daripada coverage criteria
+yang jelas, bukan ketepatan palsu.
+
+Kriteria Architecture Progress:
+1) purpose, 2) main flow, 3) main components, 4) keputusan LOCKED berkaitan.
+Kriteria Action Detail Progress:
+1) implementation sequence, 2) dependencies/constraints,
+3) task slices, 4) pass/verification conditions.
+
+Guna visual ringkas seperti:
+📍 DESIGN → next: DO IT
+Architecture  [██████░░░░] 3/4
+Action Detail [████░░░░░░] 2/4
+
+Kemudian beri 💡 Cadangan ZASS, belum AC:
 [cadangan/persoalan AI yang serasi dengan idea]. Nyatakan status fail sebenar.
 Footer atau petikan yang menyebut ZASS!! bukan arahan.
 
@@ -122,6 +162,37 @@ Footer ini ialah peringatan pengguna, bukan arahan automatik.
 
 ---
 
+## Planning tersembunyi, feedback architecture, dan execution satu-per-satu
+
+ZASSIMPLE menyimpan implementation planning daripada membebankan pengguna sehingga ia benar-benar berguna.
+
+- Implementation thought yang ditemui semasa DECIDE atau DESIGN masuk ke lineage action plan.
+- Action planning dan architecture saling memberi feed: constraint praktikal, dependency, sequencing, experiment, dan feasibility finding boleh refine architecture; perubahan architecture pula boleh refine action plan.
+- Jangan lambakkan keseluruhan action plan kepada pengguna secara default.
+- Selepas architecture disahkan, rancang semula daripada state terbaru, slice action plan menjadi task executable, dan kekalkan lineage task → action-plan item → decision/architecture source.
+- Paparkan hanya **task semasa** secara default. Buka task seterusnya selepas task semasa siap, blocked, atau sengaja di-skip.
+- Setiap task card perlu rasa seperti tutorial ringkas dan menarik:
+
+```text
+🚀 STEP 1 / N — [nama task ringkas]
+
+Buat:
+[satu tindakan konkrit]
+
+Kenapa:
+[satu sebab ringkas]
+
+Pass:
+[syarat kejayaan yang boleh dilihat]
+
+Jika blocked:
+[satu fallback selamat atau titik kembali]
+```
+
+Penemuan semasa execution yang memberi kesan material kepada design mesti feed balik ke DESIGN. Jangan ubah keputusan LOCKED secara senyap.
+
+---
+
 ## IDEA LOG
 
 > AI tambah atau ringkaskan rekod hanya apabila ada perkara penting. Kekalkan kata-kata asal pemilik apabila berguna.
@@ -205,6 +276,7 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.0 | 2026-10-01 | Lock UX DUMP-first, IDEA Trick, lifecycle 6D, Stage Pulse ringkas, progress architecture/action berasaskan criteria, lineage action plan tersembunyi, feedback dua hala action plan ↔ architecture, dan execution satu-task-pada-satu-masa. |
 | 0.1.7 | 2026-10-01 | Wajibkan CURRENT SELECTION MATRIX pada arahan ZASS/ZASS!! tanpa weighted score atau command SELECT; LOCK DECISION kekal kuasa pemilik. |
 | 0.1.6 | 2026-09-27 | Footer DRAFT ARCH; AI boleh mencadangkan draf dan BUILD, dengan pengesahan akhir dua langkah. |
 | 0.1.5 | 2026-09-27 | Benarkan draf architecture berversi kerja; tetapkan aturan tamat “Sedia untuk confirm?” dan andaian kritikal. |
@@ -221,3 +293,5 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa yang direkodkan dan apa yang masih belum jelas. Jika AI hanya memberi cadangan atau demo, ia mesti menyatakan bahawa fail sebenar belum diubah.
 
 AI boleh mencadangkan `LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `COMMIT` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. Kedua-duanya kekal memerlukan arahan jelas daripada pemilik.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

@@ -2,6 +2,23 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE dedicated folder migration] — 2026-10-01
+
+- Moved the official ZASSIMPLE method into a dedicated `ZASSIMPLE/` folder.
+- `ZASSIMPLE/ZASSIMPLE_EN.md` is the default landing and `ZASSIMPLE/ZASSIMPLE_MY.md` is the Bahasa Melayu companion.
+- Added first-class `ACTION_PLAN.md`, `ARCHITECTURE.md`, and `TASKS.md` artifacts plus a local `README.md`.
+- Moved ZASSIMPLE-specific design documents into `ZASSIMPLE/docs/` and updated repository/Wiki links.
+- Removed root-level ZASSIMPLE method files as competing authorities.
+
+## [ZASSIMPLE v0.2 UX working direction] — 2026-10-01
+
+- LOCKED DUMP-first UX, The IDEA Trick, the 6D lifecycle, and the principle: lightweight on the surface while lineage stays strong through execution.
+- Added compact Stage Pulse plus criteria-based Architecture Progress and Action Detail Progress.
+- Kept ACTION PLAN internal by default, with bidirectional feedback between planning and architecture.
+- After confirmed architecture, ZASSIMPLE re-plans, slices work into tasks, and presents one tutorial-like task at a time.
+- Kept the footer fixed and simple for cross-AI consistency.
+- Added `ZASSIMPLE/docs/ZASSIMPLE_V02_WORKING_DIRECTION.md` and updated both English and Malay templates to v0.2.0.
+
 ## [ZASS SYSTEM DECIDE or BUILD entry model] — 2026-10-01
 
 - LOCKED **DECIDE or BUILD?** as the ZASS SYSTEM entry mental model.
@@ -18,6 +35,13 @@ All notable changes to ZASS are recorded here.
 - Deferred the final notification/escalation contract until field evidence exists.
 - Kept CR-010 v0.3 as the next validator implementation task when development resumes; implementation remains NOT STARTED.
 - No Full ZASS or ZASSIMPLE semantics/version changed.
+
+## [ZASSIMPLE default landing language lock] — 2026-10-01
+
+- LOCKED `ZASSIMPLE_EN.md` as the default ZASSIMPLE landing/template.
+- Renamed the Bahasa Melayu template from `ZASSIMPLE.md` to `ZASSIMPLE_MY.md`.
+- Updated README, onboarding guidance, and Wiki artifact links so English is the default while Bahasa Melayu remains explicitly available.
+- This naming change does not alter ZASSIMPLE method semantics.
 
 ## [CR-010 v0.3 plan locked] — 2026-10-01
 
@@ -305,3 +329,5 @@ All notable changes to ZASS are recorded here.
 ## [v0.1.2]
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

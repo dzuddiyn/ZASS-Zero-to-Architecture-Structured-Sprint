@@ -1,9 +1,9 @@
 # ZASSIMPLE v0.2 — Structure Renewal Plan
 
-**Status:** LOCKED IMPLEMENTATION PLAN — NOT STARTED  
+**Status:** IMPLEMENTED BASE STRUCTURE — VALIDATION IN PROGRESS  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
-**Current baseline:** ZASSIMPLE v0.1.7 at repository root
+**Current baseline:** ZASSIMPLE v0.2.0 in dedicated `ZASSIMPLE/` folder
 
 > **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
 
@@ -77,11 +77,14 @@ ZASS-Zero-to-Architecture-Structured-Sprint/
 │
 ├── ZASSIMPLE/
 │   ├── README.md
-│   ├── ZASSIMPLE.md
-│   ├── ZASSIMPLE_EN.md
+│   ├── ZASSIMPLE_EN.md      ← default landing
+│   ├── ZASSIMPLE_MY.md      ← Bahasa Melayu
 │   ├── ACTION_PLAN.md
 │   ├── ARCHITECTURE.md
-│   └── TASKS.md
+│   ├── TASKS.md
+│   └── docs/
+│       ├── ZASSIMPLE_V02_STRUCTURE_RENEWAL_PLAN.md
+│       └── ZASSIMPLE_V02_WORKING_DIRECTION.md
 │
 ├── ZASSELECTION/
 │   └── ...
@@ -97,9 +100,9 @@ The folder boundary prevents ZASSIMPLE execution artifacts from being mixed with
 
 ## 4. Artifact authority and responsibility
 
-### `ZASSIMPLE.md`
+### `ZASSIMPLE_EN.md` / `ZASSIMPLE_MY.md`
 
-Purpose: lightweight reasoning and authoritative ZASSIMPLE project state.
+Purpose: lightweight reasoning and authoritative ZASSIMPLE method/project-state template. `ZASSIMPLE_EN.md` is the default landing; `ZASSIMPLE_MY.md` is the Bahasa Melayu companion.
 
 Contains primarily:
 
@@ -285,7 +288,7 @@ Task slicing and execution must not introduce a second decision authority.
 
 Before moving files:
 
-- inventory all references to root `ZASSIMPLE.md` and `ZASSIMPLE_EN.md`;
+- inventory all references to root `ZASSIMPLE_EN.md`, `ZASSIMPLE_MY.md`, and historical `ZASSIMPLE.md` paths;
 - inventory README, Wiki, docs, examples, CLI/bootstrap, and validator assumptions;
 - record current live HEAD before implementation.
 
@@ -296,11 +299,12 @@ Create:
 ```text
 ZASSIMPLE/
 ├── README.md
-├── ZASSIMPLE.md
 ├── ZASSIMPLE_EN.md
+├── ZASSIMPLE_MY.md
 ├── ACTION_PLAN.md
 ├── ARCHITECTURE.md
-└── TASKS.md
+├── TASKS.md
+└── docs/
 ```
 
 Move the current language templates into the folder while preserving their semantics before applying the v0.2 renewal.
@@ -309,7 +313,7 @@ Move the current language templates into the folder while preserving their seman
 
 Refactor the current single-file ZASSIMPLE model:
 
-- conversational reasoning / decisions stay in `ZASSIMPLE.md`;
+- conversational reasoning / decisions stay in the selected language template (`ZASSIMPLE_EN.md` default, or `ZASSIMPLE_MY.md`);
 - implementation thinking moves to `ACTION_PLAN.md`;
 - architecture moves to `ARCHITECTURE.md`;
 - sliced execution work moves to `TASKS.md`.
@@ -421,5 +425,7 @@ DELIVERED !!
 
 The method remains lightweight to use while preserving durable lineage from the first idea through the delivered result.
 
-**Implementation status:** NOT STARTED.  
+**Implementation status:** BASE STRUCTURE IMPLEMENTED; repository-reference validation in progress.  
 **Plan status:** LOCKED.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

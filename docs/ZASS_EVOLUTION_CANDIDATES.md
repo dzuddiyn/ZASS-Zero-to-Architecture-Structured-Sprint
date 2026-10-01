@@ -2,7 +2,7 @@
 
 **Status:** CANDIDATE REGISTER — NOT LOCKED  
 **Purpose:** Keep potentially useful ZASS evolution ideas without changing the current method prematurely.  
-**Authority:** This file is an idea register only. It does not override `ZASS.md`, `ZASSIMPLE.md`, `ZASSELECTION/ZASSELECTION_EN.md`, `ZASSELECTION/ZASSELECTION_MY.md`, or any LOCKED decision.
+**Authority:** This file is an idea register only. It does not override `ZASS.md`, `ZASSIMPLE/ZASSIMPLE_EN.md`, `ZASSIMPLE/ZASSIMPLE_MY.md`, `ZASSELECTION/ZASSELECTION_EN.md`, `ZASSELECTION/ZASSELECTION_MY.md`, or any LOCKED decision.
 
 > New ideas about improving ZASS should be recorded here first unless the project owner explicitly decides otherwise.
 
@@ -660,3 +660,5 @@ Future ZASS evaluation should use several real projects and observe useful signa
 - factual corrections required after AI-generated claims.
 
 Case-study evidence should guide future method changes before new ceremony is added.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

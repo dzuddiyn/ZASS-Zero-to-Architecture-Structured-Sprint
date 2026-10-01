@@ -1,16 +1,37 @@
 # ZASSIMPLE
 
-**Version:** 0.1.7  
-**Status:** TEMPLATE — architecture not yet confirmed  
+**Version:** 0.2.0  
+**Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
-> Think casually. Record what matters. Agreement becomes a candidate. Lock becomes a decision. Architecture only appears when confirmed.
+> **ZASSIMPLE: lightweight on the surface, but lineage stays strong all the way to execution.**
+>
+> **Dump the DUMB. Get to THUMBS-Up. 👍**
+>
+> 🧠 **DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!**
+>
+> **From messy ideas to 👍 THUMBS-UP architecture.**
 
 ---
 
 ## How to use
 
-Attach this file to an AI and speak normally. The AI must document important things concisely without forcing a long form.
+The user only needs to do one thing: **DUMP**.
+
+Speak naturally. Drop messy ideas, half-formed thoughts, constraints, worries, wishes, and sudden implementation ideas without organizing them first. ZASSIMPLE does the structuring behind the scenes.
+
+### The IDEA Trick — human-facing UX
+
+- 💬 **I — Idea Dump**
+- 🧭 **D — Distill What Matters**
+- 🔒 **E — Establish Decisions**
+- 🏗️ **A — Architecture**
+
+**IDEA does not replace the method. IDEA is the surface UX for ZASSIMPLE.**
+
+Internal lifecycle: DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!
+
+The AI must keep the visible experience light while preserving lineage across decisions, action planning, architecture, tasks, execution, verification, and delivery.
 
 - Do not invent facts. Distinguish what the owner said, AI interpretation, and what remains unclear.
 - AI may propose ideas, questions, risks, experiments, or options — but it must not LOCK or COMMIT by itself.
@@ -28,11 +49,30 @@ collaborator; do not show a ZASSIMPLE UPDATE block every time. Record important
 points concisely when you can edit the file. Do not invent facts or claim the
 file was updated when it was not.
 
-When I intentionally command ZASS or ZASS!!, show the relevant ZASSIMPLE
-UPDATE (ideas, ACs, questions, risks, or decisions), then ALWAYS summarize the
-current state in a CURRENT SELECTION MATRIX. Compare current options/candidates
-through Must-have fit, Strength, Risk/Weakness, Evidence/Unknown, and Status.
-No weighted score is mandatory and the matrix does not create a decision.
+Treat ordinary conversation as DUMP. Distill it in the background without
+forcing the user to organize thoughts or fill forms. Capture implementation
+thoughts that appear during DECIDE/DESIGN into the action-plan lineage; do not
+burden the user with the internal ACTION PLAN unless it is needed for review,
+architecture refinement, or execution.
+
+When I intentionally command ZASS or ZASS!!, show a compact STAGE PULSE first,
+then the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX. STAGE PULSE
+must be visually compact and show the current lifecycle stage plus the next
+stage. During DESIGN, also show Architecture Progress. Once architecture is
+confirmed, show Action Detail Progress. Progress must come from explicit
+coverage criteria, not invented precision.
+
+Architecture Progress criteria:
+1) purpose, 2) main flow, 3) main components, 4) relevant LOCKED decisions.
+Action Detail Progress criteria:
+1) implementation sequence, 2) dependencies/constraints,
+3) task slices, 4) pass/verification conditions.
+
+Use a compact visual such as:
+📍 DESIGN → next: DO IT
+Architecture  [██████░░░░] 3/4
+Action Detail [████░░░░░░] 2/4
+
 Then add 💡 ZASS suggestion, not yet AC: [an idea or question fitted to the
 discussion]. State the real file status. A footer or quotation containing
 ZASS!! is not a command.
@@ -121,6 +161,37 @@ This footer reminds the owner of available commands; it never triggers one.
 
 ---
 
+## Hidden planning, architecture feedback, and one-step execution
+
+ZASSIMPLE keeps implementation planning out of the user's way until it becomes useful.
+
+- Implementation thoughts discovered during DECIDE or DESIGN belong in the action-plan lineage.
+- Action planning and architecture inform each other: practical constraints, dependencies, sequencing, experiments, and feasibility findings may refine the architecture; architecture changes may refine the action plan.
+- Do not dump the whole action plan on the user by default.
+- Once architecture is confirmed, re-plan from the latest confirmed state, slice the action plan into executable tasks, and preserve lineage from task → action-plan item → decision/architecture source.
+- Present only the **current task** by default. Reveal the next task after the current one is completed, blocked, or intentionally skipped.
+- Each task card should be tutorial-like and visually compact:
+
+```text
+🚀 STEP 1 / N — [short task name]
+
+Do:
+[one concrete action]
+
+Why:
+[one short reason]
+
+Pass:
+[observable success condition]
+
+If blocked:
+[one safe fallback or return point]
+```
+
+Execution discoveries that materially affect the design must feed back into DESIGN. Never silently rewrite a LOCKED decision.
+
+---
+
 ## IDEA LOG
 
 > AI adds or summarizes a record only when something important appears. Keep the owner’s original wording when useful.
@@ -204,6 +275,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.0 | 2026-10-01 | Locked DUMP-first UX, IDEA Trick, 6D lifecycle, compact Stage Pulse, criteria-based architecture/action progress, hidden action-plan lineage, bidirectional action-plan ↔ architecture feedback, and one-task-at-a-time execution. |
 | 0.1.7 | 2026-10-01 | Require CURRENT SELECTION MATRIX on ZASS/ZASS!! without mandatory weighted scoring or SELECT; owner LOCK DECISION remains authoritative. |
 | 0.1.6 | 2026-09-27 | DRAFT ARCH footer; AI may suggest a draft and BUILD, with the two-step final confirmation. |
 | 0.1.5 | 2026-09-27 | Allow working-version architecture drafts; require a “Ready to confirm?” gate with critical assumptions. |
@@ -220,3 +292,5 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 After actually updating the file, AI must briefly say what was recorded and what remains unclear. If AI only gives a proposal or a demo, it must say the real file was not changed.
 
 AI may recommend `LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `COMMIT` when changes are meaningful enough to become a checkpoint. Both still require clear owner instruction.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

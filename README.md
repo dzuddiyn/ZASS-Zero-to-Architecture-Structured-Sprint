@@ -115,7 +115,7 @@ Target minimal project:
 
 ```text
 my-project/
-├── ZASSIMPLE.md
+├── ZASSIMPLE_EN.md
 ├── README.md
 └── .gitignore
 ```
@@ -132,7 +132,7 @@ ZASSIMPLE is the default. No method-selection wizard.
 
 Download or copy:
 
-**[ZASSIMPLE.md](ZASSIMPLE.md)**
+**[ZASSIMPLE_EN.md](ZASSIMPLE/ZASSIMPLE_EN.md)**
 
 Give it to your AI and talk normally.
 
@@ -330,8 +330,8 @@ You do not migrate because a project becomes “big”.
 
 You migrate because the **decision complexity** becomes important.
 
-**Start here:** [ZASSIMPLE.md](ZASSIMPLE.md)  
-**English ZASSIMPLE:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
+**Start here (default, English):** [ZASSIMPLE_EN.md](ZASSIMPLE/ZASSIMPLE_EN.md)  
+**Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE/ZASSIMPLE_MY.md)  
 **Full method:** [ZASS.md](ZASS.md)  
 **English Full method:** [ZASS_EN.md](ZASS_EN.md)
 
@@ -460,7 +460,7 @@ You normally do **not** need all of them at the beginning.
 # Current status
 
 **Full ZASS:** v0.3.6  
-**ZASSIMPLE:** v0.1.7  
+**ZASSIMPLE:** v0.2.0  
 **ZASSELECTION:** v0.2.0  
 **License:** [MIT](LICENSE)
 
@@ -518,3 +518,5 @@ Keep the useful state.
 Make the decision yourself.
 
 Then let architecture follow what you actually decided.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

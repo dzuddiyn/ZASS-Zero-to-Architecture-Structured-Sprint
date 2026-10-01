@@ -66,7 +66,7 @@ Target minimal project:
 
 ```text
 my-project/
-├── ZASSIMPLE.md
+├── ZASSIMPLE_EN.md
 ├── README.md
 └── .gitignore
 ```
@@ -77,7 +77,7 @@ The npm command is the target UX, not a currently released package.
 
 ### 4. File — works now
 
-Copy or download `ZASSIMPLE.md`, give it to your AI, and talk normally.
+Copy or download `ZASSIMPLE_EN.md`, give it to your AI, and talk normally.
 
 Useful commands:
 
@@ -109,3 +109,5 @@ Typical triggers:
 - decision history is becoming hard to track conversationally.
 
 Move because **decision complexity** increased, not merely because the project got larger.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
