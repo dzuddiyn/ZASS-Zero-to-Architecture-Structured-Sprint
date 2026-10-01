@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM DECIDE or BUILD entry model] — 2026-10-01
+
+- LOCKED **DECIDE or BUILD?** as the ZASS SYSTEM entry mental model.
+- LOCKED intent-based routing: **DECIDE → ZASSELECTION** and **BUILD → ZASSIMPLE**.
+- Kept Full ZASS out of the primary landing choice; it remains an escalation path from BUILD/ZASSIMPLE when observed project complexity justifies stronger governance.
+- Kept ZASSIMPLE as the default method inside the BUILD path and preserved the planned Temaya field test before defining the escalation notification contract.
+- This is a product-routing working direction only; no landing page implementation or method-version bump was performed.
+
 ## [ZASS SYSTEM default landing direction] — 2026-10-01
 
 - LOCKED ZASSIMPLE as the default landing method for the ZASS SYSTEM.

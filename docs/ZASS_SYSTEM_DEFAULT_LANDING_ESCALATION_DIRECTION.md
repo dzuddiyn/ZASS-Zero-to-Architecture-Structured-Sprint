@@ -5,23 +5,39 @@
 **Owner:** Project Owner  
 **Scope:** Product entry flow and future ZASSIMPLE → Full ZASS escalation contract
 
-> **ZASSIMPLE is the front door. Full ZASS is an escalation path, not the default burden.**
+> **DECIDE or BUILD?** is the ZASS SYSTEM entry mental model. ZASSELECTION handles DECIDE; ZASSIMPLE is the default BUILD entry; Full ZASS is an escalation path, not the default burden.
 
-## 1. Default landing
+## 1. Default landing mental model — DECIDE or BUILD?
 
-The default landing method for the ZASS SYSTEM is **ZASSIMPLE**.
+The locked entry mental model for the ZASS SYSTEM is:
 
-A new user should not be required to understand or choose Full ZASS before starting ordinary project work.
+> **DECIDE or BUILD?**
 
-Default path:
+The landing page should ask what the user is trying to do, rather than asking them to choose a ZASS method by name.
 
 ```text
 ZASS SYSTEM
     ↓
-DEFAULT LANDING
-    ↓
-ZASSIMPLE
+DECIDE or BUILD?
+    │
+    ├── DECIDE
+    │      ↓
+    │  ZASSELECTION
+    │
+    └── BUILD
+           ↓
+       ZASSIMPLE
+           ↓
+    Full ZASS when needed
 ```
+
+**DECIDE** is for selecting between alternatives or making a structured life/product choice.
+
+**BUILD** is for creating a system, project, product, workflow, automation, or architecture.
+
+Within the BUILD path, **ZASSIMPLE remains the default landing method**. A new user should not be required to understand or choose Full ZASS before starting ordinary project work.
+
+Full ZASS does not need to appear as a primary first-screen choice. It remains available later through the escalation path.
 
 ## 2. Full ZASS is not the default
 
@@ -94,19 +110,25 @@ Full ZASS can provide stronger traceability.
 
 The exact wording, thresholds, and trigger rules remain future contract work.
 
-## 5. Product principle
+## 5. Product principles
 
 LOCKED product direction:
 
+> **DECIDE or BUILD?**
+
+> **Route by user intent, not by framework knowledge.**
+
 > **Start simple by default. Escalate governance only when observed project complexity justifies it.**
 
-This keeps ZASS lightweight at entry while preserving a clear path to stronger governance.
+This keeps ZASS lightweight at entry: DECIDE routes to ZASSELECTION, BUILD routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
 
 ## 6. Current sequencing
 
 Current sequence is:
 
 ```text
+lock DECIDE or BUILD? entry model
+        ↓
 stabilize ZASSIMPLE
         ↓
 field-test ZASSIMPLE on Temaya
@@ -117,6 +139,8 @@ define notification / escalation contract
         ↓
 validate transition UX to Full ZASS
 ```
+
+The future landing-page implementation itself is not started by this decision. This document only locks the product routing model.
 
 Separately, CR-010 v0.3 ACTION_PLAN consistency remains a locked implementation plan and is the next validator implementation task when development resumes.
 
@@ -130,9 +154,11 @@ It does not:
 
 - change Full ZASS semantics;
 - change ZASSIMPLE semantics;
+- change ZASSELECTION semantics;
+- implement a landing page yet;
 - define final escalation thresholds;
 - authorize automatic migration;
 - start CR-010 v0.3 implementation;
-- bump Full ZASS or ZASSIMPLE versions.
+- bump Full ZASS, ZASSIMPLE, or ZASSELECTION versions.
 
 Future escalation rules must be based on field evidence and explicitly locked before implementation.
