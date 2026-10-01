@@ -2,7 +2,8 @@
 
 > **AI compares. You decide, AI saves.**
 > **ALL Your PRODUCT selection HISTORY COMPILED in a SINGLE SYSTEM !!**
-**Default method:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
+
+**Default English:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
 **Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION_MY.md)
 
 ---
