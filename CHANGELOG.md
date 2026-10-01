@@ -2,6 +2,15 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM default landing direction] — 2026-10-01
+
+- LOCKED ZASSIMPLE as the default landing method for the ZASS SYSTEM.
+- LOCKED Full ZASS as an escalation path rather than the default entry burden; migration remains a human choice.
+- LOCKED Temaya as the planned real-project field test after ZASSIMPLE stabilizes, with escalation signals to be derived from observed project complexity rather than invented thresholds.
+- Deferred the final notification/escalation contract until field evidence exists.
+- Kept CR-010 v0.3 as the next validator implementation task when development resumes; implementation remains NOT STARTED.
+- No Full ZASS or ZASSIMPLE semantics/version changed.
+
 ## [CR-010 v0.3 plan locked] — 2026-10-01
 
 - LOCKED `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md` as the implementation plan for ACTION_PLAN consistency validation.
