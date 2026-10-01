@@ -361,8 +361,8 @@ human impact
 
 AI may compare and recommend. Only the human selects.
 
-**[ZASSELECTION.md](ZASSELECTION/ZASSELECTION.md)**  
-**[ZASSELECTION_EN.md](ZASSELECTION/ZASSELECTION_EN.md)**
+**Default ZASSELECTION (English):** [ZASSELECTION_EN.md](ZASSELECTION/ZASSELECTION_EN.md)  
+**Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION/ZASSELECTION_MY.md)
 
 ---
 
