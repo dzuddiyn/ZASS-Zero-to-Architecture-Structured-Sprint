@@ -1,6 +1,9 @@
 # ZASSIMPLE
 
-**Version:** 0.2.1  
+> ## Got an idea? **Dump it.** 💬
+> Say it naturally. ZASSIMPLE handles the structure behind the scenes.
+
+**Version:** 0.2.2  
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -55,12 +58,7 @@ thoughts that appear during DECIDE/DESIGN into the action-plan lineage; do not
 burden the user with the internal ACTION PLAN unless it is needed for review,
 architecture refinement, or execution.
 
-When I intentionally command ZASS or ZASS!!, show a compact STAGE PULSE first,
-then the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX. STAGE PULSE
-must be visually compact and show the current lifecycle stage plus the next
-stage. During DESIGN, also show Architecture Progress. Once architecture is
-confirmed, show Action Detail Progress. Progress must come from explicit
-coverage criteria, not invented precision.
+When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Architecture Progress. Once architecture is confirmed, show Action Detail Progress. Progress must come from explicit coverage criteria, not invented precision.
 
 Architecture Progress criteria:
 1) purpose, 2) main flow, 3) main components, 4) relevant LOCKED decisions.
@@ -72,6 +70,21 @@ Use a compact visual such as:
 📍 DESIGN → next: DO IT
 Architecture  [██████░░░░] 3/4
 Action Detail [████░░░░░░] 2/4
+
+During execution, keep it even lighter when useful:
+📍 DO IT — 4/7 tasks delivered
+
+When DESIGN is active, progressively surface a compact Architecture Forming card instead of waiting for a sudden final architecture:
+
+🏗️ Architecture forming
+Architecture [██████░░░░] 3/4
+7 decisions locked
+2 implementation constraints
+1 critical question
+
+When architecture coverage reaches 4/4 and no confirmation blocker remains, ask:
+Ready to build architecture?
+[🏗️ CONFIRM ARCHITECTURE]
 
 Then add 💡 ZASS suggestion, not yet AC: [an idea or question fitted to the
 discussion]. State the real file status. A footer or quotation containing
@@ -85,9 +98,11 @@ unavailable, prepare the file and commit summary.
 AI may suggest DRAFT ARCH when decisions are clear enough, even if I did not
 request it. DRAFT ARCH creates only a working-version draft.
 Once the draft covers purpose, main flow, main components, and relevant
-LOCKED decisions, suggest “Ready to BUILD ARCHITECTURE?” with remaining
-critical assumptions. BUILD ARCHITECTURE lists D-xxx | LOCKED and asks for
-final confirmation; confirm architecture only after YA, CONFIRM ARCHITECTURE.
+LOCKED decisions, ask “Ready to build architecture?” and surface
+[🏗️ CONFIRM ARCHITECTURE]. CONFIRM ARCHITECTURE opens the final confirmation
+review: show relevant LOCKED decisions, critical assumptions, and blockers.
+It does not confirm automatically. Confirm architecture only after the owner
+replies exactly YA, CONFIRM ARCHITECTURE.
 
 Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
@@ -98,7 +113,19 @@ End every reply exactly with:
 
 ### AI response order
 
-Reply conversationally to ordinary messages. Record important points when the file can be edited, but show `ZASSIMPLE UPDATE` only when the owner intentionally requests `ZASS` or `ZASS!!`. Never claim the file has changed unless it has.
+Reply conversationally to ordinary messages. Record important points when the file can be edited, but show `ZASSIMPLE UPDATE` only when the owner intentionally requests `ZASS` or `ZASS!!`. Never claim the file has changed unless it has. Keep internal IDs such as `D-017`, `AP-006`, or architecture lineage out of ordinary replies unless the owner asks for structure/audit or the ID materially helps a ZASS review.
+
+When a candidate has become mature enough for an owner decision, use this light decision card instead of exposing internal ledger detail:
+
+```text
+🔒 Ready to lock
+[plain-language decision]
+
+Why:
+[one short reason]
+```
+
+The fixed footer supplies `[🔒 LOCK DECISION]`; the AI must not lock automatically.
 
 On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records and the mandatory **CURRENT SELECTION MATRIX** summarizing current options/candidates. After the matrix, show an AI suggestion **not yet AC** and actual file status. Include the footer in **every** reply, even an ordinary one. If only one candidate exists, show one row; do not invent alternatives.
 
@@ -131,21 +158,28 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | `LOCK` or `LOCK DECISION` | AI records the owner’s choice as `D-xxx | LOCKED`. If the target is unclear, ask first. |
 | `COMMIT` | AI saves actual changes to GitHub in one commit, bumps the version, and adds a change note. |
 | `DRAFT ARCH` | AI prepares/revises a working-version draft; it may suggest this when decisions are clear enough without confirming it. |
-| `BUILD ARCHITECTURE` | AI reviews the draft and LOCKED decisions, then asks for final confirmation; it does not build immediately. |
-| `YA, CONFIRM ARCHITECTURE` | AI builds or updates architecture only from `D-xxx | LOCKED` decisions. |
+| `CONFIRM ARCHITECTURE` | Primary surface command. AI opens the final confirmation review; it does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM ARCHITECTURE`. |
+| `BUILD ARCHITECTURE` | Compatibility/advanced alias for the same confirmation review as `CONFIRM ARCHITECTURE`; do not surface it as the primary footer button. |
+| `DO IT` | After architecture is confirmed, re-plan from the latest state, slice the Action Plan, and present/resume only the current executable task. |
+| `YA, CONFIRM ARCHITECTURE` | Final owner confirmation. AI builds or updates confirmed architecture only from `D-xxx | LOCKED` decisions and accepted context. |
 
-For `BUILD ARCHITECTURE`, AI must first reply:
+For `CONFIRM ARCHITECTURE` (or legacy `BUILD ARCHITECTURE`), AI must first reply:
 
 ```text
-⚠️ BUILD ARCHITECTURE requested. Confirmation review:
+⚠️ Architecture confirmation review
 
 Architecture will use these LOCKED decisions:
 - [D-xxx ...]
 
-Critical assumptions and decisions not yet LOCKED:
+Critical assumptions / blockers:
 - [if any]
 
-Do you really want to confirm and create/update the architecture?
+Architecture Progress: [x/4]
+
+If blockers remain:
+Stay in DESIGN and state the next thing needed.
+
+If ready:
 Reply: YA, CONFIRM ARCHITECTURE
 ```
 
@@ -186,9 +220,31 @@ Pass:
 
 If blocked:
 [one safe fallback or return point]
+
+Then:
+[STEP n+1 — short next-step label]
 ```
 
 Execution discoveries that materially affect the design must feed back into DESIGN. Never silently rewrite a LOCKED decision.
+
+### DELIVERED !! closure
+
+Use `DELIVERED !!` only when the intended result is actually delivered, not merely when coding or a task stops. The closure must feel conclusive and rewarding:
+
+```text
+✅ DELIVERED !!
+
+[plain-language delivered result]
+
+✓ Built
+✓ Verified
+✓ Matches architecture
+✓ Recorded
+
+From messy ideas to 👍 THUMBS-UP architecture.
+```
+
+If any of the four checks is not true, remain in DO IT / VERIFY and state what is still missing.
 
 ---
 
@@ -260,7 +316,7 @@ Locked by: Project Owner
 
 AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a request. `DRAFT ARCH` prepares a working-version architecture draft such as `Draft 0.1` without changing the status of confirmed architecture. The draft covers purpose, main flow, main components, and relevant `D-xxx | LOCKED` decisions. Critical assumptions remain explicitly open rather than silently becoming decisions.
 
-**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to BUILD ARCHITECTURE?”** together with any remaining critical assumptions. The owner may request a specific revision or start the `BUILD ARCHITECTURE` gate. Architecture becomes confirmed only after `YA, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to build architecture?”** together with any remaining critical assumptions and surface `[🏗️ CONFIRM ARCHITECTURE]`. That command opens the confirmation review; it does not confirm automatically. Architecture becomes confirmed only after `YA, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
 
 <!--
 ### Confirmed architecture
@@ -275,6 +331,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.2 | 2026-10-01 | Completed the locked surface UX: DUMP-first landing, stage-change/DO IT pulse, Ready-to-lock card, progressive Architecture Forming card, aligned CONFIRM ARCHITECTURE gate, one-task navigation with Then, verified DELIVERED !! closure, and simple product-routing identity. |
 | 0.2.1 | 2026-10-01 | Fixed the required footer UX to use CONFIRM ARCHITECTURE while keeping DRAFT ARCH as a valid internal drafting command. |
 | 0.2.0 | 2026-10-01 | Locked DUMP-first UX, IDEA Trick, 6D lifecycle, compact Stage Pulse, criteria-based architecture/action progress, hidden action-plan lineage, bidirectional action-plan ↔ architecture feedback, and one-task-at-a-time execution. |
 | 0.1.7 | 2026-10-01 | Require CURRENT SELECTION MATRIX on ZASS/ZASS!! without mandatory weighted scoring or SELECT; owner LOCK DECISION remains authoritative. |
@@ -293,6 +350,8 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 After actually updating the file, AI must briefly say what was recorded and what remains unclear. If AI only gives a proposal or a demo, it must say the real file was not changed.
 
 AI may recommend `LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `COMMIT` when changes are meaningful enough to become a checkpoint. Both still require clear owner instruction.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

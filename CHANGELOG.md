@@ -2,6 +2,17 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE v0.2.2 UX completion] — 2026-10-01
+
+- LOCKED the true DUMP-first landing: `Got an idea? Dump it.` / `Ada idea? DUMP saja.` before method explanation.
+- Stage Pulse now appears on intentional ZASS/ZASS!! **or** a material lifecycle-stage change, without repeating on every ordinary reply.
+- Added the lightweight `🔒 Ready to lock` decision card and hid internal lineage IDs from ordinary conversation by default.
+- Added progressive `🏗️ Architecture forming` UX with Architecture Progress, counts, and the visible `CONFIRM ARCHITECTURE` action.
+- Aligned `CONFIRM ARCHITECTURE` as the primary surface command for the final review; `BUILD ARCHITECTURE` remains a compatibility/advanced alias and final confirmation still requires exact `YA, CONFIRM ARCHITECTURE`.
+- Added `DO IT` execution semantics, one-task-at-a-time navigation with `Then`, the compact `📍 DO IT — x/y tasks delivered` pulse, and the verified `✅ DELIVERED !!` closure card.
+- LOCKED product identity: **ZASS SYSTEM starts simple** — Default: ZASSIMPLE; deeper reasoning: Full ZASS; choosing: ZASSELECTION.
+- Updated EN/MY templates and the locked v0.2 working direction. ZASSIMPLE is now v0.2.2.
+
 ## [ZASSIMPLE v0.2.1 footer UX fix] — 2026-10-01
 
 - Fixed the required ZASSIMPLE footer to end with `[🏗️ CONFIRM ARCHITECTURE]` instead of `[🏗️ DRAFT ARCH]`.
@@ -335,6 +346,8 @@ All notable changes to ZASS are recorded here.
 ## [v0.1.2]
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

@@ -1,9 +1,9 @@
 # ZASSIMPLE v0.2 — Structure Renewal Plan
 
-**Status:** IMPLEMENTED BASE STRUCTURE — VALIDATION IN PROGRESS  
+**Status:** IMPLEMENTED AND VALIDATED  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
-**Current baseline:** ZASSIMPLE v0.2.0 in dedicated `ZASSIMPLE/` folder
+**Current baseline:** ZASSIMPLE v0.2.2 in dedicated `ZASSIMPLE/` folder
 
 > **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
 
@@ -378,9 +378,9 @@ Verify at minimum:
 
 ### Phase 7 — release
 
-Target this structural renewal as **ZASSIMPLE v0.2.0** once implementation and validation are complete.
+The structural renewal landed in **ZASSIMPLE v0.2.0** and subsequent UX completion/fixes brought the current method to **v0.2.2**.
 
-Do not mark v0.2.0 released merely because this plan is locked.
+The structure and UX contract are now implemented and validated against the locked requirements.
 
 ---
 
@@ -425,7 +425,9 @@ DELIVERED !!
 
 The method remains lightweight to use while preserving durable lineage from the first idea through the delivered result.
 
-**Implementation status:** BASE STRUCTURE IMPLEMENTED; repository-reference validation in progress.  
+**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.2.2.  
 **Plan status:** LOCKED.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

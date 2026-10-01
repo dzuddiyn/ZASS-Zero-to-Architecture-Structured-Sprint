@@ -13,6 +13,7 @@ Do: ...
 Why: ...
 Pass: ...
 If blocked: ...
+Then: T-xxx / next-step label
 Result: ...
 -->
 
@@ -22,6 +23,16 @@ Result: ...
 
 ## Delivered evidence
 
-<!-- Record verified outcomes that support DELIVERED !! -->
+<!--
+Record verified outcomes that support DELIVERED !!
+Required closure checks:
+- Built: YES / NO
+- Verified: YES / NO
+- Matches architecture: YES / NO
+- Recorded: YES / NO
+Do not mark DELIVERED !! until all four are YES.
+-->
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

@@ -1,5 +1,8 @@
 # ZASSIMPLE
 
+> ## Got an idea? **Dump it.** 💬
+
+**Current version:** v0.2.2  
 **Default landing:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE_MY.md)
 
@@ -23,5 +26,7 @@ These files support the method. Users should not need to manage them manually ju
 
 - [v0.2 Structure Renewal Plan](docs/ZASSIMPLE_V02_STRUCTURE_RENEWAL_PLAN.md)
 - [v0.2 UX Working Direction](docs/ZASSIMPLE_V02_WORKING_DIRECTION.md)
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

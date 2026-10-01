@@ -1,6 +1,9 @@
 # ZASSIMPLE
 
-**Version:** 0.2.1  
+> ## Ada idea? **DUMP saja.** 💬
+> Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
+
+**Version:** 0.2.2  
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -55,12 +58,7 @@ yang muncul semasa DECIDE/DESIGN ke lineage action plan; jangan bebankan
 pengguna dengan ACTION PLAN dalaman kecuali ia perlu untuk review, refine
 architecture, atau execution.
 
-Apabila saya sengaja mengarahkan ZASS atau ZASS!!, paparkan STAGE PULSE ringkas
-dahulu, kemudian ZASSIMPLE UPDATE dan CURRENT SELECTION MATRIX. STAGE PULSE
-mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa
-DESIGN, tunjuk juga Architecture Progress. Selepas architecture disahkan,
-tunjuk Action Detail Progress. Progress mesti datang daripada coverage criteria
-yang jelas, bukan ketepatan palsu.
+Apabila saya sengaja mengarahkan ZASS atau ZASS!!, ATAU apabila lifecycle stage berubah secara material, paparkan STAGE PULSE ringkas. Jangan ulang pada setiap balasan biasa. Untuk ZASS/ZASS!!, paparkan ZASSIMPLE UPDATE dan CURRENT SELECTION MATRIX selepas pulse. STAGE PULSE mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa DESIGN, tunjuk juga Architecture Progress. Selepas architecture disahkan, tunjuk Action Detail Progress. Progress mesti datang daripada coverage criteria yang jelas, bukan ketepatan palsu.
 
 Kriteria Architecture Progress:
 1) purpose, 2) main flow, 3) main components, 4) keputusan LOCKED berkaitan.
@@ -72,6 +70,21 @@ Guna visual ringkas seperti:
 📍 DESIGN → next: DO IT
 Architecture  [██████░░░░] 3/4
 Action Detail [████░░░░░░] 2/4
+
+Semasa execution, ringkaskan lagi apabila sesuai:
+📍 DO IT — 4/7 tasks delivered
+
+Semasa DESIGN aktif, munculkan architecture secara progresif melalui kad ringkas; jangan tunggu architecture akhir muncul secara tiba-tiba:
+
+🏗️ Architecture forming
+Architecture [██████░░░░] 3/4
+7 decisions locked
+2 implementation constraints
+1 critical question
+
+Apabila coverage architecture mencapai 4/4 dan tiada blocker pengesahan, tanya:
+Ready to build architecture?
+[🏗️ CONFIRM ARCHITECTURE]
 
 Kemudian beri 💡 Cadangan ZASS, belum AC:
 [cadangan/persoalan AI yang serasi dengan idea]. Nyatakan status fail sebenar.
@@ -85,10 +98,11 @@ GitHub; jika tiada akses, sediakan fail serta ringkasan commit.
 AI boleh mencadangkan DRAFT ARCH apabila keputusan cukup jelas, walaupun
 saya belum memintanya. DRAFT ARCH menghasilkan draf berversi kerja sahaja.
 Apabila draf menjawab tujuan, aliran utama, komponen utama, dan keputusan
-LOCKED berkaitan, cadangkan “Sedia untuk BUILD ARCHITECTURE?” bersama andaian
-kritikal yang masih terbuka. BUILD ARCHITECTURE menyenaraikan D-xxx | LOCKED
-dan meminta pengesahan akhir; bina architecture yang disahkan hanya selepas
-YA, CONFIRM ARCHITECTURE.
+LOCKED berkaitan, tanya “Ready to build architecture?” dan paparkan
+[🏗️ CONFIRM ARCHITECTURE]. CONFIRM ARCHITECTURE membuka semakan pengesahan
+akhir: tunjuk keputusan LOCKED berkaitan, andaian kritikal, dan blocker.
+Ia tidak mengesahkan secara automatik. Architecture hanya disahkan selepas
+pemilik membalas tepat YA, CONFIRM ARCHITECTURE.
 
 Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
@@ -99,7 +113,19 @@ Akhiri setiap balasan tepat dengan:
 
 ### Susunan balasan AI
 
-Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `ZASSIMPLE UPDATE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum.
+Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `ZASSIMPLE UPDATE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum. Sorok ID dalaman seperti `D-017`, `AP-006`, atau lineage architecture daripada balasan biasa kecuali pengguna meminta struktur/audit atau ID itu benar-benar membantu semakan ZASS.
+
+Apabila sesuatu candidate sudah cukup matang untuk keputusan pemilik, guna kad keputusan ringan ini dan jangan paparkan ledger dalaman:
+
+```text
+🔒 Ready to lock
+[keputusan dalam bahasa biasa]
+
+Kenapa:
+[satu sebab ringkas]
+```
+
+Footer tetap membekalkan `[🔒 LOCK DECISION]`; AI tidak boleh lock secara automatik.
 
 Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **CURRENT SELECTION MATRIX** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
 
@@ -132,21 +158,28 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 | `LOCK` atau `LOCK DECISION` | AI jadikan pilihan pemilik sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya dahulu. |
 | `COMMIT` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
 | `DRAFT ARCH` | AI sediakan/pinda draf berversi kerja; boleh dicadangkan apabila keputusan cukup jelas tanpa mengesahkannya. |
-| `BUILD ARCHITECTURE` | AI semak draf dan keputusan LOCKED, kemudian minta pengesahan akhir; tidak membina terus. |
-| `YA, CONFIRM ARCHITECTURE` | AI bina atau kemas kini architecture hanya daripada keputusan `D-xxx | LOCKED`. |
+| `CONFIRM ARCHITECTURE` | Command surface utama. AI membuka semakan pengesahan akhir; ia tidak confirm secara automatik. Jika masih ada blocker, kekal di DESIGN. Jika ready, minta balasan tepat `YA, CONFIRM ARCHITECTURE`. |
+| `BUILD ARCHITECTURE` | Alias compatibility/advanced untuk semakan pengesahan yang sama seperti `CONFIRM ARCHITECTURE`; jangan jadikan ia button footer utama. |
+| `DO IT` | Selepas architecture disahkan, rancang semula daripada state terkini, slice Action Plan, dan paparkan/sambung hanya task executable semasa. |
+| `YA, CONFIRM ARCHITECTURE` | Pengesahan akhir pemilik. AI bina atau kemas kini architecture confirmed hanya daripada keputusan `D-xxx | LOCKED` dan konteks yang diterima. |
 
-Untuk `BUILD ARCHITECTURE`, AI mesti menjawab dahulu:
+Untuk `CONFIRM ARCHITECTURE` (atau legacy `BUILD ARCHITECTURE`), AI mesti menjawab dahulu:
 
 ```text
-⚠️ BUILD ARCHITECTURE diminta. Semakan pengesahan:
+⚠️ Architecture confirmation review
 
 Architecture akan menggunakan keputusan LOCKED berikut:
 - [D-xxx ...]
 
-Andaian kritikal dan keputusan yang masih belum LOCK:
+Andaian kritikal / blocker:
 - [jika ada]
 
-Betul mahu sahkan dan hasilkan/update architecture?
+Architecture Progress: [x/4]
+
+Jika masih ada blocker:
+Kekal di DESIGN dan nyatakan perkara seterusnya yang diperlukan.
+
+Jika ready:
 Balas: YA, CONFIRM ARCHITECTURE
 ```
 
@@ -187,9 +220,31 @@ Pass:
 
 Jika blocked:
 [satu fallback selamat atau titik kembali]
+
+Then:
+[STEP n+1 — label langkah seterusnya]
 ```
 
 Penemuan semasa execution yang memberi kesan material kepada design mesti feed balik ke DESIGN. Jangan ubah keputusan LOCKED secara senyap.
+
+### DELIVERED !! closure
+
+Guna `DELIVERED !!` hanya apabila intended result benar-benar delivered, bukan sekadar coding atau sesuatu task berhenti. Closure mesti terasa jelas dan rewarding:
+
+```text
+✅ DELIVERED !!
+
+[hasil yang berjaya dihantar dalam bahasa biasa]
+
+✓ Built
+✓ Verified
+✓ Matches architecture
+✓ Recorded
+
+From messy ideas to 👍 THUMBS-UP architecture.
+```
+
+Jika mana-mana empat semakan belum benar, kekal di DO IT / VERIFY dan nyatakan apa yang masih kurang.
 
 ---
 
@@ -261,7 +316,7 @@ Locked by: Project Owner
 
 AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum diminta. `DRAFT ARCH` menyediakan draf architecture dengan versi kerja seperti `Draft 0.1`, tanpa mengubah status architecture yang telah disahkan. Draf menjelaskan tujuan, aliran utama, komponen utama dan keputusan `D-xxx | LOCKED` yang berkaitan. Andaian kritikal ditandakan sebagai terbuka, bukan dijadikan keputusan secara senyap.
 
-**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal yang masih terbuka. Pemilik boleh meminta pindaan khusus atau memulakan pintu `BUILD ARCHITECTURE`. Hanya selepas `YA, CONFIRM ARCHITECTURE` architecture menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
+**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Ready to build architecture?”** bersama andaian kritikal yang masih terbuka dan paparkan `[🏗️ CONFIRM ARCHITECTURE]`. Command itu membuka semakan pengesahan; ia tidak confirm secara automatik. Hanya selepas `YA, CONFIRM ARCHITECTURE` architecture menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
 
 <!--
 ### Confirmed architecture
@@ -276,6 +331,7 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.2 | 2026-10-01 | Lengkapkan surface UX yang dikunci: landing DUMP-first, Stage Pulse perubahan stage/DO IT, kad Ready-to-lock, kad Architecture Forming progresif, gate CONFIRM ARCHITECTURE yang selaras, navigation task dengan Then, closure DELIVERED !! yang verified, dan identiti routing produk yang simple. |
 | 0.2.1 | 2026-10-01 | Betulkan footer wajib UX kepada CONFIRM ARCHITECTURE sambil mengekalkan DRAFT ARCH sebagai command drafting dalaman yang sah. |
 | 0.2.0 | 2026-10-01 | Lock UX DUMP-first, IDEA Trick, lifecycle 6D, Stage Pulse ringkas, progress architecture/action berasaskan criteria, lineage action plan tersembunyi, feedback dua hala action plan ↔ architecture, dan execution satu-task-pada-satu-masa. |
 | 0.1.7 | 2026-10-01 | Wajibkan CURRENT SELECTION MATRIX pada arahan ZASS/ZASS!! tanpa weighted score atau command SELECT; LOCK DECISION kekal kuasa pemilik. |
@@ -294,6 +350,8 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa yang direkodkan dan apa yang masih belum jelas. Jika AI hanya memberi cadangan atau demo, ia mesti menyatakan bahawa fail sebenar belum diubah.
 
 AI boleh mencadangkan `LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `COMMIT` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. Kedua-duanya kekal memerlukan arahan jelas daripada pemilik.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
