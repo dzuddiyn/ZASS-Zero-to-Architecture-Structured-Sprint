@@ -8,6 +8,14 @@ All notable changes to ZASS are recorded here.
 - LOCKED review-end labels as 🤖 AI Recommendation and 👉 Your selection?.
 - Applied the presentation convention to English and Malay ZASSELECTION methods, README, and Wiki without changing selection logic, scoring, authority, or v0.2.0 semantics.
 
+## [GitHub Wiki published] — 2026-10-01
+
+- Published the version-controlled `wiki/` Markdown source to the real GitHub Wiki repository.
+- The main repository `wiki/` directory remains the reviewable/version-controlled source for future Wiki updates.
+- The GitHub Wiki is a documentation/reference layer; authoritative method semantics remain in the main repository.
+- Published 14 Wiki pages, including the current `Convergence-Loop.md` page; no infographic binary assets were added.
+- Full ZASS remains **v0.3.6**; Wiki publication does not change method semantics or version.
+
 ## [ZASSELECTION language-file default] — 2026-10-01
 
 - LOCKED `ZASSELECTION/ZASSELECTION_EN.md` as the default ZASSELECTION method file.

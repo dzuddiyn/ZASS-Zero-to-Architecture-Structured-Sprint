@@ -25,7 +25,7 @@ The freeze does not block consistency fixes, documentation presentation, validat
 ## P1 — Implementation layer
 
 - Generate the versioned Wiki/reference source under `wiki/`. **DONE**
-- Publish that source to the separate GitHub Wiki repository, then continue slimming long-form Full-ZASS manual/reference content while preserving one portable project-state file by default. **NEXT**
+- Publish that source to the separate GitHub Wiki repository, then continue slimming long-form Full-ZASS manual/reference content while preserving one portable project-state file by default. **DONE — initial Wiki publication completed**
 - Specify `zass check`. **DONE — locked in `docs/CR010_ZASS_CHECK_SPEC.md`**
 - Build the `zass check` MVP. **DONE — local v0.1 implemented under `cli/`**
 - CR-010 v0.2 Git-aware LOCKED drift plan. **LOCKED — `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`; implementation NOT STARTED**

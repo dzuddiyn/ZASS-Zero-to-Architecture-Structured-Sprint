@@ -481,9 +481,11 @@ COMMIT
 
 # Learn more
 
-The long-form Wiki/reference source is now versioned in this repository:
+The long-form Wiki/reference is now published on GitHub:
 
-**[Open the ZASS Wiki source](wiki/Home.md)**
+**[Open the ZASS Wiki](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/wiki)**
+
+Version-controlled Wiki source: [wiki/Home.md](wiki/Home.md)
 
 It includes:
 
@@ -499,7 +501,7 @@ It includes:
 - Bahasa Melayu summary
 - historical infographic index
 
-GitHub Wiki publication is a separate publishing step because GitHub stores Wiki pages in a separate `.wiki.git` repository. The authoritative method files remain in this main repository.
+The GitHub Wiki is published from the version-controlled `wiki/` source into GitHub's separate `.wiki.git` repository. The authoritative method files remain in this main repository.
 
 ---
 

@@ -1,6 +1,6 @@
 # Publishing the ZASS Wiki
 
-**Status:** Versioned Wiki source generated  
+**Status:** Initial GitHub Wiki publication completed
 **Source directory:** `wiki/`  
 **Target:** GitHub Wiki for `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint`
 
@@ -12,7 +12,9 @@ https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.wiki.git
 
 The main repository keeps the version-controlled source under `wiki/` so the documentation can be reviewed and changed atomically with the rest of the project.
 
-## Publish for the first time
+## Initial publication — completed
+
+The initial GitHub Wiki publication was completed from the version-controlled `wiki/` source. The steps below remain as the recovery/republication procedure if the Wiki repository ever needs to be initialized again.
 
 If the GitHub Wiki has never been initialized:
 
@@ -37,6 +39,7 @@ _Sidebar.md
 Quick-Start.md
 ZASSIMPLE.md
 Full-ZASS.md
+Convergence-Loop.md
 Architecture-and-Evidence.md
 ACTION-PLAN.md
 Cross-AI-Handoff.md
@@ -77,7 +80,7 @@ Do not edit the Wiki and main-source bundle independently for long periods; that
 
 The four existing infographic assets were authored for ZASS v0.3.2 and should be treated as historical visual references until regenerated for the current method.
 
-Current text documentation is authoritative when an old infographic conflicts with v0.3.5 semantics.
+Current text documentation is authoritative when an old infographic conflicts with v0.3.6 semantics.
 
 When the image assets are published, place them in an `images/` directory in the Wiki repository and update `Infographics.md` with relative image links.
 
