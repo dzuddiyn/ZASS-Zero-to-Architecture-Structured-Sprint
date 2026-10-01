@@ -1,7 +1,7 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
 **Version:** 0.2.0  
-**Status:** UX FLOW LOCKED  
+**Status:** UX FLOW LOCKED — MALAY METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-01
 
@@ -11,7 +11,7 @@ ZASSELECTION ialah kaedah pemilihan bersama AI untuk membanding pilihan, mengema
 
 Prinsip utama:
 
-> **AI compares. AI recommends. Human selects.**
+> **AI banding, AI cadang, Anda PILIH!, AI rekod.**
 
 ZASSELECTION mesti kekal mudah di permukaan. Complexity seperti parsing, versioning, event log, sync dan persistence ialah tanggungjawab sistem, bukan pengguna.
 
@@ -22,12 +22,38 @@ ZASSELECTION mesti kekal mudah di permukaan. Complexity seperti parsing, version
 Pengguna hanya perlu satu fail method:
 
 ```text
-ZASSELECTION.md
+ZASSELECTION_MY.md
 ```
 
 Jangan paksa pengguna memahami atau mengurus banyak fail arahan untuk menjalankan method.
 
 Fail teknikal lain boleh wujud di implementation layer pada masa depan, tetapi ia tidak menjadi sebahagian daripada pengalaman penggunaan biasa.
+
+---
+
+## 1A. 🚀 AI Bootstrap
+
+Apabila menerima fail ini, gunakan ZASSELECTION sebagai method pemilihan aktif untuk sesi semasa.
+
+Pengguna tidak perlu menghafal command atau borang. Biarkan pengguna bercakap secara natural tentang produk, option, masalah atau pilihan yang sedang dipertimbangkan.
+
+Gunakan tiga tindakan utama:
+
+```text
+[ REVIEW ]      [ SAVE ]      [ HISTORY ]
+```
+
+Peraturan bootstrap:
+
+- jika option, evidence atau soalan baru muncul, kekalkan Working State dan kemas kini Matriks Pemilihan yang sama;
+- jika `REVIEW` diberi tanpa input baru, papar semula current matrix tanpa mencipta perubahan;
+- selepas REVIEW, beri AI Recommendation ringkas dan tanya `Your selection?`;
+- jika pengguna membuat pilihan eksplisit, rekod sebagai pilihan semasa;
+- jika `SAVE` diminta tanpa persistent write integration, hasilkan updated `ZASSELECTION_MY.md` yang mengekalkan state, matrix dan history;
+- jika persistent write integration tersedia, commit hanya selepas write sebenar berjaya;
+- jangan dakwa SAVE atau COMMIT berjaya tanpa receipt sebenar.
+
+Jika fail ini digunakan dalam AI lain kemudian, current state yang disimpan dalam fail mesti menjadi asas sambungan seterusnya.
 
 ---
 
@@ -467,7 +493,7 @@ Aliran utama:
 
 The following decisions are LOCKED for ZASSELECTION v0.2.0:
 
-1. User-facing method uses one main method file: `ZASSELECTION.md`.
+1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
 3. REVIEW with new input compares against existing data and updates the current matrix.
 4. REVIEW without new input means re-view and must show the saved current matrix without inventing changes.
