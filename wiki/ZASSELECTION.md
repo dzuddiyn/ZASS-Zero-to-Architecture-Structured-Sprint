@@ -285,5 +285,5 @@ Persistent destinations hold the Source-of-Truth records appropriate to each wor
 ## Authoritative files
 
 - [ZASSELECTION README](../ZASSELECTION/README.md)
-- [ZASSELECTION.md](../ZASSELECTION/ZASSELECTION.md)
-- [ZASSELECTION_EN.md](../ZASSELECTION/ZASSELECTION_EN.md)
+- [ZASSELECTION_EN.md](../ZASSELECTION/ZASSELECTION_EN.md) — **default**
+- [ZASSELECTION_MY.md](../ZASSELECTION/ZASSELECTION_MY.md) — Bahasa Melayu
