@@ -1,6 +1,6 @@
 # CR-010 v0.2 — Git-aware LOCKED Drift Specification
 
-**Status:** LOCKED IMPLEMENTATION PLAN — NOT STARTED  
+**Status:** IMPLEMENTED — VALIDATION COMPLETE
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
 **Depends on:** CR-010 v0.1 `zass check`
@@ -226,8 +226,24 @@ Do not move to CR-010 v0.3 until v0.2:
 
 If formatting-vs-substance cannot be distinguished reliably, stop and improve the parser before proceeding.
 
-## 13. Implementation authority
+## 13. v0.2 implementation receipt
 
-This file locks the **plan and scope**, not implementation completion.
+Implemented under `cli/` on 2026-10-01 without changing Full ZASS method semantics.
 
-CR-010 v0.2 remains **NOT STARTED** until the field gate is satisfied and implementation is explicitly begun.
+Verification before commit:
+
+- Node.js syntax checks passed for the Git helper, parser, drift rule, check engine and Git-drift tests;
+- Node.js built-in test runner: **17/17 tests passed**;
+- temporary-Git tests cover unchanged LOCKED decisions, formatting-only changes, modification, removal, explicit superseding, non-Git projects, and Git HEAD without committed `ZASS.md`;
+- `npm link` worked with CLI package version **0.2.0**;
+- linked `zass check` returned **0 errors / 0 warnings** at the ZASS repository root;
+- linked `zass check` returned **0 errors / 0 warnings** against `examples/01-small-farm-planner`, including its canonical LOCKED decision ledger;
+- v0.2 performs read-only Git inspection and does not checkout, reset, stash, clean, or repair project files.
+
+CR-010 v0.3 is **not started**.
+
+## 14. Implementation authority
+
+This file originally locked the **plan and scope**. The plan is now implemented and verified locally.
+
+CR-010 v0.2 is **IMPLEMENTED**. Do not start v0.3 automatically; review v0.2 field behavior first.

@@ -28,8 +28,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Publish that source to the separate GitHub Wiki repository, then continue slimming long-form Full-ZASS manual/reference content while preserving one portable project-state file by default. **DONE — initial Wiki publication completed**
 - Specify `zass check`. **DONE — locked in `docs/CR010_ZASS_CHECK_SPEC.md`**
 - Build the `zass check` MVP. **DONE — local v0.1 implemented under `cli/`**
-- CR-010 v0.2 Git-aware LOCKED drift plan. **LOCKED — `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`; implementation NOT STARTED**
-- Field-test v0.1 on 1–2 real ZASS projects before implementing v0.2. **NEXT**
+- CR-010 v0.2 Git-aware LOCKED drift. **DONE — implemented under `cli/`; specification in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`**
+- Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
 - Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.

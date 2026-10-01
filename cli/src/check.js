@@ -4,6 +4,7 @@ import { checkIds } from './rules/ids.js';
 import { checkLinks } from './rules/links.js';
 import { checkEvidenceConfidence } from './rules/evidence.js';
 import { checkSecrets } from './rules/secrets.js';
+import { checkLockedDrift } from './rules/drift.js';
 
 export async function runCheck(projectDir) {
   const discovered = await discoverProject(projectDir);
@@ -28,6 +29,7 @@ export async function runCheck(projectDir) {
   results.push(...await checkLinks(discovered.root, discovered.files));
   results.push(...checkEvidenceConfidence(zassContent));
   results.push(...await checkSecrets(discovered.root, discovered.files));
+  results.push(...await checkLockedDrift(discovered.root, zassContent));
 
   return buildReport(discovered, results);
 }

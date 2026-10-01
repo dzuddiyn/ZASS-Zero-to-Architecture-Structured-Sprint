@@ -46,7 +46,7 @@ The first validator command is:
 zass check
 ```
 
-**Status:** local v0.1 MVP implemented under `cli/`; not published to npm.
+**Status:** local v0.2 implemented under `cli/`; not published to npm.
 
 The command contract is defined in:
 
@@ -85,7 +85,7 @@ Not in v0.1:
 ```text
 v0.1  current-file validator — IMPLEMENTED
 
-v0.2  Git-aware LOCKED drift — PLAN LOCKED / NOT STARTED
+v0.2  Git-aware LOCKED drift — IMPLEMENTED
 
 v0.3  ACTION_PLAN consistency
 
@@ -120,8 +120,10 @@ Future evaluation should observe real-project signals such as:
 
 Teaching fixtures demonstrate mechanics, not efficacy.
 
-## v0.1 verification
+## Verification
 
-Before commit, the implementation passed 10/10 automated tests, `npm link` worked, and `zass check` returned 0 errors / 0 warnings against the Small Farm Planner teaching project.
+v0.1 passed 10/10 automated tests before its initial commit.
 
-CR-010 v0.2 has not started. Its locked plan compares `HEAD:ZASS.md` with the working tree, adds Z100 for unavailable Git history and Z101 for silent LOCKED-decision drift, recognizes only an explicit `Supersedes: D-xxx` replacement path, and uses temporary Git repositories for automated tests. Implementation remains gated by real-project v0.1 field checks.
+v0.2 passed **17/17 automated tests**, including temporary-Git cases for unchanged LOCKED decisions, formatting-only changes, modification, removal, explicit superseding, non-Git projects, and a Git HEAD without committed `ZASS.md`. `npm link` worked, and the linked `zass check` returned 0 errors / 0 warnings both at the ZASS repository root and against the Small Farm Planner teaching project.
+
+CR-010 v0.2 compares the committed `ZASS.md` at Git `HEAD` with the working tree, adds Z100 for unavailable Git history and Z101 for silent LOCKED-decision drift, recognizes an explicit `Supersedes: D-xxx` replacement path, and uses temporary Git repositories for automated tests. v0.3 remains deferred pending v0.2 field review.

@@ -124,7 +124,7 @@ ZASSIMPLE is the default. No method-selection wizard.
 
 > **The project-bootstrap CLI is not released yet. The command above is the locked target UX, not a currently available package.**
 >
-> **Developer validator:** CR-010 `zass check` v0.1 is implemented locally under [`cli/`](cli/README.md). It is not published to npm; use `npm link` for local development.
+> **Developer validator:** CR-010 `zass check` v0.2 is implemented locally under [`cli/`](cli/README.md), including Git-aware LOCKED-decision drift checks. It is not published to npm; use `npm link` for local development.
 
 ---
 

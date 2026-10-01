@@ -2,6 +2,17 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 v0.2] — 2026-10-01
+
+- Implemented Git-aware LOCKED-decision drift validation in local `zass check` v0.2.0.
+- Added read-only Git baseline discovery and historical `ZASS.md` loading without checkout/reset/stash/clean operations.
+- Added Z100 warnings when Git history or a committed ZASS baseline is unavailable, while preserving v0.1 current-file checks.
+- Added Z101 errors for substantive modification, removal, or unauthorized unlocking of decisions that were LOCKED at Git `HEAD`.
+- Added deterministic `Supersedes: D-xxx` handling when the old decision record is preserved, plus formatting normalization to avoid cosmetic drift false positives.
+- Added temporary-Git automated tests; the full suite passed **17/17** tests, `npm link` worked, and linked checks returned **0 errors / 0 warnings** at the repository root and Small Farm Planner example.
+- Kept `zass status`, `zass diff`, ACTION_PLAN snapshot consistency, GitHub Actions, npm publication, remote URL checking, mandatory `.zass/schema.yml`, and AI semantic comparison out of scope.
+- Full ZASS remains **v0.3.6**; CR-010 v0.3 is not started.
+
 ## [ZASSELECTION visual PICKS lock] — 2026-10-01
 
 - LOCKED the visual PICKS labels as 🎯 P, 🚧 I, 📊 C, ⭐ K, and 💾 S.

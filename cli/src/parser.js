@@ -113,3 +113,84 @@ export function extractMarkdownLinks(markdown) {
 
   return links;
 }
+
+function normalizeDecisionText(text) {
+  return text
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((line) => line
+      .trim()
+      .replace(/\s{2,}/g, ' ')
+      .replace(/\*\*|__|`/g, '')
+      .replace(/^[-*+]\s+/, '')
+      .trim())
+    .filter(Boolean)
+    .join('\n');
+}
+
+export function extractDecisionState(markdown) {
+  const visible = visibleMarkdownLines(markdown);
+  const decisions = new Map();
+  const lockedIds = new Set();
+  const supersededIds = new Set();
+  const supersedes = new Map();
+
+  const headings = visible
+    .map((line, index) => ({ ...line, index, match: line.text.match(/^##\s+(D-\d{3})\b(?:\s*[—–-]\s*(.*))?/i) }))
+    .filter((item) => item.match);
+
+  for (let i = 0; i < headings.length; i += 1) {
+    const current = headings[i];
+    const nextIndex = i + 1 < headings.length ? headings[i + 1].index : visible.length;
+    const bodyLines = [];
+
+    for (let j = current.index + 1; j < nextIndex; j += 1) {
+      if (/^#\s/.test(visible[j].text)) break;
+      bodyLines.push(visible[j].text);
+    }
+
+    const id = current.match[1].toUpperCase();
+    const body = normalizeDecisionText(bodyLines.join('\n'));
+    decisions.set(id, {
+      id,
+      title: (current.match[2] || '').trim(),
+      body,
+      line: current.number,
+      locked: false,
+      superseded: false
+    });
+
+    for (const line of bodyLines) {
+      const plain = line.replace(/\*\*|__|`/g, '');
+      const relation = plain.match(/Supersedes\s*:\s*(D-\d{3})\b/i);
+      if (relation) supersedes.set(id, relation[1].toUpperCase());
+
+      if (/\bStatus\s*:\s*LOCKED\b/i.test(plain)) lockedIds.add(id);
+      if (/\bStatus\s*:\s*SUPERSEDED\b/i.test(plain)) supersededIds.add(id);
+    }
+  }
+
+  for (const line of visible) {
+    if (/\bLOCKED\b/i.test(line.text)) {
+      for (const match of line.text.matchAll(/\bD-\d{3}\b/gi)) lockedIds.add(match[0].toUpperCase());
+    }
+    if (/\bSUPERSEDED\b/i.test(line.text)) {
+      for (const match of line.text.matchAll(/\bD-\d{3}\b/gi)) supersededIds.add(match[0].toUpperCase());
+    }
+  }
+
+  for (const id of lockedIds) {
+    const record = decisions.get(id);
+    if (record) record.locked = true;
+  }
+  for (const id of supersededIds) {
+    const record = decisions.get(id);
+    if (record) record.superseded = true;
+  }
+
+  return { decisions, lockedIds, supersededIds, supersedes };
+}
+
+export function sameDecisionContent(a, b) {
+  return Boolean(a && b && a.body === b.body);
+}
