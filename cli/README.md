@@ -40,3 +40,5 @@ Warnings do not fail the command. Validation errors return exit code `1`; CLI/ru
 v0.1 does not implement npm publication, `zass status`, `zass diff`, Git-aware LOCKED drift, ACTION_PLAN snapshot drift, remote URL checking, `.zass/schema.yml`, GitHub Actions, dashboards, or SaaS services.
 
 See [`../docs/CR010_ZASS_CHECK_SPEC.md`](../docs/CR010_ZASS_CHECK_SPEC.md) for the locked implementation plan.
+
+For the recommended local verification sequence, see [`../docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md`](../docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md).

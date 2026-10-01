@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [zass check local test guide] — 2026-10-01
+
+- Added `docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md` with the recommended Windows/PowerShell validation flow for CR-010 v0.1.
+- Documented automated tests, `npm link`, the Small Farm Planner known-good check, failing fixtures Z001–Z005, direct execution fallback, exit codes, and real-project false-positive review.
+- Linked the guide from `cli/README.md`.
+- Kept CR-010 v0.2 implementation gated on v0.1 testing against 1–2 real ZASS projects; no validator semantics changed.
+
 ## [v0.3.6] — 2026-10-01
 
 - Locked **ZASS Principle #4 — ZASS Convergence Loop**: capture broadly, converge deliberately; form candidates before deep research, research only questions that can change the choice, cross-check evidence, then LOCK before architecture.
