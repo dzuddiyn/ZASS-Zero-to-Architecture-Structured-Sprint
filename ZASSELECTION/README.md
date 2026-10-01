@@ -94,7 +94,7 @@ For example:
 AI gives its current recommendation, for example:
 
 ```text
-🤖 🤖 AI Recommendation:
+🤖 AI Recommendation:
 Option B
 
 Why:
@@ -393,7 +393,7 @@ Contohnya:
 AI beri recommendation semasa, contohnya:
 
 ```text
-🤖 🤖 AI Recommendation:
+🤖 AI Recommendation:
 Option B
 
 Why:
