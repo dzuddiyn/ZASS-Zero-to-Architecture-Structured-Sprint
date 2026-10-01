@@ -32,7 +32,7 @@ update Selection Matrix
         ↓
 AI Recommendation
         ↓
-Your selection?
+👉 Your selection?
 ```
 
 Without new input, REVIEW means **re-view**:
@@ -82,13 +82,32 @@ The quick review technique used by ZASSELECTION is:
 P → I → C → K → S
 ```
 
-- **P — Pin the Problem**: define what is actually being selected.
-- **I — Identify Must-Haves**: identify mandatory requirements.
-- **C — Compare Options**: build and update the Selection Matrix.
-- **K — Keep the Best Candidate**: show the current AI recommendation.
-- **S — Select & Save**: the user chooses; the system records.
+- 🎯 **P — Pin the Problem**: define what is actually being selected.
+- 🚧 **I — Identify Must-Haves**: identify mandatory requirements.
+- 📊 **C — Compare Options**: build and update the Selection Matrix.
+- ⭐ **K — Keep the Best Candidate**: show the current AI recommendation.
+- 💾 **S — Select & Save**: the user chooses; the system records.
 
 PICKS is optimized for fast product review, while the underlying ZASSELECTION method can also support non-product choices.
+
+---
+
+## Visual presentation lock
+
+The quick-review presentation uses these icons consistently:
+
+```text
+🎯 P — Pin the Problem
+🚧 I — Identify Must-Haves
+📊 C — Compare Options
+⭐ K — Keep the Best Candidate
+💾 S — Select & Save
+
+🤖 AI Recommendation
+👉 Your selection?
+```
+
+This is a presentation convention only; it does not change scoring, authority, or persistence semantics.
 
 ---
 
