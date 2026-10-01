@@ -94,12 +94,14 @@ For example:
 AI gives its current recommendation, for example:
 
 ```text
-AI Recommendation:
+🤖 🤖 AI Recommendation:
 Option B
 
 Why:
 Best balance of performance, upgradeability and price.
 ```
+
+👉 **Your selection?**
 
 ### 💾 S — Select & Save
 
@@ -391,12 +393,14 @@ Contohnya:
 AI beri recommendation semasa, contohnya:
 
 ```text
-AI Recommendation:
+🤖 🤖 AI Recommendation:
 Option B
 
 Why:
 Paling seimbang untuk prestasi, upgrade dan harga.
 ```
+
+👉 **Your selection?**
 
 ### 💾 S — Select & Save
 
