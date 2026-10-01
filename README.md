@@ -460,7 +460,7 @@ You normally do **not** need all of them at the beginning.
 # Current status
 
 **Full ZASS:** v0.3.6  
-**ZASSIMPLE:** v0.2.2  
+**ZASSIMPLE:** v0.2.3  
 **ZASSELECTION:** v0.2.0  
 **License:** [MIT](LICENSE)
 
@@ -518,6 +518,8 @@ Keep the useful state.
 Make the decision yourself.
 
 Then let architecture follow what you actually decided.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

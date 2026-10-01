@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE v0.2.3 simplified footer] — 2026-10-01
+
+- LOCKED the fixed footer as `[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]`.
+- `PROCEED/LOCK` is now the primary surface decision command; legacy `LOCK` / `LOCK DECISION` remain compatibility aliases.
+- `SAVE` is now the primary surface persistence command; legacy `COMMIT` remains a compatibility alias.
+- `CONFIRM ARCHITECTURE` remains a protected contextual DESIGN-stage gate and no longer occupies the fixed footer.
+- Updated EN/MY templates and the locked v0.2 working direction. ZASSIMPLE is now v0.2.3.
+
 ## [ZASSIMPLE v0.2.2 UX completion] — 2026-10-01
 
 - LOCKED the true DUMP-first landing: `Got an idea? Dump it.` / `Ada idea? DUMP saja.` before method explanation.
@@ -346,6 +354,8 @@ All notable changes to ZASS are recorded here.
 ## [v0.1.2]
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

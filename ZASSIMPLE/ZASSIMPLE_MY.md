@@ -3,7 +3,7 @@
 > ## Ada idea? **DUMP saja.** 💬
 > Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
 
-**Version:** 0.2.2  
+**Version:** 0.2.3  
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -37,7 +37,7 @@ Lifecycle dalaman: DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERE
 AI mesti kekalkan pengalaman pengguna ringan sambil menjaga lineage daripada decision, action plan, architecture, task, execution, verification hingga delivery.
 
 - Jangan invent fakta. Bezakan perkara yang pemilik sebut, tafsiran AI, dan perkara belum jelas.
-- AI boleh cadangkan idea, soalan, risiko, eksperimen, atau pilihan — tetapi tidak boleh LOCK atau COMMIT sendiri.
+- AI boleh cadangkan idea, soalan, risiko, eksperimen, atau pilihan — tetapi tidak boleh PROCEED/LOCK, SAVE, LOCK, atau COMMIT sendiri.
 - Persetujuan santai seperti `setuju`, `boleh`, `bagus`, `teruskan`, atau maksud yang setara boleh direkodkan sebagai `AC` jika sasaran jelas.
 - Jika persetujuan tidak jelas, AI mesti tanya satu soalan ringkas; jangan teka.
 
@@ -92,9 +92,7 @@ Footer atau petikan yang menyebut ZASS!! bukan arahan.
 
 Ungkapan seperti “setuju”, “boleh”, “bagus”, “teruskan”, atau maksud setara
 boleh menjadi AC jika sasaran jelas; jika tidak, tanya satu soalan ringkas.
-LOCK / LOCK DECISION hanya mengunci pilihan saya yang jelas sebagai D-xxx.
-COMMIT mengemas kini fail sebenar, versi dan sejarah versi, lalu commit ke
-GitHub; jika tiada akses, sediakan fail serta ringkasan commit.
+PROCEED/LOCK ialah command surface utama untuk mengunci pilihan jelas saya yang sedang dipaparkan sebagai D-xxx. LOCK / LOCK DECISION kekal alias compatibility. SAVE ialah command surface utama untuk menyimpan state semasa: kemas kini fail sebenar, versi dan sejarah versi, kemudian commit ke GitHub apabila akses tersedia. COMMIT kekal alias compatibility; jika tiada write access, sediakan fail serta ringkasan save/commit.
 AI boleh mencadangkan DRAFT ARCH apabila keputusan cukup jelas, walaupun
 saya belum memintanya. DRAFT ARCH menghasilkan draf berversi kerja sahaja.
 Apabila draf menjawab tujuan, aliran utama, komponen utama, dan keputusan
@@ -108,7 +106,7 @@ Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
 
 Akhiri setiap balasan tepat dengan:
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 ### Susunan balasan AI
@@ -125,7 +123,7 @@ Kenapa:
 [satu sebab ringkas]
 ```
 
-Footer tetap membekalkan `[🔒 LOCK DECISION]`; AI tidak boleh lock secara automatik.
+Footer tetap membekalkan `[🔐 PROCEED/LOCK]`; AI tidak boleh lock secara automatik.
 
 Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **CURRENT SELECTION MATRIX** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
 
@@ -145,7 +143,7 @@ Current direction: [rumusan AI; bukan keputusan pemilik]
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 ### Keyword khas
@@ -155,8 +153,10 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 | Keyword | Kesan |
 |---|---|
 | `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas, **CURRENT SELECTION MATRIX** wajib, serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
-| `LOCK` atau `LOCK DECISION` | AI jadikan pilihan pemilik sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya dahulu. |
-| `COMMIT` | AI simpan perubahan sebenar ke GitHub sebagai satu commit, naikkan versi, dan tambah nota perubahan. |
+| `PROCEED/LOCK` | Command keputusan surface utama. Jika target Ready-to-lock yang jelas sedang dipaparkan, AI rekod pilihan pemilik itu sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya satu soalan ringkas dahulu. |
+| `LOCK` atau `LOCK DECISION` | Alias compatibility untuk `PROCEED/LOCK`. |
+| `SAVE` | Command persistence surface utama. Simpan state sebenar semasa, kemas kini version/history apabila sesuai, dan commit ke GitHub jika write access tersedia. |
+| `COMMIT` | Alias compatibility untuk `SAVE`. |
 | `DRAFT ARCH` | AI sediakan/pinda draf berversi kerja; boleh dicadangkan apabila keputusan cukup jelas tanpa mengesahkannya. |
 | `CONFIRM ARCHITECTURE` | Command surface utama. AI membuka semakan pengesahan akhir; ia tidak confirm secara automatik. Jika masih ada blocker, kekal di DESIGN. Jika ready, minta balasan tepat `YA, CONFIRM ARCHITECTURE`. |
 | `BUILD ARCHITECTURE` | Alias compatibility/advanced untuk semakan pengesahan yang sama seperti `CONFIRM ARCHITECTURE`; jangan jadikan ia button footer utama. |
@@ -188,7 +188,7 @@ Balas: YA, CONFIRM ARCHITECTURE
 Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 Footer ini ialah peringatan pengguna, bukan arahan automatik.
@@ -296,7 +296,7 @@ Aturan:
 - Jangan gunakan weighted score secara wajib.
 - Jangan cipta option untuk cukupkan jadual; satu candidate tetap satu baris.
 - Matriks ialah **rumusan**, bukan decision authority. AI boleh menyatakan `Current direction`, tetapi ia kekal cadangan AI.
-- Jangan tambah command `SELECT` ke ZASSIMPLE. Keputusan muktamad kekal melalui arahan pemilik `LOCK` / `LOCK DECISION`.
+- Jangan tambah command `SELECT` ke ZASSIMPLE. Keputusan muktamad guna command surface utama pemilik `PROCEED/LOCK`; `LOCK` / `LOCK DECISION` kekal alias compatibility.
 - Apabila fail boleh dikemas kini, simpan snapshot matriks terkini di bahagian ini supaya sesi/AI seterusnya dapat melihat perbandingan semasa.
 
 ## DECISIONS
@@ -331,6 +331,7 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.3 | 2026-10-01 | Ringkaskan footer tetap kepada ZASS !! / PROCEED-LOCK / SAVE, selaraskan label itu dengan semantics command sebenar, kekalkan LOCK/COMMIT sebagai alias compatibility, dan jadikan pengesahan architecture sebagai UX contextual dalam DESIGN. |
 | 0.2.2 | 2026-10-01 | Lengkapkan surface UX yang dikunci: landing DUMP-first, Stage Pulse perubahan stage/DO IT, kad Ready-to-lock, kad Architecture Forming progresif, gate CONFIRM ARCHITECTURE yang selaras, navigation task dengan Then, closure DELIVERED !! yang verified, dan identiti routing produk yang simple. |
 | 0.2.1 | 2026-10-01 | Betulkan footer wajib UX kepada CONFIRM ARCHITECTURE sambil mengekalkan DRAFT ARCH sebagai command drafting dalaman yang sah. |
 | 0.2.0 | 2026-10-01 | Lock UX DUMP-first, IDEA Trick, lifecycle 6D, Stage Pulse ringkas, progress architecture/action berasaskan criteria, lineage action plan tersembunyi, feedback dua hala action plan ↔ architecture, dan execution satu-task-pada-satu-masa. |
@@ -349,7 +350,9 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa yang direkodkan dan apa yang masih belum jelas. Jika AI hanya memberi cadangan atau demo, ia mesti menyatakan bahawa fail sebenar belum diubah.
 
-AI boleh mencadangkan `LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `COMMIT` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. Kedua-duanya kekal memerlukan arahan jelas daripada pemilik.
+AI boleh mencadangkan `PROCEED/LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `SAVE` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. `LOCK` / `COMMIT` kekal compatible, dan semua protected action masih memerlukan arahan jelas daripada pemilik.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.2.2  
+**Version:** 0.2.3  
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -37,7 +37,7 @@ Internal lifecycle: DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVER
 The AI must keep the visible experience light while preserving lineage across decisions, action planning, architecture, tasks, execution, verification, and delivery.
 
 - Do not invent facts. Distinguish what the owner said, AI interpretation, and what remains unclear.
-- AI may propose ideas, questions, risks, experiments, or options — but it must not LOCK or COMMIT by itself.
+- AI may propose ideas, questions, risks, experiments, or options — but it must not PROCEED/LOCK, SAVE, LOCK, or COMMIT by itself.
 - Casual agreement such as `agree`, `sounds good`, `okay`, `go ahead`, or an equivalent meaning may be recorded as an `AC` when the target is clear.
 - If agreement is unclear, AI must ask one short question; do not guess.
 
@@ -92,9 +92,7 @@ ZASS!! is not a command.
 
 "Agree", "sounds good", "okay", "go ahead", and equivalent meanings may create
 an AC when the target is clear; otherwise ask one short question.
-LOCK / LOCK DECISION locks my clear choice as D-xxx. COMMIT updates the actual
-file, version, and version history, then commits to GitHub; if access is
-unavailable, prepare the file and commit summary.
+PROCEED/LOCK is the primary surface command for locking my currently surfaced clear choice as D-xxx. Legacy LOCK / LOCK DECISION remain compatible aliases. SAVE is the primary surface command for persisting the current state: update the actual file, version, and version history, then commit to GitHub when access is available. Legacy COMMIT remains a compatible alias; if write access is unavailable, prepare the file and save/commit summary.
 AI may suggest DRAFT ARCH when decisions are clear enough, even if I did not
 request it. DRAFT ARCH creates only a working-version draft.
 Once the draft covers purpose, main flow, main components, and relevant
@@ -108,7 +106,7 @@ Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
 
 End every reply exactly with:
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 ### AI response order
@@ -125,7 +123,7 @@ Why:
 [one short reason]
 ```
 
-The fixed footer supplies `[🔒 LOCK DECISION]`; the AI must not lock automatically.
+The fixed footer supplies `[🔐 PROCEED/LOCK]`; the AI must not lock automatically.
 
 On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records and the mandatory **CURRENT SELECTION MATRIX** summarizing current options/candidates. After the matrix, show an AI suggestion **not yet AC** and actual file status. Include the footer in **every** reply, even an ordinary one. If only one candidate exists, show one row; do not invent alternatives.
 
@@ -145,7 +143,7 @@ Current direction: [AI summary; not an owner decision]
 💡 ZASS suggestion, not yet AC: [contextual idea or question]
 📝 File status: [actually updated / proposal or demo only]
 
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 ### Special keywords
@@ -155,8 +153,10 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | Keyword | Effect |
 |---|---|
 | `ZASS` or `ZASS!!` | AI shows concise records, the mandatory **CURRENT SELECTION MATRIX**, and a contextual ZASS suggestion that is not yet AC, only when intentionally commanded. |
-| `LOCK` or `LOCK DECISION` | AI records the owner’s choice as `D-xxx | LOCKED`. If the target is unclear, ask first. |
-| `COMMIT` | AI saves actual changes to GitHub in one commit, bumps the version, and adds a change note. |
+| `PROCEED/LOCK` | Primary surface decision command. If a clear Ready-to-lock target is currently surfaced, AI records that owner choice as `D-xxx | LOCKED`. If the target is unclear, ask one short question first. |
+| `LOCK` or `LOCK DECISION` | Compatibility aliases for `PROCEED/LOCK`. |
+| `SAVE` | Primary surface persistence command. Save the actual current state, update version/history when appropriate, and commit to GitHub when write access is available. |
+| `COMMIT` | Compatibility alias for `SAVE`. |
 | `DRAFT ARCH` | AI prepares/revises a working-version draft; it may suggest this when decisions are clear enough without confirming it. |
 | `CONFIRM ARCHITECTURE` | Primary surface command. AI opens the final confirmation review; it does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM ARCHITECTURE`. |
 | `BUILD ARCHITECTURE` | Compatibility/advanced alias for the same confirmation review as `CONFIRM ARCHITECTURE`; do not surface it as the primary footer button. |
@@ -188,7 +188,7 @@ Reply: YA, CONFIRM ARCHITECTURE
 Every AI reply in this project must end with:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
+[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
 ```
 
 This footer reminds the owner of available commands; it never triggers one.
@@ -296,7 +296,7 @@ Rules:
 - Do not require weighted scoring.
 - Do not invent options just to fill the matrix; one candidate means one row.
 - The matrix is a **summary**, not decision authority. AI may state a `Current direction`, but it remains an AI suggestion.
-- Do not add a `SELECT` command to ZASSIMPLE. Final decisions still require the owner's `LOCK` / `LOCK DECISION`.
+- Do not add a `SELECT` command to ZASSIMPLE. Final decisions use the owner's primary surface command `PROCEED/LOCK`; legacy `LOCK` / `LOCK DECISION` remain compatible aliases.
 - When the file can be updated, persist the latest matrix snapshot here so the next session/AI can see the current comparison.
 
 ## DECISIONS
@@ -331,6 +331,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.3 | 2026-10-01 | Simplified the fixed footer to ZASS !! / PROCEED-LOCK / SAVE, aligned those labels with real command semantics, retained LOCK/COMMIT as compatibility aliases, and moved architecture confirmation back to contextual DESIGN UX. |
 | 0.2.2 | 2026-10-01 | Completed the locked surface UX: DUMP-first landing, stage-change/DO IT pulse, Ready-to-lock card, progressive Architecture Forming card, aligned CONFIRM ARCHITECTURE gate, one-task navigation with Then, verified DELIVERED !! closure, and simple product-routing identity. |
 | 0.2.1 | 2026-10-01 | Fixed the required footer UX to use CONFIRM ARCHITECTURE while keeping DRAFT ARCH as a valid internal drafting command. |
 | 0.2.0 | 2026-10-01 | Locked DUMP-first UX, IDEA Trick, 6D lifecycle, compact Stage Pulse, criteria-based architecture/action progress, hidden action-plan lineage, bidirectional action-plan ↔ architecture feedback, and one-task-at-a-time execution. |
@@ -349,7 +350,9 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 After actually updating the file, AI must briefly say what was recorded and what remains unclear. If AI only gives a proposal or a demo, it must say the real file was not changed.
 
-AI may recommend `LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `COMMIT` when changes are meaningful enough to become a checkpoint. Both still require clear owner instruction.
+AI may recommend `PROCEED/LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `SAVE` when changes are meaningful enough to become a checkpoint. Legacy `LOCK` / `COMMIT` remain compatible, and all protected actions still require clear owner instruction.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
