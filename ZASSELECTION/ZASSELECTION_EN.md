@@ -49,7 +49,7 @@ Bootstrap rules:
 
 - when a new option, evidence item, or question appears, preserve Working State and update the same Selection Matrix;
 - when `REVIEW` is requested with no new input, show the current matrix again without inventing changes;
-- after REVIEW, give a short AI Recommendation and ask `Your selection?`;
+- after REVIEW, give a short AI Recommendation and ask `👉 Your selection?`;
 - when the user explicitly chooses an option, record it as the current selection;
 - when `SAVE` is requested without persistent write integration, generate an updated `ZASSELECTION_EN.md` that preserves state, matrix, and history;
 - when persistent write integration is available, commit only after a real write succeeds;
@@ -86,7 +86,7 @@ When the user provides new information and requests REVIEW:
 5. show the updated Selection Matrix;
 6. give a short note for each option, normally around 10 words;
 7. give the current AI Recommendation;
-8. ask `Your selection?`.
+8. ask `👉 Your selection?`.
 
 ```text
 NEW INPUT
@@ -99,7 +99,7 @@ update current matrix
     ↓
 AI Recommendation
     ↓
-Your selection?
+👉 Your selection?
 ```
 
 Every new option is evaluated against the same matrix. Do not restart from zero unless the actual decision itself changes.
@@ -113,7 +113,7 @@ The system must:
 - load the current saved state;
 - show the current Selection Matrix;
 - show the current AI Recommendation;
-- ask `Your selection?`;
+- ask `👉 Your selection?`;
 - not invent new evidence;
 - not change scores merely because REVIEW was requested again.
 
@@ -149,18 +149,32 @@ The goal is to **eliminate repeated thinking**, not repeat the full analysis eve
 
 ---
 
+## 4A. ⚡ PICKS visual presentation
+
+When presenting the fast PICKS review flow, use these labels consistently:
+
+- 🎯 **P — Pin the Problem**
+- 🚧 **I — Identify Must-Haves**
+- 📊 **C — Compare Options**
+- ⭐ **K — Keep the Best Candidate**
+- 💾 **S — Select & Save**
+
+The icons are part of the standard presentation style. They improve scanning without changing the method semantics.
+
+---
+
 ## 5. AI Recommendation
 
 After every REVIEW, show:
 
 ```text
-AI Recommendation:
+🤖 AI Recommendation:
 Option X
 
 Why:
 [short reason]
 
-Your selection?
+👉 Your selection?
 ```
 
 AI Recommendation and user Selection are always separate:
@@ -177,7 +191,7 @@ AI must never change the user's selection automatically.
 
 ## 6. User selection
 
-If the user answers `Your selection?` explicitly, for example:
+If the user answers `👉 Your selection?` explicitly, for example:
 
 ```text
 Laptop B
@@ -201,7 +215,7 @@ If no write capability exists, preserve the state in the updated `ZASSELECTION_E
 
 ## 7. If the user has not selected
 
-If the user does not answer `Your selection?` and instead keeps asking questions, adds evidence, or introduces another option:
+If the user does not answer `👉 Your selection?` and instead keeps asking questions, adds evidence, or introduces another option:
 
 - do not force a choice;
 - keep the selection unresolved;
@@ -277,7 +291,7 @@ Work laptop
 Selected:
 Laptop B
 
-AI Recommendation:
+🤖 AI Recommendation:
 Laptop B
 
 Score:
@@ -297,7 +311,7 @@ New PC
 Status:
 UNFINISHED
 
-Current AI Recommendation:
+Current 🤖 AI Recommendation:
 RTX 4060 build
 
 Your Selection:
@@ -385,7 +399,7 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
                  ↓
           AI Recommendation
                  ↓
-          Your selection?
+          👉 Your selection?
                  │
            ┌─────┴─────┐
            │           │
@@ -406,7 +420,7 @@ The following are LOCKED for ZASSELECTION v0.2.0:
 4. REVIEW without new input means re-view and shows the saved current matrix without inventing changes.
 5. Every new option is added to the existing Selection Matrix.
 6. Explanations per option should normally be short, around 10 words.
-7. Every review ends with AI Recommendation followed by `Your selection?`.
+7. Every review ends with `🤖 AI Recommendation` followed by `👉 Your selection?`.
 8. AI Recommendation and Your Selection are separate concepts.
 9. An explicit user selection auto-commits when persistence is available.
 10. SAVE manually commits the current state.
@@ -415,6 +429,7 @@ The following are LOCKED for ZASSELECTION v0.2.0:
 13. REOPEN restores previous state and continues comparison instead of starting from zero.
 14. Working State must not rely solely on a platform AI's long-term memory.
 15. Backend complexity stays hidden from the normal user path.
+16. PICKS visual labels use 🎯 P, 🚧 I, 📊 C, ⭐ K, and 💾 S consistently; review endings use 🤖 AI Recommendation and 👉 Your selection?.
 
 Core UX principle:
 
