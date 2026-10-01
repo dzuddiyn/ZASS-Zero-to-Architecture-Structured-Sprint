@@ -1,7 +1,7 @@
 # ZASSELECTION
 
 > **AI compares. You decide, AI saves.**
-
+> **ALL Your PRODUCT selection HISTORY COMPILED in a SINGLE SYSTEM !!**
 **Default method:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
 **Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION_MY.md)
 
@@ -195,6 +195,8 @@ Because the complete method is directly inside the AI context, this is usually t
 Use this so ZASSELECTION can continue across AI apps that support GitHub integration, such as ChatGPT, Perplexity, Claude, and others.
 
 ### Step 1 — Create an empty repository and copy its link
+**(You ONLY need 1 repository! Not different repositories for each selection!)**
+Everything is stored within single ZASSELECTION system.
 
 Example name:
 
@@ -296,6 +298,7 @@ The result stays documented so you can revisit it later instead of repeating the
 # Bahasa Melayu
 
 > **AI banding, AI cadang, Anda PILIH!, AI rekod.**
+> **SEMUA SEJARAH pemilihan PRODUK Anda DIKUMPULKAN ke dalam 1 SISTEM TUNGGAL !!**
 
 ---
 
@@ -486,7 +489,9 @@ Ini biasanya fallback yang lebih reliable kerana keseluruhan method terus berada
 
 Gunakan mode ini supaya ZASSELECTION berterusan di semua app AI yang support GitHub integration seperti ChatGPT, Perplexity, Claude dan lain-lain.
 
-### Step 1 — Create repo kosong dan copy link
+### Step 1 — Create repo kosong dan copy link 
+> **( anda HANYA perlu 1 repo SAHAJA!, bukan repo berlainan untuk setiap pemilihan !)**
+**semuanya disimpan dalam 1 sistem ZASSELECTION**
 
 Nama contoh:
 
