@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.8 (English-default Full ZASS + Malay language routing; core decision semantics unchanged)
-**ZASS SYSTEM:** v0.1.1
+**Version:** 0.3.9 (global language-surface routing; core decision semantics unchanged)
+**ZASS SYSTEM:** v0.1.2
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.8
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.9
 
-Full ZASS is aligned with **ZASS SYSTEM v0.1.1** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
+Full ZASS is aligned with **ZASS SYSTEM v0.1.2** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
 
 When Full ZASS is used through ZASS SYSTEM:
 
@@ -43,6 +43,8 @@ If the user clearly starts speaking in Bahasa Melayu while using `ZASS.md`, show
 > Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan `ZASS.md` English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.
 
 The conversation may continue in Bahasa Melayu while `ZASS.md` remains the active method file. Conversation language does not change authority or project state.
+
+**Structured method surfaces follow the active method file, not the conversation language.** With English `ZASS.md`, user-facing ZASS tables, I/AC/D record labels, cards, matrix headings, stage/status explanations, and method prompts render in English. Canonical IDs, commands, and state tokens remain unchanged.
 
 This language choice applies to the **method template**. Git-backed project state continues to use canonical `ZASS.md` unless a project explicitly defines another contract, so existing validator/discovery behavior is preserved.
 
@@ -144,7 +146,7 @@ End **every** AI reply with:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.7 / latest v0.3.8
+⬆️ UPDATE ZASS? now v0.3.8 / latest v0.3.9
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.

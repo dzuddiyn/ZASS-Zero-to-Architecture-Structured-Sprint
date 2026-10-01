@@ -1,6 +1,6 @@
 # ZASS SYSTEM — Default Landing & Escalation Working Direction
 
-**ZASS SYSTEM version:** 0.1.1  
+**ZASS SYSTEM version:** 0.1.2  
 **Status:** LOCKED WORKING DIRECTION  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
@@ -120,6 +120,8 @@ LOCKED product direction:
 > **Route by user intent, not by framework knowledge.**
 
 > **Start simple by default. Escalate governance only when observed project complexity justifies it.**
+
+> **Language routing:** conversation language may follow the user, while structured method UI follows the active EN/MY method file. Malay availability is notified once from English files; switching is never automatic.
 
 This keeps ZASS lightweight at entry: DECIDE routes to ZASSELECTION, BUILD routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
 

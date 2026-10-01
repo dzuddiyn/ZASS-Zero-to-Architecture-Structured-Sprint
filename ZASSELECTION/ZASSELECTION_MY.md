@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.0  
+**Version:** 0.2.1  
 **Status:** UX FLOW LOCKED — MALAY METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-01
@@ -27,6 +27,12 @@ ZASSELECTION_MY.md
 
 Jangan paksa pengguna memahami atau mengurus banyak fail arahan untuk menjalankan method.
 
+### Routing bahasa
+
+`ZASSELECTION_MY.md` ialah fail method Bahasa Melayu. Apabila fail ini aktif, semua surface method berstruktur yang dilihat pengguna mesti dalam Bahasa Melayu — termasuk Matriks Pemilihan, tajuk jadual, label Cadangan AI/Pilihan anda, sejarah, kad dan prompt method. Command canonical seperti `REVIEW`, `SAVE`, `HISTORY`, ID, huruf mnemonic PICKS dan token state rasmi boleh kekal seperti asal supaya workflow dan automation tidak pecah.
+
+Jika pengguna menggunakan `ZASSELECTION_EN.md` tetapi bercakap dalam Bahasa Melayu, AI boleh terus berbual dalam Bahasa Melayu; versi Melayu hanya dimaklumkan sekali dan penukaran fail tidak berlaku secara automatik.
+
 Fail teknikal lain boleh wujud di implementation layer pada masa depan, tetapi ia tidak menjadi sebahagian daripada pengalaman penggunaan biasa.
 
 ---
@@ -46,8 +52,8 @@ Gunakan tiga tindakan utama:
 Peraturan bootstrap:
 
 - jika option, evidence atau soalan baru muncul, kekalkan Working State dan kemas kini Matriks Pemilihan yang sama;
-- jika `REVIEW` diberi tanpa input baru, papar semula current matrix tanpa mencipta perubahan;
-- selepas REVIEW, beri AI Recommendation ringkas dan tanya `👉 Your selection?`;
+- jika `REVIEW` diberi tanpa input baru, papar semula matriks semasa tanpa mencipta perubahan;
+- selepas REVIEW, beri Cadangan AI ringkas dan tanya `👉 Pilihan anda?`;
 - jika pengguna membuat pilihan eksplisit, rekod sebagai pilihan semasa;
 - jika `SAVE` diminta tanpa persistent write integration, hasilkan updated `ZASSELECTION_MY.md` yang mengekalkan state, matrix dan history;
 - jika persistent write integration tersedia, commit hanya selepas write sebenar berjaya;
@@ -83,8 +89,8 @@ Jika pengguna memberi maklumat baharu kemudian memilih `REVIEW`:
 4. kemas kini markah hanya apabila evidence atau maklumat baharu memberi sebab;
 5. paparkan Matriks Pemilihan terkini;
 6. beri ayat ringkas untuk setiap option, sasaran sekitar 10 perkataan;
-7. beri AI Recommendation semasa;
-8. tanya `👉 Your selection?`.
+7. beri Cadangan AI semasa;
+8. tanya `👉 Pilihan anda?`.
 
 Aliran:
 
@@ -95,11 +101,11 @@ NEW INPUT
     ↓
 compare with current data
     ↓
-update current matrix
+update matriks semasa
     ↓
-AI Recommendation
+Cadangan AI
     ↓
-👉 Your selection?
+👉 Pilihan anda?
 ```
 
 Setiap option baharu mesti dinilai terhadap matrix yang sama. Jangan memulakan analisis baru dari kosong kecuali keputusan yang dinilai memang berubah.
@@ -112,8 +118,8 @@ Sistem mesti:
 
 - baca state semasa yang telah disimpan;
 - papar semula Matriks Pemilihan semasa;
-- papar AI Recommendation semasa;
-- tanya `👉 Your selection?`;
+- papar Cadangan AI semasa;
+- tanya `👉 Pilihan anda?`;
 - jangan cipta evidence baharu;
 - jangan ubah markah hanya kerana review dibuat sekali lagi.
 
@@ -125,11 +131,11 @@ Aliran:
     ↓
 load saved current state
     ↓
-show current matrix
+show matriks semasa
     ↓
-show current AI Recommendation
+show current Cadangan AI
     ↓
-👉 Your selection?
+👉 Pilihan anda?
 ```
 
 ---
@@ -140,22 +146,22 @@ Matriks ialah paparan utama perbandingan.
 
 Contoh:
 
-| Criteria | Weight | Option A | Option B | Option C |
+| Kriteria | Berat | Pilihan A | Pilihan B | Pilihan C |
 |---|---:|---:|---:|---:|
-| Performance | 30% | 7 | 9 | 8 |
-| Upgrade | 20% | 8 | 9 | 7 |
-| Battery | 15% | 9 | 7 | 8 |
-| Price | 35% | 7 | 8 | 8 |
-| **TOTAL** | **100%** | **7.55** | **8.35** | **7.80** |
+| Prestasi | 30% | 7 | 9 | 8 |
+| Naik taraf | 20% | 8 | 9 | 7 |
+| Bateri | 15% | 9 | 7 | 8 |
+| Harga | 35% | 7 | 8 | 8 |
+| **JUMLAH** | **100%** | **7.55** | **8.35** | **7.80** |
 
 Di bawah matrix, setiap option hanya memerlukan sebab pendek.
 
 Contoh:
 
 ```text
-Option A — Battery bagus, tetapi prestasi dan value sederhana.
-Option B — Paling seimbang untuk prestasi, upgrade dan harga.
-Option C — Seimbang, tetapi ruang upgrade lebih terhad.
+Pilihan A — Battery bagus, tetapi prestasi dan value sederhana.
+Pilihan B — Paling seimbang untuk prestasi, upgrade dan harga.
+Pilihan C — Seimbang, tetapi ruang upgrade lebih terhad.
 ```
 
 Elakkan karangan panjang kecuali pengguna meminta penjelasan lanjut.
@@ -165,7 +171,7 @@ Jika option baharu muncul:
 ```text
 Option D detected
     ↓
-add to current matrix
+add to matriks semasa
     ↓
 score against existing criteria
     ↓
@@ -192,24 +198,24 @@ Ikon ini ialah gaya paparan standard untuk memudahkan scanning tanpa mengubah lo
 
 ---
 
-## 5. AI Recommendation
+## 5. Cadangan AI
 
 Selepas setiap REVIEW, paparkan:
 
 ```text
-🤖 AI Recommendation:
+🤖 Cadangan AI:
 Option X
 
-Why:
+Sebab:
 [ayat pendek]
 
-👉 Your selection?
+👉 Pilihan anda?
 ```
 
 Recommendation AI dan pilihan pengguna mesti sentiasa dipisahkan.
 
 ```text
-AI Recommendation ≠ Your Selection
+Cadangan AI ≠ Pilihan anda
 ```
 
 AI boleh mengubah recommendation apabila evidence atau option berubah.
@@ -220,7 +226,7 @@ AI tidak boleh menukar pilihan pengguna secara automatik.
 
 ## 6. User membuat pilihan
 
-Jika selepas soalan `👉 Your selection?` pengguna menjawab secara eksplisit, contohnya:
+Jika selepas soalan `👉 Pilihan anda?` pengguna menjawab secara eksplisit, contohnya:
 
 ```text
 Laptop B
@@ -241,7 +247,7 @@ Laptop kerja → Laptop B
 Aliran:
 
 ```text
-👉 Your selection?
+👉 Pilihan anda?
     ↓
 user explicitly chooses Option B
     ↓
@@ -254,7 +260,7 @@ Pilihan anda telah disimpan.
 
 ## 7. Jika pengguna belum memilih
 
-Jika pengguna tidak menjawab `👉 Your selection?` dan sebaliknya terus bertanya, memberi evidence atau menambah option:
+Jika pengguna tidak menjawab `👉 Pilihan anda?` dan sebaliknya terus bertanya, memberi evidence atau menambah option:
 
 - jangan paksa pilihan;
 - kekalkan current selection sebagai belum diputuskan;
@@ -265,7 +271,7 @@ Jika pengguna tidak menjawab `👉 Your selection?` dan sebaliknya terus bertany
 Contoh:
 
 ```text
-👉 Your selection?
+👉 Pilihan anda?
     ↓
 "Bagaimana kalau ada Laptop D?"
     ↓
@@ -277,9 +283,9 @@ add Laptop D
     ↓
 update matrix
     ↓
-AI Recommendation
+Cadangan AI
     ↓
-👉 Your selection?
+👉 Pilihan anda?
 ```
 
 Working State ialah state sementara sesi aktif. Ia tidak boleh bergantung pada long-term memory sesuatu platform AI sebagai satu-satunya storage.
@@ -290,13 +296,13 @@ Working State ialah state sementara sesi aktif. Ia tidak boleh bergantung pada l
 
 `SAVE` ialah explicit manual commit untuk keadaan semasa.
 
-### Jika sudah ada Your Selection
+### Jika sudah ada Pilihan anda
 
 Commit:
 
 - pilihan pengguna;
 - Matriks Pemilihan semasa;
-- AI Recommendation semasa;
+- Cadangan AI semasa;
 - data penting yang membentuk keputusan.
 
 Status:
@@ -305,14 +311,14 @@ Status:
 COMMITTED SELECTION
 ```
 
-### Jika belum ada Your Selection
+### Jika belum ada Pilihan anda
 
 Tetap commit:
 
 - maklumat semasa;
 - option semasa;
 - Matriks Pemilihan semasa;
-- AI Recommendation semasa.
+- Cadangan AI semasa.
 
 Tetapi jangan cipta pilihan palsu.
 
@@ -327,7 +333,7 @@ Aliran:
 ```text
 [ SAVE ]
    │
-   ├── Your Selection exists
+   ├── Pilihan anda exists
    │       ↓
    │   COMMITTED SELECTION
    │
@@ -345,7 +351,7 @@ SAVE membolehkan pengguna berhenti pada bila-bila masa dan sambung kemudian tanp
 `HISTORY` membuka:
 
 ```text
-MY SELECTIONS HISTORY
+SEJARAH PILIHAN SAYA
 
 Laptop kerja          → Laptop B
 AI subscription       → ChatGPT Plus
@@ -361,13 +367,13 @@ Jika pengguna membuka selection yang telah selesai:
 ```text
 Laptop kerja
 
-Selected:
+Dipilih:
 Laptop B
 
-🤖 AI Recommendation:
+🤖 Cadangan AI:
 Laptop B
 
-Score:
+Skor:
 8.35 / 10
 
 [ VIEW MATRIX ]
@@ -384,11 +390,11 @@ PC baru
 Status:
 UNFINISHED
 
-Current 🤖 AI Recommendation:
+🤖 Cadangan AI semasa:
 RTX 4060 build
 
-Your Selection:
-Not selected
+Pilihan anda:
+Belum dipilih
 
 [ REOPEN SELECTION ]
 ```
@@ -422,9 +428,9 @@ accept new input
     ↓
 update matrix
     ↓
-new AI Recommendation
+new Cadangan AI
     ↓
-👉 Your selection?
+👉 Pilihan anda?
 ```
 
 ---
@@ -440,10 +446,10 @@ State sementara semasa sesi pemilihan masih berjalan.
 Contoh:
 
 ```text
-Current decision: Pilih laptop kerja
-Current options: A, B, C, D
-Current recommendation: B
-Your Selection: Not selected
+Keputusan semasa: Pilih laptop kerja
+Pilihan semasa: A, B, C, D
+Cadangan semasa: B
+Pilihan anda: Belum dipilih
 ```
 
 ### Committed State
@@ -488,11 +494,11 @@ Aliran utama:
                  ↓
               re-view
                  ↓
-          show current matrix
+          show matriks semasa
                  ↓
-          AI Recommendation
+          Cadangan AI
                  ↓
-          👉 Your selection?
+          👉 Pilihan anda?
                  │
            ┌─────┴─────┐
            │           │
@@ -505,16 +511,16 @@ Aliran utama:
 
 ## 13. Locked UX principles
 
-The following decisions are LOCKED for ZASSELECTION v0.2.0:
+Keputusan berikut LOCKED untuk ZASSELECTION v0.2.1:
 
-1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
+1. Fail method default English ialah `ZASSELECTION_EN.md`; fail method Bahasa Melayu ialah `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
-3. REVIEW with new input compares against existing data and updates the current matrix.
-4. REVIEW without new input means re-view and must show the saved current matrix without inventing changes.
-5. Every new option is added to the existing selection matrix.
+3. REVIEW with new input compares against existing data and updates the matriks semasa.
+4. REVIEW without new input means re-view and must show the saved matriks semasa without inventing changes.
+5. Every new option is added to the existing matriks pemilihan.
 6. Explanations per option should normally be short, around 10 words.
-7. Every review ends with `🤖 AI Recommendation` followed by `👉 Your selection?`.
-8. AI Recommendation and Your Selection are separate concepts.
+7. Every review ends with `🤖 Cadangan AI` followed by `👉 Pilihan anda?`.
+8. Cadangan AI and Pilihan anda are separate concepts.
 9. An explicit user selection auto-commits immediately.
 10. After auto-commit, show `Pilihan anda telah disimpan.`.
 11. SAVE manually commits the current state.
@@ -524,7 +530,7 @@ The following decisions are LOCKED for ZASSELECTION v0.2.0:
 15. REOPEN restores the previous matrix/state and continues comparison instead of starting from zero.
 16. Working State must not rely solely on a platform AI's long-term memory.
 17. Backend complexity must remain hidden from the normal user path.
-18. Gaya visual PICKS menggunakan 🎯 P, 🚧 I, 📊 C, ⭐ K, dan 💾 S secara konsisten; hujung review menggunakan 🤖 AI Recommendation dan 👉 Your selection?.
+18. Gaya visual PICKS menggunakan 🎯 P, 🚧 I, 📊 C, ⭐ K, dan 💾 S secara konsisten; hujung review menggunakan 🤖 Cadangan AI dan 👉 Pilihan anda?.
 
 Core UX principle:
 

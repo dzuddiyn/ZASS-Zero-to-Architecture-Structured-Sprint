@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.0  
+**Version:** 0.2.1  
 **Status:** UX FLOW LOCKED — DEFAULT METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-01
@@ -28,6 +28,13 @@ ZASSELECTION_EN.md
 ```
 
 The Malay companion is `ZASSELECTION_MY.md`.
+
+If the user clearly speaks Bahasa Melayu while this English method file is active, show this lightweight notice once when useful:
+
+> **Versi Bahasa Melayu tersedia: `ZASSELECTION_MY.md`.**  
+> Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan fail English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.
+
+Do not auto-switch files or repeat the notice on every reply. Ordinary conversation may continue in Bahasa Melayu, but structured ZASSELECTION surfaces follow the active method file: with `ZASSELECTION_EN.md`, matrices, table headings, recommendation/selection cards, history labels, and method prompts render in English. Canonical commands, IDs, PICKS mnemonic letters, and state tokens remain unchanged.
 
 Technical implementation files may exist separately, but they are not part of the normal user experience.
 
@@ -412,7 +419,7 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
 
 ## 13. Locked UX principles
 
-The following are LOCKED for ZASSELECTION v0.2.0:
+The following are LOCKED for ZASSELECTION v0.2.1:
 
 1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.

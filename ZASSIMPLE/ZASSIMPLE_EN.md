@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.2.4  
+**Version:** 0.2.5  
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -22,6 +22,15 @@
 The user only needs to do one thing: **DUMP**.
 
 Speak naturally. Drop messy ideas, half-formed thoughts, constraints, worries, wishes, and sudden implementation ideas without organizing them first. ZASSIMPLE does the structuring behind the scenes.
+
+### Language routing
+
+`ZASSIMPLE_EN.md` is the default English method file. If the user clearly speaks Bahasa Melayu, show this lightweight notice once when useful:
+
+> **Versi Bahasa Melayu tersedia: `ZASSIMPLE_MY.md`.**  
+> Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan fail English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.
+
+Do not auto-switch files or repeat the notice on every reply. Ordinary conversation may continue in Bahasa Melayu, but structured ZASSIMPLE surfaces follow the active method file: with `ZASSIMPLE_EN.md`, tables, I/AC/D record labels, cards, stage/status explanations, and method prompts render in English. Canonical IDs, commands, mnemonics, and state tokens remain unchanged.
 
 ### The IDEA Trick — human-facing UX
 
@@ -331,6 +340,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.5 | 2026-10-02 | LOCKED global language routing: one-time Malay companion notice from the English default; structured method surfaces follow the active EN/MY file language while canonical IDs/commands stay stable. |
 | 0.2.4 | 2026-10-01 | FINAL LOCK: fixed footer icons finalized as 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE with command semantics unchanged. |
 | 0.2.3 | 2026-10-01 | Simplified the fixed footer to ZASS !! / PROCEED-LOCK / SAVE, aligned those labels with real command semantics, retained LOCK/COMMIT as compatibility aliases, and moved architecture confirmation back to contextual DESIGN UX. |
 | 0.2.2 | 2026-10-01 | Completed the locked surface UX: DUMP-first landing, stage-change/DO IT pulse, Ready-to-lock card, progressive Architecture Forming card, aligned CONFIRM ARCHITECTURE gate, one-task navigation with Then, verified DELIVERED !! closure, and simple product-routing identity. |

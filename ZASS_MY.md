@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.8 (lokalisasi Bahasa Melayu untuk Full ZASS; semantics keputusan teras tidak berubah)
-**ZASS SYSTEM:** v0.1.1
+**Version:** 0.3.9 (routing surface bahasa global; semantics keputusan teras tidak berubah)
+**ZASS SYSTEM:** v0.1.2
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.8
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.9
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.1.1** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.1.2** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
@@ -38,6 +38,8 @@ Perubahan ini ialah **surface/system alignment**. Authority Full ZASS, human LOC
 `ZASS_MY.md` ialah versi Bahasa Melayu untuk Full ZASS. Fail default Full ZASS ialah `ZASS.md` dalam English.
 
 Jika pengguna menggunakan `ZASS.md` English tetapi bercakap dalam Bahasa Melayu, AI boleh meneruskan perbualan dalam Bahasa Melayu tanpa menukar authority file secara automatik.
+
+**Surface method berstruktur ikut bahasa fail method aktif, bukan bahasa perbualan.** Dengan `ZASS_MY.md`, semua jadual dan label yang dilihat pengguna — termasuk rekod I/AC/D (idea/calon/keputusan), kad, tajuk matriks, penerangan stage/status dan prompt method — mesti dipaparkan dalam Bahasa Melayu. ID canonical, command dan token state rasmi kekal seperti asal supaya lineage dan automation tidak pecah.
 
 Pilihan bahasa ini merujuk kepada **method template**. Project state berasaskan Git kekal menggunakan `ZASS.md` sebagai fail canonical kecuali projek menetapkan contract lain secara eksplisit, supaya validator/discovery sedia ada kekal serasi.
 
@@ -139,7 +141,7 @@ Akhiri **setiap** balasan AI dengan:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
 
-⬆️ UPDATE ZASS? now v0.3.7 / latest v0.3.8
+⬆️ UPDATE ZASS? now v0.3.8 / latest v0.3.9
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.

@@ -62,7 +62,7 @@ Naik ke Full ZASS apabila:
 - risiko security, privasi, kos, data loss atau operasi menjadi penting;
 - sejarah keputusan susah dijejak melalui chat sahaja.
 
-## Full ZASS v0.3.8
+## Full ZASS v0.3.9
 
 Command utama:
 
@@ -119,7 +119,7 @@ MEDIUM
 HIGH
 ```
 
-Dalam Full ZASS v0.3.8, Evidence Confidence wajib dipaparkan apabila readiness architecture benar-benar dinilai pada titik yang ditetapkan.
+Dalam Full ZASS v0.3.9, Evidence Confidence wajib dipaparkan apabila readiness architecture benar-benar dinilai pada titik yang ditetapkan.
 
 ## Source of Truth
 

@@ -39,6 +39,8 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [Infographics](Infographics.md) — archived visual references.
 - [Bahasa Melayu](Bahasa-Melayu.md) — ringkasan BM.
 
+Language UX is global: conversation may follow the user, while structured method surfaces follow the active EN/MY file. English-file users who speak Malay get a one-time companion-file notice; no automatic switching.
+
 ## ZASS Convergence Loop
 
 > **Capture broadly, converge deliberately. Form candidates first; research only what can change the choice.**
@@ -55,10 +57,10 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.1.1 |
-| Full ZASS | v0.3.8 |
-| ZASSIMPLE | v0.2.4 |
-| ZASSELECTION | v0.2.0 |
+| ZASS SYSTEM | v0.1.2 |
+| Full ZASS | v0.3.9 |
+| ZASSIMPLE | v0.2.5 |
+| ZASSELECTION | v0.2.1 |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |

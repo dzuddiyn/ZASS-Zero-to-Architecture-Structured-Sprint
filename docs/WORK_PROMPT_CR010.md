@@ -39,7 +39,7 @@ Do not redesign the ZASS methodology.
 
 Do not add new ZASS commands, states, ledgers, scoring systems, or architecture rules.
 
-Full ZASS is currently v0.3.8. `ZASS.md` is the default English method and `ZASS_MY.md` is the Bahasa Melayu localization. Do not change decision semantics silently.
+Full ZASS is currently v0.3.9. `ZASS.md` is the default English method and `ZASS_MY.md` is the Bahasa Melayu localization. Do not change decision semantics silently.
 
 ### Goal
 

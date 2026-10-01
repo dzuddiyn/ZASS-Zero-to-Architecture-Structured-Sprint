@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Current version:** v0.2.4
+**Current version:** v0.2.5
 
 ZASSIMPLE is the default lightweight way to use ZASS.
 
@@ -9,6 +9,8 @@ ZASSIMPLE is the default lightweight way to use ZASS.
 ## How it feels
 
 Attach the current `ZASSIMPLE_EN.md` to an AI and talk normally.
+
+If the user speaks Bahasa Melayu, AI may keep the conversation in Malay and lightly mention `ZASSIMPLE_MY.md` once. Structured ZASSIMPLE surfaces follow the active method file language; the Malay file renders its I/AC/D tables, matrices and cards in Bahasa Melayu.
 
 You do not need to:
 

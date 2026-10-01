@@ -7,6 +7,8 @@
 **Default English:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
 **Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION_MY.md)
 
+Language behavior: ordinary conversation may follow the user, while structured ZASSELECTION matrices/cards/history labels follow the active EN/MY method file. English users who start speaking Malay get one light notice that `ZASSELECTION_MY.md` is available; switching is never automatic.
+
 ---
 
 # 🚀 Quick Start

@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM v0.1.2 / Full ZASS v0.3.9 / ZASSIMPLE v0.2.5 / ZASSELECTION v0.2.1] — 2026-10-02
+
+- LOCKED global EN/MY language routing across Full ZASS, ZASSIMPLE, and ZASSELECTION.
+- English method files remain the default distribution surfaces. When an English file is active and the user speaks Bahasa Melayu, AI shows one light Malay-companion notice and never switches files automatically.
+- LOCKED the shared notice wording: `Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan fail English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.`
+- LOCKED separation between conversation language and structured method-surface language: conversation may follow the user, while tables, matrices, I/AC/D record labels, cards, stage/status explanations, history labels, and method prompts follow the active EN/MY method file.
+- Malay method files render human-facing structured surfaces in Bahasa Melayu; English method files render them in English. Canonical IDs, protected commands, mnemonics, and state tokens stay stable when translation would break lineage or automation.
+- Localized the key ZASSIMPLE Malay I/AC/D and matrix surfaces and the key ZASSELECTION Malay matrix/recommendation/history surfaces.
+- Core decision authority and method logic are unchanged; this release is a presentation-language and discoverability contract.
+
 ## [v0.3.8 consistency follow-up] — 2026-10-02
 
 - Fixed remaining Wiki-source inconsistencies after the English-default Full ZASS migration.

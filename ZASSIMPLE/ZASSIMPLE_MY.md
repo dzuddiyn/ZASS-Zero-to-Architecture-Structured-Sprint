@@ -3,7 +3,7 @@
 > ## Ada idea? **DUMP saja.** 💬
 > Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
 
-**Version:** 0.2.4  
+**Version:** 0.2.5  
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -13,7 +13,7 @@
 >
 > 🧠 **DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!**
 >
-> **From messy ideas to 👍 THUMBS-UP architecture.**
+> **Daripada idea serabut kepada architecture 👍 THUMBS-UP.**
 
 ---
 
@@ -22,6 +22,12 @@
 Pengguna cuma perlu buat satu benda: **DUMP**.
 
 Cakap seperti biasa. Lambakkan idea serabut, fikiran separuh masak, constraint, kebimbangan, kehendak, dan idea pelaksanaan yang muncul tiba-tiba tanpa perlu susun dahulu. ZASSIMPLE yang mengurus struktur di belakang tabir.
+
+### Routing bahasa
+
+`ZASSIMPLE_MY.md` ialah fail method Bahasa Melayu. Apabila fail ini aktif, semua surface method berstruktur yang dilihat pengguna mesti dalam Bahasa Melayu — termasuk jadual I/AC/D (idea/calon/keputusan), matriks, kad, label stage/status dan prompt method. ID canonical, command, mnemonic dan token state rasmi kekal seperti asal supaya lineage dan automation tidak pecah.
+
+Jika pengguna menggunakan `ZASSIMPLE_EN.md` tetapi bercakap dalam Bahasa Melayu, AI boleh terus berbual dalam Bahasa Melayu; versi Melayu hanya dimaklumkan sekali dan penukaran fail tidak berlaku secara automatik.
 
 ### The IDEA Trick — UX manusia
 
@@ -48,7 +54,7 @@ Tampal prompt ini sebaik sahaja `ZASSIMPLE_MY.md` dimuat naik ke chat AI:
 ```text
 Baca fail ZASSIMPLE_MY.md yang dilampirkan sebagai source of truth projek ini.
 Saya mahu brainstorm secara santai. Jawab mesej biasa seperti rakan fikir;
-jangan paparkan blok ZASSIMPLE UPDATE setiap kali. Rekod perkara penting
+jangan paparkan blok KEMAS KINI ZASSIMPLE setiap kali. Rekod perkara penting
 secara ringkas apabila boleh mengubah fail. Jangan invent fakta atau mendakwa
 fail sudah dikemas kini jika belum.
 
@@ -58,7 +64,7 @@ yang muncul semasa DECIDE/DESIGN ke lineage action plan; jangan bebankan
 pengguna dengan ACTION PLAN dalaman kecuali ia perlu untuk review, refine
 architecture, atau execution.
 
-Apabila saya sengaja mengarahkan ZASS atau ZASS!!, ATAU apabila lifecycle stage berubah secara material, paparkan STAGE PULSE ringkas. Jangan ulang pada setiap balasan biasa. Untuk ZASS/ZASS!!, paparkan ZASSIMPLE UPDATE dan CURRENT SELECTION MATRIX selepas pulse. STAGE PULSE mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa DESIGN, tunjuk juga Architecture Progress. Selepas architecture disahkan, tunjuk Action Detail Progress. Progress mesti datang daripada coverage criteria yang jelas, bukan ketepatan palsu.
+Apabila saya sengaja mengarahkan ZASS atau ZASS!!, ATAU apabila lifecycle stage berubah secara material, paparkan STAGE PULSE ringkas. Jangan ulang pada setiap balasan biasa. Untuk ZASS/ZASS!!, paparkan KEMAS KINI ZASSIMPLE dan MATRIKS PEMILIHAN SEMASA selepas pulse. STAGE PULSE mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa DESIGN, tunjuk juga Architecture Progress. Selepas architecture disahkan, tunjuk Action Detail Progress. Progress mesti datang daripada coverage criteria yang jelas, bukan ketepatan palsu.
 
 Kriteria Architecture Progress:
 1) purpose, 2) main flow, 3) main components, 4) keputusan LOCKED berkaitan.
@@ -111,7 +117,7 @@ Akhiri setiap balasan tepat dengan:
 
 ### Susunan balasan AI
 
-Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `ZASSIMPLE UPDATE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum. Sorok ID dalaman seperti `D-017`, `AP-006`, atau lineage architecture daripada balasan biasa kecuali pengguna meminta struktur/audit atau ID itu benar-benar membantu semakan ZASS.
+Mesej biasa dijawab secara santai. AI merekodkan perkara penting apabila boleh mengubah fail, tetapi tidak memaparkan `KEMAS KINI ZASSIMPLE` melainkan pengguna sengaja mengarahkan `ZASS` atau `ZASS!!`. Jangan mengaku fail telah berubah jika belum. Sorok ID dalaman seperti `D-017`, `AP-006`, atau lineage architecture daripada balasan biasa kecuali pengguna meminta struktur/audit atau ID itu benar-benar membantu semakan ZASS.
 
 Apabila sesuatu candidate sudah cukup matang untuk keputusan pemilik, guna kad keputusan ringan ini dan jangan paparkan ledger dalaman:
 
@@ -125,20 +131,20 @@ Kenapa:
 
 Footer tetap membekalkan `[📌 PROCEED/LOCK]`; AI tidak boleh lock secara automatik.
 
-Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **CURRENT SELECTION MATRIX** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
+Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **MATRIKS PEMILIHAN SEMASA** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
 
 ```text
 [Respons AI santai dan relevan]
 
-## ZASSIMPLE UPDATE
+## KEMAS KINI ZASSIMPLE
 [rekod idea / AC / soalan / risiko / keputusan yang relevan]
 
-### CURRENT SELECTION MATRIX
-| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+### MATRIKS PEMILIHAN SEMASA
+| Pilihan / Calon | Padanan wajib | Kekuatan | Risiko / Kelemahan | Bukti / Belum diketahui | Status |
 |---|---|---|---|---|---|
-| [candidate semasa] | PASS / FAIL / UNKNOWN | [...] | [...] | [...] | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
+| [calon semasa] | PASS / FAIL / UNKNOWN | [...] | [...] | [...] | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
 
-Current direction: [rumusan AI; bukan keputusan pemilik]
+Arah semasa: [rumusan AI; bukan keputusan pemilik]
 
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
@@ -150,9 +156,9 @@ Current direction: [rumusan AI; bukan keputusan pemilik]
 
 Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jelas ia arahan — bukan contoh, penafian, atau perbincangan tentang perkataan itu.
 
-| Keyword | Kesan |
+| Kata kunci | Kesan |
 |---|---|
-| `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas, **CURRENT SELECTION MATRIX** wajib, serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
+| `ZASS` atau `ZASS!!` | AI paparkan kemas kini ringkas, **MATRIKS PEMILIHAN SEMASA** wajib, serta cadangan ZASS yang belum AC, hanya apabila diarahkan dengan sengaja. |
 | `PROCEED/LOCK` | Command keputusan surface utama. Jika target Ready-to-lock yang jelas sedang dipaparkan, AI rekod pilihan pemilik itu sebagai `D-xxx | LOCKED`. Jika sasaran tidak jelas, tanya satu soalan ringkas dahulu. |
 | `LOCK` atau `LOCK DECISION` | Alias compatibility untuk `PROCEED/LOCK`. |
 | `SAVE` | Command persistence surface utama. Simpan state sebenar semasa, kemas kini version/history apabila sesuai, dan commit ke GitHub jika write access tersedia. |
@@ -166,7 +172,7 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 Untuk `CONFIRM ARCHITECTURE` (atau legacy `BUILD ARCHITECTURE`), AI mesti menjawab dahulu:
 
 ```text
-⚠️ Architecture confirmation review
+⚠️ Semakan pengesahan architecture
 
 Architecture akan menggunakan keputusan LOCKED berikut:
 - [D-xxx ...]
@@ -174,7 +180,7 @@ Architecture akan menggunakan keputusan LOCKED berikut:
 Andaian kritikal / blocker:
 - [jika ada]
 
-Architecture Progress: [x/4]
+Kemajuan architecture: [x/4]
 
 Jika masih ada blocker:
 Kekal di DESIGN dan nyatakan perkara seterusnya yang diperlukan.
@@ -207,7 +213,7 @@ ZASSIMPLE menyimpan implementation planning daripada membebankan pengguna sehing
 - Setiap task card perlu rasa seperti tutorial ringkas dan menarik:
 
 ```text
-🚀 STEP 1 / N — [nama task ringkas]
+🚀 LANGKAH 1 / N — [nama task ringkas]
 
 Buat:
 [satu tindakan konkrit]
@@ -215,14 +221,14 @@ Buat:
 Kenapa:
 [satu sebab ringkas]
 
-Pass:
+Lulus:
 [syarat kejayaan yang boleh dilihat]
 
 Jika blocked:
 [satu fallback selamat atau titik kembali]
 
-Then:
-[STEP n+1 — label langkah seterusnya]
+Seterusnya:
+[LANGKAH n+1 — label langkah seterusnya]
 ```
 
 Penemuan semasa execution yang memberi kesan material kepada design mesti feed balik ke DESIGN. Jangan ubah keputusan LOCKED secara senyap.
@@ -236,59 +242,59 @@ Guna `DELIVERED !!` hanya apabila intended result benar-benar delivered, bukan s
 
 [hasil yang berjaya dihantar dalam bahasa biasa]
 
-✓ Built
-✓ Verified
-✓ Matches architecture
-✓ Recorded
+✓ Dibina
+✓ Diverifikasi
+✓ Sepadan dengan architecture
+✓ Direkod
 
-From messy ideas to 👍 THUMBS-UP architecture.
+Daripada idea serabut kepada architecture 👍 THUMBS-UP.
 ```
 
 Jika mana-mana empat semakan belum benar, kekal di DO IT / VERIFY dan nyatakan apa yang masih kurang.
 
 ---
 
-## IDEA LOG
+## LOG IDEA
 
 > AI tambah atau ringkaskan rekod hanya apabila ada perkara penting. Kekalkan kata-kata asal pemilik apabila berguna.
 
 <!--
 I-001 | OPEN
 Idea: ...
-Source: EXPLICIT / INFERRED
-Notes: ...
+Sumber: EXPLICIT / INFERRED
+Nota: ...
 -->
 
-## AGREED CANDIDATES
+## CALON DIPERSETUJUI
 
 > `AC` bermaksud arah atau calon yang pemilik setuju untuk diteroka. Ia belum keputusan muktamad.
 
 <!--
 AC-001 | AGREED
-Candidate: ...
-Why agreed: ...
-Open question: ...
+Calon: ...
+Sebab dipersetujui: ...
+Soalan terbuka: ...
 -->
 
-## OPEN NOTES
+## NOTA TERBUKA
 
 > Gunakan hanya apabila membantu mengelakkan idea/risiko penting hilang.
 
 <!--
 Q-001 | OPEN
-Question: ...
+Soalan: ...
 
 R-001 | OPEN
-Risk: ...
+Risiko: ...
 -->
 
-## CURRENT SELECTION MATRIX
+## MATRIKS PEMILIHAN SEMASA
 
 > Snapshot pemilihan semasa untuk membantu pemilik nampak trade-off tanpa menukar ZASSIMPLE menjadi ZASSELECTION. AI mesti mengemas kini matriks ini apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`.
 
-| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
+| Pilihan / Calon | Padanan wajib | Kekuatan | Risiko / Kelemahan | Bukti / Belum diketahui | Status |
 |---|---|---|---|---|---|
-| [candidate] | PASS / FAIL / UNKNOWN | ... | ... | ... | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
+| [calon] | PASS / FAIL / UNKNOWN | ... | ... | ... | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
 
 Aturan:
 
@@ -299,15 +305,15 @@ Aturan:
 - Jangan tambah command `SELECT` ke ZASSIMPLE. Keputusan muktamad guna command surface utama pemilik `PROCEED/LOCK`; `LOCK` / `LOCK DECISION` kekal alias compatibility.
 - Apabila fail boleh dikemas kini, simpan snapshot matriks terkini di bahagian ini supaya sesi/AI seterusnya dapat melihat perbandingan semasa.
 
-## DECISIONS
+## KEPUTUSAN
 
 > Hanya pemilik boleh mewujudkan rekod `LOCKED` melalui keyword `LOCK` yang jelas.
 
 <!--
 D-001 | LOCKED
-Decision: ...
-Reason: ...
-Locked by: Project Owner
+Keputusan: ...
+Sebab: ...
+Dikunci oleh: Project Owner
 -->
 
 ## ARCHITECTURE
@@ -331,15 +337,16 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.5 | 2026-10-02 | LOCK routing bahasa global: surface method berstruktur ikut fail EN/MY aktif; jadual I/AC/D dan matriks dalam fail Melayu dipaparkan dalam Bahasa Melayu, sementara ID/command canonical kekal stabil. |
 | 0.2.4 | 2026-10-01 | FINAL LOCK: ikon footer tetap dimuktamadkan sebagai 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE tanpa mengubah semantics command. |
 | 0.2.3 | 2026-10-01 | Ringkaskan footer tetap kepada ZASS !! / PROCEED-LOCK / SAVE, selaraskan label itu dengan semantics command sebenar, kekalkan LOCK/COMMIT sebagai alias compatibility, dan jadikan pengesahan architecture sebagai UX contextual dalam DESIGN. |
 | 0.2.2 | 2026-10-01 | Lengkapkan surface UX yang dikunci: landing DUMP-first, Stage Pulse perubahan stage/DO IT, kad Ready-to-lock, kad Architecture Forming progresif, gate CONFIRM ARCHITECTURE yang selaras, navigation task dengan Then, closure DELIVERED !! yang verified, dan identiti routing produk yang simple. |
 | 0.2.1 | 2026-10-01 | Betulkan footer wajib UX kepada CONFIRM ARCHITECTURE sambil mengekalkan DRAFT ARCH sebagai command drafting dalaman yang sah. |
 | 0.2.0 | 2026-10-01 | Lock UX DUMP-first, IDEA Trick, lifecycle 6D, Stage Pulse ringkas, progress architecture/action berasaskan criteria, lineage action plan tersembunyi, feedback dua hala action plan ↔ architecture, dan execution satu-task-pada-satu-masa. |
-| 0.1.7 | 2026-10-01 | Wajibkan CURRENT SELECTION MATRIX pada arahan ZASS/ZASS!! tanpa weighted score atau command SELECT; LOCK DECISION kekal kuasa pemilik. |
+| 0.1.7 | 2026-10-01 | Wajibkan MATRIKS PEMILIHAN SEMASA pada arahan ZASS/ZASS!! tanpa weighted score atau command SELECT; LOCK DECISION kekal kuasa pemilik. |
 | 0.1.6 | 2026-09-27 | Footer DRAFT ARCH; AI boleh mencadangkan draf dan BUILD, dengan pengesahan akhir dua langkah. |
 | 0.1.5 | 2026-09-27 | Benarkan draf architecture berversi kerja; tetapkan aturan tamat “Sedia untuk confirm?” dan andaian kritikal. |
-| 0.1.4 | 2026-09-27 | Tunjuk ZASSIMPLE UPDATE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |
+| 0.1.4 | 2026-09-27 | Tunjuk KEMAS KINI ZASSIMPLE dan cadangan AI hanya pada arahan ZASS; footer baharu pada setiap balasan dan keyword COMMIT. |
 | 0.1.3 | 2026-09-27 | Renamed the lightweight conversational template to ZASSIMPLE. |
 | 0.1.2 | 2026-09-27 | Added copy-ready Bahasa Melayu prompt for use after upload. |
 | 0.1.1 | 2026-09-27 | Required conversational response before the compact ZASSIMPLE update and refreshed visual footer. |

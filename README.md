@@ -59,6 +59,8 @@ Local tooling stays independently useful. AI-SYNC Web is the future UX / automat
 
 See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
+**Global language UX:** ordinary conversation may follow the user, but structured method surfaces follow the active method file language. If a user speaks Bahasa Melayu while an English method file is active, ZASS notifies once that the matching Malay file is available; it never switches files automatically.
+
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
 ---
@@ -493,10 +495,10 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.1.1 — English-default Full ZASS + Malay language routing  
-**Full ZASS:** v0.3.8 — `ZASS.md` default English; `ZASS_MY.md` Bahasa Melayu<br>
-**ZASSIMPLE:** v0.2.4  
-**ZASSELECTION:** v0.2.0  
+**ZASS SYSTEM:** v0.1.2 — global EN/MY method-surface routing  
+**Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
+**ZASSIMPLE:** v0.2.5  
+**ZASSELECTION:** v0.2.1  
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:

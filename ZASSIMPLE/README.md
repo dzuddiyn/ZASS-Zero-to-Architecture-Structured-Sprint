@@ -2,9 +2,11 @@
 
 > ## Got an idea? **Dump it.** 💬
 
-**Current version:** v0.2.4  
+**Current version:** v0.2.5  
 **Default landing:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE_MY.md)
+
+Language behavior: ordinary conversation may follow the user, while structured ZASSIMPLE tables/cards/record labels follow the active EN/MY method file. English users who start speaking Malay get one light notice that `ZASSIMPLE_MY.md` is available; switching is never automatic.
 
 > **ZASSIMPLE: lightweight on the surface, but lineage stays strong all the way to execution.**
 

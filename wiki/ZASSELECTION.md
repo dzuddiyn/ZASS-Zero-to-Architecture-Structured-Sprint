@@ -1,11 +1,13 @@
 # ZASSELECTION
 
-**Current version:** v0.2.0  
+**Current version:** v0.2.1  
 **Status:** UX FLOW LOCKED
 
 > **AI compares. You decide, AI saves.**
 
 ZASSELECTION is a selection method for choices where the main problem is comparing alternatives and keeping the resulting decision traceable.
+
+Language routing is global: `ZASSELECTION_EN.md` is the English default and `ZASSELECTION_MY.md` is the Malay companion. Conversation may continue in Malay with the English file, but structured matrices/cards/history labels follow the active method-file language.
 
 The short onboarding guide lives in [ZASSELECTION/README.md](../ZASSELECTION/README.md). This Wiki page holds the longer operating reference.
 

@@ -1,7 +1,7 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
-**System version:** 0.1.1  
-**Full ZASS surface alignment:** v0.3.8+<br>
+**System version:** 0.1.2  
+**Full ZASS surface alignment:** v0.3.9+<br>
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
@@ -397,7 +397,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.1.1
+ZASS SYSTEM v0.1.2
 DECIDE or BUILD?
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
@@ -415,11 +415,26 @@ Bump the **ZASS SYSTEM version** whenever a user-visible system-level contract c
 
 Do not require a Full ZASS/ZASSIMPLE/ZASSELECTION version bump when their own method semantics are unchanged.
 
-### Full ZASS language routing
+### Global method-language routing
 
-- `ZASS.md` is the default English Full ZASS method.
-- `ZASS_MY.md` is the Bahasa Melayu localization.
-- If a user speaks Bahasa Melayu while using `ZASS.md`, notify them lightly that `ZASS_MY.md` exists, but allow the conversation to continue in Bahasa Melayu without an automatic file switch.
+ZASS SYSTEM applies the same language behavior to Full ZASS, ZASSIMPLE, and ZASSELECTION.
+
+- English method files are the default distribution surface.
+- If a user speaks Bahasa Melayu while an English method file is active, notify them once, lightly, that the matching Malay file exists.
+- Use this wording pattern: **`Versi Bahasa Melayu tersedia: <Malay file>.`** Then: **`Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan fail English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.`**
+- Do not auto-switch files and do not repeat the notice on every reply.
+- Ordinary conversation may follow the user's language, but **structured method surfaces follow the active method file language**.
+- English method file active → tables, cards, matrices, I/AC/D record labels, stage/status explanations, and method prompts render in English.
+- Malay method file active → those same structured surfaces render in Bahasa Melayu.
+- Canonical IDs, commands, branded mnemonics, and state tokens may remain unchanged when translation would break lineage, automation, or a locked command contract.
 - Language choice does not change decision authority or project state.
+
+Current mapping:
+
+| Method | English/default | Bahasa Melayu |
+|---|---|---|
+| Full ZASS | `ZASS.md` | `ZASS_MY.md` |
+| ZASSIMPLE | `ZASSIMPLE_EN.md` | `ZASSIMPLE_MY.md` |
+| ZASSELECTION | `ZASSELECTION_EN.md` | `ZASSELECTION_MY.md` |
 
 This separation lets users and AI detect a ZASS SYSTEM upgrade without falsely claiming that an individual method changed.

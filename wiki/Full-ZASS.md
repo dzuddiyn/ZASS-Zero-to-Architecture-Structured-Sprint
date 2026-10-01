@@ -1,11 +1,11 @@
 # Full ZASS
 
-**Current version:** v0.3.8<br>
-**ZASS SYSTEM:** v0.1.1
+**Current version:** v0.3.9<br>
+**ZASS SYSTEM:** v0.1.2
 
 Full ZASS is the deeper decision-control method for projects where decisions, evidence, risks and architecture interact.
 
-v0.3.8 keeps that UI/UX alignment and makes English the default Full ZASS language: progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and shared local/Web core semantics. Core decision semantics remain unchanged.
+v0.3.9 keeps that UI/UX alignment and adds the global EN/MY structured-surface language contract: progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and shared local/Web core semantics. Core decision semantics remain unchanged.
 
 Core principles:
 
@@ -173,3 +173,5 @@ Authoritative files:
 
 - [ZASS.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md) — default English Full ZASS
 - [ZASS_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS_MY.md) — Bahasa Melayu localization
+
+With the Malay method active, structured tables/cards/I-AC-D labels render in Bahasa Melayu. With the English method active, those structured surfaces remain English even if ordinary conversation continues in Malay.

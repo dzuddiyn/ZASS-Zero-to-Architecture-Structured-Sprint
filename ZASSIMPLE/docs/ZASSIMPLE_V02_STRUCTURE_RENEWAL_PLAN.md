@@ -3,7 +3,7 @@
 **Status:** IMPLEMENTED AND VALIDATED  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
-**Current baseline:** ZASSIMPLE v0.2.4 in dedicated `ZASSIMPLE/` folder
+**Current baseline:** ZASSIMPLE v0.2.5 in dedicated `ZASSIMPLE/` folder
 
 > **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
 
@@ -102,7 +102,7 @@ The folder boundary prevents ZASSIMPLE execution artifacts from being mixed with
 
 ### `ZASSIMPLE_EN.md` / `ZASSIMPLE_MY.md`
 
-Purpose: lightweight reasoning and authoritative ZASSIMPLE method/project-state template. `ZASSIMPLE_EN.md` is the default landing; `ZASSIMPLE_MY.md` is the Bahasa Melayu companion.
+Purpose: lightweight reasoning and authoritative ZASSIMPLE method/project-state template. `ZASSIMPLE_EN.md` is the default landing; `ZASSIMPLE_MY.md` is the Bahasa Melayu companion. Structured method UI follows the active file language; conversation language may differ without forcing a file switch.
 
 Contains primarily:
 
@@ -425,7 +425,7 @@ DELIVERED !!
 
 The method remains lightweight to use while preserving durable lineage from the first idea through the delivered result.
 
-**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.2.4.  
+**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.2.5.  
 **Plan status:** LOCKED.
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

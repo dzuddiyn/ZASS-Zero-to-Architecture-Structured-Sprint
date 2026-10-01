@@ -1,6 +1,6 @@
 # ZASSIMPLE v0.2 Working Direction
 
-**Status:** LOCKED working direction — v0.2.4 final footer  
+**Status:** LOCKED working direction — v0.2.5 language routing  
 **Date:** 2026-10-01
 
 ## Core principle
@@ -38,6 +38,8 @@ Serious principle:
 **IDEA does not replace the method. IDEA is the surface UX for ZASSIMPLE.**
 
 The user only needs to **DUMP**. AI performs distillation, lineage capture, planning, and state management behind the scenes.
+
+Language routing is global: conversation prose may follow the user, but structured method surfaces follow the active `ZASSIMPLE_EN.md` / `ZASSIMPLE_MY.md` file. Malay surfaces localize tables/cards/I-AC-D labels while canonical IDs and commands remain stable.
 
 The default landing should lead with the invitation, not method explanation:
 
