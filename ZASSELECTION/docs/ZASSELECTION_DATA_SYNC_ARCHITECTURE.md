@@ -2,7 +2,7 @@
 
 **Document version:** 0.1.0  
 **Status:** SUPPORTING DESIGN — NOT CONFIRMED ARCHITECTURE  
-**Method authority:** `ZASSELECTION.md` v0.1.0  
+**Method authority:** `ZASSELECTION_EN.md` v0.2.0 (default); `ZASSELECTION_MY.md` is the Malay companion  
 **Date:** 2026-09-28
 
 > This document supports the method. It does not replace or silently extend the locked ZASSELECTION method baseline.
