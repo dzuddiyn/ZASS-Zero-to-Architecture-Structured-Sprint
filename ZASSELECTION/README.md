@@ -1,6 +1,7 @@
 # ZASSELECTION
 
 > **AI compares. You decide, AI saves.**
+
 > **ALL Your PRODUCT selection HISTORY COMPILED in a SINGLE SYSTEM !!**
 
 **Default English:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
