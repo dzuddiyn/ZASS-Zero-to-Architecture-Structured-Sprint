@@ -378,7 +378,7 @@ Verify at minimum:
 
 ### Phase 7 — release
 
-The structural renewal landed in **ZASSIMPLE v0.2.0** and subsequent UX completion/fixes brought the current method to **v0.2.2**.
+The structural renewal landed in **ZASSIMPLE v0.2.0**; subsequent UX completion, footer stabilization, and global language-routing work brought the current method to **v0.2.5**.
 
 The structure and UX contract are now implemented and validated against the locked requirements.
 

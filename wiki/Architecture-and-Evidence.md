@@ -73,7 +73,7 @@ Strong direct evidence covers the relevant critical assumptions and major risks.
 
 Do not create a second percentage.
 
-## Mandatory display rule — Full ZASS v0.3.8
+## Mandatory display rule — Full ZASS v0.3.9
 
 Evidence Confidence must be shown when:
 
