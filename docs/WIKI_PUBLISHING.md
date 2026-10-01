@@ -89,5 +89,6 @@ The authoritative method and decision semantics remain in the main repository fi
 
 - `ZASS.md`
 - `ZASSIMPLE.md`
-- `ZASSELECTION.md`
+- `ZASSELECTION/ZASSELECTION_EN.md` (default)
+- `ZASSELECTION/ZASSELECTION_MY.md` (Malay)
 - locked productization/decision documents under `docs/`
