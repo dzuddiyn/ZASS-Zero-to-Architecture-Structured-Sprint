@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION language-file default] — 2026-10-01
+
+- LOCKED `ZASSELECTION/ZASSELECTION_EN.md` as the default ZASSELECTION method file.
+- Renamed the Malay method to `ZASSELECTION/ZASSELECTION_MY.md`.
+- Updated English onboarding/prompts to reference `ZASSELECTION_EN.md` and Malay onboarding/prompts to reference `ZASSELECTION_MY.md`.
+- Aligned the English default method with the locked ZASSELECTION v0.2.0 REVIEW / SAVE / HISTORY workflow.
+- Updated README, Wiki, supporting architecture, and method-authority references without changing Full ZASS or ZASSIMPLE semantics.
+
 ## [zass check local test guide] — 2026-10-01
 
 - Added `docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md` with the recommended Windows/PowerShell validation flow for CR-010 v0.1.
