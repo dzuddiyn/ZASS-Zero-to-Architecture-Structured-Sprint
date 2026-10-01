@@ -130,7 +130,7 @@ Keep the footer fixed and simple rather than relying on AI to choose a dynamic f
 Current footer remains:
 
 ```text
-[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ DRAFT ARCH]
+[🧠 ZASS !!] -- [🔒 LOCK DECISION] -- [📦 COMMIT] -- [🏗️ CONFIRM ARCHITECTURE]
 ```
 
 ## Future escalation contract
@@ -140,5 +140,7 @@ Default landing for ZASS SYSTEM is ZASSIMPLE.
 After ZASSIMPLE is stable and field-tested in Temaya, define a formal notification contract for when Full ZASS may be useful.
 
 Escalation must be advisory, not forced. The user retains the choice to continue in ZASSIMPLE or move a decision set into Full ZASS.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

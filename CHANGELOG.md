@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE v0.2.1 footer UX fix] — 2026-10-01
+
+- Fixed the required ZASSIMPLE footer to end with `[🏗️ CONFIRM ARCHITECTURE]` instead of `[🏗️ DRAFT ARCH]`.
+- Kept `DRAFT ARCH` as a valid internal command for producing/revising a working architecture draft.
+- Updated English/Malay templates and the v0.2 working direction; ZASSIMPLE version is now v0.2.1.
+
 ## [ZASSIMPLE dedicated folder migration] — 2026-10-01
 
 - Moved the official ZASSIMPLE method into a dedicated `ZASSIMPLE/` folder.
@@ -329,5 +335,7 @@ All notable changes to ZASS are recorded here.
 ## [v0.1.2]
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
