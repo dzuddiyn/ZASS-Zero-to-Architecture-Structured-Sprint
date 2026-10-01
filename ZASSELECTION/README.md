@@ -2,6 +2,9 @@
 
 > **AI compares. You decide, AI saves.**
 
+**Default method:** [ZASSELECTION_EN.md](ZASSELECTION_EN.md)  
+**Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION_MY.md)
+
 ---
 
 # 🚀 Quick Start
@@ -139,7 +142,7 @@ No GitHub integration required.
 For this chat, use ZASSELECTION as the active and official selection method.
 
 Method:
-https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION.md
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_EN.md
 
 <continue your message or question here>
 ```
@@ -166,7 +169,7 @@ When you're ready:
 SAVE
 ```
 
-The AI generates an updated `ZASSELECTION.md` containing the current selection state.
+The AI generates an updated `ZASSELECTION_EN.md` containing the current selection state.
 
 Save it and reuse it later — even in another AI app.
 
@@ -174,7 +177,7 @@ Save it and reuse it later — even in another AI app.
 
 Download:
 
-**[ZASSELECTION.md](ZASSELECTION.md)**
+**[ZASSELECTION_EN.md](ZASSELECTION_EN.md)**
 
 Then:
 
@@ -207,7 +210,7 @@ Enable its GitHub integration / connector and grant access to your selection rep
 
 ```text
 Method:
-https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION.md
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_EN.md
 
 Selection repo:
 [YOUR REPO LINK]
@@ -215,7 +218,7 @@ Selection repo:
 <continue your message or question here>
 ```
 
-The AI should use the instructions inside `ZASSELECTION.md`.
+The AI should use the instructions inside `ZASSELECTION_EN.md`.
 
 When you select or SAVE:
 
@@ -431,7 +434,7 @@ Tak perlukan GitHub integration.
 Untuk chat ini, gunakan ZASSELECTION sebagai method pemilihan aktif & rasmi.
 
 Method:
-https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION.md
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
 
 <sambung mesej/soalan anda di sini>
 ```
@@ -458,7 +461,7 @@ Apabila sudah bersedia:
 SAVE
 ```
 
-AI akan menghasilkan updated `ZASSELECTION.md` yang mengandungi keadaan pemilihan semasa.
+AI akan menghasilkan updated `ZASSELECTION_MY.md` yang mengandungi keadaan pemilihan semasa.
 
 Simpan dan boleh guna semula di app AI lain!!
 
@@ -466,7 +469,7 @@ Simpan dan boleh guna semula di app AI lain!!
 
 Download:
 
-**[ZASSELECTION.md](ZASSELECTION.md)**
+**[ZASSELECTION_MY.md](ZASSELECTION_MY.md)**
 
 Kemudian:
 
@@ -499,7 +502,7 @@ Aktifkan GitHub integration / connector dan beri akses kepada repo pemilihan and
 
 ```text
 Method:
-https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION.md
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
 
 Selection repo:
 [YOUR REPO LINK]
@@ -507,7 +510,7 @@ Selection repo:
 <sambung mesej/soalan anda di sini>
 ```
 
-AI ikut instruction yang sudah terkandung dalam `ZASSELECTION.md`.
+AI ikut instruction yang sudah terkandung dalam `ZASSELECTION_MY.md`.
 
 Apabila anda memilih atau SAVE:
 
