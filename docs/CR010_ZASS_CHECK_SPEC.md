@@ -222,7 +222,7 @@ v0.1  current-file validator
 
 v0.2  Git-aware LOCKED drift
 
-v0.3  ACTION_PLAN consistency
+v0.3  ACTION_PLAN consistency — PLAN LOCKED / NOT STARTED
 
 v0.4  status / diff
 ```

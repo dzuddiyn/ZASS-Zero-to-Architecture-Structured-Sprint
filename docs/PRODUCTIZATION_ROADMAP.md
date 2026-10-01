@@ -30,6 +30,7 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Build the `zass check` MVP. **DONE — local v0.1 implemented under `cli/`**
 - CR-010 v0.2 Git-aware LOCKED drift. **DONE — implemented under `cli/`; specification in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`**
 - Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
+- CR-010 v0.3 ACTION_PLAN consistency plan. **LOCKED — `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; implementation NOT STARTED**
 - Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.

@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [CR-010 v0.3 plan locked] — 2026-10-01
+
+- LOCKED `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md` as the implementation plan for ACTION_PLAN consistency validation.
+- v0.3 scope covers ACTION_PLAN discovery, readiness snapshot consistency, source/version drift, explicit referenced ZASS IDs, conservative blocker consistency, and optional atomic-sync warnings.
+- `ACTION_PLAN.md` remains optional and `ZASS.md` remains authoritative; v0.3 does not create a second decision authority.
+- Kept `zass status`, `zass diff`, automatic repair, GitHub Actions, npm publication, remote URL checks, mandatory `.zass/schema.yml`, and AI semantic comparison out of scope.
+- Implementation remains **NOT STARTED** pending the v0.2 field gate. Full ZASS remains **v0.3.6**.
+
 ## [CR-010 v0.2] — 2026-10-01
 
 - Implemented Git-aware LOCKED-decision drift validation in local `zass check` v0.2.0.
