@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.7
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.8
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.1.0** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.1.1** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
@@ -38,6 +38,8 @@ Perubahan ini ialah **surface/system alignment**. Authority Full ZASS, human LOC
 `ZASS_MY.md` ialah versi Bahasa Melayu untuk Full ZASS. Fail default Full ZASS ialah `ZASS.md` dalam English.
 
 Jika pengguna menggunakan `ZASS.md` English tetapi bercakap dalam Bahasa Melayu, AI boleh meneruskan perbualan dalam Bahasa Melayu tanpa menukar authority file secara automatik.
+
+Pilihan bahasa ini merujuk kepada **method template**. Project state berasaskan Git kekal menggunakan `ZASS.md` sebagai fail canonical kecuali projek menetapkan contract lain secara eksplisit, supaya validator/discovery sedia ada kekal serasi.
 
 ---
 

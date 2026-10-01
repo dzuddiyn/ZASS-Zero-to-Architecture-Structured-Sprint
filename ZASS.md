@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.7
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.8
 
-Full ZASS is now aligned with **ZASS SYSTEM v0.1.0** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
+Full ZASS is aligned with **ZASS SYSTEM v0.1.1** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
 
 When Full ZASS is used through ZASS SYSTEM:
 
@@ -43,6 +43,8 @@ If the user clearly starts speaking in Bahasa Melayu while using `ZASS.md`, show
 > Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan `ZASS.md` English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.
 
 The conversation may continue in Bahasa Melayu while `ZASS.md` remains the active method file. Conversation language does not change authority or project state.
+
+This language choice applies to the **method template**. Git-backed project state continues to use canonical `ZASS.md` unless a project explicitly defines another contract, so existing validator/discovery behavior is preserved.
 
 ---
 

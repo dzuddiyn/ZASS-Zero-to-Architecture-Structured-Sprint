@@ -8,6 +8,7 @@ All notable changes to ZASS are recorded here.
 - Renamed the Bahasa Melayu Full ZASS authority file to `ZASS_MY.md` and removed `ZASS_EN.md` as a competing English filename.
 - LOCKED lightweight Malay-language discovery from the English default: `Versi Bahasa Melayu tersedia: ZASS_MY.md.` Users may continue speaking Bahasa Melayu while using `ZASS.md`, or switch to the Malay method file; no automatic file switch is allowed.
 - Harmonized one small language inconsistency: the Malay mobile-use section already warned about Desktop site visibility and committing secrets/tokens; the equivalent safety guidance is now present in English.
+- Clarified that `ZASS.md` / `ZASS_MY.md` are method-language entry files while Git-backed project state keeps canonical `ZASS.md`, preserving validator/discovery compatibility; corrected surface metadata to Full ZASS v0.3.8 / ZASS SYSTEM v0.1.1.
 - Updated current README, Wiki source, system contracts, roadmap, CR-010 examples, and active implementation references to the new filenames and versions.
 - Core decision semantics remain unchanged; this is a language-routing, discoverability, and authority-filename normalization release.
 
