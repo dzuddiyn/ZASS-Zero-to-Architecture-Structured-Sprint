@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.2.3  
+**Version:** 0.2.4  
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -106,7 +106,7 @@ Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
 
 End every reply exactly with:
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 ### AI response order
@@ -123,7 +123,7 @@ Why:
 [one short reason]
 ```
 
-The fixed footer supplies `[🔐 PROCEED/LOCK]`; the AI must not lock automatically.
+The fixed footer supplies `[📌 PROCEED/LOCK]`; the AI must not lock automatically.
 
 On `ZASS` or `ZASS!!`, reply naturally first, then show relevant records and the mandatory **CURRENT SELECTION MATRIX** summarizing current options/candidates. After the matrix, show an AI suggestion **not yet AC** and actual file status. Include the footer in **every** reply, even an ordinary one. If only one candidate exists, show one row; do not invent alternatives.
 
@@ -143,7 +143,7 @@ Current direction: [AI summary; not an owner decision]
 💡 ZASS suggestion, not yet AC: [contextual idea or question]
 📝 File status: [actually updated / proposal or demo only]
 
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 ### Special keywords
@@ -188,7 +188,7 @@ Reply: YA, CONFIRM ARCHITECTURE
 Every AI reply in this project must end with:
 
 ```text
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 This footer reminds the owner of available commands; it never triggers one.
@@ -331,6 +331,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.4 | 2026-10-01 | FINAL LOCK: fixed footer icons finalized as 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE with command semantics unchanged. |
 | 0.2.3 | 2026-10-01 | Simplified the fixed footer to ZASS !! / PROCEED-LOCK / SAVE, aligned those labels with real command semantics, retained LOCK/COMMIT as compatibility aliases, and moved architecture confirmation back to contextual DESIGN UX. |
 | 0.2.2 | 2026-10-01 | Completed the locked surface UX: DUMP-first landing, stage-change/DO IT pulse, Ready-to-lock card, progressive Architecture Forming card, aligned CONFIRM ARCHITECTURE gate, one-task navigation with Then, verified DELIVERED !! closure, and simple product-routing identity. |
 | 0.2.1 | 2026-10-01 | Fixed the required footer UX to use CONFIRM ARCHITECTURE while keeping DRAFT ARCH as a valid internal drafting command. |
@@ -351,6 +352,8 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 After actually updating the file, AI must briefly say what was recorded and what remains unclear. If AI only gives a proposal or a demo, it must say the real file was not changed.
 
 AI may recommend `PROCEED/LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `SAVE` when changes are meaningful enough to become a checkpoint. Legacy `LOCK` / `COMMIT` remain compatible, and all protected actions still require clear owner instruction.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

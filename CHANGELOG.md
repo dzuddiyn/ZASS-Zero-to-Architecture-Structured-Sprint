@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSIMPLE v0.2.4 final footer lock] — 2026-10-01
+
+- FINAL LOCKED the fixed footer as `[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]`.
+- The command semantics from v0.2.3 are unchanged; this release finalizes the visual icon set and exact `ZASS!!` label.
+- Updated EN/MY templates, working direction, and current-version references. ZASSIMPLE is now v0.2.4.
+
 ## [ZASSIMPLE v0.2.3 simplified footer] — 2026-10-01
 
 - LOCKED the fixed footer as `[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]`.
@@ -354,6 +360,8 @@ All notable changes to ZASS are recorded here.
 ## [v0.1.2]
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

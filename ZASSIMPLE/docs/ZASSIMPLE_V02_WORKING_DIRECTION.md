@@ -1,6 +1,6 @@
 # ZASSIMPLE v0.2 Working Direction
 
-**Status:** LOCKED working direction — v0.2.3 footer/surface command refinement  
+**Status:** LOCKED working direction — v0.2.4 final footer  
 **Date:** 2026-10-01
 
 ## Core principle
@@ -126,7 +126,7 @@ Why:
 [one short reason]
 ```
 
-The fixed footer provides `[🔐 PROCEED/LOCK]`. AI never locks automatically.
+The fixed footer provides `[📌 PROCEED/LOCK]`. AI never locks automatically.
 
 ## Execution UX
 
@@ -199,14 +199,14 @@ Keep the footer fixed and simple rather than relying on AI to choose a dynamic f
 Current footer remains:
 
 ```text
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 Surface-command contract:
 
-- `🧠⚡ ZASS !!` → open the current structured view/status when intentionally invoked.
-- `🔐 PROCEED/LOCK` → owner confirms the currently surfaced Ready-to-lock decision. It creates a LOCKED decision only when the target is clear; otherwise AI asks one short clarification. Legacy `LOCK` / `LOCK DECISION` remain compatible aliases.
-- `💾 SAVE` → persist the current project state, update version/history when appropriate, and commit to GitHub when write access is available. Legacy `COMMIT` remains a compatible alias.
+- `🔬 ZASS!!` → open the current structured view/status when intentionally invoked.
+- `📌 PROCEED/LOCK` → owner confirms the currently surfaced Ready-to-lock decision. It creates a LOCKED decision only when the target is clear; otherwise AI asks one short clarification. Legacy `LOCK` / `LOCK DECISION` remain compatible aliases.
+- `📚 SAVE` → persist the current project state, update version/history when appropriate, and commit to GitHub when write access is available. Legacy `COMMIT` remains a compatible alias.
 
 Contextual commands such as `[🏗️ CONFIRM ARCHITECTURE]` appear only when their stage requires them; they do not occupy the fixed footer.
 
@@ -225,6 +225,8 @@ Default landing for ZASS SYSTEM is ZASSIMPLE.
 After ZASSIMPLE is stable and field-tested in Temaya, define a formal notification contract for when Full ZASS may be useful.
 
 Escalation must be advisory, not forced. The user retains the choice to continue in ZASSIMPLE or move a decision set into Full ZASS.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

@@ -3,7 +3,7 @@
 > ## Ada idea? **DUMP saja.** 💬
 > Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
 
-**Version:** 0.2.3  
+**Version:** 0.2.4  
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -106,7 +106,7 @@ Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
 
 Akhiri setiap balasan tepat dengan:
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 ### Susunan balasan AI
@@ -123,7 +123,7 @@ Kenapa:
 [satu sebab ringkas]
 ```
 
-Footer tetap membekalkan `[🔐 PROCEED/LOCK]`; AI tidak boleh lock secara automatik.
+Footer tetap membekalkan `[📌 PROCEED/LOCK]`; AI tidak boleh lock secara automatik.
 
 Bagi arahan `ZASS` atau `ZASS!!`, jawab dahulu secara natural, kemudian paparkan rekod yang relevan dan **CURRENT SELECTION MATRIX** yang wajib merumuskan option/candidate semasa. Selepas matriks, beri cadangan AI yang **belum AC** dan status fail. Footer tetap ada pada **setiap** balasan, termasuk balasan biasa. Jika hanya ada satu candidate, matriks tetap mempunyai satu baris; jangan cipta option palsu.
 
@@ -143,7 +143,7 @@ Current direction: [rumusan AI; bukan keputusan pemilik]
 💡 Cadangan ZASS, belum AC: [cadangan atau persoalan yang sesuai]
 📝 Status fail: [sudah dikemas kini / cadangan atau demo sahaja]
 
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 ### Keyword khas
@@ -188,7 +188,7 @@ Balas: YA, CONFIRM ARCHITECTURE
 Setiap balasan AI dalam projek ini mesti berakhir dengan:
 
 ```text
-[🧠⚡ ZASS !!] -- [🔐 PROCEED/LOCK] -- [💾 SAVE]
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
 Footer ini ialah peringatan pengguna, bukan arahan automatik.
@@ -331,6 +331,7 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.4 | 2026-10-01 | FINAL LOCK: ikon footer tetap dimuktamadkan sebagai 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE tanpa mengubah semantics command. |
 | 0.2.3 | 2026-10-01 | Ringkaskan footer tetap kepada ZASS !! / PROCEED-LOCK / SAVE, selaraskan label itu dengan semantics command sebenar, kekalkan LOCK/COMMIT sebagai alias compatibility, dan jadikan pengesahan architecture sebagai UX contextual dalam DESIGN. |
 | 0.2.2 | 2026-10-01 | Lengkapkan surface UX yang dikunci: landing DUMP-first, Stage Pulse perubahan stage/DO IT, kad Ready-to-lock, kad Architecture Forming progresif, gate CONFIRM ARCHITECTURE yang selaras, navigation task dengan Then, closure DELIVERED !! yang verified, dan identiti routing produk yang simple. |
 | 0.2.1 | 2026-10-01 | Betulkan footer wajib UX kepada CONFIRM ARCHITECTURE sambil mengekalkan DRAFT ARCH sebagai command drafting dalaman yang sah. |
@@ -351,6 +352,8 @@ AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas, walaupun belum
 Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa yang direkodkan dan apa yang masih belum jelas. Jika AI hanya memberi cadangan atau demo, ia mesti menyatakan bahawa fail sebenar belum diubah.
 
 AI boleh mencadangkan `PROCEED/LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `SAVE` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. `LOCK` / `COMMIT` kekal compatible, dan semua protected action masih memerlukan arahan jelas daripada pemilik.
+
+[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
