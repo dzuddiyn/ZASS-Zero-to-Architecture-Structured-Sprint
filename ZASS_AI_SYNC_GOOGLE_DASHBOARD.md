@@ -1,12 +1,22 @@
 # ZASS AI Sync and Google Dashboard
 
-**Status:** Locked implementation order; pilot not yet built
+**Status:** Integration reference; AI-SYNC Web system direction locked, implementation not yet built
 
 **Pilot scope:** Full ZASS workflow first
 
 **Document version:** 0.2
 
 **Date:** 2026-09-28
+
+> **Current system direction (2026-10-01):** AI-SYNC Web is now the locked ZASS SYSTEM product UX / automation layer over a first-class local core. The Google Sheets / Sites / Notion material in this document remains an integration/reference path, not the required primary product surface. See [docs/ZASS_SYSTEM_UI_UX_CONTRACT.md](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
+
+```text
+LOCAL FIRST-CLASS CORE  ←→  AI-SYNC WEB
+             ↓
+      GitHub Source of Truth
+```
+
+The local CLI/validator must remain useful without AI-SYNC. AI-SYNC must reuse core validation/authority semantics rather than becoming a second independent rule engine.
 
 > **Bukan potong fikir; potong ulang fikir.**
 

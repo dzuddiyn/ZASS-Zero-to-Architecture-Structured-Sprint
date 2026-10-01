@@ -29,6 +29,38 @@ Continue with any AI
 
 ---
 
+# ZASS SYSTEM
+
+The locked product entry model is:
+
+> **DECIDE or BUILD?**
+
+```text
+ZASS SYSTEM
+    ↓
+DECIDE or BUILD?
+    │
+    ├── DECIDE → ZASSELECTION
+    │
+    └── BUILD  → ZASSIMPLE → Full ZASS when needed
+```
+
+The system is designed around two complementary first-class surfaces:
+
+```text
+LOCAL CORE / CLI  ←→  AI-SYNC WEB
+          ↓
+  GitHub Source of Truth
+```
+
+Local tooling stays independently useful. AI-SYNC Web is the future UX / automation layer: conversational DUMP-first workspace, progressive disclosure, contextual decision/architecture/task cards, factual Git-backed SAVE receipts, and review/history when needed.
+
+**Primary UX rule:** show the user the **next meaningful human action**, not all internal framework complexity.
+
+See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
+
+---
+
 # Start ZASS your way
 
 You do not need to learn the whole framework before using it.

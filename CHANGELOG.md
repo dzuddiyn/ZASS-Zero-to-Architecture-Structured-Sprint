@@ -2,6 +2,18 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM UI/UX contract] — 2026-10-01
+
+- LOCKED the first-class system split: local ZASS core/CLI remains independently usable while AI-SYNC Web becomes the UX / automation / projection layer over the same authority.
+- LOCKED **DECIDE or BUILD?** as the top-level entry, with DECIDE → ZASSELECTION and BUILD → ZASSIMPLE → Full ZASS when needed.
+- Promoted ZASSIMPLE UX lessons to system level: DUMP-first workspace, progressive disclosure, compact Project Pulse, contextual Ready-to-Lock / Architecture Forming / Escalation / Current Task / Delivered cards, and one-task-at-a-time execution.
+- LOCKED factual SAVE/sync states backed by real Git receipts; AI-SYNC must not claim persistence from generated Markdown alone.
+- LOCKED artifact projection: ACTION_PLAN → current focus, ARCHITECTURE → architecture state, TASKS → current task; users need not browse all internal files during normal work.
+- LOCKED **one engine, two presentations**: engineering-first local CLI output and human-facing AI-SYNC Web output must reuse the same validator/core semantics rather than duplicate rules.
+- LOCKED the primary UX principle: **Present only the next meaningful human action.**
+- Reframed current productization priority around local first-class tooling → AI-SYNC automation → product UX; real-world evidence remains useful but is not a current engineering gate.
+- Added `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; no Full ZASS, ZASSIMPLE, or ZASSELECTION method-version bump was made.
+
 ## [ZASSIMPLE v0.2.4 final footer lock] — 2026-10-01
 
 - FINAL LOCKED the fixed footer as `[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]`.

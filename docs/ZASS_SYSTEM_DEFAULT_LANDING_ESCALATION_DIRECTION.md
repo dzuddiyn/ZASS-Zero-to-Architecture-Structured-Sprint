@@ -146,7 +146,37 @@ Separately, CR-010 v0.3 ACTION_PLAN consistency remains a locked implementation 
 
 For now, **CR-010 v0.3 implementation is deferred / not started**.
 
-## 7. Authority boundary
+## 7. System architecture boundary
+
+The ZASS SYSTEM now locks a two-surface architecture:
+
+```text
+LOCAL FIRST-CLASS CORE  ←→  AI-SYNC WEB
+             ↓
+      GitHub Source of Truth
+```
+
+Local tooling remains independently useful. AI-SYNC Web provides human-facing UX, automation, sync, and projection without becoming a second decision authority.
+
+The detailed locked UI/UX contract is documented in [ZASS_SYSTEM_UI_UX_CONTRACT.md](ZASS_SYSTEM_UI_UX_CONTRACT.md).
+
+## 8. ZASSIMPLE UX promoted to system-level rules
+
+The following lessons are promoted from ZASSIMPLE into ZASS SYSTEM product direction:
+
+- DUMP/chat-first entry for BUILD;
+- progressive disclosure of internal lineage;
+- compact current-stage + next-stage Project Pulse;
+- contextual Ready-to-Lock, Architecture Forming, Escalation, Current Task, and Delivered cards;
+- one-task-at-a-time execution;
+- factual SAVE/sync states backed by real commit receipts;
+- web projection of ACTION_PLAN / ARCHITECTURE / TASKS instead of forcing users to browse internal artifacts;
+- one validator/core semantics source with separate CLI and Web presentation;
+- the primary UI rule: **present only the next meaningful human action**.
+
+The literal ZASSIMPLE chat footer is not a required web UI pattern. Persistent/contextual controls may replace repeated chat commands.
+
+## 9. Authority boundary
 
 This document locks a product working direction only.
 

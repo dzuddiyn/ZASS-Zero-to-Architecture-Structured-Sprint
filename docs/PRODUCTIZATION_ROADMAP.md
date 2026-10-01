@@ -4,7 +4,7 @@
 **Date:** 2026-09-30  
 **Scope:** Post-methodology productization priorities
 
-> **Consistency → Validator → Automation → Real-world evidence**
+> **Consistency → Local first-class tooling → AI-SYNC automation → Product UX**
 
 ## Feature freeze
 
@@ -32,11 +32,23 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
 - CR-010 v0.3 ACTION_PLAN consistency plan. **LOCKED — `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; implementation NOT STARTED**
 - ZASS SYSTEM default landing / escalation direction. **LOCKED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; `DECIDE or BUILD?` routes DECIDE → ZASSELECTION and BUILD → ZASSIMPLE; Temaya field-test before Full-ZASS escalation contract**
+- ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; local tooling remains first-class, AI-SYNC Web is UX/automation projection over the same authority and validator semantics**
 - Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.
 
-## P2 — Field evidence
+## P2 — AI-SYNC integration and adoption
+
+Current engineering priority is not blocked on proving the methodology through external case studies.
+
+- Keep local tooling first-class and independently usable.
+- Reuse validator/core semantics inside AI-SYNC rather than duplicating them.
+- Implement the locked `DECIDE or BUILD?` landing model.
+- Use DUMP-first workspace, progressive disclosure, contextual cards, Project Pulse, and Review/History surfaces.
+- Require factual SAVE/sync receipts backed by real Git commits.
+- Keep GitHub-backed project state authoritative; AI-SYNC is the product UX / automation layer.
+
+## P3 — Field evidence (non-blocking)
 
 Use ZASS on multiple real projects and record evidence such as:
 
