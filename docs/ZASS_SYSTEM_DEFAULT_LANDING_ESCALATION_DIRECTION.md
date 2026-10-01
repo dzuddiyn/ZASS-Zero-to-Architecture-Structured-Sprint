@@ -1,5 +1,6 @@
 # ZASS SYSTEM — Default Landing & Escalation Working Direction
 
+**ZASS SYSTEM version:** 0.1.0  
 **Status:** LOCKED WORKING DIRECTION  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  

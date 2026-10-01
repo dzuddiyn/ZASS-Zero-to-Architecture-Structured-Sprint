@@ -59,6 +59,8 @@ Local tooling stays independently useful. AI-SYNC Web is the future UX / automat
 
 See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
+**System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
+
 ---
 
 # Start ZASS your way
@@ -491,6 +493,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
+**ZASS SYSTEM:** v0.1.0 — DECIDE or BUILD? + Local First-Class / AI-SYNC UI/UX baseline  
 **Full ZASS:** v0.3.6  
 **ZASSIMPLE:** v0.2.4  
 **ZASSELECTION:** v0.2.0  

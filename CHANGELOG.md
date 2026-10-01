@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM v0.1.0] — 2026-10-01
+
+- Established independent **ZASS SYSTEM versioning** so users and AI can detect product-level UI/UX and integration-contract upgrades even when method semantics remain unchanged.
+- Released **ZASS SYSTEM v0.1.0** as the first system baseline covering `DECIDE or BUILD?`, Local First-Class Core + AI-SYNC Web, the locked system UI/UX contract, factual SAVE/sync receipts, progressive disclosure, contextual cards, Project Pulse, and one-engine/two-presentations.
+- Added the rule that material user-visible system routing, UI/UX, product-surface, integration, escalation, sync, or automation changes must bump the ZASS SYSTEM version.
+- Kept Full ZASS v0.3.6, ZASSIMPLE v0.2.4, and ZASSELECTION v0.2.0 unchanged because their method semantics were not changed by this system release.
+
 ## [ZASS SYSTEM UI/UX contract] — 2026-10-01
 
 - LOCKED the first-class system split: local ZASS core/CLI remains independently usable while AI-SYNC Web becomes the UX / automation / projection layer over the same authority.

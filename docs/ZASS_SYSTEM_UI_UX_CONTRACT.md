@@ -1,5 +1,6 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
+**System version:** 0.1.0  
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
@@ -388,4 +389,29 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 - start CR-010 v0.3;
 - authorize automatic Full-ZASS migration.
 
-No method version bump is required solely for this system/UI contract.
+## 15. Versioning contract
+
+`ZASS SYSTEM` has its own version independent of Full ZASS, ZASSIMPLE, and ZASSELECTION.
+
+Current baseline:
+
+```text
+ZASS SYSTEM v0.1.0
+DECIDE or BUILD?
+Local First-Class Core + AI-SYNC Web
+UI/UX Product Surface Contract
+```
+
+Bump the **ZASS SYSTEM version** whenever a user-visible system-level contract changes materially, including:
+
+- landing/routing behavior;
+- primary UI/UX interaction model;
+- product-surface structure;
+- local-core ↔ AI-SYNC integration contract;
+- save/sync user-visible semantics;
+- escalation UX;
+- system-level automation behavior.
+
+Do not require a Full ZASS/ZASSIMPLE/ZASSELECTION version bump when their own method semantics are unchanged.
+
+This separation lets users and AI detect a ZASS SYSTEM upgrade without falsely claiming that an individual method changed.
