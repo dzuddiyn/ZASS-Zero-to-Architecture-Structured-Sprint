@@ -62,7 +62,7 @@ Naik ke Full ZASS apabila:
 - risiko security, privasi, kos, data loss atau operasi menjadi penting;
 - sejarah keputusan susah dijejak melalui chat sahaja.
 
-## Full ZASS v0.3.5
+## Full ZASS v0.3.8
 
 Command utama:
 
@@ -119,7 +119,7 @@ MEDIUM
 HIGH
 ```
 
-Dalam Full ZASS v0.3.5, Evidence Confidence wajib dipaparkan apabila readiness architecture benar-benar dinilai pada titik yang ditetapkan.
+Dalam Full ZASS v0.3.8, Evidence Confidence wajib dipaparkan apabila readiness architecture benar-benar dinilai pada titik yang ditetapkan.
 
 ## Source of Truth
 
@@ -136,6 +136,7 @@ Satu trusted writer menyimpan perubahan yang sudah diluluskan.
 - [Quick Start](Quick-Start.md)
 - [ZASSIMPLE](ZASSIMPLE.md)
 - [Full ZASS](Full-ZASS.md)
+- [ZASS_MY.md — Full ZASS Bahasa Melayu](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS_MY.md)
 - [Architecture & Evidence](Architecture-and-Evidence.md)
 - [Cross-AI Handoff](Cross-AI-Handoff.md)
 - [Productization & zass check](Productization-and-zass-check.md)

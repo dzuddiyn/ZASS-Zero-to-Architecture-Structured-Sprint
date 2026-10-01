@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.8 consistency follow-up] — 2026-10-02
+
+- Fixed remaining Wiki-source inconsistencies after the English-default Full ZASS migration.
+- Updated the Bahasa Melayu Wiki summary from Full ZASS v0.3.5 to v0.3.8 and added a direct `ZASS_MY.md` link.
+- Updated the Wiki sidebar to expose both `ZASS.md` default English and `ZASS_MY.md` Bahasa Melayu.
+- Updated the Architecture & Evidence Wiki display-rule label to Full ZASS v0.3.8.
+- Teaching fixtures intentionally pinned to older project-state versions were not changed.
+
 ## [v0.3.8 / ZASS SYSTEM v0.1.1] — 2026-10-02
 
 - LOCKED `ZASS.md` as the default **English** Full ZASS method.
