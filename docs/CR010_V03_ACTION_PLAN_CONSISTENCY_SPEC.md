@@ -95,7 +95,7 @@ Parse the canonical snapshot block:
 
 - **Progress:** [███████░░░] 70%
 - **Status:** READY FOR DRAFT ARCH
-- **Source:** `ZASS.md` v0.3.6 — same Git commit
+- **Source:** `ZASS.md` v0.3.7 — same Git commit
 - **Last assessed:** 2026-10-01
 - **Next threshold:** 85% — DRAFT ARCH UNDER REVIEW
 ```
@@ -164,7 +164,7 @@ If the state cannot be determined reliably, prefer a warning/skip over guessing.
 The ACTION_PLAN snapshot may declare a source such as:
 
 ```text
-Source: ZASS.md v0.3.6 — same Git commit
+Source: ZASS.md v0.3.7 — same Git commit
 ```
 
 If the explicit ACTION_PLAN ZASS version differs from the actual ZASS version:

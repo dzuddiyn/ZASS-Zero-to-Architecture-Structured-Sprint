@@ -1,6 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.6 (ZASS Convergence Loop locked; research follows candidate formation)
+**Version:** 0.3.7 (ZASS SYSTEM UI/UX alignment; core decision semantics unchanged)
+**ZASS SYSTEM:** v0.1.0
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -13,6 +14,23 @@
 > **ZASS Principle #3 — AI produces possibilities. Evidence tests them. Humans decide. Architecture follows the decisions.**
 >
 > **ZASS Principle #4 — Capture broadly, converge deliberately: do not filter ideas too early. Form candidates first, then research only questions that can change the choice; cross-check evidence, LOCK decisions, and let architecture emerge from those decisions.**
+
+---
+
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.7
+
+Full ZASS is now aligned with **ZASS SYSTEM v0.1.0** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
+
+When Full ZASS is used through ZASS SYSTEM:
+
+- the top-level entry model is **DECIDE or BUILD?**;
+- BUILD starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
+- the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
+- the UI/AI should **present only the next meaningful human action**;
+- SAVE/sync is successful only when real persistence occurs and a factual receipt/commit exists;
+- local CLI and AI-SYNC Web must reuse the same validator/core semantics rather than maintain separate rule engines.
+
+This is a **surface/system alignment** release. Full ZASS authority, human LOCK, Evidence Confidence, the convergence loop, and the architecture confirmation gate remain unchanged.
 
 ---
 
@@ -112,7 +130,7 @@ End **every** AI reply with:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.5 / latest v0.3.6
+⬆️ UPDATE ZASS? now v0.3.6 / latest v0.3.7
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.

@@ -55,10 +55,11 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| Full ZASS | v0.3.6 |
-| ZASSIMPLE | v0.1.7 |
+| ZASS SYSTEM | v0.1.0 |
+| Full ZASS | v0.3.7 |
+| ZASSIMPLE | v0.2.4 |
 | ZASSELECTION | v0.2.0 |
-| `zass check` | Local v0.1 implemented; v0.2 plan locked/not started |
+| `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |
 

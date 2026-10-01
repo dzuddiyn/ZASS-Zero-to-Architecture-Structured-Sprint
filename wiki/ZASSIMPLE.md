@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Current version:** v0.1.7
+**Current version:** v0.2.4
 
 ZASSIMPLE is the default lightweight way to use ZASS.
 

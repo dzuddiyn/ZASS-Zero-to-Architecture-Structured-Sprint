@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [v0.3.7] — 2026-10-01
+
+- Bumped Full ZASS to **v0.3.7** so existing Full-ZASS users and AI version checks can detect the new ZASS SYSTEM UI/UX/product-surface alignment.
+- Added explicit **ZASS SYSTEM v0.1.0** compatibility metadata to both Full ZASS language files.
+- Added a compact system-surface alignment section covering `DECIDE or BUILD?`, ZASSIMPLE-first BUILD routing, progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and one-engine/two-presentations.
+- Core Full ZASS decision semantics remain unchanged: human LOCK authority, Evidence Confidence, convergence, Git authority, and architecture confirmation gates are preserved.
+- Updated README, Wiki source, Wiki publishing reference, and CR-010 v0.3 source-version examples to the current versions.
 ## [ZASS SYSTEM v0.1.0] — 2026-10-01
 
 - Established independent **ZASS SYSTEM versioning** so users and AI can detect product-level UI/UX and integration-contract upgrades even when method semantics remain unchanged.

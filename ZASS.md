@@ -1,6 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.6 (ZASS Convergence Loop dikunci; research selepas candidate terbentuk)
+**Version:** 0.3.7 (ZASS SYSTEM UI/UX alignment; core decision semantics unchanged)
+**ZASS SYSTEM:** v0.1.0
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
@@ -13,6 +14,23 @@
 > **ZASS Principle #3 — AI menghasilkan kemungkinan. Evidence menguji. Manusia memutuskan. Architecture mematuhi keputusan.**
 >
 > **ZASS Principle #4 — Tangkap luas, tumpu dengan sengaja: jangan tapis idea terlalu awal. Bentuk candidate dahulu, kemudian research hanya soalan yang boleh mengubah pilihan; silang evidence, LOCK keputusan, dan biarkan architecture muncul daripada keputusan itu.**
+
+---
+
+# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.7
+
+Full ZASS kini selari dengan **ZASS SYSTEM v0.1.0** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
+
+Apabila Full ZASS digunakan melalui ZASS SYSTEM:
+
+- entry utama sistem ialah **DECIDE or BUILD?**;
+- BUILD bermula dengan ZASSIMPLE dan naik ke Full ZASS hanya apabila governance lebih kuat diperlukan;
+- pengalaman pengguna mesti menggunakan **progressive disclosure** dan tidak memaparkan semua ID/ledger secara default;
+- UI/AI perlu **present only the next meaningful human action**;
+- SAVE/sync hanya dianggap berjaya apabila persistence sebenar berlaku dan receipt/commit sebenar tersedia;
+- local CLI dan AI-SYNC Web mesti berkongsi semantics validator/core yang sama, bukan dua rule engine berasingan.
+
+Perubahan ini ialah **surface/system alignment**. Authority Full ZASS, human LOCK, Evidence Confidence, convergence loop, dan architecture confirmation gate kekal seperti sebelumnya.
 
 ---
 
@@ -112,7 +130,7 @@ Akhiri **setiap** balasan AI dengan:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
 
-⬆️ UPDATE ZASS? now v0.3.5 / latest v0.3.6
+⬆️ UPDATE ZASS? now v0.3.6 / latest v0.3.7
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.

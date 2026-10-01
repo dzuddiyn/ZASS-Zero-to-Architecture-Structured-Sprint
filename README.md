@@ -494,7 +494,7 @@ You normally do **not** need all of them at the beginning.
 # Current status
 
 **ZASS SYSTEM:** v0.1.0 — DECIDE or BUILD? + Local First-Class / AI-SYNC UI/UX baseline  
-**Full ZASS:** v0.3.6  
+**Full ZASS:** v0.3.7 — aligned with ZASS SYSTEM v0.1.0 UI/UX contract<br>
 **ZASSIMPLE:** v0.2.4  
 **ZASSELECTION:** v0.2.0  
 **License:** [MIT](LICENSE)

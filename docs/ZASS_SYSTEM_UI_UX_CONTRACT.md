@@ -1,6 +1,7 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
 **System version:** 0.1.0  
+**Full ZASS surface alignment:** v0.3.7+<br>
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  

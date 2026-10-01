@@ -1,8 +1,11 @@
 # Full ZASS
 
-**Current version:** v0.3.6
+**Current version:** v0.3.7<br>
+**ZASS SYSTEM:** v0.1.0
 
 Full ZASS is the deeper decision-control method for projects where decisions, evidence, risks and architecture interact.
+
+v0.3.7 aligns the Full ZASS surface with the ZASS SYSTEM v0.1.0 contract: progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and shared local/Web core semantics. Core decision semantics remain unchanged.
 
 Core principles:
 
