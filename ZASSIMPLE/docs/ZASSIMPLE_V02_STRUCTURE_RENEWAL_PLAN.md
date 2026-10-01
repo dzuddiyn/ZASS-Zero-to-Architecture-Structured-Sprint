@@ -73,7 +73,7 @@ ZASSIMPLE moves into its own dedicated folder inside the same ZASS SYSTEM reposi
 ZASS-Zero-to-Architecture-Structured-Sprint/
 │
 ├── ZASS.md
-├── ZASS_EN.md
+├── ZASS_MY.md
 │
 ├── ZASSIMPLE/
 │   ├── README.md

@@ -80,7 +80,7 @@ Do not edit the Wiki and main-source bundle independently for long periods; that
 
 The four existing infographic assets were authored for ZASS v0.3.2 and should be treated as historical visual references until regenerated for the current method.
 
-Current text documentation is authoritative when an old infographic conflicts with v0.3.7 semantics.
+Current text documentation is authoritative when an old infographic conflicts with v0.3.8 semantics.
 
 When the image assets are published, place them in an `images/` directory in the Wiki repository and update `Infographics.md` with relative image links.
 
@@ -90,7 +90,8 @@ The GitHub Wiki is a documentation/reference layer.
 
 The authoritative method and decision semantics remain in the main repository files such as:
 
-- `ZASS.md`
+- `ZASS.md` — default English Full ZASS
+- `ZASS_MY.md` — Bahasa Melayu localization
 - `ZASSIMPLE.md`
 - `ZASSELECTION/ZASSELECTION_EN.md` (default)
 - `ZASSELECTION/ZASSELECTION_MY.md` (Malay)

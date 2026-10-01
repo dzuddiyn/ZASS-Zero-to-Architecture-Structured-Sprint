@@ -1,65 +1,77 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.7 (ZASS SYSTEM UI/UX alignment; core decision semantics unchanged)
-**ZASS SYSTEM:** v0.1.0
+**Version:** 0.3.8 (English-default Full ZASS + Malay language routing; core decision semantics unchanged)
+**ZASS SYSTEM:** v0.1.1
+**Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
 **Owner:** Project Owner  
 **Locked date:** 2026-09-26
 
-> **ZASS Principle #1 — Bukan potong fikir; potong ulang fikir.**
+> **ZASS Principle #1 — Don't shortcut thinking; eliminate repeated thinking.**
 >
-> **ZASS Principle #2 — Fikir bebas. Rekod keputusan. Kunci yang pasti. Bina dari yang terkunci.**
+> **ZASS Principle #2 — Think freely. Record decisions. Lock what is certain. Build from what is locked.**
 >
-> **ZASS Principle #3 — AI menghasilkan kemungkinan. Evidence menguji. Manusia memutuskan. Architecture mematuhi keputusan.**
+> **ZASS Principle #3 — AI produces possibilities. Evidence tests them. Humans decide. Architecture follows the decisions.**
 >
-> **ZASS Principle #4 — Tangkap luas, tumpu dengan sengaja: jangan tapis idea terlalu awal. Bentuk candidate dahulu, kemudian research hanya soalan yang boleh mengubah pilihan; silang evidence, LOCK keputusan, dan biarkan architecture muncul daripada keputusan itu.**
+> **ZASS Principle #4 — Capture broadly, converge deliberately: do not filter ideas too early. Form candidates first, then research only questions that can change the choice; cross-check evidence, LOCK decisions, and let architecture emerge from those decisions.**
 
 ---
 
 # ZASS SYSTEM SURFACE ALIGNMENT — v0.3.7
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.1.0** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
+Full ZASS is now aligned with **ZASS SYSTEM v0.1.0** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
 
-Apabila Full ZASS digunakan melalui ZASS SYSTEM:
+When Full ZASS is used through ZASS SYSTEM:
 
-- entry utama sistem ialah **DECIDE or BUILD?**;
-- BUILD bermula dengan ZASSIMPLE dan naik ke Full ZASS hanya apabila governance lebih kuat diperlukan;
-- pengalaman pengguna mesti menggunakan **progressive disclosure** dan tidak memaparkan semua ID/ledger secara default;
-- UI/AI perlu **present only the next meaningful human action**;
-- SAVE/sync hanya dianggap berjaya apabila persistence sebenar berlaku dan receipt/commit sebenar tersedia;
-- local CLI dan AI-SYNC Web mesti berkongsi semantics validator/core yang sama, bukan dua rule engine berasingan.
+- the top-level entry model is **DECIDE or BUILD?**;
+- BUILD starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
+- the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
+- the UI/AI should **present only the next meaningful human action**;
+- SAVE/sync is successful only when real persistence occurs and a factual receipt/commit exists;
+- local CLI and AI-SYNC Web must reuse the same validator/core semantics rather than maintain separate rule engines.
 
-Perubahan ini ialah **surface/system alignment**. Authority Full ZASS, human LOCK, Evidence Confidence, convergence loop, dan architecture confirmation gate kekal seperti sebelumnya.
+This is a **surface/system alignment** release. Full ZASS authority, human LOCK, Evidence Confidence, the convergence loop, and the architecture confirmation gate remain unchanged.
+
+# LANGUAGE ROUTING — ENGLISH DEFAULT
+
+`ZASS.md` is the default Full ZASS method and is written in English. `ZASS_MY.md` is the Bahasa Melayu localization.
+
+If the user clearly starts speaking in Bahasa Melayu while using `ZASS.md`, show this lightweight notification once when it is useful; do not repeat it on every reply and do not switch files automatically:
+
+> **Versi Bahasa Melayu tersedia: `ZASS_MY.md`.**
+> Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan `ZASS.md` English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.
+
+The conversation may continue in Bahasa Melayu while `ZASS.md` remains the active method file. Conversation language does not change authority or project state.
 
 ---
 
-# QUICK MANUAL — CARA GUNA ZASS
+# QUICK MANUAL — HOW TO USE ZASS
 
-ZASS ialah workflow untuk membawa idea mentah kepada architecture dengan cepat tanpa kehilangan konteks, mengulang perbincangan lama, atau membiarkan AI mengubah keputusan secara senyap.
+ZASS is a workflow for taking raw ideas to architecture quickly without losing context, repeating old discussions, or allowing AI to silently change decisions.
 
-Fail ini ialah **source of truth** untuk proses idea → decision → architecture.
+This file is the **source of truth** for the idea → decision → architecture process.
 
-## CARA GUNA HARIAN — CAKAP SAHAJA
+## DAILY USE — JUST SPEAK NORMALLY
 
-Berikan AI **fail ZASS projek terkini**, kemudian bercakap seperti biasa. Abang tidak perlu hafal kod, isi borang, memilih metodologi atau menyunting jadual. AI mengurus struktur fail dan mencadangkan kemas kini; abang menyemak maksudnya dan memilih keputusan.
+Give the AI the **latest ZASS file for the project**, then speak normally. You do not need to memorize IDs, fill forms, choose a methodology, or edit tables. The AI manages the file structure and proposes updates; you review the meaning and choose the decisions.
 
-| Bila | Apa boleh abang cakap |
+| When | What you can say |
 |---|---|
-| Idea baru muncul | “Aku ada idea begini...” Cerita bebas, walaupun belum tersusun. |
-| Tamat berbincang | “Masukkan isi penting perbincangan ini ke ZASS. Asingkan fakta, tafsiran dan perkara yang belum diketahui. Tunjukkan apa yang berubah.” |
-| Mahu sudut lain | “Semak bahagian kos idea ini,” atau “Cuba cari cara rancangan ini boleh gagal.” |
-| Mahu membuat keputusan | “Apa pilihan yang masih perlu aku putuskan? Terangkan trade-off dalam bahasa mudah, satu demi satu.” |
-| Sudah yakin | “Saya pilih pilihan ini: [keputusan]. Kunci keputusan ini dalam ZASS dan tunjukkan kesannya.” |
-| Mahu architecture | “Adakah keputusan penting sudah cukup untuk bina architecture? Jika belum, beritahu apa yang menghalang.” |
+| A new idea appears | “I have an idea like this…” Tell the story freely, even if it is still unstructured. |
+| The discussion ends | “Put the important parts of this discussion into ZASS. Separate facts, inferences, and unknowns. Show me what changed.” |
+| You want a different perspective | “Review the cost of this idea,” or “Try to find how this plan could fail.” |
+| You want to decide | “What choices still need my decision? Explain the trade-offs in plain language, one at a time.” |
+| You are confident | “I choose this option: [decision]. Lock this decision in ZASS and show its impact.” |
+| You want architecture | “Are the important decisions ready to build the architecture? If not, tell me what is blocking it.” |
 
-AI mesti mencari entri yang berkaitan, mengurus ID dan status di belakang tabir, serta meminta kepastian jika arahan “ini” merujuk lebih daripada satu keputusan. **Hanya arahan jelas daripada pemilik projek boleh LOCK keputusan.** Sebelum menulis atau commit, AI tunjukkan ringkasan perubahan termasuk apa-apa percanggahan dengan keputusan terkunci.
+The AI must find the relevant entries, manage IDs and states behind the scenes, and ask for clarification if “this” could refer to more than one decision. **Only an explicit instruction from the project owner can LOCK a decision.** Before writing or committing, AI must show a summary of changes, including any conflict with locked decisions.
 
 ## ZASS CONVERGENCE LOOP
 
-ZASS tidak perlu memaksa setiap idea menjadi keputusan ketika idea itu muncul. Tangkap dahulu idea, constraint, risk, evidence dan LOCKED decision yang relevan; kemudian cari **convergence** apabila bahan sudah cukup untuk membentuk candidate yang coherent.
+ZASS does not need to force every new idea into a decision when it appears. First capture relevant ideas, constraints, risks, evidence, and LOCKED decisions; then look for **convergence** once enough material exists to form coherent candidates.
 
-> **Research dibuat selepas candidate terbentuk, bukan semasa idea baru dikumpul.**
+> **Research follows candidate formation, not idea capture.**
 
 Canonical loop:
 
@@ -70,31 +82,31 @@ CAPTURE → MATCH → SYNTHESIZE → RESEARCH → CROSS-CHECK → LOCK → ARCHI
 Expanded working flow:
 
 ```text
-LAMBAK IDEA
+IDEA DUMP
     ↓
 CAPTURE
-jangan tapis terlalu awal
+do not filter too early
     ↓
 MATRIX
-satukan idea + constraint + risk + evidence + LOCK lama
+combine ideas + constraints + risks + evidence + existing LOCKs
     ↓
 MATCH
-cari idea yang saling melengkapi
+find ideas that reinforce or complement one another
     ↓
 SYNTHESIZE
-bentuk 2–3 candidate yang coherent apabila berguna
+form 2–3 coherent candidates when useful
     ↓
 SHORTLIST
-buang candidate yang gagal must-have / constraint
+remove candidates that fail must-haves / constraints
     ↓
 DEEP RESEARCH
-research hanya soalan yang boleh mengubah pilihan
+research only questions that can change the choice
     ↓
 CROSS-CHECK
-official docs + existing projects + real limitation + evidence
+official docs + existing projects + real limitations + evidence
     ↓
 UPDATE MATRIX
-apa yang research sahkan / patahkan?
+what did research confirm or break?
     ↓
 LOCK DECISIONS
     ↓
@@ -103,60 +115,60 @@ DRAFT ARCH
 BUILD ARCHITECTURE
 ```
 
-Aturan convergence:
+Convergence rules:
 
-- **CAPTURE luas, jangan tapis terlalu awal.** Idea AI, idea pemilik, constraint, risk, evidence, hasil test dan LOCK lama boleh dikumpulkan dahulu dengan provenance/status yang jelas.
-- **MATCH sebelum memilih.** Cari idea yang saling melengkapi; candidate terbaik boleh menjadi gabungan beberapa idea, bukan semestinya satu idea yang “menang”.
-- **SYNTHESIZE candidate yang coherent.** Bentuk beberapa candidate hanya apabila bahan mencukupi; jangan cipta alternatif palsu untuk cukupkan bilangan.
-- **SHORTLIST melalui must-have dan constraint.** Candidate yang jelas gagal syarat wajib tidak perlu dibawa ke deep research.
-- **RESEARCH mesti tajam.** Research hanya persoalan yang hasilnya boleh mengubah shortlist, trade-off atau keputusan. Jangan research semua teknologi sebelum candidate terbentuk.
-- **CROSS-CHECK sebelum LOCK.** Silangkan candidate dengan official capability/docs, existing project/pattern, known limitation dan evidence sebenar.
-- **UPDATE MATRIX selepas research.** Finding research kembali ke matrix/candidate state dahulu; ia tidak terus mengubah architecture.
-- **Human LOCK sebelum architecture.** Research memberi evidence; manusia membuat keputusan; architecture dibina daripada keputusan yang benar-benar LOCKED.
+- **Capture broadly; do not filter too early.** Owner ideas, AI ideas, constraints, risks, evidence, test results, and existing LOCKs may be collected first with clear provenance/status.
+- **MATCH before choosing.** Look for complementary ideas; the strongest candidate may be a synthesis of several ideas rather than a single “winner”.
+- **SYNTHESIZE coherent candidates.** Form multiple candidates only when the material supports them; do not invent alternatives merely to fill a list.
+- **SHORTLIST using must-haves and constraints.** A candidate that clearly fails a mandatory condition does not need deep research.
+- **Keep RESEARCH sharp.** Research only questions whose answers can change the shortlist, trade-off, or decision. Do not research every technology before candidates exist.
+- **CROSS-CHECK before LOCK.** Compare candidates with official capabilities/docs, existing projects/patterns, known limitations, and real evidence.
+- **UPDATE THE MATRIX after research.** Research findings return to the matrix/candidate state first; they do not directly rewrite architecture.
+- **Human LOCK before architecture.** Research supplies evidence; humans decide; architecture is built from genuinely LOCKED decisions.
 
-Trigger untuk beralih daripada CAPTURE kepada convergence bukan bilangan idea tertentu. Triggernya ialah apabila bahan sudah cukup untuk membentuk sekurang-kurangnya satu candidate yang coherent dan ada persoalan evidence tertentu yang boleh mengubah keputusan.
+The trigger to move from CAPTURE into convergence is not a fixed number of ideas. The trigger is enough material to form at least one coherent candidate plus a specific evidence question whose answer could change the decision.
 
-## MOD BALASAN ZASS PENUH
+## FULL ZASS RESPONSE MODE
 
-Mesej biasa dijawab secara natural. AI boleh merekod perkara penting dalam fail projek apabila boleh mengubahnya, tetapi tidak memaparkan blok penakulan, ID atau borang ZASS kecuali diminta. Jangan mendakwa fail berubah jika belum. AI boleh mencadangkan `DRAFT ARCH` apabila keputusan cukup jelas; cadangan itu tidak menghasilkan architecture secara automatik.
+Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
 
-Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalankan penerokaan penuh, tunjuk rekod yang relevan dan status fail, diikuti ✨ RUMUSAN dan CADANGAN oleh AI, 🧭 NEXT-DAY ACTION PROPOSAL, serta PROCEED / PIVOT. `ZASS REVIEW` mengekalkan kaedah dan skop review tersendiri. `PROCEED` meluluskan **hanya** proposal set yang disenaraikan secara eksplisit dalam pemetaan ZASS terakhir di bawah `PROPOSED FOR PROCEED`. Item yang tidak disenaraikan tidak diluluskan. Jika set berubah, bercanggah, atau tidak jelas, AI mesti paparkan semula set sebelum PROCEED. Proposal yang jelas ditanda untuk LOCK menjadi LOCKED; PROCEED tidak commit atau push. Arahan `COMMIT` dan architecture mendapat jawapan tindakan yang jelas walaupun tanpa arahan `ZASS`. Perkataan dalam contoh, petikan, demo, penafian atau footer bukan arahan.
+An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` approves **only** the proposal set explicitly listed in the latest ZASS mapping under `PROPOSED FOR PROCEED`. Unlisted items are not approved. If the set changes, conflicts, or becomes ambiguous, AI must show the set again before PROCEED. Proposals clearly marked for LOCK become LOCKED; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 
-Akhiri **setiap** balasan AI dengan:
+End **every** AI reply with:
 
 ```text
 [🧠 ZASS!!] -- [▶️ PROCEED] -- [🔄 PIVOT] -- [📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
-🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
+🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.6 / latest v0.3.7
+⬆️ UPDATE ZASS? now v0.3.7 / latest v0.3.8
 ```
 
-Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
+The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
 
-Maksud arahan footer:
+Footer command meanings:
 
-- `ZASS!!` — jalankan penerokaan penuh mengikut format ZASS.
-- `PROCEED` — luluskan tepat proposal set yang dipaparkan di bawah `PROPOSED FOR PROCEED` dalam pemetaan ZASS terakhir. Item lain tidak termasuk. Jika set berubah atau ambigu, AI mesti paparkan semula set sebelum bertindak. Proposal yang ditanda untuk LOCK menjadi LOCKED. PROCEED tidak commit atau push.
-- `PIVOT` — cadangkan arah alternatif berdasarkan kelemahan, bukti atau kekangan semasa.
-- `COMMIT` — selepas perubahan diluluskan melalui PROCEED atau arahan pemilik yang setara, kemas kini fail berkaitan, versi dan changelog sebagai satu commit atomik, push ke GitHub, kemudian laporkan SHA sebenar. Jangan laporkan kejayaan jika commit atau push belum berlaku.
+- `ZASS!!` — run full exploration using the ZASS format.
+- `PROCEED` — approve exactly the proposal set shown under `PROPOSED FOR PROCEED` in the latest ZASS mapping. Other items are excluded. If the set changes or is ambiguous, AI must show it again before acting. Proposals marked for LOCK become LOCKED. PROCEED does not commit or push.
+- `PIVOT` — suggest an alternative direction based on current weaknesses, evidence, or constraints.
+- `COMMIT` — after changes are approved through PROCEED or an equivalent owner instruction, update affected files, version, and changelog as one atomic commit, push to GitHub, then report the real SHA. Never report success before the commit and push actually occur.
 
-Apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`, bandingkan versi fail projek dengan versi terkini repo rasmi jika akses tersedia. Jika berlainan, paparkan `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. Jika sama, paparkan `✅ ZASS UP TO DATE — v<version>`. Jika semakan tidak boleh dibuat, paparkan `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; jangan reka nombor versi.
+When the user intentionally issues `ZASS` or `ZASS!!`, compare the project file version with the latest official repository version when access is available. If they differ, show `⬆️ UPDATE ZASS? now v<old> / latest v<new>`. If current, show `✅ ZASS UP TO DATE — v<version>`. If checking is unavailable, show `⚠️ VERSION CHECK UNAVAILABLE — current file v<version>`; never invent a version number.
 
-## ACTION PLAN — GERAKKAN KERJA TANPA MENJADI DECISION LEDGER KEDUA
+## ACTION PLAN — MOVE WORK WITHOUT CREATING A SECOND DECISION LEDGER
 
-Gunakan `ACTION_PLAN.md` untuk projek yang mempunyai kerja berbilang langkah atau perlu menyimpan progress antara sesi. Ia pilihan; projek idea kecil atau projek lama yang hanya mempunyai `ZASS.md` kekal sah.
+Use `ACTION_PLAN.md` for a project with multi-step work or progress that must survive across sessions. It is optional; small ideas and existing projects containing only `ZASS.md` remain valid.
 
-| Fail | Authority |
+| File | Authority |
 |---|---|
-| `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirement, readiness dan perubahan keputusan. |
-| `ACTION_PLAN.md` | Execution/progress state semasa: fokus, aksi, pelaksanaan eksperimen, bukti, hasil, blocker, lesson, kerja siap dan kerja PARKED. |
-| `ARCHITECTURE.md` | Representasi architecture yang berasal daripada state ZASS yang telah disahkan. Ia hanya diperlukan apabila architecture dibina. |
+| `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirements, readiness, and decision change. |
+| `ACTION_PLAN.md` | Current execution/progress state: focus, actions, experiment execution, evidence, results, blockers, lessons, completed work, and PARKED work. |
+| `ARCHITECTURE.md` | An architecture representation derived from confirmed ZASS state. It is needed only when architecture is built. |
 
-`ACTION_PLAN.md` tidak boleh LOCK atau mengubah keputusan ZASS, menentukan architecture, atau menjadikan eksperimen PASS sebagai keputusan secara automatik.
+`ACTION_PLAN.md` cannot LOCK or alter ZASS decisions, determine architecture, or turn a PASS experiment into a decision automatically.
 
-`ZERO → ARCHITECTURE` dikira dan direkod secara rasmi dalam `ZASS.md`. Jika `ACTION_PLAN.md` digunakan, ia menyimpan **snapshot** nilai rasmi itu untuk execution dan dashboard; ia tidak mengira, menaikkan atau menurunkan skor sendiri. Setiap perubahan skor mesti mengemas kini ZASS dan snapshot ACTION PLAN dalam commit atomik yang sama. Gunakan `Source: ZASS.md v<version> — same Git commit`; jangan cuba menulis SHA commit itu ke dalam fail kerana SHA hanya wujud selepas commit. GitHub Actions mengambil SHA sebenar daripada event commit dan menambahkannya pada mirror seperti Notion.
+`ZERO → ARCHITECTURE` is officially calculated and recorded in `ZASS.md`. When `ACTION_PLAN.md` is used, it stores a **snapshot** of that official value for execution and dashboards; it never calculates, raises, or lowers the score itself. Every score change must update ZASS and the ACTION PLAN snapshot in the same atomic commit. Use `Source: ZASS.md v<version> — same Git commit`; do not try to write that commit's SHA into the file because the SHA exists only after commit creation. GitHub Actions reads the real SHA from the commit event and adds it to a mirror such as Notion.
 
 ```text
 ZASS: Q-xxx / R-xxx / candidate / E-xxx need
@@ -170,92 +182,92 @@ ZASS FEED
 ZASS REVIEW → DECIDE / LOCK / REJECT / TEST MORE / PIVOT
 ```
 
-Gunakan ID `E-xxx` yang sama apabila eksperimen datang daripada ZASS. ZASS memegang tujuan dan requirement evidence eksperimen; ACTION_PLAN merekod pelaksanaan, bukti dan hasil. `ZASS FEED` membawa finding matang kembali untuk dinilai, bukan mencipta decision automatik.
+Keep the same `E-xxx` ID when an experiment originates in ZASS. ZASS owns the experiment's purpose and evidence requirement; ACTION_PLAN records execution, evidence, and result. `ZASS FEED` returns mature findings for evaluation; it never creates an automatic decision.
 
-**State tidak bercampur:** ZASS menggunakan state discovery/decision seperti `RAW → CANDIDATE → TESTING → DECIDED → LOCKED`. ACTION_PLAN menggunakan state execution: `OPEN`, `NEXT`, `ACTIVE`, `BLOCKED`, `DONE`, `PARKED`, `CANCELLED`. Eksperimen ACTION_PLAN menggunakan `PLANNED`, `READY`, `RUNNING`, `PASS`, `FAIL`, `INCONCLUSIVE`, `BLOCKED`, `CANCELLED`.
+**States do not mix:** ZASS uses discovery/decision states such as `RAW → CANDIDATE → TESTING → DECIDED → LOCKED`. ACTION_PLAN uses execution states: `OPEN`, `NEXT`, `ACTIVE`, `BLOCKED`, `DONE`, `PARKED`, `CANCELLED`. ACTION_PLAN experiments use `PLANNED`, `READY`, `RUNNING`, `PASS`, `FAIL`, `INCONCLUSIVE`, `BLOCKED`, `CANCELLED`.
 
-Salin `ACTION_PLAN_TEMPLATE.md` menjadi `ACTION_PLAN.md` dalam repo projek apabila execution mula berpanjangan. Guna `ACTION_PLAN_TEMPLATE_EN.md` jika projek menggunakan English. Jangan cipta serentak `progress.md`, `tasks.md`, `tasks.json` atau todo lain sebagai authority tambahan.
+Copy `ACTION_PLAN_TEMPLATE.md` to `ACTION_PLAN.md` in the project repository when execution becomes ongoing. Use `ACTION_PLAN_TEMPLATE_EN.md` for an English project. Do not create `progress.md`, `tasks.md`, `tasks.json`, or another to-do file as an additional authority at the same time.
 
-**AI behaviour:** Dalam sembang biasa, AI hanya menyebut atau mengemas kini action yang relevan; jangan paparkan seluruh templat. Apabila pengguna berkata `ZASS`, AI rujuk bukti execution yang relevan jika ACTION_PLAN wujud, dan jangan anggap status ACTION_PLAN sebagai LOCKED decision. Apabila pengguna meminta `ACTION PLAN` atau maksud setara, tunjuk current focus, P0/P1, action ACTIVE/NEXT, eksperimen, blocker, recent learning dan ZASS FEED yang berkaitan.
+**AI behavior:** In ordinary conversation, AI mentions or updates only the relevant action; do not display the entire template. When the owner says `ZASS`, AI consults relevant execution evidence when ACTION_PLAN exists and never treats ACTION_PLAN status as a LOCKED decision. When the owner asks for `ACTION PLAN` or an equivalent, return current focus, P0/P1, ACTIVE/NEXT actions, experiments, blockers, recent learning, and relevant ZASS FEED.
 
-## PROMPT SIAP GUNA — RUJUKAN PILIHAN
+## READY-TO-USE PROMPTS — OPTIONAL REFERENCE
 
-Prompt di bawah membantu apabila bertukar AI, mahu review yang tepat, atau AI tersalah faham. Abang tidak wajib menyalinnya untuk penggunaan harian. Ubah bahagian dalam `[ ]` sahaja jika perlu.
+The prompts below help when changing AI models, requesting a precise review, or correcting an AI that misunderstood the task. You do not have to copy them for daily use. Change only the parts in `[ ]` when needed.
 
-### A. Sembang bebas → kemas kini ZASS projek
+### A. Free conversation → update the project ZASS
 
 ```text
-Baca ZASS.md terkini untuk projek [NAMA PROJEK]. Extract perbincangan kita ke dalam format ZASS.
-Jangan invent fakta yang saya tak beri. Tandakan setiap perkara yang relevan sebagai
-EXPLICIT (saya nyatakan), INFERRED (tafsiran AI, perlu disahkan), atau UNKNOWN.
-Kekalkan kata-kata idea asal saya di RAW IDEA; asingkan WHY, GOALS, NON-GOALS,
-CONSTRAINTS, idea baharu, soalan dan risiko. Jangan overwrite maklumat sedia ada
-tanpa menunjukkan percanggahan. Jangan ubah LOCKED decisions.
-Tunjukkan ringkasan perubahan dan bahagian yang perlu saya sahkan.
-Jika ini projek baharu, namakan fail ZASS_[NAMA_PROJEK].md.
-Jika projek ini sudah ada fail ZASS, kemas kini fail yang sama; jangan cipta v2/final.
-Urus ID, status dan hubungan antara entri sendiri; saya tidak perlu menghafalnya.
+Read the latest ZASS.md for project [PROJECT NAME]. Extract our discussion into the ZASS format.
+Do not invent facts that I did not provide. Label each relevant item as
+EXPLICIT (I stated it), INFERRED (AI interpretation that needs confirmation), or UNKNOWN.
+Keep my original wording in RAW IDEA; separate WHY, GOALS, NON-GOALS,
+CONSTRAINTS, new ideas, questions, and risks. Do not overwrite existing information
+without showing the contradiction. Do not change LOCKED decisions.
+Show a summary of changes and the parts I need to confirm.
+If this is a new project, name the file ZASS_[PROJECT_NAME].md.
+If the project already has a ZASS file, update the same file; do not create v2/final files.
+Manage IDs, states, and links between entries yourself; I do not need to memorize them.
 ```
 
-Contoh nama projek baharu: `ZASS_Produk_Jus_TimunHalia.md`. Satu projek mempunyai satu fail ZASS utama; sejarah perubahan disimpan oleh Git. Lampirkan atau beri AI kandungan fail terkini setiap kali bertukar chat/model. Salinan dalam chat bukan versi autoritatif.
+Example name for a new project: `ZASS_Cucumber_Ginger_Drink.md`. One project has one main ZASS file; Git stores its history. Attach or provide the latest file contents whenever you change chat or model. A copy in a chat is not the authoritative version.
 
-### B. Saya sudah ada idea berstruktur → tampal dan minta AI semak
+### B. I already have a structured idea → paste it and ask AI to review
 
 ```text
 RAW IDEA
-Produk minuman berasaskan timun + halia menggunakan timun reject.
+A cucumber and ginger drink using rejected cucumbers.
 
 WHY I WANT THIS
-- Kurangkan waste timun.
-- Cari produk value-added.
+- Reduce cucumber waste.
+- Explore a value-added product.
 
 GOALS
-- Produk mudah dihasilkan.
-- Boleh diuji pada skala kecil.
+- A product that is easy to produce.
+- Can be tested at small scale.
 
 NON-GOALS
-- Belum mahu bina kilang besar.
+- Do not build a large factory yet.
 
 CONSTRAINTS
-- Modal awal rendah.
-- Shelf life belum diketahui.
+- Low initial capital.
+- Shelf life is still unknown.
 
-Masukkan ke ZASS projek ini. Anggap contoh di atas sebagai input idea sahaja,
-bukan keputusan LOCKED. Tandakan fakta EXPLICIT, tafsiran INFERRED, dan perkara
-UNKNOWN sebagai soalan. Jangan invent angka atau spesifikasi.
+Put this into the project ZASS. Treat the example above as idea input only,
+not a LOCKED decision. Label explicit facts, AI inferences, and unknown items
+as questions. Do not invent numbers or specifications.
 ```
 
-Contoh ini **bukan kandungan sebenar projek** dan tidak mengisi bahagian 1–4 di bawah secara automatik. Jika idea baru masih dalam projek yang sama, minta AI mencadangkan pindaan pada fail sedia ada, menjaga ID dan keputusan terdahulu.
+This is **not actual project content** and does not automatically fill sections 1–4 below. If the new idea belongs to the same project, ask the AI to propose an update to the existing file while preserving earlier IDs and decisions.
 
-### C. Blast dari satu perspektif
+### C. Blast from one perspective
 
 ```text
 ZASS
 Mode: Industrial product thinking
 Scope: RAW IDEA
-Cari kemungkinan, soalan dan risiko. Label sebagai calon; jangan LOCK keputusan.
+Find possibilities, questions, and risks. Label them as candidates; do not LOCK decisions.
 ```
 
-### D. Review idea yang masih awal
+### D. Review an early-stage idea
 
 ```text
 ZASS REVIEW
 Method: Constraints + Quality Attributes
 Scope: RAW IDEA / Whole system
-Focus: [contoh: kos, pengguna, penyelenggaraan]
+Focus: [example: cost, users, maintenance]
 Do not modify LOCKED decisions.
 Return only: findings, contradictions, risks, questions, candidate experiments,
 and candidate decisions.
 ```
 
-### E. Review sasaran khusus
+### E. Review a specific target
 
 ```text
 ZASS REVIEW
 Method: Hacker / assumption breaking
-Scope: [terangkan topik, bahagian, atau ID jika tahu]
-Goal: Cari failure mode, hidden assumption dan edge case.
-Focus: [contoh: input berulang, rangkaian terputus, salah izin]
+Scope: [describe a topic, area, or an ID if known]
+Goal: Find failure modes, hidden assumptions, and edge cases.
+Focus: [example: duplicate inputs, network loss, incorrect permissions]
 Do not modify LOCKED decisions.
 Return only:
 - findings
@@ -266,27 +278,27 @@ Return only:
 - candidate decisions
 ```
 
-Jika mahu, skop boleh ditulis secara biasa, contohnya “proses approval claim”. AI yang mencari ID sebenar dalam fail. `Scope: AC-001, AC-005–AC-011` hanya sesuai jika calon itu sudah direkodkan. `ATAM` lebih berguna untuk menilai candidate architecture yang cukup matang; pada tahap idea mentah gunakan BLAST atau review constraints dahulu.
+You may write the scope in plain language, for example, “the claim approval process.” The AI finds the actual IDs in the file. A scope such as `AC-001, AC-005–AC-011` is suitable only after those candidates have been recorded. ATAM is more useful when evaluating mature architecture candidates; use BLAST or a constraints review for a raw idea.
 
-`AC` bermaksud **calon cara sistem dibina**; `D` bermaksud **perkara yang abang putuskan** selepas menimbang pilihan. Butiran ID untuk AI ada di hujung fail.
+`AC` means a **candidate way to build a system**; `D` means a **matter you decide** after considering options. The detailed ID conventions for AI appear at the end of this file.
 
-Sebelum menyimpan pindaan AI, semak `diff`: apa yang ditambah, dibuang atau diubah; khususnya ID, fakta EXPLICIT/INFERRED, dan keputusan LOCKED.
+Before saving an AI change, review the diff: what was added, removed, or changed; especially IDs, EXPLICIT/INFERRED facts, and LOCKED decisions.
 
-### Melalui telefon sahaja
+### Using only a phone
 
-**Untuk edit ringkas dengan aplikasi GitHub Mobile:** pasang aplikasi GitHub rasmi dan log masuk. Buka repository → **Browse code** → buka fail ZASS projek → menu **⋯** di penjuru kanan atas → **Edit File** → ubah teks → **Commit**. Pilih branch yang sedang dibuka jika mahu perubahan terus pada branch itu. Commit dalam aplikasi sudah menyimpan perubahan pada GitHub; tiada `git push` tambahan. Semak nama branch sebelum commit.
+**For a quick edit in the official GitHub Mobile app:** install the GitHub app and sign in. Open the repository → **Browse code** → open the project ZASS file → tap the **⋯** menu in the top-right → **Edit File** → change the text → **Commit**. Select the branch you are currently browsing if the change should go directly to that branch. A commit in the app saves the change to GitHub; no additional `git push` is needed. Check the branch name before committing.
 
-**Untuk fail baharu yang AI hasilkan:** buka `github.com` dalam pelayar telefon → repository → **Add file → Upload files** → pilih `.md` yang dimuat turun → commit. Pastikan nama dan folder betul. Jika ZASS untuk projek itu sudah wujud, jangan upload satu lagi fail versi baharu; buka fail sedia ada dan kemas kini kandungannya selepas membandingkan perubahan.
+**For a new file produced by AI:** open `github.com` in your phone browser → repository → **Add file → Upload files** → choose the downloaded `.md` file → commit. Check the name and folder. If a ZASS file already exists for that project, do not upload a second version; open the existing file and update its contents after comparing the changes.
 
-Sebelum sesi AI seterusnya, buka atau muat turun versi terkini dari repo. Jika PC mempunyai salinan repo, jalankan `git pull` di PC sebelum menyunting lagi. Pindaan besar pada fail panjang lebih mudah disemak di PC.
+Before the next AI session, open or download the latest version from the repository. If a PC has a copy of the repository, run `git pull` on the PC before editing again. Large changes to a long file are easier to review on a PC.
 
-Jika pilihan GitHub sukar kelihatan pada skrin kecil, cuba **Desktop site** dalam menu pelayar. Jangan letakkan rahsia, kata laluan atau token dalam ZASS yang akan di-commit.
+If GitHub options are hard to see on a small screen, try **Desktop site** in the browser menu. Do not put secrets, passwords, or tokens in ZASS content that will be committed.
 
 ---
 
-## 1. Mulakan dengan idea mentah
+## 1. Start with a raw idea
 
-Jika mahu, isi bahagian berikut sendiri. Jika abang hanya bercerita, AI mesti mengasingkannya:
+If you want, fill in these sections yourself. If you only tell a story, AI must separate them:
 
 - `RAW IDEA`
 - `WHY I WANT THIS`
@@ -294,26 +306,26 @@ Jika mahu, isi bahagian berikut sendiri. Jika abang hanya bercerita, AI mesti me
 - `NON-GOALS`
 - `CONSTRAINTS`
 
-Tidak perlu fikir teknologi atau architecture dahulu.
+Do not think about technology or architecture yet.
 
-Contoh arahan kepada AI:
+Example instruction to AI:
 
-> ZASS. Baca ZASS.md. Jangan ubah LOCKED decisions. Cari idea, kemungkinan, persoalan, risiko dan alternatif yang belum diteroka.
+> ZASS. Read ZASS.md. Do not change LOCKED decisions. Find ideas, possibilities, questions, risks, and alternatives that have not yet been explored.
 
 ---
 
-## 2. Blast idea dengan bebas
+## 2. Blast ideas freely
 
-Gunakan mana-mana AI:
+Use any AI:
 
 - ChatGPT
 - Gemini
 - Claude
 - Perplexity / PCom
-- IDE agent
-- model lain
+- IDE agents
+- other models
 
-AI boleh menambah:
+AI may add:
 
 - IDEA
 - QUESTION
@@ -321,307 +333,307 @@ AI boleh menambah:
 - OPTION
 - CANDIDATE DECISION
 
-AI tidak boleh terus menjadikan cadangan sebagai keputusan.
+AI may not turn a suggestion directly into a decision.
 
 ---
 
-## 3. Tukar sudut pandangan / metodologi
+## 3. Change perspective or methodology
 
-Gunakan `METHOD REVIEWS` untuk menguji idea dari perspektif berbeza.
+Use `METHOD REVIEWS` to examine an idea from different perspectives.
 
-Contoh:
+Example:
 
 > ZASS REVIEW  
 > Method: Industrial / ATAM  
 > Scope: whole system  
 > Do not change LOCKED decisions.  
-> Return findings, contradictions, risks, experiments and candidate decisions only.
+> Return findings, contradictions, risks, experiments, and candidate decisions only.
 
-Kaedah atau perspektif yang boleh digunakan:
+Methods and perspectives you can use:
 
-| Kaedah | Ulasan ringkas |
+| Method | Brief review |
 |---|---|
-| **Industrial / C4 / arc42 / ATAM** | Susun komponen, tanggungjawab, aliran dan trade-off; nilai sama ada reka bentuk memenuhi kualiti operasi sebenar. |
-| **Academic / DSRM / GQM** | Tukar idea menjadi masalah, soalan, kaedah, ukuran dan bukti; pastikan tuntutan boleh diuji atau dipertahankan. |
-| **Hacker / failure injection / assumption breaking** | Pecahkan andaian sistem secara kreatif: input pelik, keadaan luar jangka, gangguan rangkaian dan urutan tindakan yang salah. |
-| **Security / threat modelling** | Kenal pasti aset penting, pihak yang boleh menyerang, laluan serangan, kesan kerosakan dan kawalan yang perlu diwujudkan. |
-| **Abuse / Scammer mindset** | Bayangkan pengguna berniat mengambil kesempatan: tuntutan palsu, akaun berganda atau manipulasi harga; rekod pencegahan, bukan trik. |
-| **Cost / unit economics** | Kira kos membina, menjalankan dan menyelenggara; kenal pasti kos tersembunyi, had bajet dan titik pulang modal. |
-| **Maintainability** | Nilai sama ada seorang manusia masa depan boleh membaca, membaiki, menaik taraf dan memulihkan sistem tanpa pencipta asal. |
-| **Operations / reliability** | Fokus kepada kerja harian: pemantauan, alert, handover, backup, recovery, kapasiti dan apa berlaku apabila manusia tidak tersedia. |
-| **Scalability** | Uji apa berubah apabila pengguna, data, arahan atau integrasi meningkat sepuluh hingga seratus kali ganda. |
-| **Crazy / unconstrained brainstorming** | Tangguhkan had teknologi, kos dan kebiasaan sementara; cari kemungkinan luar jangka sebelum menapisnya melalui constraints sebenar. |
-| **User-experience / workflow** | Ikut perjalanan pengguna dari niat hingga hasil; cari kekeliruan, langkah berlebihan, keputusan berisiko dan titik menunggu. |
-| **Single-maintainer perspective** | Nilai semuanya melalui mata seorang penjaga sistem: masa, tenaga, kemahiran, dokumentasi, kos dan risiko keletihan. |
-| **Artist / emotional experience** | Nilai rasa pengalaman: adakah sistem memberi lega, yakin, seronok, tenang atau bermakna kepada manusia yang menggunakannya? |
-| **First-principles thinking** | Pecahkan andaian kepada fakta asas; bina semula pilihan daripada apa yang benar-benar diperlukan, bukan amalan biasa. |
-| **Systems thinking** | Lihat gelung sebab-akibat, kesan sampingan, kelewatan dan pihak berkaitan; elak membaiki satu bahagian sambil merosakkan yang lain. |
-| **Product / market lens** | Tanya siapa pengguna sanggup guna, masalah apa cukup sakit, apa alternatifnya dan sebab mereka memilih penyelesaian ini. |
-| **Legal / compliance lens** | Semak kewajipan undang-undang, privasi data, rekod, persetujuan, liabiliti dan syarat industri sebelum kos pembaikan meningkat. |
-| **Ethics / harm lens** | Cari siapa mungkin terjejas, dipinggirkan atau dirugikan; tetapkan batas keputusan walaupun pilihan itu kelihatan menguntungkan. |
-| **Accessibility / inclusion lens** | Uji sama ada pengguna dengan kemampuan, bahasa, peranti, internet atau literasi berbeza masih boleh menggunakan sistem dengan selamat. |
-| **Data / evidence lens** | Tentukan data yang perlu dipercayai, sumbernya, kualitinya, siapa boleh mengubahnya dan bagaimana audit membuktikan kebenaran. |
-| **Privacy / trust lens** | Minimakan data yang dikumpul; jelas tentang tujuan, akses, tempoh simpanan dan cara pengguna mendapatkan semula kawalan. |
-| **Resilience / offline lens** | Bayangkan internet, AI provider atau integrasi hilang; tentukan fungsi minimum, queue, retry dan pemulihan apabila sambungan kembali. |
-| **Red team / adversarial review** | Cari kelemahan melalui peranan pihak yang bermusuh, tetapi hasilkan hanya risiko, bukti dan cadangan kawalan pertahanan. |
-| **Reverse planning / pre-mortem** | Anggap projek gagal setahun kemudian; senaraikan sebab paling munasabah dan bina tindakan awal untuk mengurangkannya. |
-| **Analogy / cross-domain lens** | Pinjam corak daripada hospital, bank, kilang, permainan atau kebun untuk mencari penyelesaian yang belum terfikir. |
-| **Minimal viable experiment** | Elak debat panjang dengan mencipta ujian paling kecil yang boleh menolak atau menyokong andaian utama. |
-| **Future-back / scenario planning** | Bayangkan beberapa masa depan yang munasabah; semak sama ada keputusan hari ini masih berguna apabila keadaan berubah. |
-| **Stakeholder / conflict lens** | Petakan siapa mendapat manfaat, siapa menanggung kerja atau risiko, dan konflik kepentingan yang perlu diurus awal. |
+| **Industrial / C4 / arc42 / ATAM** | Structure components, responsibilities, flows, and trade-offs; assess whether the design meets real operational quality requirements. |
+| **Academic / DSRM / GQM** | Turn an idea into a problem, questions, method, measures, and evidence; ensure claims can be tested or defended. |
+| **Hacker / failure injection / assumption breaking** | Break system assumptions creatively through unusual inputs, unexpected conditions, network loss, and incorrect action sequences. |
+| **Security / threat modelling** | Identify important assets, possible attackers, attack paths, damage impact, and the controls that need to exist. |
+| **Abuse / Scammer mindset** | Imagine users seeking unfair advantage through false claims, duplicate accounts, or price manipulation; record prevention, not tricks. |
+| **Cost / unit economics** | Calculate build, running, and maintenance costs; identify hidden costs, budget limits, and the break-even point. |
+| **Maintainability** | Assess whether a future person can read, repair, upgrade, and recover the system without relying on its original creator. |
+| **Operations / reliability** | Focus on daily work: monitoring, alerts, handover, backup, recovery, capacity, and what happens when people are unavailable. |
+| **Scalability** | Test what changes when users, data, instructions, or integrations grow by ten to one hundred times. |
+| **Crazy / unconstrained brainstorming** | Temporarily suspend limits of technology, cost, and convention; find unexpected possibilities before filtering through real constraints. |
+| **User-experience / workflow** | Follow the user journey from intent to outcome; find confusion, unnecessary steps, risky decisions, and waiting points. |
+| **Single-maintainer perspective** | Assess everything through one system caretaker's time, energy, skills, documentation, cost, and risk of exhaustion. |
+| **Artist / emotional experience** | Assess the felt experience: does the system make people feel relief, confidence, enjoyment, calm, or meaning? |
+| **First-principles thinking** | Break assumptions into basic facts; rebuild options from what is truly needed instead of customary practice. |
+| **Systems thinking** | Examine feedback loops, side effects, delays, and related parties; avoid fixing one part while damaging another. |
+| **Product / market lens** | Ask who will willingly use it, which problem hurts enough, the alternatives available, and why people would choose this solution. |
+| **Legal / compliance lens** | Check legal duties, data privacy, records, consent, liability, and industry requirements before remediation becomes expensive. |
+| **Ethics / harm lens** | Find who may be harmed, excluded, or disadvantaged; set decision boundaries even when an option appears profitable. |
+| **Accessibility / inclusion lens** | Test whether people with different abilities, languages, devices, connectivity, or literacy can still use the system safely. |
+| **Data / evidence lens** | Define which data must be trusted, its source and quality, who can change it, and how audit proves truth. |
+| **Privacy / trust lens** | Minimize collected data; make purpose, access, retention, and the user's ability to regain control clear. |
+| **Resilience / offline lens** | Imagine loss of internet, AI providers, or integrations; define minimum function, queues, retries, and recovery after return. |
+| **Red team / adversarial review** | Search for weaknesses from an opposing party's perspective, but produce only risks, evidence, and defensive controls. |
+| **Reverse planning / pre-mortem** | Assume the project failed a year later; list likely reasons and create early actions to reduce them. |
+| **Analogy / cross-domain lens** | Borrow patterns from hospitals, banks, factories, games, or farms to find solutions not yet considered. |
+| **Minimal viable experiment** | Avoid long debate by creating the smallest test that can reject or support the central assumption. |
+| **Future-back / scenario planning** | Imagine several plausible futures; check whether today's decision remains useful as conditions change. |
+| **Stakeholder / conflict lens** | Map who benefits, who carries work or risk, and conflicts of interest that need early management. |
 
-Untuk **Abuse / Scammer mindset**, output mestilah risiko, bukti, pengesanan dan kawalan pencegahan. Jangan merekod langkah bypass, penipuan atau monetisasi haram.
+For **Abuse / Scammer mindset**, output must remain limited to risks, evidence, detection, and preventive controls. Do not record bypass, deception, or illegal monetization steps.
 
-Methodology tidak mempunyai kuasa untuk mengubah architecture secara langsung.
+A methodology has no authority to change architecture directly.
 
-## PRESET REVIEW — 3-OTAK
+## PRESET REVIEW — THREE MINDS
 
-Gunakan preset ini apabila idea memerlukan tiga sudut yang saling melengkapi:
+Use this preset when an idea needs three complementary perspectives:
 
-**Nama luaran:** apabila menerangkan kaedah ini kepada pihak luar, gunakan **Abuse Red Teaming** atau **Product Safety Red Teaming**. `Victim-Abuser Red Team` ialah nama preset khas ZASS.
+**External name:** when describing this method outside ZASS, use **Abuse Red Teaming** or **Product Safety Red Teaming**. `Victim-Abuser Red Team` is the ZASS-specific preset name.
 
-| Peranan | Soalan utama | Hasil yang dicari |
+| Role | Core question | Output sought |
 |---|---|---|
-| **Engineer** | Bolehkah ia dibina, dijaga dan dijalankan dalam constraints sebenar? | Keperluan, modul, data, kos, had dan ujian teknikal. |
-| **Artist** | Bagaimanakah pengalaman itu dirasa oleh manusia? | Journey, bahasa, cerita, rasa yakin, lega, seronok atau bermakna. |
-| **Victim-Abuser Red Team** | Siapa boleh keliru, tercedera atau mengambil kesempatan, dan bagaimana dikesan? | Risiko, kesan manusia, evidence, detection signal dan preventive control. |
+| **Engineer** | Can this be built, maintained, and operated within the real constraints? | Requirements, modules, data, cost, limits, and technical tests. |
+| **Artist** | How will this experience feel to a human being? | Journey, language, story, confidence, relief, enjoyment, or meaning. |
+| **Victim-Abuser Red Team** | Who could be confused, harmed, or exploit the system, and how would that be detected? | Risks, human impact, evidence, detection signals, and preventive controls. |
 
-Contoh arahan:
+Example instruction:
 
 ```text
 ZASS REVIEW
-Method: 3-Otak
-Scope: [idea atau bahagian projek]
+Method: Three Minds
+Scope: [idea or project area]
 Run Engineer, Artist, and Victim-Abuser Red Team perspectives.
 Do not change LOCKED decisions.
 Return findings, contradictions, risks, candidate decisions, and the NEXT-DAY ACTION PROPOSAL.
 ```
 
-## MAKLUM BALAS SELEPAS KEMAS KINI
+## STATUS AFTER AN UPDATE
 
-Selepas AI benar-benar mengemas kini entri dalam fail ZASS, ia mesti memaklumkan:
+After AI has actually updated entries in the ZASS file, it must state:
 
-> **ZASS telah dikemas kini mengikut format ZASS dan sedia untuk brainstorming berstruktur.**
+> **ZASS has been updated in the ZASS format and is ready for structured brainstorming.**
 
-Jika AI hanya menunjukkan cadangan dan belum mengemas kini fail, ia mesti menyatakan perkara itu dengan jelas dan tidak mendakwa fail sudah dikemas kini.
+If AI has only shown a proposed change and has not updated the file, it must state that clearly and must not claim that the file has been updated.
 
-## OUTPUT DEFAULT — CADANGAN TINDAKAN ESOK
+## DEFAULT OUTPUT — NEXT-DAY ACTION PROPOSAL
 
-Selepas setiap `ZASS` atau `ZASS REVIEW`, AI mesti menghasilkan cadangan ini. Ia ialah cadangan kerja kecil untuk mengukur kos dan nilai idea; ia bukan arahan automatik untuk membina projek.
+After every `ZASS` or `ZASS REVIEW`, AI must produce this proposal. It is a small work plan that measures the cost and value of an idea; it does not automatically authorize building the project.
 
-AI mesti memberi ruang respons yang pendek dan mudah dibaca sebelum cadangan tindakan esok:
+AI must provide a short, readable response space before the next-day action proposal:
 
 ```text
-## ✨ RUMUSAN dan CADANGAN oleh AI
+## ✨ AI SUMMARY AND SUGGESTIONS
 
-[AI menulis 1–3 perenggan pendek secara bebas dan natural. Ia boleh merumus findings,
-menyambung corak yang AI nampak, atau memberi cadangan kreatif yang jelas sebagai calon.]
+[AI writes 1–3 short natural paragraphs freely. It may summarize findings, connect patterns
+it notices, or offer creative suggestions clearly labeled as candidates.]
 ```
 
-Rumusan ini mesti jelas sebagai cadangan AI, bukan keputusan; ia tidak boleh mengubah mana-mana `LOCKED` decision atau mencipta fakta.
+This summary must be clearly presented as AI advice, not a decision; it may not modify any `LOCKED` decision or invent facts.
 
 ------------------------
 
 ```text
 ## 🧭 NEXT-DAY ACTION PROPOSAL
 
-Esok — Sahkan satu andaian paling kritikal
-Tindakan: [satu tindakan paling kecil yang boleh dibuat esok]
-Output: [bukti / jawapan / data kecil yang boleh dinilai]
+Tomorrow — Verify one critical assumption
+Action: [one smallest action that can be taken tomorrow]
+Output: [evidence / answer / small evaluable data point]
 
 💰 Cost: RM___
-⏱️ Time: ___ jam
-🛑 Stop rule: Hentikan tindakan jika [syarat].
+⏱️ Time: ___ hours
+🛑 Stop rule: Stop the action if [condition].
 ```
 
 ------------------------
 
-AI mesti kemudian menutup output dengan soalan yang jelas:
+AI must then close the output with a clear question:
 
-Sebelum menawarkan `PROCEED`, AI mesti menunjukkan set yang akan diluluskan:
+Before offering `PROCEED`, AI must show the exact set that will be approved:
 
 ```text
 PROPOSED FOR PROCEED
-- [ID / tindakan / perubahan]
-- [ID / tindakan / perubahan]
+- [ID / action / change]
+- [ID / action / change]
 ```
 
-**👉 NEXT STEP — PROCEED ▶️ atau PIVOT 🔄?**
+**👉 NEXT STEP — PROCEED ▶️ or PIVOT 🔄?**
 
-- **PROCEED ▶️** — AI mencadangkan hanya langkah yang paling relevan daripada pilihan berikut:
-  - **🧪 Jalankan eksperimen** — uji andaian atau `E-xxx` dengan bukti kecil.
-  - **🔍 ZASS REVIEW** — nyatakan **Method**, **Scope**, **Focus**, dan sebab ringkas.
-  - **🛠️ Bina mini-prototype** — hasilkan artefak atau simulasi kecil untuk diuji.
-  - **⚖️ Cadangkan keputusan** — banding pilihan, bukti dan trade-off dalam `D-xxx`; belum LOCK.
-  - **▶️ PROCEED** — pemilik menerima tepat item dalam `PROPOSED FOR PROCEED`; item yang tidak disenaraikan tidak diluluskan. Cadangan yang jelas ditanda untuk LOCK menjadi LOCKED. Jika proposal set berubah atau ambigu, paparkan semula set dahulu. PROCEED tidak commit atau push.
-  - **📦 COMMIT** — commit dan push perubahan yang telah diluluskan ke GitHub sebagai satu commit ber-versi yang boleh dijejak; laporkan SHA sebenar hanya selepas push berjaya.
+- **PROCEED ▶️** — AI recommends only the most relevant next action from these choices:
+  - **🧪 Run an experiment** — test an assumption or `E-xxx` with small evidence.
+  - **🔍 ZASS REVIEW** — state the **Method**, **Scope**, **Focus**, and a short reason.
+  - **🛠️ Build a mini-prototype** — create a small artifact or simulation to test.
+  - **⚖️ Propose a decision** — compare options, evidence, and trade-offs in `D-xxx`; it is not LOCKED.
+  - **▶️ PROCEED** — the owner accepts exactly the items in `PROPOSED FOR PROCEED`; unlisted items are not approved. Proposals clearly marked for LOCK become LOCKED. If the proposal set changes or is ambiguous, show the set again first. PROCEED does not commit or push.
+  - **📦 COMMIT** — commit and push approved changes to GitHub as one traceable versioned commit; report the real SHA only after the push succeeds.
 
 ---
 
-- **PIVOT 🔄** — AI mencari arah lain yang masih menyelesaikan masalah asal dan mengekalkan calon terdahulu dalam rekod.
-  - **🔀 Cadangan pivot:** [arah alternatif yang sesuai dengan evidence semasa].
+- **PIVOT 🔄** — AI searches for another direction that still solves the original problem and preserves earlier candidates in the record.
+  - **🔀 Pivot candidate:** [an alternative direction appropriate to current evidence].
 
-Jika `ACTION_PLAN.md` wujud, NEXT-DAY ACTION PROPOSAL mesti rujuk action atau `E-xxx` yang sedia ada dahulu. `PROCEED` hanya mengemas kini atau mencipta action yang disenaraikan dalam `PROPOSED FOR PROCEED`; `PIVOT` merekod perubahan arah. Jika pemilik secara biasa meminta kerja ditangguh atau dihentikan, action boleh dipindahkan ke state `PARKED`; tiada command `PARK` khusus. Jangan mencipta duplicate task pada setiap perbualan. Jika tiada ACTION_PLAN, ZASS terus berfungsi seperti biasa.
+If `ACTION_PLAN.md` exists, NEXT-DAY ACTION PROPOSAL must first reference an existing action or `E-xxx`. `PROCEED` only updates or creates actions listed in `PROPOSED FOR PROCEED`; `PIVOT` records the changed direction. If the owner naturally asks to defer or stop work, the action may move to the `PARKED` state; there is no dedicated `PARK` command. Do not create duplicate tasks on every conversation. Without ACTION_PLAN, ZASS continues to work normally.
 
 
-## DISIPLIN BUKTI DAN KEPUTUSAN RINGAN
+## LIGHTWEIGHT EVIDENCE AND DECISION DISCIPLINE
 
-Tambahan ini menjadikan ZASS lebih tajam tanpa menambah state atau ID baharu. Ia digunakan apabila ada eksperimen, risiko, atau candidate decision; jangan isi medan dengan fakta rekaan.
+These additions sharpen ZASS without adding states or IDs. Use them when there is an experiment, risk, or candidate decision; never fill fields with invented facts.
 
-**Masalah yang sedang diuji:** [satu ayat calon tentang masalah pengguna/operasi yang mahu disahkan].
+**Problem being tested:** [one candidate sentence about the user or operational problem to validate].
 
-### Rekod eksperimen (`E-xxx`)
-
-```text
-🔗 Goal/Question tested: [GOAL atau Q-xxx]
-🧠 Assumption: [perkara yang dianggap benar]
-🎯 Pass/fail signal: [bukti atau ambang yang menentukan hasil]
-👀 Observed result: [apa yang benar-benar berlaku / PENDING]
-📚 Learning: [apa yang diketahui selepas hasil diperhatikan / PENDING]
-➡️ Impact: DEFER / PROCEED / PIVOT — [alasan]
-```
-
-### Rekod risiko (`R-xxx`)
+### Experiment record (`E-xxx`)
 
 ```text
-🚨 Early warning signal: [tanda awal risiko mula berlaku]
+🔗 Goal/Question tested: [GOAL or Q-xxx]
+🧠 Assumption: [what is being treated as true]
+🎯 Pass/fail signal: [evidence or threshold that determines the result]
+👀 Observed result: [what actually happened / PENDING]
+📚 Learning: [what is known after observing the result / PENDING]
+➡️ Impact: DEFER / PROCEED / PIVOT — [reason]
 ```
 
-### Rekod keputusan (`D-xxx`)
+### Risk record (`R-xxx`)
 
 ```text
-🧭 Decision drivers: [kriteria yang benar-benar penting]
-🗂️ Options considered: [pilihan yang dibandingkan]
-✅ Decision: [pilihan pemilik / PENDING jika belum diputuskan]
-🔄 Consequences: [apa yang berubah atau perlu diterima]
-🔁 Revisit trigger: [bukti atau keadaan yang memerlukan semakan semula]
+🚨 Early warning signal: [sign that the risk is beginning to occur]
 ```
 
-Untuk projek berpasukan sahaja, AI boleh mencadangkan peranan **DACI** (Driver, Approver, Contributors, Informed). Ia pilihan; pemilik projek kekal pihak yang LOCK keputusan dalam ZASS.
+### Decision record (`D-xxx`)
 
-### Mode pilihan, bukan aliran wajib
+```text
+🧭 Decision drivers: [criteria that truly matter]
+🗂️ Options considered: [alternatives compared]
+✅ Decision: [owner choice / PENDING when not yet decided]
+🔄 Consequences: [what changes or must be accepted]
+🔁 Revisit trigger: [evidence or condition requiring review]
+```
 
-- **Cynefin triage** — pilih cara kerja mengikut sifat isu: jelas → checklist; rumit → analisis pakar; kompleks → eksperimen kecil; kacau-bilau → stabilkan dahulu.
-- **Design Sprint mode** — gunakan apabila cabaran pengguna sudah jelas dan pasukan mahu prototype serta uji dengan pengguna dalam masa singkat.
-- **Wardley Mapping** — gunakan di luar output default bagi projek besar yang mempunyai banyak komponen, kebergantungan, vendor, atau keputusan build-vs-buy.
+For multi-owner projects only, AI may suggest **DACI** roles (Driver, Approver, Contributors, Informed). It is optional; the project owner remains the party that LOCKS decisions in ZASS.
+
+### Optional modes, not mandatory flow
+
+- **Cynefin triage** — match work to the issue: clear → checklist; complicated → expert analysis; complex → small experiment; chaotic → stabilize first.
+- **Design Sprint mode** — use when the user challenge is clear and a team wants to prototype and test quickly.
+- **Wardley Mapping** — use outside the default output for large projects with many components, dependencies, vendors, or build-vs-buy choices.
 
 ---
 
-## 4. Gunakan banyak AI tanpa voting
+## 4. Use many AI models without voting
 
-Jika beberapa AI bersetuju, itu **bukan evidence**.
+If multiple AI models agree, that is **not evidence**.
 
-Jika AI tidak bersetuju, tukarkan perbezaan itu kepada:
+If AI models disagree, turn the difference into:
 
 - QUESTION
 - EXPERIMENT
 - TRADE-OFF
 - CANDIDATE DECISION
 
-Contoh:
+Example:
 
 Gemini: PostgreSQL  
 Claude: SQLite  
 GPT: Firestore
 
-Jangan buat voting.
+Do not vote.
 
-Sebaliknya hasilkan soalan seperti:
+Instead, ask questions such as:
 
-- Berapa concurrent writers?
-- Perlu offline?
-- Berapa saiz data?
-- Perlu relational integrity?
-- Berapa kos operasi?
-- Siapa akan maintain?
+- How many concurrent writers?
+- Is offline operation needed?
+- What is the expected data size?
+- Is relational integrity required?
+- What is the operational cost?
+- Who will maintain it?
 
-Kemudian buat keputusan berdasarkan evidence.
+Then make a decision based on evidence.
 
 ---
 
-## 5. Bentuk candidate architecture hanya bila perlu
+## 5. Create architecture candidates only when needed
 
-Jika benar-benar ada pendekatan architecture berlainan, gunakan:
+If there are genuinely different architectural approaches, use:
 
 - `AC-001`
 - `AC-002`
 - `AC-003`
 
-Contoh:
+Example:
 
 - AC-001 Modular Monolith
 - AC-002 Microservices
 - AC-003 Event-driven Hybrid
 
-Bandingkan semua candidate menggunakan kriteria yang sama.
+Compare all candidates against the same criteria.
 
-Jangan biarkan setiap AI mencipta pelan A/B/C sendiri tanpa kawalan.
+Do not let every AI produce its own uncontrolled Plan A/B/C.
 
 ---
 
-## 6. Tukarkan isu kepada keputusan
+## 6. Turn an issue into a decision
 
-Semua keputusan penting masuk ke `DECISION LEDGER`.
+Every important decision goes into the `DECISION LEDGER`.
 
-State standard:
+Standard states:
 
 `RAW → CANDIDATE → TESTING → DECIDED → LOCKED`
 
-State tambahan:
+Additional states:
 
 - `REJECTED`
 - `DEFERRED`
 - `SUPERSEDED`
 
-AI boleh mencadangkan `CANDIDATE`.
+AI may propose a `CANDIDATE`.
 
-Hanya project owner boleh menukar keputusan kepada `LOCKED`.
-
----
-
-## 7. Lock keputusan
-
-Contoh arahan biasa: “Saya pilih [pilihan] untuk [topik]. Kunci keputusan ini.” AI mencari ID yang sepadan dan mengesahkan sasaran jika tidak jelas. `LOCK D-012` boleh digunakan jika abang sudah tahu ID, tetapi tidak wajib.
-
-Sebelum lock, semak:
-
-- masalah jelas?
-- alternatif telah dipertimbangkan?
-- trade-off diketahui?
-- evidence mencukupi?
-- kesan terhadap sistem difahami?
-
-LOCKED decision menjadi authoritative.
-
-AI tidak boleh mengubahnya secara senyap.
+Only the project owner may change a decision to `LOCKED`.
 
 ---
 
-## 8. Jangan buang rejected idea
+## 7. Lock a decision
 
-Simpan di `REJECTED IDEAS`.
+A normal instruction is: “I choose [option] for [topic]. Lock this decision.” AI finds the matching ID and confirms the target if it is unclear. You may use `LOCK D-012` if you already know the ID, but it is not required.
 
-Tujuannya supaya AI masa depan tidak mengulangi idea yang sudah dinilai dan ditolak.
+Before locking, check:
+
+- Is the problem clear?
+- Have alternatives been considered?
+- Are the trade-offs understood?
+- Is the evidence sufficient?
+- Is the impact on the system understood?
+
+A LOCKED decision becomes authoritative.
+
+AI may not change it silently.
 
 ---
 
-## 9. Draf dahulu, sahkan architecture apabila READY
+## 8. Do not delete rejected ideas
 
-`DRAFT ARCH` menghasilkan draf architecture berversi kerja walaupun readiness belum READY. Asaskan draf pada keputusan LOCKED, goals, constraints, workflows dan risiko yang diketahui; labelkan andaian serta ARCHITECTURE BLOCKER. Jangan memperkenalkan keputusan besar secara senyap.
+Keep them in `REJECTED IDEAS`.
 
-Apabila draf menjawab tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan, AI mesti bertanya **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal yang masih terbuka. AI juga boleh mencadangkan `DRAFT ARCH` lebih awal apabila keputusan cukup jelas.
-
-`BUILD ARCHITECTURE` memulakan pintu pengesahan, bukan membina terus: tunjuk draf, keputusan LOCKED, status ARCHITECTURE READINESS, andaian kritikal dan kesannya. Jika belum READY, jelaskan blocker yang menghalang pengesahan. Jika READY, minta balasan tepat `YA, CONFIRM ARCHITECTURE`. Hanya selepas balasan itu architecture disahkan daripada keputusan LOCKED dan konteks yang telah diterima pemilik.
+This prevents future AI from repeatedly suggesting ideas that have already been evaluated and rejected.
 
 ---
 
-## 10. Selepas architecture wujud
+## 9. Draft first, confirm architecture when READY
 
-Sebarang idea baru mesti melalui:
+`DRAFT ARCH` produces a working-version architecture draft even before readiness is READY. Base it on LOCKED decisions, goals, constraints, workflows, and known risks; label assumptions and ARCHITECTURE BLOCKERS. Never silently introduce major decisions.
+
+Once the draft covers purpose, main flow, main components, and relevant LOCKED decisions, AI must ask **“Ready to BUILD ARCHITECTURE?”** and list remaining critical assumptions. AI may also suggest `DRAFT ARCH` earlier when decisions are sufficiently clear.
+
+`BUILD ARCHITECTURE` starts the confirmation gate rather than immediately building: show the draft, LOCKED decisions, ARCHITECTURE READINESS status, critical assumptions, and impact. If NOT READY, explain blockers to confirmation. If READY, ask for the exact reply `YA, CONFIRM ARCHITECTURE`. Only after that reply is architecture confirmed from LOCKED decisions and owner-accepted context.
+
+---
+
+## 10. After architecture exists
+
+Every new idea must pass through:
 
 `New Idea → CANDIDATE → Impact Analysis → DECISION → Human Approval → LOCK → Architecture Update`
 
-Jangan edit architecture dahulu kemudian cuba menyesuaikan decision kemudian.
+Do not edit architecture first and then attempt to fit the decision afterward.
 
 ---
 
@@ -652,7 +664,7 @@ Jangan edit architecture dahulu kemudian cuba menyesuaikan decision kemudian.
          🏗 ARCHITECTURE
 ```
 
-Tiga zone utama:
+Three core zones:
 
 ```text
 DISCOVERY ZONE
@@ -665,9 +677,9 @@ ARCHITECTURE ZONE
 Consume LOCKED decisions only
 ```
 
-Discovery boleh chaos.  
-Decision mesti terkawal.  
-Architecture mesti disiplin.
+Discovery can be chaotic.  
+Decisions must be controlled.  
+Architecture must be disciplined.
 
 ---
 
@@ -699,7 +711,7 @@ AI may NOT:
 
 Only the project owner may change a decision to `LOCKED`.
 
-**Falsafah pemisahan:** `AI suggestion ≠ Owner decision ≠ Git change`. Cadangan AI kekal calon sehingga pemilik membuat keputusan; keputusan hanya menjadi state Git sebenar selepas perubahan berjaya disimpan/di-commit. Jangan mendakwa mana-mana lapisan telah berlaku jika ia belum berlaku.
+**Separation philosophy:** `AI suggestion ≠ Owner decision ≠ Git change`. An AI suggestion remains a candidate until the owner decides; a decision becomes actual Git state only after the change is successfully saved/committed. Never claim that any layer has happened when it has not.
 
 Decision states:
 
@@ -952,7 +964,7 @@ Create architecture candidates only when there are genuinely different architect
 
 Do not select a candidate by AI vote.
 
-Use evidence, constraints and project-owner decisions.
+Use evidence, constraints, and project-owner decisions.
 
 ---
 
@@ -1060,40 +1072,40 @@ Use experiments when discussion alone cannot resolve a decision. If `ACTION_PLAN
 
 # 18. ARCHITECTURE READINESS
 
-`ZERO → ARCHITECTURE` mengukur kematangan idea untuk dijadikan architecture. Ia **bukan** ukuran kemajuan coding, execution atau keseluruhan projek.
+`ZERO → ARCHITECTURE` measures how mature an idea is for architecture. It does **not** measure coding progress, execution progress, or total project completion.
 
-Gunakan skor telus berikut:
+Use this transparent score:
 
-| Kriteria | Berat |
+| Criterion | Weight |
 |---|---:|
-| Tujuan atau masalah jelas | 10% |
-| Pengguna/stakeholder dan hasil yang dikehendaki jelas | 10% |
-| Scope dan non-goals jelas | 10% |
-| Constraints dan quality attributes penting diketahui | 10% |
-| Pilihan serta trade-off telah dibandingkan | 10% |
-| Andaian kritikal telah ditutup atau mempunyai eksperimen | 15% |
-| Risiko utama telah ditangani | 10% |
-| Aliran utama sistem jelas | 10% |
-| Keputusan utama sudah `LOCKED` | 10% |
-| Tiada blocker architecture yang kritikal | 5% |
+| Purpose or problem is clear | 10% |
+| Users/stakeholders and desired outcomes are clear | 10% |
+| Scope and non-goals are clear | 10% |
+| Important constraints and quality attributes are known | 10% |
+| Options and trade-offs have been compared | 10% |
+| Critical assumptions are closed or have experiments | 15% |
+| Major risks have been addressed | 10% |
+| Main system flow is clear | 10% |
+| Key decisions are `LOCKED` | 10% |
+| No critical architecture blocker remains | 5% |
 
-Nilai setiap kriteria sebagai `0 = belum ada`, `0.5 = separa`, atau `1 = lengkap`, kemudian darabkan dengan beratnya. AI mesti menyatakan sebab ringkas bagi markah dan blocker utama; jangan cipta ketepatan palsu atau menaikkan markah kerana perbincangan panjang.
+Score each criterion as `0 = absent`, `0.5 = partial`, or `1 = complete`, then multiply by its weight. AI must give a short reason for the score and name the main blockers; do not create false precision or increase the score merely because the discussion is long.
 
-Status:
+Statuses:
 
-| Skor | Status |
+| Score | Status |
 |---:|---|
 | 0–19% | `RAW` |
 | 20–39% | `EXPLORING` |
 | 40–59% | `SHAPING` |
 | 60–69% | `DECIDING` |
 | 70–84% | `READY FOR DRAFT ARCH` |
-| 85–99% + draf wujud dan sedang direview | `DRAFT ARCH UNDER REVIEW` |
+| 85–99% + a draft exists and is under review | `DRAFT ARCH UNDER REVIEW` |
 | 100% | `ARCHITECTURE CONFIRMED` |
 
-Apabila skor mencapai sekurang-kurangnya 70%, AI mesti **mencadangkan** draf architecture tetapi tidak membinanya secara automatik. Status tidak naik kepada `DRAFT ARCH UNDER REVIEW` hanya kerana skor mencapai 85%; draf mesti benar-benar wujud dan sedang direview. Skor 100% hanya diberi selepas pintu pengesahan dua langkah selesai dan pemilik menjawab tepat `YA, CONFIRM ARCHITECTURE`.
+At 70% or above, AI must **suggest** an architecture draft but must not create it automatically. Status does not advance to `DRAFT ARCH UNDER REVIEW` merely because the score reaches 85%; a draft must actually exist and be under review. A score of 100% is allowed only after the two-step confirmation gate is complete and the owner replies exactly `YA, CONFIRM ARCHITECTURE`.
 
-Selain skor, confirmed architecture dibenarkan hanya apabila:
+In addition to the score, confirmed architecture is allowed only when:
 
 - [ ] Core problem is clear
 - [ ] Primary users are known
@@ -1115,33 +1127,33 @@ Selain skor, confirmed architecture dibenarkan hanya apabila:
 
 `NOT READY / READY`
 
-### EVIDENCE CONFIDENCE — paksi berasingan
+### EVIDENCE CONFIDENCE — a separate axis
 
-`Architecture Readiness` menjawab: **adakah projek cukup jelas untuk membina atau mengesahkan architecture?**
+`Architecture Readiness` answers: **is the project clear enough to build or confirm an architecture?**
 
-`Evidence Confidence` menjawab: **sejauh mana andaian, risiko dan keputusan penting disokong oleh bukti yang diperhatikan?**
+`Evidence Confidence` answers: **how strongly are the important assumptions, risks, and decisions supported by observed evidence?**
 
-Kedua-duanya **tidak boleh dicampurkan**. `100% Architecture Readiness` tidak bermaksud produk atau architecture telah tervalidasi secara empirikal.
+The two axes **must not be conflated**. `100% Architecture Readiness` does not mean the product or architecture has been empirically validated.
 
-Gunakan label kualitatif berikut, tanpa peratus kedua:
+Use these qualitative labels, without a second percentage:
 
-- `UNVALIDATED` — tiada bukti empirikal diperhatikan untuk andaian kritikal yang relevan.
-- `LOW` — bukti masih sedikit, tidak langsung, atau andaian kritikal utama belum diuji.
-- `MEDIUM` — terdapat bukti relevan tetapi coverage atau validation dunia sebenar masih tidak lengkap.
-- `HIGH` — bukti langsung yang kuat meliputi andaian kritikal dan risiko utama yang relevan.
+- `UNVALIDATED` — no observed empirical evidence for relevant critical assumptions.
+- `LOW` — evidence is limited or indirect, or major critical assumptions remain untested.
+- `MEDIUM` — relevant evidence exists but coverage or real-world validation is incomplete.
+- `HIGH` — strong direct evidence covers the relevant critical assumptions and major risks.
 
-**Evidence Confidence wajib dipaparkan** apabila salah satu keadaan berikut berlaku:
+**Evidence Confidence must be displayed** whenever any of these conditions applies:
 
-1. `ZERO → ARCHITECTURE` score dipaparkan sebagai assessment sebenar/current project state.
-2. Readiness untuk `DRAFT ARCH` sedang dinilai.
-3. `BUILD ARCHITECTURE` dijalankan.
-4. Architecture sudah `CONFIRMED` tetapi validation atau experiment masih berjalan / belum selesai.
+1. A `ZERO → ARCHITECTURE` score is shown as a real/current project assessment.
+2. Readiness for `DRAFT ARCH` is being evaluated.
+3. `BUILD ARCHITECTURE` is run.
+4. Architecture is already `CONFIRMED` while validation or experiments are still running / incomplete.
 
-Apabila dipaparkan, sertakan sebab ringkas berdasarkan evidence yang benar-benar tersedia. Jika tiada bukti empirikal diperhatikan untuk andaian kritikal yang relevan, gunakan `UNVALIDATED`. Jangan reka evidence.
+When displayed, include a short reason grounded in evidence that actually exists. If there is no observed empirical evidence for the relevant critical assumptions, use `UNVALIDATED`. Never invent evidence.
 
-Jika `ZERO → ARCHITECTURE` hanya muncul sebagai contoh statik dalam dokumentasi/template dan bukan assessment projek sebenar, rule paparan wajib ini tidak terpakai.
+If `ZERO → ARCHITECTURE` appears only as a static documentation/template example rather than a real project assessment, this mandatory display rule does not apply.
 
-Architecture boleh berstatus `CONFIRMED` dengan Evidence Confidence yang rendah jika syarat readiness dan pintu pengesahan telah dipenuhi; status confidence yang rendah mesti kekal kelihatan bersama validation loops yang masih terbuka.
+An architecture may be `CONFIRMED` with low Evidence Confidence when the readiness requirements and confirmation gate have been satisfied; the low confidence and remaining validation loops must stay visible.
 
 **Evidence Confidence:**
 
@@ -1265,7 +1277,7 @@ These are optional human-readable conventions, not software commands. The owner 
 
 ### ZASS
 
-Tangkap dan teroka idea mentah tanpa mengubah LOCKED decisions. Hasilkan NEXT-DAY ACTION PROPOSAL dan tanya sama ada pengguna mahu PROCEED atau PIVOT.
+Capture and explore a raw idea without modifying LOCKED decisions. Return the NEXT-DAY ACTION PROPOSAL and ask whether to PROCEED or PIVOT.
 
 ### ZASS REVIEW
 
@@ -1273,11 +1285,11 @@ Challenge the project using a named methodology or perspective.
 
 ### ACTION PLAN
 
-Show or update the relevant execution state: current focus, P0/P1 priorities, ACTIVE/NEXT actions, experiments, blockers, recent lessons and ZASS FEED. This command never LOCKS a decision.
+Show or update relevant execution state: current focus, P0/P1 priorities, ACTIVE/NEXT actions, experiments, blockers, recent lessons, and ZASS FEED. This command never LOCKS a decision.
 
 ### ZASS CHALLENGE
 
-Attack assumptions, edge cases, failure modes and contradictions.
+Attack assumptions, edge cases, failure modes, and contradictions.
 
 ### ZASS DECIDE
 
@@ -1285,11 +1297,11 @@ Return unresolved decision candidates and their trade-offs.
 
 ### PROCEED
 
-Pemilik projek meluluskan **tepat** proposal set yang disenaraikan di bawah `PROPOSED FOR PROCEED` dalam pemetaan ZASS terakhir. Item yang tidak disenaraikan tidak diluluskan. Mana-mana proposal yang jelas ditanda untuk LOCK menjadi LOCKED. Jika proposal set telah berubah, bercanggah atau ambigu sejak pemetaan itu, AI mesti memaparkan set baharu dan menunggu arahan PROCEED sekali lagi. PROCEED tidak commit atau push.
+The project owner approves **exactly** the proposal set listed under `PROPOSED FOR PROCEED` in the latest ZASS mapping. Unlisted items are not approved. Any proposal clearly marked for LOCK becomes LOCKED. If the proposal set has changed, conflicts, or is ambiguous since that mapping, AI must display the new set and wait for PROCEED again. PROCEED does not commit or push.
 
 ### COMMIT
 
-Commit perubahan yang telah diluluskan sebagai satu commit atomik ber-versi dan push ke GitHub source of truth. Laporkan kejayaan hanya selepas push berjaya dan pulangkan commit SHA sebenar.
+Commit the approved changes as one atomic versioned commit and push them to the GitHub source of truth. Report success only after the push succeeds and return the real commit SHA.
 
 ### DRAFT ARCH
 
@@ -1301,7 +1313,7 @@ Show the draft, readiness, LOCKED decisions, and open critical assumptions. If R
 
 ### ZASS AUDIT
 
-Audit an existing architecture against ZASS decisions, risks and constraints.
+Audit an existing architecture against ZASS decisions, risks, and constraints.
 
 ### ZASS IMPACT
 
@@ -1318,7 +1330,7 @@ AI assigns and maintains these IDs consistently. The owner does not need to reme
 | `R-xxx` | Risk | Possible failure and impact. |
 | `MR-xxx` | Method Review | Findings from a named perspective. |
 | `AC-xxx` | Architecture Candidate | Alternative arrangement of components and flows for a stated scope. |
-| `D-xxx` | Decision | Decision topic, options, trade-offs, evidence and status. |
+| `D-xxx` | Decision | Decision topic, options, trade-offs, evidence, and status. |
 | `L-xxx` | Locked Decision | Authoritative record referencing an owner-locked D entry. |
 | `E-xxx` | Experiment | Test and evidence relevant to a question or decision. |
 

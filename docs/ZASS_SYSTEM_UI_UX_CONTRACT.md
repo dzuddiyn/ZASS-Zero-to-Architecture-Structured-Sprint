@@ -1,7 +1,7 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
-**System version:** 0.1.0  
-**Full ZASS surface alignment:** v0.3.7+<br>
+**System version:** 0.1.1  
+**Full ZASS surface alignment:** v0.3.8+<br>
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
@@ -397,7 +397,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.1.0
+ZASS SYSTEM v0.1.1
 DECIDE or BUILD?
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
@@ -414,5 +414,12 @@ Bump the **ZASS SYSTEM version** whenever a user-visible system-level contract c
 - system-level automation behavior.
 
 Do not require a Full ZASS/ZASSIMPLE/ZASSELECTION version bump when their own method semantics are unchanged.
+
+### Full ZASS language routing
+
+- `ZASS.md` is the default English Full ZASS method.
+- `ZASS_MY.md` is the Bahasa Melayu localization.
+- If a user speaks Bahasa Melayu while using `ZASS.md`, notify them lightly that `ZASS_MY.md` exists, but allow the conversation to continue in Bahasa Melayu without an automatic file switch.
+- Language choice does not change decision authority or project state.
 
 This separation lets users and AI detect a ZASS SYSTEM upgrade without falsely claiming that an individual method changed.

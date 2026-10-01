@@ -28,7 +28,7 @@ Read these first:
 1. `docs/CR010_ZASS_CHECK_SPEC.md`
 2. `docs/PRODUCTIZATION_ROADMAP.md`
 3. `ZASS.md`
-4. `ZASS_EN.md`
+4. `ZASS_MY.md`
 5. `README.md`
 
 Treat the repository as the Source of Truth.
@@ -39,7 +39,7 @@ Do not redesign the ZASS methodology.
 
 Do not add new ZASS commands, states, ledgers, scoring systems, or architecture rules.
 
-Full ZASS is currently v0.3.5. Do not bump the Full ZASS method version unless implementation discovers and requires a genuine method-semantics change. If that happens, stop and report it instead of changing the method silently.
+Full ZASS is currently v0.3.8. `ZASS.md` is the default English method and `ZASS_MY.md` is the Bahasa Melayu localization. Do not change decision semantics silently.
 
 ### Goal
 

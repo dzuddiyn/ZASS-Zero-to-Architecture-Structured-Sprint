@@ -55,8 +55,8 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.1.0 |
-| Full ZASS | v0.3.7 |
+| ZASS SYSTEM | v0.1.1 |
+| Full ZASS | v0.3.8 |
 | ZASSIMPLE | v0.2.4 |
 | ZASSELECTION | v0.2.0 |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |

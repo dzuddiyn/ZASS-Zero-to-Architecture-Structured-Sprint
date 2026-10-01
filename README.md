@@ -366,8 +366,8 @@ You migrate because the **decision complexity** becomes important.
 
 **Start here (default, English):** [ZASSIMPLE_EN.md](ZASSIMPLE/ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE/ZASSIMPLE_MY.md)  
-**Full method:** [ZASS.md](ZASS.md)  
-**English Full method:** [ZASS_EN.md](ZASS_EN.md)
+**Full ZASS (default, English):** [ZASS.md](ZASS.md)  
+**Bahasa Melayu Full ZASS:** [ZASS_MY.md](ZASS_MY.md)
 
 ---
 
@@ -493,8 +493,8 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.1.0 — DECIDE or BUILD? + Local First-Class / AI-SYNC UI/UX baseline  
-**Full ZASS:** v0.3.7 — aligned with ZASS SYSTEM v0.1.0 UI/UX contract<br>
+**ZASS SYSTEM:** v0.1.1 — English-default Full ZASS + Malay language routing  
+**Full ZASS:** v0.3.8 — `ZASS.md` default English; `ZASS_MY.md` Bahasa Melayu<br>
 **ZASSIMPLE:** v0.2.4  
 **ZASSELECTION:** v0.2.0  
 **License:** [MIT](LICENSE)
