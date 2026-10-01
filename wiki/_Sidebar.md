@@ -18,5 +18,6 @@
 
 - [ZASS.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS.md)
 - [ZASSIMPLE.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE.md)
-- [ZASSELECTION.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION.md)
+- [ZASSELECTION_EN.md — default](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_EN.md)
+- [ZASSELECTION_MY.md — Bahasa Melayu](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md)
 - [CHANGELOG.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/CHANGELOG.md)
