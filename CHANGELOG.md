@@ -2,6 +2,12 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION visual PICKS lock] — 2026-10-01
+
+- LOCKED the visual PICKS labels as 🎯 P, 🚧 I, 📊 C, ⭐ K, and 💾 S.
+- LOCKED review-end labels as 🤖 AI Recommendation and 👉 Your selection?.
+- Applied the presentation convention to English and Malay ZASSELECTION methods, README, and Wiki without changing selection logic, scoring, authority, or v0.2.0 semantics.
+
 ## [ZASSELECTION language-file default] — 2026-10-01
 
 - LOCKED `ZASSELECTION/ZASSELECTION_EN.md` as the default ZASSELECTION method file.
