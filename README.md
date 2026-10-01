@@ -361,8 +361,8 @@ human impact
 
 AI may compare and recommend. Only the human selects.
 
-**[ZASSELECTION.md](ZASSELECTION.md)**  
-**[ZASSELECTION_EN.md](ZASSELECTION_EN.md)**
+**[ZASSELECTION.md](ZASSELECTION/ZASSELECTION.md)**  
+**[ZASSELECTION_EN.md](ZASSELECTION/ZASSELECTION_EN.md)**
 
 ---
 
@@ -461,7 +461,7 @@ You normally do **not** need all of them at the beginning.
 
 **Full ZASS:** v0.3.6  
 **ZASSIMPLE:** v0.1.7  
-**ZASSELECTION:** v0.1.0  
+**ZASSELECTION:** v0.2.0  
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:
