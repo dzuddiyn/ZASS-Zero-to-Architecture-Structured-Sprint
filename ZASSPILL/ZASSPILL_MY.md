@@ -281,6 +281,10 @@ Jangan masukkan maklumat peribadi yang tidak berkaitan hanya kerana AI/backend m
 
 > **Portability ialah disclosure boundary.**
 
+> **Memory provider berada di luar boundary packet.**
+
+ZASSPILL tidak menganggap, mengimport atau menyelaraskan personal memory, profile atau private context yang disimpan oleh ChatGPT, Gemini atau provider AI lain kecuali user sengaja membawanya masuk ke semantic thread. Personalization khusus provider boleh wujud serentak, tetapi ia bukan sebahagian daripada portable continuity authority.
+
 Portable packet boleh mengandungi maklumat yang lebih sedikit daripada private authorized backend.
 
 Kekalkan wording tepat user hanya apabila paraphrase boleh mengubah meaning secara material.
