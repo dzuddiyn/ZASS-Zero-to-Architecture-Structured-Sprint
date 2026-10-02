@@ -393,7 +393,101 @@ Apabila structured method memulangkan result, ZASSPILL simpan outcome relevan + 
 
 ---
 
-## 14. Ujian proof Phase 1
+## 14. Method Handoff Contract v0.1
+
+Apabila user secara jelas memilih DECIDE atau DESIGN, ZASSPILL mesti menghasilkan satu packet **ZASS METHOD HANDOFF** yang copy-ready.
+
+Packet handoff mesti:
+
+- nyatakan source method dan receiving method;
+- rekod transition yang dipilih secara jelas oleh user;
+- sertakan canonical raw GitHub link untuk receiving method;
+- arahkan receiver membaca dan mengikut method penerima sebelum structured work bermula;
+- bawa hanya continuity context minimum yang relevan daripada Section 13;
+- nyatakan bahawa inherited context ialah input, bukan keputusan, architecture, plan atau implementation yang telah siap;
+- kekalkan lineage daripada ZASSPILL ke receiving method.
+
+> **AI penerima mesti membaca receiving method sebelum membuat structured work. Jika link method tidak boleh diakses, AI tidak boleh improvise method tersebut; AI mesti minta user beri fail method berkaitan sebagai fallback.**
+
+### Handoff DESIGN
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSIMPLE
+Transition chosen by user: DESIGN
+
+Receiving method:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Arahan:
+Baca dan ikut method ZASSIMPLE pada link di atas sebelum memulakan structured design work.
+Jangan reka workflow ZASSIMPLE sendiri.
+Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSIMPLE_MY.md sebagai fallback.
+
+## THREAD
+[tajuk thread]
+
+## WHERE THE THINKING IS NOW
+[current state yang relevan kepada DESIGN]
+
+## WHAT MATTERS
+- [constraint / concern / preference / fakta yang relevan]
+
+## WHAT IS STILL OPEN
+- [perkara terbuka yang masih perlu design]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DESIGN → handoff to ZASSIMPLE.
+
+Handoff rule:
+Context ini ialah input kepada ZASSIMPLE, bukan architecture yang telah diputuskan.
+ZASSIMPLE memiliki structured design work selepas handoff ini.
+~~~
+
+### Handoff DECIDE
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSELECTION
+Transition chosen by user: DECIDE
+
+Receiving method:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Arahan:
+Baca dan ikut method ZASSELECTION pada link di atas sebelum memulakan comparison.
+Jangan bina kaedah selection sendiri.
+Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSELECTION_MY.md sebagai fallback.
+
+## THREAD
+[tajuk thread]
+
+## WHERE THE THINKING IS NOW
+[current state yang relevan kepada keputusan]
+
+## WHAT MATTERS
+- [constraint / concern / preference / fakta yang relevan]
+
+## WHAT IS STILL OPEN
+- [pilihan atau persoalan yang memang belum diputuskan]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DECIDE → handoff to ZASSELECTION.
+
+Handoff rule:
+Context ini ialah input kepada ZASSELECTION, bukan keputusan yang telah dibuat.
+ZASSELECTION memiliki structured comparison selepas handoff ini.
+~~~
+
+User sepatutnya boleh copy-paste packet handoff ini sebagai satu block ke AI yang sama atau AI lain.
+
+---
+
+## 15. Ujian proof Phase 1
 
 ZASSPILL v0.1.0 hanya dianggap berjaya apabila ini boleh dibuktikan dalam penggunaan sebenar:
 
