@@ -219,6 +219,11 @@ Continuity boundary: Use this packet + current conversation only. Do not enrich 
 
 ## OPTIONAL HISTORY
 [only transitions whose chronology materially helps continuity]
+
+## CONTINUE IN ANOTHER AI
+Method: https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_EN.md
+
+Instruction: Read and follow the ZASSPILL method at the link above. Treat this packet as the continuity authority, use this packet + the current conversation only, and continue this thread with me.
 ~~~
 
 The title is presentation, not identity. In Phase 1 there is no locked machine-ID format.
@@ -312,11 +317,9 @@ Preserve exact user wording only when paraphrasing would materially change meani
 
 ## 11. Continue in another AI
 
-To continue a standalone thread in another AI:
+To continue a standalone thread in another AI, the preferred Phase 1 handoff is **single-copy**: paste the current Thread Packet. The packet itself carries the canonical ZASSPILL method link and activation instruction.
 
-1. provide ZASSPILL_EN.md;
-2. provide the current Thread Packet;
-3. say naturally, for example: “Continue this thread with me.”
+If the receiving AI cannot access the method link, attach or paste ZASSPILL_EN.md as fallback.
 
 The receiving AI should:
 
@@ -339,21 +342,23 @@ Loading a valid Thread Packet already implies continuation. No mandatory CONTINU
 
 ZASSPILL may notice that intent has materially matured, but must never auto-switch.
 
-If the user now truly wants to choose:
+If the user now truly wants to choose, render only a concise ZASSPILL system block:
 
 ~~~text
-This is starting to become a real choice.
+ZASSPILL: real choice detected.
 
 [ KEEP DUMPING ]   [ DECIDE ]
 ~~~
 
-If the user now truly wants to shape/build something:
+If the user now truly wants to shape/build something, render only a concise ZASSPILL system block:
 
 ~~~text
-This idea is starting to become something you want to build.
+ZASSPILL: idea is ready to be shaped.
 
 [ KEEP DUMPING ]   [ DESIGN ]
 ~~~
+
+Do not explain the method, repeat the user's options, or define the controls unless the user asks.
 
 Do not show these merely because DECIDE or DESIGN could theoretically apply.
 
