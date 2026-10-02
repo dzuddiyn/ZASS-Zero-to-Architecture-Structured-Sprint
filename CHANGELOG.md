@@ -2,6 +2,18 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSPILL Design Direction v0.1] — 2026-10-02
+
+- LOCKED the pre-implementation design checkpoint for **ZASSPILL**, a portable DUMP continuity method/layer that preserves messy human context across chats and AIs without forcing premature structure.
+- LOCKED the ASC pilot target DUMP / DECIDE / DESIGN with DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. The current global DECIDE or BUILD? contract remains unchanged until explicit promotion gates pass.
+- LOCKED the target migration intent: after a successful pilot, promote DUMP / DECIDE / DESIGN to global ZASS SYSTEM, retire DECIDE or BUILD?, and replace user-facing BUILD with DESIGN.
+- LOCKED the ZASSIMPLE naming mitigation direction: its first lifecycle stage should become IDEA DUMP to distinguish raw build ideas from system-level DUMP continuity; this rename is not implemented by this checkpoint.
+- LOCKED the 6W continuity frame, truth-type vs continuity-stability separation, meaning-change refresh, continuity compression, hybrid semantic-thread model, thread retrieval/maintenance principles, Index vs Thread Packet boundary, and minimal handoff semantics.
+- LOCKED continuity authority rules: standalone packet authority before ASC linking; latest successfully synchronized ASC state for ASC-linked threads; external AI edits remain working changes until successful sync; revision conflicts must reconcile instead of silently overwrite.
+- LOCKED human-control and privacy principles: invisible by default but inspectable/correctable on demand, WHO carries only relationship + thread relevance, portability is a disclosure boundary, and user statements remain distinguishable from AI inference.
+- LOCKED phased implementation: Core proof → ASC authority/sync → semantic thread intelligence → full three-intent ASC pilot.
+- No ZASS SYSTEM or method version was bumped. No final schema, runtime contract, ZASSPILL_EN.md, ZASSPILL_MY.md, or global routing replacement is released by this checkpoint.
+
 ## [ZASS SYSTEM v0.1.2 / Full ZASS v0.3.9 / ZASSIMPLE v0.2.5 / ZASSELECTION v0.2.1] — 2026-10-02
 
 - LOCKED global EN/MY language routing across Full ZASS, ZASSIMPLE, and ZASSELECTION.
