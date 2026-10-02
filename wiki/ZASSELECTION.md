@@ -1,6 +1,6 @@
 # ZASSELECTION
 
-**Current version:** v0.2.1  
+**Current version:** v0.2.2  
 **Status:** UX FLOW LOCKED
 
 > **AI compares. You decide, AI saves.**
@@ -110,6 +110,31 @@ The quick-review presentation uses these icons consistently:
 ```
 
 This is a presentation convention only; it does not change scoring, authority, or persistence semantics.
+
+---
+
+## Matrix evidence discipline
+
+ZASSELECTION distinguishes between what AI may reasonably infer and what requires a stronger basis.
+
+| Matrix element | Default rule |
+|---|---|
+| Criteria | AI may infer from stated problem, goals, constraints and context; inferred criteria are not user-confirmed |
+| Weights | Represent priorities; AI-proposed weights are provisional, never silently authoritative |
+| Numeric scores | Require user input, evidence, measurable facts, or an explicit scoring rule |
+| Missing basis | Use qualitative comparison, `UNKNOWN`, or clearly labelled provisional scoring |
+| Recommendation | May still be given, but visible uncertainty must be preserved |
+
+Locked shorthand:
+
+```text
+Criteria may be inferred.
+Priorities must not be silently assigned.
+Scores must have a basis.
+Unknown stays UNKNOWN.
+```
+
+This rule prevents a visually precise matrix from implying evidence that does not exist.
 
 ---
 
