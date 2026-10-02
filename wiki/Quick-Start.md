@@ -82,10 +82,11 @@ Copy or download `ZASSIMPLE_EN.md`, give it to your AI, and talk normally.
 Useful commands:
 
 ```text
-ZASS
-LOCK DECISION
-COMMIT
-DRAFT ARCH
+ZASS!!
+PROCEED/LOCK
+SAVE
+DRAFT DESIGN
+CONFIRM DESIGN
 ```
 
 You do not need to memorize record IDs.
@@ -94,7 +95,7 @@ You do not need to memorize record IDs.
 
 Stay with ZASSIMPLE while you mainly ask:
 
-> **What should I build?**
+> **What should I design?**
 
 Move to Full ZASS when the harder question becomes:
 
@@ -104,7 +105,7 @@ Typical triggers:
 
 - important decisions depend on each other;
 - experiments or evidence matter;
-- several architecture options have meaningful trade-offs;
+- several design options have meaningful trade-offs;
 - privacy, money, data loss, security or operational risk matters;
 - decision history is becoming hard to track conversationally.
 

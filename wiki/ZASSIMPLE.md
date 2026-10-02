@@ -1,125 +1,113 @@
 # ZASSIMPLE
 
-**Current version:** v0.2.5
+**Current version:** v0.3.0
 
-ZASSIMPLE is the default lightweight way to use ZASS.
+ZASSIMPLE is the default lightweight DESIGN path in ZASS SYSTEM.
 
-> **Think casually. Record what matters. Agreement becomes a candidate. Lock becomes a decision. Architecture only appears when confirmed.**
+> **Got an idea? Dump it.**
+>
+> **DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!**
+
+> **From messy ideas to 👍 THUMBS-UP design.**
 
 ## How it feels
 
 Attach the current `ZASSIMPLE_EN.md` to an AI and talk normally.
 
-If the user speaks Bahasa Melayu, AI may keep the conversation in Malay and lightly mention `ZASSIMPLE_MY.md` once. Structured ZASSIMPLE surfaces follow the active method file language; the Malay file renders its I/AC/D tables, matrices and cards in Bahasa Melayu.
+If the user speaks Bahasa Melayu, AI may keep the conversation in Malay and lightly mention `ZASSIMPLE_MY.md` once. Structured ZASSIMPLE surfaces follow the active method file language; switching is never automatic.
 
 You do not need to:
-
 - fill a long form;
 - memorize IDs;
 - choose a review methodology;
-- design architecture before the problem is understood.
+- translate a non-technical project into software-architecture language.
 
-The AI should distinguish:
+The AI should keep ordinary conversation natural and preserve important lineage behind the scenes.
 
-- what the owner explicitly said;
-- AI interpretation;
-- what remains unknown.
+## DESIGN is universal
 
-AI may propose ideas, questions, risks, experiments and options. It cannot silently turn them into owner decisions.
+ZASSIMPLE uses **DESIGN** as the universal surface term. Architecture is only a technical subtype when it actually applies.
+
+Examples:
+- shop/service → layout, customer-flow, service, operating design;
+- business → operating model / process design;
+- product → product design;
+- software/IoT → system design and architecture when useful.
 
 ## Lightweight state
 
-ZASSIMPLE keeps a small set of useful sections:
+ZASSIMPLE keeps the visible UX small while maintaining useful internal records for ideas, agreed candidates, open notes, decisions, design, Action Plan, tasks, and delivery evidence.
 
-- IDEA LOG
-- AGREED CANDIDATES
-- OPEN NOTES
-- DECISIONS
-- ARCHITECTURE
-
-Casual explicit agreement can become an agreed candidate when the target is clear.
-
-A final decision requires an explicit owner instruction such as:
+A mature decision can be surfaced as:
 
 ```text
-LOCK DECISION
+🔒 Ready to lock
+[plain-language decision]
 ```
+
+The owner confirms it with `PROCEED/LOCK`.
 
 ## Deliberate ZASS mapping
 
-When the user intentionally says:
+When the user intentionally says `ZASS` or `ZASS!!`, AI can show the compact Stage Pulse, relevant records, and the current selection matrix.
 
 ```text
-ZASS
+📍 DESIGN → next: DO IT
+Design        [██████░░░░] 3/4
+Action Detail [████░░░░░░] 2/4
 ```
 
-or:
+## Design confirmation
+
+When design coverage is mature:
 
 ```text
-ZASS!!
+🎨 Design forming
+Design [██████████] 4/4
+
+Ready to confirm design?
+[🎨 CONFIRM DESIGN]
 ```
 
-the AI can organize relevant discussion into the ZASSIMPLE state.
-
-It must also show a **CURRENT SELECTION MATRIX**:
-
-| Option / Candidate | Must-have fit | Strength | Risk / Weakness | Evidence / Unknown | Status |
-|---|---|---|---|---|---|
-| [candidate] | PASS / FAIL / UNKNOWN | ... | ... | ... | IDEA / AC-xxx / D-xxx LOCKED / OPEN |
-
-The matrix is mandatory on deliberate ZASS/ZASS!! mapping, even when only one candidate exists. It does not require weighted scoring, does not invent alternatives, and does not add ZASSELECTION's `SELECT` command. Final authority remains `LOCK DECISION`.
-
-This does not automatically LOCK or COMMIT anything.
-
-## Persistence
+`CONFIRM DESIGN` opens the review gate. It does not confirm automatically. Final owner confirmation is:
 
 ```text
-AI proposal
-    ↓
-owner approval
-    ↓
-LOCK DECISION
-    ↓
-COMMIT
-    ↓
-GitHub
+YA, CONFIRM DESIGN
 ```
 
-Never claim a commit happened unless it actually happened.
+Technical projects may still use architecture-specific aliases for compatibility, but DESIGN remains the universal ZASSIMPLE surface.
 
-## Architecture
+## Execution
 
-ZASSIMPLE can propose:
+After confirmed design, ZASSIMPLE re-plans, slices the Action Plan, and shows one current task at a time.
 
 ```text
-DRAFT ARCH
+🚀 STEP 1 / N — [task]
+Do: ...
+Why: ...
+Pass: ...
+If blocked: ...
+Then: ...
 ```
 
-when the important decisions are becoming clear.
+## Footer
 
-A draft is still not confirmed architecture.
-
-The final gate remains:
+Every ZASSIMPLE reply keeps the fixed footer:
 
 ```text
-BUILD ARCHITECTURE
-        ↓
-owner review
-        ↓
-YA, CONFIRM ARCHITECTURE
-        ↓
-ARCHITECTURE CONFIRMED
+[🔬 ZASS!!] -- [📌 PROCEED/LOCK] -- [📚 SAVE]
 ```
 
-## What ZASSIMPLE intentionally does not include
+Contextual actions such as `[🎨 CONFIRM DESIGN]` appear only when relevant.
 
-ZASSIMPLE does not require the full Evidence Confidence/readiness machinery during normal lightweight use.
+## When to move to Full ZASS
 
-When evidence, architecture trade-offs and traceability become important, migrate the project to [Full ZASS](Full-ZASS.md).
+Stay in ZASSIMPLE while the project remains manageable with lightweight decision/design lineage.
 
-Authoritative template:
+Consider Full ZASS when evidence, interdependent decisions, major design trade-offs, security/privacy/safety/money/data-loss risk, or traceability needs materially increase.
 
+Migration is advisory, not automatic. The owner decides.
+
+Authoritative templates:
 - [ZASSIMPLE_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_EN.md) — default
 - [ZASSIMPLE_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md) — Bahasa Melayu
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

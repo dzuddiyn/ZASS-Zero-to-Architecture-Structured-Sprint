@@ -9,10 +9,10 @@ ZASSPILL is the portable DUMP continuity method in the ZASS family. It preserves
 
 ## Current boundary
 
-The released global ZASS SYSTEM entry remains:
+The released global ZASS SYSTEM entry is now:
 
 ~~~text
-DECIDE or BUILD?
+DECIDE or DESIGN?
 ~~~
 
 The target ASC pilot is:
@@ -23,7 +23,7 @@ DECIDE → ZASSELECTION
 DESIGN → ZASSIMPLE
 ~~~
 
-ZASSPILL v0.1.0 does not replace the current global routing.
+ZASSPILL v0.1.0 does not yet add DUMP to the released global routing.
 
 ## Phase 1
 

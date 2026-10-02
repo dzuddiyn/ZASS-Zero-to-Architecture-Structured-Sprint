@@ -1,13 +1,13 @@
 # ZASSIMPLE v0.2 — Structure Renewal Plan
 
-**Status:** IMPLEMENTED AND VALIDATED  
+**Status:** HISTORICAL v0.2 STRUCTURE PLAN — IMPLEMENTED; SEMANTICS SUPERSEDED BY v0.3  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
-**Current baseline:** ZASSIMPLE v0.2.5 in dedicated `ZASSIMPLE/` folder
+**Current baseline:** ZASSIMPLE v0.3.0 in dedicated `ZASSIMPLE/` folder
 
 > **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
 
-This document locks the structural renewal plan. It does not claim that the migration has already been implemented.
+This document records the v0.2 structural renewal plan. The structure was implemented. Its architecture-centric surface terminology is superseded by the locked v0.3 DESIGN-first working direction in `ZASSIMPLE_V03_WORKING_DIRECTION.md`: DESIGN is universal; architecture is an optional technical subtype.
 
 ---
 
@@ -73,18 +73,18 @@ ZASSIMPLE moves into its own dedicated folder inside the same ZASS SYSTEM reposi
 ZASS-Zero-to-Architecture-Structured-Sprint/
 │
 ├── ZASS.md
-├── ZASS_MY.md
+├── ZASS_EN.md
 │
 ├── ZASSIMPLE/
 │   ├── README.md
 │   ├── ZASSIMPLE_EN.md      ← default landing
 │   ├── ZASSIMPLE_MY.md      ← Bahasa Melayu
 │   ├── ACTION_PLAN.md
-│   ├── ARCHITECTURE.md
+│   ├── DESIGN.md
 │   ├── TASKS.md
 │   └── docs/
 │       ├── ZASSIMPLE_V02_STRUCTURE_RENEWAL_PLAN.md
-│       └── ZASSIMPLE_V02_WORKING_DIRECTION.md
+│       └── ZASSIMPLE_V03_WORKING_DIRECTION.md
 │
 ├── ZASSELECTION/
 │   └── ...
@@ -150,7 +150,7 @@ Architecture may in turn reshape the action plan.
 
 Neither file may silently override a LOCKED owner decision.
 
-### `ARCHITECTURE.md`
+### `DESIGN.md`
 
 Purpose: architecture artifact separated from conversational reasoning.
 
@@ -196,7 +196,7 @@ TASK finding
     ↓
 ACTION_PLAN.md
     ↕
-ARCHITECTURE.md
+DESIGN.md
     ↓
 owner decision if a LOCKED decision must change
 ```
@@ -302,7 +302,7 @@ ZASSIMPLE/
 ├── ZASSIMPLE_EN.md
 ├── ZASSIMPLE_MY.md
 ├── ACTION_PLAN.md
-├── ARCHITECTURE.md
+├── DESIGN.md
 ├── TASKS.md
 └── docs/
 ```
@@ -315,7 +315,7 @@ Refactor the current single-file ZASSIMPLE model:
 
 - conversational reasoning / decisions stay in the selected language template (`ZASSIMPLE_EN.md` default, or `ZASSIMPLE_MY.md`);
 - implementation thinking moves to `ACTION_PLAN.md`;
-- architecture moves to `ARCHITECTURE.md`;
+- design now lives in `DESIGN.md`; technical architecture is included there only when applicable;
 - sliced execution work moves to `TASKS.md`.
 
 Avoid duplicating the same authority in multiple files.
@@ -378,7 +378,7 @@ Verify at minimum:
 
 ### Phase 7 — release
 
-The structural renewal landed in **ZASSIMPLE v0.2.0**; subsequent UX completion, footer stabilization, and global language-routing work brought the current method to **v0.2.5**.
+The structural renewal landed in **ZASSIMPLE v0.2.0**; global language routing reached **v0.2.5**; the current DESIGN-first semantics are **v0.3.0**.
 
 The structure and UX contract are now implemented and validated against the locked requirements.
 
@@ -425,8 +425,8 @@ DELIVERED !!
 
 The method remains lightweight to use while preserving durable lineage from the first idea through the delivered result.
 
-**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.2.5.  
-**Plan status:** LOCKED.
+**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.3.0.  
+**Plan status:** HISTORICAL; v0.3 DESIGN-first semantics supersede architecture-centric surface terminology.
 
 [executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 

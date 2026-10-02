@@ -20,12 +20,12 @@
 
 # ZASS SYSTEM SURFACE ALIGNMENT — v0.3.9
 
-Full ZASS is aligned with **ZASS SYSTEM v0.1.2** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
+Full ZASS is aligned with **ZASS SYSTEM v0.1.3** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
 
 When Full ZASS is used through ZASS SYSTEM:
 
-- the top-level entry model is **DECIDE or BUILD?**;
-- BUILD starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
+- the top-level entry model is **DECIDE or DESIGN?**;
+- DESIGN starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
 - the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
 - the UI/AI should **present only the next meaningful human action**;
 - SAVE/sync is successful only when real persistence occurs and a factual receipt/commit exists;

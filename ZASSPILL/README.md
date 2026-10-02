@@ -13,13 +13,13 @@ It preserves enough context for a human to continue thinking across chats and AI
 
 ## Current system boundary
 
-The released global ZASS SYSTEM entry is still:
+The released global ZASS SYSTEM entry is now:
 
 ~~~text
-DECIDE or BUILD?
+DECIDE or DESIGN?
 ~~~
 
-ZASSPILL v0.1.0 does **not** replace that contract.
+ZASSPILL v0.1.0 still does **not** add DUMP as a released global entry.
 
 The target ASC pilot remains:
 

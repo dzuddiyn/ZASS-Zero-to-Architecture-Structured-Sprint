@@ -1,11 +1,13 @@
 # ZASSPILL — Design Direction v0.1
 
-**Status:** LOCKED WORKING DESIGN — PHASE 1 METHOD PACKAGE IMPLEMENTED  
+**Status:** HISTORICAL LOCKED DESIGN — PHASE 1 METHOD PACKAGE IMPLEMENTED; GLOBAL DECIDE/DESIGN PROMOTION NOW SUPERSEDES THE OLD ROUTING ASSUMPTION  
 **Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** portable DUMP continuity method/layer, ASC pilot direction, authority, portability, thread model, handoff, privacy, and phased implementation
 
 > **Stay messy. Keep the context. Continue anywhere.**
+
+> **Current-state note (2026-10-02):** the released global ZASS SYSTEM entry is now `DECIDE or DESIGN?`. This document preserves the earlier pilot assumptions as historical design context. DUMP is still not a released global entry.
 
 ## 0. Contract boundary
 

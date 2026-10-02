@@ -31,8 +31,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - CR-010 v0.2 Git-aware LOCKED drift. **DONE — implemented under `cli/`; specification in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`**
 - Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
 - CR-010 v0.3 ACTION_PLAN consistency plan. **LOCKED — `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; implementation NOT STARTED**
-- ZASS SYSTEM default landing / escalation direction. **LOCKED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; `DECIDE or BUILD?` routes DECIDE → ZASSELECTION and BUILD → ZASSIMPLE; Temaya field-test before Full-ZASS escalation contract**
-- ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.1.2; local tooling remains first-class, AI-SYNC Web is UX/automation projection over the same authority and validator semantics**
+- ZASS SYSTEM default landing / escalation direction. **LOCKED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; `DECIDE or DESIGN?` routes DECIDE → ZASSELECTION and DESIGN → ZASSIMPLE; Temaya field-test before Full-ZASS escalation contract**
+- ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.1.3; local tooling remains first-class, AI-SYNC Web is UX/automation projection over the same authority and validator semantics**
 - Global EN/MY method-surface routing. **LOCKED — conversation language may differ from method-file language; structured surfaces follow the active EN/MY file; Malay companion notice is one-time and non-switching; canonical IDs/commands remain stable**
 - Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
 
@@ -44,8 +44,8 @@ Current engineering priority is not blocked on proving the methodology through e
 
 - Keep local tooling first-class and independently usable.
 - Reuse validator/core semantics inside AI-SYNC rather than duplicating them.
-- Keep the current released global entry contract DECIDE or BUILD? unchanged while the new ASC entry model is piloted.
-- **ZASSPILL Design Direction v0.1 LOCKED — [docs/ZASSPILL_DESIGN_DIRECTION_V01.md](ZASSPILL_DESIGN_DIRECTION_V01.md).** Pilot DUMP / DECIDE / DESIGN in ASC with DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. If the promotion gates pass, move this model to global ZASS SYSTEM and retire DECIDE or BUILD? / user-facing BUILD.
+- The released global entry contract is now DECIDE or DESIGN?. DUMP remains an ASC/ZASSPILL pilot entry until its promotion gates pass.
+- **ZASSPILL Design Direction v0.1 LOCKED — [docs/ZASSPILL_DESIGN_DIRECTION_V01.md](ZASSPILL_DESIGN_DIRECTION_V01.md).** Pilot DUMP / DECIDE / DESIGN in ASC with DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. If the promotion gates pass, add DUMP as a global entry alongside the already-promoted DECIDE / DESIGN routing.
 - Implement ZASSPILL in phases: portable single-thread continuity proof → ASC authority/sync → semantic thread intelligence → full three-intent ASC product pilot.
 - **ZASSPILL Phase 1 method package IMPLEMENTED — v0.1.0** under `ZASSPILL/`; manual cross-AI field proof is **NEXT** before ASC sync implementation.
 - Keep ZASSPILL continuity-state authority distinct from Git-backed project-artifact authority: standalone Thread Packet is continuity authority until linked; latest successfully synchronized ASC state is continuity authority for ASC-linked threads.

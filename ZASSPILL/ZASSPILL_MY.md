@@ -44,9 +44,9 @@ Belum termasuk:
 - automation dormant/archive;
 - final backend schema;
 - format machine thread ID;
-- penggantian global DECIDE or BUILD?.
+- penambahan global DUMP sebagai entry first-class.
 
-Entry global ZASS SYSTEM semasa masih DECIDE or BUILD?. DUMP / DECIDE / DESIGN masih target pilot ASC.
+Entry global ZASS SYSTEM semasa ialah DECIDE or DESIGN?. DUMP / DECIDE / DESIGN masih target pilot ASC yang lebih luas.
 
 ---
 

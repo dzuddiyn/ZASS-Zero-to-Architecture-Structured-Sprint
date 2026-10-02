@@ -20,12 +20,12 @@
 
 # ZASS SYSTEM SURFACE ALIGNMENT — v0.3.9
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.1.2** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.1.3** supaya pengguna dan AI boleh mengesan perubahan UI/UX sistem, bukan hanya perubahan semantics method.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
-- entry utama sistem ialah **DECIDE or BUILD?**;
-- BUILD bermula dengan ZASSIMPLE dan naik ke Full ZASS hanya apabila governance lebih kuat diperlukan;
+- entry utama sistem ialah **DECIDE or DESIGN?**;
+- DESIGN bermula dengan ZASSIMPLE dan naik ke Full ZASS hanya apabila governance lebih kuat diperlukan;
 - pengalaman pengguna mesti menggunakan **progressive disclosure** dan tidak memaparkan semua ID/ledger secara default;
 - UI/AI perlu **present only the next meaningful human action**;
 - SAVE/sync hanya dianggap berjaya apabila persistence sebenar berlaku dan receipt/commit sebenar tersedia;

@@ -8,7 +8,7 @@
 <!--
 T-001 | READY
 Source: AP-xxx
-Decision / Architecture lineage: D-xxx / ARCH-xxx
+Decision / Design lineage: D-xxx / DESIGN-xxx
 Do: ...
 Why: ...
 Pass: ...
@@ -28,7 +28,7 @@ Record verified outcomes that support DELIVERED !!
 Required closure checks:
 - Built: YES / NO
 - Verified: YES / NO
-- Matches architecture: YES / NO
+- Matches design: YES / NO
 - Recorded: YES / NO
 Do not mark DELIVERED !! until all four are YES.
 -->

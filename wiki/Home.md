@@ -58,9 +58,9 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.1.2 |
+| ZASS SYSTEM | v0.1.3 |
 | Full ZASS | v0.3.9 |
-| ZASSIMPLE | v0.2.5 |
+| ZASSIMPLE | v0.3.0 |
 | ZASSELECTION | v0.2.1 |
 | ZASSPILL | v0.1.0 — Phase 1 core proof |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
@@ -71,7 +71,7 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Need | Use |
 |---|---|
-| Start casually and preserve important decisions | **ZASSIMPLE** |
+| Start casually and turn ideas into domain-appropriate design | **ZASSIMPLE** |
 | Deep decision/evidence/architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
 | Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |

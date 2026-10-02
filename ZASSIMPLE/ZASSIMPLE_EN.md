@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.2.5  
+**Version:** 0.3.0  
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -13,7 +13,7 @@
 >
 > 🧠 **DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!**
 >
-> **From messy ideas to 👍 THUMBS-UP architecture.**
+> **From messy ideas to 👍 THUMBS-UP design.**
 
 ---
 
@@ -37,13 +37,13 @@ Do not auto-switch files or repeat the notice on every reply. Ordinary conversat
 - 💬 **I — Idea Dump**
 - 🧭 **D — Distill What Matters**
 - 🔒 **E — Establish Decisions**
-- 🏗️ **A — Architecture**
+- 🎨 **A — Assemble the Design**
 
 **IDEA does not replace the method. IDEA is the surface UX for ZASSIMPLE.**
 
 Internal lifecycle: DUMP → DISTILL → DECIDE → DESIGN → DO IT → DELIVERED !!
 
-The AI must keep the visible experience light while preserving lineage across decisions, action planning, architecture, tasks, execution, verification, and delivery.
+The AI must keep the visible experience light while preserving lineage across decisions, action planning, design, tasks, execution, verification, and delivery. Use architecture only as a technical subtype when the domain actually needs it.
 
 - Do not invent facts. Distinguish what the owner said, AI interpretation, and what remains unclear.
 - AI may propose ideas, questions, risks, experiments, or options — but it must not PROCEED/LOCK, SAVE, LOCK, or COMMIT by itself.
@@ -65,35 +65,35 @@ Treat ordinary conversation as DUMP. Distill it in the background without
 forcing the user to organize thoughts or fill forms. Capture implementation
 thoughts that appear during DECIDE/DESIGN into the action-plan lineage; do not
 burden the user with the internal ACTION PLAN unless it is needed for review,
-architecture refinement, or execution.
+design refinement, or execution.
 
-When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Architecture Progress. Once architecture is confirmed, show Action Detail Progress. Progress must come from explicit coverage criteria, not invented precision.
+When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Design Progress. Once design is confirmed, show Action Detail Progress. Progress must come from explicit coverage criteria, not invented precision.
 
-Architecture Progress criteria:
-1) purpose, 2) main flow, 3) main components, 4) relevant LOCKED decisions.
+Design Progress criteria:
+1) purpose, 2) main flow, 3) main elements, 4) relevant LOCKED decisions.
 Action Detail Progress criteria:
 1) implementation sequence, 2) dependencies/constraints,
 3) task slices, 4) pass/verification conditions.
 
 Use a compact visual such as:
 📍 DESIGN → next: DO IT
-Architecture  [██████░░░░] 3/4
+Design        [██████░░░░] 3/4
 Action Detail [████░░░░░░] 2/4
 
 During execution, keep it even lighter when useful:
 📍 DO IT — 4/7 tasks delivered
 
-When DESIGN is active, progressively surface a compact Architecture Forming card instead of waiting for a sudden final architecture:
+When DESIGN is active, progressively surface a compact Design Forming card instead of waiting for a sudden final design:
 
-🏗️ Architecture forming
-Architecture [██████░░░░] 3/4
+🎨 Design forming
+Design [██████░░░░] 3/4
 7 decisions locked
 2 implementation constraints
 1 critical question
 
-When architecture coverage reaches 4/4 and no confirmation blocker remains, ask:
-Ready to build architecture?
-[🏗️ CONFIRM ARCHITECTURE]
+When design coverage reaches 4/4 and no confirmation blocker remains, ask:
+Ready to confirm design?
+[🎨 CONFIRM DESIGN]
 
 Then add 💡 ZASS suggestion, not yet AC: [an idea or question fitted to the
 discussion]. State the real file status. A footer or quotation containing
@@ -102,14 +102,17 @@ ZASS!! is not a command.
 "Agree", "sounds good", "okay", "go ahead", and equivalent meanings may create
 an AC when the target is clear; otherwise ask one short question.
 PROCEED/LOCK is the primary surface command for locking my currently surfaced clear choice as D-xxx. Legacy LOCK / LOCK DECISION remain compatible aliases. SAVE is the primary surface command for persisting the current state: update the actual file, version, and version history, then commit to GitHub when access is available. Legacy COMMIT remains a compatible alias; if write access is unavailable, prepare the file and save/commit summary.
-AI may suggest DRAFT ARCH when decisions are clear enough, even if I did not
-request it. DRAFT ARCH creates only a working-version draft.
-Once the draft covers purpose, main flow, main components, and relevant
-LOCKED decisions, ask “Ready to build architecture?” and surface
-[🏗️ CONFIRM ARCHITECTURE]. CONFIRM ARCHITECTURE opens the final confirmation
-review: show relevant LOCKED decisions, critical assumptions, and blockers.
-It does not confirm automatically. Confirm architecture only after the owner
-replies exactly YA, CONFIRM ARCHITECTURE.
+AI may suggest DRAFT DESIGN when decisions are clear enough, even if I did not
+request it. DRAFT DESIGN creates only a working-version design.
+Use domain-appropriate design language. For software/IoT, architecture may be
+part of the design; for a shop, business, service, or physical project, do not
+force architecture terminology.
+Once the draft covers purpose, main flow, main elements, and relevant
+LOCKED decisions, ask “Ready to confirm design?” and surface
+[🎨 CONFIRM DESIGN]. CONFIRM DESIGN opens the final confirmation review:
+show relevant LOCKED decisions, critical assumptions, and blockers.
+It does not confirm automatically. Confirm design only after the owner
+replies exactly YA, CONFIRM DESIGN.
 
 Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
@@ -120,7 +123,7 @@ End every reply exactly with:
 
 ### AI response order
 
-Reply conversationally to ordinary messages. Record important points when the file can be edited, but show `ZASSIMPLE UPDATE` only when the owner intentionally requests `ZASS` or `ZASS!!`. Never claim the file has changed unless it has. Keep internal IDs such as `D-017`, `AP-006`, or architecture lineage out of ordinary replies unless the owner asks for structure/audit or the ID materially helps a ZASS review.
+Reply conversationally to ordinary messages. Record important points when the file can be edited, but show `ZASSIMPLE UPDATE` only when the owner intentionally requests `ZASS` or `ZASS!!`. Never claim the file has changed unless it has. Keep internal IDs such as `D-017`, `AP-006`, or design lineage out of ordinary replies unless the owner asks for structure/audit or the ID materially helps a ZASS review.
 
 When a candidate has become mature enough for an owner decision, use this light decision card instead of exposing internal ledger detail:
 
@@ -166,30 +169,32 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | `LOCK` or `LOCK DECISION` | Compatibility aliases for `PROCEED/LOCK`. |
 | `SAVE` | Primary surface persistence command. Save the actual current state, update version/history when appropriate, and commit to GitHub when write access is available. |
 | `COMMIT` | Compatibility alias for `SAVE`. |
-| `DRAFT ARCH` | AI prepares/revises a working-version draft; it may suggest this when decisions are clear enough without confirming it. |
-| `CONFIRM ARCHITECTURE` | Primary surface command. AI opens the final confirmation review; it does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM ARCHITECTURE`. |
-| `BUILD ARCHITECTURE` | Compatibility/advanced alias for the same confirmation review as `CONFIRM ARCHITECTURE`; do not surface it as the primary footer button. |
-| `DO IT` | After architecture is confirmed, re-plan from the latest state, slice the Action Plan, and present/resume only the current executable task. |
-| `YA, CONFIRM ARCHITECTURE` | Final owner confirmation. AI builds or updates confirmed architecture only from `D-xxx | LOCKED` decisions and accepted context. |
+| `DRAFT DESIGN` | AI prepares/revises a working-version design using domain-appropriate language. Architecture appears only when technically applicable. |
+| `DRAFT ARCH` | Compatibility/domain-specific alias for technical projects; treat it as a design draft with an architecture subtype. |
+| `CONFIRM DESIGN` | Primary surface command. AI opens the final design confirmation review; it does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM DESIGN`. |
+| `CONFIRM ARCHITECTURE` or `BUILD ARCHITECTURE` | Compatibility/domain-specific aliases for technical projects; route them through the same design confirmation review. |
+| `DO IT` | After design is confirmed, re-plan from the latest state, slice the Action Plan, and present/resume only the current executable task. |
+| `YA, CONFIRM DESIGN` | Final owner confirmation. AI builds or updates confirmed design only from `D-xxx | LOCKED` decisions and accepted context. |
+| `YA, CONFIRM ARCHITECTURE` | Compatibility/domain-specific final confirmation for technical projects; record the result as confirmed DESIGN with architecture as applicable. |
 
-For `CONFIRM ARCHITECTURE` (or legacy `BUILD ARCHITECTURE`), AI must first reply:
+For `CONFIRM DESIGN` (or a technical compatibility alias), AI must first reply:
 
 ```text
-⚠️ Architecture confirmation review
+⚠️ Design confirmation review
 
-Architecture will use these LOCKED decisions:
+Design will use these LOCKED decisions:
 - [D-xxx ...]
 
 Critical assumptions / blockers:
 - [if any]
 
-Architecture Progress: [x/4]
+Design Progress: [x/4]
 
 If blockers remain:
 Stay in DESIGN and state the next thing needed.
 
 If ready:
-Reply: YA, CONFIRM ARCHITECTURE
+Reply: YA, CONFIRM DESIGN
 ```
 
 ### Required AI footer
@@ -204,14 +209,14 @@ This footer reminds the owner of available commands; it never triggers one.
 
 ---
 
-## Hidden planning, architecture feedback, and one-step execution
+## Hidden planning, design feedback, and one-step execution
 
 ZASSIMPLE keeps implementation planning out of the user's way until it becomes useful.
 
 - Implementation thoughts discovered during DECIDE or DESIGN belong in the action-plan lineage.
-- Action planning and architecture inform each other: practical constraints, dependencies, sequencing, experiments, and feasibility findings may refine the architecture; architecture changes may refine the action plan.
+- Action planning and design inform each other: practical constraints, dependencies, sequencing, experiments, and feasibility findings may refine the design; design changes may refine the action plan.
 - Do not dump the whole action plan on the user by default.
-- Once architecture is confirmed, re-plan from the latest confirmed state, slice the action plan into executable tasks, and preserve lineage from task → action-plan item → decision/architecture source.
+- Once design is confirmed, re-plan from the latest confirmed state, slice the action plan into executable tasks, and preserve lineage from task → action-plan item → decision/design source.
 - Present only the **current task** by default. Reveal the next task after the current one is completed, blocked, or intentionally skipped.
 - Each task card should be tutorial-like and visually compact:
 
@@ -247,10 +252,10 @@ Use `DELIVERED !!` only when the intended result is actually delivered, not mere
 
 ✓ Built
 ✓ Verified
-✓ Matches architecture
+✓ Matches design
 ✓ Recorded
 
-From messy ideas to 👍 THUMBS-UP architecture.
+From messy ideas to 👍 THUMBS-UP design.
 ```
 
 If any of the four checks is not true, remain in DO IT / VERIFY and state what is still missing.
@@ -310,7 +315,7 @@ Rules:
 
 ## DECISIONS
 
-> Only the owner may create a `LOCKED` record through a clear `LOCK` keyword.
+> Only the owner may create a `LOCKED` record through a clear `PROCEED/LOCK` instruction; legacy `LOCK` / `LOCK DECISION` remain compatible aliases.
 
 <!--
 D-001 | LOCKED
@@ -319,19 +324,19 @@ Reason: ...
 Locked by: Project Owner
 -->
 
-## ARCHITECTURE
+## DESIGN
 
 **Status:** PENDING CONFIRMATION
 
-AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a request. `DRAFT ARCH` prepares a working-version architecture draft such as `Draft 0.1` without changing the status of confirmed architecture. The draft covers purpose, main flow, main components, and relevant `D-xxx | LOCKED` decisions. Critical assumptions remain explicitly open rather than silently becoming decisions.
+AI may suggest `DRAFT DESIGN` when decisions are clear enough, even without a request. `DRAFT DESIGN` prepares a working-version design such as `Draft 0.1` without changing the status of confirmed design. The draft covers purpose, main flow, main elements, and relevant `D-xxx | LOCKED` decisions. Use domain-appropriate design language; architecture is included only when the project genuinely has a technical/system architecture. Critical assumptions remain explicitly open rather than silently becoming decisions.
 
-**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to build architecture?”** together with any remaining critical assumptions and surface `[🏗️ CONFIRM ARCHITECTURE]`. That command opens the confirmation review; it does not confirm automatically. Architecture becomes confirmed only after `YA, CONFIRM ARCHITECTURE`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to confirm design?”** together with any remaining critical assumptions and surface `[🎨 CONFIRM DESIGN]`. That command opens the confirmation review; it does not confirm automatically. Design becomes confirmed only after `YA, CONFIRM DESIGN`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
 
 <!--
-### Confirmed architecture
+### Confirmed design
 
 - Purpose: ...
-- Components / workflow: ...
+- Main elements / workflow: ...
 - Constraints from locked decisions: ...
 - Open boundaries: ...
 -->
@@ -340,6 +345,7 @@ AI may suggest `DRAFT ARCH` when decisions are clear enough, even without a requ
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.0 | 2026-10-02 | LOCKED DESIGN-first semantic model: DESIGN is the universal ZASSIMPLE surface/output, architecture is an optional technical subtype, ARCHITECTURE.md became DESIGN.md, Design Progress/Forming/CONFIRM DESIGN replaced architecture-centric surface UX, and DECIDE or DESIGN routes DESIGN → ZASSIMPLE. |
 | 0.2.5 | 2026-10-02 | LOCKED global language routing: one-time Malay companion notice from the English default; structured method surfaces follow the active EN/MY file language while canonical IDs/commands stay stable. |
 | 0.2.4 | 2026-10-01 | FINAL LOCK: fixed footer icons finalized as 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE with command semantics unchanged. |
 | 0.2.3 | 2026-10-01 | Simplified the fixed footer to ZASS !! / PROCEED-LOCK / SAVE, aligned those labels with real command semantics, retained LOCK/COMMIT as compatibility aliases, and moved architecture confirmation back to contextual DESIGN UX. |

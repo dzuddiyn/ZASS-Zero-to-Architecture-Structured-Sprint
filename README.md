@@ -33,16 +33,16 @@ Continue with any AI
 
 The locked product entry model is:
 
-> **DECIDE or BUILD?**
+> **DECIDE or DESIGN?**
 
 ```text
 ZASS SYSTEM
     ↓
-DECIDE or BUILD?
+DECIDE or DESIGN?
     │
     ├── DECIDE → ZASSELECTION
     │
-    └── BUILD  → ZASSIMPLE → Full ZASS when needed
+    └── DESIGN → ZASSIMPLE → Full ZASS when needed
 ```
 
 The system is designed around two complementary first-class surfaces:
@@ -53,7 +53,7 @@ LOCAL CORE / CLI  ←→  AI-SYNC WEB
   GitHub Source of Truth
 ```
 
-Local tooling stays independently useful. AI-SYNC Web is the future UX / automation layer: conversational DUMP-first workspace, progressive disclosure, contextual decision/architecture/task cards, factual Git-backed SAVE receipts, and review/history when needed.
+Local tooling stays independently useful. AI-SYNC Web is the future UX / automation layer: conversational DUMP-first workspace, progressive disclosure, contextual decision/design/task cards, factual Git-backed SAVE receipts, and review/history when needed.
 
 **Primary UX rule:** show the user the **next meaningful human action**, not all internal framework complexity.
 
@@ -63,7 +63,7 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
-**ZASSPILL Phase 1:** the new standalone continuity method is available for field testing, but the released global entry model remains **DECIDE or BUILD?**. The ASC target **DUMP / DECIDE / DESIGN** is not yet promoted globally.
+**ZASSPILL Phase 1:** the standalone continuity method remains available for field testing. The released global entry model is now **DECIDE or DESIGN?**. The broader ASC three-intent target **DUMP / DECIDE / DESIGN** is still not fully promoted globally.
 
 ---
 
@@ -486,7 +486,7 @@ Its job is simple:
 
 | Need | Use |
 |---|---|
-| Start casually and preserve important decisions | **ZASSIMPLE** |
+| Start casually and turn ideas into domain-appropriate design | **ZASSIMPLE** |
 | Deep decision / evidence / architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
 | Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |
@@ -498,9 +498,9 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.1.2 — global EN/MY method-surface routing  
+**ZASS SYSTEM:** v0.1.3 — DECIDE/DESIGN routing + global EN/MY method-surface routing  
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
-**ZASSIMPLE:** v0.2.5  
+**ZASSIMPLE:** v0.3.0  
 **ZASSELECTION:** v0.2.1  
 **ZASSPILL:** v0.1.0 — Phase 1 standalone portable continuity core; not yet a global entry route  
 **License:** [MIT](LICENSE)

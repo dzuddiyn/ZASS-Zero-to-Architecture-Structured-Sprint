@@ -317,7 +317,7 @@ The normal user path should remain simple even if transport and persistence beco
 | Method | Purpose |
 |---|---|
 | ZASS | raw idea → evidence → decision → architecture |
-| ZASSIMPLE | lightweight conversational path toward architecture |
+| ZASSIMPLE | lightweight conversational path from idea → DESIGN → execution; architecture only when technically applicable |
 | ZASSELECTION | alternatives → comparison → recommendation → user selection |
 
 ZASS / ZASSIMPLE / ZASSELECTION structure reasoning and selection records.

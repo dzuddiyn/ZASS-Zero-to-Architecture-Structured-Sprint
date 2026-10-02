@@ -44,9 +44,9 @@ Not included yet:
 - dormant/archive automation;
 - final backend schema;
 - machine thread-ID format;
-- global replacement of DECIDE or BUILD?.
+- global addition of DUMP as a first-class entry.
 
-The current global ZASS SYSTEM entry remains DECIDE or BUILD?. DUMP / DECIDE / DESIGN is still a target ASC pilot.
+The current global ZASS SYSTEM entry is DECIDE or DESIGN?. DUMP / DECIDE / DESIGN remains the broader ASC pilot target.
 
 ---
 

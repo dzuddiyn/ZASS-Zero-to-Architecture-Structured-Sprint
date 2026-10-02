@@ -275,7 +275,7 @@ handoff
 → COMMIT
 ```
 
-For **ZASSIMPLE**, keep ZASSIMPLE semantics. Do not import Full-ZASS `PROCEED`; use normal ZASSIMPLE agreement / `LOCK DECISION` / `COMMIT` behavior.
+For **ZASSIMPLE**, keep ZASSIMPLE semantics. Do not import Full-ZASS batch `PROCEED`; use ZASSIMPLE `PROCEED/LOCK` for the currently surfaced clear decision and `SAVE` for persistence. Legacy `LOCK DECISION` / `COMMIT` remain compatibility aliases.
 
 ---
 

@@ -1,9 +1,9 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
-**System version:** 0.1.2  
-**Full ZASS surface alignment:** v0.3.9+<br>
+**System version:** 0.1.3  
+**Full ZASS surface alignment:** v0.3.10+<br>
 **Status:** LOCKED WORKING CONTRACT  
-**Date:** 2026-10-01  
+**Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** ZASS SYSTEM local/core boundary, AI-SYNC Web presentation, and human-facing UX
 
@@ -44,18 +44,18 @@ LOCKED rules:
 
 The system landing mental model is:
 
-> **DECIDE or BUILD?**
+> **DECIDE or DESIGN?**
 
 ```text
 ZASS SYSTEM
     ↓
-DECIDE or BUILD?
+DECIDE or DESIGN?
     │
     ├── DECIDE
     │      ↓
     │  ZASSELECTION
     │
-    └── BUILD
+    └── DESIGN
            ↓
        ZASSIMPLE
            ↓
@@ -64,11 +64,11 @@ DECIDE or BUILD?
 
 Users route by intent, not by framework knowledge.
 
-Full ZASS is not a primary first-screen choice. It is an escalation path from the BUILD flow when stronger governance is justified.
+Full ZASS is not a primary first-screen choice. It is an escalation path from the DESIGN flow when stronger governance is justified.
 
-## 3. DUMP-first BUILD UX
+## 3. DUMP-first DESIGN UX
 
-The primary BUILD workspace starts from natural conversation.
+The primary DESIGN workspace starts from natural conversation.
 
 Do not lead with forms, ledgers, IDs, architecture diagrams, or configuration pages.
 
@@ -106,7 +106,7 @@ AI-SYNC Web should prefer five stable surfaces.
 
 ### 5.1 Landing
 
-`DECIDE or BUILD?` routes to ZASSELECTION or ZASSIMPLE.
+`DECIDE or DESIGN?` routes to ZASSELECTION or ZASSIMPLE.
 
 ### 5.2 Workspace
 
@@ -119,7 +119,7 @@ Cards appear only when a human action is useful.
 Core cards:
 
 - **Ready to Lock** — a mature decision needs owner approval.
-- **Architecture Forming** — architecture coverage is becoming coherent.
+- **Design Forming** — design coverage is becoming coherent; technical architecture appears only when applicable.
 - **Escalation Notice** — ZASSIMPLE may benefit from Full ZASS.
 - **Current Task** — one executable task is active.
 - **Delivered** — the intended outcome is actually built, verified, and recorded.
@@ -175,11 +175,11 @@ Why:
 
 The system must not lock automatically.
 
-### Architecture Forming
+### Design Forming
 
 ```text
-🏗️ Architecture forming
-Architecture 3/4
+🎨 Design forming
+Design 3/4
 7 decisions locked
 2 implementation constraints
 1 critical question
@@ -187,7 +187,7 @@ Architecture 3/4
 [ REVIEW ]
 ```
 
-When confirmation readiness is reached, surface the protected architecture confirmation flow.
+When confirmation readiness is reached, surface the protected design confirmation flow. Technical architecture appears only when the domain needs it.
 
 ### Escalation Notice
 
@@ -228,7 +228,7 @@ One-task-at-a-time is the default execution UX.
 
 ✓ Built
 ✓ Verified
-✓ Matches architecture
+✓ Matches design
 ✓ Recorded
 ```
 
@@ -243,9 +243,9 @@ ACTION_PLAN.md
       ↓
 Current focus / next action / blockers
 
-ARCHITECTURE.md
+DESIGN.md
       ↓
-Architecture Forming / confirmation state
+Design Forming / confirmation state
 
 TASKS.md
       ↓
@@ -364,7 +364,7 @@ stabilize validator/core contracts
         ↓
 AI-SYNC Web uses the same semantics
         ↓
-implement DECIDE or BUILD? landing
+implement DECIDE or DESIGN? landing
         ↓
 project workspace + contextual cards
         ↓
@@ -397,8 +397,8 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.1.2
-DECIDE or BUILD?
+ZASS SYSTEM v0.1.3
+DECIDE or DESIGN?
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
 ```

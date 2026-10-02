@@ -1,31 +1,31 @@
 # ZASS SYSTEM — Default Landing & Escalation Working Direction
 
-**ZASS SYSTEM version:** 0.1.2  
+**ZASS SYSTEM version:** 0.1.3  
 **Status:** LOCKED WORKING DIRECTION  
-**Date:** 2026-10-01  
+**Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** Product entry flow and future ZASSIMPLE → Full ZASS escalation contract
 
-> **DECIDE or BUILD?** is the ZASS SYSTEM entry mental model. ZASSELECTION handles DECIDE; ZASSIMPLE is the default BUILD entry; Full ZASS is an escalation path, not the default burden.
+> **DECIDE or DESIGN?** is the ZASS SYSTEM entry mental model. ZASSELECTION handles DECIDE; ZASSIMPLE is the default DESIGN entry; Full ZASS is an escalation path, not the default burden.
 
-## 1. Default landing mental model — DECIDE or BUILD?
+## 1. Default landing mental model — DECIDE or DESIGN?
 
 The locked entry mental model for the ZASS SYSTEM is:
 
-> **DECIDE or BUILD?**
+> **DECIDE or DESIGN?**
 
 The landing page should ask what the user is trying to do, rather than asking them to choose a ZASS method by name.
 
 ```text
 ZASS SYSTEM
     ↓
-DECIDE or BUILD?
+DECIDE or DESIGN?
     │
     ├── DECIDE
     │      ↓
     │  ZASSELECTION
     │
-    └── BUILD
+    └── DESIGN
            ↓
        ZASSIMPLE
            ↓
@@ -34,9 +34,9 @@ DECIDE or BUILD?
 
 **DECIDE** is for selecting between alternatives or making a structured life/product choice.
 
-**BUILD** is for creating a system, project, product, workflow, automation, or architecture.
+**DESIGN** is the universal creation path: shop/service layout and flow, business/process design, product design, workflow/automation design, or software/IoT system design. Architecture is a technical subtype when applicable, not the universal surface term.
 
-Within the BUILD path, **ZASSIMPLE remains the default landing method**. A new user should not be required to understand or choose Full ZASS before starting ordinary project work.
+Within the DESIGN path, **ZASSIMPLE remains the default landing method**. A new user should not be required to understand or choose Full ZASS before starting ordinary project work.
 
 Full ZASS does not need to appear as a primary first-screen choice. It remains available later through the escalation path.
 
@@ -115,7 +115,7 @@ The exact wording, thresholds, and trigger rules remain future contract work.
 
 LOCKED product direction:
 
-> **DECIDE or BUILD?**
+> **DECIDE or DESIGN?**
 
 > **Route by user intent, not by framework knowledge.**
 
@@ -123,14 +123,14 @@ LOCKED product direction:
 
 > **Language routing:** conversation language may follow the user, while structured method UI follows the active EN/MY method file. Malay availability is notified once from English files; switching is never automatic.
 
-This keeps ZASS lightweight at entry: DECIDE routes to ZASSELECTION, BUILD routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
+This keeps ZASS lightweight at entry: DECIDE routes to ZASSELECTION, DESIGN routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
 
 ## 6. Current sequencing
 
 Current sequence is:
 
 ```text
-lock DECIDE or BUILD? entry model
+lock DECIDE or DESIGN? entry model
         ↓
 stabilize ZASSIMPLE
         ↓
@@ -167,13 +167,13 @@ The detailed locked UI/UX contract is documented in [ZASS_SYSTEM_UI_UX_CONTRACT.
 
 The following lessons are promoted from ZASSIMPLE into ZASS SYSTEM product direction:
 
-- DUMP/chat-first entry for BUILD;
+- DUMP/chat-first entry inside the DESIGN path;
 - progressive disclosure of internal lineage;
 - compact current-stage + next-stage Project Pulse;
-- contextual Ready-to-Lock, Architecture Forming, Escalation, Current Task, and Delivered cards;
+- contextual Ready-to-Lock, Design Forming, Escalation, Current Task, and Delivered cards;
 - one-task-at-a-time execution;
 - factual SAVE/sync states backed by real commit receipts;
-- web projection of ACTION_PLAN / ARCHITECTURE / TASKS instead of forcing users to browse internal artifacts;
+- web projection of ACTION_PLAN / DESIGN / TASKS instead of forcing users to browse internal artifacts;
 - one validator/core semantics source with separate CLI and Web presentation;
 - the primary UI rule: **present only the next meaningful human action**.
 

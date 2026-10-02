@@ -2,6 +2,17 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASS SYSTEM v0.1.3 / ZASSIMPLE v0.3.0 DESIGN-first] — 2026-10-02
+
+- LOCKED **DECIDE or DESIGN?** as the released ZASS SYSTEM entry model: DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
+- LOCKED **DESIGN** as the universal ZASSIMPLE surface/output; architecture remains an optional technical subtype when the domain needs it.
+- Renamed `ZASSIMPLE/ARCHITECTURE.md` to `ZASSIMPLE/DESIGN.md` and aligned ACTION_PLAN/TASK lineage with DESIGN.
+- Replaced architecture-centric surface UX with `Design Progress`, `🎨 Design forming`, `Ready to confirm design?`, `[🎨 CONFIRM DESIGN]`, and final `YA, CONFIRM DESIGN`.
+- Added domain-adaptive design language so shop/service, business, product, workflow and physical projects are not forced into software-architecture terminology.
+- Updated the IDEA Trick to `A — Assemble the Design` and the tagline to `From messy ideas to 👍 THUMBS-UP design.`
+- Preserved v0.2.5 global EN/MY language routing and architecture commands as compatibility/domain-specific aliases for technical projects.
+- Promoted `ZASSIMPLE/docs/ZASSIMPLE_V03_WORKING_DIRECTION.md` as the active working direction; the v0.2 structure plan remains historical context.
+
 ## [ZASSELECTION v0.2.2] — 2026-10-02
 
 - LOCKED matrix evidence discipline after the ZASSPILL → DECIDE → ZASSELECTION field-test finding.

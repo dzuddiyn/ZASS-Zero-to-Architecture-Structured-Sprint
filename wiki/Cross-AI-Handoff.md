@@ -133,8 +133,8 @@ Use ZASSIMPLE's own approval semantics:
 ```text
 handoff
 → normal discussion / ZASS mapping
-→ LOCK DECISION when owner is clear
-→ COMMIT
+→ PROCEED/LOCK when owner is clear
+→ SAVE
 ```
 
-Do not import Full-ZASS PROCEED semantics into ZASSIMPLE.
+Do not import Full-ZASS batch-PROCEED semantics into ZASSIMPLE. ZASSIMPLE `PROCEED/LOCK` means lock the currently surfaced clear owner decision.
