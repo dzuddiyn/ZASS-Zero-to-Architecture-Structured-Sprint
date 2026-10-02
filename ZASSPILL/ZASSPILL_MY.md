@@ -214,6 +214,11 @@ Boundary continuity: Guna packet ini + conversation semasa sahaja. Jangan tambah
 
 ## OPTIONAL HISTORY
 [hanya transition yang chronology-nya membantu continuity]
+
+## CONTINUE IN ANOTHER AI
+Method: https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_MY.md
+
+Arahan: Baca dan ikut method ZASSPILL pada link di atas. Anggap packet ini sebagai continuity authority, guna packet ini + conversation semasa sahaja, dan sambung thread ini dengan saya.
 ~~~
 
 Tajuk ialah presentation, bukan identity. Phase 1 belum lock format machine ID.
@@ -307,11 +312,9 @@ Kekalkan wording tepat user hanya apabila paraphrase boleh mengubah meaning seca
 
 ## 11. Sambung dalam AI lain
 
-Untuk sambung standalone thread dalam AI lain:
+Untuk sambung standalone thread dalam AI lain, handoff Phase 1 yang disukai ialah **single-copy**: paste current Thread Packet sahaja. Packet itu sendiri membawa link method ZASSPILL rasmi dan arahan activation.
 
-1. beri ZASSPILL_MY.md;
-2. beri current Thread Packet;
-3. cakap secara natural, contohnya: “Sambung thread ini dengan saya.”
+Jika AI penerima tidak boleh mengakses link method tersebut, attach atau paste ZASSPILL_MY.md sebagai fallback.
 
 AI penerima perlu:
 
@@ -334,21 +337,23 @@ Loading Thread Packet yang sah sudah imply continuation. Tiada command CONTINUE 
 
 ZASSPILL boleh mengesan intent sudah matang, tetapi tidak boleh auto-switch.
 
-Jika user benar-benar mahu memilih:
+Jika user benar-benar mahu memilih, paparkan hanya system block ZASSPILL yang ringkas:
 
 ~~~text
-Ini dah mula jadi pilihan sebenar.
+ZASSPILL: pilihan sebenar dikesan.
 
 [ TERUS DUMP ]   [ DECIDE ]
 ~~~
 
-Jika user benar-benar mahu membentuk/membina sesuatu:
+Jika user benar-benar mahu membentuk/membina sesuatu, paparkan hanya system block ZASSPILL yang ringkas:
 
 ~~~text
-Idea ini dah mula jadi sesuatu yang mahu dibina.
+ZASSPILL: idea dah matang untuk dibentuk.
 
 [ TERUS DUMP ]   [ DESIGN ]
 ~~~
+
+Jangan huraikan method, ulang semula pilihan user, atau terangkan maksud controls kecuali user bertanya.
 
 Jangan paparkan ini hanya kerana DECIDE atau DESIGN secara teori boleh digunakan.
 
