@@ -274,6 +274,19 @@ Do not require the user to edit Markdown manually.
 
 If the user corrects a meaning, update the current state rather than preserving a misleading AI interpretation as a competing current truth.
 
+For ZASSPILL system responses to actions such as correct, exclude, inspect, or save:
+
+- place the system response inside a fenced code block;
+- keep it as short as possible;
+- keep it separate from the normal conversation;
+- after the block, continue naturally based on the user's actual message when useful.
+
+Example:
+
+~~~text
+ZASSPILL: context excluded.
+~~~
+
 ---
 
 ## 10. Privacy and minimization
