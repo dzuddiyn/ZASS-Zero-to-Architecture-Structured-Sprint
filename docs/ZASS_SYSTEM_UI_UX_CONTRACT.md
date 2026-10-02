@@ -1,6 +1,6 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
-**System version:** 0.1.3  
+**System version:** 0.1.4  
 **Full ZASS surface alignment:** v0.3.10+<br>
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-02  
@@ -39,6 +39,44 @@ LOCKED rules:
 - AI-SYNC must reuse the same validator/core semantics rather than reimplementing rule logic independently.
 - A web outage must not make the project state unrecoverable or invalidate local tooling.
 - AI-SYNC may simplify presentation, but it must not silently change ZASS authority rules.
+
+### 1.1 AI-SYNC Method Gateway / public read transport
+
+ZASS SYSTEM now recognizes a separate AI-SYNC **public method-read transport** for cross-AI portability.
+
+```text
+Official ZASS GitHub repo
+= authoritative method Source of Truth
+        ↓ protected sync
+AI-SYNC Method Registry / snapshot
+        ↓ public read-only gateway
+receiver AI
+```
+
+LOCKED system-level boundary:
+
+- GitHub remains authoritative for method content, version history, and commit lineage.
+- AI-SYNC may hold identifiable snapshots for transport/readability, but does not become a second method authority.
+- The public Method Gateway must serve the synced Markdown itself; a redirect/wrapper back to GitHub does not satisfy the transport contract.
+- Public method reads require no login; sync/admin/write actions remain protected.
+- Snapshot provenance must identify the source method, language, version, repository/path, Git commit, and sync time.
+- ZASSPILL / ZASSELECTION / ZASSIMPLE remain method-layer components; transport implementation belongs to AI-SYNC.
+- The existing ASC Write Contract remains a separate protected write-plane contract and is not expanded for public method distribution.
+- Until the public gateway is deployed and cross-AI readability is proven, existing GitHub method links remain a temporary bootstrap path and no nonexistent AI-SYNC URL may be presented as operational.
+
+Current implementation checkpoint (2026-10-02):
+
+```text
+AI-SYNC T-013A
+METHODS registry + protected GitHub sync
+        ↓
+T-013B
+public gateway + Gemini/Copilot proof
+        ↓
+portable receiving-method links can migrate to AI-SYNC
+```
+
+This is a system/integration-contract update. It does not alter ZASSPILL, ZASSELECTION, or ZASSIMPLE semantics.
 
 ## 2. Entry model
 
@@ -397,7 +435,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.1.3
+ZASS SYSTEM v0.1.4
 DECIDE or DESIGN?
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
