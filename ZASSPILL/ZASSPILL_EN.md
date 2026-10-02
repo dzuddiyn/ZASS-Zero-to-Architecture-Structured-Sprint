@@ -413,7 +413,8 @@ The handoff packet must:
 - preserve lineage from ZASSPILL to the receiving method;
 - update the current state immediately to reflect the transition the user explicitly chose; pre-transition state must not remain as a competing current truth;
 - keep prior AI suggestions clearly labeled as AI suggestions and never promote them into user constraints, preferences, or decisions unless the user explicitly confirmed them;
-- treat the user's explicit DECIDE or DESIGN choice as sufficient authorization to activate the receiving method; do not ask for a second confirmation before loading and following it.
+- treat the user's explicit DECIDE or DESIGN choice as sufficient authorization to activate the receiving method; do not ask for a second confirmation before loading and following it;
+- never introduce new options, examples, facts, constraints, preferences, or interpretations inside the Method Handoff Packet. The packet may only carry context already present in the source thread plus the user's explicit transition choice.
 
 > **The receiving AI must read the receiving method before doing structured work. If the method link cannot be accessed, it must not improvise that method; it must ask the user to provide the relevant method file as fallback.**
 
