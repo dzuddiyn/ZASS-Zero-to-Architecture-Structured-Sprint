@@ -3,7 +3,7 @@
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
 **Version:** 0.1.0  
-**Status:** PHASE 1 CORE PROOF — continuity portable standalone  
+**Status:** PHASE 1 FROZEN — CORE PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -576,4 +576,4 @@ Ujian mesti semak:
 - personal detail tidak perlu tidak diexport;
 - AI penerima boleh sambung tanpa memaksa form atau reconstruct transcript.
 
-Sehingga field test ini lulus, ZASSPILL kekal Phase 1 core proof dan bukan pengganti current global ZASS SYSTEM entry contract.
+Phase 1 core proof telah lulus. ZASSPILL v0.1.0 kini dibekukan. Perubahan feature seterusnya masuk ke phase/version kemudian; hanya critical fix patut mengubah release beku ini. Freeze ini tidak menggantikan current global ZASS SYSTEM entry contract.
