@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 0.3.0  
-**Status:** PHASE 3 FROZEN — PERSISTENCE / ASC CONTRACT PROOF PASSED  
+**Version:** 0.4.0  
+**Status:** PHASE 4 FROZEN — RETRIEVAL INTELLIGENCE PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -1192,3 +1192,276 @@ Proof meliputi:
 - Portable Packet v2 round-trip.
 
 > **ZASSPILL v0.3.0 Phase 3 dibekukan. Persistence semantics dan ASC contract di atas ialah authority Phase 3. Feature baharu masuk Phase 4 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 18. Phase 4 — Retrieval Intelligence
+
+Phase 4 mengunci bagaimana ZASSPILL mencari dan resolve continuity thread secara semantik tanpa menukar retrieval menjadi tekaan, keyword matching semata-mata, atau authority berdasarkan opaque score.
+
+Prinsip utama:
+
+> **Retrieval intelligence ialah evidence-based, bukan keyword-based. Candidate generation boleh luas, tetapi final resolution mesti konservatif.**
+
+Phase 4 kekal serasi dengan Phase 3: retrieval ialah READ-ONLY dan tidak memiliki authority untuk mutate state, revision, event atau semantic truth.
+
+### 18.1 Authorized Retrieval Scope
+
+Retrieval hanya boleh mencari dalam continuity scope yang user memang authorized.
+
+Sumber evidence yang dibenarkan:
+
+- exact `thread_id`;
+- explicit / near-exact title reference;
+- `resume_cues`;
+- `continuity.about`;
+- `continuity.current`;
+- `continuity.matters`;
+- `continuity.open`;
+- lineage yang memang relevan;
+- lifecycle intent user.
+
+Bukan retrieval authority:
+
+- provider memory / profile / private personalization;
+- unrelated chats;
+- web knowledge;
+- external inference AI yang tidak dibawa user ke thread;
+- opaque numeric similarity score semata-mata.
+
+### 18.2 Candidate Generation ≠ Final Resolution
+
+Retrieval semantic mempunyai dua lapisan:
+
+```text
+USER CUE
+   ↓
+CANDIDATE GENERATION
+   ↓
+FINAL RESOLUTION
+   ↓
+UNIQUE_MATCH
+MULTIPLE_MATCHES
+NO_MATCH
+```
+
+Candidate generation boleh sengaja mengambil beberapa kemungkinan.
+
+> **Menjadi candidate tidak bermaksud thread itu telah dipilih.**
+
+Final resolver mesti menilai coherence evidence sebelum memilih identity.
+
+### 18.3 Evidence Strength
+
+Evidence boleh mempunyai kekuatan berbeza.
+
+Strong evidence termasuk:
+
+- exact `thread_id`;
+- explicit unique title/reference;
+- resume cue yang sangat specific.
+
+Medium evidence termasuk:
+
+- semantic match yang coherent dengan `about` / `current`;
+- gabungan beberapa current resume cues;
+- relevant `matters` / `open`;
+- lifecycle intent yang jelas.
+
+Weak evidence termasuk:
+
+- keyword umum sahaja;
+- satu perkataan overlap;
+- similarity tanpa continuity meaning.
+
+Keyword overlap sahaja tidak cukup untuk memaksa `UNIQUE_MATCH`.
+
+### 18.4 Negative Evidence
+
+Explicit user exclusion ialah negative evidence.
+
+Contoh:
+
+```text
+"sambung pasal Kulai, bukan pasal kerja"
+```
+
+Candidate berkaitan kerja mesti kehilangan relevance walaupun berkongsi keyword `Kulai`.
+
+Explicit exclusion user lebih kuat daripada keyword overlap.
+
+### 18.5 Superseded / Stale Cue Discipline
+
+Context atau resume cue yang telah `SUPERSEDED` tidak boleh bertindak sebagai current retrieval evidence.
+
+Semantic priority:
+
+```text
+current meaning
+↓
+valid current resume cues
+↓
+relevant matters/open
+↓
+older supporting context
+```
+
+Freshness bukan timestamp sahaja.
+
+`semantic_updated_at` boleh membantu implementation sebagai tie-break, tetapi tidak boleh mengatasi semantic relevance.
+
+DORMANT atau ARCHIVED tidak bermaksud stale.
+
+### 18.6 Conservative Resolution
+
+`UNIQUE_MATCH` hanya dibenarkan apabila satu candidate mempunyai evidence yang materially stronger dan coherent.
+
+Jika dua atau lebih candidate masih plausible:
+
+```text
+MULTIPLE_MATCHES
+```
+
+Jika evidence tidak cukup:
+
+```text
+NO_MATCH
+```
+
+Jangan paksa `UNIQUE_MATCH` hanya kerana internal numeric score sedikit lebih tinggi.
+
+> **False ambiguity lebih selamat daripada false identity.**
+
+### 18.7 Exact Identity Bypass
+
+Jika `thread_id` diketahui, guna exact lookup:
+
+```text
+GET_BY_ID
+```
+
+dan jangan jalankan semantic ranking alternative.
+
+Exact unique title reference boleh menjadi strong evidence, tetapi title bukan identity. Jika dua thread berkongsi title yang sama atau reference masih ambiguous, hasilkan ambiguity.
+
+### 18.8 Lifecycle-Aware Retrieval
+
+Eligibility:
+
+```text
+ACTIVE      → retrievable
+DORMANT     → retrievable
+ARCHIVED    → retrievable untuk history / resolution
+TOMBSTONED  → bukan semantic candidate
+```
+
+Retrieval tidak boleh:
+
+- auto-RESUME DORMANT;
+- auto-REOPEN ARCHIVED;
+- resurrect tombstoned thread.
+
+Historical recall sahaja tidak mengubah lifecycle state.
+
+Tombstone ialah deletion/storage status, bukan semantic lifecycle state.
+
+### 18.9 Minimal Disclosure During Ambiguity
+
+Jika hasilnya `MULTIPLE_MATCHES`, surface candidate minimum sahaja:
+
+```text
+thread_id
+title
+state
+current
+match_basis
+```
+
+Jangan dump full Thread Record, WHO, private details atau seluruh matters/open hanya untuk resolve identity.
+
+`match_basis` mesti menjelaskan evidence apa yang menyebabkan candidate dianggap relevant tanpa memerlukan numeric score.
+
+### 18.10 Retrieval Operation Result Contract
+
+Result type mesti ikut operation.
+
+```text
+GET_BY_ID
+├─ FOUND
+├─ NOT_FOUND
+└─ THREAD_TOMBSTONED
+
+RESOLVE_THREAD
+├─ UNIQUE_MATCH
+├─ MULTIPLE_MATCHES
+└─ NO_MATCH
+
+LIST_THREADS
+└─ LIST_RESULT
+```
+
+`GET_BY_ID` bukan semantic resolution. Oleh itu exact lookup yang berjaya menghasilkan `FOUND`, bukan `UNIQUE_MATCH`.
+
+`THREAD_TOMBSTONED` ialah exact identity/deletion outcome, bukan lifecycle state.
+
+### 18.11 Read-Only Guarantee
+
+Semua retrieval operation adalah READ-ONLY.
+
+Retrieval tidak boleh:
+
+- mutate Thread Record;
+- bump revision;
+- create semantic event;
+- change lifecycle state;
+- auto-create thread;
+- auto-merge atau auto-split.
+
+Resolution hanya mencari identity. Semantic write masih tertakluk kepada Phase 3 write contract.
+
+### 18.12 Implementation Freedom
+
+ASC implementation bebas menggunakan:
+
+- keyword/BM25;
+- embeddings;
+- vector search;
+- LLM resolver;
+- hybrid retrieval;
+- reranker;
+- gabungan teknik di atas.
+
+Implementation internals tidak boleh menukar semantic contract.
+
+Opaque score, embedding distance atau model confidence tidak pernah menjadi authority sendiri untuk memilih thread.
+
+### 18.13 Phase 4 Proof
+
+Consolidated field test Phase 4 lulus bagi:
+
+```text
+Exact identity lookup               PASS
+Strong semantic resolution          PASS
+Ambiguous cue handling              PASS
+Negative evidence                   PASS
+Superseded cue rejection            PASS
+DORMANT retrieval                   PASS
+ARCHIVED historical recall          PASS
+No auto-REOPEN                      PASS
+NO_MATCH behavior                   PASS
+Tombstone protection                PASS
+Minimal candidate disclosure        PASS
+Read-only guarantee                 PASS
+Provider-memory isolation           PASS
+No numeric-score authority          PASS
+```
+
+Dua schema wording correction ditemui semasa audit dan telah dimasukkan ke contract final:
+
+- `GET_BY_ID` successful exact lookup = `FOUND`, bukan `UNIQUE_MATCH`;
+- tombstone bukan lifecycle state.
+
+Behavioral proof, contract consistency, Phase 3 compatibility, privacy boundary dan authority boundary semuanya lulus.
+
+> **ZASSPILL v0.4.0 Phase 4 dibekukan. Retrieval Intelligence contract di atas ialah authority Phase 4. Feature baharu masuk Phase 5 atau version kemudian; hanya critical fixes patut mengubah release ini.**
