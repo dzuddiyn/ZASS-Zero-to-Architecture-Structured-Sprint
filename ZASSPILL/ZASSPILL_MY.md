@@ -305,7 +305,12 @@ AI penerima perlu:
 - jawab secara natural;
 - jangan cuba reconstruct seluruh chat lama;
 - refresh hanya bila meaning berubah;
-- jaga correction dan beza fakta/fikiran/kebimbangan/tafsiran AI.
+- jaga correction dan beza fakta/fikiran/kebimbangan/tafsiran AI;
+- pastikan pengetahuan baru yang ditambah selepas handoff boleh dibezakan daripada context warisan.
+
+> **Pengetahuan baharu bukan context warisan.**
+
+Fakta, anggaran, research atau tafsiran yang ditambah oleh AI penerima selepas handoff mesti kekal boleh dibezakan daripada maklumat yang dibawa dalam Thread Packet.
 
 Loading Thread Packet yang sah sudah imply continuation. Tiada command CONTINUE wajib.
 
