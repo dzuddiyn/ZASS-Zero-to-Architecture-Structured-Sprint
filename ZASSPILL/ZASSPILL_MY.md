@@ -405,9 +405,14 @@ Packet handoff mesti:
 - arahkan receiver membaca dan mengikut method penerima sebelum structured work bermula;
 - bawa hanya continuity context minimum yang relevan daripada Section 13;
 - nyatakan bahawa inherited context ialah input, bukan keputusan, architecture, plan atau implementation yang telah siap;
-- kekalkan lineage daripada ZASSPILL ke receiving method.
+- kekalkan lineage daripada ZASSPILL ke receiving method;
+- kemas kini current state serta-merta mengikut transition yang user pilih secara jelas; state sebelum transition tidak boleh kekal sebagai current truth yang bersaing;
+- kekalkan cadangan AI terdahulu sebagai cadangan AI dan jangan naik taraf menjadi constraint, preference atau keputusan user kecuali user sendiri mengesahkannya;
+- anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut.
 
 > **AI penerima mesti membaca receiving method sebelum membuat structured work. Jika link method tidak boleh diakses, AI tidak boleh improvise method tersebut; AI mesti minta user beri fail method berkaitan sebagai fallback.**
+
+> **Aturan transition truth:** sebaik user memilih DECIDE atau DESIGN, packet handoff mesti mewakili pilihan itu sebagai current state sambil mengekalkan ketidakpastian yang masih relevan tentang keputusan atau sasaran design sebenar.
 
 ### Handoff DESIGN
 
@@ -442,7 +447,9 @@ Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSIMPLE_MY.
 ZASSPILL → user explicitly chose DESIGN → handoff to ZASSIMPLE.
 
 Handoff rule:
+Pilihan DESIGN user sudah menjadi current transition state dan sudah cukup sebagai authorization untuk mengaktifkan ZASSIMPLE; jangan minta confirmation kedua.
 Context ini ialah input kepada ZASSIMPLE, bukan architecture yang telah diputuskan.
+Cadangan AI terdahulu kekal sebagai cadangan AI kecuali user sendiri mengesahkannya.
 ZASSIMPLE memiliki structured design work selepas handoff ini.
 ~~~
 
@@ -479,7 +486,9 @@ Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSELECTION_
 ZASSPILL → user explicitly chose DECIDE → handoff to ZASSELECTION.
 
 Handoff rule:
+Pilihan DECIDE user sudah menjadi current transition state dan sudah cukup sebagai authorization untuk mengaktifkan ZASSELECTION; jangan minta confirmation kedua.
 Context ini ialah input kepada ZASSELECTION, bukan keputusan yang telah dibuat.
+Cadangan AI terdahulu kekal sebagai cadangan AI kecuali user sendiri mengesahkannya.
 ZASSELECTION memiliki structured comparison selepas handoff ini.
 ~~~
 
