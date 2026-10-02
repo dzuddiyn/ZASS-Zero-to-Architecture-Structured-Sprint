@@ -408,7 +408,8 @@ Packet handoff mesti:
 - kekalkan lineage daripada ZASSPILL ke receiving method;
 - kemas kini current state serta-merta mengikut transition yang user pilih secara jelas; state sebelum transition tidak boleh kekal sebagai current truth yang bersaing;
 - kekalkan cadangan AI terdahulu sebagai cadangan AI dan jangan naik taraf menjadi constraint, preference atau keputusan user kecuali user sendiri mengesahkannya;
-- anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut.
+- anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut;
+- jangan tambah option, contoh, fakta, constraint, preference atau tafsiran baharu di dalam Method Handoff Packet. Packet hanya boleh membawa context yang memang sudah wujud dalam source thread + transition yang user pilih secara jelas.
 
 > **AI penerima mesti membaca receiving method sebelum membuat structured work. Jika link method tidak boleh diakses, AI tidak boleh improvise method tersebut; AI mesti minta user beri fail method berkaitan sebagai fallback.**
 
