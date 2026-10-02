@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION v0.2.2] — 2026-10-02
+
+- LOCKED matrix evidence discipline after the ZASSPILL → DECIDE → ZASSELECTION field-test finding.
+- Criteria may be inferred from user-stated context, but inferred criteria are not user-confirmed requirements.
+- Weights represent priorities and must not be silently invented as authoritative; AI-proposed weights are provisional.
+- Numeric scores now require a stated basis from user input, evidence, measurable facts, or an explicit scoring rule.
+- When a numeric basis is insufficient, ZASSELECTION uses qualitative comparison, `UNKNOWN`, or clearly labelled provisional scoring instead of false precision.
+- AI may still recommend under uncertainty, but uncertainty must remain visible.
+- ZASSPILL Field Test 10 remains an END-TO-END PASS; this downstream matrix finding is scoped to ZASSELECTION only.
+
 ## [ZASSPILL v0.1.0 — Phase 1 Core Proof] — 2026-10-02
 
 - Added the minimum ZASSPILL method package: `ZASSPILL/README.md`, `ZASSPILL_EN.md`, and `ZASSPILL_MY.md`.
