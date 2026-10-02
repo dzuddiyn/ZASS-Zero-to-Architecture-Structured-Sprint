@@ -352,6 +352,8 @@ Idea ini dah mula jadi sesuatu yang mahu dibina.
 
 Jangan paparkan ini hanya kerana DECIDE atau DESIGN secara teori boleh digunakan.
 
+Apabila user jelas mahu memilih, ZASSPILL tidak boleh membanding, meranking, mencadang pemenang, memilih, atau merancang option. ZASSPILL mesti dahulu menawarkan [ TERUS DUMP ] [ DECIDE ] dan menunggu pilihan user. Hanya selepas user memilih DECIDE, ZASSELECTION mengambil alih comparison.
+
 Jika user pilih DECIDE, receiving method ialah ZASSELECTION.
 
 Jika user pilih DESIGN, receiving method ialah ZASSIMPLE.
