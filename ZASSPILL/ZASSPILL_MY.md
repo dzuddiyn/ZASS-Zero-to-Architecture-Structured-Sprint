@@ -216,9 +216,26 @@ Boundary continuity: Guna packet ini + conversation semasa sahaja. Jangan tambah
 [hanya transition yang chronology-nya membantu continuity]
 
 ## CONTINUE IN ANOTHER AI
-Method: https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_MY.md
 
-Arahan: Baca dan ikut method ZASSPILL pada link di atas. Anggap packet ini sebagai continuity authority, guna packet ini + conversation semasa sahaja, dan sambung thread ini dengan saya.
+ZASSPILL method — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_MY.md
+
+ZASSPILL method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSPILL/ZASSPILL_MY.md
+
+Jika user kemudian pilih DECIDE → ZASSELECTION — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Jika user kemudian pilih DECIDE → ZASSELECTION — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Jika user kemudian pilih DESIGN → ZASSIMPLE — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Jika user kemudian pilih DESIGN → ZASSIMPLE — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Arahan: Baca dan ikut ZASSPILL dahulu. Anggap packet ini sebagai continuity authority dan guna packet ini + conversation semasa sahaja. Jika intent user kemudian bergerak ke DECIDE atau DESIGN dan user memilih transition itu secara jelas, gunakan link receiving method yang sepadan dan sudah dibawa dalam packet ini. Jangan aktifkan ZASSELECTION atau ZASSIMPLE sebelum user memilih transition berkaitan.
 ~~~
 
 Tajuk ialah presentation, bukan identity. Phase 1 belum lock format machine ID.
@@ -312,9 +329,9 @@ Kekalkan wording tepat user hanya apabila paraphrase boleh mengubah meaning seca
 
 ## 11. Sambung dalam AI lain
 
-Untuk sambung standalone thread dalam AI lain, handoff Phase 1 yang disukai ialah **single-copy**: paste current Thread Packet sahaja. Packet itu sendiri membawa link method ZASSPILL rasmi dan arahan activation.
+Untuk sambung standalone thread dalam AI lain, handoff Phase 1 yang disukai ialah **single-copy**: paste current Thread Packet sahaja. Packet itu sendiri membawa raw + browser fallback link untuk ZASSPILL dan juga link receiving method yang telah disediakan awal bagi kedua-dua route kemudian: DECIDE → ZASSELECTION dan DESIGN → ZASSIMPLE.
 
-Jika AI penerima tidak boleh mengakses link method tersebut, attach atau paste ZASSPILL_MY.md sebagai fallback.
+AI penerima perlu membaca ZASSPILL dahulu. Link downstream dibawa awal untuk continuity tetapi tidak boleh mengaktifkan ZASSELECTION atau ZASSIMPLE sehingga user memilih transition berkaitan secara jelas.
 
 AI penerima perlu:
 
