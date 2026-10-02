@@ -406,7 +406,7 @@ The handoff packet must:
 
 - name the source method and receiving method;
 - record the transition explicitly chosen by the user;
-- include the canonical raw GitHub link for the receiving method;
+- include both links for the receiving method: (1) canonical raw GitHub link and (2) normal GitHub browser link as fallback;
 - instruct the receiver to read and follow that method before structured work begins;
 - carry only the minimum relevant continuity context from Section 13;
 - state that inherited context is input, not a pre-made decision, architecture, plan, or implementation;
@@ -416,7 +416,7 @@ The handoff packet must:
 - treat the user's explicit DECIDE or DESIGN choice as sufficient authorization to activate the receiving method; do not ask for a second confirmation before loading and following it;
 - never introduce new options, examples, facts, constraints, preferences, or interpretations inside the Method Handoff Packet. The packet may only carry context already present in the source thread plus the user's explicit transition choice.
 
-> **The receiving AI must read the receiving method before doing structured work. If the method link cannot be accessed, it must not improvise that method; it must ask the user to provide the relevant method file as fallback.**
+> **The receiving AI must read the receiving method before doing structured work. Try the canonical raw GitHub link first. If that fails, try the normal GitHub browser link. Only if both links cannot be accessed may it ask the user to provide the relevant method file as fallback. It must never improvise the receiving method.**
 
 > **Transition truth rule:** once the user chooses DECIDE or DESIGN, the handoff packet must represent that choice as the current state while preserving any still-relevant uncertainty about the underlying decision or design target.
 
@@ -429,13 +429,17 @@ From: ZASSPILL
 To: ZASSIMPLE
 Transition chosen by user: DESIGN
 
-Receiving method:
+Receiving method — raw:
 https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_EN.md
 
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_EN.md
+
 Instruction:
-Read and follow the ZASSIMPLE method at the link above before beginning structured design work.
+Read and follow ZASSIMPLE before beginning structured design work.
+Try the raw link first. If it cannot be accessed, try the browser fallback link.
 Do not invent your own ZASSIMPLE workflow.
-If the method link cannot be accessed, tell the user and ask for ZASSIMPLE_EN.md as fallback.
+Only if both links fail, tell the user and ask for ZASSIMPLE_EN.md as file/paste fallback.
 
 ## THREAD
 [thread title]
@@ -468,13 +472,17 @@ From: ZASSPILL
 To: ZASSELECTION
 Transition chosen by user: DECIDE
 
-Receiving method:
+Receiving method — raw:
 https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_EN.md
 
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_EN.md
+
 Instruction:
-Read and follow the ZASSELECTION method at the link above before beginning comparison.
+Read and follow ZASSELECTION before beginning comparison.
+Try the raw link first. If it cannot be accessed, try the browser fallback link.
 Do not invent your own selection method.
-If the method link cannot be accessed, tell the user and ask for ZASSELECTION_EN.md as fallback.
+Only if both links fail, tell the user and ask for ZASSELECTION_EN.md as file/paste fallback.
 
 ## THREAD
 [thread title]
