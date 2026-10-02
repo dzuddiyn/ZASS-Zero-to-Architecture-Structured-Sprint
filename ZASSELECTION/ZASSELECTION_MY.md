@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.1  
+**Version:** 0.2.2  
 **Status:** UX FLOW LOCKED — MALAY METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-01
@@ -184,7 +184,65 @@ Matlamatnya ialah **potong ulang fikir**, bukan mengulangi analisis penuh setiap
 
 ---
 
-## 4A. ⚡ Gaya visual PICKS
+## 4A. Disiplin evidence untuk kriteria, berat dan skor
+
+Matriks Pemilihan tidak boleh mencipta **false precision**.
+
+### Kriteria
+
+AI boleh infer kriteria perbandingan yang berguna daripada masalah, matlamat, constraint, must-have dan konteks yang pengguna sudah beri.
+
+Jika sesuatu kriteria tidak diberi secara eksplisit oleh pengguna, anggap ia sebagai **AI-inferred**, bukan requirement pengguna yang sudah disahkan.
+
+Kriteria AI-inferred boleh digunakan supaya review terus bergerak, tetapi mesti kekal terbuka untuk pembetulan.
+
+### Berat
+
+Berat mewakili keutamaan.
+
+Jangan cipta weight authoritative secara senyap bagi pihak pengguna.
+
+AI boleh mencadangkan **provisional weights** jika berguna, tetapi ia mesti jelas sebagai cadangan AI dan perlu disemak semula apabila input pengguna atau evidence menunjukkan keutamaan berbeza.
+
+Jika weight boleh mengubah recommendation secara material tetapi keutamaan pengguna belum diketahui, utamakan perbandingan tanpa weight atau qualitative comparison daripada berpura-pura bahawa priority sudah pasti.
+
+### Skor
+
+Numeric score mesti mempunyai asas yang boleh dinyatakan.
+
+Skor boleh berdasarkan:
+
+- input eksplisit pengguna;
+- evidence yang diperhatikan atau mempunyai sumber;
+- fakta produk atau ciri yang boleh diukur;
+- scoring rule eksplisit yang boleh diterangkan.
+
+Jangan beri nombor tepat hanya kerana matrix mempunyai ruangan numeric.
+
+Jika asas tidak mencukupi, gunakan:
+
+- qualitative comparison;
+- `UNKNOWN`; atau
+- provisional scoring yang dilabel dengan jelas.
+
+Jangan tukar uncertainty menjadi precision palsu.
+
+### Recommendation ketika uncertainty masih ada
+
+AI masih boleh memberi Cadangan AI walaupun sebahagian kriteria, weight atau score belum pasti, tetapi uncertainty itu mesti kelihatan dan tidak boleh dipersembahkan sebagai fakta yang sudah disahkan pengguna.
+
+Ringkasan LOCKED:
+
+```text
+Criteria may be inferred.
+Priorities must not be silently assigned.
+Scores must have a basis.
+Unknown stays UNKNOWN.
+```
+
+---
+
+## 4B. ⚡ Gaya visual PICKS
 
 Apabila memaparkan flow pantas PICKS, gunakan label ini secara konsisten:
 
@@ -511,7 +569,7 @@ Aliran utama:
 
 ## 13. Locked UX principles
 
-Keputusan berikut LOCKED untuk ZASSELECTION v0.2.1:
+Keputusan berikut LOCKED untuk ZASSELECTION v0.2.2:
 
 1. Fail method default English ialah `ZASSELECTION_EN.md`; fail method Bahasa Melayu ialah `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
@@ -531,6 +589,10 @@ Keputusan berikut LOCKED untuk ZASSELECTION v0.2.1:
 16. Working State must not rely solely on a platform AI's long-term memory.
 17. Backend complexity must remain hidden from the normal user path.
 18. Gaya visual PICKS menggunakan 🎯 P, 🚧 I, 📊 C, ⭐ K, dan 💾 S secara konsisten; hujung review menggunakan 🤖 Cadangan AI dan 👉 Pilihan anda?.
+19. AI boleh infer kriteria daripada konteks pengguna, tetapi kriteria inferred bukan requirement pengguna yang sudah disahkan.
+20. Weight tidak boleh dianggap secara senyap sebagai priority authoritative pengguna; weight cadangan AI kekal provisional.
+21. Numeric score mesti mempunyai asas; jika tidak, gunakan qualitative comparison, `UNKNOWN`, atau provisional scoring yang dilabel jelas.
+22. Cadangan AI masih boleh diberi ketika uncertainty wujud, tetapi uncertainty mesti kekal kelihatan.
 
 Core UX principle:
 
