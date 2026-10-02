@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.1  
+**Version:** 0.2.2  
 **Status:** UX FLOW LOCKED — DEFAULT METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-01
@@ -156,7 +156,65 @@ The goal is to **eliminate repeated thinking**, not repeat the full analysis eve
 
 ---
 
-## 4A. ⚡ PICKS visual presentation
+## 4A. Evidence discipline for criteria, weights, and scores
+
+The Selection Matrix must not create false precision.
+
+### Criteria
+
+AI may infer useful comparison criteria from the user's stated problem, goals, constraints, must-haves, and context.
+
+If a criterion was not explicitly supplied by the user, treat it as **AI-inferred**, not as a confirmed user requirement.
+
+AI-inferred criteria may be used to keep the review moving, but they must remain open to correction.
+
+### Weights
+
+Weights represent priority.
+
+Do not silently invent authoritative weights on behalf of the user.
+
+AI may propose **provisional weights** when useful, but they must be clearly identifiable as AI-proposed and should be revised when user input or evidence shows different priorities.
+
+If weights materially change the recommendation and the user's priorities are not known, prefer an unweighted or qualitative comparison rather than pretending the priorities are settled.
+
+### Scores
+
+Numeric scores require a stated basis.
+
+A score may be based on:
+
+- explicit user input;
+- observed or sourced evidence;
+- product facts or measurable characteristics;
+- an explicit scoring rule that can be explained.
+
+Do not assign precise numbers merely because a matrix has numeric columns.
+
+When the basis is insufficient, use:
+
+- qualitative comparison;
+- `UNKNOWN`; or
+- clearly labelled provisional scoring.
+
+Do not convert uncertainty into fake precision.
+
+### Recommendation under uncertainty
+
+AI may still give a recommendation when some criteria, weights, or scores remain uncertain, but the uncertainty must be visible and must not be presented as user-confirmed fact.
+
+Locked shorthand:
+
+```text
+Criteria may be inferred.
+Priorities must not be silently assigned.
+Scores must have a basis.
+Unknown stays UNKNOWN.
+```
+
+---
+
+## 4B. ⚡ PICKS visual presentation
 
 When presenting the fast PICKS review flow, use these labels consistently:
 
@@ -419,7 +477,7 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
 
 ## 13. Locked UX principles
 
-The following are LOCKED for ZASSELECTION v0.2.1:
+The following are LOCKED for ZASSELECTION v0.2.2:
 
 1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
@@ -437,6 +495,10 @@ The following are LOCKED for ZASSELECTION v0.2.1:
 14. Working State must not rely solely on a platform AI's long-term memory.
 15. Backend complexity stays hidden from the normal user path.
 16. PICKS visual labels use 🎯 P, 🚧 I, 📊 C, ⭐ K, and 💾 S consistently; review endings use 🤖 AI Recommendation and 👉 Your selection?.
+17. AI may infer criteria from the user's stated context, but inferred criteria are not user-confirmed requirements.
+18. Weights must not be silently treated as authoritative user priorities; AI-proposed weights are provisional.
+19. Numeric scores require a stated basis; otherwise use qualitative comparison, `UNKNOWN`, or clearly labelled provisional scoring.
+20. Recommendations may still be given under uncertainty, but the uncertainty must remain visible.
 
 Core UX principle:
 
