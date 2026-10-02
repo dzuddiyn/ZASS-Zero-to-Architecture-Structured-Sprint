@@ -1,10 +1,10 @@
 # ZASS AI Sync and Google Dashboard
 
-**Status:** Integration reference; AI-SYNC Web system direction locked, implementation not yet built
+**Status:** Integration reference; AI-SYNC Web direction locked; Public Method Gateway implementation started in Multi AI-SYNC / ASC
 
 **Pilot scope:** Full ZASS workflow first
 
-**Document version:** 0.3
+**Document version:** 0.4
 
 **Date:** 2026-10-02
 
@@ -595,7 +595,51 @@ The proof passes when:
 5. A GitHub update can synchronize to the gateway without manual copy-paste.
 6. ZASSPILL can carry the gateway URL during DECIDE/DESIGN handoff without changing ZASSPILL method semantics.
 
-This Method Gateway is a transport capability of AI-SYNC and should be designed in the Multi AI-SYNC / ASC workstream.
+This Method Gateway is a transport capability of AI-SYNC and is being implemented in the Multi AI-SYNC / ASC workstream.
+
+### Current implementation checkpoint
+
+As of 2026-10-02, the owner has promoted the Method Gateway proof into implementation.
+
+Locked implementation topology:
+
+```text
+Official ZASS GitHub
+        ↓ resolve exact main HEAD
+protected AI-SYNC sync app
+        ↓
+ASC DB / METHODS snapshot registry
+        ↓
+separate public read-only app
+        ↓
+plain Markdown / text
+        ↓
+Gemini / Copilot / other receiver AI
+```
+
+Current AI-SYNC execution sequence:
+
+```text
+T-013A
+METHODS registry + protected GitHub sync
+        ↓
+T-013B
+public Method Gateway + cross-AI proof
+        ↓
+resume ASC front-door / routing / handoff work
+```
+
+Implementation rules now locked in AI-SYNC:
+
+- the existing 8-field ASC Write Contract remains unchanged;
+- the read plane uses a separate Method Snapshot Record;
+- v0.1 uses one lightweight `METHODS` registry for the three Malay methods;
+- protected sync and public read use separate Apps Script surfaces;
+- one sync run pins all three method snapshots to one exact GitHub commit;
+- no manual Markdown copy-paste is accepted as the normal sync flow;
+- exact production domain/URL remains intentionally unlocked until the proof passes.
+
+The gateway is **not yet accepted as operational**. ZASS method files must continue using the current bootstrap transport until T-013B proves public readability, especially in Gemini and Copilot.
 
 ---
 
@@ -616,4 +660,4 @@ This Method Gateway is a transport capability of AI-SYNC and should be designed 
 
 ## 21. Current decision status
 
-The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. This document also locks the AI-SYNC Public Method Gateway direction described above. The gateway is not yet built or tested. This document does not claim that the integration, dashboard, Action, automation, or Method Gateway has been implemented.
+The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. The AI-SYNC Public Method Gateway direction and its smallest implementation topology are now owner-locked. T-013A implementation has started in the AI-SYNC workstream, but the gateway is not yet accepted as operational until live sync plus public Gemini/Copilot readability tests pass. This document does not claim that the broader dashboard, Action, automation, or final production Method Gateway URL is complete.
