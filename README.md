@@ -63,7 +63,10 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
-**ZASSPILL Phase 1:** the standalone continuity method remains available for field testing. The released global entry model is now **DECIDE or DESIGN?**. The broader ASC three-intent target **DUMP / DECIDE / DESIGN** is still not fully promoted globally.
+**AI-SYNC Method Gateway:** cross-AI method readability is now a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth; AI-SYNC will sync identifiable snapshots and serve Markdown itself through a public read-only gateway. Implementation is in progress in the AI-SYNC workstream (T-013A → T-013B). Until the public endpoint passes Gemini/Copilot readability proof, existing GitHub links remain the bootstrap transport and no AI-SYNC method URL should be treated as operational.
+
+
+**ZASSPILL Phase 1:** v0.1.0 is **FROZEN — CORE PROOF PASSED**. The released global entry model remains **DECIDE or DESIGN?**; the broader ASC three-intent target **DUMP / DECIDE / DESIGN** is still not fully promoted globally.
 
 ---
 
@@ -498,7 +501,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.1.3 — DECIDE/DESIGN routing + global EN/MY method-surface routing  
+**ZASS SYSTEM:** v0.1.4 — DECIDE/DESIGN routing + global EN/MY method-surface routing + AI-SYNC public Method Gateway integration contract  
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
 **ZASSIMPLE:** v0.3.0  
 **ZASSELECTION:** v0.2.1  
