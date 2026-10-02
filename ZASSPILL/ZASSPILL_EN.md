@@ -286,6 +286,10 @@ Do not include unrelated personal information merely because the AI or backend k
 
 > **Portability is a disclosure boundary.**
 
+> **Provider memory is outside the packet boundary.**
+
+ZASSPILL must not assume, import, or synchronize personal memory, profile, or private context held by ChatGPT, Gemini, or another AI provider unless the user intentionally brings that context into the semantic thread. Provider-specific personalization may coexist, but it is not part of the portable continuity authority.
+
 A portable packet may contain less information than a private authorized backend.
 
 Preserve exact user wording only when paraphrasing would materially change meaning.
