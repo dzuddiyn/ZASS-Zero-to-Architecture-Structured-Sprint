@@ -2,8 +2,8 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 0.3.0  
-**Status:** PHASE 3 FROZEN — PERSISTENCE / ASC CONTRACT PROOF PASSED  
+**Version:** 0.4.0  
+**Status:** PHASE 4 FROZEN — RETRIEVAL INTELLIGENCE PROOF PASSED  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
@@ -1143,3 +1143,276 @@ The proof covers:
 - Portable Packet v2 round-trip.
 
 > **ZASSPILL v0.3.0 Phase 3 is frozen. The persistence semantics and ASC contract above are the Phase 3 authority. New features belong in Phase 4 or a later version; only critical fixes should alter this release.**
+
+
+---
+
+## 18. Phase 4 — Retrieval Intelligence
+
+Phase 4 locks how ZASSPILL finds and resolves continuity threads semantically without turning retrieval into guessing, keyword-only matching, or authority based on an opaque score.
+
+Primary principle:
+
+> **Retrieval intelligence is evidence-based, not keyword-based. Candidate generation may be broad, but final resolution must remain conservative.**
+
+Phase 4 remains compatible with Phase 3: retrieval is READ-ONLY and has no authority to mutate state, revision, events, or semantic truth.
+
+### 18.1 Authorized Retrieval Scope
+
+Retrieval may search only continuity scope the user is authorized to access.
+
+Allowed evidence sources:
+
+- exact `thread_id`;
+- explicit / near-exact title reference;
+- `resume_cues`;
+- `continuity.about`;
+- `continuity.current`;
+- `continuity.matters`;
+- `continuity.open`;
+- materially relevant lineage;
+- user lifecycle intent.
+
+Not retrieval authority:
+
+- provider memory / profile / private personalization;
+- unrelated chats;
+- web knowledge;
+- external AI inference not intentionally brought into the thread by the user;
+- opaque numeric similarity score alone.
+
+### 18.2 Candidate Generation ≠ Final Resolution
+
+Semantic retrieval has two layers:
+
+```text
+USER CUE
+   ↓
+CANDIDATE GENERATION
+   ↓
+FINAL RESOLUTION
+   ↓
+UNIQUE_MATCH
+MULTIPLE_MATCHES
+NO_MATCH
+```
+
+Candidate generation may deliberately retrieve multiple possibilities.
+
+> **Being a candidate does not mean the thread has been selected.**
+
+The final resolver must evaluate evidence coherence before selecting an identity.
+
+### 18.3 Evidence Strength
+
+Evidence may have different strength.
+
+Strong evidence includes:
+
+- exact `thread_id`;
+- explicit unique title/reference;
+- highly specific resume cue.
+
+Medium evidence includes:
+
+- coherent semantic match with `about` / `current`;
+- a combination of multiple current resume cues;
+- relevant `matters` / `open`;
+- clear lifecycle intent.
+
+Weak evidence includes:
+
+- generic keyword only;
+- one overlapping word;
+- similarity without continuity meaning.
+
+Keyword overlap alone is not enough to force `UNIQUE_MATCH`.
+
+### 18.4 Negative Evidence
+
+Explicit user exclusion is negative evidence.
+
+Example:
+
+```text
+"continue the Kulai one, not the work one"
+```
+
+A work-related candidate must lose relevance even if it shares the keyword `Kulai`.
+
+Explicit user exclusion outranks keyword overlap.
+
+### 18.5 Superseded / Stale Cue Discipline
+
+Context or resume cues marked `SUPERSEDED` must not act as current retrieval evidence.
+
+Semantic priority:
+
+```text
+current meaning
+↓
+valid current resume cues
+↓
+relevant matters/open
+↓
+older supporting context
+```
+
+Freshness is not timestamp alone.
+
+`semantic_updated_at` may help an implementation as a tie-break, but it must not outrank semantic relevance.
+
+DORMANT or ARCHIVED does not mean stale.
+
+### 18.6 Conservative Resolution
+
+`UNIQUE_MATCH` is allowed only when one candidate has materially stronger and coherent evidence.
+
+If two or more candidates remain plausible:
+
+```text
+MULTIPLE_MATCHES
+```
+
+If evidence is insufficient:
+
+```text
+NO_MATCH
+```
+
+Do not force `UNIQUE_MATCH` merely because an internal numeric score is slightly higher.
+
+> **False ambiguity is safer than false identity.**
+
+### 18.7 Exact Identity Bypass
+
+When `thread_id` is known, use exact lookup:
+
+```text
+GET_BY_ID
+```
+
+and do not run semantic ranking against alternatives.
+
+An exact unique title reference may be strong evidence, but title is not identity. If multiple threads share a title or the reference remains ambiguous, preserve ambiguity.
+
+### 18.8 Lifecycle-Aware Retrieval
+
+Eligibility:
+
+```text
+ACTIVE      → retrievable
+DORMANT     → retrievable
+ARCHIVED    → retrievable for history / resolution
+TOMBSTONED  → not a semantic candidate
+```
+
+Retrieval must not:
+
+- auto-RESUME DORMANT;
+- auto-REOPEN ARCHIVED;
+- resurrect a tombstoned thread.
+
+Historical recall alone does not change lifecycle state.
+
+A tombstone is deletion/storage status, not a semantic lifecycle state.
+
+### 18.9 Minimal Disclosure During Ambiguity
+
+For `MULTIPLE_MATCHES`, surface only minimum candidate information:
+
+```text
+thread_id
+title
+state
+current
+match_basis
+```
+
+Do not expose a full Thread Record, WHO, private details, or all matters/open merely to resolve identity.
+
+`match_basis` must explain why the candidate is relevant without requiring a numeric score.
+
+### 18.10 Retrieval Operation Result Contract
+
+Result types must match the operation.
+
+```text
+GET_BY_ID
+├─ FOUND
+├─ NOT_FOUND
+└─ THREAD_TOMBSTONED
+
+RESOLVE_THREAD
+├─ UNIQUE_MATCH
+├─ MULTIPLE_MATCHES
+└─ NO_MATCH
+
+LIST_THREADS
+└─ LIST_RESULT
+```
+
+`GET_BY_ID` is not semantic resolution. Therefore a successful exact lookup returns `FOUND`, not `UNIQUE_MATCH`.
+
+`THREAD_TOMBSTONED` is an exact identity/deletion outcome, not a lifecycle state.
+
+### 18.11 Read-Only Guarantee
+
+All retrieval operations are READ-ONLY.
+
+Retrieval must not:
+
+- mutate a Thread Record;
+- bump revision;
+- create a semantic event;
+- change lifecycle state;
+- auto-create a thread;
+- auto-merge or auto-split.
+
+Resolution only finds identity. Semantic writes remain governed by the Phase 3 write contract.
+
+### 18.12 Implementation Freedom
+
+ASC implementations may use:
+
+- keyword/BM25;
+- embeddings;
+- vector search;
+- LLM resolver;
+- hybrid retrieval;
+- reranking;
+- any combination of the above.
+
+Implementation internals must not change the semantic contract.
+
+An opaque score, embedding distance, or model confidence never becomes authority by itself for thread selection.
+
+### 18.13 Phase 4 Proof
+
+The consolidated Phase 4 field test passed for:
+
+```text
+Exact identity lookup               PASS
+Strong semantic resolution          PASS
+Ambiguous cue handling              PASS
+Negative evidence                   PASS
+Superseded cue rejection            PASS
+DORMANT retrieval                   PASS
+ARCHIVED historical recall          PASS
+No auto-REOPEN                      PASS
+NO_MATCH behavior                   PASS
+Tombstone protection                PASS
+Minimal candidate disclosure        PASS
+Read-only guarantee                 PASS
+Provider-memory isolation           PASS
+No numeric-score authority          PASS
+```
+
+Two schema-wording corrections were identified during audit and incorporated into the final contract:
+
+- successful `GET_BY_ID` exact lookup = `FOUND`, not `UNIQUE_MATCH`;
+- a tombstone is not a lifecycle state.
+
+Behavioral proof, contract consistency, Phase 3 compatibility, privacy boundary, and authority boundary all passed.
+
+> **ZASSPILL v0.4.0 Phase 4 is frozen. The Retrieval Intelligence contract above is the Phase 4 authority. New features belong in Phase 5 or a later version; only critical fixes should alter this release.**
