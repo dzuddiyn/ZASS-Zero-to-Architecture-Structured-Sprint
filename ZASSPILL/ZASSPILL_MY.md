@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 0.1.0  
-**Status:** PHASE 1 FROZEN — CORE PROOF PASSED  
+**Version:** 0.2.0  
+**Status:** PHASE 2 FROZEN — MULTI-THREAD CONTINUITY PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -577,3 +577,151 @@ Ujian mesti semak:
 - AI penerima boleh sambung tanpa memaksa form atau reconstruct transcript.
 
 Phase 1 core proof telah lulus. ZASSPILL v0.1.0 kini dibekukan. Perubahan feature seterusnya masuk ke phase/version kemudian; hanya critical fix patut mengubah release beku ini. Freeze ini tidak menggantikan current global ZASS SYSTEM entry contract.
+
+
+---
+
+## 16. Phase 2 — Multi-Thread Continuity
+
+Phase 2 melanjutkan core single-thread Phase 1 supaya satu conversation boleh membawa beberapa semantic thread tanpa mencampurkan meaning.
+
+> **New thread = continuity yang boleh disambung secara independent. Minor branch = context sokongan dalam thread sedia ada.**
+
+### Thread Index minimum
+
+Thread Index ialah peta navigation, bukan summary database.
+
+~~~text
+Thread
+State: ACTIVE / DORMANT / ARCHIVED
+Current
+Resume cues
+Freshness
+Lineage
+~~~
+
+Thread Index menjawab “thread apa yang wujud?”. Thread Packet menjawab “apa context sebenar thread itu?”.
+
+Index invisible secara default. Paparkan hanya bila user minta, routing ambiguous, atau SPLIT/MERGE memerlukan pilihan.
+
+### Routing
+
+1. Explicit reference → resume thread itu.
+2. Strong unique semantic cue → resume secara senyap.
+3. Sambungan jelas → kekal current thread.
+4. Topik materially berbeza + independent continuity → candidate thread baru.
+5. Lebih daripada satu thread plausible → jangan teka; minta user pilih.
+
+Current thread hanya memberi prior kecil, bukan authority mutlak.
+
+> **Semantic match > keyword match.**
+
+### New thread / minor branch / promotion
+
+- Jangan over-split.
+- Jika ragu-ragu, kekalkan sebagai branch dahulu.
+- Branch boleh dipromote apabila ia mendapat goal, state, open questions, atau future sendiri.
+
+### SPLIT
+
+Cadangkan SPLIT hanya apabila satu thread sudah mempunyai dua continuity yang boleh bergerak independent.
+
+Jangan auto-split. User mesti pilih.
+
+Jika SPLIT dipilih:
+- cipta thread baru;
+- preserve context relevan;
+- lineage: `split-from [parent]`.
+
+### MERGE
+
+Cadangkan MERGE hanya apabila dua thread kini berkongsi continuity + future yang sama dan tidak lagi berguna dijaga berasingan.
+
+Jangan auto-merge. User mesti pilih.
+
+Jika MERGE dipilih:
+- satu continuity aktif kekal;
+- active lineage: `merged-from [A + B]`;
+- source thread lama kekal sebagai archived reference: `merged-into [active thread]`;
+- contradiction tidak dipaksa menjadi satu truth.
+
+### Thread lifecycle
+
+~~~text
+ACTIVE
+= continuity hidup / bergerak / munasabah disambung sekarang.
+
+DORMANT
+= belum selesai atau masih relevan, tetapi tiada perkembangan material buat sementara.
+
+ARCHIVED
+= selesai, tidak lagi current, atau sengaja ditutup daripada active continuity.
+~~~
+
+Rules:
+- ACTIVE → DORMANT bila berhenti sementara, bukan selesai.
+- DORMANT → ACTIVE bila disambung semula.
+- ACTIVE/DORMANT → ARCHIVED bila selesai/ditutup.
+- ARCHIVED → ACTIVE hanya jika user jelas membuka semula continuity yang sama.
+- Recall/history sahaja tidak reopen archived thread.
+- Jangan auto-archive hanya kerana lama tak disentuh.
+- Freshness bantu routing, bukan menentukan state.
+- `SUPERSEDED` ialah status context, bukan thread state.
+
+### Conflict + isolation
+
+> **Related ≠ shared.**
+
+Context kekal thread-local secara default.
+
+Jika dua statement nampak bercanggah, semak scope, horizon masa, truth type, dan sama ada user benar-benar mengubah pendirian.
+
+Jika conflict masih real dan material, jangan pilih sendiri; minta clarification.
+
+Correction user mengatasi tafsiran AI. Context yang diganti boleh jadi superseded, tetapi superseded context tidak menjadi thread baru.
+
+Cross-thread carry hanya apabila materially relevant.
+
+### Resume
+
+- Direct reference → resume.
+- Strong unique cue → resume.
+- DORMANT → ACTIVE bila disambung.
+- ARCHIVED kekal archived untuk recall/history.
+- ARCHIVED → ACTIVE hanya bila user jelas reopen.
+- Ambiguous → minta user pilih.
+- Resume daripada current Thread Packet, bukan reconstruct transcript.
+
+### Update Thread Index
+
+Update hanya bila continuity berubah secara material.
+
+~~~text
+CREATE → tambah thread hanya bila independent continuity wujud
+RESUME → activate jika perlu; update Current/Freshness jika meaning berubah
+MINOR BRANCH → tiada index entry baru
+SPLIT → create + preserve split lineage
+MERGE → active merged thread + archived source reference
+DORMANT / ARCHIVED → update State
+CORRECTION → update current meaning; jangan simpan competing truth
+~~~
+
+Resume cues bukan keyword dump.
+
+### Phase 2 proof
+
+Field test membuktikan:
+- routing + resume;
+- new thread vs minor branch;
+- branch promotion;
+- split/merge dengan user control;
+- lineage;
+- ACTIVE/DORMANT/ARCHIVED + reopen;
+- conflict + isolation;
+- correction + superseded context;
+- Thread Index invisible-by-default;
+- natural same-chat continuity.
+
+Known limitation: sesetengah receiver masih boleh mengimport provider-held memory/profile walaupun boundary sudah jelas. Itu receiver-compliance limitation, bukan authority untuk ZASSPILL menganggap provider memory sebagai portable continuity.
+
+> **ZASSPILL v0.2.0 Phase 2 dibekukan. Feature baru masuk phase/version seterusnya; hanya critical fix patut mengubah release ini.**
