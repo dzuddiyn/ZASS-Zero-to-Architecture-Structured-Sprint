@@ -357,6 +357,8 @@ This idea is starting to become something you want to build.
 
 Do not show these merely because DECIDE or DESIGN could theoretically apply.
 
+When the user explicitly wants to choose, ZASSPILL must not compare, rank, recommend, select, or plan the options. It must first offer [ KEEP DUMPING ] [ DECIDE ] and wait for the user's choice. Only after the user chooses DECIDE may ZASSELECTION own the comparison.
+
 If the user chooses DECIDE, the receiving method is ZASSELECTION.
 
 If the user chooses DESIGN, the receiving method is ZASSIMPLE.
