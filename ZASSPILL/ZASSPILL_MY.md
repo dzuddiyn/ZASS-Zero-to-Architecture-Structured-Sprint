@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 0.2.0  
-**Status:** PHASE 2 FROZEN — MULTI-THREAD CONTINUITY PROOF PASSED  
+**Version:** 0.3.0  
+**Status:** PHASE 3 FROZEN — PERSISTENCE / ASC CONTRACT PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -725,3 +725,470 @@ Field test membuktikan:
 Known limitation: sesetengah receiver masih boleh mengimport provider-held memory/profile walaupun boundary sudah jelas. Itu receiver-compliance limitation, bukan authority untuk ZASSPILL menganggap provider memory sebagai portable continuity.
 
 > **ZASSPILL v0.2.0 Phase 2 dibekukan. Feature baru masuk phase/version seterusnya; hanya critical fix patut mengubah release ini.**
+
+
+---
+
+## 17. Phase 3 — Persistence / ASC Contract
+
+Phase 3 mengunci kontrak persistence antara meaning ZASSPILL dan infrastruktur ASC.
+
+Boundary utama:
+
+> **ZASSPILL menentukan APAKAH sesuatu thread, continuity, revision, conflict, packet dan lifecycle itu bermaksud. ASC menentukan BAGAIMANA ia disimpan, diselaraskan, diretrieve dan dilindungi.**
+
+Phase 3 tidak mengunci database engine, vector store, hosting, dashboard, provider AI atau implementation stack tertentu.
+
+### 17.1 Thread Identity Contract
+
+Setiap persisted thread mempunyai identity stabil:
+
+```text
+thread_id = th_<ULID>
+```
+
+Aturan:
+
+- `thread_id` dijana oleh persistence layer/ASC sekali sahaja;
+- ia opaque, immutable dan meaning-free;
+- ia tidak boleh encode title, topic, username, provider, project, state atau semantic meaning;
+- rename, correction, normal update, DORMANT, ARCHIVE dan REOPEN mengekalkan `thread_id`;
+- SPLIT mengekalkan ID parent dan memberi ID baru kepada child;
+- TRUE MERGE menghasilkan identity baru. Source threads di-ARCHIVE dan merekod `merged_into`; merged thread merekod `merged_from`;
+- jika satu thread hanya menerima update daripada thread lain, itu bukan TRUE MERGE.
+
+Timestamp teknikal di dalam ULID tidak menentukan freshness atau authority.
+
+### 17.2 Authoritative Thread Record
+
+Satu authoritative Current Thread Record wujud bagi setiap `thread_id`.
+
+Minimum semantic record:
+
+```text
+thread_id
+title
+state
+
+continuity:
+  who
+  about
+  current
+  matters
+  open
+  origin
+
+resume_cues
+lineage
+revision
+created_at
+semantic_updated_at
+```
+
+`state` hanya:
+
+```text
+ACTIVE
+DORMANT
+ARCHIVED
+```
+
+`lineage` boleh membawa:
+
+```text
+split_from
+merged_from
+merged_into
+```
+
+Thread Index ialah derived projection sahaja, bukan source of truth kedua.
+
+Metadata seperti user/account ID, provider, device, auth, sync status, embedding atau `persisted_at` ialah ASC envelope metadata, bukan semantic Thread Record.
+
+### 17.3 Revision + Event Contract
+
+Current Thread Record ialah authority state semasa. Event log ialah immutable semantic mutation/history lineage; Phase 3 bukan full event-sourcing system.
+
+Setiap successful material semantic mutation:
+
+```text
+revision N → N+1
+```
+
+dan mesti menghasilkan satu matching semantic event.
+
+Minimum event:
+
+```text
+event_id: ev_<ULID>
+thread_id: th_<ULID>
+revision
+event_type
+occurred_at
+change
+```
+
+Locked event types:
+
+```text
+CREATE
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+Revision tidak naik untuk READ, export, sync, backup, replication, serialization-only change atau retry request yang sama.
+
+Thread Record mutation + matching event ialah satu logical atomic operation. Sistem tidak boleh melaporkan record revision baru tanpa matching event yang sah.
+
+### 17.4 Optimistic Concurrency
+
+Semantic write mesti membawa:
+
+```text
+thread_id
+expected_revision
+mutation
+```
+
+Jika:
+
+```text
+stored_revision == expected_revision
+```
+
+write boleh diterima.
+
+Jika tidak:
+
+```text
+REVISION_CONFLICT
+```
+
+dan:
+
+- Thread Record tidak berubah;
+- revision tidak naik;
+- tiada semantic event baru;
+- tiada last-write-wins;
+- caller mesti reload current record sebelum reconcile.
+
+Jika reconciliation menemukan contradiction material, minta user clarify. Jangan semantic auto-merge.
+
+### 17.5 Idempotency Contract
+
+Setiap logical semantic write membawa:
+
+```text
+request_id = req_<ULID>
+```
+
+Aturan:
+
+- same `request_id` + same payload → `ALREADY_APPLIED` / return original result;
+- jangan execute semula;
+- jangan naik revision;
+- jangan cipta event duplicate;
+- same `request_id` + different payload → `IDEMPOTENCY_KEY_REUSE_CONFLICT`;
+- mutation logical baru mesti guna `request_id` baru.
+
+`request_id` ialah identity logical request/retry. `event_id` ialah identity semantic event yang berjaya.
+
+### 17.6 Authority Contract
+
+Authority order Phase 3:
+
+- latest explicit user statement = semantic authority dalam live conversation;
+- ASC Current Thread Record = persistence authority bagi state yang berjaya disimpan;
+- event log = history / mutation / lineage authority;
+- Portable Packet = portable snapshot bagi satu known persisted revision atau standalone/local state;
+- Thread Index = derived navigation;
+- AI interpretation/chat = working context/proposal, bukan independent persistence authority;
+- provider memory/profile/private context = di luar portable authority.
+
+Live meaning boleh sementara lebih baru daripada ASC sebelum persistence berjaya. Sistem tidak boleh berpura-pura write telah berlaku.
+
+Jika packet lebih lama daripada ASC dan ASC boleh dicapai, ASC persisted state menang.
+
+### 17.7 Retrieval Contract
+
+Tiga retrieval operation:
+
+```text
+GET_BY_ID
+RESOLVE_THREAD
+LIST_THREADS
+```
+
+`GET_BY_ID`:
+- jika `thread_id` diketahui, retrieve identity itu terus;
+- jangan semantic-search alternative.
+
+`RESOLVE_THREAD`:
+- `UNIQUE_MATCH` → retrieve selected identity;
+- `MULTIPLE_MATCHES` → tunjuk candidate minimum dan minta user pilih;
+- `NO_MATCH` → jangan invent existing thread.
+
+Candidate resolution hanya membawa minimum identity/navigation context. Full continuity dibaca selepas identity dipilih.
+
+`LIST_THREADS` mengembalikan index projection, bukan full Thread Records.
+
+Retrieval ialah READ-ONLY:
+- tiada revision bump;
+- tiada event;
+- tiada auto-create;
+- tiada auto-resume;
+- tiada auto-reopen.
+
+ARCHIVED thread boleh diretrieve untuk history tetapi kekal ARCHIVED sehingga user jelas memilih REOPEN.
+
+### 17.8 Packet ↔ ASC Reconciliation
+
+ASC-backed packet membawa minimum reconciliation metadata:
+
+```text
+thread_id
+base_revision
+packet_state
+exported_at
+```
+
+`packet_state`:
+
+```text
+SYNCED
+LOCAL_CHANGES
+STANDALONE
+```
+
+`base_revision` ialah ASC revision terakhir yang packet tahu secara sah.
+
+Offline/local edit:
+
+- tidak mencipta fake ASC revision;
+- tidak mencipta fake event;
+- mengekalkan `base_revision`;
+- menukar packet kepada `LOCAL_CHANGES`.
+
+Reconciliation:
+
+```text
+packet SYNCED rev N + ASC rev N
+→ IN_SYNC
+
+packet SYNCED rev N + ASC rev >N
+→ STALE_PACKET / STALE_SNAPSHOT
+→ ASC persisted state menang
+
+packet LOCAL_CHANGES base N + ASC rev N
+→ SAFE_TO_WRITE
+→ propose write dengan expected_revision N
+
+packet LOCAL_CHANGES base N + ASC rev >N
+→ DIVERGENCE_DETECTED
+→ reload + reconcile
+→ no last-write-wins
+```
+
+Jika ASC unavailable, packet boleh menjadi portable authority untuk session tersebut tetapi mesti kekal `LOCAL_CHANGES`; jangan dakwa externally persisted.
+
+Jika packet mendakwa revision lebih baru daripada ASC tanpa provenance sah, hasilkan `REVISION_PROVENANCE_MISMATCH`.
+
+### 17.9 Cross-AI Write Contract
+
+AI/provider hanya mencadangkan semantic mutation. ASC memiliki persistence mechanics dan protected metadata.
+
+Write shape:
+
+```text
+request_id
+thread_id
+expected_revision
+operation
+changes
+```
+
+Allowed semantic operations:
+
+```text
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+AI tidak boleh menetapkan atau mengganti secara sewenang-wenang:
+
+- identity thread sedia ada;
+- revision;
+- event_id;
+- system timestamps;
+- persistence receipt.
+
+State transition mesti melalui lifecycle operation. Lineage mutation mesti melalui SPLIT/MERGE. Generic full-record replacement tidak dibenarkan.
+
+SPLIT dan MERGE multi-record mesti atomic secara logical. ASC menjana identity baru yang diperlukan.
+
+Provider memory/profile tidak boleh enrich semantic mutation kecuali user sendiri membawa context itu ke thread.
+
+### 17.10 Bootstrap / Import Contract
+
+Packet tanpa `thread_id` ialah bootstrap candidate, bukan automatik thread baru.
+
+Flow:
+
+```text
+resolve identity
+↓
+NO_MATCH
+→ CREATE new th_<ULID>, revision 1, CREATE event
+
+UNIQUE_MATCH
+→ attach existing identity
+→ no duplicate
+
+MULTIPLE_MATCHES
+→ user clarification
+→ no create / no attach
+```
+
+Jangan infer identity daripada title sahaja. Jangan auto-MERGE, auto-SPLIT atau create duplicate.
+
+Bootstrap request juga mesti idempotent.
+
+### 17.11 Delete / Forget / Tombstone
+
+`ARCHIVED` ialah semantic lifecycle state. Ia bukan privacy deletion.
+
+`DELETE_THREAD` memerlukan identity + stale-write protection.
+
+Successful delete menghapus:
+
+- semantic Thread Record;
+- semantic event history;
+- Thread Index/search projection;
+- derived semantic caches yang berkaitan.
+
+Minimal tombstone boleh kekal hanya untuk mencegah resurrection:
+
+```text
+thread_id
+deleted_at
+deletion_request_id
+```
+
+Tombstone tidak boleh menyimpan title, current, WHO, matters, open, resume cues, semantic history atau deleted content.
+
+Stale packet yang menunjuk identity tombstoned menghasilkan:
+
+```text
+THREAD_TOMBSTONED
+```
+
+dan tidak boleh auto-resurrect.
+
+Jika user mahu menggunakan semula kandungan lama, ia mesti menjadi explicit CREATE_NEW dengan identity baru.
+
+`FORGET_CONTEXT` ialah privacy erasure bagi selected semantic context. Forgotten content tidak boleh disalin ke immutable event; receipt/event boleh hanya menyatakan bahawa context dibuang atas permintaan user.
+
+### 17.12 Portable Packet v2
+
+Portable Packet v2 ialah Markdown human-readable dengan machine metadata. Ia bukan JSON-only database dump.
+
+Method identity mesti jelas:
+
+```yaml
+method: ZASSPILL
+method_version: 0.3.0
+packet_format_version: 2
+```
+
+`export`, `import` dan `reconcile` ialah operation, bukan nilai `method`.
+
+Minimum ASC-backed packet:
+
+```yaml
+---
+method: ZASSPILL
+method_version: 0.3.0
+packet_format_version: 2
+thread_id: th_<ULID>
+title: <human title>
+state: ACTIVE | DORMANT | ARCHIVED
+base_revision: <persisted revision known by packet>
+packet_state: SYNCED | LOCAL_CHANGES
+exported_at: <timestamp if known>
+continuity:
+  who: ...
+  about: ...
+  current: ...
+  matters: ...
+  open: ...
+resume_cues: ...
+lineage:
+  split_from: ...
+  merged_from: ...
+  merged_into: ...
+provenance:
+  source: ...
+---
+```
+
+Standalone packet tanpa persisted identity boleh menggunakan:
+
+```text
+packet_state: STANDALONE
+```
+
+dan boleh omit `thread_id` / `base_revision` sehingga bootstrap berjaya.
+
+Jangan export full event history secara default. Export current continuity + minimum relevant lineage/history sahaja.
+
+Round-trip invariant:
+
+> **export → AI → local change → ASC reconciliation/write → export semula mesti mengekalkan thread_id, lineage dan meaning asal kecuali perubahan semantic yang memang dibenarkan user.**
+
+Packet edit tidak pernah menjadi bukti persistence.
+
+### 17.13 Phase 3 Proof
+
+Field-test suite Phase 3 telah lulus:
+
+```text
+FT01 Identity Stability             PASS
+FT02 Revision + Event               PASS
+FT03 Idempotency                    PASS
+FT04 Concurrent Write               PASS
+FT05 Retrieval + Ambiguity          PASS
+FT06 Packet ↔ ASC Reconciliation    PASS
+FT07 Bootstrap / Duplicate Protect  PASS
+FT08 Cross-AI Write                 PASS
+FT09 Delete / Tombstone             PASS
+FT10 Portable Packet v2 Round-trip  PASS
+```
+
+Proof meliputi:
+
+- stable machine identity;
+- revision/event consistency;
+- stale-write protection;
+- idempotent retries;
+- retrieval ambiguity tanpa tekaan;
+- offline/local packet reconciliation;
+- cross-provider continuity tanpa provider-memory enrichment;
+- duplicate-safe bootstrap;
+- privacy deletion + tombstone;
+- Portable Packet v2 round-trip.
+
+> **ZASSPILL v0.3.0 Phase 3 dibekukan. Persistence semantics dan ASC contract di atas ialah authority Phase 3. Feature baharu masuk Phase 4 atau version kemudian; hanya critical fixes patut mengubah release ini.**
