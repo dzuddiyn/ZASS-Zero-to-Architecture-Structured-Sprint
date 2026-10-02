@@ -2,8 +2,8 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 0.1.0  
-**Status:** PHASE 1 FROZEN — CORE PROOF PASSED  
+**Version:** 0.2.0  
+**Status:** PHASE 2 FROZEN — MULTI-THREAD CONTINUITY PROOF PASSED  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
@@ -582,3 +582,97 @@ The test should verify:
 - the receiving AI can continue without demanding a form or reconstructing the transcript.
 
 Until this field test passes, ZASSPILL remains a Phase 1 core proof and is not a replacement for the current global ZASS SYSTEM entry contract.
+
+
+---
+
+## 16. Phase 2 — Multi-Thread Continuity
+
+Phase 2 extends the Phase 1 single-thread core so one conversation can carry multiple semantic threads without mixing their meaning.
+
+Core rules:
+
+- A new thread exists only when the topic has continuity that can be resumed independently.
+- A supporting topic stays a minor branch until it develops its own goal, state, open questions, or future.
+- Do not over-split. When uncertain, keep the topic inside the current thread.
+- The current thread gives only a small routing prior; semantic meaning matters more than keywords.
+- If more than one thread is plausible, do not guess. Ask the user to choose.
+
+### Thread Index
+
+The lightweight Thread Index contains only:
+
+~~~text
+Thread
+State: ACTIVE / DORMANT / ARCHIVED
+Current
+Resume cues
+Freshness
+Lineage
+~~~
+
+It is a navigation surface, not a summary database, and stays hidden by default.
+
+### SPLIT / MERGE
+
+Suggest SPLIT only when one thread now contains two continuities that can move independently. Never auto-split.
+
+If SPLIT is chosen, create the new thread and preserve `split-from [parent]` lineage.
+
+Suggest MERGE only when two threads now share the same continuity and future, and keeping them separate is no longer useful. Never auto-merge.
+
+If MERGE is chosen:
+- retain one active continuity;
+- active lineage uses `merged-from [A + B]`;
+- old source threads remain archived references using `merged-into [active thread]`.
+
+### Thread lifecycle
+
+- ACTIVE = alive / moving / reasonably resumable now.
+- DORMANT = unresolved or still relevant, but paused.
+- ARCHIVED = completed, no longer current, or intentionally closed.
+
+Transitions:
+- ACTIVE → DORMANT when paused.
+- DORMANT → ACTIVE when resumed.
+- ACTIVE/DORMANT → ARCHIVED when completed or closed.
+- ARCHIVED → ACTIVE only when the user clearly reopens the same continuity.
+- Historical recall alone does not reopen an archived thread.
+- Time alone must not auto-archive a thread.
+- SUPERSEDED is a context status, not a thread state.
+
+### Conflict, isolation, and resume
+
+Context remains thread-local by default. Related does not mean shared.
+
+When statements appear to conflict, check scope, time horizon, truth type, and whether the user actually changed position. If a real material conflict remains, ask for clarification rather than choosing for the user.
+
+User correction outranks AI interpretation. Corrected/superseded context must not become a separate thread or compete with current truth.
+
+Resume by explicit reference or strong unique semantic cue. If ambiguous, ask the user to choose. Resume from the current Thread Packet, not by reconstructing the full transcript.
+
+### Index updates and visibility
+
+Update the index only when continuity changes materially.
+
+Minor branches do not create index entries. Split, merge, resume, correction, and lifecycle changes update only the affected thread records.
+
+Show the Thread Index only when the user asks, routing is ambiguous, or split/merge needs a visible choice.
+
+### Phase 2 proof
+
+Field tests passed for:
+- routing and resume;
+- new thread vs minor branch;
+- branch promotion;
+- split/merge with user control;
+- lineage;
+- ACTIVE/DORMANT/ARCHIVED and reopen behavior;
+- conflict and isolation;
+- correction and superseded context;
+- hidden-by-default Thread Index;
+- natural same-chat continuity.
+
+Some receivers may still introduce context from outside the portable thread boundary. That remains a receiver-compliance limitation, not part of ZASSPILL portable authority.
+
+> **ZASSPILL v0.2.0 Phase 2 is frozen. New features belong to a later phase/version; only critical fixes should alter this release.**
