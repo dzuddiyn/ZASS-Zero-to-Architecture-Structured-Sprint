@@ -409,7 +409,8 @@ Packet handoff mesti:
 - kemas kini current state serta-merta mengikut transition yang user pilih secara jelas; state sebelum transition tidak boleh kekal sebagai current truth yang bersaing;
 - kekalkan cadangan AI terdahulu sebagai cadangan AI dan jangan naik taraf menjadi constraint, preference atau keputusan user kecuali user sendiri mengesahkannya;
 - anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut;
-- jangan tambah option, contoh, fakta, constraint, preference atau tafsiran baharu di dalam Method Handoff Packet. Packet hanya boleh membawa context yang memang sudah wujud dalam source thread + transition yang user pilih secara jelas.
+- jangan tambah option, contoh, fakta, constraint, preference atau tafsiran baharu di dalam Method Handoff Packet. Packet hanya boleh membawa context yang memang sudah wujud dalam source thread + transition yang user pilih secara jelas;
+- paparkan seluruh Method Handoff Packet sebagai satu fenced code block lengkap untuk single-copy portability. Jangan pecahkan packet kepada prose biasa, heading, table atau beberapa block. Status atau error tentang loading receiving method boleh dipaparkan di luar packet.
 
 > **AI penerima mesti membaca receiving method sebelum membuat structured work. Cuba canonical raw GitHub link dahulu. Jika gagal, cuba normal GitHub browser link. Hanya jika kedua-dua link tidak boleh diakses, AI boleh minta user beri fail method berkaitan sebagai fallback. AI tidak boleh improvise receiving method.**
 
@@ -501,7 +502,7 @@ Cadangan AI terdahulu kekal sebagai cadangan AI kecuali user sendiri mengesahkan
 ZASSELECTION memiliki structured comparison selepas handoff ini.
 ~~~
 
-User sepatutnya boleh copy-paste packet handoff ini sebagai satu block ke AI yang sama atau AI lain.
+User sepatutnya boleh copy-paste packet handoff ini sebagai satu block ke AI yang sama atau AI lain. Oleh itu, seluruh packet mesti dipaparkan di dalam satu fenced code block.
 
 ---
 
