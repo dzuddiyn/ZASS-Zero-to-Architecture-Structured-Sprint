@@ -310,7 +310,12 @@ The receiving AI should:
 - respond naturally;
 - avoid reconstructing the whole old conversation;
 - refresh only when meaning changes;
-- preserve corrections and distinctions between fact/thought/concern/AI interpretation.
+- preserve corrections and distinctions between fact/thought/concern/AI interpretation;
+- keep new knowledge introduced after handoff distinguishable from inherited context.
+
+> **New knowledge is not inherited context.**
+
+Any fact, estimate, research, or interpretation introduced by the receiving AI after handoff must remain distinguishable from information carried in the Thread Packet.
 
 Loading a valid Thread Packet already implies continuation. No mandatory CONTINUE command exists.
 
