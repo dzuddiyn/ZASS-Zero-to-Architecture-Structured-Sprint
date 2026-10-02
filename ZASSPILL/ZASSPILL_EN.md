@@ -410,9 +410,14 @@ The handoff packet must:
 - instruct the receiver to read and follow that method before structured work begins;
 - carry only the minimum relevant continuity context from Section 13;
 - state that inherited context is input, not a pre-made decision, architecture, plan, or implementation;
-- preserve lineage from ZASSPILL to the receiving method.
+- preserve lineage from ZASSPILL to the receiving method;
+- update the current state immediately to reflect the transition the user explicitly chose; pre-transition state must not remain as a competing current truth;
+- keep prior AI suggestions clearly labeled as AI suggestions and never promote them into user constraints, preferences, or decisions unless the user explicitly confirmed them;
+- treat the user's explicit DECIDE or DESIGN choice as sufficient authorization to activate the receiving method; do not ask for a second confirmation before loading and following it.
 
 > **The receiving AI must read the receiving method before doing structured work. If the method link cannot be accessed, it must not improvise that method; it must ask the user to provide the relevant method file as fallback.**
+
+> **Transition truth rule:** once the user chooses DECIDE or DESIGN, the handoff packet must represent that choice as the current state while preserving any still-relevant uncertainty about the underlying decision or design target.
 
 ### DESIGN handoff
 
@@ -447,7 +452,9 @@ If the method link cannot be accessed, tell the user and ask for ZASSIMPLE_EN.md
 ZASSPILL → user explicitly chose DESIGN → handoff to ZASSIMPLE.
 
 Handoff rule:
+The user's DESIGN choice is already the current transition state and is sufficient authorization to activate ZASSIMPLE; do not ask for a second confirmation.
 This context is input to ZASSIMPLE, not architecture already decided.
+Earlier AI suggestions remain AI suggestions unless the user explicitly confirmed them.
 ZASSIMPLE owns the structured design work after this handoff.
 ~~~
 
@@ -484,7 +491,9 @@ If the method link cannot be accessed, tell the user and ask for ZASSELECTION_EN
 ZASSPILL → user explicitly chose DECIDE → handoff to ZASSELECTION.
 
 Handoff rule:
+The user's DECIDE choice is already the current transition state and is sufficient authorization to activate ZASSELECTION; do not ask for a second confirmation.
 This context is input to ZASSELECTION, not a decision already made.
+Earlier AI suggestions remain AI suggestions unless the user explicitly confirmed them.
 ZASSELECTION owns structured comparison after this handoff.
 ~~~
 
