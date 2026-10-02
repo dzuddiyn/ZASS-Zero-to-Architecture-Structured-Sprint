@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSPILL v0.1.0 — Phase 1 Core Proof] — 2026-10-02
+
+- Added the minimum ZASSPILL method package: `ZASSPILL/README.md`, `ZASSPILL_EN.md`, and `ZASSPILL_MY.md`.
+- Implemented the standalone single-thread Phase 1 behavior from the locked design direction: 6W continuity, truth-type vs continuity-stability discipline, meaning-change refresh, continuity compression, inspection/correction, privacy minimization, portable Thread Packet rendering, manual cross-AI continuation, and contextual DECIDE/DESIGN suggestions.
+- Kept Thread Packet rendering human-readable and intentionally non-final; no separate schema authority, machine thread-ID format, semantic index, split/merge automation, or ASC sync was introduced.
+- Kept the released global ZASS SYSTEM entry contract unchanged at `DECIDE or BUILD?`; `DUMP / DECIDE / DESIGN` remains an ASC target/pilot.
+- Kept the ZASSIMPLE `DUMP` → `IDEA DUMP` rename as a locked future direction; it is not implemented in this release.
+- No ZASS SYSTEM version bump was made because global routing and system contracts remain unchanged.
+- Next gate: field-test AI A → portable packet → AI B and verify natural continuation without the old chat.
+
 ## [ZASSPILL Design Direction v0.1] — 2026-10-02
 
 - LOCKED the pre-implementation design checkpoint for **ZASSPILL**, a portable DUMP continuity method/layer that preserves messy human context across chats and AIs without forcing premature structure.

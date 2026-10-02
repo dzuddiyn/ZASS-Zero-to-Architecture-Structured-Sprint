@@ -47,6 +47,7 @@ Current engineering priority is not blocked on proving the methodology through e
 - Keep the current released global entry contract DECIDE or BUILD? unchanged while the new ASC entry model is piloted.
 - **ZASSPILL Design Direction v0.1 LOCKED — [docs/ZASSPILL_DESIGN_DIRECTION_V01.md](ZASSPILL_DESIGN_DIRECTION_V01.md).** Pilot DUMP / DECIDE / DESIGN in ASC with DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. If the promotion gates pass, move this model to global ZASS SYSTEM and retire DECIDE or BUILD? / user-facing BUILD.
 - Implement ZASSPILL in phases: portable single-thread continuity proof → ASC authority/sync → semantic thread intelligence → full three-intent ASC product pilot.
+- **ZASSPILL Phase 1 method package IMPLEMENTED — v0.1.0** under `ZASSPILL/`; manual cross-AI field proof is **NEXT** before ASC sync implementation.
 - Keep ZASSPILL continuity-state authority distinct from Git-backed project-artifact authority: standalone Thread Packet is continuity authority until linked; latest successfully synchronized ASC state is continuity authority for ASC-linked threads.
 - Use progressive disclosure, contextual cards, Project Pulse, and Review/History surfaces where the active method needs them; ordinary ZASSPILL DUMP should remain plain conversation without a permanent footer.
 - Require factual SAVE/sync receipts backed by real persistence.

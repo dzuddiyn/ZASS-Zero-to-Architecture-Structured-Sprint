@@ -63,6 +63,8 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
+**ZASSPILL Phase 1:** the new standalone continuity method is available for field testing, but the released global entry model remains **DECIDE or BUILD?**. The ASC target **DUMP / DECIDE / DESIGN** is not yet promoted globally.
+
 ---
 
 # Start ZASS your way
@@ -487,6 +489,7 @@ Its job is simple:
 | Start casually and preserve important decisions | **ZASSIMPLE** |
 | Deep decision / evidence / architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
+| Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |
 | Track persistent implementation work | **ACTION PLAN** |
 
 You normally do **not** need all of them at the beginning.
@@ -499,6 +502,7 @@ You normally do **not** need all of them at the beginning.
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
 **ZASSIMPLE:** v0.2.5  
 **ZASSELECTION:** v0.2.1  
+**ZASSPILL:** v0.1.0 — Phase 1 standalone portable continuity core; not yet a global entry route  
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:
@@ -533,6 +537,7 @@ It includes:
 - ACTION PLAN
 - cross-AI handoff
 - ZASSELECTION
+- ZASSPILL Phase 1 continuity
 - advanced review methods
 - productization and `zass check`
 - Bahasa Melayu summary

@@ -1,6 +1,6 @@
 # ZASSPILL — Design Direction v0.1
 
-**Status:** LOCKED WORKING DESIGN — PRE-IMPLEMENTATION  
+**Status:** LOCKED WORKING DESIGN — PHASE 1 METHOD PACKAGE IMPLEMENTED  
 **Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** portable DUMP continuity method/layer, ASC pilot direction, authority, portability, thread model, handoff, privacy, and phased implementation
@@ -9,7 +9,7 @@
 
 ## 0. Contract boundary
 
-This document records a design checkpoint. It does **not** release ZASSPILL, define a final packet schema, create a runtime contract, or replace the current global ZASS SYSTEM routing.
+This document records the locked design checkpoint. ZASSPILL v0.1.0 now implements the Phase 1 standalone method package from this direction. The field proof is still pending. This document still does **not** define a final backend schema, machine thread-ID contract, ASC sync implementation, or replacement for the current global ZASS SYSTEM routing.
 
 Current released/locked global entry remains:
 
@@ -911,8 +911,36 @@ The following are intentionally **not** finalized here:
 - exact index storage implementation;
 - exact ASC database schema;
 - exact split/merge scoring or thresholds;
-- actual ZASSPILL_EN.md / ZASSPILL_MY.md method text;
+- final field-validated form of ZASSPILL beyond the v0.1.0 Phase 1 method package;
 - implementation of the ZASSIMPLE DUMP → IDEA DUMP rename;
 - promotion of DUMP / DECIDE / DESIGN to the global ZASS SYSTEM entry contract.
 
 This checkpoint exists so implementation can proceed from a stable, audited design without prematurely locking schema or runtime details.
+
+
+---
+
+## 26. Phase 1 implementation status — 2026-10-02
+
+ZASSPILL v0.1.0 now exists under `ZASSPILL/` with English and Bahasa Melayu method files plus onboarding README.
+
+Implemented from this direction:
+
+- standalone one-thread continuity;
+- 6W packet meaning;
+- fact/thought/concern/preference/AI-interpretation discipline;
+- temporary/stable/superseded continuity handling;
+- meaning-change refresh and compression;
+- inspection/correction/exclusion;
+- privacy minimization;
+- portable packet rendering;
+- manual cross-AI continuation;
+- contextual DECIDE/DESIGN suggestion boundary.
+
+Still pending:
+
+- real AI A → packet → AI B field proof;
+- ASC authority/sync implementation;
+- semantic index and multi-thread resolution;
+- split/merge automation;
+- global DUMP / DECIDE / DESIGN promotion.

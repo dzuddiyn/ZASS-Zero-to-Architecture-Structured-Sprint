@@ -34,6 +34,7 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
 - [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
+- [ZASSPILL](ZASSPILL.md) — Phase 1 portable DUMP continuity across chats and AIs.
 - [Advanced Reviews](Advanced-Reviews.md) — optional lenses for challenging an idea.
 - [Productization & zass check](Productization-and-zass-check.md) — current tooling roadmap.
 - [Infographics](Infographics.md) — archived visual references.
@@ -61,6 +62,7 @@ Research follows candidate formation, not idea capture. Research findings return
 | Full ZASS | v0.3.9 |
 | ZASSIMPLE | v0.2.5 |
 | ZASSELECTION | v0.2.1 |
+| ZASSPILL | v0.1.0 — Phase 1 core proof |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |
@@ -72,6 +74,7 @@ Research follows candidate formation, not idea capture. Research findings return
 | Start casually and preserve important decisions | **ZASSIMPLE** |
 | Deep decision/evidence/architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
+| Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |
 | Track persistent implementation work | **ACTION PLAN** |
 
 Most users should start with **ZASSIMPLE**, not Full ZASS.
