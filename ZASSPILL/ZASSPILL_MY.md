@@ -342,6 +342,7 @@ Jika user benar-benar mahu memilih, paparkan hanya system block ZASSPILL yang ri
 ~~~text
 ZASSPILL: pilihan sebenar dikesan.
 
+Balas:
 [ TERUS DUMP ]   [ DECIDE ]
 ~~~
 
@@ -350,6 +351,7 @@ Jika user benar-benar mahu membentuk/membina sesuatu, paparkan hanya system bloc
 ~~~text
 ZASSPILL: idea dah matang untuk dibentuk.
 
+Balas:
 [ TERUS DUMP ]   [ DESIGN ]
 ~~~
 
