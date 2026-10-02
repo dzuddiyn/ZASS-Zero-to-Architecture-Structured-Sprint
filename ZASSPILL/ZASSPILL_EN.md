@@ -221,9 +221,26 @@ Continuity boundary: Use this packet + current conversation only. Do not enrich 
 [only transitions whose chronology materially helps continuity]
 
 ## CONTINUE IN ANOTHER AI
-Method: https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_EN.md
 
-Instruction: Read and follow the ZASSPILL method at the link above. Treat this packet as the continuity authority, use this packet + the current conversation only, and continue this thread with me.
+ZASSPILL method — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_EN.md
+
+ZASSPILL method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSPILL/ZASSPILL_EN.md
+
+If the user later chooses DECIDE → ZASSELECTION — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_EN.md
+
+If the user later chooses DECIDE → ZASSELECTION — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_EN.md
+
+If the user later chooses DESIGN → ZASSIMPLE — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_EN.md
+
+If the user later chooses DESIGN → ZASSIMPLE — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_EN.md
+
+Instruction: Read and follow ZASSPILL first. Treat this packet as the continuity authority and use this packet + the current conversation only. If the user's intent later moves to DECIDE or DESIGN and the user explicitly chooses that transition, use the matching receiving-method links already carried in this packet. Do not activate ZASSELECTION or ZASSIMPLE before the user chooses the corresponding transition.
 ~~~
 
 The title is presentation, not identity. In Phase 1 there is no locked machine-ID format.
@@ -317,9 +334,9 @@ Preserve exact user wording only when paraphrasing would materially change meani
 
 ## 11. Continue in another AI
 
-To continue a standalone thread in another AI, the preferred Phase 1 handoff is **single-copy**: paste the current Thread Packet. The packet itself carries the canonical ZASSPILL method link and activation instruction.
+To continue a standalone thread in another AI, the preferred Phase 1 handoff is **single-copy**: paste the current Thread Packet. The packet itself carries the raw + browser fallback links for ZASSPILL and also the pre-declared receiving-method links for both later routes: DECIDE → ZASSELECTION and DESIGN → ZASSIMPLE.
 
-If the receiving AI cannot access the method link, attach or paste ZASSPILL_EN.md as fallback.
+The receiving AI should read ZASSPILL first. The downstream links are carried in advance for continuity and must not activate ZASSELECTION or ZASSIMPLE until the user explicitly chooses the corresponding transition.
 
 The receiving AI should:
 
