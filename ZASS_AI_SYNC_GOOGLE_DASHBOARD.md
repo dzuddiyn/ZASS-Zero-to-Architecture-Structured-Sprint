@@ -4,9 +4,9 @@
 
 **Pilot scope:** Full ZASS workflow first
 
-**Document version:** 0.2
+**Document version:** 0.3
 
-**Date:** 2026-09-28
+**Date:** 2026-10-02
 
 > **Current system direction (2026-10-01):** AI-SYNC Web is now the locked ZASS SYSTEM product UX / automation layer over a first-class local core. The Google Sheets / Sites / Notion material in this document remains an integration/reference path, not the required primary product surface. See [docs/ZASS_SYSTEM_UI_UX_CONTRACT.md](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
@@ -535,7 +535,71 @@ This order prevents an attractive dashboard or second storage system from becomi
 
 ---
 
-## 19. References
+## 19. Public Method Gateway — locked transport direction
+
+Cross-AI field tests on 2026-10-02 showed that public method URLs hosted through GitHub raw, GitHub browser pages, jsDelivr, and Jina Reader are not reliably readable by every AI receiver. This is a transport/readability problem, not a reason to expand the ZASS method semantics.
+
+The locked responsibility boundary is:
+
+```text
+GitHub
+= authoritative source of truth for ZASS method files
+        ↓ sync
+AI-SYNC
+= public read/transport gateway and method mirror
+        ↓ portable method URL carried by
+ZASSPILL / ZASSELECTION / ZASSIMPLE
+        ↓
+receiving AI
+```
+
+### Locked rules
+
+- GitHub remains the authoritative source of truth for method content and history.
+- AI-SYNC is the portable read/transport layer, not a second method authority.
+- The public Method Gateway must serve the Markdown content itself. It must not merely redirect or wrap a GitHub URL.
+- Public method reads must not require login.
+- Sync configuration, publishing, administrative actions, and writes remain protected.
+- A gateway snapshot must retain enough metadata to identify its GitHub source, including method, language, version, source repository/path, source commit, and sync time.
+- If AI-SYNC content conflicts with the referenced GitHub source, GitHub wins.
+- ZASSPILL, ZASSELECTION, and ZASSIMPLE remain method-layer components. They may carry the portable AI-SYNC URL, but they do not own transport implementation.
+- Direct GitHub URLs may remain visible as authority/reference links, but they are not the preferred cross-AI transport once the Method Gateway is available.
+- Until the Method Gateway is implemented and proven, existing GitHub-based links remain a temporary bootstrap path; no nonexistent AI-SYNC URL may be presented as operational.
+
+### Target public routes
+
+Exact production URLs are not locked yet. The intended shape is equivalent to:
+
+```text
+/method/zasspill/my
+/method/zassimple/my
+/method/zasselection/my
+```
+
+The endpoint response should be clean Markdown/plain text that an AI receiver can read directly.
+
+### v0.1 proof scope
+
+Start with Bahasa Melayu and only these three methods:
+
+- `ZASSPILL_MY.md`
+- `ZASSIMPLE_MY.md`
+- `ZASSELECTION_MY.md`
+
+The proof passes when:
+
+1. GitHub remains the method source of truth.
+2. AI-SYNC stores or can serve an identifiable snapshot tied to a real GitHub commit/version.
+3. The public endpoint serves the Markdown itself without redirecting to GitHub.
+4. Gemini and Copilot can read the public endpoint.
+5. A GitHub update can synchronize to the gateway without manual copy-paste.
+6. ZASSPILL can carry the gateway URL during DECIDE/DESIGN handoff without changing ZASSPILL method semantics.
+
+This Method Gateway is a transport capability of AI-SYNC and should be designed in the Multi AI-SYNC / ASC workstream.
+
+---
+
+## 20. References
 
 - Google Apps Script web apps: <https://developers.google.com/apps-script/guides/web>
 - Google Apps Script `doGet` / `doPost`: <https://developers.google.com/apps-script/guides/triggers>
@@ -550,6 +614,6 @@ This order prevents an attractive dashboard or second storage system from becomi
 
 ---
 
-## 20. Current decision status
+## 21. Current decision status
 
-The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. This document does not claim that the integration, dashboard, Action, or automation has been built or tested.
+The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. This document also locks the AI-SYNC Public Method Gateway direction described above. The gateway is not yet built or tested. This document does not claim that the integration, dashboard, Action, automation, or Method Gateway has been implemented.
