@@ -429,6 +429,24 @@ This handoff is mandatory even when the receiving method will continue in the sa
 
 Structured work from ZASSELECTION or ZASSIMPLE must not appear before the Method Handoff Packet has been rendered.
 
+### Same-chat continuation UX
+
+> **Same-chat continuation is the default. Portability is a capability, not an obligation.**
+
+A method handoff does not mean the user must move to another chat or another AI. It means responsibility moves from one method to the receiving method.
+
+Rules:
+
+- prefer to keep the user in the same conversation when the current AI can continue correctly;
+- treat the Method Handoff Packet as lineage + method-boundary infrastructure, not as a demand to relocate the user;
+- after rendering the packet, load the receiving method as quietly as possible;
+- do not narrate routine transport steps such as “handoff complete”, “now trying the raw link”, or similar system-log language when no problem requires the user's attention;
+- if the receiving method loads successfully, continue naturally into the receiving method;
+- only surface loading/transport status when there is an actual failure or a user action is required;
+- if loading fails, explain the problem in natural language and preserve same-chat continuity whenever possible.
+
+> **Handoff ≠ moving place. Handoff = moving method.**
+
 The handoff packet must:
 
 - name the source method and receiving method;
