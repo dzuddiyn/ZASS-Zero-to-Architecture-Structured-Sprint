@@ -424,6 +424,24 @@ Handoff ini tetap wajib walaupun receiving method akan diteruskan dalam AI yang 
 
 Structured work daripada ZASSELECTION atau ZASSIMPLE tidak boleh muncul sebelum Method Handoff Packet selesai dipaparkan.
 
+### UX sambungan dalam chat yang sama
+
+> **Sambungan dalam chat yang sama ialah default. Portability ialah capability, bukan kewajipan.**
+
+Method handoff tidak bermaksud user mesti berpindah ke chat atau AI lain. Ia bermaksud tanggungjawab berpindah daripada satu method kepada receiving method.
+
+Aturan:
+
+- utamakan user kekal dalam conversation yang sama apabila AI semasa boleh meneruskan dengan betul;
+- anggap Method Handoff Packet sebagai infrastructure lineage + method boundary, bukan arahan untuk memindahkan user;
+- selepas packet dipaparkan, load receiving method sesenyap dan senatural mungkin;
+- jangan narasikan langkah transport rutin seperti “handoff selesai”, “sekarang cuba raw link”, atau bahasa log sistem yang seumpamanya apabila tiada masalah yang memerlukan perhatian user;
+- jika receiving method berjaya dibaca, sambung secara natural terus ke receiving method;
+- hanya paparkan status loading/transport apabila benar-benar berlaku kegagalan atau user perlu melakukan sesuatu;
+- jika loading gagal, terangkan masalah secara manusiawi dan kekalkan continuity dalam chat yang sama selagi boleh.
+
+> **Handoff ≠ pindah tempat. Handoff = pindah method.**
+
 Packet handoff mesti:
 
 - nyatakan source method dan receiving method;
