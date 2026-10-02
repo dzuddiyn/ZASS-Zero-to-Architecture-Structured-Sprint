@@ -1,6 +1,6 @@
 # ZASSPILL — Design Direction v0.1
 
-**Status:** HISTORICAL LOCKED DESIGN — PHASE 1 METHOD PACKAGE IMPLEMENTED; GLOBAL DECIDE/DESIGN PROMOTION NOW SUPERSEDES THE OLD ROUTING ASSUMPTION  
+**Status:** HISTORICAL LOCKED DESIGN — ZASSPILL v0.1.0 PHASE 1 FROZEN / CORE PROOF PASSED; GLOBAL DECIDE/DESIGN REMAINS CURRENT RELEASED ENTRY  
 **Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** portable DUMP continuity method/layer, ASC pilot direction, authority, portability, thread model, handoff, privacy, and phased implementation
@@ -11,7 +11,7 @@
 
 ## 0. Contract boundary
 
-This document records the locked design checkpoint. ZASSPILL v0.1.0 now implements the Phase 1 standalone method package from this direction. The field proof is still pending. This document still does **not** define a final backend schema, machine thread-ID contract, ASC sync implementation, or replacement for the current global ZASS SYSTEM routing.
+This document records the locked design checkpoint. ZASSPILL v0.1.0 Phase 1 is now FROZEN with its core proof passed. Cross-AI field testing exposed a separate external method-readability/transport problem; that problem is owned by AI-SYNC rather than by ZASSPILL semantics. This document still does **not** define a final backend schema, machine thread-ID contract, ASC sync implementation, or replacement for the current global ZASS SYSTEM routing.
 
 Current released/locked global entry remains:
 
@@ -32,6 +32,25 @@ If the first pilot is not good enough, the direction is to iterate the new model
 This document also does not change GitHub authority for existing Git-backed ZASS project artifacts. ZASSPILL continuity-thread authority is a separate concern described below.
 
 ---
+
+### Transport ownership update — AI-SYNC Method Gateway
+
+The Phase 1 cross-AI proof established that receiver access to GitHub raw/browser URLs and common mirrors cannot be assumed consistent.
+
+The locked responsibility is therefore:
+
+```text
+GitHub
+= authoritative method Source of Truth
+
+AI-SYNC
+= public method-read transport / synced snapshot gateway
+
+ZASSPILL
+= continuity method; carries the receiving-method link when available
+```
+
+This transport issue must not be solved by changing ZASSPILL continuity semantics. Until the AI-SYNC public gateway is implemented and proven, the existing GitHub links remain a temporary bootstrap path.
 
 ## 1. Purpose and family boundary
 
