@@ -401,7 +401,7 @@ Packet handoff mesti:
 
 - nyatakan source method dan receiving method;
 - rekod transition yang dipilih secara jelas oleh user;
-- sertakan canonical raw GitHub link untuk receiving method;
+- sertakan dua link untuk receiving method: (1) canonical raw GitHub link dan (2) normal GitHub browser link sebagai fallback;
 - arahkan receiver membaca dan mengikut method penerima sebelum structured work bermula;
 - bawa hanya continuity context minimum yang relevan daripada Section 13;
 - nyatakan bahawa inherited context ialah input, bukan keputusan, architecture, plan atau implementation yang telah siap;
@@ -411,7 +411,7 @@ Packet handoff mesti:
 - anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut;
 - jangan tambah option, contoh, fakta, constraint, preference atau tafsiran baharu di dalam Method Handoff Packet. Packet hanya boleh membawa context yang memang sudah wujud dalam source thread + transition yang user pilih secara jelas.
 
-> **AI penerima mesti membaca receiving method sebelum membuat structured work. Jika link method tidak boleh diakses, AI tidak boleh improvise method tersebut; AI mesti minta user beri fail method berkaitan sebagai fallback.**
+> **AI penerima mesti membaca receiving method sebelum membuat structured work. Cuba canonical raw GitHub link dahulu. Jika gagal, cuba normal GitHub browser link. Hanya jika kedua-dua link tidak boleh diakses, AI boleh minta user beri fail method berkaitan sebagai fallback. AI tidak boleh improvise receiving method.**
 
 > **Aturan transition truth:** sebaik user memilih DECIDE atau DESIGN, packet handoff mesti mewakili pilihan itu sebagai current state sambil mengekalkan ketidakpastian yang masih relevan tentang keputusan atau sasaran design sebenar.
 
@@ -424,13 +424,17 @@ From: ZASSPILL
 To: ZASSIMPLE
 Transition chosen by user: DESIGN
 
-Receiving method:
+Receiving method — raw:
 https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_MY.md
 
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
 Arahan:
-Baca dan ikut method ZASSIMPLE pada link di atas sebelum memulakan structured design work.
+Baca dan ikut ZASSIMPLE sebelum memulakan structured design work.
+Cuba raw link dahulu. Jika tidak boleh diakses, cuba browser fallback link.
 Jangan reka workflow ZASSIMPLE sendiri.
-Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSIMPLE_MY.md sebagai fallback.
+Hanya jika kedua-dua link gagal, beritahu user dan minta ZASSIMPLE_MY.md sebagai fallback fail/paste.
 
 ## THREAD
 [tajuk thread]
@@ -463,13 +467,17 @@ From: ZASSPILL
 To: ZASSELECTION
 Transition chosen by user: DECIDE
 
-Receiving method:
+Receiving method — raw:
 https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_MY.md
 
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
+
 Arahan:
-Baca dan ikut method ZASSELECTION pada link di atas sebelum memulakan comparison.
+Baca dan ikut ZASSELECTION sebelum memulakan comparison.
+Cuba raw link dahulu. Jika tidak boleh diakses, cuba browser fallback link.
 Jangan bina kaedah selection sendiri.
-Jika link method tidak boleh diakses, beritahu user dan minta fail ZASSELECTION_MY.md sebagai fallback.
+Hanya jika kedua-dua link gagal, beritahu user dan minta ZASSELECTION_MY.md sebagai fallback fail/paste.
 
 ## THREAD
 [tajuk thread]
