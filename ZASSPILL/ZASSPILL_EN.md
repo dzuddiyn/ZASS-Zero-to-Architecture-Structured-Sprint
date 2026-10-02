@@ -419,6 +419,16 @@ When a structured method returns a result, ZASSPILL should retain only the relev
 
 When the user explicitly chooses DECIDE or DESIGN, ZASSPILL must generate one copy-ready **ZASS METHOD HANDOFF** packet.
 
+This handoff is mandatory even when the receiving method will continue in the same AI or the same chat. The required order is:
+
+1. User explicitly chooses DECIDE or DESIGN.
+2. ZASSPILL renders the complete ZASS METHOD HANDOFF packet first.
+3. Only after the packet is rendered may the AI read/load the receiving method.
+4. If the receiving method is successfully read, continue directly without asking for a second confirmation.
+5. If the receiving method cannot be read through the available transport/fallback path, stop at that boundary and follow the declared fallback behavior.
+
+Structured work from ZASSELECTION or ZASSIMPLE must not appear before the Method Handoff Packet has been rendered.
+
 The handoff packet must:
 
 - name the source method and receiving method;
