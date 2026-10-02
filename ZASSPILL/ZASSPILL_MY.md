@@ -269,6 +269,19 @@ Jangan paksa user edit Markdown.
 
 Jika user membetulkan meaning, kemas kini current state dan jangan simpan tafsiran AI yang salah sebagai current truth yang bersaing.
 
+Untuk respons sistem ZASSPILL bagi tindakan seperti correct, exclude, inspect atau save:
+
+- letakkan respons sistem di dalam fenced code block;
+- jadikan seringkas mungkin;
+- asingkan daripada conversation biasa;
+- selepas block itu, sambung secara natural berdasarkan mesej sebenar user apabila masih berguna.
+
+Contoh:
+
+~~~text
+ZASSPILL: context dibuang.
+~~~
+
 ---
 
 ## 10. Privacy dan minimization
