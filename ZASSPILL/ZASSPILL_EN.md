@@ -398,7 +398,101 @@ When a structured method returns a result, ZASSPILL should retain only the relev
 
 ---
 
-## 14. Phase 1 proof test
+## 14. Method Handoff Contract v0.1
+
+When the user explicitly chooses DECIDE or DESIGN, ZASSPILL must generate one copy-ready **ZASS METHOD HANDOFF** packet.
+
+The handoff packet must:
+
+- name the source method and receiving method;
+- record the transition explicitly chosen by the user;
+- include the canonical raw GitHub link for the receiving method;
+- instruct the receiver to read and follow that method before structured work begins;
+- carry only the minimum relevant continuity context from Section 13;
+- state that inherited context is input, not a pre-made decision, architecture, plan, or implementation;
+- preserve lineage from ZASSPILL to the receiving method.
+
+> **The receiving AI must read the receiving method before doing structured work. If the method link cannot be accessed, it must not improvise that method; it must ask the user to provide the relevant method file as fallback.**
+
+### DESIGN handoff
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSIMPLE
+Transition chosen by user: DESIGN
+
+Receiving method:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_EN.md
+
+Instruction:
+Read and follow the ZASSIMPLE method at the link above before beginning structured design work.
+Do not invent your own ZASSIMPLE workflow.
+If the method link cannot be accessed, tell the user and ask for ZASSIMPLE_EN.md as fallback.
+
+## THREAD
+[thread title]
+
+## WHERE THE THINKING IS NOW
+[current state relevant to DESIGN]
+
+## WHAT MATTERS
+- [relevant constraint / concern / preference / fact]
+
+## WHAT IS STILL OPEN
+- [open item that still needs design work]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DESIGN → handoff to ZASSIMPLE.
+
+Handoff rule:
+This context is input to ZASSIMPLE, not architecture already decided.
+ZASSIMPLE owns the structured design work after this handoff.
+~~~
+
+### DECIDE handoff
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSELECTION
+Transition chosen by user: DECIDE
+
+Receiving method:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_EN.md
+
+Instruction:
+Read and follow the ZASSELECTION method at the link above before beginning comparison.
+Do not invent your own selection method.
+If the method link cannot be accessed, tell the user and ask for ZASSELECTION_EN.md as fallback.
+
+## THREAD
+[thread title]
+
+## WHERE THE THINKING IS NOW
+[current state relevant to the decision]
+
+## WHAT MATTERS
+- [relevant constraint / concern / preference / fact]
+
+## WHAT IS STILL OPEN
+- [options or questions not yet decided]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DECIDE → handoff to ZASSELECTION.
+
+Handoff rule:
+This context is input to ZASSELECTION, not a decision already made.
+ZASSELECTION owns structured comparison after this handoff.
+~~~
+
+The user should be able to copy and paste this handoff packet as one block into the same AI or another AI.
+
+---
+
+## 15. Phase 1 proof test
 
 ZASSPILL v0.1.0 is successful only when this can be demonstrated in real use:
 
