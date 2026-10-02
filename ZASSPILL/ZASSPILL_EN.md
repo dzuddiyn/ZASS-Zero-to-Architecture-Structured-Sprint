@@ -347,6 +347,7 @@ If the user now truly wants to choose, render only a concise ZASSPILL system blo
 ~~~text
 ZASSPILL: real choice detected.
 
+Reply:
 [ KEEP DUMPING ]   [ DECIDE ]
 ~~~
 
@@ -355,6 +356,7 @@ If the user now truly wants to shape/build something, render only a concise ZASS
 ~~~text
 ZASSPILL: idea is ready to be shaped.
 
+Reply:
 [ KEEP DUMPING ]   [ DESIGN ]
 ~~~
 
