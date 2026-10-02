@@ -2,8 +2,8 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 0.2.0  
-**Status:** PHASE 2 FROZEN — MULTI-THREAD CONTINUITY PROOF PASSED  
+**Version:** 0.3.0  
+**Status:** PHASE 3 FROZEN — PERSISTENCE / ASC CONTRACT PROOF PASSED  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
@@ -676,3 +676,470 @@ Field tests passed for:
 Some receivers may still introduce context from outside the portable thread boundary. That remains a receiver-compliance limitation, not part of ZASSPILL portable authority.
 
 > **ZASSPILL v0.2.0 Phase 2 is frozen. New features belong to a later phase/version; only critical fixes should alter this release.**
+
+
+---
+
+## 17. Phase 3 — Persistence / ASC Contract
+
+Phase 3 locks the persistence contract between ZASSPILL meaning and ASC infrastructure.
+
+Primary boundary:
+
+> **ZASSPILL defines WHAT a thread, continuity, revision, conflict, packet, and lifecycle mean. ASC defines HOW they are stored, synchronized, retrieved, and protected.**
+
+Phase 3 does not lock a database engine, vector store, hosting model, dashboard, AI provider, or implementation stack.
+
+### 17.1 Thread Identity Contract
+
+Every persisted thread has a stable identity:
+
+```text
+thread_id = th_<ULID>
+```
+
+Rules:
+
+- `thread_id` is generated once by the persistence layer/ASC;
+- it is opaque, immutable, and meaning-free;
+- it must not encode title, topic, username, provider, project, state, or semantic meaning;
+- rename, correction, normal update, DORMANT, ARCHIVE, and REOPEN preserve `thread_id`;
+- SPLIT preserves the parent ID and creates a new ID for the child;
+- TRUE MERGE creates a new identity. Source threads become ARCHIVED and record `merged_into`; the merged thread records `merged_from`;
+- if one thread merely receives an update from another, that is not a TRUE MERGE.
+
+Any technical timestamp inside a ULID does not determine freshness or authority.
+
+### 17.2 Authoritative Thread Record
+
+One authoritative Current Thread Record exists for each `thread_id`.
+
+Minimum semantic record:
+
+```text
+thread_id
+title
+state
+
+continuity:
+  who
+  about
+  current
+  matters
+  open
+  origin
+
+resume_cues
+lineage
+revision
+created_at
+semantic_updated_at
+```
+
+`state` is limited to:
+
+```text
+ACTIVE
+DORMANT
+ARCHIVED
+```
+
+`lineage` may carry:
+
+```text
+split_from
+merged_from
+merged_into
+```
+
+The Thread Index is a derived projection only, never a second source of truth.
+
+Metadata such as user/account ID, provider, device, auth, sync status, embeddings, or `persisted_at` belongs to the ASC envelope, not the semantic Thread Record.
+
+### 17.3 Revision + Event Contract
+
+The Current Thread Record is current-state authority. The event log is immutable semantic mutation/history lineage; Phase 3 is not a full event-sourcing system.
+
+Every successful material semantic mutation:
+
+```text
+revision N → N+1
+```
+
+and must create one matching semantic event.
+
+Minimum event:
+
+```text
+event_id: ev_<ULID>
+thread_id: th_<ULID>
+revision
+event_type
+occurred_at
+change
+```
+
+Locked event types:
+
+```text
+CREATE
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+Revision does not increase for READ, export, sync, backup, replication, serialization-only changes, or retries of the same logical request.
+
+The Thread Record mutation + matching event form one logical atomic operation. The system must not report a new record revision without a valid matching event.
+
+### 17.4 Optimistic Concurrency
+
+A semantic write must carry:
+
+```text
+thread_id
+expected_revision
+mutation
+```
+
+If:
+
+```text
+stored_revision == expected_revision
+```
+
+the write may be accepted.
+
+Otherwise return:
+
+```text
+REVISION_CONFLICT
+```
+
+and:
+
+- the Thread Record remains unchanged;
+- revision does not increase;
+- no new semantic event is created;
+- no last-write-wins behavior is allowed;
+- the caller must reload the current record before reconciliation.
+
+If reconciliation reveals a material contradiction, ask the user to clarify. Do not semantic-auto-merge.
+
+### 17.5 Idempotency Contract
+
+Every logical semantic write carries:
+
+```text
+request_id = req_<ULID>
+```
+
+Rules:
+
+- same `request_id` + same payload → `ALREADY_APPLIED` / return the original result;
+- do not execute again;
+- do not increase revision;
+- do not create a duplicate event;
+- same `request_id` + different payload → `IDEMPOTENCY_KEY_REUSE_CONFLICT`;
+- a new logical mutation requires a new `request_id`.
+
+`request_id` identifies the logical request/retry. `event_id` identifies the successful semantic event.
+
+### 17.6 Authority Contract
+
+Phase 3 authority order:
+
+- latest explicit user statement = semantic authority in the live conversation;
+- ASC Current Thread Record = persistence authority for successfully stored state;
+- event log = history / mutation / lineage authority;
+- Portable Packet = portable snapshot of a known persisted revision or standalone/local state;
+- Thread Index = derived navigation;
+- AI interpretation/chat = working context/proposal, not independent persistence authority;
+- provider memory/profile/private context = outside portable authority.
+
+Live meaning may temporarily be newer than ASC before persistence succeeds. The system must never pretend a write occurred.
+
+If a packet is older than reachable ASC state, persisted ASC state wins.
+
+### 17.7 Retrieval Contract
+
+Three retrieval operations:
+
+```text
+GET_BY_ID
+RESOLVE_THREAD
+LIST_THREADS
+```
+
+`GET_BY_ID`:
+- when `thread_id` is known, retrieve that identity directly;
+- do not semantic-search alternatives.
+
+`RESOLVE_THREAD`:
+- `UNIQUE_MATCH` → retrieve the selected identity;
+- `MULTIPLE_MATCHES` → show minimal candidates and ask the user to choose;
+- `NO_MATCH` → do not invent an existing thread.
+
+Resolution candidates carry only minimum identity/navigation context. Full continuity is read after an identity is selected.
+
+`LIST_THREADS` returns the index projection, not full Thread Records.
+
+Retrieval is READ-ONLY:
+- no revision bump;
+- no event;
+- no auto-create;
+- no auto-resume;
+- no auto-reopen.
+
+An ARCHIVED thread may be retrieved for history but remains ARCHIVED until the user explicitly chooses REOPEN.
+
+### 17.8 Packet ↔ ASC Reconciliation
+
+An ASC-backed packet carries minimum reconciliation metadata:
+
+```text
+thread_id
+base_revision
+packet_state
+exported_at
+```
+
+`packet_state`:
+
+```text
+SYNCED
+LOCAL_CHANGES
+STANDALONE
+```
+
+`base_revision` is the last ASC revision the packet validly knows.
+
+Offline/local edits:
+
+- do not create a fake ASC revision;
+- do not create a fake event;
+- keep `base_revision` unchanged;
+- switch the packet to `LOCAL_CHANGES`.
+
+Reconciliation:
+
+```text
+packet SYNCED rev N + ASC rev N
+→ IN_SYNC
+
+packet SYNCED rev N + ASC rev >N
+→ STALE_PACKET / STALE_SNAPSHOT
+→ persisted ASC state wins
+
+packet LOCAL_CHANGES base N + ASC rev N
+→ SAFE_TO_WRITE
+→ propose write with expected_revision N
+
+packet LOCAL_CHANGES base N + ASC rev >N
+→ DIVERGENCE_DETECTED
+→ reload + reconcile
+→ no last-write-wins
+```
+
+If ASC is unavailable, the packet may serve as portable authority for that session but must remain `LOCAL_CHANGES`; do not claim external persistence.
+
+If a packet claims a revision newer than ASC without valid provenance, return `REVISION_PROVENANCE_MISMATCH`.
+
+### 17.9 Cross-AI Write Contract
+
+An AI/provider only proposes semantic mutation. ASC owns persistence mechanics and protected metadata.
+
+Write shape:
+
+```text
+request_id
+thread_id
+expected_revision
+operation
+changes
+```
+
+Allowed semantic operations:
+
+```text
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+An AI must not arbitrarily set or replace:
+
+- an existing thread identity;
+- revision;
+- event_id;
+- system timestamps;
+- persistence receipts.
+
+State transitions must use lifecycle operations. Lineage changes must use SPLIT/MERGE. Generic full-record replacement is not allowed.
+
+SPLIT and MERGE multi-record operations must be logically atomic. ASC generates any required new identity.
+
+Provider memory/profile must not enrich a semantic mutation unless the user intentionally brings that context into the thread.
+
+### 17.10 Bootstrap / Import Contract
+
+A packet without `thread_id` is a bootstrap candidate, not automatically a new thread.
+
+Flow:
+
+```text
+resolve identity
+↓
+NO_MATCH
+→ CREATE new th_<ULID>, revision 1, CREATE event
+
+UNIQUE_MATCH
+→ attach existing identity
+→ no duplicate
+
+MULTIPLE_MATCHES
+→ user clarification
+→ no create / no attach
+```
+
+Do not infer identity from title alone. Do not auto-MERGE, auto-SPLIT, or create duplicates.
+
+Bootstrap requests must also be idempotent.
+
+### 17.11 Delete / Forget / Tombstone
+
+`ARCHIVED` is a semantic lifecycle state. It is not privacy deletion.
+
+`DELETE_THREAD` requires identity + stale-write protection.
+
+A successful delete removes:
+
+- the semantic Thread Record;
+- semantic event history;
+- Thread Index/search projections;
+- related derived semantic caches.
+
+A minimal tombstone may remain only to prevent resurrection:
+
+```text
+thread_id
+deleted_at
+deletion_request_id
+```
+
+A tombstone must not retain title, current, WHO, matters, open, resume cues, semantic history, or deleted content.
+
+A stale packet referencing a tombstoned identity returns:
+
+```text
+THREAD_TOMBSTONED
+```
+
+and must not auto-resurrect.
+
+If the user wants to reuse old content, it requires explicit CREATE_NEW with a new identity.
+
+`FORGET_CONTEXT` is privacy erasure for selected semantic context. Forgotten content must not be copied into an immutable event; a receipt/event may only state that context was removed at user request.
+
+### 17.12 Portable Packet v2
+
+Portable Packet v2 is human-readable Markdown with machine metadata. It is not a JSON-only database dump.
+
+Method identity must be explicit:
+
+```yaml
+method: ZASSPILL
+method_version: 0.3.0
+packet_format_version: 2
+```
+
+`export`, `import`, and `reconcile` are operations, not values for `method`.
+
+Minimum ASC-backed packet:
+
+```yaml
+---
+method: ZASSPILL
+method_version: 0.3.0
+packet_format_version: 2
+thread_id: th_<ULID>
+title: <human title>
+state: ACTIVE | DORMANT | ARCHIVED
+base_revision: <persisted revision known by packet>
+packet_state: SYNCED | LOCAL_CHANGES
+exported_at: <timestamp if known>
+continuity:
+  who: ...
+  about: ...
+  current: ...
+  matters: ...
+  open: ...
+resume_cues: ...
+lineage:
+  split_from: ...
+  merged_from: ...
+  merged_into: ...
+provenance:
+  source: ...
+---
+```
+
+A standalone packet without persisted identity may use:
+
+```text
+packet_state: STANDALONE
+```
+
+and may omit `thread_id` / `base_revision` until bootstrap succeeds.
+
+Do not export full event history by default. Export current continuity + minimum relevant lineage/history only.
+
+Round-trip invariant:
+
+> **export → AI → local change → ASC reconciliation/write → export again must preserve thread_id, lineage, and original meaning except for semantic changes actually authorized by the user.**
+
+Editing a packet never proves persistence.
+
+### 17.13 Phase 3 Proof
+
+The Phase 3 field-test suite passed:
+
+```text
+FT01 Identity Stability             PASS
+FT02 Revision + Event               PASS
+FT03 Idempotency                    PASS
+FT04 Concurrent Write               PASS
+FT05 Retrieval + Ambiguity          PASS
+FT06 Packet ↔ ASC Reconciliation    PASS
+FT07 Bootstrap / Duplicate Protect  PASS
+FT08 Cross-AI Write                 PASS
+FT09 Delete / Tombstone             PASS
+FT10 Portable Packet v2 Round-trip  PASS
+```
+
+The proof covers:
+
+- stable machine identity;
+- revision/event consistency;
+- stale-write protection;
+- idempotent retries;
+- ambiguity-safe retrieval;
+- offline/local packet reconciliation;
+- cross-provider continuity without provider-memory enrichment;
+- duplicate-safe bootstrap;
+- privacy deletion + tombstone;
+- Portable Packet v2 round-trip.
+
+> **ZASSPILL v0.3.0 Phase 3 is frozen. The persistence semantics and ASC contract above are the Phase 3 authority. New features belong in Phase 4 or a later version; only critical fixes should alter this release.**
