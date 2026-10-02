@@ -414,7 +414,8 @@ The handoff packet must:
 - update the current state immediately to reflect the transition the user explicitly chose; pre-transition state must not remain as a competing current truth;
 - keep prior AI suggestions clearly labeled as AI suggestions and never promote them into user constraints, preferences, or decisions unless the user explicitly confirmed them;
 - treat the user's explicit DECIDE or DESIGN choice as sufficient authorization to activate the receiving method; do not ask for a second confirmation before loading and following it;
-- never introduce new options, examples, facts, constraints, preferences, or interpretations inside the Method Handoff Packet. The packet may only carry context already present in the source thread plus the user's explicit transition choice.
+- never introduce new options, examples, facts, constraints, preferences, or interpretations inside the Method Handoff Packet. The packet may only carry context already present in the source thread plus the user's explicit transition choice;
+- render the entire Method Handoff Packet as one complete fenced code block for single-copy portability. Do not split the packet across normal prose, headings, tables, or multiple blocks. Any status or error about loading the receiving method may appear outside the packet.
 
 > **The receiving AI must read the receiving method before doing structured work. Try the canonical raw GitHub link first. If that fails, try the normal GitHub browser link. Only if both links cannot be accessed may it ask the user to provide the relevant method file as fallback. It must never improvise the receiving method.**
 
@@ -506,7 +507,7 @@ Earlier AI suggestions remain AI suggestions unless the user explicitly confirme
 ZASSELECTION owns structured comparison after this handoff.
 ~~~
 
-The user should be able to copy and paste this handoff packet as one block into the same AI or another AI.
+The user should be able to copy and paste this handoff packet as one block into the same AI or another AI. The complete packet must therefore be rendered inside one fenced code block.
 
 ---
 
