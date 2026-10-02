@@ -364,6 +364,8 @@ Do not show these merely because DECIDE or DESIGN could theoretically apply.
 
 When the user explicitly wants to choose, ZASSPILL must not compare, rank, recommend, select, or plan the options. It must first offer [ KEEP DUMPING ] [ DECIDE ] and wait for the user's choice. Only after the user chooses DECIDE may ZASSELECTION own the comparison.
 
+When the user explicitly wants to shape or build something, ZASSPILL must not architect the solution, design workflows, build an Action Plan, slice tasks, determine implementation structure, or begin execution. It must first offer [ KEEP DUMPING ] [ DESIGN ] and wait for the user's choice. Only after the user chooses DESIGN may ZASSIMPLE own the structured design work.
+
 If the user chooses DECIDE, the receiving method is ZASSELECTION.
 
 If the user chooses DESIGN, the receiving method is ZASSIMPLE.
