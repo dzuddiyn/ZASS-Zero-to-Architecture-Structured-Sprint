@@ -188,6 +188,7 @@ Ini ialah surface Phase 1 yang human-readable, bukan final backend schema.
 Method: ZASSPILL v0.1.0
 State: Standalone continuity packet
 Updated: [tarikh/masa jika diketahui]
+Boundary continuity: Guna packet ini + conversation semasa sahaja. Jangan tambah context daripada memory/profile provider kecuali user sendiri membawanya masuk semula.
 
 ## WHO
 - [hanya orang yang penting kepada thread + relevance minimum]
