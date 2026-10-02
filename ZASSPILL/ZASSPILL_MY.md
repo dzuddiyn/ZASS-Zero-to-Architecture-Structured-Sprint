@@ -414,6 +414,16 @@ Apabila structured method memulangkan result, ZASSPILL simpan outcome relevan + 
 
 Apabila user secara jelas memilih DECIDE atau DESIGN, ZASSPILL mesti menghasilkan satu packet **ZASS METHOD HANDOFF** yang copy-ready.
 
+Handoff ini tetap wajib walaupun receiving method akan diteruskan dalam AI yang sama atau chat yang sama. Urutan wajib ialah:
+
+1. User memilih DECIDE atau DESIGN secara jelas.
+2. ZASSPILL memaparkan packet ZASS METHOD HANDOFF lengkap terlebih dahulu.
+3. Hanya selepas packet dipaparkan, AI boleh membaca/load receiving method.
+4. Jika receiving method berjaya dibaca, teruskan method tersebut tanpa meminta confirmation kedua.
+5. Jika receiving method tidak dapat dibaca melalui transport/fallback yang tersedia, berhenti pada boundary itu dan ikut fallback yang telah ditetapkan.
+
+Structured work daripada ZASSELECTION atau ZASSIMPLE tidak boleh muncul sebelum Method Handoff Packet selesai dipaparkan.
+
 Packet handoff mesti:
 
 - nyatakan source method dan receiving method;
