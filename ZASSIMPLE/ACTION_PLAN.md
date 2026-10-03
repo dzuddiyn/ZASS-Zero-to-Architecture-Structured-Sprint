@@ -22,5 +22,3 @@ Feeds design: YES / NO
 ## Planning findings
 
 <!-- Practical findings may refine DESIGN.md. -->
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

@@ -601,5 +601,3 @@ The following are LOCKED as of 2026-09-30:
 - `L-LICENSE-001` — Repository license is MIT
 
 This document is now the authoritative onboarding/productization baseline for the next README and CLI implementation.
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]

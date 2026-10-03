@@ -3,6 +3,14 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-004 — public metadata cleanup] — 2026-10-03
+
+- Quality-track repository hygiene only; no ZASS method or ZASS SYSTEM version bump.
+- Removed accidental local execution/device markers from public Markdown artifacts after repository-wide enumeration.
+- Preserved product, release, Git, and CI provenance; only generated local-device execution residue was removed.
+- No method semantics, parser behavior, routing, or architecture boundaries changed.
+
+
 ## [QA-003 — parser robustness] — 2026-10-03
 
 - Quality-track parser hardening only; no ZASS method or ZASS SYSTEM version bump.
@@ -515,12 +523,6 @@ All notable changes to ZASS are recorded here.
 
 - Simplified the user guide while keeping the v0.1 baseline decisions locked.
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
