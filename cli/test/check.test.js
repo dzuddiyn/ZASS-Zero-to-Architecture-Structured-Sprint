@@ -1,9 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { runCheck, formatResults } from '../src/check.js';
+import { extractRecordDefinitions } from '../src/parser.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fixture = (name) => path.join(here, 'fixtures', name);
@@ -11,6 +14,41 @@ const fixture = (name) => path.join(here, 'fixtures', name);
 function codes(report, level) {
   return report.results.filter((item) => !level || item.level === level).map((item) => item.code);
 }
+
+
+test('QA-003 keeps a shorter inner fence inside a longer fenced block hidden', () => {
+  const markdown = [
+    '````markdown',
+    '## D-001 — Example',
+    'Status: LOCKED',
+    '```',
+    '## D-002 — Still inside outer block',
+    'Status: LOCKED',
+    '````'
+  ].join('\n');
+
+  const parsed = extractRecordDefinitions(markdown);
+  assert.deepEqual(parsed.records, []);
+  assert.deepEqual(parsed.malformed, []);
+});
+
+test('QA-003 resolves a valid local Markdown link containing balanced parentheses', async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'zass-link-parens-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  await fs.mkdir(path.join(dir, 'docs'));
+  await fs.writeFile(path.join(dir, 'docs', 'file_(draft).md'), '# Draft\n', 'utf8');
+  await fs.writeFile(
+    path.join(dir, 'ZASS.md'),
+    '# Test project\n\nSee [the draft](docs/file_(draft).md).\n',
+    'utf8'
+  );
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(!codes(report, 'error').includes('Z003'));
+  assert.ok(codes(report, 'pass').includes('Z003'));
+});
 
 test('valid fixture passes all v0.1 checks', async () => {
   const report = await runCheck(fixture('valid'));
