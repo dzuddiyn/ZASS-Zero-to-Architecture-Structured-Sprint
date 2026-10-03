@@ -54,7 +54,7 @@ If there is no final selection yet, SAVE preserves the current matrix and inform
 UNFINISHED / DRAFT
 ```
 
-When no persistent write integration is available, SAVE should produce an updated `ZASSELECTION.md` for download/export.
+When no persistent write integration is available, SAVE should produce an updated active method file (`ZASSELECTION_EN.md` or `ZASSELECTION_MY.md`, matching the active language surface) for download/export.
 
 When a real GitHub or future AI-SYNC writer is available, do not claim success until the write returns a factual receipt.
 
