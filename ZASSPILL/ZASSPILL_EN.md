@@ -2,8 +2,8 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 0.4.0  
-**Status:** PHASE 4 FROZEN — RETRIEVAL INTELLIGENCE PROOF PASSED  
+**Version:** 0.5.0  
+**Status:** PHASE 5 FROZEN — CROSS-METHOD CONTINUITY PROOF PASSED  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
@@ -1061,7 +1061,7 @@ Method identity must be explicit:
 
 ```yaml
 method: ZASSPILL
-method_version: 0.3.0
+method_version: 0.5.0
 packet_format_version: 2
 ```
 
@@ -1072,7 +1072,7 @@ Minimum ASC-backed packet:
 ```yaml
 ---
 method: ZASSPILL
-method_version: 0.3.0
+method_version: 0.5.0
 packet_format_version: 2
 thread_id: th_<ULID>
 title: <human title>
@@ -1416,3 +1416,371 @@ Two schema-wording corrections were identified during audit and incorporated int
 Behavioral proof, contract consistency, Phase 3 compatibility, privacy boundary, and authority boundary all passed.
 
 > **ZASSPILL v0.4.0 Phase 4 is frozen. The Retrieval Intelligence contract above is the Phase 4 authority. New features belong in Phase 5 or a later version; only critical fixes should alter this release.**
+
+
+---
+
+## 19. Phase 5 — Cross-Method Continuity
+
+Phase 5 locks how one semantic thread moves across ZASS methods without losing identity, mixing authority, or promoting AI output into a user decision.
+
+Primary principle:
+
+> **The method may change. Thread identity remains stable. User authority must not change merely because an AI produced an artifact or recommendation.**
+
+### 19.1 One Thread, Many Methods
+
+A method transition does not create a new semantic thread.
+
+~~~text
+th_ABC
+
+ZASSPILL
+→ ZASSELECTION
+→ ZASSPILL
+→ ZASSIMPLE
+→ ZASSPILL
+
+thread_id = th_ABC
+~~~
+
+The thread_id remains stable while the same continuity is still in progress.
+
+### 19.2 Method Ownership
+
+~~~text
+ZASSPILL
+→ continuity / context
+
+ZASSELECTION
+→ comparison / selection
+
+ZASSIMPLE
+→ design / architecture / Action Plan
+~~~
+
+Rules:
+
+- ZASSPILL does not choose an option for the user.
+- ZASSELECTION does not build architecture.
+- ZASSIMPLE does not turn an AI recommendation or draft into a user decision.
+- A structured method must not write semantic continuity without the result contract + reconciliation.
+
+### 19.3 ZASSPILL as Continuity Broker
+
+Logically:
+
+~~~text
+ZASSPILL
+→ handoff
+→ receiving method
+→ method result
+→ ZASSPILL continuity
+~~~
+
+The UX may remain smooth in the same chat, but the semantic authority boundary must remain intact.
+
+> **A cross-method handoff is not a thread switch. It is a switch of method responsibility on the same thread.**
+
+### 19.4 Handoff Identity
+
+Every method transition has its own identity:
+
+~~~text
+handoff_id = ho_<ULID>
+~~~
+
+Distinct identities:
+
+~~~text
+thread_id   = continuity identity
+request_id  = persistence write/retry identity
+event_id    = successful semantic event identity
+handoff_id  = method transition identity
+~~~
+
+Minimum persisted handoff metadata:
+
+~~~text
+handoff_id
+thread_id
+source_method
+target_method
+source_revision
+transition
+minimum relevant continuity
+method_lineage
+~~~
+
+The Method Handoff Contract v0.1 remains valid; Phase 5 adds machine lineage when a persisted thread is available.
+
+A standalone handoff may omit machine fields that do not yet exist, but must never invent fake identity or revision data.
+
+### 19.5 Handoff is a Revision-Bound Snapshot
+
+The receiving method works from a snapshot at a specific source_revision.
+
+~~~text
+thread_id: th_A
+source_revision: 12
+From: ZASSPILL
+To: ZASSELECTION
+~~~
+
+The receiving method must not assume the source thread remains at that revision until the result returns.
+
+The result must reconcile against the current persisted Thread Record before semantic persistence.
+
+### 19.6 Method Result Envelope
+
+A structured method returns a result envelope, not the entire internal artifact.
+
+Minimum:
+
+~~~text
+handoff_id
+thread_id
+source_revision
+producing_method
+result_status
+confirmed_outcome
+still_open
+artifact_refs
+~~~
+
+Locked result_status values:
+
+~~~text
+CONFIRMED_RESULT
+UNCONFIRMED_RESULT
+NO_CHANGE
+CANCELLED
+~~~
+
+For a material reconciliation conflict:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+This is a reconciliation outcome, not a user-confirmed semantic outcome.
+
+### 19.7 User Confirmation Boundary
+
+ZASSELECTION:
+
+~~~text
+AI recommendation
+→ UNCONFIRMED_RESULT
+→ not a user decision
+
+User explicitly selects
+→ CONFIRMED_RESULT
+→ may become a confirmed semantic outcome
+~~~
+
+ZASSIMPLE:
+
+~~~text
+draft architecture
+→ UNCONFIRMED_RESULT
+→ not confirmed continuity truth
+
+user explicitly confirms architecture
+→ CONFIRMED_RESULT
+→ may become a confirmed semantic outcome
+~~~
+
+> **AI-generated artifact ≠ user-confirmed outcome.**
+
+### 19.8 No Double Confirmation
+
+When the user already provided clear confirmation inside the receiving method, CONFIRMED_RESULT does not require a second confirmation merely because the result returns to ZASSPILL.
+
+Persistence still remains governed by the Phase 3 revision, idempotency, and concurrency contracts.
+
+### 19.9 Applying Method Results
+
+CONFIRMED_RESULT:
+- may produce a proposed semantic mutation;
+- must pass expected_revision / reconciliation;
+- stores concise confirmed meaning + method lineage + relevant artifact refs.
+
+UNCONFIRMED_RESULT:
+- does not become confirmed user truth;
+- may remain a draft/reference;
+- must not close an open item as a user decision.
+
+NO_CHANGE:
+- no semantic mutation is required.
+
+CANCELLED:
+- the handoff closes without forcing an outcome.
+
+### 19.10 Cross-Method Concurrency
+
+When the source revision is still current:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 12
+→ SAFE_TO_APPLY
+~~~
+
+If the source moved:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 14
+→ RECONCILE
+~~~
+
+If compatible, reload the current record and propose the mutation against the latest revision.
+
+If materially conflicting:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+and:
+
+- do not overwrite current state;
+- do not create a new revision for the stale conflicting result;
+- do not use last-write-wins;
+- ask the user for clarification when semantic authority is required.
+
+### 19.11 Thread Lineage ≠ Method Lineage
+
+Thread lineage:
+
+~~~text
+split_from
+merged_from
+merged_into
+~~~
+
+Method lineage:
+
+~~~text
+handoff_id
+source_method
+target_method
+source_revision
+result_status
+~~~
+
+A DECIDE or DESIGN handoff does not create split_from, merged_from, or merged_into.
+
+### 19.12 Chained Method Transitions
+
+When a user finishes DECIDE and then wants DESIGN:
+
+~~~text
+ZASSPILL
+   ↓ ho_001
+ZASSELECTION
+   ↓ result + reconcile
+ZASSPILL
+   ↓ ho_002
+ZASSIMPLE
+~~~
+
+Use two separate handoffs even when the UX stays in the same chat.
+
+Do not bypass continuity authority with direct semantic ownership transfer ZASSELECTION → ZASSIMPLE without a return/reconcile boundary.
+
+### 19.13 Minimal Context Forwarding
+
+The receiving method receives only context required for its job.
+
+Carry minimum data:
+
+~~~text
+thread_id
+source_revision
+current relevant state
+relevant matters
+relevant open items
+necessary method/thread lineage
+explicit transition choice
+~~~
+
+Do not forward by default:
+
+- the entire transcript;
+- the entire provider profile;
+- all user threads;
+- unrelated personal context;
+- a full artifact from the previous method when a concise outcome is sufficient.
+
+### 19.14 Artifact Isolation
+
+Detailed method artifacts remain in the artifact layer.
+
+Example:
+
+~~~text
+confirmed_outcome:
+Option B selected
+
+artifact_ref:
+selection_matrix_xyz
+~~~
+
+or:
+
+~~~text
+confirmed_outcome:
+architecture confirmed
+
+artifact_ref:
+ARCHITECTURE.md
+~~~
+
+Continuity stores relevant meaning + lineage + references, not a full copy of the artifact.
+
+> **Continuity remembers the meaning and lineage; method artifacts preserve the detailed work.**
+
+### 19.15 Method-Version Metadata
+
+Portable Packet and cross-method machine metadata must report the current active method version.
+
+~~~yaml
+method: ZASSPILL
+method_version: 0.5.0
+~~~
+
+Packets newly exported by the current release must use the current method version.
+
+### 19.16 Phase 5 Proof
+
+The consolidated Phase 5 field test passed for:
+
+~~~text
+Stable thread identity                 PASS
+Separate handoff identities            PASS
+Source revision preserved              PASS
+ZASSELECTION ownership boundary        PASS
+ZASSIMPLE ownership boundary           PASS
+AI recommendation ≠ user truth         PASS
+Confirmed decision → continuity        PASS
+Draft architecture ≠ user truth        PASS
+Confirmed architecture → continuity    PASS
+No double confirmation                 PASS
+Artifact isolation                     PASS
+Thread lineage unchanged               PASS
+Method lineage preserved               PASS
+Stale method result blocked            PASS
+METHOD_RESULT_DIVERGENCE                PASS
+No last-write-wins                     PASS
+Provider-memory isolation              PASS
+~~~
+
+The field test proves that one thread_id remains stable across DECIDE and DESIGN, AI recommendations/drafts remain unconfirmed until the user confirms them, confirmed results can return without a second confirmation, full method artifacts are not copied into continuity, and stale conflicting method results cannot overwrite current semantic state.
+
+The Method Result Envelope was locked during final audit based on the behavior already proven.
+
+Behavioral proof, method ownership, confirmation authority, result isolation, artifact isolation, revision reconciliation, thread/method-lineage separation, Phase 3 compatibility, Phase 4 compatibility, and the privacy boundary all passed.
+
+> **ZASSPILL v0.5.0 Phase 5 is frozen. The Cross-Method Continuity contract above is the Phase 5 authority. New features belong in Phase 6 or a later version; only critical fixes should alter this release.**
