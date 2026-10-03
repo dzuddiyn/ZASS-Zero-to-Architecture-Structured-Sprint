@@ -921,9 +921,9 @@ ZASSIMPLE naming collision     MITIGATED
 Implementation complexity      PHASED / MANAGEABLE
 ~~~
 
-## 25. Deliberately deferred implementation details
+## 25. Historically deferred implementation details
 
-The following are intentionally **not** finalized here:
+The following were intentionally **not** finalized at this historical checkpoint. Several were later completed by ZASSPILL v1.0.0 and ZASS SYSTEM v0.2.0; the list is preserved as design-history context:
 
 - final Thread Packet schema;
 - machine thread-ID format;
