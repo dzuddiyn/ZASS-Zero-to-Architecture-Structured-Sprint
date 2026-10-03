@@ -1,6 +1,6 @@
 # CR-010 v0.2 — Git-aware LOCKED Drift Specification
 
-**Status:** IMPLEMENTED — VALIDATION COMPLETE
+**Status:** IMPLEMENTED — FIELD GATE PASSED (CLI v0.2.2)
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
 **Depends on:** CR-010 v0.1 `zass check`
@@ -86,11 +86,13 @@ If `HEAD:ZASS.md` does not exist because the project has not committed ZASS yet,
 
 Extract LOCKED decision records from both HEAD and current state.
 
-The parser should support the canonical Full-ZASS decision forms already used by the repository, including:
+The parser should support canonical Full-ZASS decision forms used by real projects, including:
 
-- `D-xxx` decision records whose state is LOCKED;
-- LOCKED-decision sections/lists that explicitly reference `D-xxx`;
-- `L-xxx / D-xxx — LOCKED` style records when present.
+- `D-xxx` decision records whose explicit Status contains a supported state token such as `LOCKED` or compound `DECIDED / LOCKED`;
+- explicit `LOCKED DECISIONS` or `LOCKED RECORDS` sections/lists that reference `D-xxx`;
+- `L-xxx / D-xxx — LOCKED`, `L-xxx → D-xxx`, and explicit `L-xxx: Locks D-xxx` records inside those authority sections.
+
+State recognition must remain contextual. Ordinary prose or a Status line describing other decision IDs must not silently LOCK the current record.
 
 The validator must correlate LOCKED state to the underlying decision ID.
 
@@ -242,6 +244,21 @@ Verification before commit:
 - linked `zass check` returned **0 errors / 0 warnings** at the ZASS repository root;
 - linked `zass check` returned **0 errors / 0 warnings** against `examples/01-small-farm-planner`, including its canonical LOCKED decision ledger;
 - v0.2 performs read-only Git inspection and does not checkout, reset, stash, clean, or repair project files.
+
+### v0.2.2 real-project field compatibility proof — 2026-10-03
+
+Field testing against the real `dzuddiyn/Kerani_Core` project exposed two compatibility gaps and one genuine project-data defect:
+
+- Z001 originally treated bold summary/index/ledger bullets as additional record definitions, creating 38 false duplicate errors. v0.2.2 restricts Z001 primary definitions to heading/table definition positions while keeping authority parsing separate.
+- The real `D-037` state `Status: DECIDED / LOCKED` was not recognized by the narrower status parser. v0.2.2 recognizes deterministic slash-separated explicit state tokens.
+- A remaining duplicate `R-035` was a genuine project defect, not a validator false positive; the later SuperBasic risk was corrected to `R-040` in Kerani_Core.
+
+Final field proof against corrected Kerani_Core `main`:
+- unchanged project: **0 errors / 0 warnings**;
+- deliberate semantic mutation of LOCKED `D-037`: **Z101 ERROR**;
+- automated CLI suite after patch: **36/36 PASS**.
+
+CR-010 v0.2 field gate is therefore **PASSED**.
 
 CR-010 v0.3 is **not started**.
 
