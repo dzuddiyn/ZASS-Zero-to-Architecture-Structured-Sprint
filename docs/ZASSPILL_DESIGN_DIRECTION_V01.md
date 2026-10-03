@@ -1,19 +1,19 @@
 # ZASSPILL — Design Direction v0.1
 
-**Status:** HISTORICAL LOCKED DESIGN — ZASSPILL v0.1.0 PHASE 1 FROZEN / CORE PROOF PASSED; GLOBAL DECIDE/DESIGN REMAINS CURRENT RELEASED ENTRY  
+**Status:** HISTORICAL LOCKED DESIGN — superseded by ZASSPILL v1.0.0 + ZASS SYSTEM v0.2.0 global three-intent routing  
 **Date:** 2026-10-02  
 **Owner:** Project Owner  
 **Scope:** portable DUMP continuity method/layer, ASC pilot direction, authority, portability, thread model, handoff, privacy, and phased implementation
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-> **Current-state note (2026-10-02):** the released global ZASS SYSTEM entry is now `DECIDE or DESIGN?`. This document preserves the earlier pilot assumptions as historical design context. DUMP is still not a released global entry.
+> **Current-state note (2026-10-03):** ZASSPILL v1.0.0 is PRODUCTION READY and ZASS SYSTEM v0.2.0 has promoted `DUMP / DECIDE / DESIGN` globally. This document now preserves the earlier pre-promotion assumptions as historical design context.
 
 ## 0. Contract boundary
 
 This document records the locked design checkpoint. ZASSPILL v0.1.0 Phase 1 is now FROZEN with its core proof passed. Cross-AI field testing exposed a separate external method-readability/transport problem; that problem is owned by AI-SYNC rather than by ZASSPILL semantics. This document still does **not** define a final backend schema, machine thread-ID contract, ASC sync implementation, or replacement for the current global ZASS SYSTEM routing.
 
-Current released/locked global entry remains:
+Historical global entry at the time this design direction began was:
 
 ~~~text
 DECIDE or BUILD?
@@ -25,7 +25,7 @@ The target ASC pilot is:
 DUMP / DECIDE / DESIGN
 ~~~
 
-If the pilot succeeds against the gates in this document, the intended future migration is to promote DUMP / DECIDE / DESIGN to the global ZASS SYSTEM entry model, retire DECIDE or BUILD?, and retire user-facing BUILD in favor of DESIGN.
+That intended migration has now completed: ZASS SYSTEM v0.2.0 promotes DUMP / DECIDE / DESIGN globally, with DUMP → ZASSPILL, DECIDE → ZASSELECTION, and DESIGN → ZASSIMPLE.
 
 If the first pilot is not good enough, the direction is to iterate the new model until it works rather than treating the old entry model as the desired end state.
 
