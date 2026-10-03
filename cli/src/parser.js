@@ -114,6 +114,10 @@ export function extractMarkdownLinks(markdown) {
   return links;
 }
 
+function stripInlineMarkdown(text) {
+  return text.replace(/\*\*|__|`/g, '');
+}
+
 function normalizeDecisionText(text) {
   return text
     .replace(/\r\n?/g, '\n')
@@ -126,6 +130,45 @@ function normalizeDecisionText(text) {
       .trim())
     .filter(Boolean)
     .join('\n');
+}
+
+function extractDecisionSectionState(visible) {
+  const lockedIds = new Set();
+  const supersededIds = new Set();
+  let activeState = null;
+  let activeLevel = null;
+
+  for (const line of visible) {
+    const stateHeading = line.text.match(
+      /^(#{1,6})\s+(?:\d+\.\s*)?(LOCKED|SUPERSEDED)\s+DECISIONS\b/i
+    );
+
+    if (stateHeading) {
+      activeLevel = stateHeading[1].length;
+      activeState = stateHeading[2].toUpperCase();
+      continue;
+    }
+
+    const heading = line.text.match(/^(#{1,6})\s+/);
+    if (activeState && heading && heading[1].length <= activeLevel) {
+      activeState = null;
+      activeLevel = null;
+    }
+
+    if (!activeState) continue;
+
+    const plain = stripInlineMarkdown(line.text);
+    const entry = plain.match(
+      /^\s*[-*+]\s+(?:(?:L-\d{3})\s*\/\s*)?(D-\d{3})\b/i
+    );
+    if (!entry) continue;
+
+    const id = entry[1].toUpperCase();
+    if (activeState === 'LOCKED') lockedIds.add(id);
+    if (activeState === 'SUPERSEDED') supersededIds.add(id);
+  }
+
+  return { lockedIds, supersededIds };
 }
 
 export function extractDecisionState(markdown) {
@@ -161,23 +204,18 @@ export function extractDecisionState(markdown) {
     });
 
     for (const line of bodyLines) {
-      const plain = line.replace(/\*\*|__|`/g, '');
-      const relation = plain.match(/Supersedes\s*:\s*(D-\d{3})\b/i);
+      const plain = stripInlineMarkdown(line).trim().replace(/^[-*+]\s+/, '');
+      const relation = plain.match(/^Supersedes\s*:\s*(D-\d{3})\b/i);
       if (relation) supersedes.set(id, relation[1].toUpperCase());
 
-      if (/\bStatus\s*:\s*LOCKED\b/i.test(plain)) lockedIds.add(id);
-      if (/\bStatus\s*:\s*SUPERSEDED\b/i.test(plain)) supersededIds.add(id);
+      if (/^Status\s*:\s*LOCKED\b/i.test(plain)) lockedIds.add(id);
+      if (/^Status\s*:\s*SUPERSEDED\b/i.test(plain)) supersededIds.add(id);
     }
   }
 
-  for (const line of visible) {
-    if (/\bLOCKED\b/i.test(line.text)) {
-      for (const match of line.text.matchAll(/\bD-\d{3}\b/gi)) lockedIds.add(match[0].toUpperCase());
-    }
-    if (/\bSUPERSEDED\b/i.test(line.text)) {
-      for (const match of line.text.matchAll(/\bD-\d{3}\b/gi)) supersededIds.add(match[0].toUpperCase());
-    }
-  }
+  const sectionState = extractDecisionSectionState(visible);
+  for (const id of sectionState.lockedIds) lockedIds.add(id);
+  for (const id of sectionState.supersededIds) supersededIds.add(id);
 
   for (const id of lockedIds) {
     const record = decisions.get(id);
