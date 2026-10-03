@@ -2,26 +2,16 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Current version:** v0.1.0  
-**Status:** Phase 1 Core Proof  
+**Current version:** v1.0.0  
+**Status:** PRODUCTION READY — Phase 1–6 frozen  
 **Default English:** [ZASSPILL_EN.md](ZASSPILL_EN.md)  
 **Bahasa Melayu:** [ZASSPILL_MY.md](ZASSPILL_MY.md)
 
-ZASSPILL is the portable DUMP continuity method in the ZASS family.
+ZASSPILL is the first-class **DUMP** continuity method in the ZASS family.
 
-It preserves enough context for a human to continue thinking across chats and AIs without forcing goals, criteria, decisions, architecture, plans, or tasks too early.
+It preserves enough human context to continue thinking across chats and AIs without forcing a decision, design, plan, task list, or project structure too early.
 
-## Current system boundary
-
-The released global ZASS SYSTEM entry is now:
-
-~~~text
-DECIDE or DESIGN?
-~~~
-
-ZASSPILL v0.1.0 still does **not** add DUMP as a released global entry.
-
-The target ASC pilot remains:
+## Global ZASS SYSTEM routing
 
 ~~~text
 DUMP   → ZASSPILL
@@ -29,81 +19,69 @@ DECIDE → ZASSELECTION
 DESIGN → ZASSIMPLE
 ~~~
 
-## Phase 1 quick start
+DUMP is now a released global entry, not a pilot-only route.
 
-### Start a new DUMP
+## What v1.0 covers
 
-1. Give the AI ZASSPILL_EN.md or ZASSPILL_MY.md.
+~~~text
+Phase 1 — Core Continuity
+Phase 2 — Multi-Thread Continuity
+Phase 3 — Persistence / ASC Contract
+Phase 4 — Retrieval Intelligence
+Phase 5 — Cross-Method Continuity
+Phase 6 — Production Reliability
+~~~
+
+Core capabilities include:
+
+- 6W continuity and meaning discipline;
+- multi-thread routing, resume, split/merge lineage, and lifecycle;
+- stable thread identity, revision/event, concurrency, idempotency, and tombstones;
+- evidence-based retrieval with ambiguity protection;
+- Portable Packet v2 and offline/local reconciliation;
+- ZASSPILL ↔ ZASSELECTION ↔ ZASSIMPLE method continuity;
+- production reliability rules for retry, restore, migration, integrity, authorization, and telemetry.
+
+## Start a DUMP
+
+1. Load [ZASSPILL_EN.md](ZASSPILL_EN.md) or [ZASSPILL_MY.md](ZASSPILL_MY.md).
 2. Talk normally.
 3. Do not fill a form.
-4. When useful, ask what context the AI is carrying.
-5. Use SAVE when you want the current continuity state rendered/persisted.
+4. ZASSPILL keeps continuity quietly.
+5. Move to DECIDE or DESIGN only when your intent actually changes.
 
-### Continue in another AI
+## Authority boundary
 
-Give the new AI:
+ZASSPILL owns continuity meaning. ASC owns persistence, sync, retrieval implementation, authorization, and operational mechanics.
 
-~~~text
-ZASSPILL_EN.md (or ZASSPILL_MY.md)
-+
-your current ZASSPILL Thread Packet
+Provider memory/profile is outside portable continuity authority unless the user intentionally brings that context into the thread.
+
+A generated packet or write request is not proof of external persistence. Production receipts must be factual.
+
+## Portable continuity
+
+Portable Packet v2 keeps current meaning + minimum lineage rather than the full transcript or full event history.
+
+Current release metadata:
+
+~~~yaml
+method: ZASSPILL
+method_version: 1.0.0
+packet_format_version: 2
 ~~~
 
-Then say:
+## Cross-method routing
+
+When the user explicitly moves:
 
 ~~~text
-Continue this thread with me.
+DUMP
+  ↓
+DECIDE → ZASSELECTION
+or
+DESIGN → ZASSIMPLE
 ~~~
 
-The new AI should continue from the packet rather than requiring the full old transcript.
+the same semantic thread identity is preserved. Detailed method artifacts remain in their own method layer; continuity keeps the relevant confirmed outcome + lineage.
 
-## What the packet keeps
-
-The minimum semantic frame is:
-
-~~~text
-WHO
-WHAT THIS IS ABOUT
-WHERE THE THINKING IS NOW
-WHAT MATTERS
-WHAT IS STILL OPEN
-WHERE THIS CONTEXT CAME FROM
-~~~
-
-History is optional and only kept when chronology helps continuity.
-
-## What ZASSPILL deliberately does not do
-
-Phase 1 does not provide:
-
-- ASC synchronization;
-- semantic thread index;
-- automatic multi-thread routing;
-- automatic split/merge;
-- final backend schema;
-- final machine thread-ID format.
-
-It also does not force:
-
-- goals;
-- selection matrices;
-- architecture;
-- Action Plans;
-- tasks;
-- progress percentages.
-
-## Phase 1 field test
-
-The next proof is simple:
-
-~~~text
-AI A
-→ messy conversation
-→ portable packet
-→ AI B
-→ natural continuation without old chat
-~~~
-
-A successful field test must preserve meaning without inventing facts, hardening thoughts into facts, or exporting unnecessary personal detail.
-
-Design rationale: [ZASSPILL Design Direction v0.1](../docs/ZASSPILL_DESIGN_DIRECTION_V01.md)
+Historical design rationale: [ZASSPILL Design Direction v0.1](../docs/ZASSPILL_DESIGN_DIRECTION_V01.md)
