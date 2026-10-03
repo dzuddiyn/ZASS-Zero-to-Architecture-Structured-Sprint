@@ -146,12 +146,16 @@ GitHub Actions must call the same validator. It must not maintain a duplicate ru
 
 ### Duplicate ID
 
+Z001 validates **primary record-definition positions**, not every formatted ID mention.
+
+Primary definitions currently include canonical record headings and ID-first table rows. Bold list bullets may be summaries, indexes, ledgers, or D→L references in real Full-ZASS project files, so they are not treated as duplicate record definitions merely because they repeat an existing ID. LOCKED authority remains validated separately by the explicit decision-state parser.
+
 Example:
 
 ```text
-D-004
+## D-004 — First definition
 ...
-D-004
+## D-004 — Duplicate definition
 ```
 
 Result:
