@@ -3,6 +3,17 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 2 production deployment receipt] — 2026-10-04
+
+- Recorded AISYNC Gate 2 three-route integration merge `f515a7d1379534501cd7a032563bfa968f8012ae`.
+- Recorded 24/24 AISYNC repository test files PASS and no-write/regression boundaries.
+- Recorded live ASC DB `PROJECTS.ui_entry` validation migration to DUMP / DECIDE / DESIGN.
+- Recorded protected production Apps Script version 21, built from production v17 plus exactly three Gate 2 dashboard files.
+- Recorded independent post-deploy source match and restoration of the separate T-017 development HEAD.
+- Gate 2 implementation + deployment evidence is PASS; only owner-visible production UI verification remains before formal closure.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 2 acceptance lock] — 2026-10-04
 
 - Locked the production acceptance contract for the DUMP / DECIDE / DESIGN product gate.
