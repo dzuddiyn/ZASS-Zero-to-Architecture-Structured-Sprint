@@ -63,7 +63,7 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
-**AI-SYNC Method Gateway:** cross-AI method readability is now a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth; AI-SYNC will sync identifiable snapshots and serve Markdown itself through a public read-only gateway. Implementation is in progress in the AI-SYNC workstream (T-013A → T-013B). Until the public endpoint passes Gemini/Copilot readability proof, existing GitHub links remain the bootstrap transport and no AI-SYNC method URL should be treated as operational.
+**AI-SYNC Method Gateway:** cross-AI method readability is a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth. AI-SYNC T-013A and T-013B have passed: protected GitHub→METHODS snapshot sync is operational, and the public read-only Method Gateway has passed anonymous-browser, Gemini, and Copilot direct-read proof. Receiver guardrail remains strict: use the exact gateway URL, and if a receiver cannot fetch it, report the failure rather than substituting another source as method authority.
 
 
 **ZASSPILL:** v1.0.0 is **PRODUCTION READY** after Phase 1–6 proof. **DUMP / DECIDE / DESIGN** is now the released global ZASS SYSTEM entry model: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
