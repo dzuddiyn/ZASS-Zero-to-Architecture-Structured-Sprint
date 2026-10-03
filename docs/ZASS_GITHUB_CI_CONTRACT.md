@@ -27,6 +27,8 @@ It MUST:
 
 It MUST NOT reproduce Z001–Z101 logic in workflow YAML or in ASC.
 
+The workflow may also run repository-maintenance quality checks, such as `quality/check-repo-consistency.mjs`. Those checks protect the ZASS repository's own current-facing documentation/status metadata and are **not** ZASS validator semantics, do not create new Z-codes, and must not be reimplemented by ASC as validation authority.
+
 ## Baseline semantics
 
 - Pull request: compare current candidate state against the PR base commit SHA.
@@ -41,6 +43,7 @@ The explicit baseline changes only the historical source used by Z101. All rule 
 - CLI validation ERROR -> failing CI job.
 - CLI warnings retain existing non-failing behavior.
 - CLI test failure -> failing CI job.
+- Repository-consistency guard failure -> failing CI job as repository maintenance, not as a ZASS validation rule.
 - Invalid/unresolvable workflow baseline -> failing CI job before validation.
 
 A generated workflow file is not proof that CI exists operationally. Promotion requires a real GitHub Actions run tied to a commit.
