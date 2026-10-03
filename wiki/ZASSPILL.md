@@ -1,21 +1,13 @@
 # ZASSPILL
 
-**Current version:** v0.1.0  
-**Status:** Phase 1 Core Proof
+**Current version:** v1.0.0  
+**Status:** PRODUCTION READY
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-ZASSPILL is the portable DUMP continuity method in the ZASS family. It preserves enough human context to continue thinking across chats and AIs without forcing goals, choices, architecture, plans or tasks too early.
+ZASSPILL is the first-class DUMP continuity method in ZASS SYSTEM. It preserves human context across chats and AIs without forcing a choice, design, plan, or task structure too early.
 
-## Current boundary
-
-The released global ZASS SYSTEM entry is now:
-
-~~~text
-DECIDE or DESIGN?
-~~~
-
-The target ASC pilot is:
+## Global routing
 
 ~~~text
 DUMP   → ZASSPILL
@@ -23,23 +15,20 @@ DECIDE → ZASSELECTION
 DESIGN → ZASSIMPLE
 ~~~
 
-ZASSPILL v0.1.0 does not yet add DUMP to the released global routing.
+DUMP is a released global entry as of ZASS SYSTEM v0.2.0.
 
-## Phase 1
+## v1.0 scope
 
-The first release intentionally proves only:
+| Phase | Capability |
+|---|---|
+| 1 | Core Continuity |
+| 2 | Multi-Thread Continuity |
+| 3 | Persistence / ASC Contract |
+| 4 | Retrieval Intelligence |
+| 5 | Cross-Method Continuity |
+| 6 | Production Reliability |
 
-- one semantic continuity thread per portable packet;
-- 6W continuity;
-- fact/thought/concern/preference/AI-interpretation discipline;
-- temporary/stable/superseded context;
-- refresh on meaning change;
-- continuity compression;
-- human inspection/correction;
-- privacy minimization;
-- manual portability between AIs.
-
-The six semantic buckets are:
+The continuity frame remains:
 
 ~~~text
 WHO
@@ -50,23 +39,37 @@ WHAT IS STILL OPEN
 WHERE THIS CONTEXT CAME FROM
 ~~~
 
-## Proof gate
+ZASSPILL v1 adds stable identity, revision/event semantics, concurrency and idempotency protection, retrieval intelligence, Portable Packet v2, tombstones, cross-method handoff/result boundaries, and production recovery rules.
+
+## Key boundary
+
+> ZASSPILL owns continuity meaning. ASC owns persistence mechanics.
+
+Provider memory is outside portable authority unless intentionally reintroduced by the user.
+
+Retrieval is read-only. Persistence must be factual. Stale or conflicting writes reconcile rather than silently overwrite.
+
+## Cross-method continuity
+
+A thread may move:
 
 ~~~text
-AI A
-→ messy conversation
-→ portable Thread Packet
-→ AI B
-→ natural continuation without old chat
+ZASSPILL
+→ ZASSELECTION
+→ ZASSPILL
+→ ZASSIMPLE
+→ ZASSPILL
 ~~~
 
-Until that field proof passes, ZASSPILL remains a Phase 1 core proof.
+without changing thread identity merely because the method changes.
 
-Authoritative method files:
+AI recommendations and draft artifacts do not become user-confirmed truth unless the user actually confirms them.
+
+## Authoritative method files
 
 - [ZASSPILL_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSPILL/ZASSPILL_EN.md)
 - [ZASSPILL_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSPILL/ZASSPILL_MY.md)
 
-Design direction:
+Historical design direction:
 
 - [ZASSPILL Design Direction v0.1](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/ZASSPILL_DESIGN_DIRECTION_V01.md)
