@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 0.5.0  
-**Status:** PHASE 5 FROZEN — CROSS-METHOD CONTINUITY PROOF PASSED  
+**Version:** 1.0.0  
+**Status:** PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -1110,7 +1110,7 @@ Method identity mesti jelas:
 
 ```yaml
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 packet_format_version: 2
 ```
 
@@ -1121,7 +1121,7 @@ Minimum ASC-backed packet:
 ```yaml
 ---
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 packet_format_version: 2
 thread_id: th_<ULID>
 title: <human title>
@@ -1797,7 +1797,7 @@ Portable Packet dan cross-method machine metadata mesti melaporkan active method
 
 ~~~yaml
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 ~~~
 
 Packet baru yang dieksport oleh release semasa mesti menggunakan version method semasa.
@@ -1833,3 +1833,398 @@ Method Result Envelope dikunci semasa final audit berdasarkan behavior yang tela
 Behavioral proof, method ownership, confirmation authority, result isolation, artifact isolation, revision reconciliation, thread/method lineage separation, Phase 3 compatibility, Phase 4 compatibility dan privacy boundary semuanya lulus.
 
 > **ZASSPILL v0.5.0 Phase 5 dibekukan. Cross-Method Continuity contract di atas ialah authority Phase 5. Feature baharu masuk Phase 6 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 20. Phase 6 — Production Reliability
+
+Phase 6 mengunci reliability behavior apabila production transport, storage, retry, restore, migration atau authorization tidak berjalan sempurna.
+
+Prinsip utama:
+
+> **Fail closed on semantic uncertainty; recover explicitly rather than inventing continuity.**
+
+Apabila state semantic tidak pasti, sistem tidak boleh overwrite, auto-merge, fake success, resurrect deleted continuity, meneka revision, atau menghasilkan telemetry palsu.
+
+### 20.1 Truthful Persistence Receipt
+
+Sistem hanya boleh melaporkan persistence berjaya apabila write benar-benar dibuktikan.
+
+Minimum receipt:
+
+~~~text
+request_id
+thread_id
+previous_revision
+persisted_revision
+event_id
+result
+~~~
+
+Jika persistence belum dapat dibuktikan:
+
+~~~text
+PERSISTENCE_UNCONFIRMED
+~~~
+
+Request dihantar sahaja bukan bukti bahawa state telah disimpan.
+
+### 20.2 Unknown Write Outcome
+
+Jika client menghantar write tetapi response hilang selepas server mungkin sudah commit:
+
+~~~text
+WRITE_OUTCOME_UNKNOWN
+~~~
+
+Client tidak boleh meneka success atau failure.
+
+Recovery wajib menggunakan logical request yang sama:
+
+~~~text
+retry same request_id + same payload
+~~~
+
+Idempotency Phase 3 menentukan sama ada request sudah applied atau perlu dilaksanakan sekali sahaja.
+
+### 20.3 Retry Classification
+
+Retryable failure boleh termasuk:
+
+~~~text
+timeout
+temporary network failure
+service unavailable
+transient transport failure
+~~~
+
+Non-retryable semantic/security outcome termasuk:
+
+~~~text
+REVISION_CONFLICT
+IDEMPOTENCY_KEY_REUSE_CONFLICT
+THREAD_TOMBSTONED
+AUTHORIZATION_DENIED
+invalid semantic operation
+~~~
+
+Transport retry untuk logical write yang sama mesti menggunakan request_id yang sama.
+
+### 20.4 Atomic Semantic Commit
+
+Normal semantic mutation mesti commit secara logical atomic:
+
+~~~text
+Thread Record update
++
+matching semantic event
+~~~
+
+Tidak boleh ada trusted state seperti:
+
+~~~text
+record revision 8
+event log revision 7
+~~~
+
+Jika atomicity/integrity tidak dapat dibuktikan:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Affected continuity tidak selamat untuk semantic write sehingga recovery selesai.
+
+### 20.5 Multi-Record Atomicity
+
+Operation multi-record seperti SPLIT, TRUE MERGE dan operation lain yang secara semantic mesti bergerak bersama perlu logical atomicity.
+
+Contoh TRUE MERGE:
+
+~~~text
+source A archived
+source B archived
+new C created
+lineage connected
+matching events written
+~~~
+
+Partial success tidak boleh dianggap completed.
+
+Jika partial commit dikesan:
+
+~~~text
+PARTIAL_COMMIT_DETECTED
+~~~
+
+dan recovery mesti berlaku sebelum semantic operation baru diteruskan pada affected records.
+
+### 20.6 Read-After-Write Verification
+
+Selepas reported successful write, persistence layer mesti boleh verify sekurang-kurangnya:
+
+~~~text
+thread_id
+persisted_revision
+matching semantic event
+~~~
+
+Jika success receipt bercanggah dengan persisted verification:
+
+~~~text
+PERSISTENCE_VERIFICATION_FAILED
+~~~
+
+Jangan laporkan write sebagai trusted success.
+
+### 20.7 Out-of-Order / Replay Protection
+
+Replication, retry atau sync message lama tidak boleh mengundur current state.
+
+Contoh:
+
+~~~text
+current revision 12
+incoming revision 10
+→ STALE_REPLAY_IGNORED
+~~~
+
+Tiada mutation.
+
+Revision + event lineage mempunyai authority lebih tinggi daripada timestamp.
+
+### 20.8 Integrity Guard
+
+Contoh integrity violation:
+
+- duplicate semantic revision;
+- missing matching event;
+- broken merge/split lineage;
+- invalid lifecycle transition;
+- thread_id mismatch;
+- record/event revision mismatch.
+
+Outcome:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Jangan repair semantic meaning secara senyap atau mencipta event/meaning yang hilang.
+
+Read-only degraded inspection boleh dibenarkan jika selamat, tetapi semantic writes pada affected record mesti diblok sehingga recovery selesai.
+
+### 20.9 Degraded / Offline Mode
+
+Jika ASC tidak boleh dicapai:
+
+~~~text
+ASC_UNAVAILABLE
+~~~
+
+Conversation boleh terus menggunakan portable/local continuity.
+
+Local semantic change mesti:
+
+~~~text
+packet_state = LOCAL_CHANGES
+base_revision = last known persisted revision
+~~~
+
+dan:
+
+- tidak mencipta fake ASC revision;
+- tidak mencipta fake persisted event;
+- tidak mendakwa externally persisted.
+
+Bila ASC kembali, gunakan reconciliation contract Phase 3.
+
+### 20.10 Restore / Backup Safety
+
+Backup lama tidak menjadi authority hanya kerana restore secara teknikal berjaya.
+
+Contoh:
+
+~~~text
+current known revision 24
+backup revision 20
+→ RESTORE_REQUIRES_RECONCILIATION
+~~~
+
+Restore mesti memeriksa identity, revision, event lineage dan tombstone/deletion authority.
+
+Jangan silently rewind newer trusted continuity.
+
+### 20.11 Tombstone Survives Recovery
+
+Backup atau replica lama tidak boleh menghidupkan semula deleted thread.
+
+Jika valid tombstone wujud:
+
+~~~text
+THREAD_TOMBSTONED
+~~~
+
+Deletion authority menang terhadap stale semantic backup.
+
+No resurrection.
+
+### 20.12 Schema / Version Compatibility
+
+Persisted data perlu membawa schema/version metadata yang cukup untuk menentukan compatibility.
+
+Reader boleh menghasilkan:
+
+~~~text
+SUPPORTED
+MIGRATION_REQUIRED
+UNSUPPORTED_VERSION
+~~~
+
+Migration teknikal tidak menaikkan semantic revision jika meaning tidak berubah.
+
+### 20.13 Migration Safety
+
+Migration flow:
+
+~~~text
+old schema
+↓
+migration
+↓
+new schema
+↓
+semantic equivalence verification
+~~~
+
+Jika meaning boleh dipelihara dengan pasti, migration boleh berjaya tanpa semantic revision bump.
+
+Jika required semantic value tidak boleh diperoleh dengan selamat:
+
+~~~text
+MIGRATION_REVIEW_REQUIRED
+~~~
+
+Jangan invent semantic content untuk mengisi field baru.
+
+### 20.14 Authorization Failure
+
+Jika caller tidak mempunyai authority:
+
+~~~text
+AUTHORIZATION_DENIED
+~~~
+
+Semantic consequence mesti zero mutation:
+
+- tiada revision bump;
+- tiada semantic event;
+- tiada lifecycle change;
+- tiada content mutation.
+
+Authentication/permission implementation kekal concern ASC; ZASSPILL mengunci semantic consequence sahaja.
+
+### 20.15 Observability Without Leakage
+
+Operational telemetry boleh membawa metadata seperti:
+
+~~~text
+request_id
+thread_id
+operation
+result_code
+revision
+timing / failure class
+~~~
+
+Ia tidak boleh duplicate full continuity content secara default.
+
+> **Reliability telemetry tidak boleh menjadi shadow semantic database.**
+
+### 20.16 Observability Truthfulness
+
+Telemetry mesti factual.
+
+Jika timestamp, latency atau timing benar-benar diukur, log nilai sebenar.
+
+Jika tidak diukur, gunakan:
+
+~~~text
+null
+unknown
+not_measured
+~~~
+
+Jangan cipta nombor atau timestamp yang nampak factual semata-mata untuk melengkapkan log.
+
+### 20.17 Clock Independence
+
+Clock drift tidak menentukan semantic authority.
+
+~~~text
+revision + event lineage
+> timestamp
+~~~
+
+Timestamp membantu diagnosis dan ordering teknikal apabila sesuai, tetapi tidak boleh mengatasi revision/event authority.
+
+### 20.18 Recovery Principle
+
+Default production recovery:
+
+- jangan overwrite apabila semantic authority tidak pasti;
+- jangan auto-merge conflict;
+- jangan fake persistence success;
+- jangan resurrect tombstoned continuity;
+- jangan meneka missing revision/event;
+- jangan invent migration meaning;
+- reconcile atau minta review secara explicit.
+
+### 20.19 Method-Version Metadata
+
+Portable Packet dan machine metadata yang dihasilkan oleh release semasa mesti menggunakan:
+
+~~~yaml
+method: ZASSPILL
+method_version: 1.0.0
+~~~
+
+### 20.20 Phase 6 Proof
+
+Consolidated production field test telah dijalankan pada lebih daripada satu receiver/provider dan behavior utama adalah konsisten.
+
+~~~text
+A  Unknown write + idempotent retry       PASS
+B  Stale replay protection                PASS
+C  Integrity failure blocks writes        PASS
+D  Offline LOCAL_CHANGES                  PASS
+E  Divergence protection                  PASS
+F  Restore safety                         PASS
+G  Tombstone survives recovery            PASS
+H  Authorization = zero mutation          PASS
+I  Migration preserves meaning            PASS
+J  Observability without semantic leakage PASS
+~~~
+
+Final audit turut mengunci observability truthfulness selepas satu receiver menghasilkan timing/timestamp fixture yang tidak dibekalkan oleh test. Telemetry yang tidak diukur mesti dilabel unknown/not_measured, bukan direka.
+
+Proof keseluruhan meliputi:
+
+- truthful persistence receipts;
+- unknown-outcome recovery;
+- retry/idempotency safety;
+- atomicity and integrity guards;
+- stale replay protection;
+- degraded/offline operation;
+- divergence handling;
+- backup/restore safety;
+- tombstone recovery protection;
+- authorization isolation;
+- schema/migration safety;
+- telemetry privacy dan truthfulness;
+- clock-independent authority.
+
+Phase 3, Phase 4 dan Phase 5 compatibility kekal lulus.
+
+> **ZASSPILL v1.0.0 ialah PRODUCTION READY. Phase 1–6 telah dibekukan sebagai core continuity contract. Feature baharu selepas ini masuk v1.x compatibility/polish atau v2 advanced continuity intelligence; hanya critical fixes patut mengubah core v1.0 contract tanpa versioned evolution.**
