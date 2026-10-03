@@ -145,20 +145,90 @@ function extractInlineLinkTargets(text) {
   return targets;
 }
 
+function normalizeReferenceLabel(label) {
+  return label.trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function extractReferenceDefinition(text) {
+  const match = text.match(/^\s{0,3}\[([^\]]+)\]:\s*(.+?)\s*$/);
+  if (!match) return null;
+
+  const label = normalizeReferenceLabel(match[1]);
+  const remainder = match[2].trim();
+  if (!remainder) return null;
+
+  let target;
+  if (remainder.startsWith('<')) {
+    const closing = remainder.indexOf('>');
+    if (closing === -1) return null;
+    target = remainder.slice(1, closing).trim();
+  } else {
+    const targetMatch = remainder.match(/^(\S+)/);
+    if (!targetMatch) return null;
+    target = targetMatch[1];
+  }
+
+  return { label, target };
+}
+
+function extractReferenceUsages(text) {
+  const usages = [];
+  const occupied = [];
+  const fullPattern = /!?\[([^\]]+)\]\[([^\]]*)\]/g;
+  let match;
+
+  while ((match = fullPattern.exec(text)) !== null) {
+    const label = normalizeReferenceLabel(match[2] || match[1]);
+    usages.push({ label });
+    occupied.push([match.index, fullPattern.lastIndex]);
+  }
+
+  const shortcutPattern = /!?\[([^\]]+)\](?!\s*[\[(])/g;
+  while ((match = shortcutPattern.exec(text)) !== null) {
+    const start = match.index;
+    const end = shortcutPattern.lastIndex;
+    if (occupied.some(([from, to]) => start >= from && end <= to)) continue;
+    usages.push({ label: normalizeReferenceLabel(match[1]) });
+  }
+
+  return usages;
+}
+
+function normalizeMarkdownTarget(rawTarget) {
+  let target = rawTarget.trim();
+  if (target.startsWith('<') && target.endsWith('>')) {
+    target = target.slice(1, -1).trim();
+  }
+
+  const titleSplit = target.match(/^(\S+)(?:\s+["'][^"']*["'])$/);
+  if (titleSplit) target = titleSplit[1];
+  return target;
+}
+
 export function extractMarkdownLinks(markdown) {
   const links = [];
+  const visible = visibleMarkdownLines(markdown);
+  const definitions = new Map();
 
-  for (const line of visibleMarkdownLines(markdown)) {
+  for (const line of visible) {
+    const definition = extractReferenceDefinition(line.text);
+    if (definition && !definitions.has(definition.label)) {
+      definitions.set(definition.label, definition.target);
+    }
+  }
+
+  for (const line of visible) {
+    const definition = extractReferenceDefinition(line.text);
+
     for (const rawTarget of extractInlineLinkTargets(line.text)) {
-      let target = rawTarget.trim();
-      if (target.startsWith('<') && target.endsWith('>')) {
-        target = target.slice(1, -1).trim();
-      }
+      links.push({ target: normalizeMarkdownTarget(rawTarget), line: line.number });
+    }
 
-      const titleSplit = target.match(/^(\S+)(?:\s+["'][^"']*["'])$/);
-      if (titleSplit) target = titleSplit[1];
+    if (definition) continue;
 
-      links.push({ target, line: line.number });
+    for (const usage of extractReferenceUsages(line.text)) {
+      const target = definitions.get(usage.label);
+      if (target) links.push({ target: normalizeMarkdownTarget(target), line: line.number });
     }
   }
 
