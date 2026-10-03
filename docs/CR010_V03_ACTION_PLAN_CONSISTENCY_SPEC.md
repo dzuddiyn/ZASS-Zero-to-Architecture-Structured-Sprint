@@ -1,6 +1,6 @@
 # CR-010 v0.3 — ACTION_PLAN Consistency Specification
 
-**Status:** LOCKED IMPLEMENTATION PLAN — NOT STARTED; v0.2 FIELD GATE SATISFIED
+**Status:** IMPLEMENTED — FIELD VALIDATION PASSED (CLI v0.3.0)
 **Date:** 2026-10-01
 **Owner:** Project Owner
 **Depends on:** CR-010 v0.2 `zass check`
@@ -308,4 +308,31 @@ If ACTION_PLAN and ZASS project-state fields cannot be compared reliably, stop a
 
 This file locks the **plan and scope**, not implementation completion.
 
-CR-010 v0.3 remains **NOT STARTED** until the v0.2 field gate is satisfied and implementation is explicitly begun.
+CR-010 v0.3 is **IMPLEMENTED**. The locked plan remains the authority for scope; implementation did not widen it.
+
+## 19. v0.3 implementation receipt — 2026-10-03
+
+Implemented under `cli/` as **zass-cli v0.3.0**.
+
+Implemented rules:
+- **Z200** — optional ACTION_PLAN discovery and canonical snapshot availability;
+- **Z201** — explicit readiness-progress mismatch;
+- **Z202** — explicit readiness-status mismatch;
+- **Z203** — stale explicit ZASS source version;
+- **Z204** — missing explicitly related ZASS IDs;
+- **Z205** — conservative blocker inconsistency warning.
+
+Parser compatibility proven for:
+- same-line and two-line ZERO → ARCHITECTURE readiness surfaces;
+- source forms such as `ZASS.md using ZASS v0.3.5` and `ZASS_Kerani_Core.md v0.3.2`;
+- canonical strong record definitions plus explicit legacy Decision Ledger / LOCKED Records IDs for relationship-existence checks.
+
+Validation:
+- automated Node test suite: **46/46 PASS**;
+- Small Farm Planner: **0 errors / 0 warnings**;
+- real Kerani_Core project: **0 errors / 0 warnings** after canonical `ZASS_Kerani_Core.md` is supplied as the validator's `ZASS.md` project authority;
+- no ZASS method or ZASS SYSTEM semantic change.
+
+The optional **Z206** working-tree atomic-sync heuristic is **not implemented in v0.3.0**. It remains deferred because the minimum deterministic v0.3 contract is already satisfied and the heuristic can create noise during legitimate in-progress edits.
+
+Per the stop rule, do not move to CR-010 v0.4 automatically; review v0.3 field behavior first.
