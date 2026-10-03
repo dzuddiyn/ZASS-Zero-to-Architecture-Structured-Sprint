@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 2 — Production Integration Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION EVIDENCE INCOMPLETE  
+**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION + DEPLOYMENT EVIDENCE PASS; OWNER-VISIBLE PRODUCTION CHECK PENDING  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 2 only — DUMP / DECIDE / DESIGN production integration
@@ -143,28 +143,33 @@ The AISYNC front-door regression suite also verifies:
 
 Historical AISYNC live proof records also report successful provider-routing/handoff field cases.
 
-### Current production-integration gap
+### Production integration patch — implemented and deployed
 
-The main ASC dashboard/read model still declares only:
+AISYNC Gate 2 patch is now merged and production-deployed.
 
-```text
-DECIDE
-DESIGN
-```
+Canonical implementation evidence:
+- AISYNC PR #15 merged as `f515a7d1379534501cd7a032563bfa968f8012ae`;
+- main dashboard/read model now declares `DUMP / DECIDE / DESIGN`;
+- DUMP is the default dashboard route and displays `DUMP → ZASSPILL` plus the existing ASC Front Door link without implementing ZASSPILL semantics;
+- DUMP project rows can be projected from `PROJECTS.ui_entry` when present;
+- existing DECIDE / DESIGN project grouping, project detail, History, and commit-linked CI behavior remain covered by regression tests;
+- all 24 AISYNC repository `test-*.mjs` tests PASS in the verified checkout;
+- `git diff --check` PASS.
 
-Current implementation evidence includes:
+Live data/deployment evidence:
+- active ASC DB `PROJECTS.ui_entry` strict validation was migrated in place to `DUMP / DECIDE / DESIGN`; existing AISYNC `DESIGN` value was preserved and read back;
+- protected production Apps Script deployment was promoted to immutable version **21**, `Gate2-three-route-production-integration`;
+- production v21 was constructed from the prior immutable production v17 plus exactly `Dashboard.html`, `DashboardClient.html`, and `DashboardRead`;
+- independent post-deploy pull verified those three production files match AISYNC Gate 2 merge `f515a7d...`;
+- the separate T-017 development HEAD was restored after the versioned release and was not promoted into production v21;
+- AISYNC deployment receipt PR #16 merged as `92414d1db856a2c14bff9b09d5f85d5000d6e494`.
 
-- `DASHBOARD_ENTRIES = ['DECIDE', 'DESIGN']`;
-- `ASC_UI_ENTRIES_ = ['DECIDE', 'DESIGN']`;
-- ASC DB `ui_entry` documentation constrains values to DECIDE / DESIGN;
-- dashboard tests explicitly assert DECIDE / DESIGN grouping.
-
-This is not a method defect. It is an AISYNC product-integration gap between the released ZASS SYSTEM three-route contract and the older dashboard surface.
+The remaining acceptance evidence is an owner-visible production check of the protected/main ASC dashboard.
 
 ## 5. Gate 2 current verdict
 
 ```text
-G2-01  PARTIAL — front door PASS; main production dashboard still two-route
+G2-01  DEPLOYED — three-route main surface implemented; owner-visible render check pending
 G2-02  PASS
 G2-03  PASS
 G2-04  PASS
@@ -172,29 +177,24 @@ G2-05  PASS
 G2-06  PASS
 G2-07  PASS BY BOUNDARY — Full ZASS is not a landing route
 G2-08  PASS
-G2-09  FAIL / INCOMPLETE — front door and main product surface are not yet coherent
+G2-09  DEPLOYED + SOURCE VERIFIED — owner-visible production coherence check pending
 ```
 
 Therefore:
 
-> **GATE 2 = NOT YET PASS**
+> **GATE 2 = IMPLEMENTATION + DEPLOYMENT PASS; FINAL OWNER-VISIBLE CHECK PENDING**
 
-The required next implementation work belongs in AISYNC, not this repository.
+No further AISYNC code change is currently required by this acceptance contract unless the owner-visible check reveals a regression.
 
 ## 6. Minimum AISYNC integration evidence required to close Gate 2
 
-AISYNC needs to provide a production integration proof showing:
+Items 1–7 are now satisfied by merged, tested, live data, and versioned deployment evidence.
 
-1. the main production entry/navigation surface no longer contradicts DUMP / DECIDE / DESIGN;
-2. DUMP is represented appropriately without making ZASSPILL semantics part of ASC;
-3. existing DECIDE and DESIGN project navigation still works;
-4. route suggestion + explicit override still work;
-5. provider handoff still uses the exact route → method → gateway mapping;
-6. no route/handoff action writes project state;
-7. existing dashboard/history/CI behavior is not regressed;
-8. a live owner-visible production proof confirms the coherent three-route experience.
+The only remaining closure item is:
 
-The exact AISYNC internal task number or implementation topology is not prescribed by this contract.
+8. **owner-visible production proof** confirms the protected/main ASC dashboard visibly exposes DUMP / DECIDE / DESIGN, DUMP provides the expected front-door path, and existing DECIDE / DESIGN navigation remains usable.
+
+If that visible check passes without a material regression, Gate 2 may be closed without another implementation patch.
 
 ## 7. Non-blockers
 
