@@ -159,6 +159,8 @@ AI-SYNC Web should prefer five stable surfaces.
 
 `DUMP / DECIDE / DESIGN` routes DUMP → ZASSPILL, DECIDE → ZASSELECTION, and DESIGN → ZASSIMPLE.
 
+Production acceptance is governed by [`ZASS_SYSTEM_GATE2_PRODUCTION_INTEGRATION_ACCEPTANCE.md`](ZASS_SYSTEM_GATE2_PRODUCTION_INTEGRATION_ACCEPTANCE.md). A proof-only three-route front door does not satisfy the product gate if the main production surface still contradicts it with a legacy two-route model.
+
 ### 5.2 Workspace
 
 Chat / DUMP is the main working surface. The workspace should remain conversational and should not become a permanent dashboard wall.
