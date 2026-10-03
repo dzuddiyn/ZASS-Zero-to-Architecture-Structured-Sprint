@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 0.4.0  
-**Status:** PHASE 4 FROZEN — RETRIEVAL INTELLIGENCE PROOF PASSED  
+**Version:** 0.5.0  
+**Status:** PHASE 5 FROZEN — CROSS-METHOD CONTINUITY PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
@@ -1110,7 +1110,7 @@ Method identity mesti jelas:
 
 ```yaml
 method: ZASSPILL
-method_version: 0.3.0
+method_version: 0.5.0
 packet_format_version: 2
 ```
 
@@ -1121,7 +1121,7 @@ Minimum ASC-backed packet:
 ```yaml
 ---
 method: ZASSPILL
-method_version: 0.3.0
+method_version: 0.5.0
 packet_format_version: 2
 thread_id: th_<ULID>
 title: <human title>
@@ -1465,3 +1465,371 @@ Dua schema wording correction ditemui semasa audit dan telah dimasukkan ke contr
 Behavioral proof, contract consistency, Phase 3 compatibility, privacy boundary dan authority boundary semuanya lulus.
 
 > **ZASSPILL v0.4.0 Phase 4 dibekukan. Retrieval Intelligence contract di atas ialah authority Phase 4. Feature baharu masuk Phase 5 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 19. Phase 5 — Cross-Method Continuity
+
+Phase 5 mengunci bagaimana satu semantic thread bergerak antara method ZASS tanpa kehilangan identity, mencampur authority, atau menaik taraf output AI menjadi keputusan user.
+
+Prinsip utama:
+
+> **Method boleh berubah. Thread identity kekal. User authority tidak boleh berubah hanya kerana AI menghasilkan artifact atau recommendation.**
+
+### 19.1 One Thread, Many Methods
+
+Peralihan method tidak mencipta semantic thread baru.
+
+~~~text
+th_ABC
+
+ZASSPILL
+→ ZASSELECTION
+→ ZASSPILL
+→ ZASSIMPLE
+→ ZASSPILL
+
+thread_id = th_ABC
+~~~
+
+Selagi continuity yang sama masih berlangsung, thread_id kekal sama.
+
+### 19.2 Method Ownership
+
+~~~text
+ZASSPILL
+→ continuity / context
+
+ZASSELECTION
+→ comparison / selection
+
+ZASSIMPLE
+→ design / architecture / Action Plan
+~~~
+
+Aturan:
+
+- ZASSPILL tidak memilih option bagi user.
+- ZASSELECTION tidak membina architecture.
+- ZASSIMPLE tidak menukar recommendation atau draft AI menjadi keputusan user.
+- Structured method tidak boleh menulis semantic continuity tanpa result contract + reconciliation.
+
+### 19.3 ZASSPILL sebagai Continuity Broker
+
+Secara logical:
+
+~~~text
+ZASSPILL
+→ handoff
+→ receiving method
+→ method result
+→ ZASSPILL continuity
+~~~
+
+UX boleh kekal lancar dalam chat yang sama, tetapi semantic authority boundary mesti kekal.
+
+> **Cross-method handoff bukan pertukaran thread. Ia pertukaran method responsibility pada thread yang sama.**
+
+### 19.4 Handoff Identity
+
+Setiap method transition mempunyai identity:
+
+~~~text
+handoff_id = ho_<ULID>
+~~~
+
+Identity berbeza:
+
+~~~text
+thread_id   = continuity identity
+request_id  = persistence write/retry identity
+event_id    = successful semantic event identity
+handoff_id  = method transition identity
+~~~
+
+Minimum persisted handoff metadata:
+
+~~~text
+handoff_id
+thread_id
+source_method
+target_method
+source_revision
+transition
+minimum relevant continuity
+method_lineage
+~~~
+
+Method Handoff Contract v0.1 kekal sah; Phase 5 menambah machine lineage apabila persisted thread tersedia.
+
+Standalone handoff boleh omit machine fields yang memang belum wujud, tetapi tidak boleh mereka identity atau revision palsu.
+
+### 19.5 Handoff ialah Revision-Bound Snapshot
+
+Receiving method bekerja daripada snapshot pada source_revision tertentu.
+
+~~~text
+thread_id: th_A
+source_revision: 12
+From: ZASSPILL
+To: ZASSELECTION
+~~~
+
+Receiving method tidak boleh menganggap source thread kekal pada revision itu sehingga result pulang.
+
+Result mesti reconcile dengan current persisted Thread Record sebelum semantic persistence.
+
+### 19.6 Method Result Envelope
+
+Structured method memulangkan result envelope, bukan seluruh internal artifact.
+
+Minimum:
+
+~~~text
+handoff_id
+thread_id
+source_revision
+producing_method
+result_status
+confirmed_outcome
+still_open
+artifact_refs
+~~~
+
+Locked result_status:
+
+~~~text
+CONFIRMED_RESULT
+UNCONFIRMED_RESULT
+NO_CHANGE
+CANCELLED
+~~~
+
+Jika reconciliation conflict secara material:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+Ini ialah reconciliation outcome, bukan user-confirmed semantic outcome.
+
+### 19.7 User Confirmation Boundary
+
+ZASSELECTION:
+
+~~~text
+AI recommendation
+→ UNCONFIRMED_RESULT
+→ bukan user decision
+
+User explicitly selects
+→ CONFIRMED_RESULT
+→ boleh menjadi confirmed semantic outcome
+~~~
+
+ZASSIMPLE:
+
+~~~text
+draft architecture
+→ UNCONFIRMED_RESULT
+→ bukan confirmed continuity truth
+
+user explicitly confirms architecture
+→ CONFIRMED_RESULT
+→ boleh menjadi confirmed semantic outcome
+~~~
+
+> **AI-generated artifact ≠ user-confirmed outcome.**
+
+### 19.8 No Double Confirmation
+
+Jika user sudah memberi confirmation yang jelas di dalam receiving method, CONFIRMED_RESULT tidak memerlukan confirmation kedua hanya kerana result kembali ke ZASSPILL.
+
+Persistence tetap tertakluk kepada revision, idempotency dan concurrency contract Phase 3.
+
+### 19.9 Applying Method Results
+
+CONFIRMED_RESULT:
+- boleh menghasilkan proposed semantic mutation;
+- mesti melalui expected_revision / reconciliation;
+- simpan concise confirmed meaning + method lineage + relevant artifact refs.
+
+UNCONFIRMED_RESULT:
+- tidak menjadi confirmed user truth;
+- boleh kekal sebagai draft/reference;
+- tidak boleh menutup open item sebagai keputusan user.
+
+NO_CHANGE:
+- tiada semantic mutation diperlukan.
+
+CANCELLED:
+- handoff ditutup tanpa memaksa outcome.
+
+### 19.10 Cross-Method Concurrency
+
+Jika source revision masih current:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 12
+→ SAFE_TO_APPLY
+~~~
+
+Jika source telah bergerak:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 14
+→ RECONCILE
+~~~
+
+Jika compatible, reload current record dan propose mutation terhadap latest revision.
+
+Jika materially conflicting:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+dan:
+
+- jangan overwrite current state;
+- jangan create revision baru untuk stale conflicting result;
+- jangan last-write-wins;
+- minta user clarification apabila semantic authority diperlukan.
+
+### 19.11 Thread Lineage ≠ Method Lineage
+
+Thread lineage:
+
+~~~text
+split_from
+merged_from
+merged_into
+~~~
+
+Method lineage:
+
+~~~text
+handoff_id
+source_method
+target_method
+source_revision
+result_status
+~~~
+
+DECIDE atau DESIGN handoff tidak mencipta split_from, merged_from atau merged_into.
+
+### 19.12 Chained Method Transitions
+
+Jika user selesai DECIDE kemudian mahu DESIGN:
+
+~~~text
+ZASSPILL
+   ↓ ho_001
+ZASSELECTION
+   ↓ result + reconcile
+ZASSPILL
+   ↓ ho_002
+ZASSIMPLE
+~~~
+
+Gunakan dua handoff berasingan walaupun UX berjalan dalam chat yang sama.
+
+Jangan bypass continuity authority dengan direct semantic ownership transfer ZASSELECTION → ZASSIMPLE tanpa return/reconcile boundary.
+
+### 19.13 Minimal Context Forwarding
+
+Receiving method hanya menerima context yang diperlukan.
+
+Bawa minimum:
+
+~~~text
+thread_id
+source_revision
+current relevant state
+relevant matters
+relevant open items
+necessary method/thread lineage
+explicit transition choice
+~~~
+
+Jangan forward secara default:
+
+- seluruh transcript;
+- seluruh provider profile;
+- semua thread user;
+- unrelated personal context;
+- full artifact daripada method sebelumnya apabila concise outcome cukup.
+
+### 19.14 Artifact Isolation
+
+Detailed method artifacts kekal di artifact layer.
+
+Contoh:
+
+~~~text
+confirmed_outcome:
+Option B selected
+
+artifact_ref:
+selection_matrix_xyz
+~~~
+
+atau:
+
+~~~text
+confirmed_outcome:
+architecture confirmed
+
+artifact_ref:
+ARCHITECTURE.md
+~~~
+
+Continuity menyimpan meaning + lineage + relevant reference, bukan salinan penuh artifact.
+
+> **Continuity remembers the meaning and lineage; method artifacts preserve the detailed work.**
+
+### 19.15 Method-Version Metadata
+
+Portable Packet dan cross-method machine metadata mesti melaporkan active method version semasa.
+
+~~~yaml
+method: ZASSPILL
+method_version: 0.5.0
+~~~
+
+Packet baru yang dieksport oleh release semasa mesti menggunakan version method semasa.
+
+### 19.16 Phase 5 Proof
+
+Consolidated field test Phase 5 lulus bagi:
+
+~~~text
+Stable thread identity                 PASS
+Separate handoff identities            PASS
+Source revision preserved              PASS
+ZASSELECTION ownership boundary        PASS
+ZASSIMPLE ownership boundary           PASS
+AI recommendation ≠ user truth         PASS
+Confirmed decision → continuity        PASS
+Draft architecture ≠ user truth        PASS
+Confirmed architecture → continuity    PASS
+No double confirmation                 PASS
+Artifact isolation                     PASS
+Thread lineage unchanged               PASS
+Method lineage preserved               PASS
+Stale method result blocked            PASS
+METHOD_RESULT_DIVERGENCE                PASS
+No last-write-wins                     PASS
+Provider-memory isolation              PASS
+~~~
+
+Field test membuktikan satu thread_id kekal merentas DECIDE dan DESIGN, recommendation/draft AI kekal unconfirmed sehingga user mengesahkan, confirmed result boleh kembali tanpa confirmation kedua, artifact tidak disalin penuh ke continuity, dan stale conflicting method result tidak boleh overwrite current semantic state.
+
+Method Result Envelope dikunci semasa final audit berdasarkan behavior yang telah dibuktikan.
+
+Behavioral proof, method ownership, confirmation authority, result isolation, artifact isolation, revision reconciliation, thread/method lineage separation, Phase 3 compatibility, Phase 4 compatibility dan privacy boundary semuanya lulus.
+
+> **ZASSPILL v0.5.0 Phase 5 dibekukan. Cross-Method Continuity contract di atas ialah authority Phase 5. Feature baharu masuk Phase 6 atau version kemudian; hanya critical fixes patut mengubah release ini.**
