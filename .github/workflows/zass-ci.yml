@@ -1,0 +1,58 @@
+name: ZASS CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zass-check:
+    name: zass-check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run ZASS CLI tests
+        run: npm --prefix cli test
+
+      - name: Resolve historical baseline
+        id: baseline
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASELINE_REF="${{ github.event.pull_request.base.sha }}"
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            BEFORE="${{ github.event.before }}"
+            if [[ -n "$BEFORE" && ! "$BEFORE" =~ ^0+$ ]]; then
+              BASELINE_REF="$BEFORE"
+            elif git rev-parse HEAD^ >/dev/null 2>&1; then
+              BASELINE_REF="$(git rev-parse HEAD^)"
+            else
+              BASELINE_REF="$(git rev-parse HEAD)"
+            fi
+          elif git rev-parse HEAD^ >/dev/null 2>&1; then
+            BASELINE_REF="$(git rev-parse HEAD^)"
+          else
+            BASELINE_REF="$(git rev-parse HEAD)"
+          fi
+
+          git cat-file -e "${BASELINE_REF}^{commit}"
+          echo "baseline_ref=$BASELINE_REF" >> "$GITHUB_OUTPUT"
+          echo "ZASS baseline: $BASELINE_REF"
+
+      - name: Run ZASS validator
+        run: node cli/bin/zass.js check --baseline "${{ steps.baseline.outputs.baseline_ref }}"
