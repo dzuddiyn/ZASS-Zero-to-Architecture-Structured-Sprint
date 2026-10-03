@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.9 (global language-surface routing; core decision semantics unchanged)
-**ZASS SYSTEM:** v0.1.2
+**ZASS SYSTEM:** v0.2.0
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -18,13 +18,15 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — v0.3.9
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.0
 
-Full ZASS is aligned with **ZASS SYSTEM v0.1.3** so users and AI can detect system-level UI/UX changes, not only method-semantics changes.
+Full ZASS is aligned with **ZASS SYSTEM v0.2.0** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
 
 When Full ZASS is used through ZASS SYSTEM:
 
-- the top-level entry model is **DECIDE or DESIGN?**;
+- the top-level entry model is **DUMP / DECIDE / DESIGN**;
+- DUMP routes to ZASSPILL for continuity-first conversation without premature structure;
+- DECIDE routes to ZASSELECTION;
 - DESIGN starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
 - the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
 - the UI/AI should **present only the next meaningful human action**;
