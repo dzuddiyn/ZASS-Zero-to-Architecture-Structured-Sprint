@@ -34,7 +34,7 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
 - [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
-- [ZASSPILL](ZASSPILL.md) — Phase 1 portable DUMP continuity across chats and AIs.
+- [ZASSPILL](ZASSPILL.md) — production-ready DUMP continuity across chats and AIs.
 - [Advanced Reviews](Advanced-Reviews.md) — optional lenses for challenging an idea.
 - [Productization & zass check](Productization-and-zass-check.md) — current tooling roadmap.
 - [Infographics](Infographics.md) — archived visual references.
@@ -58,11 +58,11 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.1.3 |
+| ZASS SYSTEM | v0.2.0 — DUMP / DECIDE / DESIGN |
 | Full ZASS | v0.3.9 |
 | ZASSIMPLE | v0.3.0 |
-| ZASSELECTION | v0.2.1 |
-| ZASSPILL | v0.1.0 — Phase 1 core proof |
+| ZASSELECTION | v0.2.2 |
+| ZASSPILL | v1.0.0 — PRODUCTION READY |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |
@@ -74,10 +74,10 @@ Research follows candidate formation, not idea capture. Research findings return
 | Start casually and turn ideas into domain-appropriate design | **ZASSIMPLE** |
 | Deep decision/evidence/architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
-| Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |
+| Portable DUMP continuity across chats/AIs | **ZASSPILL** |
 | Track persistent implementation work | **ACTION PLAN** |
 
-Most users should start with **ZASSIMPLE**, not Full ZASS.
+Use the global intent routes: **DUMP → ZASSPILL**, **DECIDE → ZASSELECTION**, **DESIGN → ZASSIMPLE**. Full ZASS remains an escalation path when stronger governance is needed.
 
 ## Source of Truth
 
