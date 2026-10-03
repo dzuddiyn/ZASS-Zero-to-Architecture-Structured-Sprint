@@ -152,7 +152,7 @@ AI-SYNC Web should prefer five stable surfaces.
 
 ### 5.1 Landing
 
-`DECIDE or DESIGN?` routes to ZASSELECTION or ZASSIMPLE.
+`DUMP / DECIDE / DESIGN` routes DUMP → ZASSPILL, DECIDE → ZASSELECTION, and DESIGN → ZASSIMPLE.
 
 ### 5.2 Workspace
 
@@ -410,7 +410,7 @@ stabilize validator/core contracts
         ↓
 AI-SYNC Web uses the same semantics
         ↓
-implement DECIDE or DESIGN? landing
+implement DUMP / DECIDE / DESIGN landing
         ↓
 project workspace + contextual cards
         ↓
@@ -444,7 +444,7 @@ Current baseline:
 
 ```text
 ZASS SYSTEM v0.2.0
-DECIDE or DESIGN?
+DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
 ```
