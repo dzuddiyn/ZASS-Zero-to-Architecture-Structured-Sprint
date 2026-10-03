@@ -1,4 +1,4 @@
-# ZASS CLI — v0.2 validator
+# ZASS CLI — v0.2.1 validator
 
 This directory contains the first productized ZASS validator.
 
@@ -15,6 +15,14 @@ Then run from a ZASS project directory:
 ```bash
 zass check
 ```
+
+For CI or another commit-to-commit comparison, provide the historical Git baseline explicitly:
+
+```bash
+zass check --baseline <git-ref>
+```
+
+The default remains `HEAD`, preserving the existing local working-tree behavior. `--baseline` changes only the historical source used by the existing Z101 LOCKED-drift rule; it does not introduce a second rule engine.
 
 Direct execution also works without global linking:
 
@@ -41,7 +49,7 @@ Warnings do not fail the command. Validation errors return exit code `1`; CLI/ru
 
 ## Intentionally deferred
 
-v0.2 does not implement npm publication, `zass status`, `zass diff`, ACTION_PLAN snapshot drift, remote URL checking, `.zass/schema.yml`, GitHub Actions, dashboards, SaaS services, or AI semantic comparison.
+v0.2.1 does not implement npm publication, `zass status`, `zass diff`, ACTION_PLAN snapshot drift, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, or AI semantic comparison. GitHub Actions orchestration is now provided by the repository workflow, while validator semantics remain in this CLI.
 
 See [`../docs/CR010_ZASS_CHECK_SPEC.md`](../docs/CR010_ZASS_CHECK_SPEC.md) for the locked implementation plan.
 
