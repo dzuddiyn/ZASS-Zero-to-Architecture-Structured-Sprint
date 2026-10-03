@@ -37,7 +37,7 @@ node /path/to/repo/cli/bin/zass.js check
 | Z000 | Required `ZASS.md` discovery | ERROR when missing |
 | Z001 | Duplicate recognized record IDs in `ZASS.md` | ERROR |
 | Z002 | Malformed recognized record IDs in record-definition positions | ERROR |
-| Z003 | Broken relative Markdown/file references in discovered project files | ERROR |
+| Z003 | Broken relative inline or reference-style Markdown/file references in discovered project files | ERROR |
 | Z004 | Evidence Confidence pairing at Full-ZASS architecture assessment points | WARNING |
 | Z005 | High-signal possible secret/sensitive-value patterns | WARNING |
 | Z100 | Git history unavailable / no committed ZASS baseline | WARNING |
