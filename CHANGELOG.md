@@ -3,6 +3,18 @@
 All notable changes to ZASS are recorded here.
 
 
+## [CR-010 v0.3 STOP / REVIEW gate] — 2026-10-03
+
+- Completed the required post-implementation review of zass-cli v0.3.0 before any v0.4 work.
+- Re-ran the canonical 46-test suite and repository consistency guard successfully.
+- Reconfirmed Small Farm Planner and Kerani_Core current-state checks at 0 errors / 0 warnings.
+- Reconfirmed real-project mutation behavior for Z201, Z202, Z203, and Z204; isolated fixture behavior for conservative Z205.
+- Confirmed conservative non-inference when progress/status/source fields are absent and when blocker prose lacks parseable IDs.
+- Found no material false positive or false negative requiring a v0.3.x patch.
+- CR-010 v0.3 is CLOSED / PASS at its STOP/review gate.
+- Optional Z206 remains deferred; CR-010 v0.4 is NOT STARTED and requires a separate explicit implementation decision.
+
+
 ## [ZASS CLI v0.3.0 — CR-010 ACTION_PLAN consistency] — 2026-10-03
 
 - Implemented the locked CR-010 v0.3 ACTION_PLAN consistency phase without changing ZASS method or ZASS SYSTEM semantics.
