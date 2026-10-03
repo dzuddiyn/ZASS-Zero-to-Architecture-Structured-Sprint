@@ -50,6 +50,57 @@ test('QA-003 resolves a valid local Markdown link containing balanced parenthese
   assert.ok(codes(report, 'pass').includes('Z003'));
 });
 
+test('QA-007 detects a broken explicit reference-style local Markdown link', async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'zass-link-reference-broken-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  await fs.writeFile(
+    path.join(dir, 'ZASS.md'),
+    '# Test project\n\nSee [documentation][design].\n\n[design]: docs/missing.md\n',
+    'utf8'
+  );
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 1);
+  assert.ok(codes(report, 'error').includes('Z003'));
+});
+
+test('QA-007 resolves a valid explicit reference-style local Markdown link', async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'zass-link-reference-valid-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  await fs.mkdir(path.join(dir, 'docs'));
+  await fs.writeFile(path.join(dir, 'docs', 'design.md'), '# Design\n', 'utf8');
+  await fs.writeFile(
+    path.join(dir, 'ZASS.md'),
+    '# Test project\n\nSee [documentation][design].\n\n[design]: docs/design.md\n',
+    'utf8'
+  );
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(!codes(report, 'error').includes('Z003'));
+  assert.ok(codes(report, 'pass').includes('Z003'));
+});
+
+test('QA-007 resolves a valid shortcut reference-style local Markdown link', async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'zass-link-reference-shortcut-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  await fs.mkdir(path.join(dir, 'docs'));
+  await fs.writeFile(path.join(dir, 'docs', 'design.md'), '# Design\n', 'utf8');
+  await fs.writeFile(
+    path.join(dir, 'ZASS.md'),
+    '# Test project\n\nSee [design].\n\n[design]: docs/design.md\n',
+    'utf8'
+  );
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(!codes(report, 'error').includes('Z003'));
+  assert.ok(codes(report, 'pass').includes('Z003'));
+});
+
 test('valid fixture passes all v0.1 checks', async () => {
   const report = await runCheck(fixture('valid'));
   assert.equal(report.exitCode, 0);
