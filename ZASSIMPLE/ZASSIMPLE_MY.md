@@ -366,12 +366,6 @@ Selepas benar-benar mengemas kini fail, AI mesti menyatakan secara ringkas apa y
 
 AI boleh mencadangkan `PROCEED/LOCK` apabila sesuatu `AC` telah menjadi jelas atau disokong oleh persetujuan berulang. AI boleh mencadangkan `SAVE` apabila perubahan sudah cukup bermakna untuk menjadi checkpoint. `LOCK` / `COMMIT` kekal compatible, dan semua protected action masih memerlukan arahan jelas daripada pemilik.
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
