@@ -175,10 +175,11 @@ requireText('Roadmap GitHub Action DONE', productRoadmap, /Add a GitHub Action t
 requireText('Wiki shared validator operational', productWiki, /The same validator now powers both:/);
 
 const scannedFiles = await walk(root);
+const localExecutionMarker = '[executed on ' + 'device:';
 const markerHits = [];
 for (const file of scannedFiles) {
   const text = await fs.readFile(file, 'utf8');
-  if (text.includes('[executed on device:')) {
+  if (text.includes(localExecutionMarker)) {
     markerHits.push(path.relative(root, file));
   }
 }
