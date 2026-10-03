@@ -3,6 +3,17 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-008 — repository consistency guard] — 2026-10-03
+
+- Quality-track preventive guard; no ZASS method or ZASS SYSTEM version bump.
+- Added `quality/check-repo-consistency.mjs` as a repository-maintenance check separate from `zass check`.
+- Guarded current Full ZASS / ZASS SYSTEM / ZASSIMPLE / ZASSELECTION / ZASSPILL version parity across selected current-facing surfaces.
+- Guarded ZASSPILL method/protocol production-readiness wording, AI-SYNC Method Gateway T-013A/T-013B current-state agreement, GitHub CI operational-state agreement, and accidental local execution metadata.
+- Added the consistency guard as a separate GitHub Actions step; Z001–Z101 semantics remain owned by the CLI validator.
+- Closed remaining broad ZASSPILL production wording in root/Wiki current-status surfaces discovered while constructing the guard.
+- No routing, method semantics, or architecture boundaries changed.
+
+
 ## [QA-007 — reference-style Markdown link validation] — 2026-10-03
 
 - Quality-track validator robustness update; no ZASS method or ZASS SYSTEM version bump.
