@@ -1,36 +1,32 @@
 # ZASS SYSTEM — Default Landing & Escalation Working Direction
 
-**ZASS SYSTEM version:** 0.1.3  
+**ZASS SYSTEM version:** 0.2.0  
 **Status:** LOCKED WORKING DIRECTION  
-**Date:** 2026-10-02  
+**Date:** 2026-10-03  
 **Owner:** Project Owner  
 **Scope:** Product entry flow and future ZASSIMPLE → Full ZASS escalation contract
 
-> **DECIDE or DESIGN?** is the ZASS SYSTEM entry mental model. ZASSELECTION handles DECIDE; ZASSIMPLE is the default DESIGN entry; Full ZASS is an escalation path, not the default burden.
+> **DUMP / DECIDE / DESIGN** is the ZASS SYSTEM entry mental model. ZASSPILL handles DUMP, ZASSELECTION handles DECIDE, ZASSIMPLE handles DESIGN, and Full ZASS remains an escalation path rather than the default burden.
 
-## 1. Default landing mental model — DECIDE or DESIGN?
+## 1. Default landing mental model — DUMP / DECIDE / DESIGN
 
 The locked entry mental model for the ZASS SYSTEM is:
 
-> **DECIDE or DESIGN?**
+> **DUMP / DECIDE / DESIGN**
 
 The landing page should ask what the user is trying to do, rather than asking them to choose a ZASS method by name.
 
 ```text
 ZASS SYSTEM
     ↓
-DECIDE or DESIGN?
+What do you need right now?
     │
-    ├── DECIDE
-    │      ↓
-    │  ZASSELECTION
-    │
-    └── DESIGN
-           ↓
-       ZASSIMPLE
-           ↓
-    Full ZASS when needed
+    ├── DUMP   → ZASSPILL
+    ├── DECIDE → ZASSELECTION
+    └── DESIGN → ZASSIMPLE → Full ZASS when needed
 ```
+
+**DUMP** is for open-ended continuity: talking, unloading context, exploring, or continuing a thread before the user is ready to choose or design.
 
 **DECIDE** is for selecting between alternatives or making a structured life/product choice.
 
@@ -115,7 +111,7 @@ The exact wording, thresholds, and trigger rules remain future contract work.
 
 LOCKED product direction:
 
-> **DECIDE or DESIGN?**
+> **DUMP / DECIDE / DESIGN**
 
 > **Route by user intent, not by framework knowledge.**
 
@@ -123,24 +119,22 @@ LOCKED product direction:
 
 > **Language routing:** conversation language may follow the user, while structured method UI follows the active EN/MY method file. Malay availability is notified once from English files; switching is never automatic.
 
-This keeps ZASS lightweight at entry: DECIDE routes to ZASSELECTION, DESIGN routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
+This keeps ZASS lightweight at entry: DUMP routes to ZASSPILL, DECIDE routes to ZASSELECTION, DESIGN routes to ZASSIMPLE, and Full ZASS appears only when stronger governance is justified.
 
 ## 6. Current sequencing
 
 Current sequence is:
 
 ```text
-lock DECIDE or DESIGN? entry model
+promote DUMP / DECIDE / DESIGN global entry ✅
         ↓
-stabilize ZASSIMPLE
+integrate DUMP → ZASSPILL v1.0 through AI-SYNC/ASC
         ↓
-field-test ZASSIMPLE on Temaya
+field-test the three-intent landing UX
         ↓
-observe escalation signals
+continue observing ZASSIMPLE → Full ZASS escalation signals
         ↓
-define notification / escalation contract
-        ↓
-validate transition UX to Full ZASS
+define / validate the escalation notification contract
 ```
 
 The future landing-page implementation itself is not started by this decision. This document only locks the product routing model.
@@ -167,7 +161,7 @@ The detailed locked UI/UX contract is documented in [ZASS_SYSTEM_UI_UX_CONTRACT.
 
 The following lessons are promoted from ZASSIMPLE into ZASS SYSTEM product direction:
 
-- DUMP/chat-first entry inside the DESIGN path;
+- DUMP/chat-first as a first-class ZASSPILL entry; DESIGN remains conversational through ZASSIMPLE;
 - progressive disclosure of internal lineage;
 - compact current-stage + next-stage Project Pulse;
 - contextual Ready-to-Lock, Design Forming, Escalation, Current Task, and Delivered cards;
