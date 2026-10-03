@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-006 — LOCKED decision title semantics] — 2026-10-03
+
+- Quality-track validator contract clarification; no ZASS method or ZASS SYSTEM version bump.
+- Defined the semantic decision heading/title as part of the authority-bearing LOCKED decision record.
+- Z101 now compares normalized title + normalized body, so semantic title-only changes are detected while presentation-only title formatting remains allowed.
+- Added regression coverage for semantic title drift and formatting-only title changes.
+- Updated the CR-010 v0.2 specification and CLI documentation to match the implemented contract.
+- No routing or architecture boundaries changed.
+
+
 ## [QA-005 — current truth and claim precision] — 2026-10-03
 
 - Quality-track documentation/claim synchronization only; no ZASS method or ZASS SYSTEM version bump.
