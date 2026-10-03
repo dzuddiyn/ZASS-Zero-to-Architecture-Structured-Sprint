@@ -109,10 +109,13 @@ Normalize only presentation differences such as:
 
 The comparison must preserve substantive fields such as:
 
+- decision ID and semantic heading/title;
 - decision statement;
 - explicit state;
 - decision drivers/reason where they are part of the canonical record;
 - consequences/revisit trigger when present.
+
+The heading/title is authority-bearing because it is part of the visible decision record. Presentation-only title formatting may be normalized, but a semantic title change must trigger the same Z101 protection as a substantive body change.
 
 Do not normalize away wording that could change the meaning.
 
