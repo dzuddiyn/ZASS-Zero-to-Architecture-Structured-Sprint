@@ -30,8 +30,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Specify `zass check`. **DONE — locked in `docs/CR010_ZASS_CHECK_SPEC.md`**
 - Build the `zass check` MVP. **DONE — local v0.1 implemented under `cli/`**
 - CR-010 v0.2 Git-aware LOCKED drift. **DONE — implemented under `cli/`; specification in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`**
-- Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
-- CR-010 v0.3 ACTION_PLAN consistency plan. **LOCKED — `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; implementation NOT STARTED**
+- Field-test v0.2 on real ZASS projects before considering v0.3. **DONE — Kerani_Core field proof passed with CLI v0.2.2; unchanged project 0 errors/0 warnings and deliberate D-037 LOCKED drift triggers Z101**
+- CR-010 v0.3 ACTION_PLAN consistency plan. **NEXT — plan LOCKED in `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; v0.2 field gate satisfied; implementation NOT STARTED**
 - ZASS SYSTEM default landing / escalation direction. **LOCKED + PROMOTED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS remains DESIGN escalation**
 - ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.2.0; global DUMP / DECIDE / DESIGN routing; local tooling remains first-class and AI-SYNC Web remains UX/automation projection over the same authority and validator semantics**
 - Global EN/MY method-surface routing. **LOCKED — conversation language may differ from method-file language; structured surfaces follow the active EN/MY file; Malay companion notice is one-time and non-switching; canonical IDs/commands remain stable**
