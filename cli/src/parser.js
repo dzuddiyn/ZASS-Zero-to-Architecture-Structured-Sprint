@@ -281,5 +281,8 @@ export function extractDecisionState(markdown) {
 }
 
 export function sameDecisionContent(a, b) {
-  return Boolean(a && b && a.body === b.body);
+  if (!a || !b) return false;
+
+  const sameTitle = normalizeDecisionText(a.title || '') === normalizeDecisionText(b.title || '');
+  return sameTitle && a.body === b.body;
 }

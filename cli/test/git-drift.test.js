@@ -155,6 +155,30 @@ test('v0.2 ignores formatting-only decision changes', async (t) => {
   assert.ok(has(report, 'pass', 'Z101'));
 });
 
+test('QA-006 errors when a LOCKED decision title changes semantically', async (t) => {
+  const dir = await makeRepo(baseline());
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const changedTitle = baseline().replace('## D-001 — Storage', '## D-001 — Cloud storage');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), changedTitle, 'utf8');
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 1);
+  assert.ok(has(report, 'error', 'Z101', 'modified: D-001'));
+});
+
+test('QA-006 ignores presentation-only formatting changes in a LOCKED decision title', async (t) => {
+  const dir = await makeRepo(baseline());
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const formattedTitle = baseline().replace('## D-001 — Storage', '## D-001 — **Storage**');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), formattedTitle, 'utf8');
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(has(report, 'pass', 'Z101'));
+});
+
 test('v0.2 errors when a LOCKED decision is modified', async (t) => {
   const dir = await makeRepo(baseline());
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
