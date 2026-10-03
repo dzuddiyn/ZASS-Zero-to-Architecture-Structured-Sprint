@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 3 — Project Workspace + Contextual Cards Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION PENDING  
+**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 3 only — project workspace, progressive disclosure, contextual cards, and Project Pulse
@@ -194,20 +194,33 @@ COMPLETED
 
 The card is a projection of that explicit state only; Gate 3 does not redefine the method's closure requirements.
 
-## 5. Current implementation gap
+## 5. Implementation + deployment evidence
 
-Canonical AISYNC production currently opens project detail as a single technical wall containing:
+AISYNC Gate 3 is now implemented and production-deployed.
 
-- commit-linked CI;
-- progress bar;
-- progress summary;
-- next action summary;
-- next stage summary;
-- full Action Plan table;
-- full ZASS table;
-- full History table.
+Canonical implementation evidence:
+- AISYNC PR #18 merged as `3d006eb4bde64ab9cca9878c0ca4e9c69db4dbf9`;
+- project detail now opens on **Workspace** by default;
+- explicit **Workspace / Review / History** controls provide progressive disclosure;
+- Workspace shows a compact **Project Pulse** and **Continue naturally → ASC Front Door**;
+- contextual cards are selected only from explicit factual indexed state;
+- `STALE` project-index state suppresses Current Task / decision-currentness claims and shows a refresh warning;
+- Review contains commit-linked CI, current-state evidence, Action Plan, and ZASS/project records;
+- History contains the factual audit trail separately;
+- internal `AP-xxx` / `D-xxx` IDs are absent from default Workspace;
+- no write operation, validator rule logic, method-semantic inference, or automatic Full-ZASS migration was added;
+- all **26** AISYNC repository `test-*.mjs` files PASS from the T-017-inclusive baseline;
+- `git diff --check` PASS.
 
-This proves the data exists but does not satisfy Gate 3 progressive-disclosure UX.
+Production deployment evidence:
+- protected production Apps Script deployment is **version 23**, `Gate3-project-workspace-contextual-cards`;
+- v23 was constructed from immutable Gate 2 production v21 plus exactly `Dashboard.html` and `DashboardClient.html`;
+- independent post-deploy pull verified both files match Gate 3 merge `3d006eb4...`;
+- every other production file in v23 matches production v21;
+- the separate current development HEAD containing T-017 was restored after release and was not promoted as part of Gate 3;
+- AISYNC deployment receipt PR #19 merged as `ca2b690c95f896fc6a2e7c2a4cb80a178fc6a9a8`.
+
+The remaining Gate 3 acceptance evidence is owner-visible production verification.
 
 ## 6. Required implementation shape
 
@@ -237,20 +250,17 @@ Internal IDs stay hidden in Workspace but may remain visible in Review/History.
 
 ## 7. Production evidence required to close Gate 3
 
-Gate 3 closes only after:
+Gate 3 closure items 1–5 are now satisfied by merged, tested, and versioned production evidence.
 
-1. source implementation is merged;
-2. relevant AISYNC regression tests pass;
-3. existing Gate 2 route tests still pass;
-4. no new write operation is introduced;
-5. production Apps Script deployment contains the Gate 3 workspace patch;
-6. owner-visible production proof confirms:
-   - project opens on Workspace;
-   - Project Pulse is compact;
-   - Current Task or other eligible contextual card appears only when supported;
-   - Review reveals advanced project state;
-   - History reveals the audit trail separately;
-   - ordinary Workspace no longer shows the full technical wall.
+The only remaining closure item is owner-visible production proof confirming:
+- project opens on Workspace;
+- Project Pulse is compact;
+- the contextual-card area does not invent current state from STALE/sparse data;
+- Review reveals advanced project state;
+- History reveals the audit trail separately;
+- ordinary Workspace no longer shows the full technical wall.
+
+If those visible checks pass without a material regression, Gate 3 may be closed without another implementation patch.
 
 ## 8. Non-blockers
 
