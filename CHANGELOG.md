@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-001 — authority parser hardening] — 2026-10-03
+
+- Quality-track fix only; no ZASS method or ZASS SYSTEM version bump.
+- Fixed false authority classification where arbitrary visible prose containing both `D-xxx` and `LOCKED` / `SUPERSEDED` could affect Z101 state.
+- Decision-level state metadata is now recognized only from explicit `Status:` metadata, while ledger state is recognized from explicit `LOCKED DECISIONS` / `SUPERSEDED DECISIONS` list sections.
+- Preserved canonical `L-xxx / D-xxx — LOCKED` and explicit `Supersedes: D-xxx` behavior.
+- Added adversarial regression coverage for explanatory prose, canonical ledger state, and explicit status metadata.
+- Local verification: 22/22 CLI tests PASS; root `zass check` returns 0 errors.
+
+
 ## [ZASS GitHub CI operational proof] — 2026-10-03
 
 - LIVE PASS confirmed for `ZASS CI / zass-check` on merged `main` commit `13b9b267372ef9d18329ed5f88858dc04da3dfdc`.
