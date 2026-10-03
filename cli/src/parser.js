@@ -414,6 +414,34 @@ function extractCurrentVersion(visible) {
   return null;
 }
 
+function extractExplicitLedgerIds(visible) {
+  const ids = new Set();
+  let activeLevel = null;
+
+  for (const line of visible) {
+    const heading = line.text.match(/^(#{1,6})\s+(.+)$/);
+    if (heading) {
+      const label = stripInlineMarkdown(heading[2]).trim();
+      if (/\b(?:DECISION LEDGER|LOCKED RECORDS|LOCKED DECISIONS|SUPERSEDED DECISIONS)\b/i.test(label)) {
+        activeLevel = heading[1].length;
+        continue;
+      }
+
+      if (activeLevel !== null && heading[1].length <= activeLevel) {
+        activeLevel = null;
+      }
+    }
+
+    if (activeLevel === null) continue;
+
+    const plain = stripInlineMarkdown(line.text).trim();
+    if (!/^[-*+]\s+/.test(plain)) continue;
+    for (const id of extractCanonicalIds(plain)) ids.add(id);
+  }
+
+  return ids;
+}
+
 function extractCurrentCriticalBlockerIds(visible) {
   const ids = new Set();
 
@@ -456,11 +484,14 @@ export function extractZassProjectSnapshot(markdown) {
   }
 
   const definitions = extractRecordDefinitions(markdown);
+  const ids = new Set(definitions.records.map((record) => record.id));
+  for (const id of extractExplicitLedgerIds(visible)) ids.add(id);
+
   return {
     progress: readiness?.progress ?? null,
     status: readiness?.status ?? null,
     version: extractCurrentVersion(visible),
-    ids: new Set(definitions.records.map((record) => record.id)),
+    ids,
     criticalBlockerIds: extractCurrentCriticalBlockerIds(visible)
   };
 }
