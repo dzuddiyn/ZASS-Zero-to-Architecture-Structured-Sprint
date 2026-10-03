@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS CLI v0.2.1 / GitHub CI gate] — 2026-10-03
+
+- Added an optional `zass check --baseline <git-ref>` path so CI can compare a committed candidate against the correct historical Git baseline while reusing the existing Z001–Z101 validator semantics.
+- Preserved local behavior: without `--baseline`, Z101 still compares the working tree against `HEAD`.
+- Added the first repository GitHub Actions workflow, `ZASS CI / zass-check`, using full Git history, Node.js 20, the existing CLI test suite, and the same CLI validator.
+- Kept workflow permissions read-only and added no destination credentials or duplicate validation logic.
+- Added `docs/ZASS_GITHUB_CI_CONTRACT.md` as the cross-system boundary for future AISYNC T-012 consumption.
+- This change creates the CI candidate only; AISYNC T-012 remains blocked until a real commit-linked GitHub Actions run passes.
+
+
 ## [ZASS SYSTEM v0.2.0 / ZASSPILL v1.0.0 global DUMP promotion] — 2026-10-03
 
 - PROMOTED the released global ZASS SYSTEM entry model to **DUMP / DECIDE / DESIGN**.

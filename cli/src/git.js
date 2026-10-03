@@ -12,15 +12,24 @@ async function git(args, cwd) {
   });
 }
 
-export async function readGitBaseline(projectDir) {
+export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
   let gitRoot;
   let head;
+  let baseline;
+
+  if (typeof baselineRef !== 'string' || baselineRef.length === 0 || baselineRef.startsWith('-')) {
+    return { available: false, reason: 'Invalid Git baseline ref; LOCKED drift check skipped' };
+  }
 
   try {
     gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
     head = (await git(['rev-parse', 'HEAD'], projectDir)).stdout.trim();
+    baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
   } catch {
-    return { available: false, reason: 'Git history unavailable; LOCKED drift check skipped' };
+    return {
+      available: false,
+      reason: `Git history or baseline ref unavailable (${baselineRef}); LOCKED drift check skipped`
+    };
   }
 
   const zassPath = path.join(projectDir, 'ZASS.md');
@@ -31,15 +40,25 @@ export async function readGitBaseline(projectDir) {
   }
 
   try {
-    const historical = await git(['show', `HEAD:${relativeZass}`], projectDir);
-    return { available: true, gitRoot, head, relativeZass, content: historical.stdout };
+    const historical = await git(['show', `${baseline}:${relativeZass}`], projectDir);
+    return {
+      available: true,
+      gitRoot,
+      head,
+      baseline,
+      baselineRef,
+      relativeZass,
+      content: historical.stdout
+    };
   } catch {
     return {
       available: false,
       gitRoot,
       head,
+      baseline,
+      baselineRef,
       relativeZass,
-      reason: 'HEAD has no committed ZASS.md; LOCKED drift check skipped'
+      reason: `Baseline ${baselineRef} has no committed ZASS.md; LOCKED drift check skipped`
     };
   }
 }

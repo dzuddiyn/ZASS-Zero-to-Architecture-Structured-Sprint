@@ -10,8 +10,8 @@ function hasExplicitSupersedingPath(currentState, oldId) {
   return false;
 }
 
-export async function checkLockedDrift(projectRoot, currentContent) {
-  const baseline = await readGitBaseline(projectRoot);
+export async function checkLockedDrift(projectRoot, currentContent, baselineRef = 'HEAD') {
+  const baseline = await readGitBaseline(projectRoot, baselineRef);
 
   if (!baseline.available) {
     return [{

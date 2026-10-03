@@ -131,3 +131,22 @@ test('v0.2 warns when Git HEAD has no committed ZASS.md', async (t) => {
   assert.equal(report.exitCode, 0);
   assert.ok(has(report, 'warning', 'Z100', 'HEAD has no committed ZASS.md'));
 });
+
+
+test('v0.2.1 detects committed LOCKED drift against an explicit baseline ref', async (t) => {
+  const dir = await makeRepo(baseline());
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const baselineSha = git(dir, 'rev-parse', 'HEAD');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), baseline('Use cloud storage.'), 'utf8');
+  git(dir, 'add', 'ZASS.md');
+  git(dir, 'commit', '-m', 'change locked decision');
+
+  const defaultReport = await runCheck(dir);
+  assert.equal(defaultReport.exitCode, 0);
+  assert.ok(has(defaultReport, 'pass', 'Z101'));
+
+  const ciReport = await runCheck(dir, { baselineRef: baselineSha });
+  assert.equal(ciReport.exitCode, 1);
+  assert.ok(has(ciReport, 'error', 'Z101', 'modified: D-001'));
+});
