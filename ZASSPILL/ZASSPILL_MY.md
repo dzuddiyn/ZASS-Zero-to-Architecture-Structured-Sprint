@@ -46,7 +46,7 @@ Belum termasuk:
 - format machine thread ID;
 - penambahan global DUMP sebagai entry first-class.
 
-Entry global ZASS SYSTEM semasa ialah DECIDE or DESIGN?. DUMP / DECIDE / DESIGN masih target pilot ASC yang lebih luas.
+Nota sejarah Phase 1: exclusion itu terpakai pada v0.1.0. Bermula ZASSPILL v1.0.0 / ZASS SYSTEM v0.2.0, entry global rasmi ialah DUMP / DECIDE / DESIGN, dengan DUMP → ZASSPILL.
 
 ---
 
