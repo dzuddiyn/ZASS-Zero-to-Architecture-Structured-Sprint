@@ -29,10 +29,5 @@ These files support the method. Users should not need to manage them manually ju
 - [v0.2 Structure Renewal Plan](docs/ZASSIMPLE_V02_STRUCTURE_RENEWAL_PLAN.md)
 - [v0.3 DESIGN-first Working Direction](docs/ZASSIMPLE_V03_WORKING_DIRECTION.md)
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
