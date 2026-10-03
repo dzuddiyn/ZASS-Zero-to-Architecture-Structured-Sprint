@@ -1,6 +1,6 @@
 # ZASS AI Sync and Google Dashboard
 
-**Status:** Integration reference; AI-SYNC Web direction locked; Public Method Gateway implementation started in Multi AI-SYNC / ASC
+**Status:** Integration reference; AI-SYNC Web direction locked; Public Method Gateway T-013A/T-013B proof passed in AISYNC
 
 **Pilot scope:** Full ZASS workflow first
 
@@ -637,9 +637,9 @@ Implementation rules now locked in AI-SYNC:
 - protected sync and public read use separate Apps Script surfaces;
 - one sync run pins all three method snapshots to one exact GitHub commit;
 - no manual Markdown copy-paste is accepted as the normal sync flow;
-- exact production domain/URL remains intentionally unlocked until the proof passes.
+- the proven v0.1 public receiver surface is the AI-SYNC GitHub Pages Method Gateway; any future production-domain change remains a transport implementation concern.
 
-The gateway is **not yet accepted as operational**. ZASS method files must continue using the current bootstrap transport until T-013B proves public readability, especially in Gemini and Copilot.
+The v0.1 public Method Gateway is **operational for the proven read path**: T-013A protected GitHub→METHODS sync and T-013B public readability proof have passed, including direct Gemini/Copilot reads. GitHub remains the authoritative method Source of Truth, and receivers must use the exact gateway URL; if that URL cannot be fetched, they must report the failure rather than substitute another source as method authority.
 
 ---
 
@@ -660,4 +660,4 @@ The gateway is **not yet accepted as operational**. ZASS method files must conti
 
 ## 21. Current decision status
 
-The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. The AI-SYNC Public Method Gateway direction and its smallest implementation topology are now owner-locked. T-013A implementation has started in the AI-SYNC workstream, but the gateway is not yet accepted as operational until live sync plus public Gemini/Copilot readability tests pass. This document does not claim that the broader dashboard, Action, automation, or final production Method Gateway URL is complete.
+The full-ZASS-first direction, implementation order, and complete `ACTION_PLAN.md` Notion mirror for Phase A are owner-locked. GitHub remains authoritative and Notion remains read-only. Google Sheets / Google Sites for ZASSELECTION remain an architecture candidate to confirm only after the ZASS pilot is stable. The AI-SYNC Public Method Gateway direction and smallest implementation topology are owner-locked; T-013A and T-013B have passed for the v0.1 public read path. This document does not claim that the broader dashboard, Action, automation, private continuity transport, or any future production-domain migration is complete.
