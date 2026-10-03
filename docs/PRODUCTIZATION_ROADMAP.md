@@ -21,6 +21,7 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - Make CLI specification-vs-release status explicit. **DONE in v0.3.4**
 - Tighten PROCEED to approve exactly an explicitly listed proposal set. **DONE in v0.3.4**
 - Select a repository license. **DONE — MIT License**
+- Add a repository current-surface consistency guard without duplicating ZASS validator semantics. **DONE — `quality/check-repo-consistency.mjs`, enforced by ZASS CI**
 
 ## P1 — Implementation layer
 
