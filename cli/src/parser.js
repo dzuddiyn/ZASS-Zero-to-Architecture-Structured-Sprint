@@ -13,11 +13,23 @@ export function visibleMarkdownLines(markdown) {
     const trimmed = line.trimStart();
 
     if (!inComment) {
-      const fenceMatch = trimmed.match(/^(```+|~~~+)/);
+      const fenceMatch = trimmed.match(/^(`{3,}|~{3,})(.*)$/);
       if (fenceMatch) {
-        const marker = fenceMatch[1][0];
-        if (fence === null) fence = marker;
-        else if (fence === marker) fence = null;
+        const sequence = fenceMatch[1];
+        const marker = sequence[0];
+
+        if (fence === null) {
+          fence = { marker, length: sequence.length };
+          continue;
+        }
+
+        if (
+          fence.marker === marker &&
+          sequence.length >= fence.length &&
+          fenceMatch[2].trim().length === 0
+        ) {
+          fence = null;
+        }
         continue;
       }
     }
@@ -92,14 +104,53 @@ export function extractRecordDefinitions(markdown) {
   return { records, malformed };
 }
 
+function extractInlineLinkTargets(text) {
+  const targets = [];
+  const opener = /!?\[[^\]]*\]\(/g;
+  let match;
+
+  while ((match = opener.exec(text)) !== null) {
+    const contentStart = opener.lastIndex;
+    let depth = 1;
+    let escaped = false;
+    let cursor = contentStart;
+
+    for (; cursor < text.length; cursor += 1) {
+      const char = text[cursor];
+
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+      if (char === '\\') {
+        escaped = true;
+        continue;
+      }
+      if (char === '(') {
+        depth += 1;
+        continue;
+      }
+      if (char === ')') {
+        depth -= 1;
+        if (depth === 0) break;
+      }
+    }
+
+    if (depth !== 0) break;
+
+    targets.push(text.slice(contentStart, cursor));
+    opener.lastIndex = cursor + 1;
+  }
+
+  return targets;
+}
+
 export function extractMarkdownLinks(markdown) {
   const links = [];
-  const linkPattern = /!?(?:\[[^\]]*\])\(([^)]+)\)/g;
 
   for (const line of visibleMarkdownLines(markdown)) {
-    let match;
-    while ((match = linkPattern.exec(line.text)) !== null) {
-      let target = match[1].trim();
+    for (const rawTarget of extractInlineLinkTargets(line.text)) {
+      let target = rawTarget.trim();
       if (target.startsWith('<') && target.endsWith('>')) {
         target = target.slice(1, -1).trim();
       }
