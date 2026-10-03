@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 2 CLOSED / PASS] — 2026-10-04
+
+- Completed the final owner-visible production acceptance check for the DUMP / DECIDE / DESIGN landing gate.
+- Verified on the Google Sites ASC production surface that DUMP / DECIDE / DESIGN are visibly present.
+- Verified on the protected Apps Script production dashboard that the same three routes are visibly present.
+- Verified DUMP visibly renders `DUMP → ZASSPILL` plus the ASC Front Door action.
+- Verified DECIDE can be selected without error.
+- Verified DESIGN can be selected and renders the AISYNC project view without error.
+- Gate 2 is now CLOSED / PASS.
+- Promoted Gate 3 — Project Workspace + Contextual Cards — to CURRENT.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 2 production deployment receipt] — 2026-10-04
 
 - Recorded AISYNC Gate 2 three-route integration merge `f515a7d1379534501cd7a032563bfa968f8012ae`.
