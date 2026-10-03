@@ -1,4 +1,4 @@
-# ZASS CLI — v0.2.2 validator
+# ZASS CLI — v0.3.0 validator
 
 This directory contains the first productized ZASS validator.
 
@@ -42,16 +42,24 @@ node /path/to/repo/cli/bin/zass.js check
 | Z005 | High-signal possible secret/sensitive-value patterns | WARNING |
 | Z100 | Git history unavailable / no committed ZASS baseline | WARNING |
 | Z101 | Silent LOCKED-decision modification/removal | ERROR |
+| Z200 | ACTION_PLAN discovery / canonical snapshot availability | PASS or WARNING |
+| Z201 | ACTION_PLAN readiness progress mismatch | ERROR |
+| Z202 | ACTION_PLAN readiness status mismatch | ERROR |
+| Z203 | ACTION_PLAN stale ZASS source version | ERROR |
+| Z204 | Missing explicitly referenced ZASS ID | ERROR |
+| Z205 | Conservative blocker inconsistency | WARNING |
 
 Z001 treats canonical headings and table-row ID positions as primary record definitions. Bold list entries used as summaries, ledgers, indexes, or D→L references do not become duplicate definitions merely by repeating an existing ID; decision authority is parsed separately from explicit Status/LOCKED-record structures.
 
 Z100/Z101 are the CR-010 v0.2 Git-aware drift checks. They compare the current `ZASS.md` with the version at Git `HEAD` without modifying the worktree. For a LOCKED decision, the semantic heading/title and normalized body are authority-bearing; presentation-only formatting is normalized. An explicit `Supersedes: D-xxx` relation may authorize a replacement path when the old decision record is preserved.
 
+Z200–Z205 are the CR-010 v0.3 ACTION_PLAN consistency checks. `ZASS.md` remains authoritative; `ACTION_PLAN.md` is optional and is treated only as an execution/readiness snapshot. v0.3 compares explicit snapshot fields and explicit ZASS-ID relationships; it does not recalculate architecture readiness or infer semantic equivalence.
+
 Warnings do not fail the command. Validation errors return exit code `1`; CLI/runtime misuse returns `2`.
 
 ## Intentionally deferred
 
-v0.2.2 does not implement npm publication, `zass status`, `zass diff`, ACTION_PLAN snapshot drift, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, or AI semantic comparison. GitHub Actions orchestration is now provided by the repository workflow, while validator semantics remain in this CLI.
+v0.3.0 does not implement npm publication, `zass status`, `zass diff`, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, AI semantic comparison, or the optional Z206 working-tree atomic-sync heuristic. GitHub Actions orchestration is now provided by the repository workflow, while validator semantics remain in this CLI.
 
 See [`../docs/CR010_ZASS_CHECK_SPEC.md`](../docs/CR010_ZASS_CHECK_SPEC.md) for the locked implementation plan.
 
