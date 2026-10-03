@@ -3,7 +3,7 @@
 > **Stay messy. Keep the context. Continue anywhere.**
 
 **Current version:** v1.0.0  
-**Status:** PRODUCTION READY — Phase 1–6 frozen  
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — Phase 1–6 frozen  
 **Default English:** [ZASSPILL_EN.md](ZASSPILL_EN.md)  
 **Bahasa Melayu:** [ZASSPILL_MY.md](ZASSPILL_MY.md)
 
@@ -52,7 +52,7 @@ Core capabilities include:
 
 ## Authority boundary
 
-ZASSPILL owns continuity meaning. ASC owns persistence, sync, retrieval implementation, authorization, and operational mechanics.
+ZASSPILL owns continuity meaning and defines the method/protocol contract. ASC owns the runtime persistence, sync, retrieval implementation, authorization, and operational mechanics. `PRODUCTION READY` in this repository refers to the frozen ZASSPILL method/protocol contract, not to a standalone runtime service implemented here.
 
 Provider memory/profile is outside portable continuity authority unless the user intentionally brings that context into the thread.
 
