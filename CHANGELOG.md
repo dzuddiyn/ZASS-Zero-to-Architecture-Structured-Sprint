@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-003 — parser robustness] — 2026-10-03
+
+- Quality-track parser hardening only; no ZASS method or ZASS SYSTEM version bump.
+- Fixed fenced-code handling so a shorter fence cannot close a longer opening fence; closing fences must use the same marker and at least the opening length.
+- Fixed local Markdown-link extraction for balanced parentheses in valid targets such as `docs/file_(draft).md`.
+- Added adversarial regression tests for both cases.
+- Local verification: 24/24 CLI tests PASS; root `zass check` returns 0 errors.
+- No validation-rule semantics or architecture boundaries changed.
+
+
 ## [QA-002 — current documentation truth] — 2026-10-03
 
 - Quality-track documentation alignment only; no ZASS method or ZASS SYSTEM version bump.
