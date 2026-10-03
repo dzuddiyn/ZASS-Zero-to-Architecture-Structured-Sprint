@@ -1,6 +1,6 @@
 # CR-010 — `zass check` Implementation Specification
 
-**Status:** v0.1 + v0.2 IMPLEMENTED
+**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED
 **Date:** 2026-09-30  
 **Owner:** Project Owner  
 **Scope:** First productized validator for ZASS
@@ -226,7 +226,7 @@ v0.1  current-file validator
 
 v0.2  Git-aware LOCKED drift
 
-v0.3  ACTION_PLAN consistency — PLAN LOCKED / NOT STARTED
+v0.3  ACTION_PLAN consistency — IMPLEMENTED / FIELD-VALIDATED
 
 v0.4  status / diff
 ```
@@ -266,4 +266,6 @@ Verification performed before commit:
 - secret-warning output redacts the matching value;
 - no npm publication, GitHub Action, `zass status`, `zass diff`, Git-aware LOCKED drift, or ACTION_PLAN snapshot drift was added.
 
-CR-010 v0.2 is **implemented**. Its locked specification is in [`CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md). v0.3 remains deferred until v0.2 has enough real-project field evidence.
+CR-010 v0.2 is **implemented**. Its locked specification is in [`CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md).
+
+CR-010 v0.3 is now **implemented and field-validated**. Its locked specification and implementation receipt are in [`CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`](CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md).
