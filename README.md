@@ -33,15 +33,15 @@ Continue with any AI
 
 The locked product entry model is:
 
-> **DECIDE or DESIGN?**
+> **DUMP / DECIDE / DESIGN**
 
 ```text
 ZASS SYSTEM
     ↓
-DECIDE or DESIGN?
+What do you need right now?
     │
+    ├── DUMP   → ZASSPILL
     ├── DECIDE → ZASSELECTION
-    │
     └── DESIGN → ZASSIMPLE → Full ZASS when needed
 ```
 
@@ -66,7 +66,7 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 **AI-SYNC Method Gateway:** cross-AI method readability is now a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth; AI-SYNC will sync identifiable snapshots and serve Markdown itself through a public read-only gateway. Implementation is in progress in the AI-SYNC workstream (T-013A → T-013B). Until the public endpoint passes Gemini/Copilot readability proof, existing GitHub links remain the bootstrap transport and no AI-SYNC method URL should be treated as operational.
 
 
-**ZASSPILL Phase 1:** v0.1.0 is **FROZEN — CORE PROOF PASSED**. The released global entry model remains **DECIDE or DESIGN?**; the broader ASC three-intent target **DUMP / DECIDE / DESIGN** is still not fully promoted globally.
+**ZASSPILL:** v1.0.0 is **PRODUCTION READY** after Phase 1–6 proof. **DUMP / DECIDE / DESIGN** is now the released global ZASS SYSTEM entry model: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
 
 ---
 
@@ -492,7 +492,7 @@ Its job is simple:
 | Start casually and turn ideas into domain-appropriate design | **ZASSIMPLE** |
 | Deep decision / evidence / architecture governance | **Full ZASS** |
 | Choose between alternatives | **ZASSELECTION** |
-| Portable messy-thought continuity across chats/AIs (Phase 1) | **ZASSPILL** |
+| Portable DUMP continuity across chats/AIs | **ZASSPILL** |
 | Track persistent implementation work | **ACTION PLAN** |
 
 You normally do **not** need all of them at the beginning.
@@ -501,11 +501,11 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.1.4 — DECIDE/DESIGN routing + global EN/MY method-surface routing + AI-SYNC public Method Gateway integration contract  
+**ZASS SYSTEM:** v0.2.0 — global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract  
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
 **ZASSIMPLE:** v0.3.0  
-**ZASSELECTION:** v0.2.1  
-**ZASSPILL:** v0.1.0 — Phase 1 standalone portable continuity core; not yet a global entry route  
+**ZASSELECTION:** v0.2.2  
+**ZASSPILL:** v1.0.0 — PRODUCTION READY; global DUMP continuity route  
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:
@@ -540,7 +540,7 @@ It includes:
 - ACTION PLAN
 - cross-AI handoff
 - ZASSELECTION
-- ZASSPILL Phase 1 continuity
+- ZASSPILL v1.0 continuity
 - advanced review methods
 - productization and `zass check`
 - Bahasa Melayu summary
