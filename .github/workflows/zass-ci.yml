@@ -11,8 +11,16 @@ permissions:
   contents: read
 
 jobs:
+  runner-probe:
+    name: runner-probe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm runner can execute
+        run: echo "GitHub Actions runner is executing"
+
   zass-check:
     name: zass-check
+    needs: runner-probe
     runs-on: ubuntu-latest
 
     steps:
