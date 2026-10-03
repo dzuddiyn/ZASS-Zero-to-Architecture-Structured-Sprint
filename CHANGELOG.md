@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS CLI v0.3.0 — CR-010 ACTION_PLAN consistency] — 2026-10-03
+
+- Implemented the locked CR-010 v0.3 ACTION_PLAN consistency phase without changing ZASS method or ZASS SYSTEM semantics.
+- Added Z200 optional ACTION_PLAN discovery/snapshot availability.
+- Added Z201 readiness-progress mismatch, Z202 readiness-status mismatch, Z203 stale source-version, Z204 explicit related-ZASS-ID existence, and conservative Z205 blocker inconsistency.
+- Kept ZASS.md authoritative: the validator compares explicit snapshot values only and does not recalculate architecture readiness or infer semantic equivalence.
+- Added compatibility for real project surfaces, including two-line readiness scores, alternate project ZASS source filenames, and explicit legacy Decision Ledger / LOCKED Records IDs for Z204 existence checks.
+- Automated suite: **46/46 PASS**.
+- Field validation: Small Farm Planner **0 errors / 0 warnings**; Kerani_Core **0 errors / 0 warnings**.
+- Deferred optional Z206 working-tree atomic-sync heuristic to avoid adding noisy Git-state inference before evidence justifies it.
+- CR-010 v0.3 stop gate reached; v0.4 is not started automatically.
+
+
 ## [ZASS CLI v0.2.2 — CR-010 field compatibility] — 2026-10-03
 
 - Field-use patch triggered by the required CR-010 v0.2 real-project gate; no ZASS method or ZASS SYSTEM version change.

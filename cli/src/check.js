@@ -5,6 +5,7 @@ import { checkLinks } from './rules/links.js';
 import { checkEvidenceConfidence } from './rules/evidence.js';
 import { checkSecrets } from './rules/secrets.js';
 import { checkLockedDrift } from './rules/drift.js';
+import { checkActionPlanConsistency } from './rules/action-plan.js';
 
 export async function runCheck(projectDir, options = {}) {
   const discovered = await discoverProject(projectDir);
@@ -22,7 +23,11 @@ export async function runCheck(projectDir, options = {}) {
   }
 
   const zassFile = discovered.files.find((file) => file.name === 'ZASS.md');
+  const actionPlanFile = discovered.files.find((file) => file.name === 'ACTION_PLAN.md');
   const zassContent = await fs.readFile(zassFile.path, 'utf8');
+  const actionPlanContent = actionPlanFile
+    ? await fs.readFile(actionPlanFile.path, 'utf8')
+    : null;
 
   results.push({ level: 'pass', code: 'Z000', message: 'ZASS.md found' });
   results.push(...checkIds(zassContent));
@@ -30,6 +35,7 @@ export async function runCheck(projectDir, options = {}) {
   results.push(...checkEvidenceConfidence(zassContent));
   results.push(...await checkSecrets(discovered.root, discovered.files));
   results.push(...await checkLockedDrift(discovered.root, zassContent, options.baselineRef));
+  results.push(...checkActionPlanConsistency(zassContent, actionPlanContent));
 
   return buildReport(discovered, results);
 }

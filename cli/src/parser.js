@@ -367,3 +367,238 @@ export function sameDecisionContent(a, b) {
   const sameTitle = normalizeDecisionText(a.title || '') === normalizeDecisionText(b.title || '');
   return sameTitle && a.body === b.body;
 }
+
+
+
+function normalizeReadinessStatus(text) {
+  return stripInlineMarkdown(text)
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toUpperCase();
+}
+
+function parseReadinessLine(text) {
+  const plain = stripInlineMarkdown(text).trim();
+  const match = plain.match(/(\d+(?:\.\d+)?)%\s*[—–-]\s*(.+?)\s*$/);
+  if (!match) return null;
+
+  return {
+    progress: Number(match[1]),
+    status: normalizeReadinessStatus(match[2])
+  };
+}
+
+function extractCanonicalIds(text) {
+  const ids = new Set();
+  for (const match of text.matchAll(/\b(?:AC|MR|I|Q|R|E|D|L)-\d{3}\b/gi)) {
+    ids.add(match[0].toUpperCase());
+  }
+  return [...ids];
+}
+
+function extractCurrentVersion(visible) {
+  const preferred = [
+    /^ZASS method baseline\s*:\s*(?:ZASS\s*)?v?(\d+\.\d+\.\d+)\b/i,
+    /^ZASS method\s*:\s*(?:ZASS\s*)?v?(\d+\.\d+\.\d+)\b/i,
+    /^Version\s*:\s*v?(\d+\.\d+\.\d+)\b/i
+  ];
+
+  for (const pattern of preferred) {
+    for (const line of visible) {
+      const plain = stripInlineMarkdown(line.text).trim();
+      const match = plain.match(pattern);
+      if (match) return match[1];
+    }
+  }
+
+  return null;
+}
+
+function extractExplicitLedgerIds(visible) {
+  const ids = new Set();
+  let activeLevel = null;
+
+  for (const line of visible) {
+    const heading = line.text.match(/^(#{1,6})\s+(.+)$/);
+    if (heading) {
+      const label = stripInlineMarkdown(heading[2]).trim();
+      if (/\b(?:DECISION LEDGER|LOCKED RECORDS|LOCKED DECISIONS|SUPERSEDED DECISIONS)\b/i.test(label)) {
+        activeLevel = heading[1].length;
+        continue;
+      }
+
+      if (activeLevel !== null && heading[1].length <= activeLevel) {
+        activeLevel = null;
+      }
+    }
+
+    if (activeLevel === null) continue;
+
+    const plain = stripInlineMarkdown(line.text).trim();
+    if (!/^[-*+]\s+/.test(plain)) continue;
+    for (const id of extractCanonicalIds(plain)) ids.add(id);
+  }
+
+  return ids;
+}
+
+function extractCurrentCriticalBlockerIds(visible) {
+  const ids = new Set();
+
+  for (let i = 0; i < visible.length; i += 1) {
+    const plain = stripInlineMarkdown(visible[i].text).trim();
+    const sameLine = plain.match(/^Critical(?: architecture)? blockers(?: before confirmation)?\s*:\s*(.*)$/i);
+    if (!sameLine) continue;
+
+    for (const id of extractCanonicalIds(sameLine[1])) ids.add(id);
+
+    for (let j = i + 1; j < visible.length; j += 1) {
+      const next = stripInlineMarkdown(visible[j].text).trim();
+      if (/^#{1,6}\s+/.test(visible[j].text)) break;
+      if (!/^[-*+]\s+/.test(next)) break;
+      for (const id of extractCanonicalIds(next)) ids.add(id);
+    }
+  }
+
+  return ids;
+}
+
+export function extractZassProjectSnapshot(markdown) {
+  const visible = visibleMarkdownLines(markdown);
+  let readiness = null;
+
+  for (let i = 0; i < visible.length; i += 1) {
+    const plain = stripInlineMarkdown(visible[i].text);
+    if (!/ZERO\s*(?:→|->)\s*ARCHITECTURE/i.test(plain)) continue;
+
+    const sameLine = parseReadinessLine(visible[i].text);
+    if (sameLine) {
+      readiness = sameLine;
+      continue;
+    }
+
+    if (i + 1 < visible.length) {
+      const nextLine = parseReadinessLine(visible[i + 1].text);
+      if (nextLine) readiness = nextLine;
+    }
+  }
+
+  const definitions = extractRecordDefinitions(markdown);
+  const ids = new Set(definitions.records.map((record) => record.id));
+  for (const id of extractExplicitLedgerIds(visible)) ids.add(id);
+
+  return {
+    progress: readiness?.progress ?? null,
+    status: readiness?.status ?? null,
+    version: extractCurrentVersion(visible),
+    ids,
+    criticalBlockerIds: extractCurrentCriticalBlockerIds(visible)
+  };
+}
+
+function parseActionPlanSource(value) {
+  const clean = stripInlineMarkdown(value).trim();
+  const fileMatch = clean.match(/\b([A-Za-z0-9_.-]*ZASS[A-Za-z0-9_.-]*\.md)\b/i);
+  const versionMatch = clean.match(/\bv(\d+\.\d+\.\d+)\b/i);
+
+  return {
+    raw: clean,
+    file: fileMatch ? fileMatch[1] : null,
+    version: versionMatch ? versionMatch[1] : null,
+    sameCommit: /\bsame Git commit\b/i.test(clean)
+  };
+}
+
+export function extractActionPlanSnapshot(markdown) {
+  const visible = visibleMarkdownLines(markdown);
+  let start = -1;
+  let level = null;
+
+  for (let i = 0; i < visible.length; i += 1) {
+    const heading = visible[i].text.match(
+      /^(#{1,6})\s+.*?ZERO\s*(?:→|->)\s*ARCHITECTURE\s+SNAPSHOT\b/i
+    );
+    if (!heading) continue;
+    start = i;
+    level = heading[1].length;
+    break;
+  }
+
+  const relatedIds = new Set();
+  for (const line of visible) {
+    const plain = stripInlineMarkdown(line.text).trim().replace(/^[-*+]\s+/, '');
+    const field = plain.match(
+      /^(?:Related ZASS(?: IDs)?|Related risks?|Related decisions?|Source Decision|Source ZASS|ZASS experiment)\s*:\s*(.+)$/i
+    );
+    if (!field) continue;
+    for (const id of extractCanonicalIds(field[1])) relatedIds.add(id);
+  }
+
+  if (start === -1) {
+    return {
+      found: false,
+      progress: null,
+      status: null,
+      source: null,
+      blockersNone: false,
+      blockerIds: new Set(),
+      relatedIds
+    };
+  }
+
+  let progress = null;
+  let status = null;
+  let source = null;
+  let blockersNone = false;
+  const blockerIds = new Set();
+
+  for (let i = start + 1; i < visible.length; i += 1) {
+    const heading = visible[i].text.match(/^(#{1,6})\s+/);
+    if (heading && heading[1].length <= level) break;
+
+    const plain = stripInlineMarkdown(visible[i].text).trim().replace(/^[-*+]\s+/, '');
+
+    const progressMatch = plain.match(/^Progress\s*:\s*.*?(\d+(?:\.\d+)?)%\s*$/i);
+    if (progressMatch) {
+      progress = Number(progressMatch[1]);
+      continue;
+    }
+
+    const statusMatch = plain.match(/^Status\s*:\s*(.+)$/i);
+    if (statusMatch) {
+      status = normalizeReadinessStatus(statusMatch[1]);
+      continue;
+    }
+
+    const sourceMatch = plain.match(/^Source\s*:\s*(.+)$/i);
+    if (sourceMatch) {
+      source = parseActionPlanSource(sourceMatch[1]);
+      continue;
+    }
+
+    const blockerMatch = plain.match(/^Critical blockers\s*:\s*(.*)$/i);
+    if (blockerMatch) {
+      const value = blockerMatch[1].trim();
+      if (/\bnone\b|\bnone currently identified\b/i.test(value)) blockersNone = true;
+      for (const id of extractCanonicalIds(value)) blockerIds.add(id);
+
+      for (let j = i + 1; j < visible.length; j += 1) {
+        const nextHeading = visible[j].text.match(/^(#{1,6})\s+/);
+        if (nextHeading && nextHeading[1].length <= level) break;
+        const next = stripInlineMarkdown(visible[j].text).trim();
+        if (!/^[-*+]\s+/.test(next)) break;
+        for (const id of extractCanonicalIds(next)) blockerIds.add(id);
+      }
+    }
+  }
+
+  return {
+    found: true,
+    progress,
+    status,
+    source,
+    blockersNone,
+    blockerIds,
+    relatedIds
+  };
+}
