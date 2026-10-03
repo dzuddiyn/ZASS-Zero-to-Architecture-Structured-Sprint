@@ -49,7 +49,7 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 | Gate | Product capability | Current state | PASS requirement |
 |---|---|---|---|
 | **1** | **AI-SYNC consumes ZASS core semantics** | **PASS** | ASC consumes factual commit-linked ZASS CI/core results without reimplementing validator rules; GitHub remains canonical; local CLI remains independently usable. Proven by operational ZASS CI plus AISYNC T-012. |
-| **2** | **DUMP / DECIDE / DESIGN landing** | **ACCEPTANCE CONTRACT LOCKED; NOT YET PASS** | DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS only by explicit escalation. Front-door routing/provider handoff proof exists, but AISYNC main dashboard/read model still exposes only DECIDE / DESIGN. Close using `docs/ZASS_SYSTEM_GATE2_PRODUCTION_INTEGRATION_ACCEPTANCE.md`. |
+| **2** | **DUMP / DECIDE / DESIGN landing** | **IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING** | DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS only by explicit escalation. AISYNC PR #15 merged, live ASC DB validation is three-route, and protected Apps Script production v21 contains the bounded Gate 2 dashboard patch. Final close requires owner-visible production verification. |
 | **3** | **Project Workspace + Contextual Cards** | **CONTRACT LOCKED / PRODUCT IMPLEMENTATION PENDING** | Conversational-first workspace; progressive disclosure; Ready to Lock, Design Forming, Current Task, Delivered, Project Pulse; internal IDs/ledgers hidden unless useful. |
 | **4** | **Factual SAVE / sync** | **PERSISTENCE CORE PASS; integrated product state pending** | SAVED only after real persistence; Git-backed save returns traceable commit/receipt; product truthfully surfaces UNSAVED / SYNCING / SAVED / FAILED / STALE. AISYNC T-016 proves the production GitHub write boundary. |
 | **5** | **Review / History projection** | **PARTIAL** | Decisions, design/architecture, selection state, lineage, validator/CI detail, commits and history are reviewable without burdening the normal workspace. Existing AISYNC dashboard/history/CI surfaces provide partial proof. |
@@ -65,7 +65,7 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 
 Current next product focus:
 
-> **Gate 2 production integration is CURRENT.** ZASS-side acceptance is locked; AISYNC must reconcile the three-route front door with the older two-route main dashboard/read surface and provide production proof. Gate 3 does not start until Gate 2 passes.
+> **Gate 2 production integration is CURRENT at final acceptance.** Implementation, regression testing, live ASC DB migration, and protected production deployment are complete. Only the owner-visible production check remains. Gate 3 does not start until Gate 2 formally passes.
 
 ## P2 — AI-SYNC integration and adoption
 
