@@ -1,7 +1,7 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
 **System version:** 0.2.0  
-**Full ZASS surface alignment:** v0.3.10+<br>
+**Full ZASS surface alignment:** v0.3.9<br>
 **Status:** LOCKED WORKING CONTRACT  
 **Date:** 2026-10-03  
 **Owner:** Project Owner  
@@ -62,18 +62,18 @@ LOCKED system-level boundary:
 - Snapshot provenance must identify the source method, language, version, repository/path, Git commit, and sync time.
 - ZASSPILL / ZASSELECTION / ZASSIMPLE remain method-layer components; transport implementation belongs to AI-SYNC.
 - The existing ASC Write Contract remains a separate protected write-plane contract and is not expanded for public method distribution.
-- Until the public gateway is deployed and cross-AI readability is proven, existing GitHub method links remain a temporary bootstrap path and no nonexistent AI-SYNC URL may be presented as operational.
+- The v0.1 public Method Gateway has passed T-013A/T-013B sync/readability proof. Receivers must use the exact published gateway URL; on fetch failure they must report failure rather than substitute repository search, raw GitHub, or another source as method authority.
 
-Current implementation checkpoint (2026-10-02):
+Current implementation checkpoint (2026-10-03):
 
 ```text
-AI-SYNC T-013A
+AI-SYNC T-013A — PASS
 METHODS registry + protected GitHub sync
         ↓
-T-013B
-public gateway + Gemini/Copilot proof
+T-013B — PASS
+public gateway + Gemini/Copilot direct-read proof
         ↓
-portable receiving-method links can migrate to AI-SYNC
+public method-read transport operational for the proven v0.1 path
 ```
 
 This is a system/integration-contract update. It does not alter ZASSPILL, ZASSELECTION, or ZASSIMPLE semantics.
