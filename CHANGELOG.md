@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-007 — reference-style Markdown link validation] — 2026-10-03
+
+- Quality-track validator robustness update; no ZASS method or ZASS SYSTEM version bump.
+- Extended Z003 local-reference validation beyond inline links to reference-style Markdown links with local definitions.
+- Added explicit-reference and shortcut-reference regression coverage, including broken-target detection.
+- Preserved existing inline-link behavior, including balanced-parentheses support from QA-003.
+- Updated CLI and CR-010 documentation to state the supported Markdown reference scope.
+- No routing or architecture boundaries changed.
+
+
 ## [QA-006 — LOCKED decision title semantics] — 2026-10-03
 
 - Quality-track validator contract clarification; no ZASS method or ZASS SYSTEM version bump.
