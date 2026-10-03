@@ -1,7 +1,7 @@
 # ZASS Productization Roadmap
 
 **Status:** LOCKED  
-**Date:** 2026-09-30  
+**Date:** 2026-10-03  
 **Scope:** Post-methodology productization priorities
 
 > **Consistency → Local first-class tooling → AI-SYNC automation → Product UX**
@@ -31,8 +31,8 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - CR-010 v0.2 Git-aware LOCKED drift. **DONE — implemented under `cli/`; specification in `docs/CR010_V02_LOCKED_DRIFT_SPEC.md`**
 - Field-test v0.2 on real ZASS projects before considering v0.3. **NEXT**
 - CR-010 v0.3 ACTION_PLAN consistency plan. **LOCKED — `docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`; implementation NOT STARTED**
-- ZASS SYSTEM default landing / escalation direction. **LOCKED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; `DECIDE or DESIGN?` routes DECIDE → ZASSELECTION and DESIGN → ZASSIMPLE; Temaya field-test before Full-ZASS escalation contract**
-- ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.1.3; local tooling remains first-class, AI-SYNC Web is UX/automation projection over the same authority and validator semantics**
+- ZASS SYSTEM default landing / escalation direction. **LOCKED + PROMOTED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS remains DESIGN escalation**
+- ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.2.0; global DUMP / DECIDE / DESIGN routing; local tooling remains first-class and AI-SYNC Web remains UX/automation projection over the same authority and validator semantics**
 - Global EN/MY method-surface routing. **LOCKED — conversation language may differ from method-file language; structured surfaces follow the active EN/MY file; Malay companion notice is one-time and non-switching; canonical IDs/commands remain stable**
 - Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
 
@@ -44,10 +44,10 @@ Current engineering priority is not blocked on proving the methodology through e
 
 - Keep local tooling first-class and independently usable.
 - Reuse validator/core semantics inside AI-SYNC rather than duplicating them.
-- The released global entry contract is now DECIDE or DESIGN?. DUMP remains an ASC/ZASSPILL pilot entry until its promotion gates pass.
-- **ZASSPILL Design Direction v0.1 LOCKED — [docs/ZASSPILL_DESIGN_DIRECTION_V01.md](ZASSPILL_DESIGN_DIRECTION_V01.md).** Pilot DUMP / DECIDE / DESIGN in ASC with DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. If the promotion gates pass, add DUMP as a global entry alongside the already-promoted DECIDE / DESIGN routing.
-- Implement ZASSPILL in phases: portable single-thread continuity proof → ASC authority/sync → semantic thread intelligence → full three-intent ASC product pilot.
-- **ZASSPILL Phase 1 method package IMPLEMENTED — v0.1.0** under `ZASSPILL/`; manual cross-AI field proof is **NEXT** before ASC sync implementation.
+- The released global entry contract is **DUMP / DECIDE / DESIGN**: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
+- **ZASSPILL v1.0.0 PRODUCTION READY.** Phase 1–6 cover core continuity, multi-thread continuity, ASC persistence contract, retrieval intelligence, cross-method continuity, and production reliability.
+- **ZASSPILL Design Direction v0.1** remains historical design context; its promotion gate has passed.
+- Next implementation step: AI-SYNC/ASC consumes the frozen ZASSPILL v1.0 contract when its implementation gate is open; do not reopen ZASSPILL core semantics merely to fit transport/runtime details.
 - Keep ZASSPILL continuity-state authority distinct from Git-backed project-artifact authority: standalone Thread Packet is continuity authority until linked; latest successfully synchronized ASC state is continuity authority for ASC-linked threads.
 - Use progressive disclosure, contextual cards, Project Pulse, and Review/History surfaces where the active method needs them; ordinary ZASSPILL DUMP should remain plain conversation without a permanent footer.
 - Require factual SAVE/sync receipts backed by real persistence.
