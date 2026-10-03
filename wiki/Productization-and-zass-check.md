@@ -94,7 +94,7 @@ v0.4  status / diff
 
 ## One validation engine
 
-The same validator must eventually power both:
+The same validator now powers both:
 
 ```text
 Local PC ─────────┐
@@ -102,7 +102,7 @@ Local PC ─────────┐
 GitHub Action ────┘
 ```
 
-Do not duplicate the rule implementation inside GitHub Actions.
+The current GitHub Actions workflow calls the same validator/CLI semantics used locally; do not duplicate rule implementation inside GitHub Actions.
 
 ## Field evidence
 
