@@ -212,8 +212,9 @@ Contextual actions such as `[🎨 CONFIRM DESIGN]` appear only when their stage 
 
 > **ZASS SYSTEM starts simple.**
 
-> **DECIDE or DESIGN?**
+> **DUMP / DECIDE / DESIGN**
 
+- **DUMP → ZASSPILL**
 - **DECIDE → ZASSELECTION**
 - **DESIGN → ZASSIMPLE**
 - **Need deeper reasoning/governance → Full ZASS**
