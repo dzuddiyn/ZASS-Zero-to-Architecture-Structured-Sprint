@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 2 acceptance lock] — 2026-10-04
+
+- Locked the production acceptance contract for the DUMP / DECIDE / DESIGN product gate.
+- Confirmed from canonical AISYNC main that the front-door routing proof already implements DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE, visible override, exact Method Gateway handoff, and no-write routing behavior.
+- Identified the current product-integration gap: the main ASC dashboard/read model and ASC DB `ui_entry` contract still expose only DECIDE / DESIGN.
+- Gate 2 remains NOT YET PASS until the production-facing journey is coherent across the front door and main product surface.
+- AISYNC runtime implementation remains outside this repository; T-017/private continuity is not a Gate 2 prerequisite.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [CR-010 v0.3 STOP / REVIEW gate] — 2026-10-03
 
 - Completed the required post-implementation review of zass-cli v0.3.0 before any v0.4 work.
