@@ -3,6 +3,14 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS GitHub CI operational proof] — 2026-10-03
+
+- LIVE PASS confirmed for `ZASS CI / zass-check` on merged `main` commit `13b9b267372ef9d18329ed5f88858dc04da3dfdc`.
+- GitHub Actions run `37084654404` completed successfully, including checkout, Node.js 20 setup, CLI tests, historical-baseline resolution, and the ZASS validator.
+- The external CI dependency required by AISYNC T-012 is now satisfied.
+- Validation authority remains unchanged: ZASS Core/CLI/CI own rule semantics; ASC may only consume/display commit-linked results.
+
+
 ## [ZASS CLI v0.2.1 / GitHub CI gate] — 2026-10-03
 
 - Added an optional `zass check --baseline <git-ref>` path so CI can compare a committed candidate against the correct historical Git baseline while reusing the existing Z001–Z101 validator semantics.
