@@ -2,6 +2,16 @@
 
 All notable changes to ZASS are recorded here.
 
+
+## [ZASS SYSTEM v0.2.0 / ZASSPILL v1.0.0 global DUMP promotion] — 2026-10-03
+
+- PROMOTED the released global ZASS SYSTEM entry model to **DUMP / DECIDE / DESIGN**.
+- LOCKED routing as **DUMP → ZASSPILL**, **DECIDE → ZASSELECTION**, **DESIGN → ZASSIMPLE**, with Full ZASS remaining an escalation path from DESIGN when stronger governance is needed.
+- Promoted ZASSPILL v1.0.0 as **PRODUCTION READY** after Phase 1–6 proofs: core continuity, multi-thread continuity, persistence/ASC contract, retrieval intelligence, cross-method continuity, and production reliability.
+- Updated the root README, Full-ZASS EN/MY system alignment metadata, landing direction, UI/UX contract, productization roadmap, ZASSPILL README/Wiki, Wiki home, and ZASSIMPLE working direction to the three-intent model.
+- Kept historical ZASSPILL v0.1 design assumptions as historical context and marked the original promotion gate as completed.
+- This is a ZASS SYSTEM routing/product-surface release; it does not change Full ZASS decision authority or silently alter ZASSELECTION/ZASSIMPLE method semantics.
+
 ## [ZASS SYSTEM v0.1.3 / ZASSIMPLE v0.3.0 DESIGN-first] — 2026-10-02
 
 - LOCKED **DECIDE or DESIGN?** as the released ZASS SYSTEM entry model: DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
