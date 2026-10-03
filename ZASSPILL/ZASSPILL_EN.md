@@ -2,8 +2,8 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 0.5.0  
-**Status:** PHASE 5 FROZEN — CROSS-METHOD CONTINUITY PROOF PASSED  
+**Version:** 1.0.0  
+**Status:** PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
@@ -1061,7 +1061,7 @@ Method identity must be explicit:
 
 ```yaml
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 packet_format_version: 2
 ```
 
@@ -1072,7 +1072,7 @@ Minimum ASC-backed packet:
 ```yaml
 ---
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 packet_format_version: 2
 thread_id: th_<ULID>
 title: <human title>
@@ -1748,7 +1748,7 @@ Portable Packet and cross-method machine metadata must report the current active
 
 ~~~yaml
 method: ZASSPILL
-method_version: 0.5.0
+method_version: 1.0.0
 ~~~
 
 Packets newly exported by the current release must use the current method version.
@@ -1784,3 +1784,398 @@ The Method Result Envelope was locked during final audit based on the behavior a
 Behavioral proof, method ownership, confirmation authority, result isolation, artifact isolation, revision reconciliation, thread/method-lineage separation, Phase 3 compatibility, Phase 4 compatibility, and the privacy boundary all passed.
 
 > **ZASSPILL v0.5.0 Phase 5 is frozen. The Cross-Method Continuity contract above is the Phase 5 authority. New features belong in Phase 6 or a later version; only critical fixes should alter this release.**
+
+
+---
+
+## 20. Phase 6 — Production Reliability
+
+Phase 6 locks reliability behavior when production transport, storage, retries, restore, migration, or authorization do not behave perfectly.
+
+Primary principle:
+
+> **Fail closed on semantic uncertainty; recover explicitly rather than inventing continuity.**
+
+When semantic state is uncertain, the system must not overwrite, auto-merge, fake success, resurrect deleted continuity, guess revisions, or fabricate telemetry.
+
+### 20.1 Truthful Persistence Receipt
+
+The system may report successful persistence only when the write is actually proven.
+
+Minimum receipt:
+
+~~~text
+request_id
+thread_id
+previous_revision
+persisted_revision
+event_id
+result
+~~~
+
+When persistence is not proven:
+
+~~~text
+PERSISTENCE_UNCONFIRMED
+~~~
+
+Sending a request is not evidence that state was saved.
+
+### 20.2 Unknown Write Outcome
+
+If a client sends a write but loses the response after the server may already have committed:
+
+~~~text
+WRITE_OUTCOME_UNKNOWN
+~~~
+
+The client must not guess success or failure.
+
+Recovery must reuse the same logical request:
+
+~~~text
+retry same request_id + same payload
+~~~
+
+Phase 3 idempotency determines whether the request was already applied or should execute exactly once.
+
+### 20.3 Retry Classification
+
+Retryable failures may include:
+
+~~~text
+timeout
+temporary network failure
+service unavailable
+transient transport failure
+~~~
+
+Non-retryable semantic/security outcomes include:
+
+~~~text
+REVISION_CONFLICT
+IDEMPOTENCY_KEY_REUSE_CONFLICT
+THREAD_TOMBSTONED
+AUTHORIZATION_DENIED
+invalid semantic operation
+~~~
+
+A transport retry for the same logical write must keep the same request_id.
+
+### 20.4 Atomic Semantic Commit
+
+A normal semantic mutation must commit logically atomically:
+
+~~~text
+Thread Record update
++
+matching semantic event
+~~~
+
+A trusted state such as this is invalid:
+
+~~~text
+record revision 8
+event log revision 7
+~~~
+
+If atomicity/integrity cannot be proven:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Affected continuity is unsafe for semantic writes until recovery completes.
+
+### 20.5 Multi-Record Atomicity
+
+Multi-record operations such as SPLIT, TRUE MERGE, and other operations that must move together semantically require logical atomicity.
+
+Example TRUE MERGE:
+
+~~~text
+source A archived
+source B archived
+new C created
+lineage connected
+matching events written
+~~~
+
+Partial success must not be treated as completed.
+
+If a partial commit is detected:
+
+~~~text
+PARTIAL_COMMIT_DETECTED
+~~~
+
+and recovery must complete before new semantic operations continue on affected records.
+
+### 20.6 Read-After-Write Verification
+
+After a reported successful write, the persistence layer must be able to verify at least:
+
+~~~text
+thread_id
+persisted_revision
+matching semantic event
+~~~
+
+If a success receipt conflicts with persisted verification:
+
+~~~text
+PERSISTENCE_VERIFICATION_FAILED
+~~~
+
+Do not report the write as trusted success.
+
+### 20.7 Out-of-Order / Replay Protection
+
+Old replication, retry, or sync messages must not rewind current state.
+
+Example:
+
+~~~text
+current revision 12
+incoming revision 10
+→ STALE_REPLAY_IGNORED
+~~~
+
+No mutation occurs.
+
+Revision + event lineage has stronger authority than timestamps.
+
+### 20.8 Integrity Guard
+
+Examples of integrity violations:
+
+- duplicate semantic revision;
+- missing matching event;
+- broken merge/split lineage;
+- invalid lifecycle transition;
+- thread_id mismatch;
+- record/event revision mismatch.
+
+Outcome:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Do not silently repair semantic meaning or invent a missing event/meaning.
+
+Read-only degraded inspection may be allowed when safe, but semantic writes to the affected record must remain blocked until recovery completes.
+
+### 20.9 Degraded / Offline Mode
+
+When ASC is unavailable:
+
+~~~text
+ASC_UNAVAILABLE
+~~~
+
+Conversation may continue using portable/local continuity.
+
+A local semantic change must use:
+
+~~~text
+packet_state = LOCAL_CHANGES
+base_revision = last known persisted revision
+~~~
+
+and:
+
+- must not create a fake ASC revision;
+- must not create a fake persisted event;
+- must not claim external persistence.
+
+When ASC returns, use the Phase 3 reconciliation contract.
+
+### 20.10 Restore / Backup Safety
+
+An old backup does not become authority merely because restore technically succeeds.
+
+Example:
+
+~~~text
+current known revision 24
+backup revision 20
+→ RESTORE_REQUIRES_RECONCILIATION
+~~~
+
+Restore must check identity, revision, event lineage, and tombstone/deletion authority.
+
+Never silently rewind newer trusted continuity.
+
+### 20.11 Tombstone Survives Recovery
+
+An old backup or replica must not resurrect a deleted thread.
+
+When a valid tombstone exists:
+
+~~~text
+THREAD_TOMBSTONED
+~~~
+
+Deletion authority outranks stale semantic backup.
+
+No resurrection.
+
+### 20.12 Schema / Version Compatibility
+
+Persisted data should carry enough schema/version metadata to determine compatibility.
+
+A reader may return:
+
+~~~text
+SUPPORTED
+MIGRATION_REQUIRED
+UNSUPPORTED_VERSION
+~~~
+
+Technical migration does not increase semantic revision when meaning is unchanged.
+
+### 20.13 Migration Safety
+
+Migration flow:
+
+~~~text
+old schema
+↓
+migration
+↓
+new schema
+↓
+semantic equivalence verification
+~~~
+
+If meaning can be preserved safely, migration may succeed without a semantic revision bump.
+
+If a required semantic value cannot be derived safely:
+
+~~~text
+MIGRATION_REVIEW_REQUIRED
+~~~
+
+Do not invent semantic content to populate a new field.
+
+### 20.14 Authorization Failure
+
+When the caller lacks authority:
+
+~~~text
+AUTHORIZATION_DENIED
+~~~
+
+The semantic consequence must be zero mutation:
+
+- no revision bump;
+- no semantic event;
+- no lifecycle change;
+- no content mutation.
+
+Authentication/permission implementation remains an ASC concern; ZASSPILL locks only the semantic consequence.
+
+### 20.15 Observability Without Leakage
+
+Operational telemetry may carry metadata such as:
+
+~~~text
+request_id
+thread_id
+operation
+result_code
+revision
+timing / failure class
+~~~
+
+It must not duplicate full continuity content by default.
+
+> **Reliability telemetry must not become a shadow semantic database.**
+
+### 20.16 Observability Truthfulness
+
+Telemetry must be factual.
+
+If timestamp, latency, or timing was actually measured, log the real value.
+
+If not measured, use:
+
+~~~text
+null
+unknown
+not_measured
+~~~
+
+Do not fabricate numbers or timestamps that appear factual merely to complete a log.
+
+### 20.17 Clock Independence
+
+Clock drift does not determine semantic authority.
+
+~~~text
+revision + event lineage
+> timestamp
+~~~
+
+Timestamps may help diagnostics and technical ordering where appropriate, but must not override revision/event authority.
+
+### 20.18 Recovery Principle
+
+Default production recovery:
+
+- do not overwrite when semantic authority is uncertain;
+- do not auto-merge conflicts;
+- do not fake persistence success;
+- do not resurrect tombstoned continuity;
+- do not guess missing revisions/events;
+- do not invent migration meaning;
+- reconcile or request explicit review.
+
+### 20.19 Method-Version Metadata
+
+Portable Packet and machine metadata produced by the current release must use:
+
+~~~yaml
+method: ZASSPILL
+method_version: 1.0.0
+~~~
+
+### 20.20 Phase 6 Proof
+
+The consolidated production field test was run across more than one receiver/provider and the core behavior was consistent.
+
+~~~text
+A  Unknown write + idempotent retry       PASS
+B  Stale replay protection                PASS
+C  Integrity failure blocks writes        PASS
+D  Offline LOCAL_CHANGES                  PASS
+E  Divergence protection                  PASS
+F  Restore safety                         PASS
+G  Tombstone survives recovery            PASS
+H  Authorization = zero mutation          PASS
+I  Migration preserves meaning            PASS
+J  Observability without semantic leakage PASS
+~~~
+
+The final audit also locked observability truthfulness after one receiver generated fixture timing/timestamp values that were not supplied by the test. Telemetry that was not measured must be labeled unknown/not_measured rather than fabricated.
+
+Overall proof covers:
+
+- truthful persistence receipts;
+- unknown-outcome recovery;
+- retry/idempotency safety;
+- atomicity and integrity guards;
+- stale replay protection;
+- degraded/offline operation;
+- divergence handling;
+- backup/restore safety;
+- tombstone recovery protection;
+- authorization isolation;
+- schema/migration safety;
+- telemetry privacy and truthfulness;
+- clock-independent authority.
+
+Phase 3, Phase 4, and Phase 5 compatibility remain proven.
+
+> **ZASSPILL v1.0.0 is PRODUCTION READY. Phases 1–6 are frozen as the core continuity contract. New features after this point belong in v1.x compatibility/polish or v2 advanced continuity intelligence; only critical fixes should change the core v1.0 contract without versioned evolution.**
