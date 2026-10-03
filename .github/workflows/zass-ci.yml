@@ -29,6 +29,9 @@ jobs:
       - name: Run ZASS CLI tests
         run: npm --prefix cli test
 
+      - name: Check repository consistency
+        run: node quality/check-repo-consistency.mjs
+
       - name: Resolve historical baseline
         id: baseline
         shell: bash

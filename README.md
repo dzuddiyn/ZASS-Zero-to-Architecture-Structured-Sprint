@@ -505,7 +505,7 @@ You normally do **not** need all of them at the beginning.
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
 **ZASSIMPLE:** v0.3.0  
 **ZASSELECTION:** v0.2.2  
-**ZASSPILL:** v1.0.0 — PRODUCTION READY; global DUMP continuity route  
+**ZASSPILL:** v1.0.0 method/protocol contract — PRODUCTION READY; global DUMP continuity route  
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:

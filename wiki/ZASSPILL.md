@@ -1,7 +1,7 @@
 # ZASSPILL
 
 **Current version:** v1.0.0  
-**Status:** PRODUCTION READY
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
@@ -43,7 +43,9 @@ ZASSPILL v1 adds stable identity, revision/event semantics, concurrency and idem
 
 ## Key boundary
 
-> ZASSPILL owns continuity meaning. ASC owns persistence mechanics.
+> ZASSPILL owns continuity meaning and the method/protocol contract. ASC owns runtime persistence, retrieval, authorization, sync, and transport mechanics.
+
+`PRODUCTION READY` in this Wiki refers to the frozen ZASSPILL method/protocol contract, not to a standalone runtime service in this repository.
 
 Provider memory is outside portable authority unless intentionally reintroduced by the user.
 

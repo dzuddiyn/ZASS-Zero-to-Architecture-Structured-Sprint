@@ -34,7 +34,7 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
 - [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
-- [ZASSPILL](ZASSPILL.md) — production-ready DUMP continuity across chats and AIs.
+- [ZASSPILL](ZASSPILL.md) — DUMP continuity across chats and AIs; the v1.0.0 method/protocol contract is production-ready.
 - [Advanced Reviews](Advanced-Reviews.md) — optional lenses for challenging an idea.
 - [Productization & zass check](Productization-and-zass-check.md) — current tooling roadmap.
 - [Infographics](Infographics.md) — archived visual references.
@@ -62,7 +62,7 @@ Research follows candidate formation, not idea capture. Research findings return
 | Full ZASS | v0.3.9 |
 | ZASSIMPLE | v0.3.0 |
 | ZASSELECTION | v0.2.2 |
-| ZASSPILL | v1.0.0 — PRODUCTION READY |
+| ZASSPILL | v1.0.0 method/protocol contract — PRODUCTION READY |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
 | License | MIT |
