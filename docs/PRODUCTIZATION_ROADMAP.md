@@ -34,7 +34,7 @@ The freeze does not block consistency fixes, documentation presentation, validat
 - ZASS SYSTEM default landing / escalation direction. **LOCKED + PROMOTED — `docs/ZASS_SYSTEM_DEFAULT_LANDING_ESCALATION_DIRECTION.md`; DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS remains DESIGN escalation**
 - ZASS SYSTEM local-core + AI-SYNC UI/UX contract. **LOCKED — `docs/ZASS_SYSTEM_UI_UX_CONTRACT.md`; ZASS SYSTEM v0.2.0; global DUMP / DECIDE / DESIGN routing; local tooling remains first-class and AI-SYNC Web remains UX/automation projection over the same authority and validator semantics**
 - Global EN/MY method-surface routing. **LOCKED — conversation language may differ from method-file language; structured surfaces follow the active EN/MY file; Malay companion notice is one-time and non-switching; canonical IDs/commands remain stable**
-- Add a GitHub Action that runs the same validator. **LATER — after the local validator is stable**
+- Add a GitHub Action that runs the same validator. **DONE — `.github/workflows/zass-ci.yml` operational; shared semantics documented in `docs/ZASS_GITHUB_CI_CONTRACT.md`**
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.
 
@@ -45,7 +45,7 @@ Current engineering priority is not blocked on proving the methodology through e
 - Keep local tooling first-class and independently usable.
 - Reuse validator/core semantics inside AI-SYNC rather than duplicating them.
 - The released global entry contract is **DUMP / DECIDE / DESIGN**: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
-- **ZASSPILL v1.0.0 PRODUCTION READY.** Phase 1–6 cover core continuity, multi-thread continuity, ASC persistence contract, retrieval intelligence, cross-method continuity, and production reliability.
+- **ZASSPILL v1.0.0 method/protocol contract: PRODUCTION READY.** Phase 1–6 cover core continuity, multi-thread continuity, the ASC persistence contract boundary, retrieval intelligence, cross-method continuity, and production-reliability rules. Runtime persistence, retrieval, authorization, and transport remain AI-SYNC/ASC responsibilities.
 - **ZASSPILL Design Direction v0.1** remains historical design context; its promotion gate has passed.
 - Next implementation step: AI-SYNC/ASC consumes the frozen ZASSPILL v1.0 contract when its implementation gate is open; do not reopen ZASSPILL core semantics merely to fit transport/runtime details.
 - Keep ZASSPILL continuity-state authority distinct from Git-backed project-artifact authority: standalone Thread Packet is continuity authority until linked; latest successfully synchronized ASC state is continuity authority for ASC-linked threads.
