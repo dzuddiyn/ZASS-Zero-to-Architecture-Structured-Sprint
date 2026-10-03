@@ -1,6 +1,6 @@
 # ZASS GitHub CI Contract v0.1
 
-Status: implementation candidate  
+Status: OPERATIONAL  
 Purpose: provide one commit-linked ZASS validation signal that reuses the local ZASS Core/CLI semantics.
 
 ## Stable integration surface
@@ -47,4 +47,11 @@ A generated workflow file is not proof that CI exists operationally. Promotion r
 
 ## ASC dependency
 
-AISYNC T-012 remains blocked until this workflow has a live passing run and its commit-linked status can be retrieved reliably.
+Live proof:
+- merged main commit: `13b9b267372ef9d18329ed5f88858dc04da3dfdc`;
+- workflow: `ZASS CI / zass-check`;
+- GitHub Actions run: `37084654404`;
+- result: SUCCESS;
+- all validator/test/baseline steps completed successfully.
+
+AISYNC T-012 external dependency is therefore satisfied. ASC may now consume/display this commit-linked result, while validation semantics remain owned by ZASS Core/CLI/CI.
