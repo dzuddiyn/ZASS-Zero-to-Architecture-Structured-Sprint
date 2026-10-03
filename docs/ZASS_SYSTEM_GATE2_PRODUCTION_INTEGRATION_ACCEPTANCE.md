@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 2 — Production Integration Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION + DEPLOYMENT EVIDENCE PASS; OWNER-VISIBLE PRODUCTION CHECK PENDING  
+**Status:** CLOSED / PASS — IMPLEMENTED, DEPLOYED, OWNER-VISIBLE VERIFIED  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 2 only — DUMP / DECIDE / DESIGN production integration
@@ -164,12 +164,21 @@ Live data/deployment evidence:
 - the separate T-017 development HEAD was restored after the versioned release and was not promoted into production v21;
 - AISYNC deployment receipt PR #16 merged as `92414d1db856a2c14bff9b09d5f85d5000d6e494`.
 
-The remaining acceptance evidence is an owner-visible production check of the protected/main ASC dashboard.
+Owner-visible production verification is complete.
+
+Observed on the protected/main ASC production surfaces:
+- the Google Sites ASC page visibly renders `DUMP / DECIDE / DESIGN`;
+- the protected Apps Script production dashboard visibly renders the same three routes;
+- DUMP visibly renders `DUMP → ZASSPILL` and the `Open ASC Front Door` action;
+- DECIDE can be selected and renders its route view without error;
+- DESIGN can be selected and renders the AISYNC project card without error.
+
+This satisfies the remaining human-visible acceptance evidence for the integrated production journey.
 
 ## 5. Gate 2 current verdict
 
 ```text
-G2-01  DEPLOYED — three-route main surface implemented; owner-visible render check pending
+G2-01  PASS — three-route main production surface visibly verified
 G2-02  PASS
 G2-03  PASS
 G2-04  PASS
@@ -177,24 +186,22 @@ G2-05  PASS
 G2-06  PASS
 G2-07  PASS BY BOUNDARY — Full ZASS is not a landing route
 G2-08  PASS
-G2-09  DEPLOYED + SOURCE VERIFIED — owner-visible production coherence check pending
+G2-09  PASS — front door + main dashboard production coherence visibly verified
 ```
 
 Therefore:
 
-> **GATE 2 = IMPLEMENTATION + DEPLOYMENT PASS; FINAL OWNER-VISIBLE CHECK PENDING**
+> **GATE 2 = CLOSED / PASS**
 
-No further AISYNC code change is currently required by this acceptance contract unless the owner-visible check reveals a regression.
+No further Gate 2 implementation work is required. Any future regression is handled as a defect against this locked acceptance contract.
 
 ## 6. Minimum AISYNC integration evidence required to close Gate 2
 
-Items 1–7 are now satisfied by merged, tested, live data, and versioned deployment evidence.
+All closure items are satisfied.
 
-The only remaining closure item is:
+8. **owner-visible production proof — PASS.** The protected/main ASC dashboard visibly exposes DUMP / DECIDE / DESIGN; DUMP provides the expected front-door path; DECIDE and DESIGN both remain usable.
 
-8. **owner-visible production proof** confirms the protected/main ASC dashboard visibly exposes DUMP / DECIDE / DESIGN, DUMP provides the expected front-door path, and existing DECIDE / DESIGN navigation remains usable.
-
-If that visible check passes without a material regression, Gate 2 may be closed without another implementation patch.
+Gate 2 is formally closed.
 
 ## 7. Non-blockers
 
