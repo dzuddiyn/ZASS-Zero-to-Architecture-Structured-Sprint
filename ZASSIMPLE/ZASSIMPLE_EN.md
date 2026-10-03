@@ -369,12 +369,6 @@ After actually updating the file, AI must briefly say what was recorded and what
 
 AI may recommend `PROCEED/LOCK` when an `AC` has become clear or is supported by repeated agreement. AI may recommend `SAVE` when changes are meaningful enough to become a checkpoint. Legacy `LOCK` / `COMMIT` remain compatible, and all protected actions still require clear owner instruction.
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
 
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
