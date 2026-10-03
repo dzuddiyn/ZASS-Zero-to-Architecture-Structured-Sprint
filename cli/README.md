@@ -43,7 +43,7 @@ node /path/to/repo/cli/bin/zass.js check
 | Z100 | Git history unavailable / no committed ZASS baseline | WARNING |
 | Z101 | Silent LOCKED-decision modification/removal | ERROR |
 
-Z100/Z101 are the CR-010 v0.2 Git-aware drift checks. They compare the current `ZASS.md` with the version at Git `HEAD` without modifying the worktree. An explicit `Supersedes: D-xxx` relation may authorize a replacement path when the old decision record is preserved.
+Z100/Z101 are the CR-010 v0.2 Git-aware drift checks. They compare the current `ZASS.md` with the version at Git `HEAD` without modifying the worktree. For a LOCKED decision, the semantic heading/title and normalized body are authority-bearing; presentation-only formatting is normalized. An explicit `Supersedes: D-xxx` relation may authorize a replacement path when the old decision record is preserved.
 
 Warnings do not fail the command. Validation errors return exit code `1`; CLI/runtime misuse returns `2`.
 
