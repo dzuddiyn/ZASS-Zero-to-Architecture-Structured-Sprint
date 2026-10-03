@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { runCheck } from '../src/check.js';
+import { extractDecisionState } from '../src/parser.js';
 
 function git(cwd, ...args) {
   const result = spawnSync('git', ['-C', cwd, ...args], { encoding: 'utf8' });
@@ -51,6 +52,90 @@ function has(report, level, code, text = '') {
     item.level === level && item.code === code && item.message.includes(text)
   );
 }
+
+
+test('QA-001 ignores explanatory LOCKED/SUPERSEDED prose as authority state', () => {
+  const state = extractDecisionState(`# Test project
+
+## D-001 — Storage
+
+**Decision:** Use local storage.
+**Drivers:** Keep the system simple.
+
+# Notes
+
+D-001 is LOCKED in an old example.
+> Historical note: D-001 was SUPERSEDED in another project.
+`);
+
+  assert.equal(state.lockedIds.has('D-001'), false);
+  assert.equal(state.supersededIds.has('D-001'), false);
+  assert.equal(state.decisions.get('D-001').locked, false);
+  assert.equal(state.decisions.get('D-001').superseded, false);
+});
+
+test('QA-001 preserves canonical LOCKED and SUPERSEDED section records', () => {
+  const locked = extractDecisionState(`# Test project
+
+## D-001 — Storage
+
+**Decision:** Use local storage.
+
+# 13. LOCKED DECISIONS
+
+- **L-001 / D-001 — LOCKED:** local storage.
+`);
+  assert.equal(locked.lockedIds.has('D-001'), true);
+  assert.equal(locked.decisions.get('D-001').locked, true);
+
+  const superseded = extractDecisionState(`# Test project
+
+## D-001 — Storage
+
+**Decision:** Use local storage.
+
+# SUPERSEDED DECISIONS
+
+- **L-001 / D-001 — SUPERSEDED:** replaced by D-002.
+`);
+  assert.equal(superseded.supersededIds.has('D-001'), true);
+  assert.equal(superseded.decisions.get('D-001').superseded, true);
+});
+
+test('QA-001 preserves explicit decision Status metadata', () => {
+  const locked = extractDecisionState(`# Test project
+
+## D-001 — Storage
+
+**Status:** LOCKED
+**Decision:** Use local storage.
+`);
+  assert.equal(locked.lockedIds.has('D-001'), true);
+  assert.equal(locked.decisions.get('D-001').locked, true);
+});
+
+test('QA-001 regression: explanatory LOCKED prose does not trigger Z101', async (t) => {
+  const initial = `# Test project
+
+## D-001 — Storage
+
+**Decision:** Use local storage.
+**Drivers:** Keep the system simple.
+
+# Notes
+
+The following sentence is explanatory only: D-001 is LOCKED in an old example.
+`;
+  const dir = await makeRepo(initial);
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const current = initial.replace('Use local storage.', 'Use cloud storage.');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), current, 'utf8');
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(has(report, 'pass', 'Z101'));
+});
 
 test('v0.2 passes an unchanged LOCKED decision', async (t) => {
   const dir = await makeRepo(baseline());
