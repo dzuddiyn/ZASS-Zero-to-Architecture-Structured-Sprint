@@ -3,6 +3,15 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-002 — current documentation truth] — 2026-10-03
+
+- Quality-track documentation alignment only; no ZASS method or ZASS SYSTEM version bump.
+- Corrected ZASSELECTION Wiki fallback export wording to the active EN/MY method-file contract.
+- Updated Productization Wiki wording to reflect that GitHub Actions already uses the shared ZASS validator/CLI semantics.
+- Updated the root README to reflect AISYNC T-013A/T-013B PASS and the proven public Method Gateway, while preserving the exact-URL receiver guardrail.
+- No method semantics, routing, validator rules, or architecture boundaries changed.
+
+
 ## [QA-001 — authority parser hardening] — 2026-10-03
 
 - Quality-track fix only; no ZASS method or ZASS SYSTEM version bump.
