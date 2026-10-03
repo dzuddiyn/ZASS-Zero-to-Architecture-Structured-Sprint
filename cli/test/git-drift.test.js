@@ -137,6 +137,55 @@ The following sentence is explanatory only: D-001 is LOCKED in an old example.
   assert.ok(has(report, 'pass', 'Z101'));
 });
 
+
+test('CR-010 v0.2 field compatibility protects compound DECIDED / LOCKED records', async (t) => {
+  const initial = `# Real-project shaped fixture
+
+## D-037 — Provider-Agnostic Finance Bridge
+
+**Status:** DECIDED / LOCKED
+
+**Decision:** Use a provider-agnostic Finance Bridge.
+**Reason:** Preserve portability.
+`;
+
+  const dir = await makeRepo(initial);
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const current = initial.replace(
+    'Use a provider-agnostic Finance Bridge.',
+    'Use a provider-specific Finance Bridge.'
+  );
+  await fs.writeFile(path.join(dir, 'ZASS.md'), current, 'utf8');
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 1);
+  assert.ok(has(report, 'error', 'Z101', 'modified: D-037'));
+});
+
+test('CR-010 v0.2 field compatibility protects records referenced by LOCKED RECORDS arrow ledger', async (t) => {
+  const initial = `# Real-project shaped fixture
+
+## D-001 — Storage
+
+**Decision:** Use local storage.
+
+# 11A. LOCKED RECORDS — D → L
+
+- **L-001 → D-001:** local storage.
+`;
+
+  const dir = await makeRepo(initial);
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const current = initial.replace('Use local storage.', 'Use cloud storage.');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), current, 'utf8');
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 1);
+  assert.ok(has(report, 'error', 'Z101', 'modified: D-001'));
+});
+
 test('v0.2 passes an unchanged LOCKED decision', async (t) => {
   const dir = await makeRepo(baseline());
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
