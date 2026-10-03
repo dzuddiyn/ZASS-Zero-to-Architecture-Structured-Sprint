@@ -1,9 +1,9 @@
 # ZASS SYSTEM — UI/UX & Product Surface Contract
 
-**System version:** 0.1.4  
+**System version:** 0.2.0  
 **Full ZASS surface alignment:** v0.3.10+<br>
 **Status:** LOCKED WORKING CONTRACT  
-**Date:** 2026-10-02  
+**Date:** 2026-10-03  
 **Owner:** Project Owner  
 **Scope:** ZASS SYSTEM local/core boundary, AI-SYNC Web presentation, and human-facing UX
 
@@ -82,12 +82,16 @@ This is a system/integration-contract update. It does not alter ZASSPILL, ZASSEL
 
 The system landing mental model is:
 
-> **DECIDE or DESIGN?**
+> **DUMP / DECIDE / DESIGN**
 
-```text
+~~~text
 ZASS SYSTEM
     ↓
-DECIDE or DESIGN?
+What do you need right now?
+    │
+    ├── DUMP
+    │      ↓
+    │  ZASSPILL
     │
     ├── DECIDE
     │      ↓
@@ -98,15 +102,19 @@ DECIDE or DESIGN?
        ZASSIMPLE
            ↓
     Full ZASS when needed
-```
+~~~
 
 Users route by intent, not by framework knowledge.
 
-Full ZASS is not a primary first-screen choice. It is an escalation path from the DESIGN flow when stronger governance is justified.
+**DUMP** is the continuity-first route for open-ended thinking, messy context, and conversations that are not yet ready to become a choice or design.
 
-## 3. DUMP-first DESIGN UX
+**DECIDE** is the structured choice route.
 
-The primary DESIGN workspace starts from natural conversation.
+**DESIGN** is the creation/design route and starts with ZASSIMPLE; Full ZASS remains an escalation path when stronger governance is justified.
+
+## 3. DUMP-first continuity UX
+
+The primary DUMP workspace is ZASSPILL and starts from natural conversation. DESIGN may also begin conversationally in ZASSIMPLE; users are not required to pre-structure their input.
 
 Do not lead with forms, ledgers, IDs, architecture diagrams, or configuration pages.
 
@@ -435,7 +443,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.1.4
+ZASS SYSTEM v0.2.0
 DECIDE or DESIGN?
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
