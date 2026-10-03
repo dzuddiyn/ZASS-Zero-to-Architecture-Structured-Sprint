@@ -1,9 +1,11 @@
 # Full ZASS
 
 **Current version:** v0.3.9<br>
-**ZASS SYSTEM:** v0.1.2
+**ZASS SYSTEM:** v0.2.0
 
 Full ZASS is the deeper decision-control method for projects where decisions, evidence, risks and architecture interact.
+
+Global ZASS SYSTEM routing is now **DUMP / DECIDE / DESIGN**: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. Full ZASS remains an escalation path when stronger governance is needed.
 
 v0.3.9 keeps that UI/UX alignment and adds the global EN/MY structured-surface language contract: progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and shared local/Web core semantics. Core decision semantics remain unchanged.
 
