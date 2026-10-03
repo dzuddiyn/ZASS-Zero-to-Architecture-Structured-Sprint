@@ -254,7 +254,7 @@ REVIEW
    ↓
 SAVE
    ↓
-updated ZASSELECTION.md
+updated ZASSELECTION_EN.md / ZASSELECTION_MY.md
    ↓
 download / reuse in another AI
 ```
