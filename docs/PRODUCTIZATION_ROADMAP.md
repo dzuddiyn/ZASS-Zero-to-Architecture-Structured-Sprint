@@ -40,6 +40,33 @@ The freeze does not block consistency fixes, documentation presentation, validat
 
 Validator rule candidates already accepted include duplicate/malformed IDs, broken references, unauthorized LOCKED-decision changes, invalid architecture references, stale ZASS ↔ ACTION_PLAN snapshots, unresolved critical placeholders, and likely secret/sensitive-value patterns.
 
+## ZASS SYSTEM product delivery gates
+
+These six gates are the primary path from a stable method/local-core baseline to a ZASS SYSTEM product that is usable end-to-end.
+
+AISYNC task numbers are implementation detail in the AISYNC repository. This roadmap tracks the **ZASS SYSTEM acceptance gates**. Work such as AISYNC T-017 may supply implementation/evidence for one or more gates, but it is not executed or governed from this repository.
+
+| Gate | Product capability | Current state | PASS requirement |
+|---|---|---|---|
+| **1** | **AI-SYNC consumes ZASS core semantics** | **PASS** | ASC consumes factual commit-linked ZASS CI/core results without reimplementing validator rules; GitHub remains canonical; local CLI remains independently usable. Proven by operational ZASS CI plus AISYNC T-012. |
+| **2** | **DUMP / DECIDE / DESIGN landing** | **CONTRACT + TECHNICAL PROOF PASS; production journey integration remains** | DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS only by explicit escalation. AISYNC routing/provider handoff proof exists, but the integrated Production v1 journey must expose this coherently. |
+| **3** | **Project Workspace + Contextual Cards** | **CONTRACT LOCKED / PRODUCT IMPLEMENTATION PENDING** | Conversational-first workspace; progressive disclosure; Ready to Lock, Design Forming, Current Task, Delivered, Project Pulse; internal IDs/ledgers hidden unless useful. |
+| **4** | **Factual SAVE / sync** | **PERSISTENCE CORE PASS; integrated product state pending** | SAVED only after real persistence; Git-backed save returns traceable commit/receipt; product truthfully surfaces UNSAVED / SYNCING / SAVED / FAILED / STALE. AISYNC T-016 proves the production GitHub write boundary. |
+| **5** | **Review / History projection** | **PARTIAL** | Decisions, design/architecture, selection state, lineage, validator/CI detail, commits and history are reviewable without burdening the normal workspace. Existing AISYNC dashboard/history/CI surfaces provide partial proof. |
+| **6** | **Automation + adoption UX** | **PENDING** | Handoff/sync/continuity/automation preserve the same authority model; real multi-project/human field use passes; UX is stable enough for ordinary use without developer-side repair. AISYNC private continuity/retrieval and later Production v1 reliability/beta work are implementation dependencies, not ZASS method changes. |
+
+### Cross-repository execution boundary
+
+- **This ZASS repository owns:** method/system contracts, local core/validator semantics, product acceptance gates, GitHub authority rules, and compatibility requirements.
+- **AISYNC owns:** transport, persistence runtime, private continuity/retrieval runtime, provider handoff, integrated web journey, operational reliability, and closed-beta implementation.
+- Do not duplicate AISYNC runtime tasks inside ZASS.
+- Do not change ZASS method semantics merely to make an AISYNC implementation easier.
+- A gate may be marked PASS here only from factual implementation evidence, not from planned AISYNC work.
+
+Current next product focus:
+
+> **Gate 2 production integration → Gate 3 Workspace/Cards**, while Gate 4 backend persistence is already proven and AISYNC continues its own runtime delivery track independently.
+
 ## P2 — AI-SYNC integration and adoption
 
 Current engineering priority is not blocked on proving the methodology through external case studies.
