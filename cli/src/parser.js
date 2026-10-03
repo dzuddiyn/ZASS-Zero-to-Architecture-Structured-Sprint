@@ -78,8 +78,7 @@ export function extractRecordDefinitions(markdown) {
   const malformed = [];
   const patterns = [
     new RegExp(`^#{1,6}\\s+(${ID_CANDIDATE})(?=\\s|—|–|-|:|$)`, 'i'),
-    new RegExp(`^\\s*\\|\\s*(${ID_CANDIDATE})\\s*\\|`, 'i'),
-    new RegExp(`^\\s*[-*+]\\s+\\*\\*(${ID_CANDIDATE})(?=\\*\\*|\\s|—|–|:|/)`, 'i')
+    new RegExp(`^\\s*\\|\\s*(${ID_CANDIDATE})\\s*\\|`, 'i')
   ];
 
   for (const line of visibleMarkdownLines(markdown)) {
@@ -239,6 +238,17 @@ function stripInlineMarkdown(text) {
   return text.replace(/\*\*|__|`/g, '');
 }
 
+function explicitStatusTokens(text) {
+  const plain = stripInlineMarkdown(text).trim().replace(/^[-*+]\s+/, '');
+  const match = plain.match(/^Status\s*:\s*([A-Z]+(?:\s*\/\s*[A-Z]+)*)\b/i);
+  if (!match) return [];
+
+  return match[1]
+    .split('/')
+    .map((token) => token.trim().toUpperCase())
+    .filter(Boolean);
+}
+
 function normalizeDecisionText(text) {
   return text
     .replace(/\r\n?/g, '\n')
@@ -261,7 +271,7 @@ function extractDecisionSectionState(visible) {
 
   for (const line of visible) {
     const stateHeading = line.text.match(
-      /^(#{1,6})\s+(?:\d+\.\s*)?(LOCKED|SUPERSEDED)\s+DECISIONS\b/i
+      /^(#{1,6})\s+(?:\d+[A-Z]?\.\s*)?(LOCKED|SUPERSEDED)\s+(?:DECISIONS|RECORDS)\b/i
     );
 
     if (stateHeading) {
@@ -279,9 +289,9 @@ function extractDecisionSectionState(visible) {
     if (!activeState) continue;
 
     const plain = stripInlineMarkdown(line.text);
-    const entry = plain.match(
-      /^\s*[-*+]\s+(?:(?:L-\d{3})\s*\/\s*)?(D-\d{3})\b/i
-    );
+    const entry =
+      plain.match(/^\s*[-*+]\s+(?:(?:L-\d{3})\s*(?:\/|→|->)\s*)?(D-\d{3})\b/i) ||
+      plain.match(/^\s*[-*+]\s+L-\d{3}\s*:\s*Locks\s+(D-\d{3})\b/i);
     if (!entry) continue;
 
     const id = entry[1].toUpperCase();
@@ -329,8 +339,9 @@ export function extractDecisionState(markdown) {
       const relation = plain.match(/^Supersedes\s*:\s*(D-\d{3})\b/i);
       if (relation) supersedes.set(id, relation[1].toUpperCase());
 
-      if (/^Status\s*:\s*LOCKED\b/i.test(plain)) lockedIds.add(id);
-      if (/^Status\s*:\s*SUPERSEDED\b/i.test(plain)) supersededIds.add(id);
+      const statusTokens = explicitStatusTokens(line);
+      if (statusTokens.includes('LOCKED')) lockedIds.add(id);
+      if (statusTokens.includes('SUPERSEDED')) supersededIds.add(id);
     }
   }
 

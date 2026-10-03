@@ -1,6 +1,6 @@
 # CR-010 v0.3 — ACTION_PLAN Consistency Specification
 
-**Status:** LOCKED IMPLEMENTATION PLAN — NOT STARTED
+**Status:** LOCKED IMPLEMENTATION PLAN — NOT STARTED; v0.2 FIELD GATE SATISFIED
 **Date:** 2026-10-01
 **Owner:** Project Owner
 **Depends on:** CR-010 v0.2 `zass check`
@@ -45,6 +45,8 @@ Proceed only if:
 - any v0.2 parser defect found is fixed or explicitly accepted first.
 
 Locking this plan does not bypass that field gate.
+
+**Field-gate receipt (2026-10-03): SATISFIED.** CR-010 v0.2.2 was tested against the real Kerani_Core project after field compatibility fixes. The unchanged project returned 0 errors / 0 warnings and a deliberate semantic mutation of LOCKED D-037 returned Z101. v0.3 implementation remains NOT STARTED until explicitly begun.
 
 ## 3. Scope
 

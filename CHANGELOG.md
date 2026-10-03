@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS CLI v0.2.2 — CR-010 field compatibility] — 2026-10-03
+
+- Field-use patch triggered by the required CR-010 v0.2 real-project gate; no ZASS method or ZASS SYSTEM version change.
+- Fixed Z001 false positives where bold summary/index/ledger list entries repeated IDs that were already defined by canonical headings/tables.
+- Preserved real duplicate detection: field testing exposed a genuine duplicate `R-035` in Kerani_Core, corrected separately to `R-040` rather than weakening Z001.
+- Extended explicit decision-state parsing to deterministic compound forms such as `Status: DECIDED / LOCKED`.
+- Extended explicit authority-section support to `LOCKED RECORDS` plus `L-xxx → D-xxx` and `L-xxx: Locks D-xxx` forms while keeping ordinary prose non-authoritative.
+- Added real-project-shaped parser and Git-drift regressions.
+- Automated suite: **36/36 PASS**.
+- Final field proof against corrected Kerani_Core `main`: unchanged project **0 errors / 0 warnings**; deliberate semantic mutation of LOCKED `D-037` produces **Z101 ERROR**.
+- CR-010 v0.2 field gate is PASSED; CR-010 v0.3 ACTION_PLAN consistency is now the next implementation gate but remains NOT STARTED.
+
+
 ## [QA-008 — repository consistency guard] — 2026-10-03
 
 - Quality-track preventive guard; no ZASS method or ZASS SYSTEM version bump.
