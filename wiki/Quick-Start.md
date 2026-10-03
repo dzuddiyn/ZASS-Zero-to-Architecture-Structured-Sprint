@@ -110,5 +110,3 @@ Typical triggers:
 - decision history is becoming hard to track conversationally.
 
 Move because **decision complexity** increased, not merely because the project got larger.
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
