@@ -128,6 +128,41 @@ test('CR-010 v0.3 Z204 errors on an explicitly referenced missing ZASS ID', asyn
   assert.ok(has(report, 'error', 'Z204', 'D-999'));
 });
 
+test('CR-010 v0.3 Z204 accepts IDs declared in an explicit legacy decision ledger', async (t) => {
+  const zass = `# Project
+
+**ZASS method:** v0.3.9
+
+# 11. DECISION LEDGER — LOCKED
+
+- **D-006:** Inbound message must be durably recorded.
+
+## Canonical ZERO → ARCHITECTURE assessment
+
+**ZERO → ARCHITECTURE:** [███████░░░] 70% — READY FOR DRAFT ARCH
+`;
+
+  const action = `# ACTION PLAN
+
+## ZERO → ARCHITECTURE SNAPSHOT
+
+- **Progress:** 70%
+- **Status:** READY FOR DRAFT ARCH
+- **Source:** ZASS.md v0.3.9 — same Git commit
+
+## Work
+
+- **Related ZASS:** D-006
+`;
+
+  const dir = await makeProject(zass, action);
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const report = await runCheck(dir);
+  assert.equal(report.exitCode, 0);
+  assert.ok(has(report, 'pass', 'Z204'));
+});
+
 test('CR-010 v0.3 accepts shared valid E-xxx identity', async (t) => {
   const dir = await makeProject(baseZass(), baseActionPlan({ related: 'E-001' }));
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
