@@ -64,17 +64,21 @@ LOCKED system-level boundary:
 - The existing ASC Write Contract remains a separate protected write-plane contract and is not expanded for public method distribution.
 - The v0.1 public Method Gateway has passed T-013A/T-013B sync/readability proof. Receivers must use the exact published gateway URL; on fetch failure they must report failure rather than substitute repository search, raw GitHub, or another source as method authority.
 
-Current implementation checkpoint (2026-10-03):
+Current implementation checkpoint:
 
 ```text
-AI-SYNC T-013A — PASS
-METHODS registry + protected GitHub sync
-        ↓
-T-013B — PASS
-public gateway + Gemini/Copilot direct-read proof
-        ↓
+AI-SYNC T-013A/T-013B — PASS
 public method-read transport operational for the proven v0.1 path
+
+ZASS CI + AISYNC T-012 — PASS
+ASC consumes factual commit-linked validator/CI status
+without duplicating ZASS rule semantics
+
+AISYNC T-016 — PASS
+production GitHub write boundary + factual verified SAVE/NO_CHANGE receipts
 ```
+
+These proofs do not by themselves complete the integrated ZASS SYSTEM product UX. They satisfy core dependencies for the product delivery gates tracked in `PRODUCTIZATION_ROADMAP.md`.
 
 This is a system/integration-contract update. It does not alter ZASSPILL, ZASSELECTION, or ZASSIMPLE semantics.
 
@@ -421,7 +425,7 @@ review/history projection
 automation and product adoption UX
 ```
 
-CR-010 v0.3 remains a locked implementation plan but is currently deferred.
+CR-010 v0.3 is implemented, field-validated, and closed at its STOP/review gate as zass-cli v0.3.0. Optional Z206 and CR-010 v0.4 remain deferred/not started.
 
 ## 14. Authority boundary
 
