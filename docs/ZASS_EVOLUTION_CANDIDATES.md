@@ -660,5 +660,3 @@ Future ZASS evaluation should use several real projects and observe useful signa
 - factual corrections required after AI-generated claims.
 
 Case-study evidence should guide future method changes before new ceremony is added.
-
-[executed on device: LAPTOP-DBGSGIEI (3bcc9967-d6ee-42e6-bd9f-ac96ebcea9f1)]
