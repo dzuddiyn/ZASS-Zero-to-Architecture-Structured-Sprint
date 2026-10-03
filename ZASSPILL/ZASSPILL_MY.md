@@ -3,11 +3,13 @@
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
 **Version:** 1.0.0  
-**Status:** PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
 ZASSPILL ialah method continuity DUMP dalam keluarga ZASS.
+
+Dalam repository ini, `PRODUCTION READY` merujuk kepada kontrak method/protocol ZASSPILL yang telah dibekukan. Runtime persistence, retrieval, authorization dan transport dilaksanakan di luar layer method ini oleh AI-SYNC/ASC.
 
 Tugasnya mudah:
 

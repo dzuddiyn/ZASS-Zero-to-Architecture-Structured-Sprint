@@ -3,6 +3,16 @@
 All notable changes to ZASS are recorded here.
 
 
+## [QA-005 — current truth and claim precision] — 2026-10-03
+
+- Quality-track documentation/claim synchronization only; no ZASS method or ZASS SYSTEM version bump.
+- Aligned the older AI-SYNC integration reference and UI/UX contract with the proven T-013A/T-013B public Method Gateway state while preserving GitHub method authority and exact-URL receiver guardrails.
+- Marked the GitHub Actions roadmap item DONE and retained later validator phases as separate future work.
+- Corrected Full ZASS surface alignment metadata to current v0.3.9.
+- Qualified ZASSPILL `PRODUCTION READY` wording across current surfaces: it refers to the v1.0.0 method/protocol contract, while runtime persistence/retrieval/authorization/transport remain AI-SYNC/ASC responsibilities.
+- No routing, method semantics, validator rules, or architecture boundaries changed.
+
+
 ## [QA-004 — public metadata cleanup] — 2026-10-03
 
 - Quality-track repository hygiene only; no ZASS method or ZASS SYSTEM version bump.
