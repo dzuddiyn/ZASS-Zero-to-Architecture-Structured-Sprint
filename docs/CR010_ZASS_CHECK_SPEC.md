@@ -179,7 +179,7 @@ Malformed forms such as `D004`, `D_004`, or `D-4` may be reported when they occu
 
 ### Broken local reference
 
-Check relative Markdown/file references that point inside the project. Remote HTTP/HTTPS link checking is deferred.
+Check relative Markdown/file references that point inside the project. Z003 covers ordinary inline links plus reference-style links whose local target is defined in the same Markdown file, including explicit/collapsed and shortcut usages when a matching definition exists. Remote HTTP/HTTPS link checking is deferred.
 
 ### Evidence Confidence pairing
 
