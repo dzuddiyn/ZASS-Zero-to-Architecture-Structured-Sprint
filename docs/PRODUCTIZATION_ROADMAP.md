@@ -52,8 +52,8 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 | **2** | **DUMP / DECIDE / DESIGN landing** | **PASS / CLOSED** | DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE; Full ZASS only by explicit escalation. AISYNC PR #15 merged, live ASC DB validation is three-route, protected Apps Script production v21 contains the bounded Gate 2 patch, and owner-visible production checks confirmed DUMP / DECIDE / DESIGN plus working DECIDE and DESIGN navigation. |
 | **3** | **Project Workspace + Contextual Cards** | **PASS / CLOSED** | Workspace defaults to Project Pulse + natural continuation + factual contextual-card projection; Review/History provide progressive disclosure. AISYNC PR #18 merged, protected Apps Script production v23 contains the bounded Gate 3 patch, and owner-visible verification confirmed Workspace, STALE-state suppression, Review, and History behavior. |
 | **4** | **Factual SAVE / sync** | **PASS / CLOSED** | Protected Confirm & Sync visibly proved UNSAVED → SYNCING → SAVED with factual NO_CHANGE receipt, `verified=true`, and no invented commit. Workspace Project Pulse visibly showed Save / sync health = STALE despite prior SAVE success, proving persistence truth is not conflated with index freshness. Production remains Apps Script v26 with bounded NO REQUEST and D-030 return-control fixes. |
-| **5** | **Review / History projection** | **CURRENT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING** | Review now projects Decisions, Design/architecture, Selection state, lineage/source, validator/CI, Action Plan, Commit/version trail and raw records on demand; History projects factual audit events and compact receipt truth. AISYNC PR #30 merged and protected Apps Script production v27 contains the bounded Gate 5 patch. Final close requires owner-visible production verification. |
-| **6** | **Automation + adoption UX** | **PENDING** | Handoff/sync/continuity/automation preserve the same authority model; real multi-project/human field use passes; UX is stable enough for ordinary use without developer-side repair. AISYNC private continuity/retrieval and later Production v1 reliability/beta work are implementation dependencies, not ZASS method changes. |
+| **5** | **Review / History projection** | **PASS / CLOSED** | Production v27 owner-visible proof confirmed Workspace remains compact/default; Review exposes STALE caveat, factual CI status, Decisions, neutral Design/architecture and Selection-state absence, Action Plan, readable lineage/source, Commit/version trail and raw records on demand; History exposes factual audit events and compact receipt truth with raw JSON secondary. |
+| **6** | **Automation + adoption UX** | **CURRENT — ACCEPTANCE NOT YET LOCKED** | Handoff/sync/continuity/automation must preserve the same authority model; real multi-project/human field use must pass; UX must be stable enough for ordinary use without developer-side repair. AISYNC private continuity/retrieval, integrated handoff/reopen/transfer, automation safety, reliability and closed-beta evidence are implementation inputs, not ZASS method changes. |
 
 ### Cross-repository execution boundary
 
@@ -65,7 +65,7 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 
 Current next product focus:
 
-> **Gates 1–4 are CLOSED / PASS. Gate 5 — Review / History projection is now CURRENT.** Gate 5 must turn the already-working Review/History surfaces into a complete audit/review projection without re-expanding the default Workspace into a technical wall.
+> **Gates 1–5 are CLOSED / PASS. Gate 6 — Automation + adoption UX is now CURRENT.** Gate 6 must prove the integrated handoff/sync/continuity/automation journey and ordinary multi-project human adoption without weakening the authority model or requiring developer-side repair.
 
 ## P2 — AI-SYNC integration and adoption
 
