@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 4 — Factual SAVE / Sync Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION PENDING  
+**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 4 only — factual save/sync state and receipt UX
@@ -152,23 +152,36 @@ FAILED
 
 No automatic click, silent write, or bypass of confirmation is allowed.
 
-## 7. Production evidence required to close Gate 4
+## 7. Implementation + deployment evidence
 
-Gate 4 closes only after:
+Gate 4 source implementation is merged and production-deployed.
 
-1. acceptance contract is merged;
-2. AISYNC source patch is merged;
-3. all relevant confirm/write/dashboard regression tests pass;
-4. browser/client code still contains no direct GitHub/Sheets credentialed writer;
-5. production Apps Script deployment contains the bounded Gate 4 UI patch;
-6. owner-visible production proof confirms:
-   - pending preview visibly says UNSAVED;
-   - after explicit CONFIRM & SYNC, SYNCING appears before final state;
-   - verified success renders SAVED with truthful receipt facts;
-   - failure fixture/test cannot render SAVED;
-   - Workspace Project Pulse shows STALE/SAVED/FAILED truthfully without conflating save receipt with index freshness.
+Canonical AISYNC evidence:
+- AISYNC PR #21 merged as `c4ab3e2be49a295e741f5a35ac0bde1667bd1a06`;
+- all **26** AISYNC repository `test-*.mjs` files PASS;
+- `git diff --check` PASS;
+- confirm UI regressions cover UNSAVED / SYNCING / SAVED / FAILED, delayed return, VERIFIED_WRITE, NO_CHANGE, VERIFIED_WRITE_RECONCILED, and unverified failure;
+- dashboard regressions cover STALE precedence, verified SAVED, NO_CHANGE, FAILED, and insufficient receipt evidence;
+- browser client still exposes no direct GitHub/Sheets/token writer.
 
-A production proof may use a deterministic T-016 `NO_CHANGE` request so no duplicate Git commit is created.
+Production deployment evidence:
+- protected production Apps Script deployment is **version 24**, `Gate4-factual-save-sync`;
+- v24 was constructed from immutable Gate 3 production v23 plus exactly `Index.html`, `Client.html`, and `DashboardClient.html`;
+- independent post-deploy pull verified all three files match AISYNC Gate 4 merge `c4ab3e2...`;
+- every other production file in v24 matches production v23;
+- the separate current development HEAD containing T-017 was restored after release and was not promoted as part of Gate 4;
+- AISYNC deployment receipt PR #22 merged as `9b820214975848491c4731b4f1acdc5b2263db08`.
+
+Closure items 1–5 are satisfied.
+
+The only remaining closure item is owner-visible production proof confirming:
+- pending preview visibly says **UNSAVED**;
+- explicit CONFIRM & SYNC shows **SYNCING** before final state;
+- a verified production success renders **SAVED** with truthful receipt facts;
+- Workspace Project Pulse shows factual Save / sync health, including current **STALE** behavior;
+- failure/unverified paths remain incapable of rendering SAVED (already regression-proven; no destructive live failure injection is required).
+
+A deterministic T-016 `NO_CHANGE` request may be used for the live success proof so no duplicate Git commit is created.
 
 ## 8. Non-blockers
 
