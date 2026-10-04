@@ -3,6 +3,20 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 4 CLOSED / PASS] — 2026-10-04
+
+- Completed final owner-visible production acceptance for Factual SAVE / sync.
+- Verified a valid pending request visibly showed `UNSAVED`.
+- Verified explicit `CONFIRM & SYNC` visibly transitioned through `SYNCING`.
+- Verified factual final receipt rendered `SAVED / NO_CHANGE / verified=true` with `write_performed=false` and no invented commit.
+- Verified Workspace Project Pulse showed `Save / sync health: STALE` while the prior SAVE receipt was successful, proving persistence success and index freshness remain distinct.
+- Retained D-030 user-activated `Return to main ASC UI` as the guaranteed post-SAVE return path.
+- Recorded AISYNC final owner-visible closure receipt PR #29, merge `715000c5b9416fa40eb05855a8f751816e29f16a`.
+- Gate 4 is now CLOSED / PASS.
+- Promoted Gate 5 — Review / History projection — to CURRENT.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 4 live proof + D-030 compatibility fix] — 2026-10-04
 
 - Recorded owner-visible factual `SAVED / NO_CHANGE / verified=true` proof for request `ASC-G4-NOCHANGE-20261004013025`.
