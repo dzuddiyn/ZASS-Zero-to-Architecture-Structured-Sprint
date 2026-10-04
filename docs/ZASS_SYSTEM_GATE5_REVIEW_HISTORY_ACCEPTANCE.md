@@ -1,0 +1,272 @@
+# ZASS SYSTEM Gate 5 — Review / History Projection Acceptance
+
+**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION PENDING  
+**Date:** 2026-10-04  
+**System baseline:** ZASS SYSTEM v0.2.0  
+**Scope:** Product Gate 5 only — read-only review, lineage, commit/version, validator, and audit-history projection
+
+> Gate 5 makes advanced project state inspectable on demand without turning the default Workspace back into a technical wall.
+
+## 1. Product intent
+
+The user-facing separation is:
+
+```text
+Workspace
+= work normally
+
+Review
+= inspect current structured/project evidence
+
+History
+= inspect what happened over time
+```
+
+Primary rule:
+
+> **Advanced evidence must be reviewable without becoming default working noise.**
+
+## 2. Authority boundary
+
+- GitHub-backed project artifacts and Git lineage remain canonical where applicable.
+- ASC DB / Sheets remains an operational/index projection plus factual receipt/history store.
+- Review and History are **read-only projections**.
+- Gate 5 must not introduce a second validator, second decision ledger, second selection authority, or editable mirror of canonical project artifacts.
+- Gate 5 may group, filter, deduplicate, sort, and link explicit indexed facts for presentation.
+- Missing evidence remains missing; the UI must not synthesize decisions, design state, selection matrices, lineage, commits, or versions.
+- Gates 1–4 behavior remains unchanged.
+
+## 3. Minimum Gate 5 PASS contract
+
+### G5-01 — Review remains on-demand
+
+The default project surface remains **Workspace**.
+
+Review and History appear only after explicit user selection.
+
+No Gate 5 implementation may re-expand Workspace into the old technical wall.
+
+### G5-02 — Decisions projection
+
+Review exposes indexed decision records separately from generic records when explicit decision records exist.
+
+Minimum useful fields:
+- decision ID;
+- status;
+- summary;
+- source artifact;
+- source commit;
+- canonical source link when supplied.
+
+No decision state may be inferred from ordinary prose.
+
+### G5-03 — Design / architecture projection
+
+Review exposes explicit design/architecture records separately when indexed.
+
+Accepted record categories may include explicit record types such as:
+- `design`;
+- `architecture`;
+- `design_record`;
+- equivalent explicit indexed type.
+
+If none exist, show a neutral “No design/architecture records indexed” state rather than infer one from decision text.
+
+### G5-04 — Selection-state projection
+
+Review supports explicit ZASSELECTION/selection-state records when indexed.
+
+Examples include explicit record types such as:
+- `selection`;
+- `selection_matrix`;
+- `matrix`;
+- equivalent explicit indexed selection type.
+
+If no selection-state record exists for the project, show **No selection state indexed**.
+
+Gate 5 does not create or persist a selection matrix merely to populate this surface.
+
+### G5-05 — Lineage and source traceability
+
+Review exposes lineage and source metadata in a human-reviewable form:
+
+- record lineage from explicit `lineage_json`;
+- Action Plan source lineage from explicit `source_lineage`;
+- source artifact;
+- source commit;
+- canonical URL where supplied.
+
+A valid lineage JSON array may be rendered as a readable list.
+
+Malformed/unreadable lineage must remain visibly unreadable/raw; do not repair or infer it silently.
+
+### G5-06 — Validator / CI detail
+
+Review keeps factual commit-linked ZASS CI detail available:
+
+- repository;
+- exact source commit;
+- status;
+- workflow/job;
+- conclusion;
+- run ID;
+- fetched time;
+- GitHub Actions link when factual.
+
+`NOT_FOUND` and `READ_ERROR` remain non-PASS states.
+
+ASC must not reimplement validator rule semantics.
+
+### G5-07 — Commit / version trail
+
+Review exposes a **Commit / version trail** built only from explicit commit identifiers already present in:
+
+- project index metadata;
+- RECORDS;
+- ACTION_PLAN;
+- HISTORY.
+
+Requirements:
+- deduplicate identical explicit commit IDs for presentation;
+- retain source/provenance labels;
+- when `github_repo` is available and the commit token is a valid Git SHA-like hex token, provide a GitHub commit link;
+- do not invent semantic version numbers;
+- absence of commit/version data is shown neutrally.
+
+This trail is an indexed audit projection, not a replacement for Git history.
+
+### G5-08 — History audit projection
+
+History exposes factual audit events separately from Review.
+
+Minimum fields:
+- timestamp;
+- operation;
+- destination;
+- status;
+- affected resource;
+- commit/record identifier;
+- failure reason.
+
+When a receipt exists, the UI should prioritize a compact factual receipt summary:
+- adapter outcome;
+- verified;
+- write performed;
+- commit/record identifier when attributable.
+
+Raw receipt JSON may remain behind a details control.
+
+Failures must remain visible and must not be collapsed into successful history.
+
+### G5-09 — Freshness / projection caveat remains visible
+
+Review must clearly display current index/source freshness.
+
+A stale operational/index projection must not be presented as current canonical truth.
+
+### G5-10 — Read-only / no authority mutation
+
+Review and History controls:
+- do not write;
+- do not lock decisions;
+- do not modify selection state;
+- do not trigger SAVE;
+- do not mutate GitHub/Sheets/project state.
+
+Any future action controls belong to their own protected flows.
+
+## 4. Current implementation baseline
+
+AISYNC already provides partial Gate 5 evidence:
+
+- Workspace / Review / History progressive disclosure is live from Gate 3;
+- Review already displays commit-linked ZASS CI;
+- Review already displays current-state summaries, Action Plan, and raw project RECORDS;
+- History already displays factual HISTORY rows and raw receipt JSON on demand;
+- Gate 4 has proven factual SAVE receipts and STALE projection behavior.
+
+Current product gaps:
+- decisions/design/selection are not projected as distinct review categories;
+- lineage is mostly raw table data;
+- explicit commit/version evidence is scattered across project/record/action/history rows rather than summarized as a review trail;
+- History raw receipt JSON is technically available but not yet optimized as a compact audit summary.
+
+## 5. Required production shape
+
+Minimum accepted structure:
+
+```text
+[ Workspace ] [ Review ] [ History ]
+
+Review
+  Review Overview / source freshness
+  Validator / CI
+  Decisions
+  Design / architecture
+  Selection state
+  Action Plan
+  Lineage / sources
+  Commit / version trail
+  Raw project records (secondary/details)
+
+History
+  Audit events
+  Compact factual receipt details
+  Raw receipt JSON (secondary/details)
+```
+
+The exact visual layout may differ, but the information hierarchy and authority boundary must remain equivalent.
+
+## 6. Selection and design absence behavior
+
+Gate 5 capability is not measured by forcing every project to contain every record type.
+
+For a project with no indexed selection/design records:
+
+```text
+Selection state
+No selection state indexed.
+
+Design / architecture
+No design/architecture records indexed.
+```
+
+This is a valid factual state.
+
+Automated fixtures must prove the positive rendering path when those explicit record types are present.
+
+## 7. Production evidence required to close Gate 5
+
+Gate 5 closes only after:
+
+1. this acceptance contract is merged;
+2. AISYNC source implementation is merged;
+3. relevant repository regression tests pass;
+4. Gates 1–4 regressions remain intact;
+5. no new write operation is introduced;
+6. production Apps Script deployment contains the bounded Gate 5 UI patch;
+7. owner-visible production proof confirms:
+   - Workspace remains compact/default;
+   - Review exposes Decisions, Design/architecture, Selection state, lineage/source, validator/CI, and Commit/version trail;
+   - absent selection/design state is shown neutrally when absent;
+   - History exposes audit events and compact receipt truth separately;
+   - raw technical detail remains available without burdening Workspace.
+
+Automated fixtures may supply positive proof for record categories absent from the current AISYNC project index.
+
+## 8. Non-blockers
+
+Gate 5 does not require:
+- adding fake selection/design records to AISYNC;
+- changing the ASC DB schema;
+- T-018 completion;
+- CR-010 v0.4;
+- Z206;
+- public beta;
+- a new method/system version.
+
+## 9. Stop rule
+
+Do not mark Gate 5 PASS because raw data merely exists somewhere.
+
+The review surface must make the evidence practically inspectable while preserving the Workspace/authority boundaries.
