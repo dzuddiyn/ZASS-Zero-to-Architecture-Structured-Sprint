@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 4 live proof + D-030 compatibility fix] — 2026-10-04
+
+- Recorded owner-visible factual `SAVED / NO_CHANGE / verified=true` proof for request `ASC-G4-NOCHANGE-20261004013025`.
+- Recorded that no new commit was created because authoritative target content already matched.
+- Recorded live UX defect: empty protected page displayed `UNSAVED`; fixed to neutral `NO REQUEST`.
+- Recorded live platform finding: timer-driven top-level auto-return did not navigate from the Apps Script/browser sandbox.
+- Confirmed D-030 already makes the user-activated `Return to main ASC UI` control the guaranteed v0.1 return path and automatic navigation optional.
+- Recorded AISYNC PR #25 (`75a76bd0...`) and PR #26 (`9abddcfd...`) bounded fixes.
+- Recorded protected production Apps Script v26, `Gate4-D030-return-control-fix`, with independent source verification and no unrelated production drift.
+- Gate 4 owner-visible SAVED proof is PASS; final closure still requires visible UNSAVED/SYNCING for a valid request and Workspace Save / sync health proof.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 4 production deployment receipt] — 2026-10-04
 
 - Recorded AISYNC Gate 4 factual SAVE/sync merge `c4ab3e2be49a295e741f5a35ac0bde1667bd1a06`.

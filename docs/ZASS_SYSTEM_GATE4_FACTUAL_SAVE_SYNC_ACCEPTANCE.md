@@ -160,25 +160,37 @@ Canonical AISYNC evidence:
 - AISYNC PR #21 merged as `c4ab3e2be49a295e741f5a35ac0bde1667bd1a06`;
 - all **26** AISYNC repository `test-*.mjs` files PASS;
 - `git diff --check` PASS;
-- confirm UI regressions cover UNSAVED / SYNCING / SAVED / FAILED, delayed return, VERIFIED_WRITE, NO_CHANGE, VERIFIED_WRITE_RECONCILED, and unverified failure;
+- confirm UI regressions cover UNSAVED / SYNCING / SAVED / FAILED, VERIFIED_WRITE, NO_CHANGE, VERIFIED_WRITE_RECONCILED, unverified failure, neutral NO REQUEST state, and the D-030 user-activated return control;
 - dashboard regressions cover STALE precedence, verified SAVED, NO_CHANGE, FAILED, and insufficient receipt evidence;
 - browser client still exposes no direct GitHub/Sheets/token writer.
 
 Production deployment evidence:
-- protected production Apps Script deployment is **version 24**, `Gate4-factual-save-sync`;
-- v24 was constructed from immutable Gate 3 production v23 plus exactly `Index.html`, `Client.html`, and `DashboardClient.html`;
-- independent post-deploy pull verified all three files match AISYNC Gate 4 merge `c4ab3e2...`;
-- every other production file in v24 matches production v23;
-- the separate current development HEAD containing T-017 was restored after release and was not promoted as part of Gate 4;
-- AISYNC deployment receipt PR #22 merged as `9b820214975848491c4731b4f1acdc5b2263db08`.
+- initial Gate 4 production deployment: Apps Script **v24**, `Gate4-factual-save-sync`;
+- owner-visible proof exposed two bounded UX findings without invalidating persistence:
+  1. empty protected page incorrectly showed `UNSAVED`; fixed so no-payload state is `NO REQUEST`;
+  2. timer-driven top-level auto-return did not navigate in the Apps Script/browser sandbox;
+- D-030 already defines the guaranteed v0.1 successful-return path as a **user-activated Return to main ASC UI control**, with auto-navigation optional;
+- AISYNC PR #25 merged the `NO REQUEST` fix at `75a76bd0f8aba9c8c68dfea3aba4735ba4cb7690`;
+- AISYNC PR #26 merged the D-030 return-control alignment at `9abddcfd8a5abd91f81d041a85b5474b74493b7b`;
+- protected production Apps Script now points to **version 26**, `Gate4-D030-return-control-fix`;
+- v26 = v25 plus exactly `Index.html` and `Client.html`;
+- independent post-deploy verification confirmed both files match the merged D-030 fix and all other production files match v25;
+- current development HEAD containing T-017 remains restored and separate;
+- AISYNC live-finding/deployment receipt PR #27 merged as `f4d84c168eed40844080ad421f761776e7274ecd`.
 
 Closure items 1–5 are satisfied.
 
-The only remaining closure item is owner-visible production proof confirming:
-- pending preview visibly says **UNSAVED**;
-- explicit CONFIRM & SYNC shows **SYNCING** before final state;
-- a verified production success renders **SAVED** with truthful receipt facts;
-- Workspace Project Pulse shows factual Save / sync health, including current **STALE** behavior;
+Owner-visible production proof already confirmed:
+- verified production success renders **SAVED** with truthful receipt facts;
+- live receipt: `Outcome: NO_CHANGE`, `New write performed: no`, `Verified: true`;
+- request `ASC-G4-NOCHANGE-20261004013025`;
+- resource `dzuddiyn/AISYNC/records/T016-LIVE-20261003181842.md`;
+- timer-driven auto-return failure is closed as a D-030 compatibility/UX finding, not a persistence failure.
+
+Remaining closure evidence:
+- pending preview visibly says **UNSAVED** for a valid pending request;
+- explicit CONFIRM & SYNC visibly shows **SYNCING** before final state;
+- Workspace Project Pulse visibly shows factual Save / sync health, including current **STALE** behavior;
 - failure/unverified paths remain incapable of rendering SAVED (already regression-proven; no destructive live failure injection is required).
 
 A deterministic T-016 `NO_CHANGE` request may be used for the live success proof so no duplicate Git commit is created.
