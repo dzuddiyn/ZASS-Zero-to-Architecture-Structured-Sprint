@@ -3,6 +3,22 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 3 CLOSED / PASS] — 2026-10-04
+
+- Completed final owner-visible production acceptance for Project Workspace + Contextual Cards on protected Apps Script v23.
+- Verified project opens on Workspace by default.
+- Verified compact Project Pulse with current stage, next stage, factual progress state, STALE index freshness, and latest update.
+- Verified STALE state suppresses stale Current Task / decision-currentness claims and surfaces `Project state needs refresh`.
+- Verified Continue naturally / ASC Front Door is visible without implying SAVE.
+- Verified Review exposes commit-linked CI, current-state evidence, Action Plan, and ZASS/project records on demand.
+- Verified History exposes the factual audit trail separately.
+- Verified the default Workspace no longer exposes the previous full technical wall.
+- Observed factual `READ_ERROR / GITHUB_READ_FAILED` in Review for the stale indexed commit; this was correctly surfaced as an error rather than a PASS.
+- Gate 3 is now CLOSED / PASS.
+- Promoted Gate 4 — Factual SAVE / sync — to CURRENT.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 3 production deployment receipt] — 2026-10-04
 
 - Recorded AISYNC Gate 3 workspace/contextual-cards merge `3d006eb4bde64ab9cca9878c0ca4e9c69db4dbf9`.
