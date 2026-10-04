@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 3 — Project Workspace + Contextual Cards Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
+**Status:** CLOSED / PASS — IMPLEMENTED, DEPLOYED, OWNER-VISIBLE VERIFIED  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 3 only — project workspace, progressive disclosure, contextual cards, and Project Pulse
@@ -220,7 +220,18 @@ Production deployment evidence:
 - the separate current development HEAD containing T-017 was restored after release and was not promoted as part of Gate 3;
 - AISYNC deployment receipt PR #19 merged as `ca2b690c95f896fc6a2e7c2a4cb80a178fc6a9a8`.
 
-The remaining Gate 3 acceptance evidence is owner-visible production verification.
+Owner-visible production verification is complete.
+
+Observed on protected production Apps Script v23:
+- the AISYNC project opens directly on **Workspace**;
+- **Project Pulse** is compact and shows the indexed current stage, next stage, factual progress state, index freshness, and latest update;
+- index freshness is visibly **STALE** and the contextual area correctly shows **Project state needs refresh** instead of presenting a stale task or decision as current;
+- **Continue naturally** and the ASC Front Door action are visible without implying persistence;
+- **Review** exposes commit-linked ZASS CI, current-state summaries, Action Plan, and ZASS/project records on demand;
+- **History** exposes the factual audit trail separately;
+- the default Workspace no longer exposes the previous permanent technical wall.
+
+The Review surface also displayed a factual `READ_ERROR / GITHUB_READ_FAILED` for the commit-linked CI read tied to the stale indexed commit. This is truthful error presentation and does not invalidate Gate 3.
 
 ## 6. Required implementation shape
 
@@ -250,17 +261,19 @@ Internal IDs stay hidden in Workspace but may remain visible in Review/History.
 
 ## 7. Production evidence required to close Gate 3
 
-Gate 3 closure items 1–5 are now satisfied by merged, tested, and versioned production evidence.
+All Gate 3 closure items are satisfied.
 
-The only remaining closure item is owner-visible production proof confirming:
-- project opens on Workspace;
-- Project Pulse is compact;
-- the contextual-card area does not invent current state from STALE/sparse data;
-- Review reveals advanced project state;
-- History reveals the audit trail separately;
-- ordinary Workspace no longer shows the full technical wall.
+Owner-visible production proof — **PASS**:
+- Workspace default: PASS;
+- compact Project Pulse: PASS;
+- STALE-state suppression of current-action claims: PASS;
+- Review progressive disclosure: PASS;
+- History progressive disclosure: PASS;
+- default Workspace no longer shows the full technical wall: PASS.
 
-If those visible checks pass without a material regression, Gate 3 may be closed without another implementation patch.
+> **GATE 3 = CLOSED / PASS**
+
+No further Gate 3 implementation work is required unless a future regression is reported against this acceptance contract.
 
 ## 8. Non-blockers
 
