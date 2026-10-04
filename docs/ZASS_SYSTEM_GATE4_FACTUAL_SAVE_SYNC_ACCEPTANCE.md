@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 4 — Factual SAVE / Sync Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
+**Status:** CLOSED / PASS — IMPLEMENTED, DEPLOYED, OWNER-VISIBLE VERIFIED  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 4 only — factual save/sync state and receipt UX
@@ -187,13 +187,20 @@ Owner-visible production proof already confirmed:
 - resource `dzuddiyn/AISYNC/records/T016-LIVE-20261003181842.md`;
 - timer-driven auto-return failure is closed as a D-030 compatibility/UX finding, not a persistence failure.
 
-Remaining closure evidence:
-- pending preview visibly says **UNSAVED** for a valid pending request;
-- explicit CONFIRM & SYNC visibly shows **SYNCING** before final state;
-- Workspace Project Pulse visibly shows factual Save / sync health, including current **STALE** behavior;
-- failure/unverified paths remain incapable of rendering SAVED (already regression-proven; no destructive live failure injection is required).
+Final owner-visible production proof is complete:
+- valid pending request visibly showed **UNSAVED** before confirmation;
+- after explicit **CONFIRM & SYNC**, the UI visibly showed **SYNCING** before the final state;
+- factual success rendered **SAVED** with `Outcome: NO_CHANGE`, `New write performed: no`, and `Verified: true`;
+- no commit was invented when authoritative content already matched;
+- Workspace Project Pulse visibly showed **Save / sync health: STALE** while the prior SAVE receipt was successful, proving persistence success and index freshness are not conflated;
+- failure/unverified paths remain incapable of rendering SAVED by regression proof; no destructive live failure injection was required;
+- the D-030 user-activated `Return to main ASC UI` control remains the guaranteed post-SAVE return path.
 
-A deterministic T-016 `NO_CHANGE` request may be used for the live success proof so no duplicate Git commit is created.
+AISYNC final owner-visible closure receipt: PR #29 merged as `715000c5b9416fa40eb05855a8f751816e29f16a`.
+
+> **GATE 4 = CLOSED / PASS**
+
+No further Gate 4 implementation work is required unless a future regression is reported against this acceptance contract.
 
 ## 8. Non-blockers
 
