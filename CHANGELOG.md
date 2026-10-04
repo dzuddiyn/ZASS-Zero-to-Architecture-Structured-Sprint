@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 4 production deployment receipt] — 2026-10-04
+
+- Recorded AISYNC Gate 4 factual SAVE/sync merge `c4ab3e2be49a295e741f5a35ac0bde1667bd1a06`.
+- Recorded all 26 AISYNC repository test files PASS and `git diff --check` PASS.
+- Recorded protected Confirm & Sync product states UNSAVED → SYNCING → SAVED / FAILED.
+- Recorded factual receipt handling for VERIFIED_WRITE, NO_CHANGE, and VERIFIED_WRITE_RECONCILED without inventing commit SHAs.
+- Recorded Project Pulse Save / sync health with STALE precedence over historical SAVE success.
+- Recorded protected production Apps Script version 24, built from production v23 plus exactly `Index.html`, `Client.html`, and `DashboardClient.html`.
+- Recorded independent post-deploy source match, non-Gate-4 production-file parity with v23, and restoration of the separate T-017 development HEAD.
+- Gate 4 implementation + deployment evidence is PASS; owner-visible production verification remains before formal closure.
+- No ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 3 CLOSED / PASS] — 2026-10-04
 
 - Completed final owner-visible production acceptance for Project Workspace + Contextual Cards on protected Apps Script v23.
