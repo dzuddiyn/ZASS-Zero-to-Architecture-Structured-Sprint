@@ -3,6 +3,19 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 5 production deployment receipt] — 2026-10-04
+
+- Recorded AISYNC Gate 5 Review/History merge `56f3430f6e0718d21e0b8f63e59dfabd325731d3`.
+- Recorded all 27 AISYNC repository test files PASS and `git diff --check` PASS.
+- Recorded Review projection for freshness, commit-linked CI, Decisions, Design/architecture, Selection state, Action Plan, readable lineage/source metadata, Commit/version trail, and raw project records behind details.
+- Recorded History projection for factual audit events, compact receipt truth, visible failures, and raw receipt JSON behind details.
+- Recorded positive automated fixtures for decision/design/selection/lineage/commit/history paths plus neutral absence behavior.
+- Recorded protected production Apps Script v27, built from production v26 plus exactly `Dashboard.html` and `DashboardClient.html`.
+- Recorded independent post-deploy source match and non-Gate-5 production-file parity with v26.
+- Gate 5 implementation + deployment evidence is PASS; owner-visible production verification remains before formal closure.
+- No ASC DB schema, ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 4 CLOSED / PASS] — 2026-10-04
 
 - Completed final owner-visible production acceptance for Factual SAVE / sync.
