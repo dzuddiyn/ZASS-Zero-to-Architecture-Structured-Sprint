@@ -3,6 +3,23 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 5 CLOSED / PASS] — 2026-10-04
+
+- Completed final owner-visible production acceptance for Review / History projection.
+- Verified Workspace remains compact/default and does not expose advanced audit sections by default.
+- Verified Review clearly presents read-only indexed evidence with explicit STALE caveat.
+- Verified factual commit-linked ZASS CI presentation, including a truthful NOT_FOUND result for the stale indexed commit with no false PASS claim.
+- Verified separate Decisions projection.
+- Verified neutral Design / architecture absence and neutral Selection-state absence for the current AISYNC index.
+- Verified Action Plan, readable Lineage / sources, and Commit / version trail on demand.
+- Verified History separately presents factual audit events, compact receipt truth, visible failures, and raw receipt JSON behind details.
+- Verified NO_CHANGE receipts do not invent commits.
+- Recorded AISYNC final owner-visible closure receipt PR #32, merge `81d53f9a04b1b015e6750f9d5df12ee51179ea90`.
+- Gate 5 is now CLOSED / PASS.
+- Promoted Gate 6 — Automation + adoption UX — to CURRENT.
+- No ASC DB schema, ZASS method, validator, or ZASS SYSTEM version change.
+
+
 ## [ZASS SYSTEM Gate 5 production deployment receipt] — 2026-10-04
 
 - Recorded AISYNC Gate 5 Review/History merge `56f3430f6e0718d21e0b8f63e59dfabd325731d3`.
