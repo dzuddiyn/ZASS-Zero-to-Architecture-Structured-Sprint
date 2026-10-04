@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 5 — Review / History Projection Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTATION PENDING  
+**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 5 only — read-only review, lineage, commit/version, validator, and audit-history projection
@@ -235,24 +235,39 @@ This is a valid factual state.
 
 Automated fixtures must prove the positive rendering path when those explicit record types are present.
 
-## 7. Production evidence required to close Gate 5
+## 7. Implementation + deployment evidence
 
-Gate 5 closes only after:
+Gate 5 source implementation is merged and production-deployed.
 
-1. this acceptance contract is merged;
-2. AISYNC source implementation is merged;
-3. relevant repository regression tests pass;
-4. Gates 1–4 regressions remain intact;
-5. no new write operation is introduced;
-6. production Apps Script deployment contains the bounded Gate 5 UI patch;
-7. owner-visible production proof confirms:
-   - Workspace remains compact/default;
-   - Review exposes Decisions, Design/architecture, Selection state, lineage/source, validator/CI, and Commit/version trail;
-   - absent selection/design state is shown neutrally when absent;
-   - History exposes audit events and compact receipt truth separately;
-   - raw technical detail remains available without burdening Workspace.
+Canonical AISYNC evidence:
+- AISYNC PR #30 merged as `56f3430f6e0718d21e0b8f63e59dfabd325731d3`;
+- all **27** repository `test-*.mjs` files PASS;
+- `git diff --check` PASS;
+- Workspace remains free of Review/History audit sections;
+- Review now projects Review overview/freshness, commit-linked CI, Decisions, Design/architecture, Selection state, Action Plan, readable Lineage/sources, Commit/version trail, and raw records behind details;
+- History now projects factual audit events, compact receipt truth, visible failures, and raw receipt JSON behind details;
+- automated fixtures prove positive decision/design/selection/lineage/commit/history paths and neutral absence behavior;
+- no schema migration, writer, validator duplication, or authority mutation was added.
 
-Automated fixtures may supply positive proof for record categories absent from the current AISYNC project index.
+Production deployment evidence:
+- protected production Apps Script deployment is **version 27**, `Gate5-review-history-projection`;
+- v27 was built from immutable Gate 4 production v26 plus exactly `Dashboard.html` and `DashboardClient.html`;
+- independent post-deploy pull verified both files match AISYNC Gate 5 merge `56f3430...`;
+- every other production file in v27 matches v26;
+- development HEAD was restored after release;
+- AISYNC deployment receipt PR #31 merged as `268af5f15db0a1bfb7742c1841887084d13e0111`.
+
+Closure items 1–6 are satisfied.
+
+The only remaining closure item is owner-visible production proof confirming:
+- Workspace remains compact/default;
+- Review exposes the Gate 5 categories and current STALE/freshness caveat;
+- absent Design/architecture and Selection state are shown neutrally for AISYNC if still absent;
+- Lineage/sources and Commit/version trail are inspectable;
+- History exposes audit events and compact receipt truth separately;
+- raw technical detail remains available without burdening Workspace.
+
+Automated fixtures supply positive proof for record categories absent from the current AISYNC project index.
 
 ## 8. Non-blockers
 
