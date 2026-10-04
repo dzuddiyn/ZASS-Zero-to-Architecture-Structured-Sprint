@@ -1,6 +1,6 @@
 # ZASS SYSTEM Gate 5 — Review / History Projection Acceptance
 
-**Status:** LOCKED ACCEPTANCE CONTRACT — IMPLEMENTED + PRODUCTION DEPLOYED; OWNER-VISIBLE CHECK PENDING  
+**Status:** CLOSED / PASS — IMPLEMENTED, DEPLOYED, OWNER-VISIBLE VERIFIED  
 **Date:** 2026-10-04  
 **System baseline:** ZASS SYSTEM v0.2.0  
 **Scope:** Product Gate 5 only — read-only review, lineage, commit/version, validator, and audit-history projection
@@ -259,15 +259,30 @@ Production deployment evidence:
 
 Closure items 1–6 are satisfied.
 
-The only remaining closure item is owner-visible production proof confirming:
-- Workspace remains compact/default;
-- Review exposes the Gate 5 categories and current STALE/freshness caveat;
-- absent Design/architecture and Selection state are shown neutrally for AISYNC if still absent;
-- Lineage/sources and Commit/version trail are inspectable;
-- History exposes audit events and compact receipt truth separately;
-- raw technical detail remains available without burdening Workspace.
+Final owner-visible production proof is complete:
+- Workspace remains compact/default and does not expose Gate 5 audit sections by default;
+- Review clearly labels itself as read-only indexed evidence;
+- Review overview shows the explicit **STALE** caveat that indexed evidence is not current canonical truth;
+- Commit-linked ZASS CI is visible and factually shows **NOT_FOUND** for the stale indexed commit, with explicit wording that this is not a PASS result;
+- Decisions are projected separately;
+- Design / architecture shows neutral absence: `No design/architecture records indexed.`;
+- Selection state shows neutral absence: `No selection state indexed.`;
+- Action Plan remains inspectable;
+- Lineage / sources renders readable lineage/source evidence;
+- Commit / version trail is inspectable with factual commit links;
+- History is separate and shows factual audit events with compact receipt truth;
+- verified-write receipts show factual commit IDs;
+- NO_CHANGE receipts show `Verified: true`, `Write performed: no`, and do not invent a commit;
+- raw receipt JSON remains available behind a details control;
+- automated fixtures already cover positive design/selection rendering paths absent from the current AISYNC index.
 
-Automated fixtures supply positive proof for record categories absent from the current AISYNC project index.
+AISYNC final owner-visible closure receipt: PR #32 merged as `81d53f9a04b1b015e6750f9d5df12ee51179ea90`.
+
+The production `NOT_FOUND` CI result is a truthful stale-index read result, not a Gate 5 failure.
+
+> **GATE 5 = CLOSED / PASS**
+
+No further Gate 5 implementation work is required unless a future regression is reported against this acceptance contract.
 
 ## 8. Non-blockers
 
