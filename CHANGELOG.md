@@ -3,6 +3,17 @@
 All notable changes to ZASS are recorded here.
 
 
+## [ZASS SYSTEM Gate 6 acceptance lock] — 2026-10-05
+
+- LOCKED the Gate 6 — Automation + adoption UX acceptance contract in `docs/ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md`.
+- Locked G6-01 through G6-09 covering authority preservation, integrated ordinary-user journey, progressive-disclosure UX, bounded beta access, truthful automation, continuity/privacy, minimum three distinct non-developer beta participants, factual recovery evidence, and final ZASS acceptance.
+- Locked the cross-repository sequence: AISYNC primary implementation → ZASS SYSTEM audit → ZASS-owned gap fix where applicable → AISYNC integration/re-audit → ZASS final acceptance.
+- Locked the UX direction: Simple View remains default; Guided Journey / Workflow Navigator is secondary progressive disclosure driven only by factual project state/evidence.
+- Recorded that full visual polish is not a prerequisite for functional closed beta; minimum ordinary-user usability is required before counted beta journeys.
+- Recorded current implementation input: AISYNC T-019 PASS; T-020 CURRENT but external beta not yet counted because readiness findings remain.
+- No ZASS method semantics, validator rules, command surface, or ZASS SYSTEM version changed.
+
+
 ## [ZASS SYSTEM Gate 5 CLOSED / PASS] — 2026-10-04
 
 - Completed final owner-visible production acceptance for Review / History projection.
