@@ -491,3 +491,22 @@ Current mapping:
 | ZASSELECTION | `ZASSELECTION_EN.md` | `ZASSELECTION_MY.md` |
 
 This separation lets users and AI detect a ZASS SYSTEM upgrade without falsely claiming that an individual method changed.
+
+## 16. Gate 6 adoption UX extension
+
+Gate 6 acceptance is governed by [`ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md`](ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md).
+
+LOCKED UX direction:
+
+- **Simple View is the default:** DUMP → DECIDE → DESIGN → DO IT → DELIVERED.
+- **Guided Journey / Workflow Navigator is secondary progressive disclosure**, not a permanent lifecycle wall.
+- Guided status must derive from factual project state/evidence; it must not invent PASS, current stage, percentage, or completion.
+- Rework loops such as DESIGN ↔ ACTION_PLAN may be shown explicitly when evidence causes a return.
+- A guided step may expose Why, Pass criteria, Evidence, Decisions, Sources, and History on demand.
+- Ordinary beta users must not need protocol-facing terms such as raw result-envelope names or internal SAVE mechanics to complete the journey.
+- Full visual polish may follow functional closed beta; minimum usability, truthful labels, bounded access, and recoverable ordinary-user flow are required before counted beta journeys begin.
+
+Canonical direction:
+
+> **Simple on the surface. Guided when useful. Factual state underneath. Strong lineage throughout.**
+
