@@ -3,6 +3,17 @@
 All notable changes to ZASS are recorded here.
 
 
+## [Project Bootstrap future direction lock] — 2026-10-05
+
+- LOCKED the future ZASS Project Bootstrap Core shared by the npm onboarding CLI and AISYNC Create Project.
+- Locked the boundary: ZASS owns bootstrap structure/metadata/validation; AISYNC owns Create Project UX, GitHub repository creation integration, registration, and projection.
+- Locked explicit owner confirmation before GitHub repository creation; entering DESIGN alone must never create a repository.
+- Locked GitHub as the canonical project Source of Truth so projects remain independently usable outside AISYNC.
+- Locked the post-Production v1 sequence through CR-010 v0.4 closure, npm bootstrap, shared bootstrap core, and AISYNC Create New Project → GitHub.
+- Locked a focused post-polish UX regression using two returning beta participants plus one fresh user, with desktop/mobile coverage.
+- This is future productization direction only; no current Gate 6 task, method semantics, validator rules, or ZASS SYSTEM version changed.
+
+
 ## [ZASS SYSTEM Gate 6 acceptance lock] — 2026-10-05
 
 - LOCKED the Gate 6 — Automation + adoption UX acceptance contract in `docs/ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md`.
