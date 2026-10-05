@@ -660,3 +660,86 @@ Future ZASS evaluation should use several real projects and observe useful signa
 - factual corrections required after AI-generated claims.
 
 Case-study evidence should guide future method changes before new ceremony is added.
+
+---
+
+## CR-015 — P3 Field Evidence Recorder
+
+**Status:** CANDIDATE  
+**Source:** Project Owner discussion during Gate 6 / T-020 preparation  
+**Scope:** P3 field evidence, adoption learning, case-study support  
+**Priority:** Non-blocking
+
+### Core idea
+
+Create a small **read-only evidence collector/projection** that compiles field-use evidence already produced by normal ZASS/AISYNC work instead of asking users to maintain a separate manual research ledger.
+
+Candidate flow:
+
+```text
+normal ZASS / AISYNC use
+        ↓
+existing factual records
+(commits, decisions, ACTION_PLAN, TASKS,
+HISTORY, SAVE receipts, continuity revisions,
+handoffs, verification evidence)
+        ↓
+P3 Field Evidence Recorder
+        ↓
+metrics + timeline + candidate observations
+        ↓
+human review
+        ↓
+documented case study
+```
+
+### Design direction
+
+Prefer **projection over duplication**.
+
+The recorder should reuse existing evidence where possible rather than creating another Source of Truth or requiring users to log the same event twice.
+
+Potential signals include:
+
+- repeated project-context retelling;
+- time from raw idea to owner-approved decision;
+- resurfacing of previously rejected ideas;
+- hidden assumptions discovered before implementation;
+- factual corrections to AI-generated claims;
+- cross-AI continuation success/failure;
+- handoff/reopen/recovery outcomes;
+- time for another AI or maintainer to understand current project state.
+
+### Privacy boundary
+
+Collect workflow evidence by default, not private semantic content.
+
+Any future implementation should:
+
+- minimize stored personal/content data;
+- avoid provider-held personal memory/profile as an evidence source unless intentionally introduced by the user;
+- distinguish anonymous/participant identity needed for beta/adoption evidence from project semantic content;
+- preserve existing authority boundaries and factual-state rules.
+
+### Non-goals
+
+This candidate is **not**:
+
+- a blocker for Gate 6 or Production v1;
+- a new project Source of Truth;
+- a replacement for AISYNC HISTORY, receipts, continuity, Git history, or ZASS evidence;
+- permission to add broad user analytics/telemetry without a separate privacy/authority decision;
+- an automatic case-study publisher.
+
+### Trigger for promotion
+
+Revisit after T-020 Human Closed Beta or after enough real projects exist to show that manually assembling P3 evidence is repetitive or error-prone.
+
+Promotion should require a small evidence model that answers useful P3 questions without duplicating existing records or weakening privacy.
+
+### Relationship to CR-014
+
+CR-014 defines real-world case studies as a field-evidence priority.
+
+CR-015 is only a candidate mechanism for collecting and projecting the factual evidence needed to support those case studies more efficiently.
+
