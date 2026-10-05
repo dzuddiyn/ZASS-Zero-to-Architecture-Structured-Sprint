@@ -329,6 +329,19 @@ If the exact npm package name is technically unavailable at publication time, ch
 
 ---
 
+
+## L-CLI-002 — Shared Project Bootstrap Core
+
+**Decision:** The future npm bootstrap CLI and AISYNC Create Project flow must converge on one shared ZASS Project Bootstrap Core rather than maintain separate project-template semantics.
+
+See [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md).
+
+The shared core owns project-file generation, initial metadata, and validation. AISYNC owns repository-creation UX/integration and project registration. GitHub remains the canonical Source of Truth for each Git-backed project.
+
+This is a **future product direction**, not an active Gate 6 task. Repository creation requires explicit owner confirmation and must never occur silently from merely entering DESIGN.
+
+---
+
 # Landing / README order
 
 The README implementation should follow this order unless the owner explicitly changes it:
