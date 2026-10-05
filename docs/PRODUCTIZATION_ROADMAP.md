@@ -96,6 +96,29 @@ Use ZASS on multiple real projects and record evidence such as:
 
 Publish case studies only from documented real usage.
 
+
+## Post-Production v1 future productization
+
+The current critical path remains Gate 6 / AISYNC T-020. The following sequence is LOCKED as **future work** and must not displace that path:
+
+```text
+T-020 Human Closed Beta
+→ Final ZASS Gate 6 acceptance
+→ Gate 6 PASS / CLOSED
+→ AISYNC visual polish + Guided Journey
+→ UX regression
+→ T-021 Production v1 release acceptance
+→ DELIVERED !!
+→ CR-010 v0.4: zass status + zass diff
+→ real-project field test
+→ CLOSE CR-010
+→ npm bootstrap CLI
+→ ZASS Project Bootstrap Core
+→ AISYNC Create New Project → GitHub
+```
+
+The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md).
+
 ## Validation architecture
 
 ```text
