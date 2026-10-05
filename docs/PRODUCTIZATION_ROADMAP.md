@@ -53,7 +53,7 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 | **3** | **Project Workspace + Contextual Cards** | **PASS / CLOSED** | Workspace defaults to Project Pulse + natural continuation + factual contextual-card projection; Review/History provide progressive disclosure. AISYNC PR #18 merged, protected Apps Script production v23 contains the bounded Gate 3 patch, and owner-visible verification confirmed Workspace, STALE-state suppression, Review, and History behavior. |
 | **4** | **Factual SAVE / sync** | **PASS / CLOSED** | Protected Confirm & Sync visibly proved UNSAVED → SYNCING → SAVED with factual NO_CHANGE receipt, `verified=true`, and no invented commit. Workspace Project Pulse visibly showed Save / sync health = STALE despite prior SAVE success, proving persistence truth is not conflated with index freshness. Production remains Apps Script v26 with bounded NO REQUEST and D-030 return-control fixes. |
 | **5** | **Review / History projection** | **PASS / CLOSED** | Production v27 owner-visible proof confirmed Workspace remains compact/default; Review exposes STALE caveat, factual CI status, Decisions, neutral Design/architecture and Selection-state absence, Action Plan, readable lineage/source, Commit/version trail and raw records on demand; History exposes factual audit events and compact receipt truth with raw JSON secondary. |
-| **6** | **Automation + adoption UX** | **CURRENT — ACCEPTANCE NOT YET LOCKED** | Handoff/sync/continuity/automation must preserve the same authority model; real multi-project/human field use must pass; UX must be stable enough for ordinary use without developer-side repair. AISYNC private continuity/retrieval, integrated handoff/reopen/transfer, automation safety, reliability and closed-beta evidence are implementation inputs, not ZASS method changes. |
+| **6** | **Automation + adoption UX** | **CURRENT — ACCEPTANCE LOCKED** | Governed by [`ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md`](ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTANCE.md): preserve authority, prove the integrated ordinary-user journey, enforce bounded beta access, keep automation factual, preserve continuity/privacy, and complete factual closed-beta adoption with at least three distinct non-developer humans before final ZASS acceptance. |
 
 ### Cross-repository execution boundary
 
@@ -65,7 +65,7 @@ AISYNC task numbers are implementation detail in the AISYNC repository. This roa
 
 Current next product focus:
 
-> **Gates 1–5 are CLOSED / PASS. Gate 6 — Automation + adoption UX is now CURRENT.** Gate 6 must prove the integrated handoff/sync/continuity/automation journey and ordinary multi-project human adoption without weakening the authority model or requiring developer-side repair.
+> **Gates 1–5 are CLOSED / PASS. Gate 6 — Automation + adoption UX is CURRENT with its acceptance contract LOCKED.** AISYNC supplies the runtime and closed-beta evidence; ZASS SYSTEM audits that evidence against the locked Gate 6 contract before Gate 6 may close.
 
 ## P2 — AI-SYNC integration and adoption
 
