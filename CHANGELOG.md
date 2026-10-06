@@ -2,6 +2,14 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION v0.2.3] — 2026-10-07
+
+- LOCKED the **Selection Score Bar** as the compact visual summary shown immediately after a comparison table when valid comparable numeric totals exist.
+- The bar may normalize existing totals to a 0–100 display scale, while preserving the underlying matrix score unchanged.
+- Provisional / AI-proposed numeric scores must display `PROVISIONAL / AI-PROPOSED`; if numeric scoring has no valid basis, the numeric bar is omitted.
+- The Selection Score Bar is display-only and does not replace the Selection Matrix, AI Recommendation, or owner selection.
+- Preserved the v0.2.2 evidence-discipline rule: the bar summarizes existing evidence and must never create false precision.
+
 
 ## [Project Bootstrap future direction lock] — 2026-10-05
 
