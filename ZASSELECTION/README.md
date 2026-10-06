@@ -91,6 +91,20 @@ For example:
 | Practical Fit | 20% | 8 | 9 | 8 |
 | **TOTAL** | **100%** | **7.4** | **8.7** | **7.8** |
 
+Quick visual:
+
+```text
+┌────────────────────────────────┐
+│          ZASSELECTION          │
+│                                │
+│ Option A   ███████░░░   74     │
+│ Option B   █████████░   87     │
+│ Option C   ████████░░   78     │
+└────────────────────────────────┘
+```
+
+> **Selection Score Bar** is shown only when the numeric totals have a valid basis. Provisional scores must be labelled; otherwise ZASSELECTION keeps the comparison qualitative.
+
 ### ⭐ K — Keep the Best Candidate
 
 AI gives its current recommendation, for example:
