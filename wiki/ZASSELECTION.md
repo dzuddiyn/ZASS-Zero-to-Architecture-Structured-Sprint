@@ -152,7 +152,7 @@ When valid comparable numeric totals exist, ZASSELECTION renders a compact visua
 └────────────────────────────────┘
 ```
 
-The display may normalize totals to 0–100, such as 7.8/10 → 78. This is display-only: the source matrix remains authoritative.
+The display may normalize totals to 0–100, such as 7.8/10 → 78. This is display-only: the source matrix remains authoritative, and the bar never creates new evidence.
 
 If numeric values are provisional, label the bar `PROVISIONAL / AI-PROPOSED`. If numeric values lack a valid basis, omit the numeric bar. The bar never replaces the matrix, recommendation, or owner selection.
 
