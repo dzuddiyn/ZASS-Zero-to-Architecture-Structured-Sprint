@@ -192,7 +192,8 @@ This is a human-readable Phase 1 rendering surface, not a final backend schema.
 ~~~markdown
 # ZASSPILL Thread — [human-readable title]
 
-Method: ZASSPILL v0.1.0
+Method: ZASSPILL v1.0.0
+Packet format: Portable Thread Packet v0.1
 State: Standalone continuity packet
 Updated: [date/time if known]
 Continuity boundary: Use this packet + current conversation only. Do not enrich this thread from provider memory/profile unless the user explicitly reintroduces it.
