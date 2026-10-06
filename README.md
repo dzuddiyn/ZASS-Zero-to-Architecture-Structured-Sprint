@@ -504,7 +504,7 @@ You normally do **not** need all of them at the beginning.
 **ZASS SYSTEM:** v0.2.0 — global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract  
 **Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
 **ZASSIMPLE:** v0.3.0  
-**ZASSELECTION:** v0.2.2  
+**ZASSELECTION:** v0.2.3  
 **ZASSPILL:** v1.0.0 method/protocol contract — PRODUCTION READY; global DUMP continuity route  
 **License:** [MIT](LICENSE)
 
