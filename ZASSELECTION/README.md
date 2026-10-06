@@ -1,6 +1,6 @@
 # ZASSELECTION
 
-**Current version:** v0.2.3  
+**Current version:** v0.2.4  
 
 > **AI compares. You decide, AI saves.**
 
@@ -96,16 +96,12 @@ For example:
 Quick visual:
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Option A   ███████░░░   74     │
-│ Option B   █████████░   87     │
-│ Option C   ████████░░   78     │
-└────────────────────────────────┘
+Option A   ━━━━━━━━━━━━━━━        74
+Option B   ━━━━━━━━━━━━━━━━━      87
+Option C   ━━━━━━━━━━━━━━━━       78
 ```
 
-> **Selection Score Bar** is shown only when the numeric totals have a valid basis. Provisional scores use `PROVISIONAL / AI-PROPOSED`; otherwise ZASSELECTION keeps the comparison qualitative. The bar summarizes existing evidence and never creates new evidence.
+> **Selection Score Bar** is shown only when the numeric totals have a valid basis. Standard style uses a clean solid `━` line with space padding—no `░` filler blocks or outer box. Provisional scores use `PROVISIONAL / AI-PROPOSED`; otherwise ZASSELECTION keeps the comparison qualitative. The bar summarizes existing evidence and never creates new evidence.
 
 ### ⭐ K — Keep the Best Candidate
 
@@ -409,16 +405,12 @@ Contohnya:
 Visual pantas:
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Option A   ███████░░░   74     │
-│ Option B   █████████░   87     │
-│ Option C   ████████░░   78     │
-└────────────────────────────────┘
+Option A   ━━━━━━━━━━━━━━━        74
+Option B   ━━━━━━━━━━━━━━━━━      87
+Option C   ━━━━━━━━━━━━━━━━       78
 ```
 
-> **Selection Score Bar** hanya dipaparkan apabila total numeric mempunyai asas yang sah. Jika score provisional, label `PROVISIONAL / AI-PROPOSED`; jika tiada asas numeric, kekalkan comparison secara qualitative.
+> **Selection Score Bar** hanya dipaparkan apabila total numeric mempunyai asas yang sah. Gaya standard menggunakan solid line `━` dengan space padding—tanpa `░` filler atau kotak luar. Jika score provisional, label `PROVISIONAL / AI-PROPOSED`; jika tiada asas numeric, kekalkan comparison secara qualitative.
 
 ### ⭐ K — Keep the Best Candidate
 

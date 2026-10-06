@@ -2,6 +2,13 @@
 
 All notable changes to ZASS are recorded here.
 
+## [ZASSELECTION v0.2.4] — 2026-10-07
+
+- LOCKED a cleaner **Selection Score Bar** presentation after visual review.
+- Replaced block/filler bars such as `████░░` with a lightweight solid-line `━` bar and space padding.
+- Removed the decorative outer box from the standard score-bar presentation.
+- Kept v0.2.3 semantics unchanged: the bar remains display-only, uses existing valid scores, preserves provisional labels, and never creates evidence or false precision.
+
 ## [ZASSELECTION v0.2.3] — 2026-10-07
 
 - LOCKED the **Selection Score Bar** as the compact visual summary shown immediately after a comparison table when valid comparable numeric totals exist.

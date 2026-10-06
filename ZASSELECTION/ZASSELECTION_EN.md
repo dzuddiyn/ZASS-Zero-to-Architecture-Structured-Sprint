@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.3  
+**Version:** 0.2.4  
 **Status:** UX FLOW LOCKED — DEFAULT METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-07
@@ -144,13 +144,9 @@ Example:
 **Selection Score Bar example:**
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Option A   ████████░░   76     │
-│ Option B   ████████░░   84     │
-│ Option C   ████████░░   78     │
-└────────────────────────────────┘
+Option A   ━━━━━━━━━━━━━━━        76
+Option B   ━━━━━━━━━━━━━━━━━      84
+Option C   ━━━━━━━━━━━━━━━━       78
 ```
 
 The bar is a visual summary of the matrix totals, not a separate score source.
@@ -250,23 +246,20 @@ When the Selection Matrix has valid, comparable numeric totals, show a compact *
 Example:
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Option A   ████████░░   78     │
-│ Option B   █████████░   91     │
-│ Option C   ██████░░░░   64     │
-└────────────────────────────────┘
+Option A   ━━━━━━━━━━━━━━━━       78
+Option B   ━━━━━━━━━━━━━━━━━━     91
+Option C   ━━━━━━━━━━━━━          64
 ```
 
 Rules:
 
 - normalize the displayed total to a 0–100 scale when needed, e.g. 7.8/10 → 78;
 - the bar is display-only and must not change the underlying matrix score;
-- use a compact fixed-width bar for quick scanning;
+- use a compact solid-line bar (`━`) for quick scanning, padded with spaces only;
 - include every option with a valid comparable numeric total;
 - if the scores are AI-proposed or provisional, label the bar clearly as `PROVISIONAL / AI-PROPOSED`;
 - if numeric scoring lacks a valid basis, omit the numeric bar rather than inventing values;
+- do not use empty-fill glyphs such as `░` or decorative outer boxes in the standard bar;
 - the bar does not replace the Selection Matrix, AI Recommendation, or user selection.
 
 The score bar summarizes evidence already present in the matrix. It never creates new evidence.
@@ -525,7 +518,7 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
 
 ## 13. Locked UX principles
 
-The following are LOCKED for ZASSELECTION v0.2.3:
+The following are LOCKED for ZASSELECTION v0.2.4:
 
 1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
@@ -550,6 +543,7 @@ The following are LOCKED for ZASSELECTION v0.2.3:
 21. When valid comparable numeric totals exist, show a Selection Score Bar immediately after the comparison table.
 22. The Selection Score Bar is display-only; it normalizes existing totals for scanning and never creates or changes evidence.
 23. Provisional numeric scores require a visible `PROVISIONAL / AI-PROPOSED` label; without a valid numeric basis, omit the numeric bar.
+24. The standard Selection Score Bar uses a clean solid-line `━` style with space padding only; no `░` empty-fill blocks or decorative outer box.
 
 Core UX principle:
 
