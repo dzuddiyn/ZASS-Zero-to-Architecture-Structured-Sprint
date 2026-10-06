@@ -61,7 +61,7 @@ Research follows candidate formation, not idea capture. Research findings return
 | ZASS SYSTEM | v0.2.0 — DUMP / DECIDE / DESIGN |
 | Full ZASS | v0.3.9 |
 | ZASSIMPLE | v0.3.0 |
-| ZASSELECTION | v0.2.2 |
+| ZASSELECTION | v0.2.3 |
 | ZASSPILL | v1.0.0 method/protocol contract — PRODUCTION READY |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |
 | CLI bootstrap | Specification locked; not released |
