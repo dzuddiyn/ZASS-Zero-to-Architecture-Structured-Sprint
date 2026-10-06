@@ -1,6 +1,6 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.3  
+**Version:** 0.2.4  
 **Status:** UX FLOW LOCKED — MALAY METHOD  
 **Owner:** User / Decision Owner  
 **Locked date:** 2026-10-07
@@ -158,13 +158,9 @@ Contoh:
 **Contoh Selection Score Bar:**
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Pilihan A  ████████░░   76     │
-│ Pilihan B  ████████░░   84     │
-│ Pilihan C  ████████░░   78     │
-└────────────────────────────────┘
+Pilihan A  ━━━━━━━━━━━━━━━        76
+Pilihan B  ━━━━━━━━━━━━━━━━━      84
+Pilihan C  ━━━━━━━━━━━━━━━━       78
 ```
 
 Bar ialah visual summary kepada total matrix, bukan sumber score yang berasingan.
@@ -278,23 +274,20 @@ Apabila Matriks Pemilihan mempunyai total numeric yang sah dan comparable, papar
 Contoh:
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Pilihan A  ████████░░   78     │
-│ Pilihan B  █████████░   91     │
-│ Pilihan C  ██████░░░░   64     │
-└────────────────────────────────┘
+Pilihan A  ━━━━━━━━━━━━━━━━       78
+Pilihan B  ━━━━━━━━━━━━━━━━━━     91
+Pilihan C  ━━━━━━━━━━━━━          64
 ```
 
 Peraturan:
 
 - normalize total paparan kepada skala 0–100 jika perlu, contohnya 7.8/10 → 78;
 - bar hanya untuk display dan tidak mengubah score asal dalam matrix;
-- gunakan bar fixed-width yang compact supaya cepat discan;
+- gunakan solid-line bar (`━`) yang compact dan pad dengan spaces sahaja supaya cepat discan;
 - masukkan setiap option yang mempunyai total numeric comparable yang sah;
 - jika score ialah AI-proposed atau provisional, label bar dengan jelas sebagai `PROVISIONAL / AI-PROPOSED`;
 - jika scoring numeric tidak mempunyai asas yang sah, jangan paparkan numeric bar dan jangan cipta nilai;
+- jangan guna empty-fill glyph seperti `░` atau kotak luar dekoratif untuk bar standard;
 - bar tidak menggantikan Matriks Pemilihan, Cadangan AI atau Pilihan anda.
 
 Score bar hanya merumus evidence yang sudah ada dalam matrix. Ia tidak mencipta evidence baharu.
@@ -617,7 +610,7 @@ Aliran utama:
 
 ## 13. Locked UX principles
 
-Keputusan berikut LOCKED untuk ZASSELECTION v0.2.3:
+Keputusan berikut LOCKED untuk ZASSELECTION v0.2.4:
 
 1. Fail method default English ialah `ZASSELECTION_EN.md`; fail method Bahasa Melayu ialah `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
@@ -644,6 +637,7 @@ Keputusan berikut LOCKED untuk ZASSELECTION v0.2.3:
 23. Jika total numeric yang sah dan comparable wujud, paparkan Selection Score Bar terus selepas comparison table.
 24. Selection Score Bar hanya untuk display; ia normalize total sedia ada untuk scanning dan tidak mencipta atau mengubah evidence.
 25. Score numeric provisional mesti mempunyai label `PROVISIONAL / AI-PROPOSED`; jika tiada asas numeric yang sah, numeric bar tidak dipaparkan.
+26. Selection Score Bar standard menggunakan solid-line `━` yang clean dengan space padding sahaja; tiada `░` empty-fill blocks atau kotak luar dekoratif.
 
 Core UX principle:
 

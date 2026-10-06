@@ -1,6 +1,6 @@
 # ZASSELECTION
 
-**Current version:** v0.2.3  
+**Current version:** v0.2.4  
 **Status:** UX FLOW LOCKED
 
 > **AI compares. You decide, AI saves.**
@@ -143,16 +143,12 @@ This rule prevents a visually precise matrix from implying evidence that does no
 When valid comparable numeric totals exist, ZASSELECTION renders a compact visual summary immediately after the comparison table:
 
 ```text
-┌────────────────────────────────┐
-│          ZASSELECTION          │
-│                                │
-│ Option A   ████████░░   78     │
-│ Option B   █████████░   91     │
-│ Option C   ██████░░░░   64     │
-└────────────────────────────────┘
+Option A   ━━━━━━━━━━━━━━━━       78
+Option B   ━━━━━━━━━━━━━━━━━━     91
+Option C   ━━━━━━━━━━━━━          64
 ```
 
-The display may normalize totals to 0–100, such as 7.8/10 → 78. This is display-only: the source matrix remains authoritative, and the bar never creates new evidence.
+The display may normalize totals to 0–100, such as 7.8/10 → 78. The standard presentation uses a clean solid `━` line with space padding only—no `░` empty-fill glyphs or decorative outer box. This is display-only: the source matrix remains authoritative, and the bar never creates new evidence.
 
 If numeric values are provisional, label the bar `PROVISIONAL / AI-PROPOSED`. If numeric values lack a valid basis, omit the numeric bar. The bar never replaces the matrix, recommendation, or owner selection.
 
