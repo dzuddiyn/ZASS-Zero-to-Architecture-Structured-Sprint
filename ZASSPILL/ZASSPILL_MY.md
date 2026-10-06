@@ -187,7 +187,8 @@ Ini ialah surface Phase 1 yang human-readable, bukan final backend schema.
 ~~~markdown
 # ZASSPILL Thread — [tajuk mudah difahami manusia]
 
-Method: ZASSPILL v0.1.0
+Method: ZASSPILL v1.0.0
+Packet format: Portable Thread Packet v0.1
 State: Standalone continuity packet
 Updated: [tarikh/masa jika diketahui]
 Boundary continuity: Guna packet ini + conversation semasa sahaja. Jangan tambah context daripada memory/profile provider kecuali user sendiri membawanya masuk semula.
