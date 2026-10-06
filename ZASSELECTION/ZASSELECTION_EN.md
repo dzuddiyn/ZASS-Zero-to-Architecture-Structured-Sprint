@@ -1,9 +1,9 @@
 # ZASSELECTION — Zero-to-Answer Structured Selection
 
-**Version:** 0.2.2  
+**Version:** 0.2.3  
 **Status:** UX FLOW LOCKED — DEFAULT METHOD  
 **Owner:** User / Decision Owner  
-**Locked date:** 2026-10-01
+**Locked date:** 2026-10-07
 
 > **AI compares. You decide, AI saves.**
 
@@ -91,9 +91,10 @@ When the user provides new information and requests REVIEW:
 3. add or update relevant options;
 4. change scores only when new evidence or information gives a reason;
 5. show the updated Selection Matrix;
-6. give a short note for each option, normally around 10 words;
-7. give the current AI Recommendation;
-8. ask `👉 Your selection?`.
+6. when valid comparable numeric totals exist, show the Selection Score Bar immediately after the table;
+7. give a short note for each option, normally around 10 words;
+8. give the current AI Recommendation;
+9. ask `👉 Your selection?`.
 
 ```text
 NEW INPUT
@@ -139,6 +140,20 @@ Example:
 | Battery | 15% | 9 | 7 | 8 |
 | Price | 35% | 7 | 8 | 8 |
 | **TOTAL** | **100%** | **7.55** | **8.35** | **7.80** |
+
+**Selection Score Bar example:**
+
+```text
+┌────────────────────────────────┐
+│          ZASSELECTION          │
+│                                │
+│ Option A   ████████░░   76     │
+│ Option B   ████████░░   84     │
+│ Option C   ████████░░   78     │
+└────────────────────────────────┘
+```
+
+The bar is a visual summary of the matrix totals, not a separate score source.
 
 Each option normally gets one short explanation.
 
@@ -225,6 +240,36 @@ When presenting the fast PICKS review flow, use these labels consistently:
 - 💾 **S — Select & Save**
 
 The icons are part of the standard presentation style. They improve scanning without changing the method semantics.
+
+---
+
+## 4C. Selection Score Bar
+
+When the Selection Matrix has valid, comparable numeric totals, show a compact **Selection Score Bar immediately after the comparison table**.
+
+Example:
+
+```text
+┌────────────────────────────────┐
+│          ZASSELECTION          │
+│                                │
+│ Option A   ████████░░   78     │
+│ Option B   █████████░   91     │
+│ Option C   ██████░░░░   64     │
+└────────────────────────────────┘
+```
+
+Rules:
+
+- normalize the displayed total to a 0–100 scale when needed, e.g. 7.8/10 → 78;
+- the bar is display-only and must not change the underlying matrix score;
+- use a compact fixed-width bar for quick scanning;
+- include every option with a valid comparable numeric total;
+- if the scores are AI-proposed or provisional, label the bar clearly as `PROVISIONAL / AI-PROPOSED`;
+- if numeric scoring lacks a valid basis, omit the numeric bar rather than inventing values;
+- the bar does not replace the Selection Matrix, AI Recommendation, or user selection.
+
+The score bar summarizes evidence already present in the matrix. It never creates new evidence.
 
 ---
 
@@ -462,6 +507,9 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
                  ↓
           show current matrix
                  ↓
+     Selection Score Bar
+       (when score is valid)
+                 ↓
           AI Recommendation
                  ↓
           👉 Your selection?
@@ -477,7 +525,7 @@ A saved unresolved selection also enters HISTORY, clearly marked as `Draft` or `
 
 ## 13. Locked UX principles
 
-The following are LOCKED for ZASSELECTION v0.2.2:
+The following are LOCKED for ZASSELECTION v0.2.3:
 
 1. English default method file is `ZASSELECTION_EN.md`; Malay method file is `ZASSELECTION_MY.md`.
 2. The three mandatory primary controls are `REVIEW`, `SAVE`, and `HISTORY`.
@@ -499,6 +547,9 @@ The following are LOCKED for ZASSELECTION v0.2.2:
 18. Weights must not be silently treated as authoritative user priorities; AI-proposed weights are provisional.
 19. Numeric scores require a stated basis; otherwise use qualitative comparison, `UNKNOWN`, or clearly labelled provisional scoring.
 20. Recommendations may still be given under uncertainty, but the uncertainty must remain visible.
+21. When valid comparable numeric totals exist, show a Selection Score Bar immediately after the comparison table.
+22. The Selection Score Bar is display-only; it normalizes existing totals for scanning and never creates or changes evidence.
+23. Provisional numeric scores require a visible `PROVISIONAL / AI-PROPOSED` label; without a valid numeric basis, omit the numeric bar.
 
 Core UX principle:
 
