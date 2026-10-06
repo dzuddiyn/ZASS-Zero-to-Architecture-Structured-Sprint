@@ -1,5 +1,7 @@
 # ZASSELECTION
 
+**Current version:** v0.2.3  
+
 > **AI compares. You decide, AI saves.**
 
 > **ALL Your PRODUCT selection HISTORY COMPILED in a SINGLE SYSTEM !!**
@@ -103,7 +105,7 @@ Quick visual:
 └────────────────────────────────┘
 ```
 
-> **Selection Score Bar** is shown only when the numeric totals have a valid basis. Provisional scores must be labelled; otherwise ZASSELECTION keeps the comparison qualitative.
+> **Selection Score Bar** is shown only when the numeric totals have a valid basis. Provisional scores use `PROVISIONAL / AI-PROPOSED`; otherwise ZASSELECTION keeps the comparison qualitative. The bar summarizes existing evidence and never creates new evidence.
 
 ### ⭐ K — Keep the Best Candidate
 
@@ -403,6 +405,20 @@ Contohnya:
 | Price | 30% | 7 | 8 | 8 |
 | Practical Fit | 20% | 8 | 9 | 8 |
 | **TOTAL** | **100%** | **7.4** | **8.7** | **7.8** |
+
+Visual pantas:
+
+```text
+┌────────────────────────────────┐
+│          ZASSELECTION          │
+│                                │
+│ Option A   ███████░░░   74     │
+│ Option B   █████████░   87     │
+│ Option C   ████████░░   78     │
+└────────────────────────────────┘
+```
+
+> **Selection Score Bar** hanya dipaparkan apabila total numeric mempunyai asas yang sah. Jika score provisional, label `PROVISIONAL / AI-PROPOSED`; jika tiada asas numeric, kekalkan comparison secara qualitative.
 
 ### ⭐ K — Keep the Best Candidate
 
