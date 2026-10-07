@@ -499,7 +499,7 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — IMPLEMENTED / REAL-PROJECT FIELD-VALIDATED — FINAL STOP/REVIEW CLOSURE IN PROGRESS  
+**Status:** ACCEPTED — CLOSED — zass-cli v0.4.0  
 **Source:** External Copilot UX/automation review + Project Owner decision  
 **Decision date:** 2026-09-30
 
@@ -528,7 +528,7 @@ zass status → factual current-state summary
 zass diff   → factual local-HEAD change summary
 ```
 
-The CLI is now versioned as `zass-cli v0.4.0`. It remains private/not published to npm; npm onboarding/bootstrap is separate post-CR-010 productization work.
+The CLI is versioned as `zass-cli v0.4.0` and CR-010 is CLOSED after explicit STOP/REVIEW PASS. It remains private/not published to npm; npm onboarding/bootstrap is separate post-CR-010 productization work. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
 
 Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboard expansion, and other new validator semantics remain outside CR-010 unless separately promoted.
 
