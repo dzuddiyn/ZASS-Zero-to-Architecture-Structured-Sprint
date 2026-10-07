@@ -460,3 +460,18 @@ GitHub Actions ZASS CI passed on PR #37 after implementation:
 No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, methodology change, or real-project field-test claim is included.
 
 The CR-010 real-project field-test gate remains pending.
+
+
+## 21. Windows field-test correction
+
+Real-project field testing on Windows exposed a false-positive file delta: Git's committed blob content is read with LF line endings while the checked-out working tree may contain CRLF under normal Git autocrlf behavior.
+
+The v0.4b file comparison therefore normalizes line-ending representation only:
+
+```text
+CRLF / CR → LF
+```
+
+before deciding `UNCHANGED` versus `MODIFIED`.
+
+This does not trim spaces, collapse blank lines, normalize Markdown, or hide semantic/content changes.
