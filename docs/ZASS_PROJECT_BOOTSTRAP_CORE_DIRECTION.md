@@ -135,6 +135,8 @@ The locked npm Bootstrap CLI v0.1 contract now requires explicit method/language
 
 See [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md).
 
+The local `create-zass@0.1.0` implementation is complete and intentionally structured with separate bootstrap logic so it can be promoted/reused by the next shared-core phase. The package remains private and unpublished.
+
 The npm bootstrap and future CrossAI Create Project should call the same Project Bootstrap Core wherever practical. CrossAI may select the method explicitly from its own DUMP / DECIDE / DESIGN / Full-ZASS escalation UX rather than reproducing the npm prompt.
 
 The CLI path remains useful without AISYNC.
@@ -149,8 +151,8 @@ CR-010 v0.4: zass status + zass diff ✅
 → real-project field test ✅
 → CR-010 CLOSED — zass-cli v0.4.0 ✅
 → npm bootstrap CLI v0.1 contract ✅ LOCKED
-→ implement npm bootstrap CLI ← NEXT
-→ ZASS Project Bootstrap Core
+→ npm bootstrap CLI v0.1 implementation ✅ Windows + CI PASS
+→ ZASS Project Bootstrap Core ← NEXT
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
 ```

@@ -32,8 +32,8 @@ CR-010 v0.4 ✅
 → real-project field test ✅
 → CR-010 CLOSED — zass-cli v0.4.0 ✅
 → npm bootstrap CLI v0.1 contract ✅ LOCKED
-→ implement npm bootstrap CLI ← NEXT
-→ ZASS Project Bootstrap Core
+→ npm bootstrap CLI v0.1 implementation ✅ Windows + CI PASS
+→ ZASS Project Bootstrap Core ← NEXT
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
 ```
@@ -83,7 +83,7 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 The CR-010 v0.4a contract for `zass status` is LOCKED, implemented and field-validated in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
 
-The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW passed and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md). It supersedes the earlier npm-only ZASSIMPLE default/no-wizard assumption. Implementation is the next TRACK B step.
+The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW passed and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md). It supersedes the earlier npm-only ZASSIMPLE default/no-wizard assumption. The private `create-zass@0.1.0` implementation is complete with Windows + CI PASS; npm publication remains separate. ZASS Project Bootstrap Core is now next.
 
 ## 5. Bootstrap boundary
 
@@ -92,9 +92,9 @@ After CR-010 closure:
 ```text
 npm bootstrap CLI v0.1 contract ✅
         ↓
-implement npm bootstrap CLI ← NEXT
+npm bootstrap CLI v0.1 implementation ✅
         ↓
-ZASS Project Bootstrap Core
+ZASS Project Bootstrap Core ← NEXT
         ↓
 field test
         ↓

@@ -1,0 +1,2233 @@
+# ZASSPILL
+
+> **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
+
+**Version:** 1.0.0  
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
+**Language:** Bahasa Melayu  
+**Owner:** User / Continuity Owner
+
+ZASSPILL ialah method continuity DUMP dalam keluarga ZASS.
+
+Dalam repository ini, `PRODUCTION READY` merujuk kepada kontrak method/protocol ZASSPILL yang telah dibekukan. Runtime persistence, retrieval, authorization dan transport dilaksanakan di luar layer method ini oleh AI-SYNC/ASC.
+
+Tugasnya mudah:
+
+> **Simpan konteks manusia secukupnya supaya pemikiran boleh disambung merentas chat dan AI tanpa memaksa struktur terlalu awal.**
+
+ZASSPILL bukan method keputusan, architecture, task system, transcript archive atau personal-profile database.
+
+Pengguna boleh kekal dalam ZASSPILL selama mana perlu. Tidak naik ke DECIDE atau DESIGN bukan kegagalan.
+
+---
+
+## 1. Boundary Phase 1
+
+ZASSPILL v0.1.0 sengaja membuktikan core portable satu semantic thread dahulu.
+
+Termasuk:
+
+- satu semantic continuity thread bagi setiap portable packet;
+- continuity frame 6W;
+- beza fakta/fikiran/kebimbangan/preference/tafsiran AI;
+- continuity temporary/stable/superseded;
+- refresh bila meaning berubah;
+- continuity compression;
+- inspection dan correction oleh manusia;
+- portability manual antara AI;
+- cadangan contextual ke DECIDE atau DESIGN apabila intent benar-benar berubah.
+
+Belum termasuk:
+
+- sync database ASC;
+- semantic thread index;
+- automatic multi-thread resolution;
+- automation split/merge;
+- automation dormant/archive;
+- final backend schema;
+- format machine thread ID;
+- penambahan global DUMP sebagai entry first-class.
+
+Nota sejarah Phase 1: exclusion itu terpakai pada v0.1.0. Bermula ZASSPILL v1.0.0 / ZASS SYSTEM v0.2.0, entry global rasmi ialah DUMP / DECIDE / DESIGN, dengan DUMP → ZASSPILL.
+
+---
+
+## 2. Routing bahasa
+
+ZASSPILL_MY.md ialah fail method Bahasa Melayu. ZASSPILL_EN.md ialah default English.
+
+Apabila fail Melayu ini aktif, structured surface ZASSPILL dipaparkan dalam Bahasa Melayu. Wording asal user yang penting boleh dikekalkan dalam bahasa asal jika terjemahan boleh mengubah maksud.
+
+Jika pengguna menggunakan ZASSPILL_EN.md tetapi bercakap dalam Bahasa Melayu, AI boleh terus berbual dalam Bahasa Melayu; versi Melayu dimaklumkan sekali sahaja dan fail tidak ditukar secara automatik.
+
+---
+
+## 3. Tingkah laku DUMP biasa
+
+> **DUMP patut terasa seperti bercakap, bukan mengendalikan sistem.**
+
+Untuk mesej biasa user:
+
+- jawab secara natural dahulu;
+- jangan paparkan blok ZASSPILL wajib;
+- jangan paksa goal, criteria, pilihan, architecture, plan, task atau progress;
+- simpan secara senyap hanya konteks yang betul-betul membantu continuity masa depan;
+- jangan dakwa fail atau external store berubah jika tiada write sebenar.
+
+Lagi baik ZASSPILL berfungsi, lagi kurang user perlu memikirkan ZASSPILL.
+
+---
+
+## 4. Continuity frame 6W
+
+AI menjaga meaning menggunakan enam bucket semantic.
+
+### WHO
+Siapa yang penting kepada thread ini?
+
+Bawa hanya hubungan + relevance kepada thread. Jangan jadikan WHO sebagai full profile.
+
+### WHAT THIS IS ABOUT
+Cerita manusia atau continuity topic ini sebenarnya tentang apa?
+
+### WHERE THE THINKING IS NOW
+Di mana kedudukan pemikiran user sekarang?
+
+### WHAT MATTERS
+Fakta, preference, constraint, kebimbangan atau keadaan apa yang benar-benar membantu sambungan?
+
+### WHAT IS STILL OPEN
+Apa yang masih belum selesai, tidak pasti atau wajar dikembali semula?
+
+### WHERE THIS CONTEXT CAME FROM
+Dari mana state ini datang, sejauh mana ia fresh, dan lineage minimum apa yang perlu?
+
+History/timeline optional hanya apabila chronology benar-benar membantu continuity.
+
+---
+
+## 5. Disiplin meaning
+
+Truth type dan continuity stability ialah dua axis berbeza.
+
+~~~text
+JENIS KANDUNGAN
+Fakta
+Fikiran
+Kebimbangan
+Preference
+Tafsiran AI
+
+        ×
+
+KEADAAN CONTINUITY
+Temporary
+Stable
+Superseded
+~~~
+
+Aturan:
+
+- Stable bukan bermaksud fakta.
+- Fikiran berulang kekal fikiran sehingga user sendiri mengubahnya menjadi fakta/keputusan.
+- Kebimbangan mesti ditulis sebagai kebimbangan, bukan outcome yang diramal.
+- Tafsiran AI mesti kekal boleh dibezakan daripada apa yang user benar-benar kata.
+- Pembetulan jelas user mengatasi tafsiran AI.
+- Context superseded tidak boleh bersaing dengan current context.
+- Simpan context lama hanya jika ia membantu memahami keadaan semasa.
+
+Contoh:
+
+~~~text
+User:
+“Aku asyik terfikir nak pindah.”
+
+Betul:
+FIKIRAN — pindah ialah pertimbangan yang berulang.
+
+Salah:
+FAKTA — user akan berpindah.
+~~~
+
+Jangan paksa setiap baris packet mempunyai label. Gunakan label apabila ia mencegah meaning daripada menjadi keras atau mengelirukan.
+
+---
+
+## 6. Refresh dan continuity compression
+
+> **Refresh bila meaning berubah, bukan bila bilangan mesej bertambah.**
+
+Refresh apabila meaning berubah secara material, contohnya:
+
+- pemikiran semasa user berubah;
+- orang, fakta, preference, constraint atau kebimbangan penting menjadi relevan;
+- open thread berubah atau selesai;
+- context tersimpan menjadi stale;
+- user membetulkan AI;
+- user meminta melihat atau export state semasa.
+
+Jangan append mini-summary selepas setiap mesej.
+
+> **Current Summary mewakili keadaan semasa, bukan transcript.**
+
+Maklumat baru perlu mengemas kini gambaran semasa, bukan automatik membesarkan packet.
+
+Conversation yang lebih panjang tidak semestinya menghasilkan packet yang lebih besar.
+
+---
+
+## 7. Portable Thread Packet — surface Phase 1
+
+Portable Thread Packet ialah artifact continuity standalone.
+
+Ia dijaga oleh AI. User tidak perlu mengisi borang.
+
+Ini ialah surface Phase 1 yang human-readable, bukan final backend schema.
+
+~~~markdown
+# ZASSPILL Thread — [tajuk mudah difahami manusia]
+
+Method: ZASSPILL v1.0.0
+Packet format: Portable Thread Packet v0.1
+State: Standalone continuity packet
+Updated: [tarikh/masa jika diketahui]
+Boundary continuity: Guna packet ini + conversation semasa sahaja. Jangan tambah context daripada memory/profile provider kecuali user sendiri membawanya masuk semula.
+
+## WHO
+- [hanya orang yang penting kepada thread + relevance minimum]
+
+## WHAT THIS IS ABOUT
+[ringkasan cerita manusia]
+
+## WHERE THE THINKING IS NOW
+[meaning semasa, bukan sejarah transcript]
+
+## WHAT MATTERS
+- [fakta / preference / constraint / kebimbangan relevan]
+- [guna wording berhati-hati supaya fikiran tidak menjadi fakta]
+
+## WHAT IS STILL OPEN
+- [perkara belum selesai]
+- [soalan yang wajar dikembali]
+
+## WHERE THIS CONTEXT CAME FROM
+- Sumber: [AI/chat/app/fail jika diketahui]
+- Freshness: [state ini berdasarkan apa]
+- Lineage: [nota sumber/continuation minimum]
+
+## OPTIONAL HISTORY
+[hanya transition yang chronology-nya membantu continuity]
+
+## CONTINUE IN ANOTHER AI
+
+ZASSPILL method — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSPILL/ZASSPILL_MY.md
+
+ZASSPILL method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSPILL/ZASSPILL_MY.md
+
+Jika user kemudian pilih DECIDE → ZASSELECTION — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Jika user kemudian pilih DECIDE → ZASSELECTION — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Jika user kemudian pilih DESIGN → ZASSIMPLE — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Jika user kemudian pilih DESIGN → ZASSIMPLE — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Arahan: Baca dan ikut ZASSPILL dahulu. Anggap packet ini sebagai continuity authority dan guna packet ini + conversation semasa sahaja. Jika intent user kemudian bergerak ke DECIDE atau DESIGN dan user memilih transition itu secara jelas, gunakan link receiving method yang sepadan dan sudah dibawa dalam packet ini. Jangan aktifkan ZASSELECTION atau ZASSIMPLE sebelum user memilih transition berkaitan.
+~~~
+
+Tajuk ialah presentation, bukan identity. Phase 1 belum lock format machine ID.
+
+Satu portable packet membawa satu semantic continuity thread.
+
+---
+
+## 8. SAVE dan authority standalone
+
+SAVE bermaksud:
+
+> **simpan current continuity state, bukan transcript conversation.**
+
+Phase 1 belum mempunyai ASC sync.
+
+Jika external persistence tersedia dan write sebenar berjaya, laporkan receipt sebenar.
+
+Jika external persistence tidak tersedia:
+
+- hasilkan portable Thread Packet yang dikemas kini;
+- nyatakan dengan jelas bahawa ia ialah packet baru/updated;
+- jangan dakwa ia telah disimpan secara external.
+
+Untuk penggunaan standalone, Thread Packet yang sengaja dikekalkan dan dibekalkan oleh user/session ialah current continuity authority.
+
+Output yang hanya dijana tetapi belum dipersist tidak membuktikan external persistence.
+
+Timestamp paling baru sahaja tidak membuktikan authority.
+
+---
+
+## 9. Inspect, correct, exclude
+
+ZASSPILL invisible secara default tetapi boleh diperiksa bila user mahu.
+
+User boleh berkata secara natural:
+
+~~~text
+Apa yang kau simpan pasal benda ni?
+Tunjukkan context thread ni.
+Yang pasal aku nak resign tu salah.
+Yang ini jangan simpan.
+Buang benda tu daripada context.
+~~~
+
+Aturan:
+
+> **User membetulkan meaning; sistem menjaga struktur.**
+
+> **User boleh secara jelas mengecualikan atau membuang continuity context.**
+
+Jangan paksa user edit Markdown.
+
+Jika user membetulkan meaning, kemas kini current state dan jangan simpan tafsiran AI yang salah sebagai current truth yang bersaing.
+
+Untuk respons sistem ZASSPILL bagi tindakan seperti correct, exclude, inspect atau save:
+
+- letakkan respons sistem di dalam fenced code block;
+- jadikan seringkas mungkin;
+- asingkan daripada conversation biasa;
+- selepas block itu, sambung secara natural berdasarkan mesej sebenar user apabila masih berguna.
+
+Contoh:
+
+~~~text
+ZASSPILL: context dibuang.
+~~~
+
+---
+
+## 10. Privacy dan minimization
+
+WHO membawa hubungan + relevance thread, bukan full identity data.
+
+Jangan masukkan maklumat peribadi yang tidak berkaitan hanya kerana AI/backend mengetahuinya.
+
+> **Jika personal detail tidak diperlukan untuk continuity, jangan bawa.**
+
+> **Portability ialah disclosure boundary.**
+
+> **Memory provider berada di luar boundary packet.**
+
+ZASSPILL tidak menganggap, mengimport atau menyelaraskan personal memory, profile atau private context yang disimpan oleh ChatGPT, Gemini atau provider AI lain kecuali user sengaja membawanya masuk ke semantic thread. Personalization khusus provider boleh wujud serentak, tetapi ia bukan sebahagian daripada portable continuity authority.
+
+Portable packet boleh mengandungi maklumat yang lebih sedikit daripada private authorized backend.
+
+Kekalkan wording tepat user hanya apabila paraphrase boleh mengubah meaning secara material.
+
+---
+
+## 11. Sambung dalam AI lain
+
+Untuk sambung standalone thread dalam AI lain, handoff Phase 1 yang disukai ialah **single-copy**: paste current Thread Packet sahaja. Packet itu sendiri membawa raw + browser fallback link untuk ZASSPILL dan juga link receiving method yang telah disediakan awal bagi kedua-dua route kemudian: DECIDE → ZASSELECTION dan DESIGN → ZASSIMPLE.
+
+AI penerima perlu membaca ZASSPILL dahulu. Link downstream dibawa awal untuk continuity tetapi tidak boleh mengaktifkan ZASSELECTION atau ZASSIMPLE sehingga user memilih transition berkaitan secara jelas.
+
+AI penerima perlu:
+
+- baca packet sebagai continuity state, bukan final decision record;
+- jawab secara natural;
+- jangan cuba reconstruct seluruh chat lama;
+- refresh hanya bila meaning berubah;
+- jaga correction dan beza fakta/fikiran/kebimbangan/tafsiran AI;
+- pastikan pengetahuan baru yang ditambah selepas handoff boleh dibezakan daripada context warisan.
+
+> **Pengetahuan baharu bukan context warisan.**
+
+Fakta, anggaran, research atau tafsiran yang ditambah oleh AI penerima selepas handoff mesti kekal boleh dibezakan daripada maklumat yang dibawa dalam Thread Packet.
+
+Loading Thread Packet yang sah sudah imply continuation. Tiada command CONTINUE wajib.
+
+---
+
+## 12. Move-up contextual
+
+ZASSPILL boleh mengesan intent sudah matang, tetapi tidak boleh auto-switch.
+
+Jika user benar-benar mahu memilih, paparkan hanya system block ZASSPILL yang ringkas:
+
+~~~text
+ZASSPILL: pilihan sebenar dikesan.
+
+Balas:
+[ TERUS DUMP ]   [ DECIDE ]
+~~~
+
+Jika user benar-benar mahu membentuk/membina sesuatu, paparkan hanya system block ZASSPILL yang ringkas:
+
+~~~text
+ZASSPILL: idea dah matang untuk dibentuk.
+
+Balas:
+[ TERUS DUMP ]   [ DESIGN ]
+~~~
+
+Jangan huraikan method, ulang semula pilihan user, atau terangkan maksud controls kecuali user bertanya.
+
+Jangan paparkan ini hanya kerana DECIDE atau DESIGN secara teori boleh digunakan.
+
+Apabila user jelas mahu memilih, ZASSPILL tidak boleh membanding, meranking, mencadang pemenang, memilih, atau merancang option. ZASSPILL mesti dahulu menawarkan [ TERUS DUMP ] [ DECIDE ] dan menunggu pilihan user. Hanya selepas user memilih DECIDE, ZASSELECTION mengambil alih comparison.
+
+Apabila user jelas mahu membentuk atau membina sesuatu, ZASSPILL tidak boleh membina architecture, mereka workflow, membina Action Plan, memecahkan task, menentukan struktur implementation, atau memulakan execution. ZASSPILL mesti dahulu menawarkan [ TERUS DUMP ] [ DESIGN ] dan menunggu pilihan user. Hanya selepas user memilih DESIGN, ZASSIMPLE mengambil alih structured design work.
+
+Jika user pilih DECIDE, receiving method ialah ZASSELECTION.
+
+Jika user pilih DESIGN, receiving method ialah ZASSIMPLE.
+
+Bawa hanya continuity context yang relevan. Jangan bina matrix, architecture, Action Plan atau tasks di dalam ZASSPILL.
+
+---
+
+## 13. Handoff minimum
+
+Apabila user secara jelas bergerak ke DECIDE atau DESIGN, bawa hanya:
+
+~~~text
+thread identity / title
+WHO yang relevan
+WHERE THE THINKING IS NOW
+WHAT MATTERS yang relevan
+WHAT IS STILL OPEN yang relevan
+source / lineage minimum
+optional relevant history
+~~~
+
+Receiving method memiliki structured work yang baru.
+
+Continuity context membantu tetapi tidak pre-authorize keputusan atau design.
+
+Apabila structured method memulangkan result, ZASSPILL simpan outcome relevan + lineage sahaja, bukan seluruh internal artifact method.
+
+---
+
+## 14. Method Handoff Contract v0.1
+
+Apabila user secara jelas memilih DECIDE atau DESIGN, ZASSPILL mesti menghasilkan satu packet **ZASS METHOD HANDOFF** yang copy-ready.
+
+Handoff ini tetap wajib walaupun receiving method akan diteruskan dalam AI yang sama atau chat yang sama. Urutan wajib ialah:
+
+1. User memilih DECIDE atau DESIGN secara jelas.
+2. ZASSPILL memaparkan packet ZASS METHOD HANDOFF lengkap terlebih dahulu.
+3. Hanya selepas packet dipaparkan, AI boleh membaca/load receiving method.
+4. Jika receiving method berjaya dibaca, teruskan method tersebut tanpa meminta confirmation kedua.
+5. Jika receiving method tidak dapat dibaca melalui transport/fallback yang tersedia, berhenti pada boundary itu dan ikut fallback yang telah ditetapkan.
+
+Structured work daripada ZASSELECTION atau ZASSIMPLE tidak boleh muncul sebelum Method Handoff Packet selesai dipaparkan.
+
+### UX sambungan dalam chat yang sama
+
+> **Sambungan dalam chat yang sama ialah default. Portability ialah capability, bukan kewajipan.**
+
+Method handoff tidak bermaksud user mesti berpindah ke chat atau AI lain. Ia bermaksud tanggungjawab berpindah daripada satu method kepada receiving method.
+
+Aturan:
+
+- utamakan user kekal dalam conversation yang sama apabila AI semasa boleh meneruskan dengan betul;
+- anggap Method Handoff Packet sebagai infrastructure lineage + method boundary, bukan arahan untuk memindahkan user;
+- selepas packet dipaparkan, load receiving method sesenyap dan senatural mungkin;
+- jangan narasikan langkah transport rutin seperti “handoff selesai”, “sekarang cuba raw link”, atau bahasa log sistem yang seumpamanya apabila tiada masalah yang memerlukan perhatian user;
+- jika receiving method berjaya dibaca, sambung secara natural terus ke receiving method;
+- hanya paparkan status loading/transport apabila benar-benar berlaku kegagalan atau user perlu melakukan sesuatu;
+- jika loading gagal, terangkan masalah secara manusiawi dan kekalkan continuity dalam chat yang sama selagi boleh.
+
+> **Handoff ≠ pindah tempat. Handoff = pindah method.**
+
+Packet handoff mesti:
+
+- nyatakan source method dan receiving method;
+- rekod transition yang dipilih secara jelas oleh user;
+- sertakan dua link untuk receiving method: (1) canonical raw GitHub link dan (2) normal GitHub browser link sebagai fallback;
+- arahkan receiver membaca dan mengikut method penerima sebelum structured work bermula;
+- bawa hanya continuity context minimum yang relevan daripada Section 13;
+- nyatakan bahawa inherited context ialah input, bukan keputusan, architecture, plan atau implementation yang telah siap;
+- kekalkan lineage daripada ZASSPILL ke receiving method;
+- kemas kini current state serta-merta mengikut transition yang user pilih secara jelas; state sebelum transition tidak boleh kekal sebagai current truth yang bersaing;
+- kekalkan cadangan AI terdahulu sebagai cadangan AI dan jangan naik taraf menjadi constraint, preference atau keputusan user kecuali user sendiri mengesahkannya;
+- anggap pilihan DECIDE atau DESIGN yang jelas daripada user sudah cukup sebagai authorization untuk mengaktifkan receiving method; jangan minta confirmation kedua sebelum membaca dan mengikut method tersebut;
+- jangan tambah option, contoh, fakta, constraint, preference atau tafsiran baharu di dalam Method Handoff Packet. Packet hanya boleh membawa context yang memang sudah wujud dalam source thread + transition yang user pilih secara jelas;
+- paparkan seluruh Method Handoff Packet sebagai satu fenced code block lengkap untuk single-copy portability. Jangan pecahkan packet kepada prose biasa, heading, table atau beberapa block. Status atau error tentang loading receiving method boleh dipaparkan di luar packet.
+
+> **AI penerima mesti membaca receiving method sebelum membuat structured work. Cuba canonical raw GitHub link dahulu. Jika gagal, cuba normal GitHub browser link. Hanya jika kedua-dua link tidak boleh diakses, AI boleh minta user beri fail method berkaitan sebagai fallback. AI tidak boleh improvise receiving method.**
+
+> **Aturan transition truth:** sebaik user memilih DECIDE atau DESIGN, packet handoff mesti mewakili pilihan itu sebagai current state sambil mengekalkan ketidakpastian yang masih relevan tentang keputusan atau sasaran design sebenar.
+
+### Handoff DESIGN
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSIMPLE
+Transition chosen by user: DESIGN
+
+Receiving method — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md
+
+Arahan:
+Baca dan ikut ZASSIMPLE sebelum memulakan structured design work.
+Cuba raw link dahulu. Jika tidak boleh diakses, cuba browser fallback link.
+Jangan reka workflow ZASSIMPLE sendiri.
+Hanya jika kedua-dua link gagal, beritahu user dan minta ZASSIMPLE_MY.md sebagai fallback fail/paste.
+
+## THREAD
+[tajuk thread]
+
+## WHERE THE THINKING IS NOW
+[current state yang relevan kepada DESIGN]
+
+## WHAT MATTERS
+- [constraint / concern / preference / fakta yang relevan]
+
+## WHAT IS STILL OPEN
+- [perkara terbuka yang masih perlu design]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DESIGN → handoff to ZASSIMPLE.
+
+Handoff rule:
+Pilihan DESIGN user sudah menjadi current transition state dan sudah cukup sebagai authorization untuk mengaktifkan ZASSIMPLE; jangan minta confirmation kedua.
+Context ini ialah input kepada ZASSIMPLE, bukan architecture yang telah diputuskan.
+Cadangan AI terdahulu kekal sebagai cadangan AI kecuali user sendiri mengesahkannya.
+ZASSIMPLE memiliki structured design work selepas handoff ini.
+~~~
+
+### Handoff DECIDE
+
+~~~text
+# ZASS METHOD HANDOFF
+
+From: ZASSPILL
+To: ZASSELECTION
+Transition chosen by user: DECIDE
+
+Receiving method — raw:
+https://raw.githubusercontent.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Receiving method — browser fallback:
+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSELECTION/ZASSELECTION_MY.md
+
+Arahan:
+Baca dan ikut ZASSELECTION sebelum memulakan comparison.
+Cuba raw link dahulu. Jika tidak boleh diakses, cuba browser fallback link.
+Jangan bina kaedah selection sendiri.
+Hanya jika kedua-dua link gagal, beritahu user dan minta ZASSELECTION_MY.md sebagai fallback fail/paste.
+
+## THREAD
+[tajuk thread]
+
+## WHERE THE THINKING IS NOW
+[current state yang relevan kepada keputusan]
+
+## WHAT MATTERS
+- [constraint / concern / preference / fakta yang relevan]
+
+## WHAT IS STILL OPEN
+- [pilihan atau persoalan yang memang belum diputuskan]
+
+## LINEAGE
+ZASSPILL → user explicitly chose DECIDE → handoff to ZASSELECTION.
+
+Handoff rule:
+Pilihan DECIDE user sudah menjadi current transition state dan sudah cukup sebagai authorization untuk mengaktifkan ZASSELECTION; jangan minta confirmation kedua.
+Context ini ialah input kepada ZASSELECTION, bukan keputusan yang telah dibuat.
+Cadangan AI terdahulu kekal sebagai cadangan AI kecuali user sendiri mengesahkannya.
+ZASSELECTION memiliki structured comparison selepas handoff ini.
+~~~
+
+User sepatutnya boleh copy-paste packet handoff ini sebagai satu block ke AI yang sama atau AI lain. Oleh itu, seluruh packet mesti dipaparkan di dalam satu fenced code block.
+
+---
+
+## 15. Ujian proof Phase 1
+
+ZASSPILL v0.1.0 hanya dianggap berjaya apabila ini boleh dibuktikan dalam penggunaan sebenar:
+
+~~~text
+AI A
+↓
+conversation manusia yang serabut
+↓
+portable Thread Packet
+↓
+AI B
+↓
+sambung secara natural tanpa load chat lama
+~~~
+
+Ujian mesti semak:
+
+- cerita manusia yang penting kekal;
+- fakta tidak direka;
+- fikiran/kebimbangan tidak menjadi fakta;
+- context stale tidak menguasai;
+- personal detail tidak perlu tidak diexport;
+- AI penerima boleh sambung tanpa memaksa form atau reconstruct transcript.
+
+Phase 1 core proof telah lulus. ZASSPILL v0.1.0 kini dibekukan. Perubahan feature seterusnya masuk ke phase/version kemudian; hanya critical fix patut mengubah release beku ini. Freeze ini tidak menggantikan current global ZASS SYSTEM entry contract.
+
+
+---
+
+## 16. Phase 2 — Multi-Thread Continuity
+
+Phase 2 melanjutkan core single-thread Phase 1 supaya satu conversation boleh membawa beberapa semantic thread tanpa mencampurkan meaning.
+
+> **New thread = continuity yang boleh disambung secara independent. Minor branch = context sokongan dalam thread sedia ada.**
+
+### Thread Index minimum
+
+Thread Index ialah peta navigation, bukan summary database.
+
+~~~text
+Thread
+State: ACTIVE / DORMANT / ARCHIVED
+Current
+Resume cues
+Freshness
+Lineage
+~~~
+
+Thread Index menjawab “thread apa yang wujud?”. Thread Packet menjawab “apa context sebenar thread itu?”.
+
+Index invisible secara default. Paparkan hanya bila user minta, routing ambiguous, atau SPLIT/MERGE memerlukan pilihan.
+
+### Routing
+
+1. Explicit reference → resume thread itu.
+2. Strong unique semantic cue → resume secara senyap.
+3. Sambungan jelas → kekal current thread.
+4. Topik materially berbeza + independent continuity → candidate thread baru.
+5. Lebih daripada satu thread plausible → jangan teka; minta user pilih.
+
+Current thread hanya memberi prior kecil, bukan authority mutlak.
+
+> **Semantic match > keyword match.**
+
+### New thread / minor branch / promotion
+
+- Jangan over-split.
+- Jika ragu-ragu, kekalkan sebagai branch dahulu.
+- Branch boleh dipromote apabila ia mendapat goal, state, open questions, atau future sendiri.
+
+### SPLIT
+
+Cadangkan SPLIT hanya apabila satu thread sudah mempunyai dua continuity yang boleh bergerak independent.
+
+Jangan auto-split. User mesti pilih.
+
+Jika SPLIT dipilih:
+- cipta thread baru;
+- preserve context relevan;
+- lineage: `split-from [parent]`.
+
+### MERGE
+
+Cadangkan MERGE hanya apabila dua thread kini berkongsi continuity + future yang sama dan tidak lagi berguna dijaga berasingan.
+
+Jangan auto-merge. User mesti pilih.
+
+Jika MERGE dipilih:
+- satu continuity aktif kekal;
+- active lineage: `merged-from [A + B]`;
+- source thread lama kekal sebagai archived reference: `merged-into [active thread]`;
+- contradiction tidak dipaksa menjadi satu truth.
+
+### Thread lifecycle
+
+~~~text
+ACTIVE
+= continuity hidup / bergerak / munasabah disambung sekarang.
+
+DORMANT
+= belum selesai atau masih relevan, tetapi tiada perkembangan material buat sementara.
+
+ARCHIVED
+= selesai, tidak lagi current, atau sengaja ditutup daripada active continuity.
+~~~
+
+Rules:
+- ACTIVE → DORMANT bila berhenti sementara, bukan selesai.
+- DORMANT → ACTIVE bila disambung semula.
+- ACTIVE/DORMANT → ARCHIVED bila selesai/ditutup.
+- ARCHIVED → ACTIVE hanya jika user jelas membuka semula continuity yang sama.
+- Recall/history sahaja tidak reopen archived thread.
+- Jangan auto-archive hanya kerana lama tak disentuh.
+- Freshness bantu routing, bukan menentukan state.
+- `SUPERSEDED` ialah status context, bukan thread state.
+
+### Conflict + isolation
+
+> **Related ≠ shared.**
+
+Context kekal thread-local secara default.
+
+Jika dua statement nampak bercanggah, semak scope, horizon masa, truth type, dan sama ada user benar-benar mengubah pendirian.
+
+Jika conflict masih real dan material, jangan pilih sendiri; minta clarification.
+
+Correction user mengatasi tafsiran AI. Context yang diganti boleh jadi superseded, tetapi superseded context tidak menjadi thread baru.
+
+Cross-thread carry hanya apabila materially relevant.
+
+### Resume
+
+- Direct reference → resume.
+- Strong unique cue → resume.
+- DORMANT → ACTIVE bila disambung.
+- ARCHIVED kekal archived untuk recall/history.
+- ARCHIVED → ACTIVE hanya bila user jelas reopen.
+- Ambiguous → minta user pilih.
+- Resume daripada current Thread Packet, bukan reconstruct transcript.
+
+### Update Thread Index
+
+Update hanya bila continuity berubah secara material.
+
+~~~text
+CREATE → tambah thread hanya bila independent continuity wujud
+RESUME → activate jika perlu; update Current/Freshness jika meaning berubah
+MINOR BRANCH → tiada index entry baru
+SPLIT → create + preserve split lineage
+MERGE → active merged thread + archived source reference
+DORMANT / ARCHIVED → update State
+CORRECTION → update current meaning; jangan simpan competing truth
+~~~
+
+Resume cues bukan keyword dump.
+
+### Phase 2 proof
+
+Field test membuktikan:
+- routing + resume;
+- new thread vs minor branch;
+- branch promotion;
+- split/merge dengan user control;
+- lineage;
+- ACTIVE/DORMANT/ARCHIVED + reopen;
+- conflict + isolation;
+- correction + superseded context;
+- Thread Index invisible-by-default;
+- natural same-chat continuity.
+
+Known limitation: sesetengah receiver masih boleh mengimport provider-held memory/profile walaupun boundary sudah jelas. Itu receiver-compliance limitation, bukan authority untuk ZASSPILL menganggap provider memory sebagai portable continuity.
+
+> **ZASSPILL v0.2.0 Phase 2 dibekukan. Feature baru masuk phase/version seterusnya; hanya critical fix patut mengubah release ini.**
+
+
+---
+
+## 17. Phase 3 — Persistence / ASC Contract
+
+Phase 3 mengunci kontrak persistence antara meaning ZASSPILL dan infrastruktur ASC.
+
+Boundary utama:
+
+> **ZASSPILL menentukan APAKAH sesuatu thread, continuity, revision, conflict, packet dan lifecycle itu bermaksud. ASC menentukan BAGAIMANA ia disimpan, diselaraskan, diretrieve dan dilindungi.**
+
+Phase 3 tidak mengunci database engine, vector store, hosting, dashboard, provider AI atau implementation stack tertentu.
+
+### 17.1 Thread Identity Contract
+
+Setiap persisted thread mempunyai identity stabil:
+
+```text
+thread_id = th_<ULID>
+```
+
+Aturan:
+
+- `thread_id` dijana oleh persistence layer/ASC sekali sahaja;
+- ia opaque, immutable dan meaning-free;
+- ia tidak boleh encode title, topic, username, provider, project, state atau semantic meaning;
+- rename, correction, normal update, DORMANT, ARCHIVE dan REOPEN mengekalkan `thread_id`;
+- SPLIT mengekalkan ID parent dan memberi ID baru kepada child;
+- TRUE MERGE menghasilkan identity baru. Source threads di-ARCHIVE dan merekod `merged_into`; merged thread merekod `merged_from`;
+- jika satu thread hanya menerima update daripada thread lain, itu bukan TRUE MERGE.
+
+Timestamp teknikal di dalam ULID tidak menentukan freshness atau authority.
+
+### 17.2 Authoritative Thread Record
+
+Satu authoritative Current Thread Record wujud bagi setiap `thread_id`.
+
+Minimum semantic record:
+
+```text
+thread_id
+title
+state
+
+continuity:
+  who
+  about
+  current
+  matters
+  open
+  origin
+
+resume_cues
+lineage
+revision
+created_at
+semantic_updated_at
+```
+
+`state` hanya:
+
+```text
+ACTIVE
+DORMANT
+ARCHIVED
+```
+
+`lineage` boleh membawa:
+
+```text
+split_from
+merged_from
+merged_into
+```
+
+Thread Index ialah derived projection sahaja, bukan source of truth kedua.
+
+Metadata seperti user/account ID, provider, device, auth, sync status, embedding atau `persisted_at` ialah ASC envelope metadata, bukan semantic Thread Record.
+
+### 17.3 Revision + Event Contract
+
+Current Thread Record ialah authority state semasa. Event log ialah immutable semantic mutation/history lineage; Phase 3 bukan full event-sourcing system.
+
+Setiap successful material semantic mutation:
+
+```text
+revision N → N+1
+```
+
+dan mesti menghasilkan satu matching semantic event.
+
+Minimum event:
+
+```text
+event_id: ev_<ULID>
+thread_id: th_<ULID>
+revision
+event_type
+occurred_at
+change
+```
+
+Locked event types:
+
+```text
+CREATE
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+Revision tidak naik untuk READ, export, sync, backup, replication, serialization-only change atau retry request yang sama.
+
+Thread Record mutation + matching event ialah satu logical atomic operation. Sistem tidak boleh melaporkan record revision baru tanpa matching event yang sah.
+
+### 17.4 Optimistic Concurrency
+
+Semantic write mesti membawa:
+
+```text
+thread_id
+expected_revision
+mutation
+```
+
+Jika:
+
+```text
+stored_revision == expected_revision
+```
+
+write boleh diterima.
+
+Jika tidak:
+
+```text
+REVISION_CONFLICT
+```
+
+dan:
+
+- Thread Record tidak berubah;
+- revision tidak naik;
+- tiada semantic event baru;
+- tiada last-write-wins;
+- caller mesti reload current record sebelum reconcile.
+
+Jika reconciliation menemukan contradiction material, minta user clarify. Jangan semantic auto-merge.
+
+### 17.5 Idempotency Contract
+
+Setiap logical semantic write membawa:
+
+```text
+request_id = req_<ULID>
+```
+
+Aturan:
+
+- same `request_id` + same payload → `ALREADY_APPLIED` / return original result;
+- jangan execute semula;
+- jangan naik revision;
+- jangan cipta event duplicate;
+- same `request_id` + different payload → `IDEMPOTENCY_KEY_REUSE_CONFLICT`;
+- mutation logical baru mesti guna `request_id` baru.
+
+`request_id` ialah identity logical request/retry. `event_id` ialah identity semantic event yang berjaya.
+
+### 17.6 Authority Contract
+
+Authority order Phase 3:
+
+- latest explicit user statement = semantic authority dalam live conversation;
+- ASC Current Thread Record = persistence authority bagi state yang berjaya disimpan;
+- event log = history / mutation / lineage authority;
+- Portable Packet = portable snapshot bagi satu known persisted revision atau standalone/local state;
+- Thread Index = derived navigation;
+- AI interpretation/chat = working context/proposal, bukan independent persistence authority;
+- provider memory/profile/private context = di luar portable authority.
+
+Live meaning boleh sementara lebih baru daripada ASC sebelum persistence berjaya. Sistem tidak boleh berpura-pura write telah berlaku.
+
+Jika packet lebih lama daripada ASC dan ASC boleh dicapai, ASC persisted state menang.
+
+### 17.7 Retrieval Contract
+
+Tiga retrieval operation:
+
+```text
+GET_BY_ID
+RESOLVE_THREAD
+LIST_THREADS
+```
+
+`GET_BY_ID`:
+- jika `thread_id` diketahui, retrieve identity itu terus;
+- jangan semantic-search alternative.
+
+`RESOLVE_THREAD`:
+- `UNIQUE_MATCH` → retrieve selected identity;
+- `MULTIPLE_MATCHES` → tunjuk candidate minimum dan minta user pilih;
+- `NO_MATCH` → jangan invent existing thread.
+
+Candidate resolution hanya membawa minimum identity/navigation context. Full continuity dibaca selepas identity dipilih.
+
+`LIST_THREADS` mengembalikan index projection, bukan full Thread Records.
+
+Retrieval ialah READ-ONLY:
+- tiada revision bump;
+- tiada event;
+- tiada auto-create;
+- tiada auto-resume;
+- tiada auto-reopen.
+
+ARCHIVED thread boleh diretrieve untuk history tetapi kekal ARCHIVED sehingga user jelas memilih REOPEN.
+
+### 17.8 Packet ↔ ASC Reconciliation
+
+ASC-backed packet membawa minimum reconciliation metadata:
+
+```text
+thread_id
+base_revision
+packet_state
+exported_at
+```
+
+`packet_state`:
+
+```text
+SYNCED
+LOCAL_CHANGES
+STANDALONE
+```
+
+`base_revision` ialah ASC revision terakhir yang packet tahu secara sah.
+
+Offline/local edit:
+
+- tidak mencipta fake ASC revision;
+- tidak mencipta fake event;
+- mengekalkan `base_revision`;
+- menukar packet kepada `LOCAL_CHANGES`.
+
+Reconciliation:
+
+```text
+packet SYNCED rev N + ASC rev N
+→ IN_SYNC
+
+packet SYNCED rev N + ASC rev >N
+→ STALE_PACKET / STALE_SNAPSHOT
+→ ASC persisted state menang
+
+packet LOCAL_CHANGES base N + ASC rev N
+→ SAFE_TO_WRITE
+→ propose write dengan expected_revision N
+
+packet LOCAL_CHANGES base N + ASC rev >N
+→ DIVERGENCE_DETECTED
+→ reload + reconcile
+→ no last-write-wins
+```
+
+Jika ASC unavailable, packet boleh menjadi portable authority untuk session tersebut tetapi mesti kekal `LOCAL_CHANGES`; jangan dakwa externally persisted.
+
+Jika packet mendakwa revision lebih baru daripada ASC tanpa provenance sah, hasilkan `REVISION_PROVENANCE_MISMATCH`.
+
+### 17.9 Cross-AI Write Contract
+
+AI/provider hanya mencadangkan semantic mutation. ASC memiliki persistence mechanics dan protected metadata.
+
+Write shape:
+
+```text
+request_id
+thread_id
+expected_revision
+operation
+changes
+```
+
+Allowed semantic operations:
+
+```text
+UPDATE
+CORRECT
+RENAME
+DORMANT
+RESUME
+ARCHIVE
+REOPEN
+SPLIT
+MERGE
+```
+
+AI tidak boleh menetapkan atau mengganti secara sewenang-wenang:
+
+- identity thread sedia ada;
+- revision;
+- event_id;
+- system timestamps;
+- persistence receipt.
+
+State transition mesti melalui lifecycle operation. Lineage mutation mesti melalui SPLIT/MERGE. Generic full-record replacement tidak dibenarkan.
+
+SPLIT dan MERGE multi-record mesti atomic secara logical. ASC menjana identity baru yang diperlukan.
+
+Provider memory/profile tidak boleh enrich semantic mutation kecuali user sendiri membawa context itu ke thread.
+
+### 17.10 Bootstrap / Import Contract
+
+Packet tanpa `thread_id` ialah bootstrap candidate, bukan automatik thread baru.
+
+Flow:
+
+```text
+resolve identity
+↓
+NO_MATCH
+→ CREATE new th_<ULID>, revision 1, CREATE event
+
+UNIQUE_MATCH
+→ attach existing identity
+→ no duplicate
+
+MULTIPLE_MATCHES
+→ user clarification
+→ no create / no attach
+```
+
+Jangan infer identity daripada title sahaja. Jangan auto-MERGE, auto-SPLIT atau create duplicate.
+
+Bootstrap request juga mesti idempotent.
+
+### 17.11 Delete / Forget / Tombstone
+
+`ARCHIVED` ialah semantic lifecycle state. Ia bukan privacy deletion.
+
+`DELETE_THREAD` memerlukan identity + stale-write protection.
+
+Successful delete menghapus:
+
+- semantic Thread Record;
+- semantic event history;
+- Thread Index/search projection;
+- derived semantic caches yang berkaitan.
+
+Minimal tombstone boleh kekal hanya untuk mencegah resurrection:
+
+```text
+thread_id
+deleted_at
+deletion_request_id
+```
+
+Tombstone tidak boleh menyimpan title, current, WHO, matters, open, resume cues, semantic history atau deleted content.
+
+Stale packet yang menunjuk identity tombstoned menghasilkan:
+
+```text
+THREAD_TOMBSTONED
+```
+
+dan tidak boleh auto-resurrect.
+
+Jika user mahu menggunakan semula kandungan lama, ia mesti menjadi explicit CREATE_NEW dengan identity baru.
+
+`FORGET_CONTEXT` ialah privacy erasure bagi selected semantic context. Forgotten content tidak boleh disalin ke immutable event; receipt/event boleh hanya menyatakan bahawa context dibuang atas permintaan user.
+
+### 17.12 Portable Packet v2
+
+Portable Packet v2 ialah Markdown human-readable dengan machine metadata. Ia bukan JSON-only database dump.
+
+Method identity mesti jelas:
+
+```yaml
+method: ZASSPILL
+method_version: 1.0.0
+packet_format_version: 2
+```
+
+`export`, `import` dan `reconcile` ialah operation, bukan nilai `method`.
+
+Minimum ASC-backed packet:
+
+```yaml
+---
+method: ZASSPILL
+method_version: 1.0.0
+packet_format_version: 2
+thread_id: th_<ULID>
+title: <human title>
+state: ACTIVE | DORMANT | ARCHIVED
+base_revision: <persisted revision known by packet>
+packet_state: SYNCED | LOCAL_CHANGES
+exported_at: <timestamp if known>
+continuity:
+  who: ...
+  about: ...
+  current: ...
+  matters: ...
+  open: ...
+resume_cues: ...
+lineage:
+  split_from: ...
+  merged_from: ...
+  merged_into: ...
+provenance:
+  source: ...
+---
+```
+
+Standalone packet tanpa persisted identity boleh menggunakan:
+
+```text
+packet_state: STANDALONE
+```
+
+dan boleh omit `thread_id` / `base_revision` sehingga bootstrap berjaya.
+
+Jangan export full event history secara default. Export current continuity + minimum relevant lineage/history sahaja.
+
+Round-trip invariant:
+
+> **export → AI → local change → ASC reconciliation/write → export semula mesti mengekalkan thread_id, lineage dan meaning asal kecuali perubahan semantic yang memang dibenarkan user.**
+
+Packet edit tidak pernah menjadi bukti persistence.
+
+### 17.13 Phase 3 Proof
+
+Field-test suite Phase 3 telah lulus:
+
+```text
+FT01 Identity Stability             PASS
+FT02 Revision + Event               PASS
+FT03 Idempotency                    PASS
+FT04 Concurrent Write               PASS
+FT05 Retrieval + Ambiguity          PASS
+FT06 Packet ↔ ASC Reconciliation    PASS
+FT07 Bootstrap / Duplicate Protect  PASS
+FT08 Cross-AI Write                 PASS
+FT09 Delete / Tombstone             PASS
+FT10 Portable Packet v2 Round-trip  PASS
+```
+
+Proof meliputi:
+
+- stable machine identity;
+- revision/event consistency;
+- stale-write protection;
+- idempotent retries;
+- retrieval ambiguity tanpa tekaan;
+- offline/local packet reconciliation;
+- cross-provider continuity tanpa provider-memory enrichment;
+- duplicate-safe bootstrap;
+- privacy deletion + tombstone;
+- Portable Packet v2 round-trip.
+
+> **ZASSPILL v0.3.0 Phase 3 dibekukan. Persistence semantics dan ASC contract di atas ialah authority Phase 3. Feature baharu masuk Phase 4 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 18. Phase 4 — Retrieval Intelligence
+
+Phase 4 mengunci bagaimana ZASSPILL mencari dan resolve continuity thread secara semantik tanpa menukar retrieval menjadi tekaan, keyword matching semata-mata, atau authority berdasarkan opaque score.
+
+Prinsip utama:
+
+> **Retrieval intelligence ialah evidence-based, bukan keyword-based. Candidate generation boleh luas, tetapi final resolution mesti konservatif.**
+
+Phase 4 kekal serasi dengan Phase 3: retrieval ialah READ-ONLY dan tidak memiliki authority untuk mutate state, revision, event atau semantic truth.
+
+### 18.1 Authorized Retrieval Scope
+
+Retrieval hanya boleh mencari dalam continuity scope yang user memang authorized.
+
+Sumber evidence yang dibenarkan:
+
+- exact `thread_id`;
+- explicit / near-exact title reference;
+- `resume_cues`;
+- `continuity.about`;
+- `continuity.current`;
+- `continuity.matters`;
+- `continuity.open`;
+- lineage yang memang relevan;
+- lifecycle intent user.
+
+Bukan retrieval authority:
+
+- provider memory / profile / private personalization;
+- unrelated chats;
+- web knowledge;
+- external inference AI yang tidak dibawa user ke thread;
+- opaque numeric similarity score semata-mata.
+
+### 18.2 Candidate Generation ≠ Final Resolution
+
+Retrieval semantic mempunyai dua lapisan:
+
+```text
+USER CUE
+   ↓
+CANDIDATE GENERATION
+   ↓
+FINAL RESOLUTION
+   ↓
+UNIQUE_MATCH
+MULTIPLE_MATCHES
+NO_MATCH
+```
+
+Candidate generation boleh sengaja mengambil beberapa kemungkinan.
+
+> **Menjadi candidate tidak bermaksud thread itu telah dipilih.**
+
+Final resolver mesti menilai coherence evidence sebelum memilih identity.
+
+### 18.3 Evidence Strength
+
+Evidence boleh mempunyai kekuatan berbeza.
+
+Strong evidence termasuk:
+
+- exact `thread_id`;
+- explicit unique title/reference;
+- resume cue yang sangat specific.
+
+Medium evidence termasuk:
+
+- semantic match yang coherent dengan `about` / `current`;
+- gabungan beberapa current resume cues;
+- relevant `matters` / `open`;
+- lifecycle intent yang jelas.
+
+Weak evidence termasuk:
+
+- keyword umum sahaja;
+- satu perkataan overlap;
+- similarity tanpa continuity meaning.
+
+Keyword overlap sahaja tidak cukup untuk memaksa `UNIQUE_MATCH`.
+
+### 18.4 Negative Evidence
+
+Explicit user exclusion ialah negative evidence.
+
+Contoh:
+
+```text
+"sambung pasal Kulai, bukan pasal kerja"
+```
+
+Candidate berkaitan kerja mesti kehilangan relevance walaupun berkongsi keyword `Kulai`.
+
+Explicit exclusion user lebih kuat daripada keyword overlap.
+
+### 18.5 Superseded / Stale Cue Discipline
+
+Context atau resume cue yang telah `SUPERSEDED` tidak boleh bertindak sebagai current retrieval evidence.
+
+Semantic priority:
+
+```text
+current meaning
+↓
+valid current resume cues
+↓
+relevant matters/open
+↓
+older supporting context
+```
+
+Freshness bukan timestamp sahaja.
+
+`semantic_updated_at` boleh membantu implementation sebagai tie-break, tetapi tidak boleh mengatasi semantic relevance.
+
+DORMANT atau ARCHIVED tidak bermaksud stale.
+
+### 18.6 Conservative Resolution
+
+`UNIQUE_MATCH` hanya dibenarkan apabila satu candidate mempunyai evidence yang materially stronger dan coherent.
+
+Jika dua atau lebih candidate masih plausible:
+
+```text
+MULTIPLE_MATCHES
+```
+
+Jika evidence tidak cukup:
+
+```text
+NO_MATCH
+```
+
+Jangan paksa `UNIQUE_MATCH` hanya kerana internal numeric score sedikit lebih tinggi.
+
+> **False ambiguity lebih selamat daripada false identity.**
+
+### 18.7 Exact Identity Bypass
+
+Jika `thread_id` diketahui, guna exact lookup:
+
+```text
+GET_BY_ID
+```
+
+dan jangan jalankan semantic ranking alternative.
+
+Exact unique title reference boleh menjadi strong evidence, tetapi title bukan identity. Jika dua thread berkongsi title yang sama atau reference masih ambiguous, hasilkan ambiguity.
+
+### 18.8 Lifecycle-Aware Retrieval
+
+Eligibility:
+
+```text
+ACTIVE      → retrievable
+DORMANT     → retrievable
+ARCHIVED    → retrievable untuk history / resolution
+TOMBSTONED  → bukan semantic candidate
+```
+
+Retrieval tidak boleh:
+
+- auto-RESUME DORMANT;
+- auto-REOPEN ARCHIVED;
+- resurrect tombstoned thread.
+
+Historical recall sahaja tidak mengubah lifecycle state.
+
+Tombstone ialah deletion/storage status, bukan semantic lifecycle state.
+
+### 18.9 Minimal Disclosure During Ambiguity
+
+Jika hasilnya `MULTIPLE_MATCHES`, surface candidate minimum sahaja:
+
+```text
+thread_id
+title
+state
+current
+match_basis
+```
+
+Jangan dump full Thread Record, WHO, private details atau seluruh matters/open hanya untuk resolve identity.
+
+`match_basis` mesti menjelaskan evidence apa yang menyebabkan candidate dianggap relevant tanpa memerlukan numeric score.
+
+### 18.10 Retrieval Operation Result Contract
+
+Result type mesti ikut operation.
+
+```text
+GET_BY_ID
+├─ FOUND
+├─ NOT_FOUND
+└─ THREAD_TOMBSTONED
+
+RESOLVE_THREAD
+├─ UNIQUE_MATCH
+├─ MULTIPLE_MATCHES
+└─ NO_MATCH
+
+LIST_THREADS
+└─ LIST_RESULT
+```
+
+`GET_BY_ID` bukan semantic resolution. Oleh itu exact lookup yang berjaya menghasilkan `FOUND`, bukan `UNIQUE_MATCH`.
+
+`THREAD_TOMBSTONED` ialah exact identity/deletion outcome, bukan lifecycle state.
+
+### 18.11 Read-Only Guarantee
+
+Semua retrieval operation adalah READ-ONLY.
+
+Retrieval tidak boleh:
+
+- mutate Thread Record;
+- bump revision;
+- create semantic event;
+- change lifecycle state;
+- auto-create thread;
+- auto-merge atau auto-split.
+
+Resolution hanya mencari identity. Semantic write masih tertakluk kepada Phase 3 write contract.
+
+### 18.12 Implementation Freedom
+
+ASC implementation bebas menggunakan:
+
+- keyword/BM25;
+- embeddings;
+- vector search;
+- LLM resolver;
+- hybrid retrieval;
+- reranker;
+- gabungan teknik di atas.
+
+Implementation internals tidak boleh menukar semantic contract.
+
+Opaque score, embedding distance atau model confidence tidak pernah menjadi authority sendiri untuk memilih thread.
+
+### 18.13 Phase 4 Proof
+
+Consolidated field test Phase 4 lulus bagi:
+
+```text
+Exact identity lookup               PASS
+Strong semantic resolution          PASS
+Ambiguous cue handling              PASS
+Negative evidence                   PASS
+Superseded cue rejection            PASS
+DORMANT retrieval                   PASS
+ARCHIVED historical recall          PASS
+No auto-REOPEN                      PASS
+NO_MATCH behavior                   PASS
+Tombstone protection                PASS
+Minimal candidate disclosure        PASS
+Read-only guarantee                 PASS
+Provider-memory isolation           PASS
+No numeric-score authority          PASS
+```
+
+Dua schema wording correction ditemui semasa audit dan telah dimasukkan ke contract final:
+
+- `GET_BY_ID` successful exact lookup = `FOUND`, bukan `UNIQUE_MATCH`;
+- tombstone bukan lifecycle state.
+
+Behavioral proof, contract consistency, Phase 3 compatibility, privacy boundary dan authority boundary semuanya lulus.
+
+> **ZASSPILL v0.4.0 Phase 4 dibekukan. Retrieval Intelligence contract di atas ialah authority Phase 4. Feature baharu masuk Phase 5 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 19. Phase 5 — Cross-Method Continuity
+
+Phase 5 mengunci bagaimana satu semantic thread bergerak antara method ZASS tanpa kehilangan identity, mencampur authority, atau menaik taraf output AI menjadi keputusan user.
+
+Prinsip utama:
+
+> **Method boleh berubah. Thread identity kekal. User authority tidak boleh berubah hanya kerana AI menghasilkan artifact atau recommendation.**
+
+### 19.1 One Thread, Many Methods
+
+Peralihan method tidak mencipta semantic thread baru.
+
+~~~text
+th_ABC
+
+ZASSPILL
+→ ZASSELECTION
+→ ZASSPILL
+→ ZASSIMPLE
+→ ZASSPILL
+
+thread_id = th_ABC
+~~~
+
+Selagi continuity yang sama masih berlangsung, thread_id kekal sama.
+
+### 19.2 Method Ownership
+
+~~~text
+ZASSPILL
+→ continuity / context
+
+ZASSELECTION
+→ comparison / selection
+
+ZASSIMPLE
+→ design / architecture / Action Plan
+~~~
+
+Aturan:
+
+- ZASSPILL tidak memilih option bagi user.
+- ZASSELECTION tidak membina architecture.
+- ZASSIMPLE tidak menukar recommendation atau draft AI menjadi keputusan user.
+- Structured method tidak boleh menulis semantic continuity tanpa result contract + reconciliation.
+
+### 19.3 ZASSPILL sebagai Continuity Broker
+
+Secara logical:
+
+~~~text
+ZASSPILL
+→ handoff
+→ receiving method
+→ method result
+→ ZASSPILL continuity
+~~~
+
+UX boleh kekal lancar dalam chat yang sama, tetapi semantic authority boundary mesti kekal.
+
+> **Cross-method handoff bukan pertukaran thread. Ia pertukaran method responsibility pada thread yang sama.**
+
+### 19.4 Handoff Identity
+
+Setiap method transition mempunyai identity:
+
+~~~text
+handoff_id = ho_<ULID>
+~~~
+
+Identity berbeza:
+
+~~~text
+thread_id   = continuity identity
+request_id  = persistence write/retry identity
+event_id    = successful semantic event identity
+handoff_id  = method transition identity
+~~~
+
+Minimum persisted handoff metadata:
+
+~~~text
+handoff_id
+thread_id
+source_method
+target_method
+source_revision
+transition
+minimum relevant continuity
+method_lineage
+~~~
+
+Method Handoff Contract v0.1 kekal sah; Phase 5 menambah machine lineage apabila persisted thread tersedia.
+
+Standalone handoff boleh omit machine fields yang memang belum wujud, tetapi tidak boleh mereka identity atau revision palsu.
+
+### 19.5 Handoff ialah Revision-Bound Snapshot
+
+Receiving method bekerja daripada snapshot pada source_revision tertentu.
+
+~~~text
+thread_id: th_A
+source_revision: 12
+From: ZASSPILL
+To: ZASSELECTION
+~~~
+
+Receiving method tidak boleh menganggap source thread kekal pada revision itu sehingga result pulang.
+
+Result mesti reconcile dengan current persisted Thread Record sebelum semantic persistence.
+
+### 19.6 Method Result Envelope
+
+Structured method memulangkan result envelope, bukan seluruh internal artifact.
+
+Minimum:
+
+~~~text
+handoff_id
+thread_id
+source_revision
+producing_method
+result_status
+confirmed_outcome
+still_open
+artifact_refs
+~~~
+
+Locked result_status:
+
+~~~text
+CONFIRMED_RESULT
+UNCONFIRMED_RESULT
+NO_CHANGE
+CANCELLED
+~~~
+
+Jika reconciliation conflict secara material:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+Ini ialah reconciliation outcome, bukan user-confirmed semantic outcome.
+
+### 19.7 User Confirmation Boundary
+
+ZASSELECTION:
+
+~~~text
+AI recommendation
+→ UNCONFIRMED_RESULT
+→ bukan user decision
+
+User explicitly selects
+→ CONFIRMED_RESULT
+→ boleh menjadi confirmed semantic outcome
+~~~
+
+ZASSIMPLE:
+
+~~~text
+draft architecture
+→ UNCONFIRMED_RESULT
+→ bukan confirmed continuity truth
+
+user explicitly confirms architecture
+→ CONFIRMED_RESULT
+→ boleh menjadi confirmed semantic outcome
+~~~
+
+> **AI-generated artifact ≠ user-confirmed outcome.**
+
+### 19.8 No Double Confirmation
+
+Jika user sudah memberi confirmation yang jelas di dalam receiving method, CONFIRMED_RESULT tidak memerlukan confirmation kedua hanya kerana result kembali ke ZASSPILL.
+
+Persistence tetap tertakluk kepada revision, idempotency dan concurrency contract Phase 3.
+
+### 19.9 Applying Method Results
+
+CONFIRMED_RESULT:
+- boleh menghasilkan proposed semantic mutation;
+- mesti melalui expected_revision / reconciliation;
+- simpan concise confirmed meaning + method lineage + relevant artifact refs.
+
+UNCONFIRMED_RESULT:
+- tidak menjadi confirmed user truth;
+- boleh kekal sebagai draft/reference;
+- tidak boleh menutup open item sebagai keputusan user.
+
+NO_CHANGE:
+- tiada semantic mutation diperlukan.
+
+CANCELLED:
+- handoff ditutup tanpa memaksa outcome.
+
+### 19.10 Cross-Method Concurrency
+
+Jika source revision masih current:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 12
+→ SAFE_TO_APPLY
+~~~
+
+Jika source telah bergerak:
+
+~~~text
+handoff source_revision = 12
+current ASC revision = 14
+→ RECONCILE
+~~~
+
+Jika compatible, reload current record dan propose mutation terhadap latest revision.
+
+Jika materially conflicting:
+
+~~~text
+METHOD_RESULT_DIVERGENCE
+~~~
+
+dan:
+
+- jangan overwrite current state;
+- jangan create revision baru untuk stale conflicting result;
+- jangan last-write-wins;
+- minta user clarification apabila semantic authority diperlukan.
+
+### 19.11 Thread Lineage ≠ Method Lineage
+
+Thread lineage:
+
+~~~text
+split_from
+merged_from
+merged_into
+~~~
+
+Method lineage:
+
+~~~text
+handoff_id
+source_method
+target_method
+source_revision
+result_status
+~~~
+
+DECIDE atau DESIGN handoff tidak mencipta split_from, merged_from atau merged_into.
+
+### 19.12 Chained Method Transitions
+
+Jika user selesai DECIDE kemudian mahu DESIGN:
+
+~~~text
+ZASSPILL
+   ↓ ho_001
+ZASSELECTION
+   ↓ result + reconcile
+ZASSPILL
+   ↓ ho_002
+ZASSIMPLE
+~~~
+
+Gunakan dua handoff berasingan walaupun UX berjalan dalam chat yang sama.
+
+Jangan bypass continuity authority dengan direct semantic ownership transfer ZASSELECTION → ZASSIMPLE tanpa return/reconcile boundary.
+
+### 19.13 Minimal Context Forwarding
+
+Receiving method hanya menerima context yang diperlukan.
+
+Bawa minimum:
+
+~~~text
+thread_id
+source_revision
+current relevant state
+relevant matters
+relevant open items
+necessary method/thread lineage
+explicit transition choice
+~~~
+
+Jangan forward secara default:
+
+- seluruh transcript;
+- seluruh provider profile;
+- semua thread user;
+- unrelated personal context;
+- full artifact daripada method sebelumnya apabila concise outcome cukup.
+
+### 19.14 Artifact Isolation
+
+Detailed method artifacts kekal di artifact layer.
+
+Contoh:
+
+~~~text
+confirmed_outcome:
+Option B selected
+
+artifact_ref:
+selection_matrix_xyz
+~~~
+
+atau:
+
+~~~text
+confirmed_outcome:
+architecture confirmed
+
+artifact_ref:
+ARCHITECTURE.md
+~~~
+
+Continuity menyimpan meaning + lineage + relevant reference, bukan salinan penuh artifact.
+
+> **Continuity remembers the meaning and lineage; method artifacts preserve the detailed work.**
+
+### 19.15 Method-Version Metadata
+
+Portable Packet dan cross-method machine metadata mesti melaporkan active method version semasa.
+
+~~~yaml
+method: ZASSPILL
+method_version: 1.0.0
+~~~
+
+Packet baru yang dieksport oleh release semasa mesti menggunakan version method semasa.
+
+### 19.16 Phase 5 Proof
+
+Consolidated field test Phase 5 lulus bagi:
+
+~~~text
+Stable thread identity                 PASS
+Separate handoff identities            PASS
+Source revision preserved              PASS
+ZASSELECTION ownership boundary        PASS
+ZASSIMPLE ownership boundary           PASS
+AI recommendation ≠ user truth         PASS
+Confirmed decision → continuity        PASS
+Draft architecture ≠ user truth        PASS
+Confirmed architecture → continuity    PASS
+No double confirmation                 PASS
+Artifact isolation                     PASS
+Thread lineage unchanged               PASS
+Method lineage preserved               PASS
+Stale method result blocked            PASS
+METHOD_RESULT_DIVERGENCE                PASS
+No last-write-wins                     PASS
+Provider-memory isolation              PASS
+~~~
+
+Field test membuktikan satu thread_id kekal merentas DECIDE dan DESIGN, recommendation/draft AI kekal unconfirmed sehingga user mengesahkan, confirmed result boleh kembali tanpa confirmation kedua, artifact tidak disalin penuh ke continuity, dan stale conflicting method result tidak boleh overwrite current semantic state.
+
+Method Result Envelope dikunci semasa final audit berdasarkan behavior yang telah dibuktikan.
+
+Behavioral proof, method ownership, confirmation authority, result isolation, artifact isolation, revision reconciliation, thread/method lineage separation, Phase 3 compatibility, Phase 4 compatibility dan privacy boundary semuanya lulus.
+
+> **ZASSPILL v0.5.0 Phase 5 dibekukan. Cross-Method Continuity contract di atas ialah authority Phase 5. Feature baharu masuk Phase 6 atau version kemudian; hanya critical fixes patut mengubah release ini.**
+
+
+---
+
+## 20. Phase 6 — Production Reliability
+
+Phase 6 mengunci reliability behavior apabila production transport, storage, retry, restore, migration atau authorization tidak berjalan sempurna.
+
+Prinsip utama:
+
+> **Fail closed on semantic uncertainty; recover explicitly rather than inventing continuity.**
+
+Apabila state semantic tidak pasti, sistem tidak boleh overwrite, auto-merge, fake success, resurrect deleted continuity, meneka revision, atau menghasilkan telemetry palsu.
+
+### 20.1 Truthful Persistence Receipt
+
+Sistem hanya boleh melaporkan persistence berjaya apabila write benar-benar dibuktikan.
+
+Minimum receipt:
+
+~~~text
+request_id
+thread_id
+previous_revision
+persisted_revision
+event_id
+result
+~~~
+
+Jika persistence belum dapat dibuktikan:
+
+~~~text
+PERSISTENCE_UNCONFIRMED
+~~~
+
+Request dihantar sahaja bukan bukti bahawa state telah disimpan.
+
+### 20.2 Unknown Write Outcome
+
+Jika client menghantar write tetapi response hilang selepas server mungkin sudah commit:
+
+~~~text
+WRITE_OUTCOME_UNKNOWN
+~~~
+
+Client tidak boleh meneka success atau failure.
+
+Recovery wajib menggunakan logical request yang sama:
+
+~~~text
+retry same request_id + same payload
+~~~
+
+Idempotency Phase 3 menentukan sama ada request sudah applied atau perlu dilaksanakan sekali sahaja.
+
+### 20.3 Retry Classification
+
+Retryable failure boleh termasuk:
+
+~~~text
+timeout
+temporary network failure
+service unavailable
+transient transport failure
+~~~
+
+Non-retryable semantic/security outcome termasuk:
+
+~~~text
+REVISION_CONFLICT
+IDEMPOTENCY_KEY_REUSE_CONFLICT
+THREAD_TOMBSTONED
+AUTHORIZATION_DENIED
+invalid semantic operation
+~~~
+
+Transport retry untuk logical write yang sama mesti menggunakan request_id yang sama.
+
+### 20.4 Atomic Semantic Commit
+
+Normal semantic mutation mesti commit secara logical atomic:
+
+~~~text
+Thread Record update
++
+matching semantic event
+~~~
+
+Tidak boleh ada trusted state seperti:
+
+~~~text
+record revision 8
+event log revision 7
+~~~
+
+Jika atomicity/integrity tidak dapat dibuktikan:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Affected continuity tidak selamat untuk semantic write sehingga recovery selesai.
+
+### 20.5 Multi-Record Atomicity
+
+Operation multi-record seperti SPLIT, TRUE MERGE dan operation lain yang secara semantic mesti bergerak bersama perlu logical atomicity.
+
+Contoh TRUE MERGE:
+
+~~~text
+source A archived
+source B archived
+new C created
+lineage connected
+matching events written
+~~~
+
+Partial success tidak boleh dianggap completed.
+
+Jika partial commit dikesan:
+
+~~~text
+PARTIAL_COMMIT_DETECTED
+~~~
+
+dan recovery mesti berlaku sebelum semantic operation baru diteruskan pada affected records.
+
+### 20.6 Read-After-Write Verification
+
+Selepas reported successful write, persistence layer mesti boleh verify sekurang-kurangnya:
+
+~~~text
+thread_id
+persisted_revision
+matching semantic event
+~~~
+
+Jika success receipt bercanggah dengan persisted verification:
+
+~~~text
+PERSISTENCE_VERIFICATION_FAILED
+~~~
+
+Jangan laporkan write sebagai trusted success.
+
+### 20.7 Out-of-Order / Replay Protection
+
+Replication, retry atau sync message lama tidak boleh mengundur current state.
+
+Contoh:
+
+~~~text
+current revision 12
+incoming revision 10
+→ STALE_REPLAY_IGNORED
+~~~
+
+Tiada mutation.
+
+Revision + event lineage mempunyai authority lebih tinggi daripada timestamp.
+
+### 20.8 Integrity Guard
+
+Contoh integrity violation:
+
+- duplicate semantic revision;
+- missing matching event;
+- broken merge/split lineage;
+- invalid lifecycle transition;
+- thread_id mismatch;
+- record/event revision mismatch.
+
+Outcome:
+
+~~~text
+INTEGRITY_ERROR
+~~~
+
+Jangan repair semantic meaning secara senyap atau mencipta event/meaning yang hilang.
+
+Read-only degraded inspection boleh dibenarkan jika selamat, tetapi semantic writes pada affected record mesti diblok sehingga recovery selesai.
+
+### 20.9 Degraded / Offline Mode
+
+Jika ASC tidak boleh dicapai:
+
+~~~text
+ASC_UNAVAILABLE
+~~~
+
+Conversation boleh terus menggunakan portable/local continuity.
+
+Local semantic change mesti:
+
+~~~text
+packet_state = LOCAL_CHANGES
+base_revision = last known persisted revision
+~~~
+
+dan:
+
+- tidak mencipta fake ASC revision;
+- tidak mencipta fake persisted event;
+- tidak mendakwa externally persisted.
+
+Bila ASC kembali, gunakan reconciliation contract Phase 3.
+
+### 20.10 Restore / Backup Safety
+
+Backup lama tidak menjadi authority hanya kerana restore secara teknikal berjaya.
+
+Contoh:
+
+~~~text
+current known revision 24
+backup revision 20
+→ RESTORE_REQUIRES_RECONCILIATION
+~~~
+
+Restore mesti memeriksa identity, revision, event lineage dan tombstone/deletion authority.
+
+Jangan silently rewind newer trusted continuity.
+
+### 20.11 Tombstone Survives Recovery
+
+Backup atau replica lama tidak boleh menghidupkan semula deleted thread.
+
+Jika valid tombstone wujud:
+
+~~~text
+THREAD_TOMBSTONED
+~~~
+
+Deletion authority menang terhadap stale semantic backup.
+
+No resurrection.
+
+### 20.12 Schema / Version Compatibility
+
+Persisted data perlu membawa schema/version metadata yang cukup untuk menentukan compatibility.
+
+Reader boleh menghasilkan:
+
+~~~text
+SUPPORTED
+MIGRATION_REQUIRED
+UNSUPPORTED_VERSION
+~~~
+
+Migration teknikal tidak menaikkan semantic revision jika meaning tidak berubah.
+
+### 20.13 Migration Safety
+
+Migration flow:
+
+~~~text
+old schema
+↓
+migration
+↓
+new schema
+↓
+semantic equivalence verification
+~~~
+
+Jika meaning boleh dipelihara dengan pasti, migration boleh berjaya tanpa semantic revision bump.
+
+Jika required semantic value tidak boleh diperoleh dengan selamat:
+
+~~~text
+MIGRATION_REVIEW_REQUIRED
+~~~
+
+Jangan invent semantic content untuk mengisi field baru.
+
+### 20.14 Authorization Failure
+
+Jika caller tidak mempunyai authority:
+
+~~~text
+AUTHORIZATION_DENIED
+~~~
+
+Semantic consequence mesti zero mutation:
+
+- tiada revision bump;
+- tiada semantic event;
+- tiada lifecycle change;
+- tiada content mutation.
+
+Authentication/permission implementation kekal concern ASC; ZASSPILL mengunci semantic consequence sahaja.
+
+### 20.15 Observability Without Leakage
+
+Operational telemetry boleh membawa metadata seperti:
+
+~~~text
+request_id
+thread_id
+operation
+result_code
+revision
+timing / failure class
+~~~
+
+Ia tidak boleh duplicate full continuity content secara default.
+
+> **Reliability telemetry tidak boleh menjadi shadow semantic database.**
+
+### 20.16 Observability Truthfulness
+
+Telemetry mesti factual.
+
+Jika timestamp, latency atau timing benar-benar diukur, log nilai sebenar.
+
+Jika tidak diukur, gunakan:
+
+~~~text
+null
+unknown
+not_measured
+~~~
+
+Jangan cipta nombor atau timestamp yang nampak factual semata-mata untuk melengkapkan log.
+
+### 20.17 Clock Independence
+
+Clock drift tidak menentukan semantic authority.
+
+~~~text
+revision + event lineage
+> timestamp
+~~~
+
+Timestamp membantu diagnosis dan ordering teknikal apabila sesuai, tetapi tidak boleh mengatasi revision/event authority.
+
+### 20.18 Recovery Principle
+
+Default production recovery:
+
+- jangan overwrite apabila semantic authority tidak pasti;
+- jangan auto-merge conflict;
+- jangan fake persistence success;
+- jangan resurrect tombstoned continuity;
+- jangan meneka missing revision/event;
+- jangan invent migration meaning;
+- reconcile atau minta review secara explicit.
+
+### 20.19 Method-Version Metadata
+
+Portable Packet dan machine metadata yang dihasilkan oleh release semasa mesti menggunakan:
+
+~~~yaml
+method: ZASSPILL
+method_version: 1.0.0
+~~~
+
+### 20.20 Phase 6 Proof
+
+Consolidated production field test telah dijalankan pada lebih daripada satu receiver/provider dan behavior utama adalah konsisten.
+
+~~~text
+A  Unknown write + idempotent retry       PASS
+B  Stale replay protection                PASS
+C  Integrity failure blocks writes        PASS
+D  Offline LOCAL_CHANGES                  PASS
+E  Divergence protection                  PASS
+F  Restore safety                         PASS
+G  Tombstone survives recovery            PASS
+H  Authorization = zero mutation          PASS
+I  Migration preserves meaning            PASS
+J  Observability without semantic leakage PASS
+~~~
+
+Final audit turut mengunci observability truthfulness selepas satu receiver menghasilkan timing/timestamp fixture yang tidak dibekalkan oleh test. Telemetry yang tidak diukur mesti dilabel unknown/not_measured, bukan direka.
+
+Proof keseluruhan meliputi:
+
+- truthful persistence receipts;
+- unknown-outcome recovery;
+- retry/idempotency safety;
+- atomicity and integrity guards;
+- stale replay protection;
+- degraded/offline operation;
+- divergence handling;
+- backup/restore safety;
+- tombstone recovery protection;
+- authorization isolation;
+- schema/migration safety;
+- telemetry privacy dan truthfulness;
+- clock-independent authority.
+
+Phase 3, Phase 4 dan Phase 5 compatibility kekal lulus.
+
+> **ZASSPILL v1.0.0 ialah PRODUCTION READY. Phase 1–6 telah dibekukan sebagai core continuity contract. Feature baharu selepas ini masuk v1.x compatibility/polish atau v2 advanced continuity intelligence; hanya critical fixes patut mengubah core v1.0 contract tanpa versioned evolution.**

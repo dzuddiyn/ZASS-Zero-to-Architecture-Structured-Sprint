@@ -1,3 +1,15 @@
+## 2026-10-07 — npm Bootstrap CLI v0.1 implementation
+
+- Implemented private `create-zass@0.1.0` under `create-zass/`; it is not published to npm.
+- Added interactive no-default method/language prompts plus explicit non-interactive `--method` / `--lang` behavior.
+- Implemented all 4 × 2 method/language combinations with Full ZASS always generating canonical `ZASS.md`.
+- Added create-new-only preflight, existing-target refusal, safe partial cleanup, structural validation, factual success receipts, and no implicit external side effects.
+- Bundled all eight canonical method/language templates as versioned package assets and added template-sync regression tests.
+- Windows evidence: 32/32 create-zass tests PASS.
+- PR #42 ZASS CI PASS including both existing zass-cli tests and new create-zass tests.
+- A Windows `npm pack --dry-run` attempt did not produce usable evidence and was terminated; no publication/package-artifact proof is claimed.
+- ZASS Project Bootstrap Core is the next TRACK B phase; npm publication remains separately gated.
+
 ## 2026-10-07 — npm Bootstrap CLI v0.1 contract LOCKED
 
 - SUPERSEDED the earlier npm-only onboarding default that silently generated ZASSIMPLE/English with no method-selection question.

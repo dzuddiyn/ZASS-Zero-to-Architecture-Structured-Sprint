@@ -144,7 +144,7 @@ COMMIT
 
 ## 3. CLI — coming soon
 
-**Bootstrap status: v0.1 behavioral contract LOCKED — implementation pending.**
+**Bootstrap status: v0.1 IMPLEMENTED LOCALLY — Windows + CI PASS — not published to npm.**
 
 Target experience:
 
@@ -183,7 +183,7 @@ README.md
 
 Full ZASS always uses `ZASS.md` as the generated project authority filename so current `zass check/status/diff` discovery remains compatible.
 
-> **The project-bootstrap CLI is not released yet. The command above is the locked target UX, not a currently available package.**
+> **The project-bootstrap CLI is implemented in [`create-zass/`](create-zass/) but not released to npm yet. The command above remains the target registry UX until the separate publish gate passes.**
 >
 > Contract: [`docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 >

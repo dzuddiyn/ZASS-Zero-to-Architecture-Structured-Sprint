@@ -62,7 +62,7 @@ Target experience:
 npm create zass@latest my-project
 ```
 
-**Status: npm Bootstrap CLI v0.1 contract LOCKED — implementation pending.**
+**Status: npm Bootstrap CLI v0.1 IMPLEMENTED LOCALLY — Windows + CI PASS — not published.**
 
 Interactive bootstrap asks for the method and language explicitly:
 
@@ -77,7 +77,7 @@ Every successful v0.1 bootstrap creates one selected method file plus `README.md
 
 Contract: [`../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
-The npm command is the target UX, not a currently released package.
+The npm command remains the target registry UX. The implementation exists locally under `create-zass/` but is not yet published.
 
 ### 4. File — works now
 

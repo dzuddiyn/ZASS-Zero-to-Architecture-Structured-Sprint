@@ -29,6 +29,9 @@ jobs:
       - name: Run ZASS CLI tests
         run: npm --prefix cli test
 
+      - name: Run create-zass bootstrap tests
+        run: npm --prefix create-zass test
+
       - name: Check repository consistency
         run: node quality/check-repo-consistency.mjs
 
