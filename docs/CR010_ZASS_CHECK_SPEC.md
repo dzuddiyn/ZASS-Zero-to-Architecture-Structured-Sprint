@@ -1,6 +1,6 @@
 # CR-010 — `zass check` Implementation Specification
 
-**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED; v0.4a + v0.4b IMPLEMENTED / FIELD-VALIDATED; STOP/REVIEW PENDING
+**Status:** CLOSED — v0.1 through v0.4 IMPLEMENTED / FIELD-VALIDATED — zass-cli v0.4.0
 **Date:** 2026-09-30  
 **Owner:** Project Owner  
 **Scope:** First productized validator for ZASS
@@ -287,4 +287,15 @@ CR-010 v0.4 field validation is **PASS**. See [`CR010_V04_REAL_PROJECT_FIELD_TES
 
 The field gate included clean real-project behavior, deliberate LOCKED-decision and readiness-drift mutations, and a Windows EOL false-positive discovered and corrected before the gate was accepted.
 
-Do not close CR-010 automatically. Run the explicit STOP/REVIEW gate first.
+CR-010 STOP/REVIEW subsequently PASSED and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
+
+
+## 10. CR-010 closure
+
+CR-010 is **CLOSED** at `zass-cli v0.4.0`.
+
+The explicit STOP/REVIEW gate passed after implementation, CI, real-project field validation, the Windows EOL correction, and final package/documentation reconciliation.
+
+Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
+
+Future npm bootstrap/onboarding and the shared ZASS Project Bootstrap Core are separate TRACK B work, not CR-010.
