@@ -69,10 +69,10 @@ TRACK B MAY:
 LOCK zass status contract ✅
 → implement zass status ✅ (CI PASS; field test later)
 → design/LOCK zass diff contract ✅
-→ implement zass diff ✅ (CI PASS; field test next)
-→ regression tests
-→ real-project field test
-→ STOP / REVIEW
+→ implement zass diff ✅
+→ regression tests ✅
+→ real-project field test ✅ PASS
+→ STOP / REVIEW ← NEXT
 → CLOSE CR-010
 ```
 
@@ -80,9 +80,9 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 `zass status` and `zass diff` must add deterministic ZASS-relevant meaning and must not merely rebrand raw Git output.
 
-The CR-010 v0.4a contract for `zass status` is LOCKED and implemented in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md). Repository CI passes; the later real-project field-test gate remains pending.
+The CR-010 v0.4a contract for `zass status` is LOCKED, implemented and field-validated in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
 
-The CR-010 v0.4b contract for `zass diff` is LOCKED and implemented in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). Repository CI passes; real-project field testing remains the next CR-010 gate.
+The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW is now the next CR-010 gate.
 
 ## 5. Bootstrap boundary
 
