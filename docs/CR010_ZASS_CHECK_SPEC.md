@@ -1,6 +1,6 @@
 # CR-010 — `zass check` Implementation Specification
 
-**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED; v0.4a STATUS CONTRACT LOCKED / NOT IMPLEMENTED
+**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED; v0.4a + v0.4b IMPLEMENTED / FIELD-VALIDATED; STOP/REVIEW PENDING
 **Date:** 2026-09-30  
 **Owner:** Project Owner  
 **Scope:** First productized validator for ZASS
@@ -34,7 +34,7 @@ Exit codes:
 - `1` — one or more validation errors;
 - `2` — CLI/runtime/system error.
 
-The check engine is stable through v0.3. CR-010 v0.4a `zass status` now has a LOCKED behavioral contract in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md); implementation has not started. `zass diff` remains deferred until its own behavioral contract is designed.
+The check engine is stable through v0.3. CR-010 v0.4a `zass status` and v0.4b `zass diff` are now implemented and real-project field-validated under their locked contracts. The explicit CR-010 STOP/REVIEW gate remains before closure.
 
 ## 2. Initial repository structure
 
@@ -228,9 +228,9 @@ v0.2  Git-aware LOCKED drift
 
 v0.3  ACTION_PLAN consistency — IMPLEMENTED / FIELD-VALIDATED
 
-v0.4a `zass status` — CONTRACT LOCKED / IMPLEMENTATION NOT STARTED
+v0.4a `zass status` — IMPLEMENTED / FIELD-VALIDATED
 
-v0.4b `zass diff` — CONTRACT LOCKED / IMPLEMENTATION NOT STARTED
+v0.4b `zass diff` — IMPLEMENTED / FIELD-VALIDATED
 ```
 
 ## 7. Stop rule
@@ -281,3 +281,10 @@ The v0.4a contract is read-only and factual: Full ZASS detection, primary file p
 CR-010 v0.4b is now behaviorally LOCKED. Its specification is in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md).
 
 The v0.4b contract defines a read-only ZASS-aware working-tree delta against local `HEAD`: primary-file ADDED/MODIFIED/DELETED/UNCHANGED states, canonical ZASS ID set changes, LOCKED/SUPERSEDED decision-state deltas, and declared readiness/blocker changes using existing parser semantics. It does not validate the change; `zass check` retains that authority.
+
+
+CR-010 v0.4 field validation is **PASS**. See [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md).
+
+The field gate included clean real-project behavior, deliberate LOCKED-decision and readiness-drift mutations, and a Windows EOL false-positive discovered and corrected before the gate was accepted.
+
+Do not close CR-010 automatically. Run the explicit STOP/REVIEW gate first.

@@ -1,6 +1,6 @@
 # CR-010 v0.4a — `zass status` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTED / CI PASS — REAL-PROJECT FIELD TEST PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — STOP/REVIEW PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -304,3 +304,14 @@ GitHub Actions ZASS CI passed on PR #35 after implementation:
 No `zass diff`, npm publication, bootstrap-core work, remote access, or methodology change is included.
 
 The later CR-010 real-project field-test gate remains pending and is intentionally not claimed by this implementation receipt.
+
+
+## 16. Real-project field validation
+
+CR-010 v0.4 real-project field gate is **PASS**.
+
+`zass status` was exercised against real Kerani_Core content on Windows using the established temporary canonical-`ZASS.md` compatibility surface. Clean state returned DETECTED / PASS / CLEAN with exit 0, and deliberate validation mutations were summarized as ERROR / CHANGED while `zass check` retained rule-level authority.
+
+See [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md).
+
+CR-010 closure remains pending the explicit STOP/REVIEW gate.
