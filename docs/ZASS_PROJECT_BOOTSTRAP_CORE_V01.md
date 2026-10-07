@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW HOLD — PRE-FREEZE API CORRECTION REQUIRED  
+**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — API CORRECTION PASS — REPEAT STOP/REVIEW PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -777,3 +777,44 @@ Reason: the currently exported `buildBootstrapPlan(..., dependencies)` surface e
 Receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
 
 Next: correct the public deterministic API seam, re-run targeted regression/CI, then repeat STOP/REVIEW before stable freeze.
+
+
+## 29. Pre-freeze API correction receipt
+
+The STOP/REVIEW blocker was corrected without freezing the API.
+
+Changes:
+
+- public `buildBootstrapPlan` now accepts canonical project input only;
+- template-loader dependency injection was removed from the public plan builder;
+- no replacement injection seam was retained because current tests do not require one;
+- root Core exports were reduced to the stable-candidate consumer surface:
+  - `CORE_CONTRACT_VERSION`
+  - `METHOD_CHOICES`
+  - `LANGUAGE_CHOICES`
+  - `getBootstrapDescriptor`
+  - `buildBootstrapPlan`
+  - `verifyBootstrapSnapshot`
+- internal validators/template/readme/path helpers are no longer root exports;
+- create-zass now validates selections from the canonical public choice lists rather than requiring public support-check helpers.
+
+Targeted public-boundary tests prove:
+
+```text
+root export surface = exact expected six exports
+attempted public loadTemplate override = cannot change canonical plan
+```
+
+Windows regression:
+
+```text
+bootstrap-core  28/28 PASS
+create-zass     24/24 PASS
+combined        52/52 PASS
+```
+
+During regression, latest main was found to have canonical method updates not yet mirrored into four bundled Core templates. The Core copies of ZASSIMPLE EN/MY and Full ZASS EN/MY were mechanically synchronized from their canonical repository method files; no new method semantics were invented in this correction.
+
+Stable external API remains **NOT FROZEN**.
+
+Next: repeat STOP/REVIEW.
