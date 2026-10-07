@@ -303,7 +303,7 @@ GitHub Actions ZASS CI passed on PR #35 after implementation:
 
 No `zass diff`, npm publication, bootstrap-core work, remote access, or methodology change is included.
 
-The later CR-010 real-project field-test gate remains pending and is intentionally not claimed by this implementation receipt.
+At implementation-receipt time the real-project field-test gate was still pending; it subsequently PASSED and is recorded in `CR010_V04_REAL_PROJECT_FIELD_TEST.md`.
 
 
 ## 16. Real-project field validation
