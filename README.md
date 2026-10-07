@@ -11,17 +11,17 @@ You repeat the context. Old decisions return. Rejected ideas come back. AI sugge
 
 **ZASS gives your project a memory outside the AI.**
 
-It keeps the important thinking, decisions, evidence, and architecture in portable Markdown — with humans retaining control over what becomes authoritative.
+It keeps the important thinking, decisions, evidence, and architecture in portable Markdown â€” with humans retaining control over what becomes authoritative.
 
 ```text
 Think anywhere
-      ↓
+      â†“
 Capture what matters
-      ↓
+      â†“
 Human-approved decisions
-      ↓
+      â†“
 GitHub Source of Truth
-      ↓
+      â†“
 Continue with any AI
 ```
 
@@ -37,19 +37,19 @@ The locked product entry model is:
 
 ```text
 ZASS SYSTEM
-    ↓
+    â†“
 What do you need right now?
-    │
-    ├── DUMP   → ZASSPILL
-    ├── DECIDE → ZASSELECTION
-    └── DESIGN → ZASSIMPLE → Full ZASS when needed
+    â”‚
+    â”œâ”€â”€ DUMP   â†’ ZASSPILL
+    â”œâ”€â”€ DECIDE â†’ ZASSELECTION
+    â””â”€â”€ DESIGN â†’ ZASSIMPLE â†’ Full ZASS when needed
 ```
 
 The system is designed around two complementary first-class surfaces:
 
 ```text
-LOCAL CORE / CLI  ←→  AI-SYNC WEB
-          ↓
+LOCAL CORE / CLI  â†â†’  AI-SYNC WEB
+          â†“
   GitHub Source of Truth
 ```
 
@@ -63,10 +63,10 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
 
-**AI-SYNC Method Gateway:** cross-AI method readability is a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth. AI-SYNC T-013A and T-013B have passed: protected GitHub→METHODS snapshot sync is operational, and the public read-only Method Gateway has passed anonymous-browser, Gemini, and Copilot direct-read proof. Receiver guardrail remains strict: use the exact gateway URL, and if a receiver cannot fetch it, report the failure rather than substituting another source as method authority.
+**AI-SYNC Method Gateway:** cross-AI method readability is a locked transport responsibility of AI-SYNC. GitHub remains the authoritative method Source of Truth. AI-SYNC T-013A and T-013B have passed: protected GitHubâ†’METHODS snapshot sync is operational, and the public read-only Method Gateway has passed anonymous-browser, Gemini, and Copilot direct-read proof. Receiver guardrail remains strict: use the exact gateway URL, and if a receiver cannot fetch it, report the failure rather than substituting another source as method authority.
 
 
-**ZASSPILL:** the v1.0.0 **method/protocol contract is PRODUCTION READY** after Phase 1–6 proof. Runtime persistence, retrieval, authorization, and transport remain AI-SYNC/ASC responsibilities. **DUMP / DECIDE / DESIGN** is the released global ZASS SYSTEM entry model: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE.
+**ZASSPILL:** the v1.0.0 **method/protocol contract is PRODUCTION READY** after Phase 1â€“6 proof. Runtime persistence, retrieval, authorization, and transport remain AI-SYNC/ASC responsibilities. **DUMP / DECIDE / DESIGN** is the released global ZASS SYSTEM entry model: DUMP â†’ ZASSPILL, DECIDE â†’ ZASSELECTION, DESIGN â†’ ZASSIMPLE.
 
 ---
 
@@ -74,7 +74,7 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 You do not need to learn the whole framework before using it.
 
-## 1. Just brainstorm — zero setup
+## 1. Just brainstorm â€” zero setup
 
 Already discussing an idea somewhere else?
 
@@ -84,15 +84,15 @@ When something becomes worth preserving:
 
 ```text
 useful conversation
-       ↓
+       â†“
 copy / paste
-       ↓
+       â†“
 trusted GitHub-writer AI
-       ↓
+       â†“
 ZASS
-       ↓
+       â†“
 review / decide
-       ↓
+       â†“
 COMMIT
 ```
 
@@ -100,7 +100,7 @@ COMMIT
 
 ---
 
-## 2. Public project — paste the link
+## 2. Public project â€” paste the link
 
 If your ZASS project is public, paste the repository URL into another AI that can read public links.
 
@@ -128,23 +128,23 @@ Bring the resulting `ZASS_HANDOFF.md` back to your trusted writer.
 
 ```text
 Another AI
-    ↓
+    â†“
 brainstorm / challenge / review
-    ↓
+    â†“
 ZASS_HANDOFF.md
-    ↓
+    â†“
 trusted writer checks latest repo
-    ↓
+    â†“
 human approval
-    ↓
+    â†“
 COMMIT
 ```
 
 ---
 
-## 3. CLI — coming soon
+## 3. CLI â€” coming soon
 
-**Bootstrap status: v0.1 IMPLEMENTED LOCALLY — Windows + CI PASS — not published to npm.**
+**Bootstrap status: v0.1 IMPLEMENTED LOCALLY â€” Windows + CI PASS â€” not published to npm.**
 
 Target experience:
 
@@ -191,7 +191,7 @@ Full ZASS always uses `ZASS.md` as the generated project authority filename so c
 
 ---
 
-## 4. File — start now
+## 4. File â€” start now
 
 Download or copy:
 
@@ -227,9 +227,9 @@ ZASS separates three things that AI conversations often blur together:
 
 ```text
 AI suggestion
-      ≠
+      â‰ 
 Owner decision
-      ≠
+      â‰ 
 Git change
 ```
 
@@ -249,17 +249,17 @@ A suggestion never becomes a decision merely because an AI wrote it. A decision 
 
 ```text
 CAPTURE
-  ↓
+  â†“
 MATCH
-  ↓
+  â†“
 SYNTHESIZE
-  ↓
+  â†“
 RESEARCH
-  ↓
+  â†“
 CROSS-CHECK
-  ↓
+  â†“
 LOCK
-  ↓
+  â†“
 ARCHITECTURE
 ```
 
@@ -279,23 +279,23 @@ Research findings return to the candidate/matrix state first. They do not jump d
 
 ```text
 RAW IDEA
-    ↓
+    â†“
 EXPLORE
-    ↓
+    â†“
 QUESTIONS / RISKS / OPTIONS
-    ↓
+    â†“
 TEST when needed
-    ↓
+    â†“
 HUMAN DECISION
-    ↓
+    â†“
 LOCKED
-    ↓
+    â†“
 DRAFT ARCHITECTURE
-    ↓
+    â†“
 REVIEW
-    ↓
+    â†“
 YA, CONFIRM ARCHITECTURE
-    ↓
+    â†“
 CONFIRMED ARCHITECTURE
 ```
 
@@ -389,13 +389,13 @@ Full ZASS becomes useful when:
 - privacy, security, money, data loss, or operational risk matters;
 - decision history becomes difficult to track conversationally.
 
-You do not migrate because a project becomes “big”.
+You do not migrate because a project becomes â€œbigâ€.
 
 You migrate because the **decision complexity** becomes important.
 
-**Start here (default, English):** [ZASSIMPLE_EN.md](ZASSIMPLE/ZASSIMPLE_EN.md)  
-**Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE/ZASSIMPLE_MY.md)  
-**Full ZASS (default, English):** [ZASS.md](ZASS.md)  
+**Start here (default, English):** [ZASSIMPLE_EN.md](ZASSIMPLE/ZASSIMPLE_EN.md)
+**Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE/ZASSIMPLE_MY.md)
+**Full ZASS (default, English):** [ZASS.md](ZASS.md)
 **Bahasa Melayu Full ZASS:** [ZASS_MY.md](ZASS_MY.md)
 
 ---
@@ -424,7 +424,7 @@ human impact
 
 AI may compare and recommend. Only the human selects.
 
-**Default ZASSELECTION (English):** [ZASSELECTION_EN.md](ZASSELECTION/ZASSELECTION_EN.md)  
+**Default ZASSELECTION (English):** [ZASSELECTION_EN.md](ZASSELECTION/ZASSELECTION_EN.md)
 **Bahasa Melayu:** [ZASSELECTION_MY.md](ZASSELECTION/ZASSELECTION_MY.md)
 
 ---
@@ -461,7 +461,7 @@ HIGH
 
 for Evidence Confidence.
 
-In Full ZASS, Evidence Confidence is mandatory whenever a real `ZERO → ARCHITECTURE` assessment is shown, DRAFT ARCH readiness is evaluated, BUILD ARCHITECTURE runs, or a confirmed architecture still has open validation/experiments.
+In Full ZASS, Evidence Confidence is mandatory whenever a real `ZERO â†’ ARCHITECTURE` assessment is shown, DRAFT ARCH readiness is evaluated, BUILD ARCHITECTURE runs, or a confirmed architecture still has open validation/experiments.
 
 ---
 
@@ -475,11 +475,11 @@ Not the chat. Not AI memory. Not whichever model you used last.
 
 ```text
 GitHub
-  ↑
+  â†‘
 trusted writer
-  ↑
+  â†‘
 human approval
-  ↑
+  â†‘
 ideas from any AI
 ```
 
@@ -523,11 +523,11 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**ZASS SYSTEM:** v0.2.0 — global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract  
-**Full ZASS:** v0.3.9 — structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
-**ZASSIMPLE:** v0.3.0  
-**ZASSELECTION:** v0.2.4  
-**ZASSPILL:** v1.0.0 method/protocol contract — PRODUCTION READY; global DUMP continuity route  
+**ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
+**Full ZASS:** v0.3.9 â€” structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
+**ZASSIMPLE:** v0.3.1
+**ZASSELECTION:** v0.2.4
+**ZASSPILL:** v1.0.0 method/protocol contract â€” PRODUCTION READY; global DUMP continuity route
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:

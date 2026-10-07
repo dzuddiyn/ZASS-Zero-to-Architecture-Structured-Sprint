@@ -4,7 +4,12 @@
 **Design Progress:** 0/4 — purpose / main flow / main elements / relevant LOCKED decisions  
 **Authority:** Design must derive from LOCKED owner decisions and recorded planning findings.
 
-**Surface gate:** `[🎨 CONFIRM DESIGN]` opens the final review. Final confirmation still requires exact owner reply `YA, CONFIRM DESIGN`.
+**Pre-confirmation challenge:** NOT RUN
+**Challenge count:** 0
+**Challenge methods:** ...
+**Material findings:** ...
+
+**Surface gate:** Design 4/4 first surfaces `[🥊 CHALLENGE DESIGN !]` / `[🎨 CONTINUE TO CONFIRM]`. After every PASS, surface `Ready to confirm design? or Re-challenge?!` with `[🥊 RE-CHALLENGE DESIGN ?!]` / `[🎨 CONFIRM DESIGN]`. REFINE returns to DESIGN. Final confirmation still requires exact owner reply `YA, CONFIRM DESIGN`.
 
 ## Design type
 

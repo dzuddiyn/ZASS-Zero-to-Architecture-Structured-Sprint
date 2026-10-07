@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Current version:** v0.3.0
+**Current version:** v0.3.1
 
 ZASSIMPLE is the default lightweight DESIGN path in ZASS SYSTEM.
 
@@ -59,15 +59,28 @@ Action Detail [████░░░░░░] 2/4
 
 ## Design confirmation
 
-When design coverage is mature:
+When design coverage is mature, 4/4 means **ready to challenge**, not “confirm immediately”:
 
 ```text
 🎨 Design forming
 Design [██████████] 4/4
 
-Ready to confirm design?
-[🎨 CONFIRM DESIGN]
+🥊 Draft ready for challenge
+Recommended challenge: [AI-selected thinking method]
+Why: [one short reason]
+
+[🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
 ```
+
+AI selects the smallest useful thinking method automatically. If the challenge returns REFINE, ZASSIMPLE goes back to DESIGN. If it returns PASS, do not jump directly to confirmation. Show:
+
+```text
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+```
+
+RE-CHALLENGE selects the next most valuable method for residual risk. After every PASS, the same RE-CHALLENGE / CONFIRM choice appears again. If the owner explicitly skips the first challenge with CONTINUE TO CONFIRM, confirmation may be surfaced directly.
 
 `CONFIRM DESIGN` opens the review gate. It does not confirm automatically. Final owner confirmation is:
 

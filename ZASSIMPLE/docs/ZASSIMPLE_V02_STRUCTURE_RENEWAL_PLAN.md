@@ -3,7 +3,7 @@
 **Status:** HISTORICAL v0.2 STRUCTURE PLAN — IMPLEMENTED; SEMANTICS SUPERSEDED BY v0.3  
 **Date:** 2026-10-01  
 **Owner:** Project Owner  
-**Current baseline:** ZASSIMPLE v0.3.0 in dedicated `ZASSIMPLE/` folder
+**Current baseline:** ZASSIMPLE v0.3.1 in dedicated `ZASSIMPLE/` folder
 
 > **ZASSIMPLE: lightweight di permukaan, tetapi lineage tetap kuat sampai execution.**
 
@@ -425,7 +425,7 @@ DELIVERED !!
 
 The method remains lightweight to use while preserving durable lineage from the first idea through the delivered result.
 
-**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.3.0.  
+**Implementation status:** IMPLEMENTED AND VALIDATED — current ZASSIMPLE v0.3.1.
 **Plan status:** HISTORICAL; v0.3 DESIGN-first semantics supersede architecture-centric surface terminology.
 
 

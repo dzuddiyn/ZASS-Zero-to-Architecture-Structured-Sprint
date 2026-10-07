@@ -1,6 +1,7 @@
 # ZASSIMPLE v0.3 Working Direction
 
-**Status:** LOCKED — DESIGN-first semantic model  
+**Current method version:** v0.3.1
+**Status:** LOCKED — DESIGN-first semantic model + pre-confirmation Challenge / Re-challenge gate
 **Date:** 2026-10-02  
 **Owner:** Project Owner
 
@@ -94,14 +95,55 @@ Design [██████░░░░] 3/4
 2 implementation constraints
 1 critical question
 ```
-When design reaches 4/4 with no confirmation blocker:
+When design reaches 4/4 with no confirmation blocker, **4/4 means ready to challenge, not automatically ready to confirm**.
+
+Surface a lightweight pre-confirmation challenge:
 
 ```text
-Ready to confirm design?
-[🎨 CONFIRM DESIGN]
+🥊 Draft ready for challenge
+
+Recommended challenge:
+[AI-selected thinking method]
+
+Why:
+[one short reason]
+
+Challenge the draft before final confirmation?
+
+[🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
 ```
 
-`CONFIRM DESIGN` opens the final confirmation review; it does **not** confirm automatically. Final confirmation requires the exact owner reply `YA, CONFIRM DESIGN`.
+The AI selects **one** suitable thinking method automatically from the smallest useful set for the current context. Do not make the user choose the methodology.
+
+Method-selection rule:
+- unclear or fragile assumptions → **Assumption Challenge**;
+- unclear fundamentals / overcomplicated concept → **First-Principles Check**;
+- reliability, safety, operational failure, or “what could go wrong?” → **Pre-mortem / Failure-Mode Review**;
+- hard resource, cost, space, dependency, or implementation limits → **Constraint Test**;
+- customer/user/service flow → **User-Journey Review**;
+- competing benefits with meaningful downsides → **Trade-off Review**;
+- implementation practicality or dependency ordering → **Feasibility / Dependency Review**.
+
+Choose the method that is most likely to expose a material weakness **before confirmation**. Do not turn ZASSIMPLE into a review-methodology menu.
+
+`CHALLENGE DESIGN` runs one focused challenge pass:
+- **PASS** → that challenge found no material weakness;
+- **REFINE** → material weakness found; return to DESIGN and refine;
+- record the selected method and material finding in the design state.
+
+After every **PASS**, do not auto-advance to confirmation. Surface exactly:
+
+```text
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+```
+
+`RE-CHALLENGE DESIGN` selects the next most valuable thinking method for residual risk. Do not repeat the same method unless the design changed materially or the same risk genuinely needs retesting. After every PASS, offer RE-CHALLENGE or CONFIRM again.
+
+The owner may explicitly choose `CONTINUE TO CONFIRM` to skip the optional first challenge and go directly to the confirmation gate.
+
+`CONFIRM DESIGN` opens the final confirmation review; it does **not** confirm automatically. The review must show challenge count, methods used, findings, and the latest challenge status or explicit owner skip. Final confirmation requires the exact owner reply `YA, CONFIRM DESIGN`.
 
 For technical projects, legacy/domain-specific architecture commands may remain compatible aliases, but the universal surface stays DESIGN.
 

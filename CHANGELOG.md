@@ -1,3 +1,14 @@
+## 2026-10-07 — ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1 Challenge loop
+
+- LOCKED the pre-confirmation Challenge / Re-challenge loop for ZASSIMPLE.
+- Design 4/4 now means **ready to challenge**, not automatically ready to confirm.
+- Surface action is `[🥊 CHALLENGE DESIGN !]`; AI chooses one suitable thinking method automatically based on the draft's current weakness/risk.
+- `REFINE` returns to DESIGN. `PASS` must not auto-advance.
+- After every PASS, show exactly: `Ready to confirm design? or Re-challenge?!` with `[🥊 RE-CHALLENGE DESIGN ?!]` and `[🎨 CONFIRM DESIGN]`.
+- Re-challenge selects the next most valuable thinking method for residual risk and may repeat until the owner chooses CONFIRM DESIGN.
+- `[🎨 CONTINUE TO CONFIRM]` remains the explicit owner-controlled skip for the optional first challenge.
+- Updated ZASSIMPLE EN/MY, DESIGN.md, locked v0.3 working direction, Wiki, and ZASS SYSTEM UI/UX contract.
+
 ## 2026-10-07 — Bootstrap Core v0.1 STOP / REVIEW HOLD
 
 - Reviewed contract fidelity, implementation evidence, Windows/CI regression, field behavior, second-consumer verification, and Core/consumer boundaries.

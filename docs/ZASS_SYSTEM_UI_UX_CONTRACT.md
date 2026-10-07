@@ -1,10 +1,10 @@
-# ZASS SYSTEM — UI/UX & Product Surface Contract
+# ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.0  
+**System version:** 0.2.1
 **Full ZASS surface alignment:** v0.3.9<br>
-**Status:** LOCKED WORKING CONTRACT  
-**Date:** 2026-10-03  
-**Owner:** Project Owner  
+**Status:** LOCKED WORKING CONTRACT
+**Date:** 2026-10-07
+**Owner:** Project Owner
 **Scope:** ZASS SYSTEM local/core boundary, AI-SYNC Web presentation, and human-facing UX
 
 > **Present only the next meaningful human action.**
@@ -15,18 +15,18 @@ ZASS SYSTEM has two first-class product surfaces over one authoritative project 
 
 ```text
                     ZASS SYSTEM
-                         │
-              ┌──────────┴──────────┐
-              │                     │
+                         â”‚
+              â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+              â”‚                     â”‚
        LOCAL FIRST-CLASS        AI-SYNC WEB
-              │                     │
+              â”‚                     â”‚
          zass CLI              human UX
          validator             automation
          parser                sync / handoff
          bootstrap             GitHub bridge
-              │                     │
-              └──────────┬──────────┘
-                         ↓
+              â”‚                     â”‚
+              â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                         â†“
                       GitHub
                   Source of Truth
 ```
@@ -47,9 +47,9 @@ ZASS SYSTEM now recognizes a separate AI-SYNC **public method-read transport** f
 ```text
 Official ZASS GitHub repo
 = authoritative method Source of Truth
-        ↓ protected sync
+        â†“ protected sync
 AI-SYNC Method Registry / snapshot
-        ↓ public read-only gateway
+        â†“ public read-only gateway
 receiver AI
 ```
 
@@ -67,15 +67,15 @@ LOCKED system-level boundary:
 Current implementation checkpoint:
 
 ```text
-AI-SYNC T-013A — PASS
-AI-SYNC T-013B — PASS
+AI-SYNC T-013A â€” PASS
+AI-SYNC T-013B â€” PASS
 public method-read transport operational for the proven v0.1 path
 
-ZASS CI + AISYNC T-012 — PASS
+ZASS CI + AISYNC T-012 â€” PASS
 ASC consumes factual commit-linked validator/CI status
 without duplicating ZASS rule semantics
 
-AISYNC T-016 — PASS
+AISYNC T-016 â€” PASS
 production GitHub write boundary + factual verified SAVE/NO_CHANGE receipts
 ```
 
@@ -91,21 +91,21 @@ The system landing mental model is:
 
 ~~~text
 ZASS SYSTEM
-    ↓
+    â†“
 What do you need right now?
-    │
-    ├── DUMP
-    │      ↓
-    │  ZASSPILL
-    │
-    ├── DECIDE
-    │      ↓
-    │  ZASSELECTION
-    │
-    └── DESIGN
-           ↓
+    â”‚
+    â”œâ”€â”€ DUMP
+    â”‚      â†“
+    â”‚  ZASSPILL
+    â”‚
+    â”œâ”€â”€ DECIDE
+    â”‚      â†“
+    â”‚  ZASSELECTION
+    â”‚
+    â””â”€â”€ DESIGN
+           â†“
        ZASSIMPLE
-           ↓
+           â†“
     Full ZASS when needed
 ~~~
 
@@ -126,7 +126,7 @@ Do not lead with forms, ledgers, IDs, architecture diagrams, or configuration pa
 Preferred first interaction:
 
 ```text
-💬 Tell me your idea
+ðŸ’¬ Tell me your idea
 ```
 
 The system may structure state behind the scenes, but the user should be able to begin by speaking naturally.
@@ -157,7 +157,7 @@ AI-SYNC Web should prefer five stable surfaces.
 
 ### 5.1 Landing
 
-`DUMP / DECIDE / DESIGN` routes DUMP → ZASSPILL, DECIDE → ZASSELECTION, and DESIGN → ZASSIMPLE.
+`DUMP / DECIDE / DESIGN` routes DUMP â†’ ZASSPILL, DECIDE â†’ ZASSELECTION, and DESIGN â†’ ZASSIMPLE.
 
 Production acceptance is governed by [`ZASS_SYSTEM_GATE2_PRODUCTION_INTEGRATION_ACCEPTANCE.md`](ZASS_SYSTEM_GATE2_PRODUCTION_INTEGRATION_ACCEPTANCE.md). A proof-only three-route front door does not satisfy the product gate if the main production surface still contradicts it with a legacy two-route model.
 
@@ -171,11 +171,11 @@ Cards appear only when a human action is useful.
 
 Core cards:
 
-- **Ready to Lock** — a mature decision needs owner approval.
-- **Design Forming** — design coverage is becoming coherent; technical architecture appears only when applicable.
-- **Escalation Notice** — ZASSIMPLE may benefit from Full ZASS.
-- **Current Task** — one executable task is active.
-- **Delivered** — the intended outcome is actually built, verified, and recorded.
+- **Ready to Lock** â€” a mature decision needs owner approval.
+- **Design Forming** â€” design coverage is becoming coherent; technical architecture appears only when applicable.
+- **Escalation Notice** â€” ZASSIMPLE may benefit from Full ZASS.
+- **Current Task** â€” one executable task is active.
+- **Delivered** â€” the intended outcome is actually built, verified, and recorded.
 
 ### 5.4 Project Pulse
 
@@ -191,7 +191,7 @@ Do not show the entire lifecycle permanently.
 Example:
 
 ```text
-📍 DESIGN → next: DO IT
+ðŸ“ DESIGN â†’ next: DO IT
 Architecture 3/4
 Saved at abc1234
 ```
@@ -216,7 +216,7 @@ This surface is available without burdening normal conversation.
 ### Ready to Lock
 
 ```text
-🔒 Ready to lock
+ðŸ”’ Ready to lock
 
 [plain-language decision]
 
@@ -231,7 +231,7 @@ The system must not lock automatically.
 ### Design Forming
 
 ```text
-🎨 Design forming
+ðŸŽ¨ Design forming
 Design 3/4
 7 decisions locked
 2 implementation constraints
@@ -240,7 +240,26 @@ Design 3/4
 [ REVIEW ]
 ```
 
-When confirmation readiness is reached, surface the protected design confirmation flow. Technical architecture appears only when the domain needs it.
+When design coverage reaches 4/4, do **not** surface confirmation as the only next action. First surface the Challenge gate:
+
+```text
+ðŸ¥Š Draft ready for challenge
+
+Recommended challenge: [AI-selected thinking method]
+Why: [one line]
+
+[ðŸ¥Š CHALLENGE DESIGN !]   [ðŸŽ¨ CONTINUE TO CONFIRM]
+```
+
+A REFINE result returns the project to DESIGN. After every PASS, surface exactly:
+
+```text
+Ready to confirm design? or Re-challenge?!
+
+[ðŸ¥Š RE-CHALLENGE DESIGN ?!]   [ðŸŽ¨ CONFIRM DESIGN]
+```
+
+RE-CHALLENGE selects the next most valuable thinking method for residual risk. Do not repeat the same method without a reason. Explicit owner skip of the first challenge may proceed directly to the protected design confirmation flow. Technical architecture appears only when the domain needs it.
 
 ### Escalation Notice
 
@@ -258,7 +277,7 @@ No automatic migration is allowed.
 ### Current Task
 
 ```text
-🚀 STEP 1 / N — [task]
+ðŸš€ STEP 1 / N â€” [task]
 
 Do:
 [one concrete action]
@@ -275,14 +294,14 @@ One-task-at-a-time is the default execution UX.
 ### Delivered
 
 ```text
-✅ DELIVERED !!
+âœ… DELIVERED !!
 
 [result]
 
-✓ Built
-✓ Verified
-✓ Matches design
-✓ Recorded
+âœ“ Built
+âœ“ Verified
+âœ“ Matches design
+âœ“ Recorded
 ```
 
 Do not show DELIVERED if any required closure condition is false.
@@ -293,15 +312,15 @@ The project files remain first-class. The web UI projects useful views from them
 
 ```text
 ACTION_PLAN.md
-      ↓
+      â†“
 Current focus / next action / blockers
 
 DESIGN.md
-      ↓
+      â†“
 Design Forming / confirmation state
 
 TASKS.md
-      ↓
+      â†“
 Current Task / execution progress
 ```
 
@@ -348,7 +367,7 @@ exit 0
 AI-SYNC Web translates the same underlying result into human-facing UX.
 
 ```text
-✅ Project state healthy
+âœ… Project state healthy
 
 1 warning needs attention:
 ACTION PLAN may be behind the current ZASS state.
@@ -382,17 +401,19 @@ The system may know far more than it shows.
 Preferred sequence:
 
 ```text
-💬 Tell me your idea
-        ↓
-📍 DESIGN
-        ↓
-🔒 Ready to lock
-        ↓
-🏗️ Confirm architecture
-        ↓
-🚀 Current task
-        ↓
-✅ DELIVERED !!
+ðŸ’¬ Tell me your idea
+        â†“
+ðŸ“ DESIGN
+        â†“
+ðŸ”’ Ready to lock
+        â†“
+ðŸ¥Š Challenge design
+        â†“
+ðŸ¥Š Re-challenge or ðŸŽ¨ Confirm design
+        â†“
+ðŸš€ Current task
+        â†“
+âœ… DELIVERED !!
 ```
 
 ## 12. Full-ZASS escalation
@@ -412,19 +433,19 @@ Until that contract is locked:
 
 ```text
 finish local first-class tooling
-        ↓
+        â†“
 stabilize validator/core contracts
-        ↓
+        â†“
 AI-SYNC Web uses the same semantics
-        ↓
+        â†“
 implement DUMP / DECIDE / DESIGN landing
-        ↓
+        â†“
 project workspace + contextual cards
-        ↓
+        â†“
 factual SAVE/sync receipts
-        ↓
+        â†“
 review/history projection
-        ↓
+        â†“
 automation and product adoption UX
 ```
 
@@ -450,7 +471,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.2.0
+ZASS SYSTEM v0.2.1
 DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
@@ -461,7 +482,7 @@ Bump the **ZASS SYSTEM version** whenever a user-visible system-level contract c
 - landing/routing behavior;
 - primary UI/UX interaction model;
 - product-surface structure;
-- local-core ↔ AI-SYNC integration contract;
+- local-core â†” AI-SYNC integration contract;
 - save/sync user-visible semantics;
 - escalation UX;
 - system-level automation behavior.
@@ -477,8 +498,8 @@ ZASS SYSTEM applies the same language behavior to Full ZASS, ZASSIMPLE, and ZASS
 - Use this wording pattern: **`Versi Bahasa Melayu tersedia: <Malay file>.`** Then: **`Anda boleh terus bercakap dalam Bahasa Melayu walaupun menggunakan fail English, atau gunakan versi Melayu jika mahu arahan method sepenuhnya dalam BM.`**
 - Do not auto-switch files and do not repeat the notice on every reply.
 - Ordinary conversation may follow the user's language, but **structured method surfaces follow the active method file language**.
-- English method file active → tables, cards, matrices, I/AC/D record labels, stage/status explanations, and method prompts render in English.
-- Malay method file active → those same structured surfaces render in Bahasa Melayu.
+- English method file active â†’ tables, cards, matrices, I/AC/D record labels, stage/status explanations, and method prompts render in English.
+- Malay method file active â†’ those same structured surfaces render in Bahasa Melayu.
 - Canonical IDs, commands, branded mnemonics, and state tokens may remain unchanged when translation would break lineage, automation, or a locked command contract.
 - Language choice does not change decision authority or project state.
 
@@ -498,10 +519,10 @@ Gate 6 acceptance is governed by [`ZASS_SYSTEM_GATE6_AUTOMATION_ADOPTION_ACCEPTA
 
 LOCKED UX direction:
 
-- **Simple View is the default:** DUMP → DECIDE → DESIGN → DO IT → DELIVERED.
+- **Simple View is the default:** DUMP â†’ DECIDE â†’ DESIGN â†’ DO IT â†’ DELIVERED.
 - **Guided Journey / Workflow Navigator is secondary progressive disclosure**, not a permanent lifecycle wall.
 - Guided status must derive from factual project state/evidence; it must not invent PASS, current stage, percentage, or completion.
-- Rework loops such as DESIGN ↔ ACTION_PLAN may be shown explicitly when evidence causes a return.
+- Rework loops such as DESIGN â†” ACTION_PLAN may be shown explicitly when evidence causes a return.
 - A guided step may expose Why, Pass criteria, Evidence, Decisions, Sources, and History on demand.
 - Ordinary beta users must not need protocol-facing terms such as raw result-envelope names or internal SAVE mechanics to complete the journey.
 - Full visual polish may follow functional closed beta; minimum usability, truthful labels, bounded access, and recoverable ordinary-user flow are required before counted beta journeys begin.

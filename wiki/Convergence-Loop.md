@@ -187,7 +187,7 @@ This lets four strong ideas converge quickly while thirty disconnected ideas can
 
 ## Relationship to ZASSIMPLE
 
-ZASSIMPLE v0.3.0 uses the **CURRENT SELECTION MATRIX** as a lightweight convergence surface.
+ZASSIMPLE v0.3.1 uses the **CURRENT SELECTION MATRIX** as a lightweight convergence surface.
 
 It does not add mandatory weighted scoring or a `SELECT` command. Final authority remains the owner's `PROCEED/LOCK` instruction; legacy `LOCK DECISION` remains compatible.
 

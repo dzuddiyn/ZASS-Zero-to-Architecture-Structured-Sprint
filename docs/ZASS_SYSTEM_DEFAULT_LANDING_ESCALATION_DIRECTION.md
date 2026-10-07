@@ -1,14 +1,14 @@
-# ZASS SYSTEM — Default Landing & Escalation Working Direction
+# ZASS SYSTEM â€” Default Landing & Escalation Working Direction
 
-**ZASS SYSTEM version:** 0.2.0  
-**Status:** LOCKED WORKING DIRECTION  
-**Date:** 2026-10-03  
-**Owner:** Project Owner  
-**Scope:** Product entry flow and future ZASSIMPLE → Full ZASS escalation contract
+**ZASS SYSTEM version:** 0.2.1
+**Status:** LOCKED WORKING DIRECTION
+**Date:** 2026-10-07
+**Owner:** Project Owner
+**Scope:** Product entry flow and future ZASSIMPLE â†’ Full ZASS escalation contract
 
 > **DUMP / DECIDE / DESIGN** is the ZASS SYSTEM entry mental model. ZASSPILL handles DUMP, ZASSELECTION handles DECIDE, ZASSIMPLE handles DESIGN, and Full ZASS remains an escalation path rather than the default burden.
 
-## 1. Default landing mental model — DUMP / DECIDE / DESIGN
+## 1. Default landing mental model â€” DUMP / DECIDE / DESIGN
 
 The locked entry mental model for the ZASS SYSTEM is:
 
@@ -18,12 +18,12 @@ The landing page should ask what the user is trying to do, rather than asking th
 
 ```text
 ZASS SYSTEM
-    ↓
+    â†“
 What do you need right now?
-    │
-    ├── DUMP   → ZASSPILL
-    ├── DECIDE → ZASSELECTION
-    └── DESIGN → ZASSIMPLE → Full ZASS when needed
+    â”‚
+    â”œâ”€â”€ DUMP   â†’ ZASSPILL
+    â”œâ”€â”€ DECIDE â†’ ZASSELECTION
+    â””â”€â”€ DESIGN â†’ ZASSIMPLE â†’ Full ZASS when needed
 ```
 
 **DUMP** is for open-ended continuity: talking, unloading context, exploring, or continuing a thread before the user is ready to choose or design.
@@ -46,16 +46,16 @@ The expected progression is:
 
 ```text
 ZASSIMPLE
-    ↓
+    â†“
 natural project use
-    ↓
+    â†“
 complexity becomes materially harder to control
-    ↓
+    â†“
 escalation notice
-    ↓
+    â†“
 human decides
-   ├─ STAY ZASSIMPLE
-   └─ MOVE TO FULL ZASS
+   â”œâ”€ STAY ZASSIMPLE
+   â””â”€ MOVE TO FULL ZASS
 ```
 
 No automatic migration is authorized.
@@ -126,14 +126,14 @@ This keeps ZASS lightweight at entry: DUMP routes to ZASSPILL, DECIDE routes to 
 Current sequence is:
 
 ```text
-promote DUMP / DECIDE / DESIGN global entry ✅
-        ↓
-integrate DUMP → ZASSPILL v1.0 through AI-SYNC/ASC
-        ↓
+promote DUMP / DECIDE / DESIGN global entry âœ…
+        â†“
+integrate DUMP â†’ ZASSPILL v1.0 through AI-SYNC/ASC
+        â†“
 field-test the three-intent landing UX
-        ↓
-continue observing ZASSIMPLE → Full ZASS escalation signals
-        ↓
+        â†“
+continue observing ZASSIMPLE â†’ Full ZASS escalation signals
+        â†“
 define / validate the escalation notification contract
 ```
 
@@ -146,8 +146,8 @@ Separately, the CR-010 validator/tooling track has advanced through v0.4: ACTION
 The ZASS SYSTEM now locks a two-surface architecture:
 
 ```text
-LOCAL FIRST-CLASS CORE  ←→  AI-SYNC WEB
-             ↓
+LOCAL FIRST-CLASS CORE  â†â†’  AI-SYNC WEB
+             â†“
       GitHub Source of Truth
 ```
 

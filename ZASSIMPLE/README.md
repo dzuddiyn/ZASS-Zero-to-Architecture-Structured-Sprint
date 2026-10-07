@@ -2,7 +2,7 @@
 
 > ## Got an idea? **Dump it.** 💬
 
-**Current version:** v0.3.0  
+**Current version:** v0.3.1
 **Default landing:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE_MY.md)
 
