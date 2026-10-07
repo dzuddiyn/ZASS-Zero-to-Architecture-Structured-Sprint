@@ -1,3 +1,11 @@
+## 2026-10-07 — CR-010 v0.4b implementation
+
+- Implemented `zass diff` under the locked v0.4b read-only local-HEAD contract.
+- Added deterministic primary-file ADDED/MODIFIED/DELETED/UNCHANGED states plus canonical ID, LOCKED/SUPERSEDED, declared readiness and critical-blocker deltas using existing parser semantics.
+- Added focused tests for baseline/current file absence, ZASS add/delete, non-Git behavior, read-only proof, CLI routing and argument rejection.
+- ZASS CI passed all workflow steps on PR #37; the real-project field-test gate remains pending and is not claimed here.
+- Did not add custom baselines, raw patch mode, remote comparison, npm publication, or Bootstrap Core work.
+
 ## 2026-10-07 — CR-010 v0.4b contract
 
 - LOCKED the CR-010 v0.4b `zass diff` behavioral contract; implementation has not started.
