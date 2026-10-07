@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.0
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.1
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.2.0** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.2.1** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
