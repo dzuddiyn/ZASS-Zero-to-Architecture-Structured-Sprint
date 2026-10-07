@@ -29,4 +29,6 @@ Supported languages:
 - `en`
 - `my`
 
+Shared project semantics now come from the repository's private `bootstrap-core/` module. This CLI owns only terminal/argv behavior plus local filesystem materialization, refusal, cleanup and factual console receipts.
+
 The bootstrap is create-new-only and does not initialize Git, connect GitHub, register CrossAI, install dependencies, or download templates at runtime.

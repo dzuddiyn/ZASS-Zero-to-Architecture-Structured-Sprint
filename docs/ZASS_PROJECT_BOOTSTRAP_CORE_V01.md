@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTATION NOT STARTED — STABLE FREEZE PENDING FIELD TEST  
+**Status:** LOCKED — IMPLEMENTED / WINDOWS + CI PASS — FIELD TEST PENDING — STABLE FREEZE PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -644,3 +644,117 @@ Not part of Core v0.1 implementation:
 > **Same method + language + project name + Core release → same bootstrap plan.**
 
 > **CrossAI and create-zass must consume shared bootstrap semantics, not maintain competing project creators.**
+
+
+## 27. Implementation receipt
+
+The locked v0.1 contract is implemented as a private shared module:
+
+```text
+bootstrap-core/
+├── package.json
+├── src/
+├── templates/
+└── test/
+```
+
+Package identity:
+
+```text
+zass-bootstrap-core@0.1.0
+private: true
+```
+
+Implemented Core surface:
+
+```js
+buildBootstrapPlan(...)
+validateBootstrapInput(...)
+validateBootstrapPlan(...)
+verifyBootstrapSnapshot(...)
+```
+
+Additional shared catalog/read helpers remain internal/provisional support surfaces until the stable freeze gate.
+
+### Shared ownership now implemented
+
+`bootstrap-core` owns:
+
+- the four-method/two-language catalog;
+- authority filename mapping;
+- the single bundled bootstrap template source;
+- deterministic three-artifact bootstrap plans;
+- English/Bahasa Melayu consumer-neutral README generation;
+- the secret-oriented `.gitignore` baseline;
+- bootstrap input and plan validation;
+- materialized snapshot verification.
+
+`create-zass` now consumes the Core and owns only:
+
+- argv and interactive prompts;
+- local target path/preflight;
+- existing-target refusal;
+- filesystem materialization;
+- partial-failure cleanup;
+- console receipt.
+
+The previous `create-zass/templates/`, `create-zass/src/templates.js`, and create-zass template-sync test were removed. There is no longer an independent create-zass template/catalog source.
+
+### Windows evidence
+
+Temporary Windows field environment at implementation commit:
+
+```text
+3446312f6189ddaf5afc0cb95de96f64bb611422
+```
+
+Results:
+
+```text
+bootstrap-core tests  26/26 PASS
+create-zass tests     24/24 PASS
+combined              50/50 PASS
+```
+
+Evidence included:
+
+- all 4 × 2 method/language Core plans;
+- deterministic repeated plans;
+- English/Bahasa Melayu consumer-neutral README behavior;
+- Full-ZASS `ZASS.md` authority mapping;
+- invalid-input fixtures;
+- unsafe/duplicate/missing/unexpected artifact fixtures;
+- stale README / empty method / incomplete gitignore fixtures;
+- snapshot PASS and FAIL fixtures;
+- template synchronization against canonical repository method files;
+- proof that Core planning does not materialize files/directories;
+- create-zass existing-target refusal;
+- create-zass partial cleanup;
+- create-zass CLI regression behavior.
+
+### GitHub Actions evidence
+
+PR #44 ZASS CI PASS with:
+
+- existing zass-cli tests;
+- Bootstrap Core tests;
+- create-zass tests;
+- repository consistency;
+- historical baseline resolution;
+- ZASS validator.
+
+### Implementation conclusion
+
+Bootstrap Core v0.1 implementation: **PASS for implementation gate**.
+
+This does **not** freeze the stable external API.
+
+Next gate remains:
+
+```text
+field-test bootstrap
+→ STOP / REVIEW
+→ freeze stable Bootstrap Core contract
+```
+
+CrossAI integration, Drive adapter, Git/GitHub integration and npm publication remain outside this implementation step.

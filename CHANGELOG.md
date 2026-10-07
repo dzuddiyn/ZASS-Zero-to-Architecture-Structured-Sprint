@@ -1,3 +1,14 @@
+## 2026-10-07 — ZASS Project Bootstrap Core v0.1 implementation
+
+- Implemented private `zass-bootstrap-core@0.1.0` under `bootstrap-core/`.
+- Moved the shared four-method/two-language catalog and all eight bootstrap templates into the Core; removed the duplicate `create-zass` template source.
+- Implemented deterministic `buildBootstrapPlan()`, plan/input validation, localized consumer-neutral README generation, gitignore safety baseline, and materialized snapshot verification.
+- Refactored `create-zass` to consume Core semantics while retaining CLI prompts, target refusal, local filesystem materialization, cleanup, and console receipts.
+- Windows evidence: Bootstrap Core 26/26 PASS + create-zass 24/24 PASS = 50/50 combined.
+- PR #44 ZASS CI PASS across zass-cli, Bootstrap Core, create-zass, repository consistency, historical baseline, and validator.
+- Stable external Core API is not frozen yet. NEXT: bootstrap field test, then STOP/REVIEW, then stable Core freeze.
+- CrossAI integration and npm publication remain separately gated.
+
 ## 2026-10-07 — ZASS Project Bootstrap Core v0.1 contract LOCKED
 
 - LOCKED the shared Bootstrap Core implementation contract for `create-zass` and future CrossAI Create Project.

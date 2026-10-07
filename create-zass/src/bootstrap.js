@@ -1,38 +1,12 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { constants } from 'node:fs';
+import {
+  buildBootstrapPlan,
+  getBootstrapDescriptor,
+  verifyBootstrapSnapshot
+} from '../../bootstrap-core/src/index.js';
 import { BootstrapRefusalError } from './errors.js';
-import { getTemplateDescriptor, loadTemplate } from './templates.js';
-
-export const GITIGNORE_CONTENT = `.env
-.env.*
-!.env.example
-.secrets/
-*.key
-*.pem
-`;
-
-function buildReadme({ projectName, descriptor }) {
-  return `# ${projectName}
-
-This project uses **${descriptor.methodLabel}**.
-
-- **Language:** ${descriptor.languageLabel}
-- **Active method file:** \`${descriptor.methodFile}\`
-
-## Start
-
-Open \`${descriptor.methodFile}\` with your AI and start with that method.
-
-## Safety
-
-Never place passwords, API keys, tokens, or sensitive personal data inside tracked ZASS Markdown files.
-
-## Local-first state
-
-This bootstrap creates local project files only. Git is not initialized, GitHub is not connected, and CrossAI is not registered.
-`;
-}
 
 async function pathExists(target) {
   try {
@@ -44,27 +18,25 @@ async function pathExists(target) {
   }
 }
 
-async function validateGeneratedProject(projectDir, methodFile) {
-  const expected = ['.gitignore', 'README.md', methodFile].sort();
-  const actual = (await fs.readdir(projectDir)).sort();
+async function readBootstrapSnapshot(projectDir) {
+  const entries = await fs.readdir(projectDir);
+  const files = [];
 
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error(
-      `Generated project structure mismatch. Expected ${expected.join(', ')}; got ${actual.join(', ')}`
-    );
-  }
-
-  for (const name of expected) {
-    const stat = await fs.stat(path.join(projectDir, name));
+  for (const name of entries) {
+    const fullPath = path.join(projectDir, name);
+    const stat = await fs.stat(fullPath);
     if (!stat.isFile()) {
-      throw new Error(`Generated entry is not a file: ${name}`);
+      files.push({ path: name, content: null });
+      continue;
     }
+
+    files.push({
+      path: name,
+      content: await fs.readFile(fullPath, 'utf8')
+    });
   }
 
-  const methodContent = await fs.readFile(path.join(projectDir, methodFile), 'utf8');
-  if (methodContent.trim().length === 0) {
-    throw new Error(`Generated method file is empty: ${methodFile}`);
-  }
+  return { files };
 }
 
 export async function bootstrapProject(
@@ -74,9 +46,8 @@ export async function bootstrapProject(
   const projectDir = path.resolve(target);
   const parentDir = path.dirname(projectDir);
   const projectName = path.basename(projectDir);
-  const descriptor = getTemplateDescriptor(method, language);
-  const templateLoader = dependencies.loadTemplate ?? loadTemplate;
   const writeFile = dependencies.writeFile ?? fs.writeFile;
+  const planBuilder = dependencies.buildPlan ?? buildBootstrapPlan;
 
   if (await pathExists(projectDir)) {
     throw new BootstrapRefusalError(`Target already exists: ${projectDir}`);
@@ -102,8 +73,8 @@ export async function bootstrapProject(
     throw new BootstrapRefusalError(`Parent directory is not writable: ${parentDir}`);
   }
 
-  const methodContent = await templateLoader(method, language);
-  const readmeContent = buildReadme({ projectName, descriptor });
+  const plan = await planBuilder({ projectName, method, language });
+  const descriptor = getBootstrapDescriptor(method, language);
   let created = false;
 
   try {
@@ -117,15 +88,20 @@ export async function bootstrapProject(
       throw error;
     }
 
-    await writeFile(
-      path.join(projectDir, descriptor.methodFile),
-      methodContent,
-      'utf8'
-    );
-    await writeFile(path.join(projectDir, 'README.md'), readmeContent, 'utf8');
-    await writeFile(path.join(projectDir, '.gitignore'), GITIGNORE_CONTENT, 'utf8');
+    for (const file of plan.files) {
+      await writeFile(path.join(projectDir, file.path), file.content, 'utf8');
+    }
 
-    await validateGeneratedProject(projectDir, descriptor.methodFile);
+    const snapshot = await readBootstrapSnapshot(projectDir);
+    const verification = verifyBootstrapSnapshot(plan, snapshot);
+
+    if (!verification.ok) {
+      throw new Error(
+        `Materialized bootstrap verification failed: ${verification.errors
+          .map((entry) => entry.message)
+          .join('; ')}`
+      );
+    }
 
     return {
       ok: true,
@@ -134,10 +110,10 @@ export async function bootstrapProject(
       target,
       method,
       language,
-      methodFile: descriptor.methodFile,
+      methodFile: plan.project.methodFile,
       methodLabel: descriptor.methodLabel,
       languageLabel: descriptor.languageLabel,
-      createdFiles: [descriptor.methodFile, 'README.md', '.gitignore']
+      createdFiles: plan.files.map((file) => file.path)
     };
   } catch (error) {
     if (created) {

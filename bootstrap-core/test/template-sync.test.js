@@ -14,7 +14,7 @@ const MAP = [
 ];
 
 for (const [template, canonical] of MAP) {
-  test(`bundled template stays synchronized with ${canonical}`, async () => {
+  test(`Core template stays synchronized with ${canonical}`, async () => {
     const bundled = await fs.readFile(new URL(template, import.meta.url), 'utf8');
     const source = await fs.readFile(new URL(canonical, import.meta.url), 'utf8');
     assert.equal(bundled, source);
