@@ -1,6 +1,6 @@
 # ZASS npm Bootstrap CLI v0.1 — Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION NOT STARTED  
+**Status:** LOCKED — IMPLEMENTED LOCALLY / WINDOWS + CI PASS — NOT PUBLISHED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -563,3 +563,78 @@ Not part of v0.1:
 And:
 
 > **Create the local project first. Add Git, GitHub, CrossAI, or other external systems only through later explicit steps.**
+
+
+## 24. Implementation receipt
+
+The locked v0.1 contract is implemented as a new private package area:
+
+```text
+create-zass/
+├── package.json
+├── bin/create-zass.js
+├── src/
+├── templates/
+└── test/
+```
+
+Implemented behavior:
+
+- package identity: `create-zass@0.1.0`;
+- package remains `private: true` to prevent accidental publication;
+- interactive method prompt exposes ZASSPILL / ZASSELECTION / ZASSIMPLE / Full ZASS with no silent default;
+- interactive language prompt exposes English / Bahasa Melayu;
+- non-interactive mode requires explicit `--method` and `--lang`;
+- all 4 × 2 method/language combinations are implemented;
+- Full ZASS always generates `ZASS.md` as project authority for both languages;
+- target-directory preflight is create-new-only;
+- existing targets are refused without mutation;
+- partial targets created by the current run are removed on known failure;
+- generated project contains exactly one selected method file plus `README.md` and `.gitignore`;
+- no Git, GitHub, CrossAI, Drive, AI API, telemetry, runtime template download, project `npm init`, or dependency installation behavior is present;
+- bundled templates are versioned package assets and are regression-tested against the canonical repository method files;
+- repository CI now runs both `zass-cli` and `create-zass` tests.
+
+### Windows evidence
+
+A temporary Windows clone at implementation commit `0300574cd6431de670878d5bb3c6a4833d264d7f` ran:
+
+```text
+npm --prefix create-zass test
+
+32 tests
+32 pass
+0 fail
+```
+
+This included all 8 method/language combinations, interactive-choice behavior, explicit CLI flags, existing-target refusal, safe cleanup, CLI exit codes, and bundled-template synchronization.
+
+### GitHub Actions evidence
+
+PR #42 ZASS CI passed with:
+
+- existing ZASS CLI tests: PASS;
+- new create-zass bootstrap tests: PASS;
+- repository consistency check: PASS;
+- historical baseline resolution: PASS;
+- ZASS validator: PASS.
+
+### Publication boundary
+
+This implementation is **not published to npm**.
+
+A Windows `npm pack --dry-run` attempt during implementation did not produce a usable result and was terminated; therefore no package-artifact/publication proof is claimed.
+
+The locked publication gate remains unchanged:
+
+```text
+npm pack
+→ inspect artifact
+→ execute packed artifact locally
+→ verify disposable bootstrap projects
+→ explicit publish decision
+```
+
+That gate is future work and is not required to call the local v0.1 implementation complete.
+
+The shared ZASS Project Bootstrap Core is also not yet frozen; it remains the next TRACK B phase.
