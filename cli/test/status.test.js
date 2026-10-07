@@ -41,7 +41,7 @@ function fileState(report, name) {
 
 test('CR-010 v0.4a detects a Full ZASS project and all primary files', async (t) => {
   const dir = await makeRepo({
-    actionPlan: '# ACTION PLAN\n',
+    actionPlan: '# ACTION PLAN\n\n## ZERO → ARCHITECTURE SNAPSHOT\n\n- **Progress:** 0%\n- **Status:** EXPLORING\n',
     architecture: '# ARCHITECTURE\n'
   });
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
