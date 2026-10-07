@@ -343,7 +343,7 @@ create-zass release
 
 The exact template semantics are now owned by the **frozen ZASS Project Bootstrap Core v0.1**.
 
-The CLI consumes that shared Core in repository development rather than maintaining a second bootstrap engine. Before npm publication, the packed `create-zass` artifact must prove that the required Core code/assets are included or resolved through a publish-safe dependency strategy; a monorepo sibling import is not publication proof.
+The CLI consumes that shared Core without maintaining a second semantic engine. For npm distribution, `create-zass` carries a byte-for-byte vendored runtime snapshot of canonical Core `src/` + `templates/` under `create-zass/vendor/bootstrap-core/`. A repository sync test must fail on any drift. The packed artifact must still prove this snapshot is present and executable outside the monorepo.
 
 ## 13. No external side effects
 
@@ -593,7 +593,7 @@ Implemented behavior:
 - partial targets created by the current run are removed on known failure;
 - generated project contains exactly one selected method file plus `README.md` and `.gitignore`;
 - no Git, GitHub, CrossAI, Drive, AI API, telemetry, runtime template download, project `npm init`, or dependency installation behavior is present;
-- Bootstrap Core bundled templates are versioned assets and regression-tested against the canonical repository method files; `create-zass` consumes those Core semantics in the monorepo;
+- Bootstrap Core bundled templates are versioned assets and regression-tested against the canonical repository method files; `create-zass` consumes those Core semantics through a vendored runtime snapshot that is byte-for-byte sync-guarded against canonical Core;
 - repository CI now runs both `zass-cli` and `create-zass` tests.
 
 ### Windows evidence
@@ -638,4 +638,4 @@ npm pack
 
 That publication gate is now the **next TRACK B gate** and remains separate from the already-complete local v0.1 implementation.
 
-The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. Current publication readiness must therefore prove the distribution boundary itself. In particular, the present repository implementation imports `bootstrap-core` from a monorepo sibling path; the npm package must be made standalone through a proven bundled/dependency approach before publication, then validated with `npm pack` + clean-install smoke testing. CrossAI Bootstrap Core consumption remains later and separately gated.
+The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary has been remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass` and redirecting runtime imports to that snapshot, with byte-for-byte sync regression coverage. Publication readiness still requires the formal `npm pack` + clean-install smoke result, remaining package metadata/private/auth/name checks, and an explicit publish decision. CrossAI Bootstrap Core consumption remains later and separately gated.
