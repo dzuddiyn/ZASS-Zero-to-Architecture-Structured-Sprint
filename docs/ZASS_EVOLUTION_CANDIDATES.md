@@ -499,42 +499,39 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — v0.1 IMPLEMENTED / v0.2 PLAN LOCKED — NOT STARTED  
+**Status:** ACCEPTED — IMPLEMENTED / REAL-PROJECT FIELD-VALIDATED — FINAL STOP/REVIEW CLOSURE IN PROGRESS  
 **Source:** External Copilot UX/automation review + Project Owner decision  
 **Decision date:** 2026-09-30
 
-The implementation sequence is now locked in:
+Canonical implementation specifications:
 
 - [`docs/CR010_ZASS_CHECK_SPEC.md`](CR010_ZASS_CHECK_SPEC.md)
+- [`docs/CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md)
+- [`docs/CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`](CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md)
+- [`docs/CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md)
+- [`docs/CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md)
+- [`docs/CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md)
 
-First implementation command:
+Implemented local CLI surface:
 
 ```bash
 zass check
+zass status
+zass diff
 ```
 
-The first MVP is intentionally small:
+Authority boundary:
 
-- project-file discovery;
-- duplicate IDs;
-- malformed IDs;
-- broken local references;
-- Evidence Confidence pairing;
-- likely secret/sensitive-value warnings.
+```text
+zass check  → validation
+zass status → factual current-state summary
+zass diff   → factual local-HEAD change summary
+```
 
-v0.1 is implemented. The next validator phase is specified separately:
+The CLI is now versioned as `zass-cli v0.4.0`. It remains private/not published to npm; npm onboarding/bootstrap is separate post-CR-010 productization work.
 
-- [`docs/CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md) — **LOCKED PLAN, NOT STARTED**
+Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboard expansion, and other new validator semantics remain outside CR-010 unless separately promoted.
 
-Still deferred beyond v0.2:
-
-- `zass status`;
-- `zass diff`;
-- ACTION_PLAN snapshot consistency;
-- GitHub Action integration;
-- npm publication.
-
-Local CLI and GitHub Actions must eventually use the same validation engine. The CLI onboarding baseline remains minimal; validator tooling is productization work, not an onboarding prerequisite.
 
 ---
 
