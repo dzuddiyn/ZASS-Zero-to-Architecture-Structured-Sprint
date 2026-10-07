@@ -3,7 +3,7 @@
 > ## Ada idea? **DUMP saja.** 💬
 > Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
 
-**Version:** 0.3.0  
+**Version:** 0.3.1
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -88,9 +88,21 @@ Design [██████░░░░] 3/4
 2 implementation constraints
 1 critical question
 
-Apabila coverage design mencapai 4/4 dan tiada blocker pengesahan, tanya:
-Ready to confirm design?
-[🎨 CONFIRM DESIGN]
+Apabila coverage design mencapai 4/4 dan tiada blocker pengesahan, **jangan terus lompat ke confirmation**. Anggap 4/4 sebagai **ready to challenge** dan paparkan challenge pra-confirmation yang ringkas:
+
+🥊 Draft ready for challenge
+
+Recommended challenge:
+[thinking method dipilih AI]
+
+Why:
+[satu sebab ringkas kenapa method ini sesuai dengan design/risk semasa]
+
+Challenge the draft before final confirmation?
+
+[🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
+
+AI pilih satu thinking method yang sesuai secara automatik; jangan bebankan pengguna memilih methodology. Utamakan challenge terkecil yang berguna, contohnya assumption challenge, pre-mortem, failure-mode review, first-principles check, constraint test, user-journey review, atau trade-off review.
 
 Kemudian beri 💡 Cadangan ZASS, belum AC:
 [cadangan/persoalan AI yang serasi dengan idea]. Nyatakan status fail sebenar.
@@ -105,11 +117,29 @@ Gunakan bahasa design yang sesuai dengan domain. Untuk software/IoT, architectur
 boleh menjadi sebahagian daripada design; untuk kedai, business, service, atau
 projek fizikal, jangan paksa istilah architecture.
 Apabila draf menjawab tujuan, aliran utama, elemen utama, dan keputusan
-LOCKED berkaitan, tanya “Ready to confirm design?” dan paparkan
-[🎨 CONFIRM DESIGN]. CONFIRM DESIGN membuka semakan pengesahan akhir:
-tunjuk keputusan LOCKED berkaitan, andaian kritikal, dan blocker.
-Ia tidak mengesahkan secara automatik. Design hanya disahkan selepas
-pemilik membalas tepat YA, CONFIRM DESIGN.
+LOCKED berkaitan, **tawarkan design test pra-confirmation dahulu**. AI mesti
+pilih satu thinking method yang sesuai dengan domain, uncertainty dan risk
+semasa, nyatakan method serta satu sebab ringkas, kemudian tanya sama ada mahu
+jalankan challenge itu. [🥊 CHALLENGE DESIGN !] menjalankan satu focused
+challenge pass. [🎨 CONTINUE TO CONFIRM] bermaksud pemilik sengaja skip
+challenge pertama yang optional dan terus ke confirmation gate. Jika challenge
+menemui kelemahan material, kembali ke DESIGN dan refine sebelum confirmation
+dipaparkan. Jika challenge PASS, **jangan terus lompat ke confirmation**.
+Sentiasa tawarkan:
+
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+
+RE-CHALLENGE memilih thinking method seterusnya yang paling bernilai untuk
+residual risk. Jangan ulang method sama kecuali design berubah secara material
+atau risk yang sama memang perlu diuji semula. Selepas setiap PASS, tawarkan
+RE-CHALLENGE lagi sehingga pemilik memilih CONFIRM DESIGN. Jika pemilik jelas
+skip challenge pertama melalui CONTINUE TO CONFIRM, terus ke confirmation gate.
+CONFIRM DESIGN membuka semakan pengesahan akhir: tunjuk keputusan LOCKED,
+andaian kritikal, status/hasil test dan blocker. Ia tidak mengesahkan secara
+automatik. Design hanya disahkan selepas pemilik membalas tepat
+YA, CONFIRM DESIGN.
 
 Keyword khas hanya berkuat kuasa apabila saya sengaja memberi arahan,
 bukan dalam demo, contoh, petikan, penafian atau footer.
@@ -168,7 +198,10 @@ Keyword ini boleh muncul dalam ayat biasa, tetapi AI hanya bertindak apabila jel
 | `COMMIT` | Alias compatibility untuk `SAVE`. |
 | `DRAFT DESIGN` | AI sediakan/pinda draf design berversi kerja dengan bahasa yang sesuai untuk domain. Architecture hanya muncul apabila teknikal dan relevan. |
 | `DRAFT ARCH` | Alias compatibility/domain-specific untuk projek teknikal; anggap ia sebagai design draft dengan subtype architecture. |
-| `CONFIRM DESIGN` | Command surface utama. AI membuka semakan pengesahan design; ia tidak confirm secara automatik. Jika masih ada blocker, kekal di DESIGN. Jika ready, minta balasan tepat `YA, CONFIRM DESIGN`. |
+| `CHALLENGE DESIGN` | Command challenge pra-confirmation utama; UI boleh render sebagai `[🥊 CHALLENGE DESIGN !]`. AI pilih thinking method paling sesuai secara automatik, jalankan satu focused challenge, dan rekod PASS / REFINE serta finding material. |
+| `RE-CHALLENGE DESIGN` | Selepas PASS, jalankan challenge lain menggunakan thinking method seterusnya yang paling bernilai untuk residual risk. UI render `[🥊 RE-CHALLENGE DESIGN ?!]`. Selepas setiap PASS, tawarkan RE-CHALLENGE atau CONFIRM semula. |
+| `CONTINUE TO CONFIRM` | Pemilik sengaja skip challenge pertama yang optional dan terus ke confirmation gate biasa. |
+| `CONFIRM DESIGN` | Command surface utama. AI membuka semakan pengesahan design hanya selepas soalan challenge telah dipaparkan dan owner mempunyai sejarah PASS atau sengaja skip challenge pertama. Ia tidak confirm secara automatik. Jika masih ada blocker, kekal di DESIGN. Jika ready, minta balasan tepat `YA, CONFIRM DESIGN`. |
 | `CONFIRM ARCHITECTURE` atau `BUILD ARCHITECTURE` | Alias compatibility/domain-specific untuk projek teknikal; route melalui semakan pengesahan design yang sama. |
 | `DO IT` | Selepas design disahkan, rancang semula daripada state terkini, slice Action Plan, dan paparkan/sambung hanya task executable semasa. |
 | `YA, CONFIRM DESIGN` | Pengesahan akhir pemilik. AI bina atau kemas kini design confirmed hanya daripada keputusan `D-xxx | LOCKED` dan konteks yang diterima. |
@@ -185,7 +218,22 @@ Design akan menggunakan keputusan LOCKED berikut:
 Andaian kritikal / blocker:
 - [jika ada]
 
+Challenge pra-confirmation:
+- Status: NOT RUN / PASS / REFINE / SKIPPED BY OWNER
+- Bilangan challenge: [0 / 1 / 2 / ...]
+- Method: [thinking method yang telah digunakan atau N/A]
+- Finding material: [hasil ringkas setiap challenge]
+
 Design Progress: [x/4]
+
+Jika challenge terbaru menemui kelemahan material:
+Kembali ke DESIGN dan refine; jangan minta final confirmation lagi.
+
+Jika challenge terbaru PASS:
+Paparkan tepat:
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
 
 Jika masih ada blocker:
 Kekal di DESIGN dan nyatakan perkara seterusnya yang diperlukan.
@@ -327,7 +375,7 @@ Locked by: Project Owner
 
 AI boleh mencadangkan `DRAFT DESIGN` apabila keputusan cukup jelas, walaupun belum diminta. `DRAFT DESIGN` menyediakan draf design dengan versi kerja seperti `Draft 0.1`, tanpa mengubah status design yang telah disahkan. Draf menjelaskan tujuan, aliran utama, elemen utama dan keputusan `D-xxx | LOCKED` yang berkaitan. Gunakan bahasa design yang sesuai dengan domain; architecture hanya dimasukkan jika projek benar-benar mempunyai technical/system architecture. Andaian kritikal ditandakan sebagai terbuka, bukan dijadikan keputusan secara senyap.
 
-**Aturan tamat draf:** Setelah keempat-empat perkara itu dijawab, AI mesti membentangkan **“Ready to confirm design?”** bersama andaian kritikal yang masih terbuka dan paparkan `[🎨 CONFIRM DESIGN]`. Command itu membuka semakan pengesahan; ia tidak confirm secara automatik. Hanya selepas `YA, CONFIRM DESIGN` design menjadi versi yang disahkan; ia mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
+**Aturan tamat draf:** Setelah empat area design lengkap, Design 4/4 bermaksud **ready to challenge**, bukan terus ready to confirm. AI mesti paparkan `[🥊 CHALLENGE DESIGN !]` bersama `[🎨 CONTINUE TO CONFIRM]`. Selepas PASS, AI mesti paparkan tepat `Ready to confirm design? or Re-challenge?!` bersama `[🥊 RE-CHALLENGE DESIGN ?!]` dan `[🎨 CONFIRM DESIGN]`. REFINE kembali ke DESIGN. Confirmation tidak berlaku automatik; DESIGN confirmed masih memerlukan `YA, CONFIRM DESIGN` dan mesti berpunca daripada keputusan `D-xxx | LOCKED`, bukan sekadar andaian AI atau `AC`.
 
 <!--
 ### Confirmed design
@@ -342,6 +390,7 @@ AI boleh mencadangkan `DRAFT DESIGN` apabila keputusan cukup jelas, walaupun bel
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.1 | 2026-10-07 | LOCKED loop Draft Challenge pra-confirmation: Design 4/4 bermaksud ready to challenge, CHALLENGE DESIGN guna thinking method pilihan AI, REFINE kembali ke DESIGN, PASS mesti tawarkan RE-CHALLENGE DESIGN atau CONFIRM DESIGN, dan owner boleh sengaja skip challenge pertama dengan CONTINUE TO CONFIRM. |
 | 0.3.0 | 2026-10-02 | LOCKED model semantic DESIGN-first: DESIGN ialah surface/output universal ZASSIMPLE, architecture ialah subtype teknikal optional, ARCHITECTURE.md menjadi DESIGN.md, Design Progress/Forming/CONFIRM DESIGN menggantikan UX architecture-centric, dan DECIDE or DESIGN route DESIGN → ZASSIMPLE. |
 | 0.2.5 | 2026-10-02 | LOCKED routing bahasa global: surface berstruktur ikut fail EN/MY aktif; perbualan boleh ikut bahasa pengguna; ID/command canonical kekal stabil. |
 | 0.2.4 | 2026-10-01 | FINAL LOCK: ikon footer tetap dimuktamadkan sebagai 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE tanpa mengubah semantics command. |
