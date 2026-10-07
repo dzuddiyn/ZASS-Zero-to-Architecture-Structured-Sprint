@@ -440,7 +440,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 - implement AI-SYNC Web;
 - implement the landing page;
 - publish the CLI;
-- start CR-010 v0.3;
+- reopen CR-010 or add new validator semantics;
 - authorize automatic Full-ZASS migration.
 
 ## 15. Versioning contract
