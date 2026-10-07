@@ -1,3 +1,9 @@
+## 2026-10-07
+
+- Reconciled the post-Production-v1 bootstrap roadmap with the locked Drive-first optional-GitHub architecture.
+- Updated ZASS Project Bootstrap Core so a valid project no longer requires GitHub by default; GitHub creation/linking is an explicit optional path.
+- Preserved the locked CR-010 v0.4 → field test → close → npm bootstrap → shared bootstrap-core sequence without activating it ahead of the current Gate 6/T-020 critical path.
+
 # Changelog
 
 All notable changes to ZASS are recorded here.

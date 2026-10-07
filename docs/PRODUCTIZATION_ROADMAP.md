@@ -114,10 +114,10 @@ T-020 Human Closed Beta
 → CLOSE CR-010
 → npm bootstrap CLI
 → ZASS Project Bootstrap Core
-→ AISYNC Create New Project → GitHub
+→ CrossAI Create Project vNext (Drive-first; GitHub optional)
 ```
 
-The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md).
+The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md). The earlier mandatory-GitHub Create Project assumption is superseded: the bootstrap core must support a durable project space first, while CrossAI may offer GitHub creation/linking optionally.
 
 ## Validation architecture
 
