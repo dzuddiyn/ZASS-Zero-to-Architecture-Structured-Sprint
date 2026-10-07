@@ -86,3 +86,64 @@ export async function readGitWorkingState(projectDir) {
     };
   }
 }
+
+
+export async function readGitProjectBaselineFiles(projectDir, fileNames, baselineRef = 'HEAD') {
+  if (
+    typeof baselineRef !== 'string' ||
+    baselineRef.length === 0 ||
+    baselineRef.startsWith('-') ||
+    !Array.isArray(fileNames)
+  ) {
+    return {
+      available: false,
+      baseline: 'N/A',
+      reason: 'Local Git HEAD unavailable'
+    };
+  }
+
+  let gitRoot;
+  let baseline;
+
+  try {
+    gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
+    await git(['rev-parse', 'HEAD'], projectDir);
+    baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
+  } catch {
+    return {
+      available: false,
+      baseline: 'N/A',
+      reason: 'Local Git HEAD unavailable'
+    };
+  }
+
+  const files = {};
+
+  for (const name of fileNames) {
+    const absolutePath = path.resolve(projectDir, name);
+    const relativePath = path.relative(gitRoot, absolutePath).split(path.sep).join('/');
+
+    if (!relativePath || relativePath.startsWith('../') || path.isAbsolute(relativePath)) {
+      return {
+        available: false,
+        baseline: 'N/A',
+        reason: 'Project files are outside the Git repository'
+      };
+    }
+
+    try {
+      const historical = await git(['show', `${baseline}:${relativePath}`], projectDir);
+      files[name] = historical.stdout;
+    } catch {
+      files[name] = null;
+    }
+  }
+
+  return {
+    available: true,
+    baseline: 'HEAD',
+    baselineSha: baseline,
+    gitRoot,
+    files
+  };
+}
