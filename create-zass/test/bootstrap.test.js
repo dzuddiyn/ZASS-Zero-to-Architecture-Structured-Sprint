@@ -3,10 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import {
-  buildBootstrapPlan,
-  GITIGNORE_CONTENT
-} from '../../bootstrap-core/src/index.js';
+import { buildBootstrapPlan } from '../../bootstrap-core/src/index.js';
+import { GITIGNORE_CONTENT } from '../../bootstrap-core/src/readme.js';
 import { bootstrapProject } from '../src/bootstrap.js';
 
 const CASES = [

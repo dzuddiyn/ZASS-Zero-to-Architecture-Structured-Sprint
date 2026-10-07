@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import * as bootstrapCore from '../src/index.js';
 import { buildBootstrapPlan } from '../src/index.js';
 
 const CASES = [
@@ -86,5 +87,20 @@ test('Core rejects invalid project inputs', async () => {
   await assert.rejects(
     buildBootstrapPlan({ projectName: 'demo', method: 'zassimple', language: 'xx' }),
     /Unsupported language/
+  );
+});
+
+
+test('Core public export surface is explicit', () => {
+  assert.deepEqual(
+    Object.keys(bootstrapCore).sort(),
+    [
+      'CORE_CONTRACT_VERSION',
+      'LANGUAGE_CHOICES',
+      'METHOD_CHOICES',
+      'buildBootstrapPlan',
+      'getBootstrapDescriptor',
+      'verifyBootstrapSnapshot'
+    ].sort()
   );
 });
