@@ -3,8 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { bootstrapProject, GITIGNORE_CONTENT } from '../src/bootstrap.js';
-import { loadTemplate } from '../src/templates.js';
+import {
+  buildBootstrapPlan,
+  GITIGNORE_CONTENT
+} from '../../bootstrap-core/src/index.js';
+import { bootstrapProject } from '../src/bootstrap.js';
 
 const CASES = [
   ['zasspill', 'en', 'ZASSPILL_EN.md'],
@@ -18,29 +21,38 @@ const CASES = [
 ];
 
 for (const [method, language, methodFile] of CASES) {
-  test(`v0.1 creates minimal ${method}/${language} project`, async (t) => {
+  test(`v0.1 materializes Core ${method}/${language} plan`, async (t) => {
     const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-'));
     t.after(() => fs.rm(parent, { recursive: true, force: true }));
     const target = path.join(parent, `${method}-${language}`);
 
     const report = await bootstrapProject({ target, method, language });
+    const plan = await buildBootstrapPlan({
+      projectName: path.basename(target),
+      method,
+      language
+    });
 
     assert.equal(report.ok, true);
     assert.equal(report.methodFile, methodFile);
     assert.deepEqual(
       (await fs.readdir(target)).sort(),
-      ['.gitignore', 'README.md', methodFile].sort()
+      plan.files.map((file) => file.path).sort()
     );
 
-    assert.equal(
-      await fs.readFile(path.join(target, methodFile), 'utf8'),
-      await loadTemplate(method, language)
-    );
+    for (const file of plan.files) {
+      assert.equal(
+        await fs.readFile(path.join(target, file.path), 'utf8'),
+        file.content
+      );
+    }
 
     const readme = await fs.readFile(path.join(target, 'README.md'), 'utf8');
     assert.match(readme, new RegExp(methodFile.replace('.', '\\.')));
-    assert.match(readme, /Git is not initialized/);
-    assert.match(readme, /Never place passwords/);
+    assert.match(readme, /passwords|kata laluan/);
+    assert.doesNotMatch(readme, /Git is not initialized/);
+    assert.doesNotMatch(readme, /CrossAI/);
+
     assert.equal(
       await fs.readFile(path.join(target, '.gitignore'), 'utf8'),
       GITIGNORE_CONTENT
@@ -51,22 +63,32 @@ for (const [method, language, methodFile] of CASES) {
   });
 }
 
-test('v0.1 refuses any existing target without mutation', async (t) => {
+test('v0.1 refuses any existing target without invoking Core materialization', async (t) => {
   const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-existing-'));
   t.after(() => fs.rm(parent, { recursive: true, force: true }));
   const target = path.join(parent, 'existing');
   await fs.mkdir(target);
   await fs.writeFile(path.join(target, 'sentinel.txt'), 'keep\n', 'utf8');
+  let built = false;
 
   await assert.rejects(
-    bootstrapProject({
-      target,
-      method: 'zassimple',
-      language: 'en'
-    }),
+    bootstrapProject(
+      { target, method: 'zassimple', language: 'en' },
+      {
+        buildPlan: async () => {
+          built = true;
+          return buildBootstrapPlan({
+            projectName: 'existing',
+            method: 'zassimple',
+            language: 'en'
+          });
+        }
+      }
+    ),
     /Target already exists/
   );
 
+  assert.equal(built, false);
   assert.equal(
     await fs.readFile(path.join(target, 'sentinel.txt'), 'utf8'),
     'keep\n'

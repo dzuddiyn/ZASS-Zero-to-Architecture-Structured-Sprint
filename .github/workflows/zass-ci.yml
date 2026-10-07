@@ -29,6 +29,9 @@ jobs:
       - name: Run ZASS CLI tests
         run: npm --prefix cli test
 
+      - name: Run Bootstrap Core tests
+        run: npm --prefix bootstrap-core test
+
       - name: Run create-zass bootstrap tests
         run: npm --prefix create-zass test
 

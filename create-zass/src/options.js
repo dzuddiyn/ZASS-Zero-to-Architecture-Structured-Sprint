@@ -1,19 +1,12 @@
 import { UsageError } from './errors.js';
+import {
+  LANGUAGE_CHOICES,
+  METHOD_CHOICES,
+  isSupportedLanguage,
+  isSupportedMethod
+} from '../../bootstrap-core/src/index.js';
 
-export const METHOD_CHOICES = Object.freeze([
-  { value: 'zasspill', label: 'ZASSPILL', description: 'capture / continuity' },
-  { value: 'zasselection', label: 'ZASSELECTION', description: 'compare / decide' },
-  { value: 'zassimple', label: 'ZASSIMPLE', description: 'design / execute' },
-  { value: 'zass', label: 'FULL ZASS', description: 'governed architecture' }
-]);
-
-export const LANGUAGE_CHOICES = Object.freeze([
-  { value: 'en', label: 'English' },
-  { value: 'my', label: 'Bahasa Melayu' }
-]);
-
-const METHODS = new Set(METHOD_CHOICES.map((choice) => choice.value));
-const LANGUAGES = new Set(LANGUAGE_CHOICES.map((choice) => choice.value));
+export { LANGUAGE_CHOICES, METHOD_CHOICES };
 
 export function parseArgs(argv) {
   let target;
@@ -60,17 +53,17 @@ export function parseArgs(argv) {
 }
 
 function validateMethod(method) {
-  if (!METHODS.has(method)) {
+  if (!isSupportedMethod(method)) {
     throw new UsageError(
-      `Invalid method: ${method}. Expected one of: ${[...METHODS].join(', ')}`
+      `Invalid method: ${method}. Expected one of: ${METHOD_CHOICES.map((choice) => choice.value).join(', ')}`
     );
   }
 }
 
 function validateLanguage(language) {
-  if (!LANGUAGES.has(language)) {
+  if (!isSupportedLanguage(language)) {
     throw new UsageError(
-      `Invalid language: ${language}. Expected one of: ${[...LANGUAGES].join(', ')}`
+      `Invalid language: ${language}. Expected one of: ${LANGUAGE_CHOICES.map((choice) => choice.value).join(', ')}`
     );
   }
 }

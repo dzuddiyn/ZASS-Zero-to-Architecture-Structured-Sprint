@@ -1,15 +1,13 @@
 {
-  "name": "create-zass",
+  "name": "zass-bootstrap-core",
   "version": "0.1.0",
   "private": true,
-  "description": "Local-first bootstrap CLI for ZASS projects",
+  "description": "Shared deterministic bootstrap semantics for ZASS projects",
   "type": "module",
-  "bin": {
-    "create-zass": "./bin/create-zass.js"
-  },
+  "exports": "./src/index.js",
   "files": [
-    "bin",
     "src",
+    "templates",
     "README.md",
     "LICENSE"
   ],
