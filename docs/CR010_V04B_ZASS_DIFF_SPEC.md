@@ -1,6 +1,6 @@
 # CR-010 v0.4b — `zass diff` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION NOT STARTED  
+**Status:** LOCKED — IMPLEMENTED / CI PASS — REAL-PROJECT FIELD TEST PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -436,3 +436,27 @@ Not part of v0.4b:
 - ARCHITECTURE semantic diff;
 - npm publication;
 - Project Bootstrap Core implementation.
+
+
+## 20. Implementation receipt
+
+CR-010 v0.4b is implemented in the bounded locked slice:
+
+- `cli/src/git.js` adds a local baseline-file reader for the three primary Full ZASS files;
+- `cli/src/diff.js` provides `runDiff()` and `formatDiff()`;
+- primary files are classified as `UNCHANGED / MODIFIED / ADDED / DELETED`;
+- canonical ZASS ID, LOCKED/SUPERSEDED state-set, declared readiness and critical-blocker deltas reuse existing parser semantics;
+- `cli/bin/zass.js` supports `zass diff` with no arguments;
+- `cli/test/diff.test.js` covers the locked acceptance behaviors;
+- existing unsupported-usage regression now recognizes `diff` as a valid command.
+
+GitHub Actions ZASS CI passed on PR #37 after implementation:
+
+- CLI test step: PASS;
+- repository consistency check: PASS;
+- historical baseline resolution: PASS;
+- ZASS validator step: PASS.
+
+No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, methodology change, or real-project field-test claim is included.
+
+The CR-010 real-project field-test gate remains pending.

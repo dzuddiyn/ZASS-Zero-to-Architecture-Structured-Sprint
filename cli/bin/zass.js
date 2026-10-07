@@ -2,6 +2,7 @@
 
 import { runCheck, formatResults } from '../src/check.js';
 import { runStatus, formatStatus } from '../src/status.js';
+import { runDiff, formatDiff } from '../src/diff.js';
 
 const [, , command, ...args] = process.argv;
 
@@ -24,7 +25,8 @@ function usage() {
   return [
     'Usage:',
     '  zass check [--baseline <git-ref>]',
-    '  zass status'
+    '  zass status',
+    '  zass diff'
   ].join('\n');
 }
 
@@ -61,6 +63,24 @@ async function main() {
       process.exitCode = report.exitCode;
     } catch (error) {
       console.error(`ZASS STATUS\n\nERROR Z999 — ${error.message}`);
+      process.exitCode = 2;
+    }
+    return;
+  }
+
+  if (command === 'diff') {
+    if (args.length !== 0) {
+      console.error(usage());
+      process.exitCode = 2;
+      return;
+    }
+
+    try {
+      const report = await runDiff(process.cwd());
+      console.log(formatDiff(report));
+      process.exitCode = report.exitCode;
+    } catch (error) {
+      console.error(`ZASS DIFF\n\nERROR Z999 — ${error.message}`);
       process.exitCode = 2;
     }
     return;

@@ -251,6 +251,7 @@ test('CLI returns exit code 2 for unsupported usage', () => {
   assert.equal(result.status, 2);
   assert.match(result.stderr, /zass check/);
   assert.match(result.stderr, /zass status/);
+  assert.match(result.stderr, /zass diff/);
 });
 
 test('file discovery requires ZASS.md', async () => {
