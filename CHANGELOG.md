@@ -1,3 +1,12 @@
+## 2026-10-07 — CR-010 v0.4 real-project field gate PASS
+
+- Completed real-project field testing of `zass status` and `zass diff` against Kerani_Core on Windows.
+- Clean Kerani_Core returned validator 0/0, status PASS/CLEAN, and diff NO_CHANGE.
+- Deliberate D-037 and readiness mutations proved the intended command separation: diff reports factual change, check owns validation, status summarizes current validation/Git state.
+- Field testing exposed the Windows EOL false positive fixed in PR #38 before the gate was accepted.
+- Secondary Kerani_Core_SuperBasic sampling confirmed diff NO_CHANGE on a clean working tree while status truthfully projected its existing validator findings.
+- CR-010 v0.4 field gate is PASS; STOP/REVIEW remains before CR-010 closure.
+
 ## 2026-10-07 — CR-010 v0.4b Windows field correction
 
 - Real-project field testing exposed a Windows EOL false positive in `zass diff`: clean CRLF working files differed byte-for-byte from LF `git show` baseline blobs.
