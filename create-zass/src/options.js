@@ -2,11 +2,11 @@ import { UsageError } from './errors.js';
 import {
   LANGUAGE_CHOICES,
   METHOD_CHOICES
-} from '../../bootstrap-core/src/index.js';
+} from '../vendor/bootstrap-core/src/index.js';
 import {
   isSupportedLanguage,
   isSupportedMethod
-} from '../../bootstrap-core/src/catalog.js';
+} from '../vendor/bootstrap-core/src/catalog.js';
 
 export { LANGUAGE_CHOICES, METHOD_CHOICES };
 

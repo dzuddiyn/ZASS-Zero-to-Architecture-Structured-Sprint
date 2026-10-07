@@ -5,7 +5,7 @@ import {
   buildBootstrapPlan,
   getBootstrapDescriptor,
   verifyBootstrapSnapshot
-} from '../../bootstrap-core/src/index.js';
+} from '../vendor/bootstrap-core/src/index.js';
 import { BootstrapRefusalError } from './errors.js';
 
 async function pathExists(target) {
