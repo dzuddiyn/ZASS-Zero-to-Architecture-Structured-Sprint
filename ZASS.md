@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.9 (global language-surface routing; core decision semantics unchanged)
-**ZASS SYSTEM:** v0.2.0
+**ZASS SYSTEM:** v0.2.1
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
