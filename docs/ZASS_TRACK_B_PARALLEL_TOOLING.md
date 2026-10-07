@@ -36,7 +36,10 @@ CR-010 v0.4 ✅
 → Bootstrap Core v0.1 contract ✅ LOCKED
 → shared Bootstrap Core implementation ✅ Windows + CI PASS
 → field-test bootstrap ✅ PASS
-→ STOP / REVIEW ← NEXT
+→ STOP / REVIEW ⚠ HOLD
+→ correct public deterministic API seam ← NEXT
+→ repeat STOP / REVIEW
+→ stable Core freeze
 → freeze stable Bootstrap Core contract
 ```
 
@@ -102,7 +105,11 @@ shared Bootstrap Core implementation ✅
         ↓
 field-test bootstrap ✅ PASS
         ↓
-STOP / REVIEW ← NEXT
+STOP / REVIEW ⚠ HOLD
+        ↓
+correct public deterministic API seam ← NEXT
+        ↓
+repeat STOP / REVIEW
         ↓
 stable core contract
 ```
