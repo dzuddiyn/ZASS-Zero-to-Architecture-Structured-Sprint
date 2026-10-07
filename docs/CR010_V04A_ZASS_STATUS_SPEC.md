@@ -1,6 +1,6 @@
 # CR-010 v0.4a — `zass status` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION IN PROGRESS  
+**Status:** LOCKED — IMPLEMENTED / CI PASS — REAL-PROJECT FIELD TEST PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -284,14 +284,23 @@ Not part of v0.4a:
 - Project Bootstrap Core implementation.
 
 
-## 15. Implementation progress
+## 15. Implementation receipt
 
-Implementation branch adds the bounded v0.4a slice only:
+CR-010 v0.4a is implemented in the bounded locked slice:
 
-- `cli/src/status.js`;
-- local Git working-state detection in `cli/src/git.js`;
-- `zass status` CLI routing;
-- focused `status.test.js` coverage;
-- existing `zass check` usage regression updated for the newly supported command.
+- `cli/src/status.js` provides `runStatus()` and `formatStatus()`;
+- `cli/src/git.js` adds deterministic local Git `CLEAN / CHANGED / UNKNOWN` reading;
+- `cli/bin/zass.js` supports `zass status` with no arguments while preserving `zass check`;
+- `cli/test/status.test.js` covers project/file detection, PASS/WARNING/ERROR summaries, Git states, read-only behavior, CLI success, and argument rejection;
+- existing unsupported-usage regression now recognizes `status` as a valid command.
+
+GitHub Actions ZASS CI passed on PR #35 after implementation:
+
+- CLI test step: PASS;
+- repository consistency check: PASS;
+- historical baseline resolution: PASS;
+- ZASS validator step: PASS.
 
 No `zass diff`, npm publication, bootstrap-core work, remote access, or methodology change is included.
+
+The later CR-010 real-project field-test gate remains pending and is intentionally not claimed by this implementation receipt.
