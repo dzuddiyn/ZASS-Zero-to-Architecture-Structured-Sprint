@@ -1,3 +1,10 @@
+## 2026-10-07 — TRACK B activation
+
+- Activated isolated parallel ZASS TRACK B before AISYNC T-020/T-021 completion.
+- Superseded only the old sequencing assumption; existing architecture remains unchanged.
+- Locked TRACK B order: CR-010 v0.4 → field test → close CR-010 → npm bootstrap → ZASS Project Bootstrap Core → bootstrap field test → stable core contract.
+- Locked isolation guardrail: TRACK B must not modify AISYNC runtime, Apps Script production, Gate 6 acceptance, or T-020/T-021 criteria.
+
 ## 2026-10-07
 
 - Reconciled the post-Production-v1 bootstrap roadmap with the locked Drive-first optional-GitHub architecture.

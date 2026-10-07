@@ -97,11 +97,16 @@ Use ZASS on multiple real projects and record evidence such as:
 Publish case studies only from documented real usage.
 
 
-## Post-Production v1 future productization
+## Parallel productization tracks
 
-The current critical path remains Gate 6 / AISYNC T-020. The following sequence is LOCKED as **future work** and must not displace that path:
+The previous timing assumption that CR-010 v0.4 and later ZASS tooling must wait until AISYNC Production v1 is DELIVERED is SUPERSEDED.
+
+LOCKED sequencing refinement:
+
+> **ZASS tooling/productization work may proceed as an isolated parallel TRACK B before AISYNC T-020/T-021 completes, provided it does not modify or interrupt the active AISYNC runtime, Gate 6 acceptance, or CrossAI Production v1 critical path.**
 
 ```text
+TRACK A — AISYNC / CrossAI
 T-020 Human Closed Beta
 → Final ZASS Gate 6 acceptance
 → Gate 6 PASS / CLOSED
@@ -109,15 +114,24 @@ T-020 Human Closed Beta
 → UX regression
 → T-021 Production v1 release acceptance
 → DELIVERED !!
-→ CR-010 v0.4: zass status + zass diff
+
+TRACK B — ZASS tooling/productization
+CR-010 v0.4: zass status + zass diff
 → real-project field test
 → CLOSE CR-010
 → npm bootstrap CLI
 → ZASS Project Bootstrap Core
-→ CrossAI Create Project vNext (Drive-first; GitHub optional)
+→ field-test bootstrap
+→ freeze stable Bootstrap Core contract
 ```
 
-The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md). The earlier mandatory-GitHub Create Project assumption is superseded: the bootstrap core must support a durable project space first, while CrossAI may offer GitHub creation/linking optionally.
+TRACK B remains isolated. It must not modify AISYNC runtime, Apps Script production, T-020/T-021 acceptance, or Gate 6 evidence.
+
+After TRACK A is DELIVERED and TRACK B has a stable Bootstrap Core, CrossAI may consume that shared core for Create Project vNext.
+
+The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md). The earlier mandatory-GitHub Create Project assumption remains superseded: a valid ZASS project must not require GitHub.
+
+See [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md).
 
 ## Validation architecture
 

@@ -3,7 +3,7 @@
 **Status:** LOCKED FUTURE DIRECTION  
 **Date:** 2026-10-05  
 **Owner:** Project Owner  
-**Activation:** Post-AISYNC Production v1 delivery; not an active Gate 6 task  
+**Activation:** ZASS tooling/bootstrap work may proceed under isolated TRACK B before AISYNC Production v1 delivery; CrossAI consumption/integration remains gated separately  
 **Scope:** Shared project bootstrap engine for CLI and AISYNC Create Project
 
 > **Create once. Own the project space. Add Git when useful. Continue anywhere.**
@@ -127,27 +127,26 @@ The npm bootstrap and CrossAI Create Project should call the same Project Bootst
 
 The CLI path remains useful without AISYNC.
 
-## 6. Post-Production v1 sequence
+## 6. Parallel TRACK B sequence
 
-Locked future sequence:
+LOCKED sequencing refinement:
 
 ```text
-T-020 Human Closed Beta
-→ Final ZASS Gate 6 acceptance
-→ Gate 6 PASS / CLOSED
-→ AISYNC visual polish + Guided Journey
-→ UX regression
-→ T-021 Production v1 release acceptance
-→ DELIVERED !!
-→ CR-010 v0.4: zass status + zass diff
+TRACK B
+CR-010 v0.4: zass status + zass diff
 → real-project field test
 → CLOSE CR-010
 → npm bootstrap CLI
 → ZASS Project Bootstrap Core
-→ CrossAI Create Project vNext (Drive-first; GitHub optional)
+→ field-test bootstrap
+→ freeze stable Bootstrap Core contract
 ```
 
-This ordering remains the default activation sequence. Project-bootstrap work must not interrupt the current T-020 / Gate 6 critical path.
+This TRACK B may proceed before AISYNC/CrossAI T-020/T-021 finishes, provided it remains isolated from the active AISYNC runtime and Gate 6/Production v1 critical path.
+
+CrossAI consumption of the Bootstrap Core remains a separate later integration step.
+
+See [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md).
 
 ## 7. CR-010 relationship
 
