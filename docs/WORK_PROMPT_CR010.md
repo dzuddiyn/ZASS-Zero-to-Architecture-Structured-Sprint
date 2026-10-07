@@ -1,11 +1,11 @@
 # Work Prompt — Implement CR-010 `zass check` MVP
 
-**Status:** LOCKED IMPLEMENTATION PROMPT  
+**Status:** COMPLETED / HISTORICAL IMPLEMENTATION PROMPT — CR-010 CLOSED  
 **Date:** 2026-09-30  
 **Target repository:** `dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint`  
 **Authoritative spec:** `docs/CR010_ZASS_CHECK_SPEC.md`
 
-Use this prompt in **ChatGPT Work** when handing off implementation of the first CR-010 validator phase.
+This prompt is retained as historical implementation lineage for the first CR-010 validator phase. CR-010 is CLOSED at zass-cli v0.4.0; do not reuse this as the current implementation plan.
 
 ---
 
