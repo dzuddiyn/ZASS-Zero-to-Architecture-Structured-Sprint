@@ -139,9 +139,7 @@ define / validate the escalation notification contract
 
 The future landing-page implementation itself is not started by this decision. This document only locks the product routing model.
 
-Separately, CR-010 v0.3 ACTION_PLAN consistency remains a locked implementation plan and is the next validator implementation task when development resumes.
-
-For now, **CR-010 v0.3 implementation is deferred / not started**.
+Separately, the CR-010 validator/tooling track has advanced through v0.4: ACTION_PLAN consistency, `zass status`, and `zass diff` are implemented and real-project field-validated. CR-010 closure is governed by its explicit STOP/review receipt rather than this product-direction document.
 
 ## 7. System architecture boundary
 
@@ -185,7 +183,7 @@ It does not:
 - implement a landing page yet;
 - define final escalation thresholds;
 - authorize automatic migration;
-- start CR-010 v0.3 implementation;
+- reopen or extend CR-010 beyond its explicitly approved validator/tooling scope;
 - bump Full ZASS, ZASSIMPLE, or ZASSELECTION versions.
 
 Future escalation rules must be based on field evidence and explicitly locked before implementation.
