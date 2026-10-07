@@ -116,9 +116,10 @@ T-020 Human Closed Beta
 → DELIVERED !!
 
 TRACK B — ZASS tooling/productization
-CR-010 v0.4a: zass status — IMPLEMENTED / CI PASS; field test pending
-→ CR-010 v0.4b: zass diff — IMPLEMENTED / CI PASS; field test pending
-→ real-project field test
+CR-010 v0.4a: zass status — IMPLEMENTED / FIELD-VALIDATED
+→ CR-010 v0.4b: zass diff — IMPLEMENTED / FIELD-VALIDATED
+→ real-project field test ✅ PASS
+→ STOP / REVIEW ← NEXT
 → CLOSE CR-010
 → npm bootstrap CLI
 → ZASS Project Bootstrap Core
@@ -128,7 +129,7 @@ CR-010 v0.4a: zass status — IMPLEMENTED / CI PASS; field test pending
 
 TRACK B remains isolated. It must not modify AISYNC runtime, Apps Script production, T-020/T-021 acceptance, or Gate 6 evidence.
 
-CR-010 v0.4a `zass status` is IMPLEMENTED with CI PASS under its locked contract in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md). The later real-project field-test gate remains pending. `zass diff` v0.4b is IMPLEMENTED with CI PASS under its locked contract in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The CR-010 real-project field-test gate remains pending.
+CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate is now next; CR-010 is not yet closed.
 
 After TRACK A is DELIVERED and TRACK B has a stable Bootstrap Core, CrossAI may consume that shared core for Create Project vNext.
 
