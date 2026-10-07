@@ -62,3 +62,27 @@ export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
     };
   }
 }
+
+
+export async function readGitWorkingState(projectDir) {
+  try {
+    await git(['rev-parse', '--show-toplevel'], projectDir);
+    await git(['rev-parse', 'HEAD'], projectDir);
+    const status = await git(
+      ['status', '--porcelain=v1', '--untracked-files=all'],
+      projectDir
+    );
+
+    return {
+      available: true,
+      state: status.stdout.length === 0 ? 'CLEAN' : 'CHANGED',
+      baseline: 'HEAD'
+    };
+  } catch {
+    return {
+      available: false,
+      state: 'UNKNOWN',
+      baseline: 'N/A'
+    };
+  }
+}

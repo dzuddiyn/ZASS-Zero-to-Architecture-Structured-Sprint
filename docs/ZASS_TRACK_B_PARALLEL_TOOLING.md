@@ -67,7 +67,7 @@ TRACK B MAY:
 
 ```text
 LOCK zass status contract ✅
-→ implement zass status
+→ implement zass status ✅ (CI PASS; field test later)
 → design/LOCK zass diff contract
 → implement zass diff
 → regression tests
@@ -80,7 +80,7 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 `zass status` and `zass diff` must add deterministic ZASS-relevant meaning and must not merely rebrand raw Git output.
 
-The CR-010 v0.4a contract for `zass status` is now LOCKED in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md). No v0.4a implementation is included in this lock.
+The CR-010 v0.4a contract for `zass status` is LOCKED and implemented in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md). Repository CI passes; the later real-project field-test gate remains pending.
 
 ## 5. Bootstrap boundary
 

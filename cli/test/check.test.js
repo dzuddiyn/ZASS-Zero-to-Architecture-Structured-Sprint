@@ -244,12 +244,13 @@ test('CLI returns exit code 1 for validation errors', () => {
 
 test('CLI returns exit code 2 for unsupported usage', () => {
   const cli = path.join(here, '..', 'bin', 'zass.js');
-  const result = spawnSync(process.execPath, [cli, 'status'], {
+  const result = spawnSync(process.execPath, [cli, 'unknown'], {
     cwd: fixture('valid'),
     encoding: 'utf8'
   });
   assert.equal(result.status, 2);
-  assert.match(result.stderr, /Usage: zass check/);
+  assert.match(result.stderr, /zass check/);
+  assert.match(result.stderr, /zass status/);
 });
 
 test('file discovery requires ZASS.md', async () => {
