@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildBootstrapPlan,
-  validateBootstrapPlan,
   verifyBootstrapSnapshot
 } from '../src/index.js';
+import { validateBootstrapPlan } from '../src/validation.js';
 
 function clone(value) {
   return structuredClone(value);
