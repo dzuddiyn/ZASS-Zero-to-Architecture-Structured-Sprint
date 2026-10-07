@@ -4,7 +4,7 @@
 **Locked by:** Project Owner  
 **Locked date:** 2026-09-30  
 **Scope:** Landing page, onboarding, cross-AI handoff, CLI bootstrap  
-**Implementation status:** README/CLI implementation may follow separately; the decisions in this document are authoritative unless the owner explicitly revises them.
+**Implementation status:** npm Bootstrap CLI v0.1 is implemented locally and CI/Windows tested; npm publication remains a separate gate. The decisions in this document remain authoritative unless the owner explicitly revises them.
 
 > **Think once. Keep the decisions. Continue with any AI.**
 
@@ -331,6 +331,8 @@ Non-interactive bootstrap must not guess a missing method or language.
 The complete locked behavioral contract is:
 
 - [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md)
+
+Implementation receipt: [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) — implemented locally as private `create-zass@0.1.0`; npm publication not yet performed.
 
 The bootstrap remains local-first, create-new-only, and free of implicit Git/GitHub/CrossAI side effects.
 
