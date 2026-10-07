@@ -1,3 +1,9 @@
+## 2026-10-07 — CR-010 v0.4b Windows field correction
+
+- Real-project field testing exposed a Windows EOL false positive in `zass diff`: clean CRLF working files differed byte-for-byte from LF `git show` baseline blobs.
+- Fixed file comparison by normalizing line-ending representation only before UNCHANGED/MODIFIED classification.
+- Added an explicit CRLF/LF regression test; no whitespace trimming or semantic normalization was added.
+
 ## 2026-10-07 — CR-010 v0.4b implementation
 
 - Implemented `zass diff` under the locked v0.4b read-only local-HEAD contract.
