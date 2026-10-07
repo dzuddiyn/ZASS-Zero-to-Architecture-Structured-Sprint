@@ -230,7 +230,7 @@ v0.3  ACTION_PLAN consistency — IMPLEMENTED / FIELD-VALIDATED
 
 v0.4a `zass status` — CONTRACT LOCKED / IMPLEMENTATION NOT STARTED
 
-v0.4b `zass diff` — NOT DESIGNED / NOT STARTED
+v0.4b `zass diff` — CONTRACT LOCKED / IMPLEMENTATION NOT STARTED
 ```
 
 ## 7. Stop rule
@@ -276,3 +276,8 @@ CR-010 v0.3 is now **implemented and field-validated**. Its locked specification
 CR-010 v0.4a is now behaviorally LOCKED. Its specification is in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
 
 The v0.4a contract is read-only and factual: Full ZASS detection, primary file presence, reuse of the existing validator summary, compact local Git working state, and established exit-code semantics. It explicitly prohibits progress/lifecycle/next-action inference and does not implement `zass diff`.
+
+
+CR-010 v0.4b is now behaviorally LOCKED. Its specification is in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md).
+
+The v0.4b contract defines a read-only ZASS-aware working-tree delta against local `HEAD`: primary-file ADDED/MODIFIED/DELETED/UNCHANGED states, canonical ZASS ID set changes, LOCKED/SUPERSEDED decision-state deltas, and declared readiness/blocker changes using existing parser semantics. It does not validate the change; `zass check` retains that authority.
