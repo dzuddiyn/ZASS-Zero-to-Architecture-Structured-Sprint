@@ -20,7 +20,7 @@ The landing experience should lead with the user's problem:
 
 > Stop repeating the same project context to every AI.
 
-ZASS is not introduced first as a catalogue of methods. The default path is to start with **ZASSIMPLE**, work naturally, persist approved state deliberately, and reveal advanced methods only when needed.
+ZASS is not introduced first as a catalogue of methods. The default **landing/conversational path** is to start with **ZASSIMPLE**, work naturally, persist approved state deliberately, and reveal advanced methods only when needed. The npm bootstrap is an explicit-tooling exception: it asks the user which official method to create rather than silently selecting one.
 
 ---
 
@@ -42,7 +42,7 @@ HUMAN-APPROVED DECISIONS
 TRACEABLE PROJECT STATE / ARCHITECTURE
 ```
 
-Default onboarding begins with **ZASSIMPLE**. New users are not required to choose between ZASS, ZASSIMPLE, ZASSELECTION, ACTION PLAN, or advanced methods before starting.
+Default landing/conversational onboarding begins with **ZASSIMPLE**. New users are not required to choose between advanced methods before starting through that path. The npm bootstrap follows L-CLI-002 instead and explicitly asks which official method and language to create.
 
 **Primary positioning:**
 
