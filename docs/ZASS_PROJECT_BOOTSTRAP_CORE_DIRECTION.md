@@ -54,7 +54,8 @@ CrossAI Create Project
 
 - Project Bootstrap Core semantics;
 - generated ZASS project structure;
-- initial ZASS/ZASSIMPLE files and safe defaults;
+- official method bootstrap surfaces for ZASSPILL, ZASSELECTION, ZASSIMPLE, and Full ZASS;
+- explicit method/language selection semantics;
 - initial project metadata contract;
 - bootstrap validation;
 - compatibility with `zass check` and later local CLI tooling.
@@ -117,13 +118,24 @@ Each factual state must remain separately visible.
 
 ## 5. Relationship to npm onboarding
 
-The existing locked onboarding target remains:
+The target command remains:
 
 ```bash
 npm create zass@latest my-project
 ```
 
-The npm bootstrap and CrossAI Create Project should call the same Project Bootstrap Core wherever practical.
+The earlier npm-only default (`ZASSIMPLE` + English + no method question) is SUPERSEDED.
+
+The locked npm Bootstrap CLI v0.1 contract now requires explicit method/language resolution:
+
+- interactive terminal → ask the user;
+- automation/non-interactive → require `--method` and `--lang`;
+- methods → ZASSPILL / ZASSELECTION / ZASSIMPLE / Full ZASS;
+- no silent npm method default.
+
+See [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md).
+
+The npm bootstrap and future CrossAI Create Project should call the same Project Bootstrap Core wherever practical. CrossAI may select the method explicitly from its own DUMP / DECIDE / DESIGN / Full-ZASS escalation UX rather than reproducing the npm prompt.
 
 The CLI path remains useful without AISYNC.
 
@@ -136,7 +148,8 @@ TRACK B
 CR-010 v0.4: zass status + zass diff ✅
 → real-project field test ✅
 → CR-010 CLOSED — zass-cli v0.4.0 ✅
-→ npm bootstrap CLI ← NEXT
+→ npm bootstrap CLI v0.1 contract ✅ LOCKED
+→ implement npm bootstrap CLI ← NEXT
 → ZASS Project Bootstrap Core
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
