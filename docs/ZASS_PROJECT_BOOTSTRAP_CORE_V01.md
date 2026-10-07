@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW HOLD — PRE-FREEZE API CORRECTION REQUIRED  
+**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — API CORRECTION PASS — REPEAT STOP/REVIEW PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -777,3 +777,26 @@ Reason: the currently exported `buildBootstrapPlan(..., dependencies)` surface e
 Receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
 
 Next: correct the public deterministic API seam, re-run targeted regression/CI, then repeat STOP/REVIEW before stable freeze.
+
+
+## 29. Pre-freeze API correction
+
+The STOP/REVIEW blocker was corrected without changing bootstrap semantics.
+
+Public `buildBootstrapPlan` now accepts one explicit project input only and always uses canonical bundled templates.
+
+The provisional root public surface was narrowed to:
+
+```text
+CORE_CONTRACT_VERSION
+METHOD_CHOICES
+LANGUAGE_CHOICES
+buildBootstrapPlan
+validateBootstrapInput
+validateBootstrapPlan
+verifyBootstrapSnapshot
+```
+
+Correction receipt: [`ZASS_BOOTSTRAP_CORE_API_SEAM_CORRECTION.md`](ZASS_BOOTSTRAP_CORE_API_SEAM_CORRECTION.md).
+
+Next gate: repeat STOP/REVIEW. Stable freeze is still not performed by this correction.

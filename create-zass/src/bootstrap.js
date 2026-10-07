@@ -3,7 +3,8 @@ import path from 'node:path';
 import { constants } from 'node:fs';
 import {
   buildBootstrapPlan,
-  getBootstrapDescriptor,
+  LANGUAGE_CHOICES,
+  METHOD_CHOICES,
   verifyBootstrapSnapshot
 } from '../../bootstrap-core/src/index.js';
 import { BootstrapRefusalError } from './errors.js';
@@ -16,6 +17,10 @@ async function pathExists(target) {
     if (error.code === 'ENOENT') return false;
     throw error;
   }
+}
+
+function choiceLabel(choices, value) {
+  return choices.find((choice) => choice.value === value)?.label ?? value;
 }
 
 async function readBootstrapSnapshot(projectDir) {
@@ -74,7 +79,6 @@ export async function bootstrapProject(
   }
 
   const plan = await planBuilder({ projectName, method, language });
-  const descriptor = getBootstrapDescriptor(method, language);
   let created = false;
 
   try {
@@ -111,8 +115,8 @@ export async function bootstrapProject(
       method,
       language,
       methodFile: plan.project.methodFile,
-      methodLabel: descriptor.methodLabel,
-      languageLabel: descriptor.languageLabel,
+      methodLabel: choiceLabel(METHOD_CHOICES, method),
+      languageLabel: choiceLabel(LANGUAGE_CHOICES, language),
       createdFiles: plan.files.map((file) => file.path)
     };
   } catch (error) {

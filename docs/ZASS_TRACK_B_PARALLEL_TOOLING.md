@@ -37,8 +37,8 @@ CR-010 v0.4 ✅
 → shared Bootstrap Core implementation ✅ Windows + CI PASS
 → field-test bootstrap ✅ PASS
 → STOP / REVIEW ⚠ HOLD
-→ correct public deterministic API seam ← NEXT
-→ repeat STOP / REVIEW
+→ correct public deterministic API seam ✅ PASS
+→ repeat STOP / REVIEW ← NEXT
 → stable Core freeze
 → freeze stable Bootstrap Core contract
 ```
@@ -107,9 +107,9 @@ field-test bootstrap ✅ PASS
         ↓
 STOP / REVIEW ⚠ HOLD
         ↓
-correct public deterministic API seam ← NEXT
+correct public deterministic API seam ✅ PASS
         ↓
-repeat STOP / REVIEW
+repeat STOP / REVIEW ← NEXT
         ↓
 stable core contract
 ```
