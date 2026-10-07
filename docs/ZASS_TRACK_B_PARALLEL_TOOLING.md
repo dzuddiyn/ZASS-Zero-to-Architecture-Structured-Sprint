@@ -69,7 +69,7 @@ TRACK B MAY:
 LOCK zass status contract ✅
 → implement zass status ✅ (CI PASS; field test later)
 → design/LOCK zass diff contract ✅
-→ implement zass diff
+→ implement zass diff ✅ (CI PASS; field test next)
 → regression tests
 → real-project field test
 → STOP / REVIEW
@@ -82,7 +82,7 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 The CR-010 v0.4a contract for `zass status` is LOCKED and implemented in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md). Repository CI passes; the later real-project field-test gate remains pending.
 
-The CR-010 v0.4b contract for `zass diff` is now LOCKED in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). Implementation has not started.
+The CR-010 v0.4b contract for `zass diff` is LOCKED and implemented in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). Repository CI passes; real-project field testing remains the next CR-010 gate.
 
 ## 5. Bootstrap boundary
 
