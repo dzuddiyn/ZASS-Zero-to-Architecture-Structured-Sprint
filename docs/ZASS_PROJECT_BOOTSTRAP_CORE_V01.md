@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTED / WINDOWS + CI PASS — FIELD TEST PENDING — STABLE FREEZE PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW PENDING — STABLE FREEZE PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -749,11 +749,12 @@ Bootstrap Core v0.1 implementation: **PASS for implementation gate**.
 
 This does **not** freeze the stable external API.
 
+Field test subsequently PASSED. Receipt: [`ZASS_BOOTSTRAP_CORE_FIELD_TEST.md`](ZASS_BOOTSTRAP_CORE_FIELD_TEST.md).
+
 Next gate remains:
 
 ```text
-field-test bootstrap
-→ STOP / REVIEW
+STOP / REVIEW
 → freeze stable Bootstrap Core contract
 ```
 
