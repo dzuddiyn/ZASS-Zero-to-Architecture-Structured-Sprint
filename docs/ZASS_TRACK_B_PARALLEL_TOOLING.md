@@ -72,8 +72,8 @@ LOCK zass status contract ✅
 → implement zass diff ✅
 → regression tests ✅
 → real-project field test ✅ PASS
-→ STOP / REVIEW ← NEXT
-→ CLOSE CR-010
+→ STOP / REVIEW ✅ PASS
+→ CLOSE CR-010 ✅ CLOSED — zass-cli v0.4.0
 ```
 
 Do not implement v0.4 commands before the behavioral contract is explicit.
@@ -82,7 +82,7 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 The CR-010 v0.4a contract for `zass status` is LOCKED, implemented and field-validated in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
 
-The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW is now the next CR-010 gate.
+The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW passed and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The next TRACK B step is npm bootstrap CLI design/onboarding.
 
 ## 5. Bootstrap boundary
 
