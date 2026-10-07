@@ -428,7 +428,7 @@ review/history projection
 automation and product adoption UX
 ```
 
-CR-010 v0.3 is implemented, field-validated, and closed at its STOP/review gate as zass-cli v0.3.0. Optional Z206 and CR-010 v0.4 remain deferred/not started.
+CR-010 v0.4 is implemented and real-project field-validated as zass-cli v0.4.0. Its final STOP/review and closure receipt are handled in the CR-010 productization track. Optional Z206 remains deferred.
 
 ## 14. Authority boundary
 
