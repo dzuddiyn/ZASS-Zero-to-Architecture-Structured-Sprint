@@ -67,8 +67,8 @@ LOCKED system-level boundary:
 Current implementation checkpoint:
 
 ```text
-AI-SYNC T-013A â€” PASS
-AI-SYNC T-013B â€” PASS
+AI-SYNC T-013A — PASS
+AI-SYNC T-013B — PASS
 public method-read transport operational for the proven v0.1 path
 
 ZASS CI + AISYNC T-012 â€” PASS

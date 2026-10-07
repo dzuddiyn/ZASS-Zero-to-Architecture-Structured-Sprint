@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.9 (routing surface bahasa global; semantics keputusan teras tidak berubah)
-**ZASS SYSTEM:** v0.2.0
+**ZASS SYSTEM:** v0.2.1
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.0
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.1
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.2.0** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.2.1** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
