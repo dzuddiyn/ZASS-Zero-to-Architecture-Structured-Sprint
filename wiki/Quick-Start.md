@@ -62,16 +62,20 @@ Target experience:
 npm create zass@latest my-project
 ```
 
-Target minimal project:
+**Status: npm Bootstrap CLI v0.1 contract LOCKED — implementation pending.**
+
+Interactive bootstrap asks for the method and language explicitly:
 
 ```text
-my-project/
-├── ZASSIMPLE_EN.md
-├── README.md
-└── .gitignore
+ZASSPILL / ZASSELECTION / ZASSIMPLE / FULL ZASS
+English / Bahasa Melayu
 ```
 
-**Status: specification locked — implementation pending.**
+There is no silent npm method default. Automation may pass `--method` and `--lang` explicitly.
+
+Every successful v0.1 bootstrap creates one selected method file plus `README.md` and `.gitignore`.
+
+Contract: [`../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
 The npm command is the target UX, not a currently released package.
 
