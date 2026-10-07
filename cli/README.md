@@ -1,6 +1,8 @@
 # ZASS CLI — v0.4.0
 
-This directory contains the first productized ZASS validator.
+This directory contains the first productized ZASS validator/tooling surface.
+
+**CR-010 is CLOSED at zass-cli v0.4.0.** npm publication/bootstrap remains separate future productization work.
 
 ## Local development
 
