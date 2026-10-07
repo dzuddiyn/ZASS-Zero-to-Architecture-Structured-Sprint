@@ -1,6 +1,6 @@
 # CR-010 v0.4a — `zass status` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — STOP/REVIEW PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — CR-010 CLOSED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -314,4 +314,4 @@ CR-010 v0.4 real-project field gate is **PASS**.
 
 See [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md).
 
-CR-010 closure remains pending the explicit STOP/REVIEW gate.
+CR-010 STOP/REVIEW passed; CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
