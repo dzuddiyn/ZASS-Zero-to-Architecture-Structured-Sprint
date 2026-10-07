@@ -341,9 +341,9 @@ create-zass release
 → generated project
 ```
 
-The exact template semantics are finalized in the next **ZASS Project Bootstrap Core** phase.
+The exact template semantics are now owned by the **frozen ZASS Project Bootstrap Core v0.1**.
 
-The npm CLI must be structured so its local bootstrap logic can be promoted/reused by that shared core rather than becoming a second independent bootstrap engine.
+The CLI consumes that shared Core in repository development rather than maintaining a second bootstrap engine. Before npm publication, the packed `create-zass` artifact must prove that the required Core code/assets are included or resolved through a publish-safe dependency strategy; a monorepo sibling import is not publication proof.
 
 ## 13. No external side effects
 
@@ -421,9 +421,7 @@ The implementation should return a factual internal result shaped approximately 
 }
 ```
 
-This is not yet the frozen shared Bootstrap Core schema.
-
-The next Bootstrap Core phase may refine/freeze the shared contract.
+This CLI result is a consumer receipt, not the Bootstrap Core public API. The Bootstrap Core v0.1 public consumer surface is now **FROZEN / PASS**; this CLI receipt may remain consumer-specific as long as it stays factual.
 
 ## 17. Success output
 
@@ -499,7 +497,7 @@ Initial implementation should remain bounded to:
 7. factual receipt/console formatting;
 8. automated tests.
 
-Do not implement CrossAI integration or the final shared Bootstrap Core contract in this slice.
+Do not implement CrossAI integration in this CLI slice. The shared Bootstrap Core contract is now frozen separately and must be consumed without duplicating its semantics.
 
 ## 21. Acceptance requirements
 
@@ -552,7 +550,6 @@ Not part of v0.1:
 - ACTION_PLAN/ARCHITECTURE auto-generation;
 - method recommendation engine;
 - automatic routing from user intent;
-- final shared Bootstrap Core contract;
 - telemetry;
 - remote template updates.
 
@@ -574,6 +571,10 @@ create-zass/
 ├── package.json
 ├── bin/create-zass.js
 ├── src/
+└── test/
+
+bootstrap-core/
+├── src/
 ├── templates/
 └── test/
 ```
@@ -592,7 +593,7 @@ Implemented behavior:
 - partial targets created by the current run are removed on known failure;
 - generated project contains exactly one selected method file plus `README.md` and `.gitignore`;
 - no Git, GitHub, CrossAI, Drive, AI API, telemetry, runtime template download, project `npm init`, or dependency installation behavior is present;
-- bundled templates are versioned package assets and are regression-tested against the canonical repository method files;
+- Bootstrap Core bundled templates are versioned assets and regression-tested against the canonical repository method files; `create-zass` consumes those Core semantics in the monorepo;
 - repository CI now runs both `zass-cli` and `create-zass` tests.
 
 ### Windows evidence
@@ -635,6 +636,6 @@ npm pack
 → explicit publish decision
 ```
 
-That gate is future work and is not required to call the local v0.1 implementation complete.
+That publication gate is now the **next TRACK B gate** and remains separate from the already-complete local v0.1 implementation.
 
-The shared ZASS Project Bootstrap Core is also not yet frozen; it remains the next TRACK B phase.
+The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. Current publication readiness must therefore prove the distribution boundary itself. In particular, the present repository implementation imports `bootstrap-core` from a monorepo sibling path; the npm package must be made standalone through a proven bundled/dependency approach before publication, then validated with `npm pack` + clean-install smoke testing. CrossAI Bootstrap Core consumption remains later and separately gated.

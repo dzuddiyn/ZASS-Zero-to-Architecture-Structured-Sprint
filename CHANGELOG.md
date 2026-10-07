@@ -1,3 +1,11 @@
+## 2026-10-08 — Bootstrap stale-status cleanup
+
+- Removed current-facing Bootstrap Core HOLD/NEXT wording that had been superseded by the completed corrective API cleanup and public-API freeze.
+- Aligned the Bootstrap Core contract, Track B sequence, productization roadmap, Core README, npm CLI contract, and shared-core direction with **Bootstrap Core v0.1 PUBLIC API FROZEN / PASS**.
+- Preserved historical HOLD/field-test/STOP-REVIEW receipts as historical evidence rather than rewriting past state.
+- Set the next Track B gate to `create-zass@0.1.0` npm publication readiness: standalone packaging-boundary remediation → `npm pack` + clean-install smoke test → publish if PASS → fresh registry verification → publication receipt.
+- CrossAI Bootstrap Core consumption remains later and separately gated after npm publication closure.
+
 ## 2026-10-07 — Full ZASS v0.3.10 / ZASSIMPLE v0.3.2 Architecture-to-Execution
 
 - LOCKED Architecture Challenge as a pre-confirmation **gate/review mode** for mature material technical architecture rather than a new top-level lifecycle stage.
