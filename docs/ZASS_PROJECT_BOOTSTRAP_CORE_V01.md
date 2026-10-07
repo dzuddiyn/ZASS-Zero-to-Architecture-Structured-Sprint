@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW HOLD — PRE-FREEZE API CORRECTION REQUIRED  
+**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — PUBLIC API FROZEN / PASS  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -106,7 +106,7 @@ External systems may add their own operational identifiers outside the Core arti
 
 ## 5. Input contract
 
-Provisional v0.1 API concept:
+Frozen v0.1 public consumer call shape:
 
 ```js
 buildBootstrapPlan({
@@ -239,7 +239,7 @@ File ordering is deterministic:
 2. README;
 3. gitignore.
 
-This shape is locked for v0.1 implementation, but is not yet the frozen stable external API. Stable freeze happens only after field testing.
+This plan shape is locked for v0.1 behavior. The stable public consumer API was frozen after field testing and corrective STOP/REVIEW; internal helper surfaces remain outside that public contract.
 
 ## 9. Initial project metadata
 
@@ -608,17 +608,22 @@ Field evidence must specifically check whether generated artifacts are understan
 
 ## 24. Stable freeze gate
 
-The v0.1 contract is LOCKED for implementation but NOT YET the stable external Core contract.
+The v0.1 stable public consumer API is now **FROZEN / PASS**.
 
-After field testing:
+Completed sequence:
 
 ```text
-STOP / REVIEW
-→ correct field defects if any
-→ freeze stable Bootstrap Core contract
+implementation ✅
+→ field test ✅
+→ STOP / REVIEW corrective gate ✅
+→ deterministic public API seam corrected ✅
+→ repeat STOP / REVIEW ✅ PASS
+→ stable Bootstrap Core public API FROZEN ✅
 ```
 
-Only then should CrossAI consumption or public package-distribution architecture treat the Core interface as stable.
+Closure receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
+
+This freeze makes the Core interface stable enough for downstream package/distribution and CrossAI consumer gates. It does **not** itself publish `create-zass` or authorize CrossAI integration.
 
 ## 25. Deferred
 
@@ -674,7 +679,7 @@ validateBootstrapPlan(...)
 verifyBootstrapSnapshot(...)
 ```
 
-Additional shared catalog/read helpers remain internal/provisional support surfaces until the stable freeze gate.
+Additional validators, template loaders, catalog predicates, and support helpers remain internal implementation surfaces outside the frozen public root export contract.
 
 ### Shared ownership now implemented
 
@@ -747,33 +752,36 @@ PR #44 ZASS CI PASS with:
 
 Bootstrap Core v0.1 implementation: **PASS for implementation gate**.
 
-This does **not** freeze the stable external API.
-
 Field test subsequently PASSED. Receipt: [`ZASS_BOOTSTRAP_CORE_FIELD_TEST.md`](ZASS_BOOTSTRAP_CORE_FIELD_TEST.md).
 
-Next gate remains:
-
-```text
-STOP / REVIEW
-→ freeze stable Bootstrap Core contract
-```
-
-CrossAI integration, Drive adapter, Git/GitHub integration and npm publication remain outside this implementation step.
+The later corrective STOP/REVIEW sequence also completed and the stable public consumer API is now **FROZEN / PASS**. npm publication and CrossAI consumption remain separate downstream gates.
 
 
-## 28. STOP / REVIEW result
+## 28. STOP / REVIEW closure
 
-STOP/REVIEW did **not** freeze the stable external Core API.
+The earlier HOLD was resolved.
 
-Review result:
+Final result:
 
 ```text
 functional / field behavior   PASS
-stable API readiness          HOLD
+deterministic public API      PASS
+stable API readiness          PASS / FROZEN
 ```
 
-Reason: the currently exported `buildBootstrapPlan(..., dependencies)` surface exposes a template-loader override that can produce a different plan for the same project name + method + language + Core release.
+The public template-loader injection was removed from `buildBootstrapPlan({ projectName, method, language })`, the supported root consumer API was narrowed and regression-locked, canonical templates were synchronized, and repeat STOP/REVIEW plus post-merge `main` CI passed.
 
-Receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
+Frozen public consumer surface:
 
-Next: correct the public deterministic API seam, re-run targeted regression/CI, then repeat STOP/REVIEW before stable freeze.
+```text
+CORE_CONTRACT_VERSION
+METHOD_CHOICES
+LANGUAGE_CHOICES
+getBootstrapDescriptor
+buildBootstrapPlan
+verifyBootstrapSnapshot
+```
+
+Closure receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
+
+Next productization gate: npm publication readiness for `create-zass@0.1.0`; CrossAI consumption remains later and separately gated.

@@ -15,4 +15,4 @@ It owns deterministic project-bootstrap semantics only:
 
 It does not create directories, write files, call Git/GitHub/Drive/CrossAI, use AI APIs, send telemetry, or access network services.
 
-The module remains private and its external API is not frozen until the later field-test + STOP/REVIEW gate.
+The module remains private. Its stable public consumer API is now **FROZEN / PASS** after field testing, corrective API cleanup, repeat STOP/REVIEW, and post-merge CI verification. Internal validators, template loaders, and support helpers remain implementation details outside the frozen root export contract.
