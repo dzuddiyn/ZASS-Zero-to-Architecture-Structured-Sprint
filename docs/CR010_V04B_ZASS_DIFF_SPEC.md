@@ -1,6 +1,6 @@
 # CR-010 v0.4b — `zass diff` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTED / CI PASS — REAL-PROJECT FIELD TEST PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — STOP/REVIEW PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -475,3 +475,14 @@ CRLF / CR → LF
 before deciding `UNCHANGED` versus `MODIFIED`.
 
 This does not trim spaces, collapse blank lines, normalize Markdown, or hide semantic/content changes.
+
+
+## 22. Real-project field validation
+
+CR-010 v0.4 real-project field gate is **PASS**.
+
+Field testing on Windows first exposed and then corrected an EOL-only false-positive file delta. After the correction, clean Kerani_Core state returned `NO_CHANGE`; deliberate real-project mutations produced factual `CHANGED` and declared-readiness delta output while `zass check` retained validation authority.
+
+See [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md).
+
+CR-010 closure remains pending the explicit STOP/REVIEW gate.
