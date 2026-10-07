@@ -313,3 +313,23 @@ test('CLI zass diff rejects arguments with exit code 2', async (t) => {
   assert.equal(result.status, 2);
   assert.match(result.stderr, /zass diff/);
 });
+
+
+test('CR-010 v0.4b field regression ignores CRLF/LF representation differences', async (t) => {
+  const dir = await initRepo({
+    'ZASS.md': baseZass(),
+    'ACTION_PLAN.md': '# ACTION PLAN\n'
+  });
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+
+  const zass = await fs.readFile(path.join(dir, 'ZASS.md'), 'utf8');
+  const action = await fs.readFile(path.join(dir, 'ACTION_PLAN.md'), 'utf8');
+  await fs.writeFile(path.join(dir, 'ZASS.md'), zass.replace(/\n/g, '\r\n'), 'utf8');
+  await fs.writeFile(path.join(dir, 'ACTION_PLAN.md'), action.replace(/\n/g, '\r\n'), 'utf8');
+
+  const report = await runDiff(dir);
+
+  assert.equal(report.state, 'NO_CHANGE');
+  assert.equal(state(report, 'ZASS.md'), 'UNCHANGED');
+  assert.equal(state(report, 'ACTION_PLAN.md'), 'UNCHANGED');
+});
