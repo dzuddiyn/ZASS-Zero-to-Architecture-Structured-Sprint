@@ -1,3 +1,15 @@
+## 2026-10-07 — ZASS Project Bootstrap Core v0.1 field test PASS
+
+- Field-tested four real Windows bootstrap projects: ZASSPILL/English, ZASSELECTION/Bahasa Melayu, ZASSIMPLE/English, and Full ZASS/Bahasa Melayu.
+- Each local materialization produced exactly one selected method file plus README.md and .gitignore.
+- Generated README files were understandable, localized, consumer-neutral, and free of Git/GitHub/CrossAI/Drive state claims.
+- Full-ZASS Bahasa Melayu generated canonical ZASS.md and passed zass check with 0 errors / 1 expected no-baseline warning / exit 0.
+- Ran a second consumer-style in-memory adapter using buildBootstrapPlan → write/read-back Map → verifyBootstrapSnapshot, independent of the create-zass filesystem path.
+- Second-consumer plans were deterministic, verified successfully, and deliberate content tampering was rejected with B205.
+- No field defect requiring corrective Core implementation was found.
+- Receipt: docs/ZASS_BOOTSTRAP_CORE_FIELD_TEST.md.
+- NEXT: STOP/REVIEW. Stable external Core contract is not frozen yet; CrossAI integration and npm publication remain separately gated.
+
 ## 2026-10-07 — ZASS Project Bootstrap Core v0.1 implementation
 
 - Implemented private `zass-bootstrap-core@0.1.0` under `bootstrap-core/`.
