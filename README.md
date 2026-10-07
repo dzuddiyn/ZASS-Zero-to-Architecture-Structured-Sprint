@@ -144,7 +144,7 @@ COMMIT
 
 ## 3. CLI — coming soon
 
-**Bootstrap status: Specification locked — implementation pending.**
+**Bootstrap status: v0.1 behavioral contract LOCKED — implementation pending.**
 
 Target experience:
 
@@ -152,18 +152,40 @@ Target experience:
 npm create zass@latest my-project
 ```
 
-Target minimal project:
+If method/language flags are not supplied, the interactive bootstrap asks the user to choose:
 
 ```text
-my-project/
-├── ZASSIMPLE_EN.md
-├── README.md
-└── .gitignore
+Method:
+  ZASSPILL
+  ZASSELECTION
+  ZASSIMPLE
+  FULL ZASS
+
+Language:
+  English
+  Bahasa Melayu
 ```
 
-ZASSIMPLE is the default. No method-selection wizard.
+There is **no silent npm method default**.
+
+Automation may be explicit:
+
+```bash
+npm create zass@latest my-project -- --method zassimple --lang en
+```
+
+Every v0.1 bootstrap creates one selected method file plus:
+
+```text
+README.md
+.gitignore
+```
+
+Full ZASS always uses `ZASS.md` as the generated project authority filename so current `zass check/status/diff` discovery remains compatible.
 
 > **The project-bootstrap CLI is not released yet. The command above is the locked target UX, not a currently available package.**
+>
+> Contract: [`docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 >
 > **Developer tooling:** CR-010 is **CLOSED** at **zass-cli v0.4.0** under [`cli/`](cli/README.md): `zass check`, `zass status`, and `zass diff`. The CLI is still private/not published to npm, so use `npm link` for local development.
 

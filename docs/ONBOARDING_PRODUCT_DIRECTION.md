@@ -20,7 +20,7 @@ The landing experience should lead with the user's problem:
 
 > Stop repeating the same project context to every AI.
 
-ZASS is not introduced first as a catalogue of methods. The default path is to start with **ZASSIMPLE**, work naturally, persist approved state deliberately, and reveal advanced methods only when needed.
+ZASS is not introduced first as a catalogue of methods. The default **landing/conversational path** is to start with **ZASSIMPLE**, work naturally, persist approved state deliberately, and reveal advanced methods only when needed. The npm bootstrap is an explicit-tooling exception: it asks the user which official method to create rather than silently selecting one.
 
 ---
 
@@ -42,7 +42,7 @@ HUMAN-APPROVED DECISIONS
 TRACEABLE PROJECT STATE / ARCHITECTURE
 ```
 
-Default onboarding begins with **ZASSIMPLE**. New users are not required to choose between ZASS, ZASSIMPLE, ZASSELECTION, ACTION PLAN, or advanced methods before starting.
+Default landing/conversational onboarding begins with **ZASSIMPLE**. New users are not required to choose between advanced methods before starting through that path. The npm bootstrap follows L-CLI-002 instead and explicitly asks which official method and language to create.
 
 **Primary positioning:**
 
@@ -101,7 +101,7 @@ Target user experience:
 npm create zass@latest my-project
 ```
 
-Then work from the generated ZASSIMPLE project.
+Then choose the ZASS method and language explicitly in the interactive bootstrap, or provide them through CLI flags for automation.
 
 ### 2. Manual file — portable start
 
@@ -279,53 +279,60 @@ For **ZASSIMPLE**, keep ZASSIMPLE semantics. Do not import Full-ZASS batch `PROC
 
 ---
 
-## L-CLI-001 — CLI is an official onboarding mechanism
+## L-CLI-001 — Historical npm default — SUPERSEDED
 
-**Decision:** The CLI is a first-class official onboarding path for ZASS.
+**Status:** SUPERSEDED by L-CLI-002 on 2026-10-07.
 
-Target command:
+The earlier npm-bootstrap lock used:
+
+```text
+ZASSIMPLE default
+English default
+no method-selection question
+```
+
+That default applied only to the planned npm onboarding path. It no longer governs `npm create zass`.
+
+This supersession does **not** change ZASS SYSTEM routing: ZASSPILL remains DUMP, ZASSELECTION remains DECIDE, and ZASSIMPLE remains the default lightweight DESIGN path.
+
+## L-CLI-002 — Explicit npm method/language bootstrap
+
+**Decision:** The CLI remains a first-class official onboarding path, but it must not silently select the user's ZASS method.
+
+Canonical target:
 
 ```bash
 npm create zass@latest my-project
 ```
 
-Target default output:
+Interactive bootstrap asks the user to choose explicitly from:
 
-```text
-my-project/
-├── ZASSIMPLE_EN.md
-├── README.md
-└── .gitignore
+- ZASSPILL;
+- ZASSELECTION;
+- ZASSIMPLE;
+- Full ZASS.
+
+It then asks for:
+
+- English; or
+- Bahasa Melayu.
+
+Automation bypasses prompts using explicit flags:
+
+```bash
+npm create zass@latest my-project -- --method zasspill --lang en
+npm create zass@latest my-project -- --method zasselection --lang my
+npm create zass@latest my-project -- --method zassimple --lang en
+npm create zass@latest my-project -- --method zass --lang my
 ```
 
-Locked default behavior:
+Non-interactive bootstrap must not guess a missing method or language.
 
-- generate **ZASSIMPLE**, not Full ZASS;
-- English default;
-- minimal project structure;
-- no method-selection question during the basic path;
-- no backend or complex configuration;
-- generated README is short and action-oriented;
-- generated `.gitignore` ignores common secret files.
+The complete locked behavioral contract is:
 
-Suggested baseline `.gitignore`:
+- [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
-```gitignore
-.env
-.env.*
-!.env.example
-.secrets/
-*.key
-*.pem
-```
-
-Documentation must also warn:
-
-> Never place passwords, API keys, tokens, or sensitive personal data inside tracked ZASS Markdown files.
-
-The CLI implementation may be built later. The **CLI onboarding mechanism and minimal default behavior are LOCKED now**.
-
-If the exact npm package name is technically unavailable at publication time, changing the command requires an explicit owner decision; do not silently substitute another command.
+The bootstrap remains local-first, create-new-only, and free of implicit Git/GitHub/CrossAI side effects.
 
 ---
 
