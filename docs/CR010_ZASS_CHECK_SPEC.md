@@ -34,7 +34,7 @@ Exit codes:
 - `1` — one or more validation errors;
 - `2` — CLI/runtime/system error.
 
-The check engine is stable through v0.3. CR-010 v0.4a `zass status` and v0.4b `zass diff` are now implemented and real-project field-validated under their locked contracts. The explicit CR-010 STOP/REVIEW gate remains before closure.
+The check engine is stable through v0.3. CR-010 v0.4a `zass status` and v0.4b `zass diff` are implemented and real-project field-validated under their locked contracts. The explicit CR-010 STOP/REVIEW gate PASSED; CR-010 is CLOSED.
 
 ## 2. Initial repository structure
 
