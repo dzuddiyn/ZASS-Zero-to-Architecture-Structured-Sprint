@@ -1,3 +1,12 @@
+## 2026-10-07 — npm Bootstrap CLI v0.1 contract LOCKED
+
+- SUPERSEDED the earlier npm-only onboarding default that silently generated ZASSIMPLE/English with no method-selection question.
+- LOCKED `npm create zass@latest <project>` as an explicit four-method bootstrap: ZASSPILL, ZASSELECTION, ZASSIMPLE, or Full ZASS.
+- Interactive use asks for method and language; non-interactive use must provide `--method` and `--lang` rather than guessing.
+- Full ZASS bootstrap preserves `ZASS.md` as the generated project authority filename for both English and Bahasa Melayu so current zass-cli discovery remains compatible.
+- v0.1 remains local-first, create-new-only, and performs no implicit Git, GitHub, CrossAI, Drive, AI API, telemetry, or runtime-template-download side effects.
+- The npm package is not implemented or published by this lock; implementation is the next TRACK B step.
+
 ## 2026-10-07 — CR-010 STOP / REVIEW PASS — CLOSED
 
 - Ran the explicit CR-010 STOP/REVIEW after v0.4 implementation and real-project field validation.
