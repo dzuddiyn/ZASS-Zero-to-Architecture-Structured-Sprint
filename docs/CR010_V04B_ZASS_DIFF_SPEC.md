@@ -418,7 +418,7 @@ Before v0.4b implementation may be called PASS, tests must cover:
 - argument rejection;
 - existing `zass check` and `zass status` regressions remain PASS.
 
-The later CR-010 real-project field test remains a separate gate after v0.4b implementation.
+The real-project field test remained a separate gate after v0.4b implementation and subsequently PASSED.
 
 ## 19. Deferred
 
@@ -459,7 +459,7 @@ GitHub Actions ZASS CI passed on PR #37 after implementation:
 
 No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, methodology change, or real-project field-test claim is included.
 
-The CR-010 real-project field-test gate remains pending.
+At implementation-receipt time the CR-010 real-project field-test gate was pending; it subsequently PASSED.
 
 
 ## 21. Windows field-test correction
