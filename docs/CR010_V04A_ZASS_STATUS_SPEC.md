@@ -1,6 +1,6 @@
 # CR-010 v0.4a — `zass status` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION NOT STARTED  
+**Status:** LOCKED — IMPLEMENTATION IN PROGRESS  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -282,3 +282,16 @@ Not part of v0.4a:
 - dashboards or SaaS state;
 - npm publication;
 - Project Bootstrap Core implementation.
+
+
+## 15. Implementation progress
+
+Implementation branch adds the bounded v0.4a slice only:
+
+- `cli/src/status.js`;
+- local Git working-state detection in `cli/src/git.js`;
+- `zass status` CLI routing;
+- focused `status.test.js` coverage;
+- existing `zass check` usage regression updated for the newly supported command.
+
+No `zass diff`, npm publication, bootstrap-core work, remote access, or methodology change is included.
