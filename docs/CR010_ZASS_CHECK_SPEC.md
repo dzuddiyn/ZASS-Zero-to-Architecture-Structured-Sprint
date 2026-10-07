@@ -1,6 +1,6 @@
 # CR-010 — `zass check` Implementation Specification
 
-**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED
+**Status:** v0.1 + v0.2 + v0.3 IMPLEMENTED; v0.4a STATUS CONTRACT LOCKED / NOT IMPLEMENTED
 **Date:** 2026-09-30  
 **Owner:** Project Owner  
 **Scope:** First productized validator for ZASS
@@ -34,7 +34,7 @@ Exit codes:
 - `1` — one or more validation errors;
 - `2` — CLI/runtime/system error.
 
-`zass status` and `zass diff` are deferred until the check engine is stable.
+The check engine is stable through v0.3. CR-010 v0.4a `zass status` now has a LOCKED behavioral contract in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md); implementation has not started. `zass diff` remains deferred until its own behavioral contract is designed.
 
 ## 2. Initial repository structure
 
@@ -228,7 +228,9 @@ v0.2  Git-aware LOCKED drift
 
 v0.3  ACTION_PLAN consistency — IMPLEMENTED / FIELD-VALIDATED
 
-v0.4  status / diff
+v0.4a `zass status` — CONTRACT LOCKED / IMPLEMENTATION NOT STARTED
+
+v0.4b `zass diff` — NOT DESIGNED / NOT STARTED
 ```
 
 ## 7. Stop rule
@@ -269,3 +271,8 @@ Verification performed before commit:
 CR-010 v0.2 is **implemented**. Its locked specification is in [`CR010_V02_LOCKED_DRIFT_SPEC.md`](CR010_V02_LOCKED_DRIFT_SPEC.md).
 
 CR-010 v0.3 is now **implemented and field-validated**. Its locked specification and implementation receipt are in [`CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md`](CR010_V03_ACTION_PLAN_CONSISTENCY_SPEC.md).
+
+
+CR-010 v0.4a is now behaviorally LOCKED. Its specification is in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
+
+The v0.4a contract is read-only and factual: Full ZASS detection, primary file presence, reuse of the existing validator summary, compact local Git working state, and established exit-code semantics. It explicitly prohibits progress/lifecycle/next-action inference and does not implement `zass diff`.

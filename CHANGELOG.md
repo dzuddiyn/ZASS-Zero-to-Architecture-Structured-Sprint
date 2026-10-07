@@ -1,3 +1,10 @@
+## 2026-10-07 — CR-010 v0.4a contract
+
+- LOCKED the CR-010 v0.4a `zass status` behavioral contract; implementation has not started.
+- Locked a read-only factual snapshot over Full ZASS detection, primary file presence, existing validator summary, local Git CLEAN/CHANGED/UNKNOWN state, and HEAD/N/A baseline.
+- Locked guardrails against project mutation, remote access, progress/lifecycle inference, and next-action invention.
+- Split later `zass diff` work into v0.4b; no `zass diff` semantics were silently designed in this change.
+
 ## 2026-10-07 — TRACK B activation
 
 - Activated isolated parallel ZASS TRACK B before AISYNC T-020/T-021 completion.
