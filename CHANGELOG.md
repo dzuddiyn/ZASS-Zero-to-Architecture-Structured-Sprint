@@ -1,3 +1,11 @@
+## 2026-10-07 — CR-010 v0.4a implementation
+
+- Implemented `zass status` under the locked v0.4a read-only factual contract.
+- Added Full ZASS detection, primary file FOUND/MISSING reporting, existing-validator PASS/WARNING/ERROR summary, local Git CLEAN/CHANGED/UNKNOWN state, and HEAD/N/A baseline.
+- Added focused tests including non-Git behavior, read-only proof, CLI routing, and argument rejection.
+- ZASS CI passed all workflow steps on PR #35; later real-project field testing remains pending and is not claimed here.
+- Did not implement `zass diff`, publish npm, or touch Bootstrap Core/CrossAI runtime.
+
 ## 2026-10-07 — CR-010 v0.4a contract
 
 - LOCKED the CR-010 v0.4a `zass status` behavioral contract; implementation has not started.
