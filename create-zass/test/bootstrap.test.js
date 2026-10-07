@@ -3,10 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import {
-  buildBootstrapPlan,
-  GITIGNORE_CONTENT
-} from '../../bootstrap-core/src/index.js';
+import { buildBootstrapPlan } from '../../bootstrap-core/src/index.js';
 import { bootstrapProject } from '../src/bootstrap.js';
 
 const CASES = [
@@ -55,7 +52,7 @@ for (const [method, language, methodFile] of CASES) {
 
     assert.equal(
       await fs.readFile(path.join(target, '.gitignore'), 'utf8'),
-      GITIGNORE_CONTENT
+      plan.files.find((file) => file.role === 'gitignore').content
     );
 
     assert.equal((await fs.readdir(target)).includes('.git'), false);

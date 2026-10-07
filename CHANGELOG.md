@@ -1,3 +1,14 @@
+## 2026-10-07 — Bootstrap Core pre-freeze API correction PASS
+
+- Removed public template-loader injection from `buildBootstrapPlan`; canonical input now determines the canonical plan.
+- Reduced root Core exports to six stable-candidate consumer surfaces: contract version, method/language choices, bootstrap descriptor, plan builder, and snapshot verifier.
+- Kept validators/template/readme/path helpers internal; no unused replacement injection seam was introduced.
+- Refactored create-zass option validation to consume canonical public choice lists.
+- Added explicit tests for exact root export surface and resistance to attempted public template override.
+- Mechanically synchronized four bundled Core templates after latest-main method updates exposed pre-existing template drift.
+- Windows regression: Bootstrap Core 28/28 PASS; create-zass 24/24 PASS; combined 52/52 PASS.
+- Stable API remains NOT FROZEN. NEXT: repeat STOP/REVIEW.
+
 ## 2026-10-07 — ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1 Challenge loop
 
 - LOCKED the pre-confirmation Challenge / Re-challenge loop for ZASSIMPLE.

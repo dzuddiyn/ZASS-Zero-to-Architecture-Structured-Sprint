@@ -3,10 +3,7 @@ import { buildProjectReadme, GITIGNORE_CONTENT } from './readme.js';
 import { loadBootstrapTemplate } from './templates.js';
 import { validateBootstrapInput, validateBootstrapPlan } from './validation.js';
 
-export async function buildBootstrapPlan(
-  { projectName, method, language },
-  dependencies = {}
-) {
+export async function buildBootstrapPlan({ projectName, method, language }) {
   const input = validateBootstrapInput({ projectName, method, language });
   if (!input.ok) {
     const error = new Error(input.errors.map((entry) => entry.message).join('; '));
@@ -16,8 +13,7 @@ export async function buildBootstrapPlan(
   }
 
   const descriptor = getBootstrapDescriptor(method, language);
-  const templateLoader = dependencies.loadTemplate ?? loadBootstrapTemplate;
-  const methodContent = await templateLoader(method, language);
+  const methodContent = await loadBootstrapTemplate(method, language);
   const readmeContent = buildProjectReadme({
     projectName,
     methodLabel: descriptor.methodLabel,
