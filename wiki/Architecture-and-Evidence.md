@@ -73,7 +73,7 @@ Strong direct evidence covers the relevant critical assumptions and major risks.
 
 Do not create a second percentage.
 
-## Mandatory display rule — Full ZASS v0.3.9
+## Mandatory display rule — Full ZASS v0.3.10
 
 Evidence Confidence must be shown when:
 
@@ -118,13 +118,43 @@ That is not a contradiction.
 ```text
 DRAFT ARCH
     ↓
-BUILD ARCHITECTURE
+ARCHITECTURE CHALLENGE
     ↓
-show decisions + readiness + assumptions + blockers
+KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED
+    ↓
+CONTROLLED REVISION
+    ↓
+YA, LOCK PRE-ARCH
+    ↓
+PRE-ARCH BASELINE — LOCKED FOR EXECUTION
+    ↓
+DETAILED ACTION PLAN + ATOMIC TASKS
+    ↓
+RESULT / EVIDENCE
+    ↓
+PRE-ARCH REVIEW / REVISION
+    ↓
+SUFFICIENT IMPLEMENTATION EVIDENCE
+    ↓
+LAST ARCHITECTURE CHALLENGE
+    ↓
+FINAL IMPROVE / REVISION
+    ↓
+BUILD ARCHITECTURE
     ↓
 YA, CONFIRM ARCHITECTURE
     ↓
 ARCHITECTURE CONFIRMED
+    ↓
+REBUILD RELEASE ACTION PLAN
+    ↓
+FIRST-RELEASE BUILD / VERIFY
+    ↓
+RELEASE ACCEPTANCE
+    ↓
+DELIVERED !!
 ```
 
 Architecture must follow owner-approved decisions. Missing major architectural decisions should be surfaced as blockers rather than silently assumed.
+
+For complex/high-impact architecture challenge, prefer a stronger reasoning capability or Work-style analysis/research environment when available. The rule is capability-based and tool-agnostic. For material technical architecture, bounded execution evidence is intentionally gathered **before** final confirmation against a locked PRE-ARCH baseline; then a last evidence-backed challenge is resolved before confirmation. Confirmation starts the release-build planning phase; it is not `DELIVERED !!`. See [Architecture-to-Execution](Architecture-to-Execution.md).

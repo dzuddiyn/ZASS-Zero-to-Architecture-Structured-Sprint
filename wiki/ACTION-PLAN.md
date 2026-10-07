@@ -11,8 +11,10 @@ Use it when a project has multi-step implementation, experiments, blockers or pr
 | File | Authority |
 |---|---|
 | `ZASS.md` | discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirements, readiness, architecture |
-| `ACTION_PLAN.md` | current execution state, actions, experiment execution, evidence, blockers, lessons, completed work |
+| `ACTION_PLAN.md` | implementation planning + current execution state, dependencies, feasibility findings, actions, gates, evidence, blockers, lessons, completed work |
 | `ARCHITECTURE.md` | confirmed architecture derived from the approved ZASS state |
+
+ACTION PLAN may surface an implementation finding that requires architecture review; that is feedback, not architecture authority.
 
 ACTION PLAN must not:
 
@@ -23,17 +25,22 @@ ACTION PLAN must not:
 ## Execution loop
 
 ```text
-ZASS: question / risk / candidate / experiment need
+LOCKED PRE-ARCH baseline
                     ↓
-ACTION PLAN: execute action or experiment
+DETAILED ACTION PLAN
                     ↓
-observed evidence
+ATOMIC TASK
                     ↓
-ZASS FEED
+RESULT / EVIDENCE
                     ↓
-ZASS REVIEW
-                    ↓
-DECIDE / LOCK / REJECT / TEST MORE / PIVOT
+PRE-ARCH REVIEW
+
+NO ARCH IMPACT → PASS → NEXT TASK
+TASK-PLAN ISSUE → REWORK
+ARCH IMPACT → REVISE / SUPERSEDE PRE-ARCH
+LOCKED DECISION IMPACT → STOP → OWNER
+
+Mature decision/evidence findings still return through ZASS FEED / ZASS REVIEW when decision authority is involved.
 ```
 
 ## Work-item states
@@ -105,3 +112,26 @@ Templates:
 
 - [ACTION_PLAN_TEMPLATE.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ACTION_PLAN_TEMPLATE.md)
 - [ACTION_PLAN_TEMPLATE_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ACTION_PLAN_TEMPLATE_EN.md)
+
+## Two technical plan modes
+
+```text
+PRE-ARCH EVIDENCE
+→ prove / de-risk / validate architecture
+→ task results feed PRE-ARCH review
+
+ARCHITECTURE CONFIRMED
+→ rebuild ACTION PLAN
+→ RELEASE BUILD
+→ build / integrate / harden / verify first release
+→ release acceptance
+→ DELIVERED !!
+```
+
+If release work reveals a material architecture defect, stop normal release flow and reopen governed architecture review.
+
+## Architecture feedback and atomic tasks
+
+If planning finds a dependency, feasibility, migration, testability, rollback, security, integration or operability issue that materially affects architecture, record it as an architecture-impact finding and return it for review. Do not bury it inside a task.
+
+For substantial technical architecture, the initial detailed ACTION PLAN is built against an owner-approved `PRE-ARCH BASELINE — LOCKED FOR EXECUTION` and drives evidence/de-risking tasks. Every result is classified for PRE-ARCH impact before the next task proceeds. After the last evidence-backed challenge and final architecture confirmation, **rebuild/rebase ACTION PLAN** from confirmed architecture plus current implementation state, then slice a fresh RELEASE BUILD queue. PRE-ARCH evidence tasks do not automatically become release tasks. See [Architecture-to-Execution](Architecture-to-Execution.md).

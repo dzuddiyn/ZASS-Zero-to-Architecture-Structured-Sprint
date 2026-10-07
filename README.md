@@ -292,16 +292,46 @@ LOCKED
     â†“
 DRAFT ARCHITECTURE
     â†“
-REVIEW
+ARCHITECTURE CHALLENGE
+    â†“
+CONTROLLED REVISION
+    â†“
+OWNER REVIEW
+    â†“
+LOCK PRE-ARCH BASELINE
+    â†“
+CAPABLE REASONER / DETAILED ACTION PLAN
+    â†“
+ATOMIC TASKS
+    â†“
+EXECUTION / RESULT
+    â†“
+PRE-ARCH REVIEW / REVISION
+    â†“
+SUFFICIENT IMPLEMENTATION EVIDENCE
+    â†“
+LAST ARCHITECTURE CHALLENGE
+    â†“
+FINAL IMPROVE / REVISION
     â†“
 YA, CONFIRM ARCHITECTURE
     â†“
-CONFIRMED ARCHITECTURE
+REBUILD RELEASE ACTION PLAN
+    â†“
+RELEASE ATOMIC TASKS
+    â†“
+BUILD / TEST / INTEGRATE / HARDEN / VERIFY
+    â†“
+RELEASE ACCEPTANCE
+    â†“
+DELIVERED !!
 ```
 
 ZASS does not ask AI to invent architecture first and justify it later.
 
-Architecture must follow the decisions that were actually accepted.
+Architecture must follow the decisions that were actually accepted. For material technical architecture, the challenged/revised draft becomes an owner-approved **PRE-ARCH execution baseline** before detailed planning. A capable reasoner/planner then builds the detailed Action Plan and atomic evidence tasks; results feed back through PRE-ARCH review. When evidence is sufficient, one **last evidence-backed architecture challenge** and any final improvement/revision happen before owner confirmation. After architecture is confirmed, ZASS rebuilds the release Action Plan and fresh atomic tasks to build, integrate, harden and verify the first release through `DELIVERED !!`.
+
+**[Read the Architecture-to-Execution Standard](docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md)**
 
 ---
 
@@ -349,18 +379,36 @@ DRAFT ARCH
 
 ZASS builds a working architecture draft from what is known and LOCKED.
 
-Before final confirmation:
+For material technical architecture, the next steps are:
 
 ```text
-BUILD ARCHITECTURE
+ARCHITECTURE CHALLENGE
+→ YA, LOCK PRE-ARCH
+→ detailed ACTION PLAN
+→ evidence atomic tasks
+→ result/evidence
+→ PRE-ARCH review
+→ sufficient evidence
+→ LAST ARCHITECTURE CHALLENGE
+→ final improve/revision
 ```
 
-The AI shows the decisions, assumptions, and blockers being used.
-
-Only the project owner can finally confirm:
+Only after the required evidence, last challenge and final revision are resolved does `BUILD ARCHITECTURE` open the final owner confirmation gate:
 
 ```text
 YA, CONFIRM ARCHITECTURE
+```
+
+After confirmation, rebuild the release plan from current truth:
+
+```text
+ARCHITECTURE CONFIRMED
+→ RELEASE ACTION PLAN
+→ fresh atomic tasks
+→ build first release
+→ test / integrate / harden / verify
+→ release acceptance
+→ DELIVERED !!
 ```
 
 A complete fictional walkthrough is available here:
@@ -524,8 +572,8 @@ You normally do **not** need all of them at the beginning.
 # Current status
 
 **ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
-**Full ZASS:** v0.3.9 â€” structured surfaces follow `ZASS.md` English / `ZASS_MY.md` Malay<br>
-**ZASSIMPLE:** v0.3.1
+**Full ZASS:** v0.3.10 â€” challenge → PRE-ARCH → evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
+**ZASSIMPLE:** v0.3.2
 **ZASSELECTION:** v0.2.4
 **ZASSPILL:** v1.0.0 method/protocol contract â€” PRODUCTION READY; global DUMP continuity route
 **License:** [MIT](LICENSE)
@@ -560,6 +608,7 @@ It includes:
 - Full ZASS
 - Architecture Readiness + Evidence Confidence
 - ACTION PLAN
+- Architecture-to-Execution Standard
 - cross-AI handoff
 - ZASSELECTION
 - ZASSPILL v1.0 continuity

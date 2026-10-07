@@ -2,7 +2,7 @@
 
 > ## Got an idea? **Dump it.** 💬
 
-**Current version:** v0.3.1
+**Current version:** v0.3.2
 **Default landing:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE_MY.md)
 
@@ -20,7 +20,7 @@ Language behavior: ordinary conversation may follow the user, while structured Z
 
 - `ACTION_PLAN.md` — hidden implementation-planning lineage; feeds Design and execution.
 - `DESIGN.md` — draft/confirmed design derived from owner-controlled decisions; technical architecture is included only when applicable.
-- `TASKS.md` — executable task slices derived from the current Action Plan.
+- `TASKS.md` — executable atomic task slices derived from the current Action Plan; coding workers must STOP & ESCALATE outside their bounded task.
 
 These files support the method. Users should not need to manage them manually just to brainstorm.
 
@@ -31,3 +31,7 @@ These files support the method. Users should not need to manage them manually ju
 
 
 
+
+## Architecture-to-execution standard
+
+For substantial technical work, ZASSIMPLE uses the compact flow `Challenge → owner-approved PRE-ARCH → capable-reasoner detailed ACTION PLAN → evidence atomic tasks → PRE-ARCH review → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!`. Ordinary/non-technical design keeps the lightweight direct-confirm path. See [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).

@@ -31,7 +31,8 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [Full ZASS](Full-ZASS.md) — decision, evidence, risk and architecture governance.
 - [ZASS Convergence Loop](Convergence-Loop.md) — capture broadly, form candidates, then research and cross-check before LOCK.
 - [Architecture & Evidence](Architecture-and-Evidence.md) — ZERO → ARCHITECTURE and Evidence Confidence.
-- [ACTION PLAN](ACTION-PLAN.md) — execution without creating a second decision ledger.
+- [ACTION PLAN](ACTION-PLAN.md) — implementation planning/execution without creating a second decision ledger.
+- [Architecture-to-Execution](Architecture-to-Execution.md) — challenge, revision, atomic task and STOP/ESCALATE contract.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
 - [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
 - [ZASSPILL](ZASSPILL.md) — DUMP continuity across chats and AIs; the v1.0.0 method/protocol contract is production-ready.
@@ -59,8 +60,8 @@ Research follows candidate formation, not idea capture. Research findings return
 | Component | Current state |
 |---|---|
 | ZASS SYSTEM | v0.2.1 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate |
-| Full ZASS | v0.3.9 |
-| ZASSIMPLE | v0.3.1 |
+| Full ZASS | v0.3.10 |
+| ZASSIMPLE | v0.3.2 |
 | ZASSELECTION | v0.2.4 |
 | ZASSPILL | v1.0.0 method/protocol contract — PRODUCTION READY |
 | `zass check` | Local v0.2 implemented; v0.3 plan locked/not started |

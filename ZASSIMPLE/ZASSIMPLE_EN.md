@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.3.1
+**Version:** 0.3.2
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -67,7 +67,7 @@ thoughts that appear during DECIDE/DESIGN into the action-plan lineage; do not
 burden the user with the internal ACTION PLAN unless it is needed for review,
 design refinement, or execution.
 
-When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Design Progress. Once design is confirmed, show Action Detail Progress. Progress must come from explicit coverage criteria, not invented precision.
+When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Design Progress. For ordinary work, show Action Detail Progress after design confirmation; for substantial technical architecture, Action Detail Progress may begin after `YA, LOCK PRE-ARCH` because detailed planning/execution occurs before final confirmation. Progress must come from explicit coverage criteria, not invented precision.
 
 Design Progress criteria:
 1) purpose, 2) main flow, 3) main elements, 4) relevant LOCKED decisions.
@@ -103,7 +103,11 @@ Why:
 
 Challenge the draft before final confirmation?
 
+Ordinary / non-technical design:
 [🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
+
+Substantial technical architecture:
+[🥊 CHALLENGE DESIGN !]   ← required before PRE-ARCH execution baseline
 
 The AI chooses one suitable thinking method automatically; do not make the user choose a methodology. Prefer the smallest useful challenge, for example: assumption challenge, pre-mortem, failure-mode review, first-principles check, constraint test, user-journey review, or trade-off review.
 
@@ -120,29 +124,45 @@ Use domain-appropriate design language. For software/IoT, architecture may be
 part of the design; for a shop, business, service, or physical project, do not
 force architecture terminology.
 Once the draft covers purpose, main flow, main elements, and relevant
-LOCKED decisions, **offer a pre-confirmation design test first**. The AI must
-select one thinking method suited to the current domain, uncertainty, and risk,
-state the method and one-line reason, then ask whether to run it.
-[🥊 CHALLENGE DESIGN !] runs one focused challenge pass. [🎨 CONTINUE TO CONFIRM]
-explicitly skips that optional first challenge and proceeds to the confirmation gate.
-If the challenge finds a material weakness, return to DESIGN and refine before
-surfacing confirmation. If the challenge PASSes, do not jump straight to
-confirmation. Always offer:
+LOCKED decisions, **offer the design challenge first**. The AI must select one
+thinking method suited to the current domain, uncertainty, and risk, state the
+method and one-line reason, then ask whether to run it.
 
-Ready to confirm design? or Re-challenge?!
+For ordinary/non-technical design, the first challenge remains optional:
+[🥊 CHALLENGE DESIGN !] runs one focused pass and [🎨 CONTINUE TO CONFIRM]
+may explicitly skip it.
 
-[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+For substantial technical architecture, CHALLENGE DESIGN is mandatory before
+material execution. CONTINUE TO CONFIRM must not bypass this technical gate.
+If the challenge finds a material weakness, return to DESIGN and refine.
+If technical Challenge PASSes and revision is coherent, offer:
 
-RE-CHALLENGE chooses the next most valuable thinking method for the residual
-risk. Do not repeat the same method unless the design changed materially or
-that same risk genuinely needs retesting. After every PASS, offer RE-CHALLENGE
-again until the owner chooses CONFIRM DESIGN. If the owner explicitly skips
-the first challenge with CONTINUE TO CONFIRM, proceed directly to the
-confirmation gate.
-CONFIRM DESIGN opens the final confirmation review: show relevant LOCKED
-decisions, critical assumptions, test status/findings, and blockers.
-It does not confirm automatically. Confirm design only after the owner
-replies exactly YA, CONFIRM DESIGN.
+[🔒 LOCK PRE-ARCH]   [🥊 RE-CHALLENGE DESIGN ?!]
+
+LOCK PRE-ARCH opens an owner review. Only the exact owner reply
+YA, LOCK PRE-ARCH creates PRE-ARCH BASELINE — LOCKED FOR EXECUTION.
+This is not final design confirmation.
+
+After PRE-ARCH lock, use a capable Architect / Strong Reasoner and Planner to
+build the detailed ACTION PLAN and atomic tasks. Each task result returns to
+PRE-ARCH review. NO ARCH IMPACT may PASS to the next task; TASK-PLAN ISSUE
+causes REWORK; material architecture impact triggers PRE-ARCH revision;
+LOCKED-decision impact STOPs at the owner gate.
+
+For substantial technical architecture, once PRE-ARCH/ACTION PLAN evidence is
+sufficient, run one **LAST DESIGN / ARCHITECTURE CHALLENGE** against the
+evidence-backed final candidate. Apply any justified final improvement/revision.
+If a LOCKED decision must change, STOP at the owner gate.
+
+Only after that last challenge and final improvement does CONFIRM DESIGN become
+available. Final confirmation still requires the exact owner reply
+YA, CONFIRM DESIGN.
+
+After confirmed technical design/architecture, do not blindly continue the
+PRE-ARCH evidence task queue. Rebuild the ACTION PLAN from the confirmed design
+and current implementation state, slice fresh release atomic tasks, build the
+first release version, complete required integration/hardening/verification and
+release acceptance, then mark DELIVERED !! only when acceptance is factually met.
 
 Special keywords take effect only when I intentionally instruct you, not in
 demos, examples, quotations, negations, or the footer.
@@ -202,47 +222,60 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | `DRAFT DESIGN` | AI prepares/revises a working-version design using domain-appropriate language. Architecture appears only when technically applicable. |
 | `DRAFT ARCH` | Compatibility/domain-specific alias for technical projects; treat it as a design draft with an architecture subtype. |
 | `CHALLENGE DESIGN` | Primary pre-confirmation challenge command; the UI may render it as `[🥊 CHALLENGE DESIGN !]`. AI selects the most suitable thinking method automatically, runs one focused challenge, and records PASS / REFINE plus the material finding. |
-| `RE-CHALLENGE DESIGN` | After a PASS, run another focused challenge using the next most valuable thinking method for residual risk. The UI renders `[🥊 RE-CHALLENGE DESIGN ?!]`. After every PASS, offer RE-CHALLENGE or CONFIRM again. |
-| `CONTINUE TO CONFIRM` | Owner explicitly skips the optional first challenge and proceeds to the normal confirmation gate. |
-| `CONFIRM DESIGN` | Primary surface command. AI opens the final design confirmation review only after the challenge question has been surfaced and either the owner has a PASS history or explicitly skipped the first challenge. It does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM DESIGN`. |
-| `CONFIRM ARCHITECTURE` or `BUILD ARCHITECTURE` | Compatibility/domain-specific aliases for technical projects; route them through the same design confirmation review. |
-| `DO IT` | After design is confirmed, re-plan from the latest state, slice the Action Plan, and present/resume only the current executable task. |
-| `YA, CONFIRM DESIGN` | Final owner confirmation. AI builds or updates confirmed design only from `D-xxx | LOCKED` decisions and accepted context. |
-| `YA, CONFIRM ARCHITECTURE` | Compatibility/domain-specific final confirmation for technical projects; record the result as confirmed DESIGN with architecture as applicable. |
+| `RE-CHALLENGE DESIGN` | After a PASS, run another focused challenge using the next most valuable thinking method for residual risk. Ordinary/non-technical design may then confirm; substantial technical architecture may proceed to PRE-ARCH owner review only after challenge/revision coherence. |
+| `CONTINUE TO CONFIRM` | Owner explicitly skips the optional first challenge **only for ordinary/non-technical design**. It must not bypass Challenge for substantial technical architecture. |
+| `LOCK PRE-ARCH` | Technical execution-baseline gate. After Challenge/revision coherence, open owner review for `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`; request exact reply `YA, LOCK PRE-ARCH`. |
+| `YA, LOCK PRE-ARCH` | Owner approves the current challenged/revised technical design as a versioned execution baseline. This is not final design/architecture confirmation. |
+| `LAST CHALLENGE` | For substantial technical architecture, run one final evidence-backed design/architecture challenge after PRE-ARCH evidence is sufficient and before final confirmation. Apply justified final revision; LOCKED-decision impact stops at the owner gate. |
+| `CONFIRM DESIGN` | Primary final-confirmation surface. Ordinary/non-technical design may reach it through the lightweight path. Substantial technical architecture reaches it only after locked PRE-ARCH → detailed ACTION PLAN → atomic-task evidence → PRE-ARCH review → sufficient evidence → LAST CHALLENGE → final improvement/revision. |
+| `CONFIRM ARCHITECTURE` or `BUILD ARCHITECTURE` | Compatibility/domain-specific aliases for the **final** technical confirmation review after the PRE-ARCH evidence loop. |
+| `DO IT` | Ordinary/non-technical work: after confirmed design. Substantial technical architecture has two bounded execution modes: PRE-ARCH evidence tasks after `YA, LOCK PRE-ARCH`, then fresh RELEASE BUILD tasks after final confirmation. Each task remains atomic and reviewable. |
+| `YA, CONFIRM DESIGN` | Final owner confirmation. For technical architecture it is valid only after the required PRE-ARCH evidence loop; confirmed design derives from `D-xxx | LOCKED`, latest reviewed PRE-ARCH, and accepted evidence/context. |
+| `YA, CONFIRM ARCHITECTURE` | Compatibility/domain-specific final confirmation for technical projects after the PRE-ARCH evidence loop; record the result as confirmed DESIGN with architecture as applicable. |
 
-For `CONFIRM DESIGN` (or a technical compatibility alias), AI must first reply:
+For `CONFIRM DESIGN` (or a technical compatibility alias), AI must first perform the appropriate final review.
+
+Ordinary/non-technical design may use the lightweight challenge/skip history.
+
+For substantial technical architecture, show:
 
 ```text
-⚠️ Design confirmation review
+⚠️ Final technical design confirmation review
 
-Design will use these LOCKED decisions:
+LOCKED decisions:
 - [D-xxx ...]
 
+PRE-ARCH:
+- Current baseline/version: [...]
+- Owner baseline approval: YES / NO
+- Challenge history/findings: [...]
+- Material revisions/supersessions: [...]
+
+Implementation evidence:
+- Required by ACTION PLAN: [...]
+- Completed / verified: [...]
+- Still missing / explicitly deferred: [...]
+
+Task-result architecture review:
+- PASS / REWORK / PRE-ARCH revisions / owner gates: [...]
+
 Critical assumptions / blockers:
-- [if any]
+- [...]
 
-Pre-confirmation challenge:
-- Status: NOT RUN / PASS / REFINE / SKIPPED BY OWNER
-- Challenge count: [0 / 1 / 2 / ...]
-- Method(s): [selected thinking method(s) or N/A]
-- Material finding(s): [short result(s)]
+If required evidence is insufficient:
+Do not request final confirmation. Return to PRE-ARCH / ACTION PLAN / task evidence.
 
-Design Progress: [x/4]
+If evidence is sufficient:
+Run LAST CHALLENGE against the evidence-backed final candidate.
+Apply any justified final improvement/revision and re-check affected evidence.
 
-If the latest challenge found a material weakness:
-Return to DESIGN and refine; do not request final confirmation yet.
-
-If the latest challenge PASSed:
-Show exactly:
-Ready to confirm design? or Re-challenge?!
-
-[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
-
-If blockers remain:
-Stay in DESIGN and state the next thing needed.
-
-If ready:
+If still ready:
 Reply: YA, CONFIRM DESIGN
+
+After confirmation:
+Rebuild RELEASE ACTION PLAN from confirmed design + current implementation state,
+slice fresh release atomic tasks, build/test/integrate/harden/verify the first
+release, then mark DELIVERED !! only after release acceptance passes.
 ```
 
 ### Required AI footer
@@ -264,7 +297,10 @@ ZASSIMPLE keeps implementation planning out of the user's way until it becomes u
 - Implementation thoughts discovered during DECIDE or DESIGN belong in the action-plan lineage.
 - Action planning and design inform each other: practical constraints, dependencies, sequencing, experiments, and feasibility findings may refine the design; design changes may refine the action plan.
 - Do not dump the whole action plan on the user by default.
-- Once design is confirmed, re-plan from the latest confirmed state, slice the action plan into executable tasks, and preserve lineage from task → action-plan item → decision/design source.
+- For ordinary/non-technical work, confirmed design may proceed directly to execution as before. For **substantial technical architecture**, do not final-confirm the design before evidence: Challenge/revision → owner-approved PRE-ARCH → capable-reasoner detailed Action Plan → evidence atomic tasks → PRE-ARCH review → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation. After confirmation, rebuild a release Action Plan and fresh release atomic tasks through first-release acceptance → DELIVERED !!.
+- Preserve lineage from task → action-plan item → PRE-ARCH/design → decision source.
+- A task is READY only when it has one primary outcome, bounded scope, explicit dependencies/inputs, allowed and forbidden scope, observable acceptance criteria, tests/regressions, evidence expectation, commit expectation when relevant, and STOP & ESCALATE rules. If architecture judgment is still required, return to planning instead of executing.
+- For substantial technical architecture, the existing Challenge checkpoint must examine hidden coupling/boundaries/failure/testability risks before major implementation. Use `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED` internally to preserve findings. A technical Challenge PASS means **ready for PRE-ARCH owner review**, not final confirmation.
 - Present only the **current task** by default. Reveal the next task after the current one is completed, blocked, or intentionally skipped.
 - Each task card should be tutorial-like and visually compact:
 
@@ -287,7 +323,9 @@ Then:
 [STEP n+1 — short next-step label]
 ```
 
-Execution discoveries that materially affect the design must feed back into DESIGN. Never silently rewrite a LOCKED decision.
+Every technical task result returns to PRE-ARCH review through ACTION PLAN. `NO ARCH IMPACT` may PASS to the next task; task/plan issues cause REWORK; material architecture findings revise/supersede PRE-ARCH through capable review; LOCKED-decision impact STOPs at the owner gate. Never hide an architecture flaw inside a task and never silently rewrite a LOCKED decision.
+
+Coding workers execute bounded tasks; they do not create new architecture decisions. On a genuine scope/architecture/security/authority gate they must STOP & ESCALATE according to [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md). For complex architecture challenge work, prefer a stronger reasoning capability or Work-style analysis environment when available; the method remains tool-agnostic.
 
 ### DELIVERED !! closure
 
@@ -378,7 +416,20 @@ Locked by: Project Owner
 
 AI may suggest `DRAFT DESIGN` when decisions are clear enough, even without a request. `DRAFT DESIGN` prepares a working-version design such as `Draft 0.1` without changing the status of confirmed design. The draft covers purpose, main flow, main elements, and relevant `D-xxx | LOCKED` decisions. Use domain-appropriate design language; architecture is included only when the project genuinely has a technical/system architecture. Critical assumptions remain explicitly open rather than silently becoming decisions.
 
-**Draft completion rule:** Once those four areas are covered, Design 4/4 means **ready to challenge**, not ready to confirm. AI must surface `[🥊 CHALLENGE DESIGN !]` plus `[🎨 CONTINUE TO CONFIRM]`. A PASS must then surface exactly `Ready to confirm design? or Re-challenge?!` with `[🥊 RE-CHALLENGE DESIGN ?!]` and `[🎨 CONFIRM DESIGN]`. A REFINE result returns to DESIGN. Confirmation does not occur automatically; confirmed DESIGN still requires `YA, CONFIRM DESIGN` and must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+**Draft completion rule:** Once those four areas are covered, Design 4/4 means **ready to challenge**, not ready to confirm. A challenge records material findings internally as `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`; `REFINE` returns to DESIGN. If resolving a finding requires changing a LOCKED decision, stop at an owner decision gate.
+
+For ordinary/non-technical design, the existing lightweight challenge/confirmation UX remains valid, including explicit owner skip where appropriate.
+
+For **substantial technical architecture**, Challenge is required before material execution and cannot be skipped into final confirmation. After PASS/revision coherence, surface a compact execution-baseline gate instead of final confirmation:
+
+```text
+🥊 Challenge complete
+Ready to lock the execution baseline?
+
+[🔒 LOCK PRE-ARCH]   [🥊 RE-CHALLENGE DESIGN ?!]
+```
+
+`LOCK PRE-ARCH` opens owner review and requires `YA, LOCK PRE-ARCH`. This creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`, not confirmed design. The capable reasoner/planner then builds the detailed ACTION PLAN and evidence atomic tasks. After sufficient task evidence and PRE-ARCH review, run `LAST CHALLENGE`, apply justified final improvement/revision, then `CONFIRM DESIGN` becomes available. After final confirmation, rebuild the RELEASE ACTION PLAN and fresh release atomic tasks through first-release acceptance → `DELIVERED !!`.
 
 <!--
 ### Confirmed design
@@ -393,6 +444,7 @@ AI may suggest `DRAFT DESIGN` when decisions are clear enough, even without a re
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.2 | 2026-10-07 | Canonicalized the technical architecture-to-execution loop: Challenge → owner-approved PRE-ARCH → capable-reasoner detailed ACTION PLAN → evidence atomic tasks → PRE-ARCH review → LAST CHALLENGE → final improvement/revision → final design/architecture confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!. Preserved lightweight direct confirmation for ordinary/non-technical design, while technical workers retain STOP & ESCALATE and tool-agnostic reasoning escalation. |
 | 0.3.1 | 2026-10-07 | LOCKED the pre-confirmation Draft Challenge loop: Design 4/4 means ready to challenge, CHALLENGE DESIGN uses an AI-selected thinking method, REFINE returns to DESIGN, PASS must offer RE-CHALLENGE DESIGN or CONFIRM DESIGN, and owner may explicitly skip the first challenge with CONTINUE TO CONFIRM. |
 | 0.3.0 | 2026-10-02 | LOCKED DESIGN-first semantic model: DESIGN is the universal ZASSIMPLE surface/output, architecture is an optional technical subtype, ARCHITECTURE.md became DESIGN.md, Design Progress/Forming/CONFIRM DESIGN replaced architecture-centric surface UX, and DECIDE or DESIGN routes DESIGN → ZASSIMPLE. |
 | 0.2.5 | 2026-10-02 | LOCKED global language routing: one-time Malay companion notice from the English default; structured method surfaces follow the active EN/MY file language while canonical IDs/commands stay stable. |

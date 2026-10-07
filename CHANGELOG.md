@@ -1,3 +1,19 @@
+## 2026-10-07 — Full ZASS v0.3.10 / ZASSIMPLE v0.3.2 Architecture-to-Execution
+
+- LOCKED Architecture Challenge as a pre-confirmation **gate/review mode** for mature material technical architecture rather than a new top-level lifecycle stage.
+- Standardized challenge findings as `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`; any required LOCKED-decision change returns to an explicit owner gate.
+- Added the canonical **PRE-ARCH BASELINE — LOCKED FOR EXECUTION** state. `YA, LOCK PRE-ARCH` approves a challenged/revised architecture hypothesis for detailed planning and bounded implementation; it is not final architecture confirmation.
+- Moved final Full-ZASS architecture confirmation to **after** the PRE-ARCH evidence loop and a **LAST ARCHITECTURE CHALLENGE**: capable-reasoner detailed ACTION PLAN → atomic evidence tasks → task result/evidence → PRE-ARCH review/revision → sufficient implementation evidence → last challenge → final improve/revision → BUILD ARCHITECTURE → `YA, CONFIRM ARCHITECTURE`.
+- Strengthened ACTION_PLAN as a first-class implementation-planning/execution authority that can feed material findings back to PRE-ARCH/design without becoming decision or architecture authority.
+- Added derived **atomic task packets** for Full ZASS and upgraded ZASSIMPLE `TASKS.md` with PRE-ARCH lineage, bounded scope, tests/regressions, evidence, commit expectations, architecture-impact classification, reviewer disposition, and STOP & ESCALATE.
+- Canonicalized task feedback: `NO ARCH IMPACT → PASS/NEXT`; task-plan issue → REWORK; material architecture finding → capable PRE-ARCH review/revision; LOCKED-decision impact → STOP → owner.
+- Added a distinct post-confirmation **RELEASE BUILD** phase: rebuild/rebase ACTION PLAN from confirmed architecture + current implementation state, slice fresh release atomic tasks, build/test/integrate/harden/verify the first release, pass release acceptance, then mark `DELIVERED !!`. PRE-ARCH evidence tasks are not automatically reused as release tasks.
+- Added the shared tool-agnostic `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` covering Human Owner, Architect/Strong Reasoner, Planner, Coding Worker and Reviewer roles; durable task/result handoff; PRE-ARCH feedback loops; and deterministic escalation rules.
+- Added a reasoning-escalation guideline: complex/high-impact architecture challenge/planning/review should prefer a stronger reasoning capability, higher-reasoning model, Work-style analysis environment or specialist reviewer when available, without locking ZASS to a vendor/tool.
+- ZASSIMPLE remains lightweight: ordinary/non-technical design may use the direct confirmation path, while substantial technical architecture uses the PRE-ARCH evidence loop before final CONFIRM DESIGN.
+- Preserved Full ZASS owner-only LOCK authority, Evidence Confidence, ZERO → ARCHITECTURE and ZASS FEED semantics; PRE-ARCH never overrides a `D-xxx | LOCKED` decision.
+- Synchronized Bootstrap Core method templates with the upgraded canonical Full ZASS and ZASSIMPLE method files.
+
 ## 2026-10-07 — Bootstrap Core v0.1 public API freeze PASS
 
 - Closed the Bootstrap Core v0.1 STOP / REVIEW gate as **PASS / FROZEN** after the pre-freeze deterministic API correction.

@@ -1,7 +1,7 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
 **System version:** 0.2.1
-**Full ZASS surface alignment:** v0.3.9<br>
+**Full ZASS surface alignment:** v0.3.10<br>
 **Status:** LOCKED WORKING CONTRACT
 **Date:** 2026-10-07
 **Owner:** Project Owner
@@ -248,18 +248,30 @@ When design coverage reaches 4/4, do **not** surface confirmation as the only ne
 Recommended challenge: [AI-selected thinking method]
 Why: [one line]
 
+Ordinary / non-technical:
 [ðŸ¥Š CHALLENGE DESIGN !]   [ðŸŽ¨ CONTINUE TO CONFIRM]
+
+Substantial technical architecture:
+[ðŸ¥Š CHALLENGE DESIGN !]   ← required before PRE-ARCH execution baseline
 ```
 
-A REFINE result returns the project to DESIGN. After every PASS, surface exactly:
+A REFINE result returns the project to DESIGN.
+
+For ordinary/non-technical design, after PASS surface the lightweight RE-CHALLENGE / CONFIRM choice and preserve the explicit owner-skip behavior where appropriate.
+
+For **substantial technical architecture**, Challenge is mandatory before material execution and PASS does **not** surface final confirmation. Instead surface the compact execution-baseline gate:
 
 ```text
-Ready to confirm design? or Re-challenge?!
+Ready to lock the execution baseline?
 
-[ðŸ¥Š RE-CHALLENGE DESIGN ?!]   [ðŸŽ¨ CONFIRM DESIGN]
+[ðŸ”’ LOCK PRE-ARCH]   [ðŸ¥Š RE-CHALLENGE DESIGN ?!]
 ```
 
-RE-CHALLENGE selects the next most valuable thinking method for residual risk. Do not repeat the same method without a reason. Explicit owner skip of the first challenge may proceed directly to the protected design confirmation flow. Technical architecture appears only when the domain needs it.
+`LOCK PRE-ARCH` requires explicit owner approval and creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`. Detailed planning and atomic-task evidence then feed PRE-ARCH review. Final CONFIRM DESIGN is surfaced only after the required evidence is sufficient.
+
+After PRE-ARCH evidence is sufficient, run a **LAST DESIGN / ARCHITECTURE CHALLENGE** before surfacing final confirmation. Apply justified final improvement/revision. After final confirmation, surface release-build progress from a rebuilt ACTION PLAN and fresh release atomic tasks until release acceptance; only then show `DELIVERED !!`.
+
+Technical architecture appears only when the domain needs it.
 
 ### Escalation Notice
 

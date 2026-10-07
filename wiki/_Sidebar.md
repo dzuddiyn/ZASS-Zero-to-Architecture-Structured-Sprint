@@ -7,6 +7,7 @@
 - [ZASS Convergence Loop](Convergence-Loop.md)
 - [Architecture & Evidence](Architecture-and-Evidence.md)
 - [ACTION PLAN](ACTION-PLAN.md)
+- [Architecture-to-Execution](Architecture-to-Execution.md)
 - [Cross-AI Handoff](Cross-AI-Handoff.md)
 - [ZASSELECTION](ZASSELECTION.md)
 - [ZASSPILL](ZASSPILL.md)

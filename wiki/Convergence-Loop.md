@@ -45,7 +45,29 @@ LOCK DECISIONS
     ↓
 DRAFT ARCH
     ↓
-BUILD ARCHITECTURE
+ARCHITECTURE CHALLENGE
+    ↓
+REVISION
+    ↓
+LOCK PRE-ARCH
+    ↓
+DETAILED ACTION PLAN ↔ PRE-ARCH
+    ↓
+ATOMIC EVIDENCE LOOP
+    ↓
+LAST ARCHITECTURE CHALLENGE
+    ↓
+FINAL IMPROVE / REVISION
+    ↓
+BUILD / CONFIRM ARCHITECTURE
+    ↓
+REBUILD RELEASE ACTION PLAN
+    ↓
+FIRST-RELEASE ATOMIC BUILD
+    ↓
+RELEASE ACCEPTANCE
+    ↓
+DELIVERED !!
 ```
 
 ## Why this exists
@@ -187,7 +209,7 @@ This lets four strong ideas converge quickly while thirty disconnected ideas can
 
 ## Relationship to ZASSIMPLE
 
-ZASSIMPLE v0.3.1 uses the **CURRENT SELECTION MATRIX** as a lightweight convergence surface.
+ZASSIMPLE v0.3.2 uses the **CURRENT SELECTION MATRIX** as a lightweight convergence surface.
 
 It does not add mandatory weighted scoring or a `SELECT` command. Final authority remains the owner's `PROCEED/LOCK` instruction; legacy `LOCK DECISION` remains compatible.
 

@@ -2,6 +2,8 @@
 
 These examples are **teaching fixtures**, not claims of real-world validation. They exist to show how ZASS records evolve from conversation to decisions and architecture.
 
+> The Small Farm Planner fixture predates Full ZASS v0.3.10. The current canonical architecture-to-execution flow adds an Architecture Challenge and ACTION_PLAN feedback before final confirmation/major implementation. See [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).
+
 ## 01 — Small Farm Planner
 
 [01-small-farm-planner/](01-small-farm-planner/README.md) demonstrates a complete full-ZASS flow:

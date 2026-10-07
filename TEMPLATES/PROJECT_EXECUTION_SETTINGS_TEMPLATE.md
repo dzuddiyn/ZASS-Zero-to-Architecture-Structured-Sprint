@@ -75,11 +75,23 @@ Preserve lineage:
 
 ```text
 Decision
-→ ACTION_PLAN ↔ DESIGN
-→ architecture where needed
-→ tasks
+→ draft DESIGN / architecture
+→ ARCHITECTURE CHALLENGE when material
+→ controlled revision
+→ owner-approved PRE-ARCH baseline
+→ detailed ACTION_PLAN ↔ PRE-ARCH
+→ atomic tasks
 → implementation
-→ evidence
+→ result / evidence
+→ PRE-ARCH review
+→ sufficient architecture evidence
+→ LAST ARCHITECTURE CHALLENGE
+→ final improve / revision
+→ final design/architecture confirmation
+→ rebuild RELEASE ACTION PLAN
+→ release atomic tasks
+→ build / integrate / harden / verify first release
+→ release acceptance
 → delivered result
 ```
 
@@ -132,7 +144,7 @@ Architecture may be broad; deployment must stay:
 - reversible;
 - evidence-driven.
 
-A FOUNDATION / EXPERIMENT / POC may proceed before full design confirmation when it:
+A FOUNDATION / EXPERIMENT / POC or other bounded atomic task may proceed against a locked PRE-ARCH before final design confirmation when it:
 - is reversible;
 - does not silently lock unresolved architecture;
 - produces useful evidence;
@@ -148,6 +160,8 @@ small vertical slice
 ---
 
 # 7. ACTION PLAN RULES
+
+For substantial technical architecture, build the detailed ACTION_PLAN against the owner-approved PRE-ARCH baseline. ACTION_PLAN may surface PRE-ARCH flaws but cannot revise architecture by itself.
 
 ACTION_PLAN should:
 - have one primary critical path;
@@ -177,18 +191,40 @@ TASKS.md should promote only:
 - immediate blocked successors;
 - explicit gates.
 
-Each task contains:
+Each atomic task contains:
+- Primary outcome;
 - Source / lineage;
-- Do;
-- Why;
-- Pass;
-- Evidence;
-- If blocked;
+- Dependencies / inputs;
+- Allowed scope / files / modules;
+- Forbidden scope;
+- Do / Why;
+- Acceptance criteria;
+- Tests / regression requirements;
+- Evidence required;
+- Commit expectation;
+- STOP & ESCALATE;
 - Then.
 
 Do not slice the entire project into hundreds of tasks upfront.
 
 ---
+
+
+## 8A. ARCHITECT / WORKER SEPARATION
+
+For substantial technical design, use a capable Architect / Strong Reasoner to challenge architecture before major implementation. After justified revision, require owner approval of a `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`; then use the capable reasoner/planner to build the detailed ACTION PLAN and slice atomic work. Higher-reasoning models, Work-style analysis environments, or specialist reviewers are examples when available; the workflow remains tool-agnostic.
+
+Coding Workers execute bounded atomic tasks only. They must not create a new architecture decision. Each result returns to reviewer/PRE-ARCH impact classification before the next task: PASS for no architecture impact, REWORK for task/plan issues, PRE-ARCH revision for material architecture findings, or owner gate for LOCKED-decision impact. Apply the shared STOP & ESCALATE rules from `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`, including stopping for LOCKED-decision changes, architecture conflicts, ambiguous consequential requirements, out-of-scope/production access, unavailable credentials, materially different viable designs, three repeated failures without new diagnosis, weakened valid tests, broader Core/module changes, uncommitted-work collision risk, or destructive/security/privacy gates.
+
+## 8B. FINAL CHALLENGE / RELEASE REPLAN
+
+When PRE-ARCH evidence is sufficient, run one last evidence-backed architecture challenge before final confirmation. Apply justified final revision and stop at the owner gate if a LOCKED decision would need to change.
+
+After confirmation, rebuild/rebase the ACTION PLAN from confirmed architecture/design plus current implementation state. Slice fresh RELEASE BUILD tasks rather than blindly continuing PRE-ARCH evidence tasks.
+
+A release task that reveals a material architecture defect must STOP normal release flow and reopen governed architecture review.
+
+`DELIVERED !!` requires release acceptance evidence, not merely architecture confirmation or task completion.
 
 # 9. DIRECT EXECUTION
 

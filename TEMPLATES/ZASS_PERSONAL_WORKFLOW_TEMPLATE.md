@@ -26,33 +26,53 @@ NARROW DOWN
   ↓
 DECIDE / LOCK
   ↓
-PRE-DESIGN / PRE-ARCH
+PRE-DESIGN / PRE-ARCH DRAFT
   ↓
 ACTION PLAN v0
   ↓
-OPEN WIDE AGAIN — challenge the plan
+ARCHITECTURE / PLAN CHALLENGE
   ↓
-NARROW DOWN AGAIN
+CONTROLLED REVISION
   ↓
-REMAKE PRE-DESIGN / DESIGN
-  ↕
-REPLAN ACTION
+OWNER REVIEW
+  ↓
+LOCK PRE-ARCH BASELINE
+  ↓
+CAPABLE REASONER / PLANNER
+  ↓
+DETAILED ACTION PLAN ↔ PRE-ARCH
   ↓
 PRE-EXECUTION AUDIT
   ↓
-SLICE TASKS
+SLICE ATOMIC TASKS
   ↓
-START SMALL / FOUNDATION / POC
+EXECUTE ONE TASK
   ↓
-TEST + VERIFY + SAVE EVIDENCE
+TEST + VERIFY + RESULT
   ↓
-FEEDBACK TO DESIGN ↔ ACTION PLAN
+PRE-ARCH REVIEW
+  ↙       ↓        ↘
+REWORK  NEXT TASK  REVISE PRE-ARCH
   ↓
-CONFIRM DESIGN when the gate is due
+SUFFICIENT IMPLEMENTATION EVIDENCE
   ↓
-DO IT
+FINAL DESIGN / ARCHITECTURE REVIEW
   ↓
-INTEGRATION / LIVE PROOF
+LAST ARCHITECTURE CHALLENGE
+  ↓
+FINAL IMPROVE / REVISION
+  ↓
+CONFIRM DESIGN / ARCHITECTURE
+  ↓
+REBUILD RELEASE ACTION PLAN
+  ↓
+RELEASE ATOMIC TASKS
+  ↓
+BUILD FIRST RELEASE
+  ↓
+TEST / INTEGRATE / HARDEN / VERIFY
+  ↓
+RELEASE ACCEPTANCE
   ↓
 DELIVERED !!
 ```
@@ -196,10 +216,15 @@ unless the requirement genuinely depends on it.
 Preserve decision lineage:
 ```text
 D-xxx | LOCKED
-→ DESIGN
-→ ACTION_PLAN
-→ TASK
-→ EVIDENCE
+→ DRAFT DESIGN / ARCHITECTURE
+→ ARCHITECTURE CHALLENGE
+→ REVISION
+→ LOCKED PRE-ARCH BASELINE
+→ DETAILED ACTION_PLAN ↔ PRE-ARCH
+→ ATOMIC TASK
+→ RESULT / EVIDENCE
+→ PRE-ARCH REVIEW
+→ FINAL CONFIRMATION
 → DELIVERED
 ```
 
@@ -254,9 +279,9 @@ Foundation
 
 ---
 
-# 9. PHASE H — OPEN WIDE #2: CHALLENGE THE PLAN
+# 9. PHASE H — ARCHITECTURE / PLAN CHALLENGE
 
-Before real execution, attack the plan.
+Before real execution, challenge the mature design/architecture and the plan. Classify material findings as KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED. If a LOCKED decision must change, stop at the owner gate.
 
 Use:
 - capability/reuse inventory;
@@ -292,7 +317,9 @@ Give each open item a due gate:
 
 Then:
 - remake/refine PRE-DESIGN or DESIGN;
-- replan ACTION_PLAN;
+- resolve material challenge findings;
+- obtain owner approval to `LOCK PRE-ARCH` when the technical baseline is coherent enough for bounded execution;
+- after PRE-ARCH lock, let the capable reasoner/planner build the **detailed** ACTION_PLAN against that baseline;
 - keep deferred items deferred.
 
 This is the main anti-overengineering mechanism.
@@ -334,17 +361,21 @@ Promote only:
 - the current eligible task;
 - its immediate blocked successors.
 
-Each task should contain:
+Each atomic task should contain:
+- one primary outcome;
 - source/lineage;
-- do;
-- why;
-- pass;
-- evidence;
-- if blocked;
+- dependencies and inputs;
+- allowed files/modules and forbidden scope;
+- do / why;
+- acceptance criteria;
+- tests and regression requirements;
+- evidence required;
+- commit expectation;
+- STOP & ESCALATE rules;
 - next.
 
 Prefer:
-**one small vertical slice → evidence → next slice.**
+**one small vertical slice → evidence → PRE-ARCH review → next slice.**
 
 ---
 
@@ -400,10 +431,12 @@ Implementation teaches architecture.
 Feed discoveries back:
 
 ```text
-real evidence
-→ ACTION_PLAN ↔ DESIGN
-→ task sequence
-→ next implementation
+task RESULT / real evidence
+→ reviewer compares against current PRE-ARCH + ACTION_PLAN
+→ NO ARCH IMPACT: PASS → next task
+→ TASK/PLAN ISSUE: REWORK
+→ ARCH IMPACT: revise/supersede PRE-ARCH with capable review
+→ LOCKED DECISION IMPACT: STOP → owner
 ```
 
 If evidence conflicts with a LOCKED decision:
@@ -417,12 +450,13 @@ Do not silently change the decision.
 
 Do not confirm merely because the diagram looks complete.
 
-A strong confirmation point is when:
-- enough discovery is done;
-- major authority/privacy boundaries are clear;
-- the foundation/POC has removed critical assumptions;
+A strong final confirmation point for substantial technical architecture is when:
+- the challenged draft was owner-approved as a PRE-ARCH execution baseline;
+- the detailed Action Plan was built against that baseline;
+- required atomic-task implementation evidence has been reviewed;
+- material architecture findings have been fed back into the latest PRE-ARCH;
+- major authority/privacy boundaries and dependencies are supported by evidence appropriate to the scope;
 - blockers due at this stage are closed;
-- Action Plan is coherent;
 - future details can safely remain deferred.
 
 `CONFIRM DESIGN` opens the final review.
@@ -519,3 +553,15 @@ Avoid:
 When starting a new project, tell the AI:
 
 > Use ZASS as an execution-oriented discovery-to-delivery workflow. Let me DUMP first. Save checkpoints. Distill only after enough ideas exist. Then widen options and research before narrowing. Lock principles/authority before implementation details. Build a working pre-design, then Action Plan. Challenge the plan using reuse inventory, failure/privacy analysis and real-event walkthroughs. Replan from findings. Close only blockers that are due. Slice one current task. Start with the smallest reversible proof. Execute, test, independently verify and save evidence. Feed implementation findings back into DESIGN ↔ ACTION_PLAN. Never silently change LOCKED decisions. Continue automatically until a genuine human gate.
+
+## Final challenge and release build
+
+The last architecture challenge occurs **after** PRE-ARCH evidence is sufficient and before final confirmation. It must inspect what implementation evidence actually revealed, then apply justified final improvement/revision.
+
+After architecture/design is confirmed, rebuild the ACTION PLAN from confirmed architecture/design plus the current implementation state. PRE-ARCH evidence tasks are not automatically release tasks. Slice a fresh RELEASE BUILD queue and continue until release acceptance is factually satisfied.
+
+If a release task exposes a material architecture defect, STOP normal release flow and reopen governed architecture/design review.
+
+## Shared execution contract
+
+For Architect/Strong Reasoner, Planner, Coding Worker, Reviewer, atomic task/result handoff, reasoning escalation, and STOP & ESCALATE rules, use `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`. Tool names are examples only; capability roles are authoritative.
