@@ -34,8 +34,8 @@ CR-010 v0.4 ✅
 → npm bootstrap CLI v0.1 contract ✅ LOCKED
 → npm bootstrap CLI v0.1 implementation ✅ Windows + CI PASS
 → Bootstrap Core v0.1 contract ✅ LOCKED
-→ implement shared Bootstrap Core ← NEXT
-→ field-test bootstrap
+→ shared Bootstrap Core implementation ✅ Windows + CI PASS
+→ field-test bootstrap ← NEXT
 → freeze stable Bootstrap Core contract
 ```
 
@@ -97,9 +97,9 @@ npm bootstrap CLI v0.1 implementation ✅
         ↓
 Bootstrap Core v0.1 contract ✅
         ↓
-implement shared Bootstrap Core ← NEXT
+shared Bootstrap Core implementation ✅
         ↓
-field test
+field-test bootstrap ← NEXT
         ↓
 stable core contract
 ```
