@@ -126,10 +126,10 @@ CR-010 v0.4a: zass status — IMPLEMENTED / FIELD-VALIDATED
 → Bootstrap Core v0.1 contract ✅ LOCKED
 → shared Bootstrap Core implementation ✅ Windows + CI PASS
 → field-test bootstrap ✅ PASS
-→ STOP / REVIEW ⚠ HOLD
-→ correct public deterministic API seam ← NEXT
-→ repeat STOP / REVIEW
-→ freeze stable Bootstrap Core contract
+→ STOP / REVIEW corrective gate ✅
+→ public deterministic API seam corrected ✅
+→ repeat STOP / REVIEW ✅ PASS
+→ stable Bootstrap Core public API FROZEN ✅
 → freeze stable Bootstrap Core contract
 ```
 
