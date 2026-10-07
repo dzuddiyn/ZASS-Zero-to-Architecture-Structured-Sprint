@@ -1,3 +1,14 @@
+## 2026-10-07 — Bootstrap Core v0.1 public API freeze PASS
+
+- Closed the Bootstrap Core v0.1 STOP / REVIEW gate as **PASS / FROZEN** after the pre-freeze deterministic API correction.
+- Removed public template-loader injection from `buildBootstrapPlan({ projectName, method, language })`.
+- Frozen the supported root consumer API to: `CORE_CONTRACT_VERSION`, `METHOD_CHOICES`, `LANGUAGE_CHOICES`, `getBootstrapDescriptor`, `buildBootstrapPlan`, and `verifyBootstrapSnapshot`.
+- Kept validators, template loading, support helpers, and catalog predicates internal; repository-internal consumers import those modules directly rather than expanding the public contract.
+- Synchronized bundled ZASSIMPLE and Full-ZASS EN/MY templates with their canonical source files before freeze.
+- Verified post-merge `main` at `a9fd887070b692313ddae4ecb0ab43b02fb1933e` with **ZASS CI #171 PASS** across CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline resolution, and the ZASS validator.
+- Closure receipt: `docs/ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`.
+- npm publication and CrossAI/AISYNC consumption remain separate gates.
+
 ## 2026-10-07 — ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1 Challenge loop
 
 - LOCKED the pre-confirmation Challenge / Re-challenge loop for ZASSIMPLE.

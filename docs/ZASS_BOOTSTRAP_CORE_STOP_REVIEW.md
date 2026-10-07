@@ -1,13 +1,16 @@
 # ZASS Project Bootstrap Core v0.1 — STOP / REVIEW
 
-**Status:** HOLD — FUNCTIONAL / FIELD PASS, STABLE FREEZE BLOCKED BY API-SEAM CORRECTION  
+**Status:** PASS / CLOSED — STABLE PUBLIC API FROZEN  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
-**Reviewed main:** `4feab7c96abb2ab3f3b551ce48d41715853293c7`
+**Reviewed main:** `a9fd887070b692313ddae4ecb0ab43b02fb1933e`  
+**Post-merge CI:** ZASS CI #171 — PASS
 
 ## 1. Review question
 
 Is Bootstrap Core v0.1 ready to freeze as a stable external Core contract?
+
+**Decision: YES — PASS / FROZEN.**
 
 The review covers:
 
@@ -30,55 +33,56 @@ Implemented behavior matches the locked v0.1 direction:
 - exactly three bootstrap artifacts;
 - localized consumer-neutral README;
 - safe baseline `.gitignore`;
-- deterministic default plan generation;
+- deterministic plan generation;
 - plan validation;
 - materialized snapshot verification;
 - no Git/GitHub/Drive/CrossAI/network side effects from Core.
 
-### Implementation / regression — PASS
+### Template synchronization — PASS
 
-Windows implementation evidence:
+Bundled Bootstrap Core templates are synchronized with the current canonical repository method files for:
 
-```text
-bootstrap-core  26/26 PASS
-create-zass     24/24 PASS
-combined        50/50 PASS
+- ZASSIMPLE English;
+- ZASSIMPLE Bahasa Melayu;
+- Full ZASS English;
+- Full ZASS Bahasa Melayu.
+
+The repository template-sync tests pass against the canonical sources.
+
+### Public deterministic API seam — PASS
+
+The pre-freeze blocker has been corrected.
+
+Public `buildBootstrapPlan` now has the canonical input-only surface:
+
+```js
+buildBootstrapPlan({ projectName, method, language })
 ```
 
-Repository CI passed through implementation and field-test receipts, including:
+The public function no longer accepts a template-loader override. Template loading is canonical inside the Core implementation, so an external consumer cannot change generated method content while keeping the same project name, method, language, and Core release.
 
-- zass-cli tests;
-- Bootstrap Core tests;
-- create-zass tests;
-- repository consistency;
-- historical baseline resolution;
-- ZASS validator.
+This restores the locked invariant:
 
-### Field behavior — PASS
+> **Same project name + method + language + Core release → same bootstrap plan.**
 
-Field receipt:
+### Stable public export surface — PASS / FROZEN
 
-[`ZASS_BOOTSTRAP_CORE_FIELD_TEST.md`](ZASS_BOOTSTRAP_CORE_FIELD_TEST.md)
+The supported Bootstrap Core public consumer surface is frozen as:
 
-Field evidence covered:
+```text
+CORE_CONTRACT_VERSION
+METHOD_CHOICES
+LANGUAGE_CHOICES
+getBootstrapDescriptor
+buildBootstrapPlan
+verifyBootstrapSnapshot
+```
 
-- ZASSPILL / English;
-- ZASSELECTION / Bahasa Melayu;
-- ZASSIMPLE / English;
-- Full ZASS / Bahasa Melayu;
-- Windows filesystem materialization;
-- second consumer-style in-memory adapter;
-- deterministic repeated plans;
-- read-back verification;
-- tamper rejection;
-- Full-ZASS validator compatibility;
-- consumer-neutral README semantics.
+Validators, template loaders, support helpers, and catalog predicates such as `isSupportedMethod` / `isSupportedLanguage` remain internal implementation surfaces and are not part of the frozen public contract.
 
-No field defect requiring a corrective behavior patch was found.
+A regression test explicitly locks this root export surface.
 
 ### Core / consumer boundary — PASS
-
-The current ownership boundary remains correct:
 
 ```text
 Bootstrap Core
@@ -91,86 +95,29 @@ future CrossAI
 → storage orchestration / registration / projection / optional GitHub
 ```
 
-## 3. Stable-freeze blocker found
+The `create-zass` consumer uses the frozen public surface for consumer-facing Core operations and imports internal predicates directly only as repository-internal implementation detail.
 
-The exported `buildBootstrapPlan` currently has this implementation shape:
+### CI / regression — PASS
 
-```js
-buildBootstrapPlan(
-  { projectName, method, language },
-  dependencies = {}
-)
-```
+PR #50 synchronized canonical templates and passed CI before merge.
 
-and accepts:
+PR #49 corrected the public deterministic API seam and explicit export surface, was rebased over the synchronized `main`, and passed full CI before merge.
 
-```js
-dependencies.loadTemplate
-```
-
-as an override.
-
-That means an external caller can theoretically do:
-
-```js
-buildBootstrapPlan(input, {
-  loadTemplate: customLoader
-})
-```
-
-and produce different method content for the same:
+Post-merge verification on `main`:
 
 ```text
-projectName
-method
-language
-Core release
+commit: a9fd887070b692313ddae4ecb0ab43b02fb1933e
+ZASS CI #171: PASS
+
+ZASS CLI tests                  PASS
+Bootstrap Core tests            PASS
+create-zass bootstrap tests     PASS
+repository consistency          PASS
+historical baseline resolution  PASS
+ZASS validator                  PASS
 ```
 
-This conflicts with the locked invariant:
-
-> **Same project name + method + language + Core release → same bootstrap plan.**
-
-The current create-zass consumer and field tests do not use this override, so normal behavior remains correct.
-
-The problem is specifically **stable external API readiness**: a test/dependency-injection seam is currently exposed through the public exported function.
-
-## 4. API-surface observation
-
-The package currently exports `./src/index.js`, whose root surface includes both intended Core operations and several helper/catalog/template functions.
-
-This is acceptable while the package remains private/provisional.
-
-It must not be accidentally interpreted as the frozen stable API.
-
-The stable-freeze step must explicitly distinguish:
-
-- supported public consumer surface;
-- internal/provisional helper surface.
-
-This is not a field behavior defect, but it reinforces why freeze should not happen before the API-seam correction.
-
-## 5. Required corrective work before freeze
-
-Minimum corrective direction:
-
-1. Public `buildBootstrapPlan` must become canonical and deterministic from explicit project input only.
-2. Template-loader injection, if retained for tests/internal composition, must move behind a non-public/internal function or equivalent test seam.
-3. The stable public export surface must be made explicit before freeze.
-4. Existing create-zass behavior and all Core field/regression evidence must remain PASS after the correction.
-5. Re-run targeted determinism/API tests and repository CI.
-
-Do not broaden this correction into:
-
-- new methods;
-- new artifacts;
-- CrossAI integration;
-- Drive/GitHub integration;
-- npm publication;
-- lifecycle routing;
-- methodology changes.
-
-## 6. Review matrix
+## 3. Review matrix
 
 ```text
 Contract fidelity                 PASS
@@ -181,27 +128,30 @@ Repository CI                    PASS
 Field behavior                   PASS
 Second-consumer verification     PASS
 Core/consumer boundary           PASS
-Default deterministic behavior   PASS
-Stable public API readiness      HOLD
+Deterministic public plan API    PASS
+Template synchronization         PASS
+Stable public API readiness      PASS / FROZEN
 ```
 
-## 7. STOP / REVIEW decision
+## 4. STOP / REVIEW decision
 
-**STOP / REVIEW = HOLD FOR ONE PRE-FREEZE CORRECTION.**
+**STOP / REVIEW = PASS / CLOSED.**
 
-Bootstrap Core v0.1 is functionally successful and field-validated.
+Bootstrap Core v0.1 is functionally successful, field-validated, synchronized with canonical method templates, and verified by post-merge CI on `main`.
 
-It is **not yet eligible for stable external API freeze** because the public plan-builder signature still exposes a template override that can violate the deterministic Core invariant.
+The stable public consumer API is now **FROZEN**.
 
-No stable freeze is performed by this review.
+Future changes to the six exported public symbols or to the public `buildBootstrapPlan` contract are contract changes and must not be made silently.
 
-## 8. Next step
+## 5. Out of scope / separate gates
 
-```text
-correct public deterministic API seam
-→ targeted regression / CI
-→ repeat STOP / REVIEW
-→ if PASS, freeze stable Bootstrap Core contract
-```
+This freeze does **not** authorize or imply:
 
-CrossAI integration and npm publication remain separately gated.
+- npm publication;
+- CrossAI/AISYNC integration;
+- GitHub/Drive side effects inside Core;
+- new bootstrap artifacts;
+- new methods;
+- methodology expansion.
+
+Those remain separately gated.

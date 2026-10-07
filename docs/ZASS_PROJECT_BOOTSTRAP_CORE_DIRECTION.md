@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core — Future Product Direction
 
-**Status:** LOCKED DIRECTION — v0.1 CORE IMPLEMENTED / FIELD-TEST PASS / STOP-REVIEW HOLD  
+**Status:** LOCKED DIRECTION — v0.1 CORE IMPLEMENTED / FIELD-TEST PASS / PUBLIC API FROZEN  
 **Date:** 2026-10-05  
 **Owner:** Project Owner  
 **Activation:** ZASS tooling/bootstrap work may proceed under isolated TRACK B before AISYNC Production v1 delivery; CrossAI consumption/integration remains gated separately  
@@ -157,11 +157,10 @@ CR-010 v0.4: zass status + zass diff ✅
 → Bootstrap Core v0.1 contract ✅ LOCKED
 → shared Bootstrap Core implementation ✅ Windows + CI PASS
 → field-test bootstrap ✅ PASS
-→ STOP / REVIEW ⚠ HOLD
-→ correct public deterministic API seam ← NEXT
-→ repeat STOP / REVIEW
-→ freeze stable Bootstrap Core contract
-→ freeze stable Bootstrap Core contract
+→ STOP / REVIEW corrective gate ✅
+→ public deterministic API seam corrected ✅
+→ repeat STOP / REVIEW ✅ PASS
+→ stable Bootstrap Core public API FROZEN ✅
 ```
 
 This TRACK B may proceed before AISYNC/CrossAI T-020/T-021 finishes, provided it remains isolated from the active AISYNC runtime and Gate 6/Production v1 critical path.
