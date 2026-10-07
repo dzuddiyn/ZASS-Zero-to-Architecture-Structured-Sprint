@@ -28,10 +28,10 @@ T-020 Human Closed Beta
 → DELIVERED !!
 
 TRACK B — ZASS tooling/productization
-CR-010 v0.4
-→ real-project field test
-→ CLOSE CR-010
-→ npm bootstrap CLI
+CR-010 v0.4 ✅
+→ real-project field test ✅
+→ CR-010 CLOSED — zass-cli v0.4.0 ✅
+→ npm bootstrap CLI ← NEXT
 → ZASS Project Bootstrap Core
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
@@ -86,7 +86,7 @@ The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-valid
 
 ## 5. Bootstrap boundary
 
-After CR-010 closes:
+After CR-010 closure:
 
 ```text
 npm bootstrap CLI
