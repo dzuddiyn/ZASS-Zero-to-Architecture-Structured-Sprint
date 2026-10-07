@@ -1,9 +1,7 @@
 import { UsageError } from './errors.js';
 import {
   LANGUAGE_CHOICES,
-  METHOD_CHOICES,
-  isSupportedLanguage,
-  isSupportedMethod
+  METHOD_CHOICES
 } from '../../bootstrap-core/src/index.js';
 
 export { LANGUAGE_CHOICES, METHOD_CHOICES };
@@ -53,7 +51,7 @@ export function parseArgs(argv) {
 }
 
 function validateMethod(method) {
-  if (!isSupportedMethod(method)) {
+  if (!METHOD_CHOICES.some((choice) => choice.value === method)) {
     throw new UsageError(
       `Invalid method: ${method}. Expected one of: ${METHOD_CHOICES.map((choice) => choice.value).join(', ')}`
     );
@@ -61,7 +59,7 @@ function validateMethod(method) {
 }
 
 function validateLanguage(language) {
-  if (!isSupportedLanguage(language)) {
+  if (!LANGUAGE_CHOICES.some((choice) => choice.value === language)) {
     throw new UsageError(
       `Invalid language: ${language}. Expected one of: ${LANGUAGE_CHOICES.map((choice) => choice.value).join(', ')}`
     );
