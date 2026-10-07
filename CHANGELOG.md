@@ -1,3 +1,10 @@
+## 2026-10-07 — CR-010 v0.4b contract
+
+- LOCKED the CR-010 v0.4b `zass diff` behavioral contract; implementation has not started.
+- Defined a ZASS-aware local-HEAD comparison over primary-file states, canonical ID additions/removals, LOCKED/SUPERSEDED state-set deltas, and declared readiness/blocker changes using existing parser semantics.
+- Preserved command separation: `status` = current factual state, `diff` = factual change summary, `check` = validation authority.
+- Explicitly excluded raw unrestricted patch output, remote comparison, custom baselines, lifecycle inference, and validator-rule duplication.
+
 ## 2026-10-07 — CR-010 v0.4a implementation
 
 - Implemented `zass status` under the locked v0.4a read-only factual contract.
