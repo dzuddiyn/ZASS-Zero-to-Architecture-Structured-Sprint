@@ -205,3 +205,26 @@ correct public deterministic API seam
 ```
 
 CrossAI integration and npm publication remain separately gated.
+
+
+## 9. Correction status
+
+The blocker identified by this review was subsequently corrected.
+
+Receipt:
+
+[`ZASS_BOOTSTRAP_CORE_API_SEAM_CORRECTION.md`](ZASS_BOOTSTRAP_CORE_API_SEAM_CORRECTION.md)
+
+Correction status:
+
+```text
+public template injection removed     PASS
+root export surface narrowed          PASS
+create-zass regression                PASS
+Windows targeted tests                PASS
+PR CI                                 PASS
+```
+
+This historical review remains a HOLD record. The correction does not retroactively convert this review to PASS.
+
+Next gate: **repeat STOP / REVIEW**.

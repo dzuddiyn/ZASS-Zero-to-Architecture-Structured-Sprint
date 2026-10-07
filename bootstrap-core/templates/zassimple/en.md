@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.3.0  
+**Version:** 0.3.1
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -91,9 +91,21 @@ Design [██████░░░░] 3/4
 2 implementation constraints
 1 critical question
 
-When design coverage reaches 4/4 and no confirmation blocker remains, ask:
-Ready to confirm design?
-[🎨 CONFIRM DESIGN]
+When design coverage reaches 4/4 and no confirmation blocker remains, **do not jump straight to confirmation**. Treat 4/4 as **ready to challenge** and surface a compact pre-confirmation challenge:
+
+🥊 Draft ready for challenge
+
+Recommended challenge:
+[AI-selected thinking method]
+
+Why:
+[one short reason this method fits the current design/risk]
+
+Challenge the draft before final confirmation?
+
+[🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
+
+The AI chooses one suitable thinking method automatically; do not make the user choose a methodology. Prefer the smallest useful challenge, for example: assumption challenge, pre-mortem, failure-mode review, first-principles check, constraint test, user-journey review, or trade-off review.
 
 Then add 💡 ZASS suggestion, not yet AC: [an idea or question fitted to the
 discussion]. State the real file status. A footer or quotation containing
@@ -108,9 +120,27 @@ Use domain-appropriate design language. For software/IoT, architecture may be
 part of the design; for a shop, business, service, or physical project, do not
 force architecture terminology.
 Once the draft covers purpose, main flow, main elements, and relevant
-LOCKED decisions, ask “Ready to confirm design?” and surface
-[🎨 CONFIRM DESIGN]. CONFIRM DESIGN opens the final confirmation review:
-show relevant LOCKED decisions, critical assumptions, and blockers.
+LOCKED decisions, **offer a pre-confirmation design test first**. The AI must
+select one thinking method suited to the current domain, uncertainty, and risk,
+state the method and one-line reason, then ask whether to run it.
+[🥊 CHALLENGE DESIGN !] runs one focused challenge pass. [🎨 CONTINUE TO CONFIRM]
+explicitly skips that optional first challenge and proceeds to the confirmation gate.
+If the challenge finds a material weakness, return to DESIGN and refine before
+surfacing confirmation. If the challenge PASSes, do not jump straight to
+confirmation. Always offer:
+
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+
+RE-CHALLENGE chooses the next most valuable thinking method for the residual
+risk. Do not repeat the same method unless the design changed materially or
+that same risk genuinely needs retesting. After every PASS, offer RE-CHALLENGE
+again until the owner chooses CONFIRM DESIGN. If the owner explicitly skips
+the first challenge with CONTINUE TO CONFIRM, proceed directly to the
+confirmation gate.
+CONFIRM DESIGN opens the final confirmation review: show relevant LOCKED
+decisions, critical assumptions, test status/findings, and blockers.
 It does not confirm automatically. Confirm design only after the owner
 replies exactly YA, CONFIRM DESIGN.
 
@@ -171,7 +201,10 @@ These keywords may appear in ordinary sentences, but AI acts only when they are 
 | `COMMIT` | Compatibility alias for `SAVE`. |
 | `DRAFT DESIGN` | AI prepares/revises a working-version design using domain-appropriate language. Architecture appears only when technically applicable. |
 | `DRAFT ARCH` | Compatibility/domain-specific alias for technical projects; treat it as a design draft with an architecture subtype. |
-| `CONFIRM DESIGN` | Primary surface command. AI opens the final design confirmation review; it does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM DESIGN`. |
+| `CHALLENGE DESIGN` | Primary pre-confirmation challenge command; the UI may render it as `[🥊 CHALLENGE DESIGN !]`. AI selects the most suitable thinking method automatically, runs one focused challenge, and records PASS / REFINE plus the material finding. |
+| `RE-CHALLENGE DESIGN` | After a PASS, run another focused challenge using the next most valuable thinking method for residual risk. The UI renders `[🥊 RE-CHALLENGE DESIGN ?!]`. After every PASS, offer RE-CHALLENGE or CONFIRM again. |
+| `CONTINUE TO CONFIRM` | Owner explicitly skips the optional first challenge and proceeds to the normal confirmation gate. |
+| `CONFIRM DESIGN` | Primary surface command. AI opens the final design confirmation review only after the challenge question has been surfaced and either the owner has a PASS history or explicitly skipped the first challenge. It does not confirm automatically. If blockers remain, stay in DESIGN. If ready, request the exact reply `YA, CONFIRM DESIGN`. |
 | `CONFIRM ARCHITECTURE` or `BUILD ARCHITECTURE` | Compatibility/domain-specific aliases for technical projects; route them through the same design confirmation review. |
 | `DO IT` | After design is confirmed, re-plan from the latest state, slice the Action Plan, and present/resume only the current executable task. |
 | `YA, CONFIRM DESIGN` | Final owner confirmation. AI builds or updates confirmed design only from `D-xxx | LOCKED` decisions and accepted context. |
@@ -188,7 +221,22 @@ Design will use these LOCKED decisions:
 Critical assumptions / blockers:
 - [if any]
 
+Pre-confirmation challenge:
+- Status: NOT RUN / PASS / REFINE / SKIPPED BY OWNER
+- Challenge count: [0 / 1 / 2 / ...]
+- Method(s): [selected thinking method(s) or N/A]
+- Material finding(s): [short result(s)]
+
 Design Progress: [x/4]
+
+If the latest challenge found a material weakness:
+Return to DESIGN and refine; do not request final confirmation yet.
+
+If the latest challenge PASSed:
+Show exactly:
+Ready to confirm design? or Re-challenge?!
+
+[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
 
 If blockers remain:
 Stay in DESIGN and state the next thing needed.
@@ -330,7 +378,7 @@ Locked by: Project Owner
 
 AI may suggest `DRAFT DESIGN` when decisions are clear enough, even without a request. `DRAFT DESIGN` prepares a working-version design such as `Draft 0.1` without changing the status of confirmed design. The draft covers purpose, main flow, main elements, and relevant `D-xxx | LOCKED` decisions. Use domain-appropriate design language; architecture is included only when the project genuinely has a technical/system architecture. Critical assumptions remain explicitly open rather than silently becoming decisions.
 
-**Draft completion rule:** Once those four areas are covered, AI must present **“Ready to confirm design?”** together with any remaining critical assumptions and surface `[🎨 CONFIRM DESIGN]`. That command opens the confirmation review; it does not confirm automatically. Design becomes confirmed only after `YA, CONFIRM DESIGN`; it must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
+**Draft completion rule:** Once those four areas are covered, Design 4/4 means **ready to challenge**, not ready to confirm. AI must surface `[🥊 CHALLENGE DESIGN !]` plus `[🎨 CONTINUE TO CONFIRM]`. A PASS must then surface exactly `Ready to confirm design? or Re-challenge?!` with `[🥊 RE-CHALLENGE DESIGN ?!]` and `[🎨 CONFIRM DESIGN]`. A REFINE result returns to DESIGN. Confirmation does not occur automatically; confirmed DESIGN still requires `YA, CONFIRM DESIGN` and must derive from `D-xxx | LOCKED` decisions, not AI assumptions or `AC` records alone.
 
 <!--
 ### Confirmed design
@@ -345,6 +393,7 @@ AI may suggest `DRAFT DESIGN` when decisions are clear enough, even without a re
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.1 | 2026-10-07 | LOCKED the pre-confirmation Draft Challenge loop: Design 4/4 means ready to challenge, CHALLENGE DESIGN uses an AI-selected thinking method, REFINE returns to DESIGN, PASS must offer RE-CHALLENGE DESIGN or CONFIRM DESIGN, and owner may explicitly skip the first challenge with CONTINUE TO CONFIRM. |
 | 0.3.0 | 2026-10-02 | LOCKED DESIGN-first semantic model: DESIGN is the universal ZASSIMPLE surface/output, architecture is an optional technical subtype, ARCHITECTURE.md became DESIGN.md, Design Progress/Forming/CONFIRM DESIGN replaced architecture-centric surface UX, and DECIDE or DESIGN routes DESIGN → ZASSIMPLE. |
 | 0.2.5 | 2026-10-02 | LOCKED global language routing: one-time Malay companion notice from the English default; structured method surfaces follow the active EN/MY file language while canonical IDs/commands stay stable. |
 | 0.2.4 | 2026-10-01 | FINAL LOCK: fixed footer icons finalized as 🔬 ZASS!! / 📌 PROCEED/LOCK / 📚 SAVE with command semantics unchanged. |

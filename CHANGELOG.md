@@ -1,3 +1,16 @@
+## 2026-10-07 — Bootstrap Core public API seam correction PASS
+
+- Removed template-loader dependency injection from public `buildBootstrapPlan`; it now accepts one explicit project input and always uses canonical bundled templates.
+- Narrowed the provisional Core root exports to contract version, method/language choices, plan build, input/plan validation, and snapshot verification.
+- Removed low-level descriptor, template-loader, README-builder, path-safety and helper exports from the root consumer surface.
+- Refactored `create-zass` to consume only the narrowed public Core surface.
+- Added targeted public-API tests proving `buildBootstrapPlan.length === 1`, extra template injection cannot override canonical content, and low-level helpers are not root exports.
+- Windows evidence before rebase: Bootstrap Core 30/30 PASS + create-zass 24/24 PASS = 54/54.
+- PR #47 CI PASS on the corrective source before rebase.
+- Rebased cleanly over the concurrent ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1 change and resynchronized the affected Core templates to the latest canonical method files.
+- NEXT: repeat STOP/REVIEW. Stable freeze is still pending.
+- Receipt: docs/ZASS_BOOTSTRAP_CORE_API_SEAM_CORRECTION.md.
+
 ## 2026-10-07 — ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1 Challenge loop
 
 - LOCKED the pre-confirmation Challenge / Re-challenge loop for ZASSIMPLE.
