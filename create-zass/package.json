@@ -1,0 +1,24 @@
+{
+  "name": "create-zass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first bootstrap CLI for ZASS projects",
+  "type": "module",
+  "bin": {
+    "create-zass": "./bin/create-zass.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
