@@ -148,7 +148,7 @@ Arahan sengaja `ZASS` atau `ZASS!!` menggantikan arahan penerokaan lama: jalanka
 Akhiri **setiap** balasan AI dengan:
 
 ```text
-[🧠 ZASS!!]-[▶️ PROCEED]-[📦 COMMIT]
+[🧠 ZASS!!]--[▶️ PROCEED]--[📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]

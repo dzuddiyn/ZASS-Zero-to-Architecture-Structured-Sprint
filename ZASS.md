@@ -153,7 +153,7 @@ An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explo
 End **every** AI reply with:
 
 ```text
-[🧠 ZASS!!]-[▶️ PROCEED]-[📦 COMMIT]
+[🧠 ZASS!!]--[▶️ PROCEED]--[📦 COMMIT]
 
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
