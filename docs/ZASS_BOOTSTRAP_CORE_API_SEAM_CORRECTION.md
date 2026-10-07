@@ -1,9 +1,9 @@
 # ZASS Project Bootstrap Core v0.1 — Public API Seam Correction
 
-**Status:** PASS — CORRECTION COMPLETE / REPEAT STOP-REVIEW PENDING  
+**Status:** CORRECTION PASS — MERGE HOLD / BASE MAIN CI RED — REPEAT STOP-REVIEW PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
-**Corrective commit under test:** `82830ecfa477fbb19ae13a9fe88bc521be70c5db`
+**Corrective commit under test:** `7932ecca2358f6a85d11af9cf7b89a1a39769fed`
 
 ## 1. Trigger
 
@@ -120,13 +120,17 @@ A separate root-surface test also asserts the exact intended provisional public 
 
 ## 6. Windows regression evidence
 
-At corrective commit:
+The correction was first tested at `82830ecfa477fbb19ae13a9fe88bc521be70c5db`, then rebased cleanly onto the newer main commit that introduced ZASS SYSTEM v0.2.1 / ZASSIMPLE v0.3.1.
+
+Rebased corrective commit:
 
 ```text
-82830ecfa477fbb19ae13a9fe88bc521be70c5db
+7932ecca2358f6a85d11af9cf7b89a1a39769fed
 ```
 
-Windows results:
+The affected Core template copies were resynchronized to the newer canonical ZASSIMPLE / Full-ZASS method files before retesting.
+
+Windows results after rebase:
 
 ```text
 Bootstrap Core  30/30 PASS
@@ -138,14 +142,29 @@ The previous 26 Core tests still pass, plus four new public-API/determinism test
 
 ## 7. GitHub Actions evidence
 
-PR #47 ZASS CI passed after the source correction, including:
+Before the concurrent main change, PR #47 source correction reached a fully green ZASS CI run.
 
-- zass-cli tests;
-- Bootstrap Core tests;
-- create-zass tests;
-- repository consistency;
-- historical baseline resolution;
-- ZASS validator.
+After rebasing onto current main `71881110a70681eaaf96ecee6af26c50b96a2bfb`, the PR run showed:
+
+```text
+zass-cli tests        PASS
+Bootstrap Core tests  PASS
+create-zass tests     PASS
+repository consistency FAIL
+```
+
+The repository-consistency failure is inherited from the new base main, not introduced by this correction.
+
+Evidence:
+
+- main workflow run #160 at `71881110a70681eaaf96ecee6af26c50b96a2bfb` was already FAIL before the rebased correction could merge;
+- PR #47 run #161 passed all three code/test layers before failing at repository consistency;
+- the PR log reports the inherited consistency errors:
+  - ZASS SYSTEM version mismatch;
+  - UI contract T-013A current-state marker missing;
+  - UI contract T-013B current-state marker missing.
+
+The correction therefore has targeted implementation proof, but **repo-wide CI is not green** and merge remains HOLD until the unrelated base-main consistency issue is resolved.
 
 ## 8. Scope discipline
 
@@ -171,17 +190,21 @@ same-input canonical plan enforced         PASS
 root export surface narrowed               PASS
 create-zass regression preserved           PASS
 Windows targeted regression                PASS
-PR CI                                      PASS
+PR targeted test layers                    PASS
+repo-wide CI                               HOLD — inherited base-main failure
+merge                                      HOLD
 ```
 
-**Corrective step = PASS.**
+**Corrective code step = PASS. Integration/merge gate = HOLD because current base main is already CI-red.**
 
 This does not itself overturn the historical STOP/REVIEW HOLD or perform stable freeze.
 
 ## 10. Next gate
 
 ```text
-repeat STOP / REVIEW
+restore current main repository consistency
+→ merge API-seam correction
+→ repeat STOP / REVIEW
 → if PASS, freeze stable Bootstrap Core contract
 ```
 
