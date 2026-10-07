@@ -133,10 +133,10 @@ LOCKED sequencing refinement:
 
 ```text
 TRACK B
-CR-010 v0.4: zass status + zass diff
-→ real-project field test
-→ CLOSE CR-010
-→ npm bootstrap CLI
+CR-010 v0.4: zass status + zass diff ✅
+→ real-project field test ✅
+→ CR-010 CLOSED — zass-cli v0.4.0 ✅
+→ npm bootstrap CLI ← NEXT
 → ZASS Project Bootstrap Core
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
@@ -152,7 +152,7 @@ See [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md).
 
 CR-010 remains a validator/tooling track.
 
-CR-010 may close after v0.4 `zass status` + `zass diff` are implemented, regression-tested, understandable in real use, and field-tested on at least one real ZASS project without unacceptable false positives or misleading state.
+CR-010 is CLOSED after v0.4 `zass status` + `zass diff` were implemented, regression-tested, reviewed in real use, field-tested on Kerani_Core, and corrected for the Windows EOL false positive. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
 
 The npm bootstrap CLI and Project Bootstrap Core are separate onboarding/productization work and are not required to close CR-010.
 
