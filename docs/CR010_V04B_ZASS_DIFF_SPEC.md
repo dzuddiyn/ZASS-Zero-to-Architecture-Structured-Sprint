@@ -1,6 +1,6 @@
 # CR-010 v0.4b — `zass diff` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION NOT STARTED  
+**Status:** LOCKED — IMPLEMENTATION IN PROGRESS  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -436,3 +436,17 @@ Not part of v0.4b:
 - ARCHITECTURE semantic diff;
 - npm publication;
 - Project Bootstrap Core implementation.
+
+
+## 20. Implementation progress
+
+Implementation branch adds only the locked v0.4b slice:
+
+- a local baseline-file reader for the three primary Full ZASS files;
+- `cli/src/diff.js` with deterministic file-state and semantic-delta reporting;
+- reuse of `extractZassProjectSnapshot()` and `extractDecisionState()`;
+- `zass diff` CLI routing with no arguments;
+- focused `diff.test.js` coverage;
+- existing unsupported-usage regression updated for the newly supported command.
+
+No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, or methodology change is included.
