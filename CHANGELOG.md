@@ -1,3 +1,13 @@
+## 2026-10-07 — Bootstrap Core v0.1 STOP / REVIEW HOLD
+
+- Reviewed contract fidelity, implementation evidence, Windows/CI regression, field behavior, second-consumer verification, and Core/consumer boundaries.
+- Functional and field behavior remain PASS.
+- Stable API freeze is HOLD because exported `buildBootstrapPlan(input, dependencies)` exposes a template-loader override that can violate the locked same-input/same-release deterministic plan invariant.
+- The current broad root export surface is acceptable while private/provisional but must be made explicit before stable freeze.
+- No CrossAI integration, npm publication, or methodology expansion is authorized by this review.
+- NEXT: correct the public deterministic API seam, run targeted regression/CI, repeat STOP/REVIEW, then freeze only if PASS.
+- Receipt: docs/ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md.
+
 ## 2026-10-07 — ZASS Project Bootstrap Core v0.1 field test PASS
 
 - Field-tested four real Windows bootstrap projects: ZASSPILL/English, ZASSELECTION/Bahasa Melayu, ZASSIMPLE/English, and Full ZASS/Bahasa Melayu.

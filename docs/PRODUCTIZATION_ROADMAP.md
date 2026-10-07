@@ -126,13 +126,16 @@ CR-010 v0.4a: zass status — IMPLEMENTED / FIELD-VALIDATED
 → Bootstrap Core v0.1 contract ✅ LOCKED
 → shared Bootstrap Core implementation ✅ Windows + CI PASS
 → field-test bootstrap ✅ PASS
-→ STOP / REVIEW ← NEXT
+→ STOP / REVIEW ⚠ HOLD
+→ correct public deterministic API seam ← NEXT
+→ repeat STOP / REVIEW
+→ freeze stable Bootstrap Core contract
 → freeze stable Bootstrap Core contract
 ```
 
 TRACK B remains isolated. It must not modify AISYNC runtime, Apps Script production, T-020/T-021 acceptance, or Gate 6 evidence.
 
-CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and implemented locally as private `create-zass@0.1.0` with Windows + CI PASS. npm publication remains separate. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md). Windows + CI implementation evidence is PASS. Bootstrap field testing PASSED; receipt: [`ZASS_BOOTSTRAP_CORE_FIELD_TEST.md`](ZASS_BOOTSTRAP_CORE_FIELD_TEST.md). STOP/REVIEW is now the next TRACK B gate; stable Core freeze remains after that gate.
+CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and implemented locally as private `create-zass@0.1.0` with Windows + CI PASS. npm publication remains separate. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md). Windows + CI implementation evidence is PASS. Bootstrap field testing PASSED; receipt: [`ZASS_BOOTSTRAP_CORE_FIELD_TEST.md`](ZASS_BOOTSTRAP_CORE_FIELD_TEST.md). STOP/REVIEW completed with functional/field PASS but stable-API HOLD. The blocker is the exported template-loader injection seam on `buildBootstrapPlan`, which can violate the deterministic Core invariant. Receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md). Correct that API seam next, then repeat STOP/REVIEW before stable freeze.
 
 After TRACK A is DELIVERED and TRACK B has a stable Bootstrap Core, CrossAI may consume that shared core for Create Project vNext.
 
