@@ -1,6 +1,6 @@
 # ZASS Project Bootstrap Core v0.1 — Implementation Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW PENDING — STABLE FREEZE PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-TEST PASS — STOP/REVIEW HOLD — PRE-FREEZE API CORRECTION REQUIRED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -759,3 +759,21 @@ STOP / REVIEW
 ```
 
 CrossAI integration, Drive adapter, Git/GitHub integration and npm publication remain outside this implementation step.
+
+
+## 28. STOP / REVIEW result
+
+STOP/REVIEW did **not** freeze the stable external Core API.
+
+Review result:
+
+```text
+functional / field behavior   PASS
+stable API readiness          HOLD
+```
+
+Reason: the currently exported `buildBootstrapPlan(..., dependencies)` surface exposes a template-loader override that can produce a different plan for the same project name + method + language + Core release.
+
+Receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
+
+Next: correct the public deterministic API seam, re-run targeted regression/CI, then repeat STOP/REVIEW before stable freeze.
