@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.9 (global language-surface routing; core decision semantics unchanged)
+**Version:** 0.3.10 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
 **ZASS SYSTEM:** v0.2.1
 **Language:** English — default Full ZASS method
 
@@ -118,7 +118,17 @@ LOCK DECISIONS
     ↓
 DRAFT ARCH
     ↓
-BUILD ARCHITECTURE
+ARCHITECTURE CHALLENGE
+    ↓
+CONTROLLED REVISION
+    ↓
+LOCK PRE-ARCH
+    ↓
+DETAILED ACTION PLAN ↔ PRE-ARCH
+    ↓
+ATOMIC EVIDENCE LOOP
+    ↓
+BUILD / CONFIRM ARCHITECTURE
 ```
 
 Convergence rules:
@@ -148,7 +158,7 @@ End **every** AI reply with:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [short reason grounded in actual evidence]
 
-⬆️ UPDATE ZASS? now v0.3.8 / latest v0.3.9
+⬆️ UPDATE ZASS? now v0.3.9 / latest v0.3.10
 ```
 
 The footer is a reminder, never an automatic command. Replace the example progress bar, percentage, status, Evidence Confidence, and versions with the actual state. When ZERO → ARCHITECTURE is a real project assessment, the Evidence Confidence line must be shown with it according to the Evidence Confidence rules. In ordinary messages the footer and progress bar remain visible, but a version check is required only when the user intentionally issues `ZASS` or `ZASS!!`. `AC-xxx` in full ZASS continues to mean **Architecture Candidate**, unlike ZASSIMPLE's agreed candidate.
@@ -169,23 +179,29 @@ Use `ACTION_PLAN.md` for a project with multi-step work or progress that must su
 | File | Authority |
 |---|---|
 | `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirements, readiness, and decision change. |
-| `ACTION_PLAN.md` | Current execution/progress state: focus, actions, experiment execution, evidence, results, blockers, lessons, completed work, and PARKED work. |
+| `ACTION_PLAN.md` | Implementation planning + execution/progress state: PRE-ARCH reference, sequence, dependencies, feasibility, experiments, migration/integration/security/test/rollback gates, atomic-task planning, evidence/results, blockers, lessons, completed work, and PARKED work. |
 | `ARCHITECTURE.md` | An architecture representation derived from confirmed ZASS state. It is needed only when architecture is built. |
 
-`ACTION_PLAN.md` cannot LOCK or alter ZASS decisions, determine architecture, or turn a PASS experiment into a decision automatically.
+`ACTION_PLAN.md` cannot LOCK or alter ZASS decisions, determine architecture, or turn a PASS experiment into a decision automatically. It **may** record implementation-planning findings that require architecture review. Such findings must feed back explicitly to ZASS/ARCHITECTURE; ACTION_PLAN never applies the architecture change by itself.
 
 `ZERO → ARCHITECTURE` is officially calculated and recorded in `ZASS.md`. When `ACTION_PLAN.md` is used, it stores a **snapshot** of that official value for execution and dashboards; it never calculates, raises, or lowers the score itself. Every score change must update ZASS and the ACTION PLAN snapshot in the same atomic commit. Use `Source: ZASS.md v<version> — same Git commit`; do not try to write that commit's SHA into the file because the SHA exists only after commit creation. GitHub Actions reads the real SHA from the commit event and adds it to a mirror such as Notion.
 
 ```text
-ZASS: Q-xxx / R-xxx / candidate / E-xxx need
+LOCKED PRE-ARCH baseline
                   ↓
-ACTION_PLAN: execute action or E-xxx
+DETAILED ACTION_PLAN
                   ↓
-evidence: PASS / FAIL / INCONCLUSIVE / BLOCKED
+ATOMIC TASK
                   ↓
-ZASS FEED
+RESULT / EVIDENCE
                   ↓
-ZASS REVIEW → DECIDE / LOCK / REJECT / TEST MORE / PIVOT
+PRE-ARCH REVIEW
+                  ├─ NO ARCH IMPACT → PASS → NEXT TASK
+                  ├─ TASK-PLAN ISSUE → REWORK
+                  ├─ ARCH IMPACT → REVISE / SUPERSEDE PRE-ARCH
+                  └─ LOCKED DECISION IMPACT → STOP → OWNER
+
+Decision/evidence findings that affect authority still return through ZASS FEED / ZASS REVIEW.
 ```
 
 Keep the same `E-xxx` ID when an experiment originates in ZASS. ZASS owns the experiment's purpose and evidence requirement; ACTION_PLAN records execution, evidence, and result. `ZASS FEED` returns mature findings for evaluation; it never creates an automatic decision.
@@ -623,13 +639,71 @@ This prevents future AI from repeatedly suggesting ideas that have already been 
 
 ---
 
-## 9. Draft first, confirm architecture when READY
+## 9. Draft → challenge → lock PRE-ARCH → confirm after evidence
 
 `DRAFT ARCH` produces a working-version architecture draft even before readiness is READY. Base it on LOCKED decisions, goals, constraints, workflows, and known risks; label assumptions and ARCHITECTURE BLOCKERS. Never silently introduce major decisions.
 
-Once the draft covers purpose, main flow, main components, and relevant LOCKED decisions, AI must ask **“Ready to BUILD ARCHITECTURE?”** and list remaining critical assumptions. AI may also suggest `DRAFT ARCH` earlier when decisions are sufficiently clear.
+Once the draft covers purpose, main flow, main components, and relevant LOCKED decisions, AI must ask **“Ready for ARCHITECTURE CHALLENGE?”** and list remaining critical assumptions. AI may also suggest `DRAFT ARCH` earlier when decisions are sufficiently clear.
 
-`BUILD ARCHITECTURE` starts the confirmation gate rather than immediately building: show the draft, LOCKED decisions, ARCHITECTURE READINESS status, critical assumptions, and impact. If NOT READY, explain blockers to confirmation. If READY, ask for the exact reply `YA, CONFIRM ARCHITECTURE`. Only after that reply is architecture confirmed from LOCKED decisions and owner-accepted context.
+For material technical architecture, `BUILD ARCHITECTURE` is the **final** confirmation gate and comes only after the PRE-ARCH evidence loop is sufficient, the final architecture candidate has gone through a **LAST ARCHITECTURE CHALLENGE**, and any justified final improvement/revision has been incorporated. At final review, show the latest PRE-ARCH lineage, LOCKED decisions, ARCHITECTURE READINESS, initial and last challenge findings, implementation evidence, ACTION_PLAN feedback, accepted/deferred unknowns, and impact. If READY, ask for the exact reply `YA, CONFIRM ARCHITECTURE`. Only after that reply is architecture confirmed.
+
+**Architecture Challenge is a gate/review mode, not a new top-level lifecycle stage.** Use the existing review engine with the smallest useful method set: red-team, pre-mortem, assumption challenge, failure-mode analysis, dependency/coupling, trust/security boundary, operability/testability, portability/vendor-lock-in, or feasibility/dependency review. Classify material findings as `KEEP`, `REVISE`, `QUESTION`, `EXPERIMENT`, or `OWNER DECISION REQUIRED`. A `REVISE` finding may update the draft only when it does not change a LOCKED decision. If a LOCKED decision must change, STOP and return to the owner decision gate.
+
+For complex/high-impact challenges, prefer an Architect / Strong Reasoner capability with higher reasoning depth or a Work-style research/analysis environment when available. This is a capability recommendation, not a tool/vendor requirement.
+
+---
+
+## 9A. Architecture → execution contract
+
+After the architecture draft is mature enough to drive material implementation:
+
+```text
+DRAFT ARCHITECTURE
+→ ARCHITECTURE CHALLENGE
+→ CONTROLLED REVISION
+→ OWNER REVIEW
+→ YA, LOCK PRE-ARCH
+→ PRE-ARCH BASELINE — LOCKED FOR EXECUTION
+→ CAPABLE REASONER / PLANNER
+→ DETAILED ACTION PLAN ↔ PRE-ARCH
+→ DETAILED ATOMIC TASK SLICING
+→ EXECUTE ONE TASK
+→ RESULT / EVIDENCE
+→ PRE-ARCH REVIEW
+   ├─ PASS → NEXT TASK
+   ├─ REWORK → TASK / ACTION PLAN
+   ├─ ARCH FINDING → REVISE / SUPERSEDE PRE-ARCH
+   └─ LOCKED-DECISION IMPACT → STOP → OWNER
+→ SUFFICIENT IMPLEMENTATION EVIDENCE
+→ FINAL ARCHITECTURE REVIEW
+→ LAST ARCHITECTURE CHALLENGE
+→ FINAL IMPROVE / REVISION
+→ BUILD ARCHITECTURE
+→ YA, CONFIRM ARCHITECTURE
+→ ARCHITECTURE CONFIRMED
+→ REBUILD RELEASE ACTION PLAN
+→ RELEASE ATOMIC TASKS
+→ BUILD FIRST RELEASE VERSION
+→ TEST / INTEGRATE / HARDEN / VERIFY
+→ RELEASE ACCEPTANCE
+→ DELIVERED !!
+```
+
+`PRE-ARCH BASELINE — LOCKED FOR EXECUTION` is a versioned owner-approved architectural hypothesis. It is stable enough for detailed planning and bounded evidence-producing implementation, but it is **not** `ARCHITECTURE CONFIRMED` and does not override any `D-xxx | LOCKED` decision.
+
+After PRE-ARCH lock, a capable Architect / Strong Reasoner and Planner must produce or refine the detailed ACTION PLAN: sequence, dependencies, feasibility, experiments, migration, integration/security checks, test/regression gates, rollback points, and evidence required before final architecture review.
+
+Only then derive detailed atomic task packets. A task is READY only when one primary outcome, scope, dependencies, inputs, allowed/forbidden change surface, acceptance criteria, tests/regressions, evidence and escalation rules are clear. If a coding worker still needs architecture judgment, return the item to planning.
+
+Every PRE-ARCH task result returns to review. `NO ARCH IMPACT` may PASS to the next evidence task; task/plan problems cause REWORK; material architecture findings trigger PRE-ARCH review/revision; any LOCKED-decision impact stops at the owner gate.
+
+When PRE-ARCH evidence is sufficient, run a **last architecture challenge** focused on what implementation evidence actually revealed: surviving assumptions, hidden coupling, runtime/deployment behavior, reliability/retry/idempotency, security/trust boundaries, operability/observability, migration/rollback, portability, and architecture debt. Apply any justified final improvement/revision before `BUILD ARCHITECTURE`.
+
+After `ARCHITECTURE CONFIRMED`, do **not** blindly continue the PRE-ARCH evidence task queue. Rebuild/rebase ACTION_PLAN from the confirmed architecture and current repo/product state, slice a fresh set of release atomic tasks, build the first release version, then test/integrate/harden/verify it to release acceptance. Only then may the project/release be marked `DELIVERED !!`. If release work discovers a material architecture defect, STOP normal release flow and reopen architecture through governed review.
+
+ACTION_PLAN remains planning/execution authority only. It may request PRE-ARCH review but cannot decide architecture or change a LOCKED decision.
+
+Use the shared contract: [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).
 
 ---
 
@@ -1109,7 +1183,7 @@ Statuses:
 | 85–99% + a draft exists and is under review | `DRAFT ARCH UNDER REVIEW` |
 | 100% | `ARCHITECTURE CONFIRMED` |
 
-At 70% or above, AI must **suggest** an architecture draft but must not create it automatically. Status does not advance to `DRAFT ARCH UNDER REVIEW` merely because the score reaches 85%; a draft must actually exist and be under review. A score of 100% is allowed only after the two-step confirmation gate is complete and the owner replies exactly `YA, CONFIRM ARCHITECTURE`.
+At 70% or above, AI must **suggest** an architecture draft but must not create it automatically. Status does not advance to `DRAFT ARCH UNDER REVIEW` merely because the score reaches 85%; a draft must actually exist and be under review. A PRE-ARCH baseline may be locked while the score remains below 100%; PRE-ARCH is an execution baseline, not final architecture confirmation. A score of 100% is allowed only after the final evidence-backed confirmation gate is complete and the owner replies exactly `YA, CONFIRM ARCHITECTURE`.
 
 In addition to the score, confirmed architecture is allowed only when:
 
@@ -1124,6 +1198,10 @@ In addition to the score, confirmed architecture is allowed only when:
 - [ ] No unresolved contradiction affects the core architecture
 - [ ] Major candidate architectures have been resolved or intentionally deferred
 - [ ] Known blockers are documented
+- [ ] For material technical architecture, Architecture Challenge is complete and the current PRE-ARCH baseline is owner-approved
+- [ ] Required implementation evidence from the PRE-ARCH/ACTION_PLAN has been reviewed
+- [ ] Material task findings have been incorporated into or explicitly rejected from the latest PRE-ARCH
+- [ ] No unresolved PRE-ARCH finding requires an owner decision before final confirmation
 
 **ZERO → ARCHITECTURE score:**
 
@@ -1178,8 +1256,9 @@ Confirm architecture using ONLY:
 3. LOCKED decisions
 4. Required workflows
 5. Known risks
-6. Validated evidence
-7. Explicitly accepted trade-offs
+6. Latest reviewed PRE-ARCH baseline and its supersession history
+7. Validated implementation / experiment evidence required by the ACTION PLAN
+8. Explicitly accepted or deferred unknowns and trade-offs
 
 Do not introduce major architectural decisions without explicitly flagging them.
 
@@ -1251,8 +1330,9 @@ If a LOCKED decision must change:
 PROJECT/
 │
 ├── ZASS.md
-├── ACTION_PLAN.md        ← optional; live execution/progress state
+├── ACTION_PLAN.md        ← optional; planning + live execution/progress authority
 ├── ARCHITECTURE.md       ← only after architecture is built
+├── [derived task packets]← optional backend; never a second planning authority
 ├── README.md
 │
 ├── docs/
@@ -1313,9 +1393,25 @@ Commit the approved changes as one atomic versioned commit and push them to the 
 
 Prepare or revise a working-version architecture draft from the authoritative locked state. This does not confirm it.
 
+### LOCK PRE-ARCH
+
+After Architecture Challenge and justified revision, open an owner review for the execution baseline. If coherent enough for bounded planning/implementation, request `YA, LOCK PRE-ARCH`. This creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`; it does **not** confirm architecture. Any later material revision must be traceable, and any LOCKED-decision conflict returns to the owner.
+
+### LAST ARCHITECTURE CHALLENGE
+
+When PRE-ARCH evidence is sufficient, run one final evidence-backed architecture challenge before `BUILD ARCHITECTURE`. Use the same `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED` classes. Apply justified final improvement/revision; if a LOCKED decision must change, STOP at the owner gate.
+
 ### BUILD ARCHITECTURE
 
-Show the draft, readiness, LOCKED decisions, and open critical assumptions. If READY, request `YA, CONFIRM ARCHITECTURE` before confirming.
+Open the final confirmation gate only after the locked PRE-ARCH has gone through detailed ACTION PLAN, atomic-task evidence, PRE-ARCH review, the LAST ARCHITECTURE CHALLENGE, and any required final improvement/revision. Show the latest architecture candidate, readiness, LOCKED decisions, challenge findings, implementation evidence, ACTION_PLAN architecture-impact findings, and accepted/deferred unknowns. If READY, request `YA, CONFIRM ARCHITECTURE` before confirming.
+
+### BUILD FIRST RELEASE
+
+After `ARCHITECTURE CONFIRMED`, rebuild the ACTION PLAN from the confirmed architecture/current implementation state, slice fresh release atomic tasks, and execute the first-release build. Complete required integration, hardening, verification and release acceptance before declaring `DELIVERED !!`. A material architecture defect discovered during release work must reopen governed architecture review rather than being patched silently.
+
+### ARCHITECTURE CHALLENGE
+
+Run the pre-confirmation architecture review using the smallest useful challenge method set. Return material findings as `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`. Do not silently change LOCKED decisions.
 
 ### ZASS AUDIT
 

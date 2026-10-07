@@ -13,7 +13,12 @@
 - **Current focus:** [one main focus]
 - **Execution backend:** \`ACTION_PLAN.md\` / [GitHub Issues or another named backend]
 - **Architecture status:** [not started / draft / confirmed reference]
+- **Plan mode:** [PRE-ARCH EVIDENCE / RELEASE BUILD / ORDINARY EXECUTION]
+- **Execution baseline:** [not applicable / PRE-ARCH not locked / PRE-ARCH locked]
+- **PRE-ARCH version/reference:** [reference]
+- **Evidence required before final architecture confirmation:** [list / none justified]
 - **Rule:** ZASS remains authoritative for questions, risks, candidates, decisions, LOCKED decisions, and architecture readiness.
+- **Planning feedback rule:** ACTION_PLAN may surface implementation findings that require architecture review, but it cannot decide architecture or change a LOCKED decision.
 
 ## 🏗️ ZERO → ARCHITECTURE SNAPSHOT
 
@@ -53,6 +58,92 @@
 | Action ID | Priority | Status | Action | Done when | Related ZASS IDs |
 |---|---|---|---|---|---|
 | A-001 | P0 | NEXT | [small action] | [observable acceptance criteria] | [Q-xxx / E-xxx] |
+
+## 3A. IMPLEMENTATION PLANNING / ARCHITECTURE FEEDBACK
+
+> Do not hide an architecture flaw inside a task. Record it here and return it to architecture/design authority.
+
+For substantial technical architecture, detailed planning is built against the owner-approved `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`. PRE-ARCH is a versioned execution hypothesis, not final architecture confirmation.
+
+Planning may capture implementation sequence, dependencies, feasibility, migration, test gates/regressions, rollback points, security/privacy checks, integration checkpoints, unresolved implementation questions, and evidence required before the next gate.
+
+| Finding ID | Type | Finding / evidence | Architecture impact | Required response | Related IDs |
+|---|---|---|---|---|---|
+| APF-001 | [DEPENDENCY / FEASIBILITY / MIGRATION / TEST / ROLLBACK / SECURITY / INTEGRATION / OPERABILITY / OTHER] | [...] | [NONE / REVIEW REQUIRED / REVISION PROPOSED / OWNER DECISION REQUIRED] | [...] | [D-xxx / E-xxx / architecture section] |
+
+If impact is `OWNER DECISION REQUIRED`, stop before execution changes the affected boundary.
+
+## 3B. DERIVED ATOMIC TASK PACKET
+
+> This is a derived execution packet, not a second planning authority.
+
+```text
+Task ID:
+PRE-ARCH version/reference:
+Primary outcome:
+Source / lineage:
+Dependencies:
+Inputs:
+Allowed scope:
+Allowed files/modules:
+Forbidden scope:
+Acceptance criteria:
+Tests:
+Regression requirements:
+Evidence required:
+Commit expectation:
+STOP & ESCALATE:
+Result:
+Architecture impact: NO ARCH IMPACT / TASK-PLAN ISSUE / PRE-ARCH REVIEW REQUIRED / LOCKED DECISION IMPACT
+Reviewer disposition: PENDING / PASS / REWORK / REVISE PRE-ARCH / BLOCK OWNER DECISION
+```
+
+A task is READY only when no unresolved architecture judgment remains. See `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`.
+
+## 3C. TASK RESULT → PRE-ARCH REVIEW
+
+For substantial technical architecture, every completed atomic task returns evidence to a reviewer before the next task is automatically eligible.
+
+```text
+NO ARCH IMPACT
+→ PASS → update ACTION_PLAN → NEXT TASK
+
+TASK-PLAN ISSUE
+→ REWORK → task/ACTION_PLAN
+
+PRE-ARCH REVIEW REQUIRED
+→ capable reasoner reviews evidence
+→ revise/supersede PRE-ARCH if justified
+→ re-plan/re-slice affected work
+
+LOCKED DECISION IMPACT
+→ STOP → OWNER DECISION GATE
+```
+
+Do not let a coding worker silently revise PRE-ARCH.
+
+## 3D. POST-CONFIRMATION RELEASE REPLAN
+
+After material technical architecture is `ARCHITECTURE CONFIRMED`, do not blindly continue the PRE-ARCH evidence task queue.
+
+Rebuild/rebase ACTION_PLAN from current truth:
+
+- confirmed architecture reference;
+- current repository/product state;
+- accepted first-release scope;
+- remaining dependencies/migrations;
+- integration checkpoints;
+- release test/regression gates;
+- security/operability/reliability gates due;
+- deployment/rollback requirements;
+- documentation/durable-state updates;
+- release acceptance criteria.
+
+Then slice a fresh RELEASE BUILD atomic task set.
+
+If release work reveals a material architecture defect, STOP normal release flow and return it to governed architecture review. Do not let a worker silently mutate confirmed architecture.
+
+`DELIVERED !!` is allowed only after applicable release acceptance checks are factually satisfied.
 
 ## 4. EXPERIMENTS
 

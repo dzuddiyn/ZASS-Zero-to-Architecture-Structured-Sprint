@@ -13,7 +13,12 @@
 - **Current focus:** [satu fokus utama]
 - **Execution backend:** \`ACTION_PLAN.md\` / [GitHub Issues atau backend dinamakan]
 - **Architecture status:** [not started / draft / confirmed reference]
+- **Plan mode:** [PRE-ARCH EVIDENCE / RELEASE BUILD / ORDINARY EXECUTION]
+- **Execution baseline:** [not applicable / PRE-ARCH not locked / PRE-ARCH locked]
+- **PRE-ARCH version/reference:** [reference]
+- **Evidence required sebelum final architecture confirmation:** [list / none justified]
 - **Rule:** ZASS kekal authoritative untuk questions, risks, candidates, decisions, LOCKED decisions dan architecture readiness.
+- **Planning feedback rule:** ACTION_PLAN boleh surface implementation finding yang memerlukan architecture review, tetapi ia tidak boleh menentukan architecture atau mengubah keputusan LOCKED.
 
 ## 🏗️ ZERO → ARCHITECTURE SNAPSHOT
 
@@ -53,6 +58,92 @@
 | Action ID | Priority | Status | Action | Done when | Related ZASS IDs |
 |---|---|---|---|---|---|
 | A-001 | P0 | NEXT | [small action] | [observable acceptance criteria] | [Q-xxx / E-xxx] |
+
+## 3A. IMPLEMENTATION PLANNING / ARCHITECTURE FEEDBACK
+
+> Jangan sembunyikan architecture flaw di dalam task. Rekod di sini dan pulangkan kepada authority design/architecture.
+
+Untuk substantial technical architecture, detailed planning dibina terhadap `PRE-ARCH BASELINE — LOCKED FOR EXECUTION` yang diluluskan owner. PRE-ARCH ialah execution hypothesis berversi, bukan final architecture confirmation.
+
+Planning boleh menyimpan implementation sequence, dependencies, feasibility, migration, test gates/regressions, rollback points, security/privacy checks, integration checkpoints, unresolved implementation questions, dan evidence required sebelum next gate.
+
+| Finding ID | Type | Finding / evidence | Architecture impact | Required response | Related IDs |
+|---|---|---|---|---|---|
+| APF-001 | [DEPENDENCY / FEASIBILITY / MIGRATION / TEST / ROLLBACK / SECURITY / INTEGRATION / OPERABILITY / OTHER] | [...] | [NONE / REVIEW REQUIRED / REVISION PROPOSED / OWNER DECISION REQUIRED] | [...] | [D-xxx / E-xxx / architecture section] |
+
+Jika impact ialah `OWNER DECISION REQUIRED`, STOP sebelum execution mengubah boundary berkaitan.
+
+## 3B. DERIVED ATOMIC TASK PACKET
+
+> Ini execution packet derived, bukan planning authority kedua.
+
+```text
+Task ID:
+PRE-ARCH version/reference:
+Primary outcome:
+Source / lineage:
+Dependencies:
+Inputs:
+Allowed scope:
+Allowed files/modules:
+Forbidden scope:
+Acceptance criteria:
+Tests:
+Regression requirements:
+Evidence required:
+Commit expectation:
+STOP & ESCALATE:
+Result:
+Architecture impact: NO ARCH IMPACT / TASK-PLAN ISSUE / PRE-ARCH REVIEW REQUIRED / LOCKED DECISION IMPACT
+Reviewer disposition: PENDING / PASS / REWORK / REVISE PRE-ARCH / BLOCK OWNER DECISION
+```
+
+Task hanya READY apabila tiada unresolved architecture judgment. Rujuk `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`.
+
+## 3C. TASK RESULT → PRE-ARCH REVIEW
+
+Untuk substantial technical architecture, setiap atomic task yang siap mesti pulangkan evidence kepada reviewer sebelum task seterusnya menjadi eligible secara automatik.
+
+```text
+NO ARCH IMPACT
+→ PASS → update ACTION_PLAN → NEXT TASK
+
+TASK-PLAN ISSUE
+→ REWORK → task/ACTION_PLAN
+
+PRE-ARCH REVIEW REQUIRED
+→ capable reasoner review evidence
+→ revise/supersede PRE-ARCH jika justified
+→ re-plan/re-slice kerja terjejas
+
+LOCKED DECISION IMPACT
+→ STOP → OWNER DECISION GATE
+```
+
+Coding worker tidak boleh revise PRE-ARCH secara senyap.
+
+## 3D. POST-CONFIRMATION RELEASE REPLAN
+
+Selepas technical architecture yang material menjadi `ARCHITECTURE CONFIRMED`, jangan sambung PRE-ARCH evidence task queue secara membuta tuli.
+
+Rebuild/rebase ACTION_PLAN daripada current truth:
+
+- confirmed architecture reference;
+- current repository/product state;
+- accepted first-release scope;
+- remaining dependencies/migrations;
+- integration checkpoints;
+- release test/regression gates;
+- security/operability/reliability gates due;
+- deployment/rollback requirements;
+- documentation/durable-state updates;
+- release acceptance criteria.
+
+Kemudian slice fresh RELEASE BUILD atomic task set.
+
+Jika release work mendedahkan architecture defect material, STOP normal release flow dan pulangkan kepada governed architecture review. Worker tidak boleh mutate confirmed architecture secara senyap.
+
+`DELIVERED !!` hanya dibenarkan selepas applicable release acceptance checks benar-benar dipenuhi.
 
 ## 4. EXPERIMENTS
 

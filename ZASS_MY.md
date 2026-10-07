@@ -1,6 +1,6 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.9 (routing surface bahasa global; semantics keputusan teras tidak berubah)
+**Version:** 0.3.10 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
 **ZASS SYSTEM:** v0.2.1
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
@@ -113,7 +113,17 @@ LOCK DECISIONS
     ↓
 DRAFT ARCH
     ↓
-BUILD ARCHITECTURE
+ARCHITECTURE CHALLENGE
+    ↓
+CONTROLLED REVISION
+    ↓
+LOCK PRE-ARCH
+    ↓
+DETAILED ACTION PLAN ↔ PRE-ARCH
+    ↓
+ATOMIC EVIDENCE LOOP
+    ↓
+BUILD / CONFIRM ARCHITECTURE
 ```
 
 Aturan convergence:
@@ -143,7 +153,7 @@ Akhiri **setiap** balasan AI dengan:
 🏗️ ZERO → ARCHITECTURE: [███████░░░] 70% — READY FOR DRAFT ARCH
 🔬 EVIDENCE CONFIDENCE: UNVALIDATED — [sebab ringkas berdasarkan evidence sebenar]
 
-⬆️ UPDATE ZASS? now v0.3.8 / latest v0.3.9
+⬆️ UPDATE ZASS? now v0.3.9 / latest v0.3.10
 ```
 
 Footer ialah peringatan, bukan arahan automatik. Gantikan progress bar, peratus, status, Evidence Confidence dan versi contoh dengan keadaan sebenar. Jika baris ZERO → ARCHITECTURE ialah assessment sebenar, baris Evidence Confidence wajib dipaparkan bersama mengikut rule di bahagian Evidence Confidence. Pada mesej biasa, footer dan progress bar tetap kelihatan tetapi semakan versi hanya wajib apabila pengguna sengaja memberi arahan `ZASS` atau `ZASS!!`. `AC-xxx` dalam ZASS penuh kekal bermaksud **Architecture Candidate**, bukan calon persetujuan ZASSIMPLE.
@@ -164,23 +174,29 @@ Gunakan `ACTION_PLAN.md` untuk projek yang mempunyai kerja berbilang langkah ata
 | Fail | Authority |
 |---|---|
 | `ZASS.md` | Discovery, questions, risks, candidates, decisions, LOCKED decisions, experiment requirement, readiness dan perubahan keputusan. |
-| `ACTION_PLAN.md` | Execution/progress state semasa: fokus, aksi, pelaksanaan eksperimen, bukti, hasil, blocker, lesson, kerja siap dan kerja PARKED. |
+| `ACTION_PLAN.md` | Implementation planning + execution/progress state: PRE-ARCH reference, sequence, dependencies, feasibility, experiments, migration/integration/security/test/rollback gates, atomic-task planning, evidence/results, blocker, lesson, kerja siap dan PARKED. |
 | `ARCHITECTURE.md` | Representasi architecture yang berasal daripada state ZASS yang telah disahkan. Ia hanya diperlukan apabila architecture dibina. |
 
-`ACTION_PLAN.md` tidak boleh LOCK atau mengubah keputusan ZASS, menentukan architecture, atau menjadikan eksperimen PASS sebagai keputusan secara automatik.
+`ACTION_PLAN.md` tidak boleh LOCK atau mengubah keputusan ZASS, menentukan architecture, atau menjadikan eksperimen PASS sebagai keputusan secara automatik. Ia **boleh** merekod finding implementation-planning yang memerlukan architecture review. Finding itu mesti feed balik secara explicit kepada ZASS/ARCHITECTURE; ACTION_PLAN tidak mengaplikasikan perubahan architecture dengan sendiri.
 
 `ZERO → ARCHITECTURE` dikira dan direkod secara rasmi dalam `ZASS.md`. Jika `ACTION_PLAN.md` digunakan, ia menyimpan **snapshot** nilai rasmi itu untuk execution dan dashboard; ia tidak mengira, menaikkan atau menurunkan skor sendiri. Setiap perubahan skor mesti mengemas kini ZASS dan snapshot ACTION PLAN dalam commit atomik yang sama. Gunakan `Source: ZASS.md v<version> — same Git commit`; jangan cuba menulis SHA commit itu ke dalam fail kerana SHA hanya wujud selepas commit. GitHub Actions mengambil SHA sebenar daripada event commit dan menambahkannya pada mirror seperti Notion.
 
 ```text
-ZASS: Q-xxx / R-xxx / candidate / E-xxx need
+LOCKED PRE-ARCH baseline
                   ↓
-ACTION_PLAN: execute action or E-xxx
+DETAILED ACTION_PLAN
                   ↓
-evidence: PASS / FAIL / INCONCLUSIVE / BLOCKED
+ATOMIC TASK
                   ↓
-ZASS FEED
+RESULT / EVIDENCE
                   ↓
-ZASS REVIEW → DECIDE / LOCK / REJECT / TEST MORE / PIVOT
+PRE-ARCH REVIEW
+                  ├─ NO ARCH IMPACT → PASS → NEXT TASK
+                  ├─ TASK-PLAN ISSUE → REWORK
+                  ├─ ARCH IMPACT → REVISE / SUPERSEDE PRE-ARCH
+                  └─ LOCKED DECISION IMPACT → STOP → OWNER
+
+Finding keputusan/evidence yang menyentuh authority masih kembali melalui ZASS FEED / ZASS REVIEW.
 ```
 
 Gunakan ID `E-xxx` yang sama apabila eksperimen datang daripada ZASS. ZASS memegang tujuan dan requirement evidence eksperimen; ACTION_PLAN merekod pelaksanaan, bukti dan hasil. `ZASS FEED` membawa finding matang kembali untuk dinilai, bukan mencipta decision automatik.
@@ -618,13 +634,71 @@ Tujuannya supaya AI masa depan tidak mengulangi idea yang sudah dinilai dan dito
 
 ---
 
-## 9. Draf dahulu, sahkan architecture apabila READY
+## 9. Draf → challenge → lock PRE-ARCH → confirm selepas evidence
 
 `DRAFT ARCH` menghasilkan draf architecture berversi kerja walaupun readiness belum READY. Asaskan draf pada keputusan LOCKED, goals, constraints, workflows dan risiko yang diketahui; labelkan andaian serta ARCHITECTURE BLOCKER. Jangan memperkenalkan keputusan besar secara senyap.
 
-Apabila draf menjawab tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan, AI mesti bertanya **“Sedia untuk BUILD ARCHITECTURE?”** bersama andaian kritikal yang masih terbuka. AI juga boleh mencadangkan `DRAFT ARCH` lebih awal apabila keputusan cukup jelas.
+Apabila draf menjawab tujuan, aliran utama, komponen utama dan keputusan LOCKED berkaitan, AI mesti bertanya **“Sedia untuk ARCHITECTURE CHALLENGE?”** bersama andaian kritikal yang masih terbuka. AI juga boleh mencadangkan `DRAFT ARCH` lebih awal apabila keputusan cukup jelas.
 
-`BUILD ARCHITECTURE` memulakan pintu pengesahan, bukan membina terus: tunjuk draf, keputusan LOCKED, status ARCHITECTURE READINESS, andaian kritikal dan kesannya. Jika belum READY, jelaskan blocker yang menghalang pengesahan. Jika READY, minta balasan tepat `YA, CONFIRM ARCHITECTURE`. Hanya selepas balasan itu architecture disahkan daripada keputusan LOCKED dan konteks yang telah diterima pemilik.
+Untuk technical architecture yang material, `BUILD ARCHITECTURE` ialah gate pengesahan **akhir** dan hanya berlaku selepas PRE-ARCH evidence loop mencukupi, final architecture candidate telah melalui **LAST ARCHITECTURE CHALLENGE**, dan sebarang final improvement/revision yang justified telah dimasukkan. Pada final review, tunjuk PRE-ARCH lineage terkini, keputusan LOCKED, ARCHITECTURE READINESS, finding challenge awal dan terakhir, implementation evidence, feedback ACTION_PLAN, unknown yang diterima/defer, dan impak. Jika READY, minta balasan tepat `YA, CONFIRM ARCHITECTURE`. Hanya selepas balasan itu architecture disahkan.
+
+**Architecture Challenge ialah gate/review mode, bukan stage lifecycle top-level baharu.** Guna review engine sedia ada dengan set method paling kecil yang berguna: red-team, pre-mortem, assumption challenge, failure-mode analysis, dependency/coupling, trust/security boundary, operability/testability, portability/vendor-lock-in, atau feasibility/dependency review. Klasifikasikan finding material sebagai `KEEP`, `REVISE`, `QUESTION`, `EXPERIMENT`, atau `OWNER DECISION REQUIRED`. Finding `REVISE` hanya boleh mengemas kini draf jika ia tidak mengubah keputusan LOCKED. Jika keputusan LOCKED perlu berubah, STOP dan kembali kepada owner decision gate.
+
+Untuk challenge kompleks/berimpak tinggi, utamakan capability Architect / Strong Reasoner dengan reasoning lebih tinggi atau Work-style research/analysis environment jika tersedia. Ini cadangan capability, bukan requirement tool/vendor tertentu.
+
+---
+
+## 9A. Kontrak architecture → execution
+
+Selepas draf architecture cukup matang untuk memacu implementation material:
+
+```text
+DRAFT ARCHITECTURE
+→ ARCHITECTURE CHALLENGE
+→ CONTROLLED REVISION
+→ OWNER REVIEW
+→ YA, LOCK PRE-ARCH
+→ PRE-ARCH BASELINE — LOCKED FOR EXECUTION
+→ CAPABLE REASONER / PLANNER
+→ DETAILED ACTION PLAN ↔ PRE-ARCH
+→ DETAILED ATOMIC TASK SLICING
+→ EXECUTE ONE TASK
+→ RESULT / EVIDENCE
+→ PRE-ARCH REVIEW
+   ├─ PASS → NEXT TASK
+   ├─ REWORK → TASK / ACTION PLAN
+   ├─ ARCH FINDING → REVISE / SUPERSEDE PRE-ARCH
+   └─ LOCKED-DECISION IMPACT → STOP → OWNER
+→ SUFFICIENT IMPLEMENTATION EVIDENCE
+→ FINAL ARCHITECTURE REVIEW
+→ LAST ARCHITECTURE CHALLENGE
+→ FINAL IMPROVE / REVISION
+→ BUILD ARCHITECTURE
+→ YA, CONFIRM ARCHITECTURE
+→ ARCHITECTURE CONFIRMED
+→ REBUILD RELEASE ACTION PLAN
+→ RELEASE ATOMIC TASKS
+→ BUILD FIRST RELEASE VERSION
+→ TEST / INTEGRATE / HARDEN / VERIFY
+→ RELEASE ACCEPTANCE
+→ DELIVERED !!
+```
+
+`PRE-ARCH BASELINE — LOCKED FOR EXECUTION` ialah architectural hypothesis berversi yang diluluskan owner. Ia cukup stabil untuk detailed planning dan bounded evidence-producing implementation, tetapi **bukan** `ARCHITECTURE CONFIRMED` dan tidak mengatasi mana-mana keputusan `D-xxx | LOCKED`.
+
+Selepas PRE-ARCH lock, Architect / Strong Reasoner yang capable bersama Planner mesti menghasilkan atau refine detailed ACTION PLAN: sequence, dependencies, feasibility, experiments, migration, integration/security checks, test/regression gates, rollback points, dan evidence required sebelum final architecture review.
+
+Hanya selepas itu derive detailed atomic task packets. Task hanya READY apabila satu primary outcome, scope, dependencies, inputs, allowed/forbidden change surface, acceptance criteria, tests/regressions, evidence dan escalation rules jelas. Jika coding worker masih memerlukan architecture judgment, pulangkan item kepada planning.
+
+Setiap PRE-ARCH task result kembali ke review. `NO ARCH IMPACT` boleh PASS ke evidence task seterusnya; masalah task/plan menyebabkan REWORK; architecture finding material mencetuskan PRE-ARCH review/revision; sebarang impact kepada keputusan LOCKED berhenti pada owner gate.
+
+Apabila PRE-ARCH evidence mencukupi, jalankan **last architecture challenge** yang fokus pada apa yang implementation evidence benar-benar dedahkan: surviving assumptions, hidden coupling, runtime/deployment behavior, reliability/retry/idempotency, security/trust boundaries, operability/observability, migration/rollback, portability, dan architecture debt. Terapkan final improvement/revision yang justified sebelum `BUILD ARCHITECTURE`.
+
+Selepas `ARCHITECTURE CONFIRMED`, jangan sambung PRE-ARCH evidence task queue secara membuta tuli. Rebuild/rebase ACTION_PLAN daripada confirmed architecture dan state repo/product semasa, slice release atomic tasks yang baharu, bina first release version, kemudian test/integrate/harden/verify sehingga release acceptance. Hanya selepas itu projek/release boleh ditanda `DELIVERED !!`. Jika release work menemui architecture defect yang material, STOP normal release flow dan buka semula architecture melalui governed review.
+
+ACTION_PLAN kekal planning/execution authority sahaja. Ia boleh meminta PRE-ARCH review tetapi tidak boleh menentukan architecture atau mengubah keputusan LOCKED.
+
+Guna kontrak shared: [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).
 
 ---
 
@@ -1104,7 +1178,7 @@ Status:
 | 85–99% + draf wujud dan sedang direview | `DRAFT ARCH UNDER REVIEW` |
 | 100% | `ARCHITECTURE CONFIRMED` |
 
-Apabila skor mencapai sekurang-kurangnya 70%, AI mesti **mencadangkan** draf architecture tetapi tidak membinanya secara automatik. Status tidak naik kepada `DRAFT ARCH UNDER REVIEW` hanya kerana skor mencapai 85%; draf mesti benar-benar wujud dan sedang direview. Skor 100% hanya diberi selepas pintu pengesahan dua langkah selesai dan pemilik menjawab tepat `YA, CONFIRM ARCHITECTURE`.
+Apabila skor mencapai sekurang-kurangnya 70%, AI mesti **mencadangkan** draf architecture tetapi tidak membinanya secara automatik. Status tidak naik kepada `DRAFT ARCH UNDER REVIEW` hanya kerana skor mencapai 85%; draf mesti benar-benar wujud dan sedang direview. PRE-ARCH baseline boleh di-lock ketika skor masih di bawah 100%; PRE-ARCH ialah execution baseline, bukan final architecture confirmation. Skor 100% hanya diberi selepas final evidence-backed confirmation gate selesai dan pemilik menjawab tepat `YA, CONFIRM ARCHITECTURE`.
 
 Selain skor, confirmed architecture dibenarkan hanya apabila:
 
@@ -1119,6 +1193,10 @@ Selain skor, confirmed architecture dibenarkan hanya apabila:
 - [ ] No unresolved contradiction affects the core architecture
 - [ ] Major candidate architectures have been resolved or intentionally deferred
 - [ ] Known blockers are documented
+- [ ] Untuk technical architecture yang material, Architecture Challenge selesai dan PRE-ARCH baseline semasa telah diluluskan owner
+- [ ] Required implementation evidence daripada PRE-ARCH/ACTION_PLAN telah direview
+- [ ] Material task findings telah dimasukkan atau ditolak secara explicit daripada PRE-ARCH terkini
+- [ ] Tiada unresolved PRE-ARCH finding yang memerlukan owner decision sebelum final confirmation
 
 **ZERO → ARCHITECTURE score:**
 
@@ -1173,8 +1251,9 @@ Confirm architecture using ONLY:
 3. LOCKED decisions
 4. Required workflows
 5. Known risks
-6. Validated evidence
-7. Explicitly accepted trade-offs
+6. Latest reviewed PRE-ARCH baseline dan supersession history
+7. Validated implementation / experiment evidence yang diperlukan ACTION PLAN
+8. Unknown/trade-off yang diterima atau defer secara explicit
 
 Do not introduce major architectural decisions without explicitly flagging them.
 
@@ -1246,8 +1325,9 @@ If a LOCKED decision must change:
 PROJECT/
 │
 ├── ZASS.md
-├── ACTION_PLAN.md        ← optional; live execution/progress state
+├── ACTION_PLAN.md        ← optional; planning + live execution/progress authority
 ├── ARCHITECTURE.md       ← only after architecture is built
+├── [derived task packets]← optional backend; bukan planning authority kedua
 ├── README.md
 │
 ├── docs/
@@ -1308,9 +1388,25 @@ Commit perubahan yang telah diluluskan sebagai satu commit atomik ber-versi dan 
 
 Prepare or revise a working-version architecture draft from the authoritative locked state. This does not confirm it.
 
+### LOCK PRE-ARCH
+
+Selepas Architecture Challenge dan revision yang justified, buka owner review untuk execution baseline. Jika cukup coherent untuk bounded planning/implementation, minta `YA, LOCK PRE-ARCH`. Ini mewujudkan `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`; ia **bukan** architecture confirmation. Revision material selepas itu mesti traceable, dan conflict dengan keputusan LOCKED kembali kepada owner.
+
+### LAST ARCHITECTURE CHALLENGE
+
+Apabila PRE-ARCH evidence mencukupi, jalankan satu final evidence-backed architecture challenge sebelum `BUILD ARCHITECTURE`. Guna kelas `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED` yang sama. Terapkan final improvement/revision yang justified; jika keputusan LOCKED perlu berubah, STOP pada owner gate.
+
 ### BUILD ARCHITECTURE
 
-Show the draft, readiness, LOCKED decisions, and open critical assumptions. If READY, request `YA, CONFIRM ARCHITECTURE` before confirming.
+Buka final confirmation gate hanya selepas locked PRE-ARCH melalui detailed ACTION PLAN, atomic-task evidence, PRE-ARCH review, LAST ARCHITECTURE CHALLENGE dan final improvement/revision yang diperlukan. Tunjuk final architecture candidate, readiness, keputusan LOCKED, challenge findings, implementation evidence, ACTION_PLAN architecture-impact findings, serta unknown yang diterima/defer. Jika READY, minta `YA, CONFIRM ARCHITECTURE` sebelum confirm.
+
+### BUILD FIRST RELEASE
+
+Selepas `ARCHITECTURE CONFIRMED`, rebuild ACTION PLAN daripada confirmed architecture/current implementation state, slice fresh release atomic tasks, dan execute first-release build. Lengkapkan integration, hardening, verification dan release acceptance yang diperlukan sebelum mengisytiharkan `DELIVERED !!`. Architecture defect material yang ditemui semasa release work mesti membuka governed architecture review semula, bukan dipatch senyap.
+
+### ARCHITECTURE CHALLENGE
+
+Jalankan pre-confirmation architecture review menggunakan set challenge method paling kecil yang berguna. Pulangkan finding material sebagai `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`. Jangan ubah keputusan LOCKED secara senyap.
 
 ### ZASS AUDIT
 

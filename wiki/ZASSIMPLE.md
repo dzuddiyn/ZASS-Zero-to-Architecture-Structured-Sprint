@@ -1,6 +1,6 @@
 # ZASSIMPLE
 
-**Current version:** v0.3.1
+**Current version:** v0.3.2
 
 ZASSIMPLE is the default lightweight DESIGN path in ZASS SYSTEM.
 
@@ -69,20 +69,24 @@ Design [██████████] 4/4
 Recommended challenge: [AI-selected thinking method]
 Why: [one short reason]
 
+Ordinary / non-technical:
 [🥊 CHALLENGE DESIGN !]   [🎨 CONTINUE TO CONFIRM]
+
+Substantial technical architecture:
+[🥊 CHALLENGE DESIGN !]   ← required before PRE-ARCH execution baseline
 ```
 
-AI selects the smallest useful thinking method automatically. If the challenge returns REFINE, ZASSIMPLE goes back to DESIGN. If it returns PASS, do not jump directly to confirmation. Show:
+AI selects the smallest useful thinking method automatically. Material findings are preserved internally as `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`. If resolving a finding would change a LOCKED decision, stop at the owner gate.
+
+For ordinary/non-technical design, the lightweight RE-CHALLENGE / CONFIRM path remains available.
+
+For **substantial technical architecture**, Challenge PASS means ready for PRE-ARCH owner review, not final confirmation:
 
 ```text
-Ready to confirm design? or Re-challenge?!
-
-[🥊 RE-CHALLENGE DESIGN ?!]   [🎨 CONFIRM DESIGN]
+[🔒 LOCK PRE-ARCH]   [🥊 RE-CHALLENGE DESIGN ?!]
 ```
 
-RE-CHALLENGE selects the next most valuable method for residual risk. After every PASS, the same RE-CHALLENGE / CONFIRM choice appears again. If the owner explicitly skips the first challenge with CONTINUE TO CONFIRM, confirmation may be surfaced directly.
-
-`CONFIRM DESIGN` opens the review gate. It does not confirm automatically. Final owner confirmation is:
+`YA, LOCK PRE-ARCH` creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`. A capable reasoner/planner then builds the detailed ACTION PLAN and evidence atomic tasks. Task evidence feeds PRE-ARCH review/revision. After evidence is sufficient, run one **LAST DESIGN / ARCHITECTURE CHALLENGE** and apply any justified final improvement/revision. Only then does `CONFIRM DESIGN` open final review, still requiring:
 
 ```text
 YA, CONFIRM DESIGN
@@ -92,7 +96,7 @@ Technical projects may still use architecture-specific aliases for compatibility
 
 ## Execution
 
-After confirmed design, ZASSIMPLE re-plans, slices the Action Plan, and shows one current task at a time.
+For ordinary/non-technical work, confirmed design may proceed directly to execution. For substantial technical architecture, PRE-ARCH execution happens **before** final design confirmation: detailed ACTION PLAN → evidence atomic task → result/evidence → PRE-ARCH review → next task/rework/revision → sufficient evidence → LAST CHALLENGE → final improvement → confirmation. After confirmation, rebuild the release ACTION PLAN, slice fresh RELEASE BUILD atomic tasks, build/test/integrate/harden/verify the first release, and mark `DELIVERED !!` only after release acceptance. A coding worker may make bounded implementation-local choices but must STOP & ESCALATE instead of making a new architecture decision.
 
 ```text
 🚀 STEP 1 / N — [task]
@@ -124,3 +128,5 @@ Migration is advisory, not automatic. The owner decides.
 Authoritative templates:
 - [ZASSIMPLE_EN.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_EN.md) — default
 - [ZASSIMPLE_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASSIMPLE/ZASSIMPLE_MY.md) — Bahasa Melayu
+
+See [Architecture-to-Execution](Architecture-to-Execution.md) for the shared task/result/STOP-ESCALATE contract.

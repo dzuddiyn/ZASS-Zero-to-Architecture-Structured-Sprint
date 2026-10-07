@@ -1,13 +1,13 @@
 # Full ZASS
 
-**Current version:** v0.3.9<br>
-**ZASS SYSTEM:** v0.2.0
+**Current version:** v0.3.10<br>
+**ZASS SYSTEM:** v0.2.1
 
 Full ZASS is the deeper decision-control method for projects where decisions, evidence, risks and architecture interact.
 
 Global ZASS SYSTEM routing is now **DUMP / DECIDE / DESIGN**: DUMP → ZASSPILL, DECIDE → ZASSELECTION, DESIGN → ZASSIMPLE. Full ZASS remains an escalation path when stronger governance is needed.
 
-v0.3.9 keeps that UI/UX alignment and adds the global EN/MY structured-surface language contract: progressive disclosure, next-meaningful-action UX, factual SAVE/sync receipts, and shared local/Web core semantics. Core decision semantics remain unchanged.
+v0.3.10 keeps the global EN/MY surface contract and adds the canonical technical flow: Architecture Challenge → owner-approved PRE-ARCH execution baseline → capable-reasoner detailed ACTION PLAN → atomic evidence loop → PRE-ARCH review/revision → last evidence-backed architecture challenge → final improvement/revision → owner architecture confirmation → rebuilt release Action Plan → first-release atomic build → DELIVERED !!. Core owner decision authority remains unchanged.
 
 Core principles:
 
@@ -44,11 +44,41 @@ LOCKED
     ↓
 DRAFT ARCHITECTURE
     ↓
-REVIEW
+ARCHITECTURE CHALLENGE
+    ↓
+CONTROLLED REVISION
+    ↓
+OWNER REVIEW
+    ↓
+YA, LOCK PRE-ARCH
+    ↓
+PRE-ARCH BASELINE — LOCKED FOR EXECUTION
+    ↓
+CAPABLE REASONER / DETAILED ACTION PLAN
+    ↓
+ATOMIC TASKS
+    ↓
+RESULT / EVIDENCE
+    ↓
+PRE-ARCH REVIEW / REVISION
+    ↓
+SUFFICIENT IMPLEMENTATION EVIDENCE
+    ↓
+LAST ARCHITECTURE CHALLENGE
+    ↓
+FINAL IMPROVE / REVISION
     ↓
 YA, CONFIRM ARCHITECTURE
     ↓
-CONFIRMED ARCHITECTURE
+REBUILD RELEASE ACTION PLAN
+    ↓
+RELEASE ATOMIC TASKS
+    ↓
+BUILD / TEST / INTEGRATE / HARDEN / VERIFY
+    ↓
+RELEASE ACCEPTANCE
+    ↓
+DELIVERED !!
 ```
 
 ## The authority boundary
@@ -132,15 +162,35 @@ Do not report success before the real commit/push succeeds.
 
 Prepare or revise a working architecture draft from the authoritative state.
 
+### ARCHITECTURE CHALLENGE
+
+Before major implementation/final confirmation of a material technical architecture, challenge the mature draft using the smallest useful review set. Classify findings as `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED`. If a LOCKED decision would need to change, stop at the owner decision gate.
+
+For complex/high-impact review, prefer a stronger reasoning capability or Work-style analysis environment when available; ZASS remains tool-agnostic.
+
+### LOCK PRE-ARCH
+
+After challenge/revision coherence, the owner may approve the current technical draft as `PRE-ARCH BASELINE — LOCKED FOR EXECUTION` with `YA, LOCK PRE-ARCH`. This is a versioned execution hypothesis, not final architecture confirmation.
+
+A capable reasoner/planner then creates the detailed ACTION PLAN and atomic tasks. Task results are reviewed against PRE-ARCH; material architecture findings revise/supersede PRE-ARCH, while LOCKED-decision impact stops at the owner gate.
+
+### LAST ARCHITECTURE CHALLENGE
+
+After PRE-ARCH evidence is sufficient, run one last evidence-backed architecture challenge focused on what the implementation revealed. Apply justified final improvement/revision; if a LOCKED decision must change, stop at the owner gate.
+
 ### BUILD ARCHITECTURE
 
-Show the draft, relevant LOCKED decisions, readiness, critical assumptions and blockers.
+Open the final confirmation gate only after the evidence required by PRE-ARCH/ACTION_PLAN is sufficient, the LAST ARCHITECTURE CHALLENGE is resolved, and any required final revision is incorporated. Show the final candidate, relevant LOCKED decisions, readiness, challenge history, implementation evidence, planning findings, and accepted/deferred unknowns.
 
 If ready, request the exact owner confirmation:
 
 ```text
 YA, CONFIRM ARCHITECTURE
 ```
+
+### BUILD FIRST RELEASE
+
+After `ARCHITECTURE CONFIRMED`, rebuild/rebase ACTION PLAN from confirmed architecture and current implementation state. Slice fresh RELEASE BUILD atomic tasks, build the first release version, complete required tests/integration/hardening/verification and release acceptance, then mark `DELIVERED !!`. PRE-ARCH evidence tasks are not automatically the release queue. Material architecture defects found during release work reopen governed architecture review.
 
 ## PARK
 
@@ -177,3 +227,7 @@ Authoritative files:
 - [ZASS_MY.md](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/ZASS_MY.md) — Bahasa Melayu localization
 
 With the Malay method active, structured tables/cards/I-AC-D labels render in Bahasa Melayu. With the English method active, those structured surfaces remain English even if ordinary conversation continues in Malay.
+
+## Architecture to execution
+
+For material technical architecture, atomic tasks are derived **after PRE-ARCH lock and detailed planning, before final confirmation**. Coding workers execute bounded tasks only; reviewers feed results back to PRE-ARCH until sufficient evidence exists for final architecture confirmation. See [Architecture-to-Execution](Architecture-to-Execution.md).
