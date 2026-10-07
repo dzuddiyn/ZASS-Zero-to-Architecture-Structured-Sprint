@@ -1,6 +1,6 @@
 # CR-010 v0.4a — `zass status` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — STOP/REVIEW PENDING  
+**Status:** LOCKED — IMPLEMENTED / FIELD-VALIDATED — CR-010 CLOSED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -303,7 +303,7 @@ GitHub Actions ZASS CI passed on PR #35 after implementation:
 
 No `zass diff`, npm publication, bootstrap-core work, remote access, or methodology change is included.
 
-The later CR-010 real-project field-test gate remains pending and is intentionally not claimed by this implementation receipt.
+At implementation-receipt time the real-project field-test gate was still pending; it subsequently PASSED and is recorded in `CR010_V04_REAL_PROJECT_FIELD_TEST.md`.
 
 
 ## 16. Real-project field validation
@@ -314,4 +314,4 @@ CR-010 v0.4 real-project field gate is **PASS**.
 
 See [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md).
 
-CR-010 closure remains pending the explicit STOP/REVIEW gate.
+CR-010 STOP/REVIEW passed; CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).

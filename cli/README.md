@@ -1,6 +1,8 @@
-# ZASS CLI — v0.3.0 validator
+# ZASS CLI — v0.4.0
 
-This directory contains the first productized ZASS validator.
+This directory contains the first productized ZASS validator/tooling surface.
+
+**CR-010 is CLOSED at zass-cli v0.4.0.** npm publication/bootstrap remains separate future productization work.
 
 ## Local development
 
@@ -10,10 +12,20 @@ npm test
 npm link
 ```
 
-Then run from a ZASS project directory:
+Then run from a Full ZASS project directory:
 
 ```bash
 zass check
+zass status
+zass diff
+```
+
+Command boundaries:
+
+```text
+zass check  → validate the current project under ZASS rules
+zass status → show a compact factual current-state summary
+zass diff   → show a ZASS-aware working-tree delta against local HEAD
 ```
 
 For CI or another commit-to-commit comparison, provide the historical Git baseline explicitly:
@@ -57,9 +69,20 @@ Z200–Z205 are the CR-010 v0.3 ACTION_PLAN consistency checks. `ZASS.md` remain
 
 Warnings do not fail the command. Validation errors return exit code `1`; CLI/runtime misuse returns `2`.
 
+## v0.4 status / diff
+
+CR-010 v0.4 adds two read-only commands without creating a second authority model:
+
+- `zass status` reports factual Full-ZASS file presence, validator summary, and local Git CLEAN / CHANGED / UNKNOWN state;
+- `zass diff` compares the three primary Full-ZASS files against local `HEAD`, reports file ADDED / MODIFIED / DELETED / UNCHANGED states, and provides bounded ZASS-aware identity / decision-state / declared-readiness deltas.
+
+`zass diff` is informational; `zass check` remains the validation authority.
+
+The Windows field correction normalizes only line-ending representation before file equality comparison so ordinary CRLF working trees do not become false `MODIFIED` results.
+
 ## Intentionally deferred
 
-v0.3.0 does not implement npm publication, `zass status`, `zass diff`, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, AI semantic comparison, or the optional Z206 working-tree atomic-sync heuristic. GitHub Actions orchestration is now provided by the repository workflow, while validator semantics remain in this CLI.
+v0.4.0 does not implement npm publication, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, AI semantic comparison, custom `zass diff` baselines/ranges, or the optional Z206 working-tree atomic-sync heuristic. GitHub Actions orchestration is provided by the repository workflow, while validator semantics remain in this CLI.
 
 See [`../docs/CR010_ZASS_CHECK_SPEC.md`](../docs/CR010_ZASS_CHECK_SPEC.md) for the locked implementation plan.
 

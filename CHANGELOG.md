@@ -1,3 +1,12 @@
+## 2026-10-07 — CR-010 STOP / REVIEW PASS — CLOSED
+
+- Ran the explicit CR-010 STOP/REVIEW after v0.4 implementation and real-project field validation.
+- Review criteria all PASS: local execution, passing/failing fixtures, understandable command output, real-project behavior, and no remaining unacceptable tested false positive after the Windows EOL correction.
+- STOP/REVIEW caught and corrected one closure-hygiene gap: package/docs still identified the implemented v0.4 CLI as v0.3.0 / status-diff deferred.
+- Aligned the private local package and active docs to `zass-cli v0.4.0`; no behavior or method semantics changed.
+- **CR-010 is CLOSED.** Final local commands: `zass check`, `zass status`, `zass diff`.
+- npm bootstrap CLI and ZASS Project Bootstrap Core remain separate next TRACK B work.
+
 ## 2026-10-07 — CR-010 v0.4 real-project field gate PASS
 
 - Completed real-project field testing of `zass status` and `zass diff` against Kerani_Core on Windows.

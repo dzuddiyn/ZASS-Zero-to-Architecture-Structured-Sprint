@@ -428,7 +428,7 @@ review/history projection
 automation and product adoption UX
 ```
 
-CR-010 v0.3 is implemented, field-validated, and closed at its STOP/review gate as zass-cli v0.3.0. Optional Z206 and CR-010 v0.4 remain deferred/not started.
+CR-010 is CLOSED at zass-cli v0.4.0 after v0.4 implementation, real-project field validation, and explicit STOP/review PASS. Optional Z206 remains deferred.
 
 ## 14. Authority boundary
 
@@ -440,7 +440,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 - implement AI-SYNC Web;
 - implement the landing page;
 - publish the CLI;
-- start CR-010 v0.3;
+- reopen CR-010 or add new validator semantics;
 - authorize automatic Full-ZASS migration.
 
 ## 15. Versioning contract
