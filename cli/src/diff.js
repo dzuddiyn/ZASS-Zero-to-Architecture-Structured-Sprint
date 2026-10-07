@@ -17,11 +17,17 @@ async function readCurrentFile(projectDir, name) {
   }
 }
 
+function normalizeLineEndings(content) {
+  return content.replace(/\r\n?/g, '\n');
+}
+
 function fileState(before, after) {
   if (before == null && after == null) return 'UNCHANGED';
   if (before == null) return 'ADDED';
   if (after == null) return 'DELETED';
-  return before === after ? 'UNCHANGED' : 'MODIFIED';
+  return normalizeLineEndings(before) === normalizeLineEndings(after)
+    ? 'UNCHANGED'
+    : 'MODIFIED';
 }
 
 function setDelta(before, after) {
