@@ -1,12 +1,14 @@
 # ZASS Project Bootstrap Core — Future Product Direction
 
-**Status:** LOCKED FUTURE DIRECTION  
+**Status:** LOCKED DIRECTION — v0.1 CORE CONTRACT LOCKED / IMPLEMENTATION NOT STARTED  
 **Date:** 2026-10-05  
 **Owner:** Project Owner  
 **Activation:** ZASS tooling/bootstrap work may proceed under isolated TRACK B before AISYNC Production v1 delivery; CrossAI consumption/integration remains gated separately  
 **Scope:** Shared project bootstrap engine for CLI and AISYNC Create Project
 
 > **Create once. Own the project space. Add Git when useful. Continue anywhere.**
+
+Detailed implementation contract: [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md).
 
 ## 1. Product goal
 
@@ -152,7 +154,8 @@ CR-010 v0.4: zass status + zass diff ✅
 → CR-010 CLOSED — zass-cli v0.4.0 ✅
 → npm bootstrap CLI v0.1 contract ✅ LOCKED
 → npm bootstrap CLI v0.1 implementation ✅ Windows + CI PASS
-→ ZASS Project Bootstrap Core ← NEXT
+→ Bootstrap Core v0.1 contract ✅ LOCKED
+→ implement shared Bootstrap Core ← NEXT
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
 ```

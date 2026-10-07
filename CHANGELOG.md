@@ -1,3 +1,14 @@
+## 2026-10-07 — ZASS Project Bootstrap Core v0.1 contract LOCKED
+
+- LOCKED the shared Bootstrap Core implementation contract for `create-zass` and future CrossAI Create Project.
+- Separated shared project semantics from consumer-specific materialization: Core owns method/language mapping, templates, minimal artifact plan, README/gitignore semantics, metadata, validation and snapshot verification; consumers own filesystem/Drive/GitHub/registration behavior.
+- Locked deterministic plan semantics: same project name + method + language + Core release produces the same three-artifact bootstrap plan.
+- Locked Full-ZASS authority mapping to `ZASS.md` for both English and Bahasa Melayu.
+- Locked consumer-neutral localized README generation and safe secret-oriented `.gitignore` baseline.
+- Locked migration of bootstrap template ownership out of `create-zass` into the shared Core so there is one template/catalog source.
+- CrossAI integration, Drive adapter, Git/GitHub adapter, public npm distribution strategy and stable external API freeze remain deferred until implementation + field test.
+- NEXT TRACK B step: implement shared Bootstrap Core and refactor `create-zass` to consume it.
+
 ## 2026-10-07 — npm Bootstrap CLI v0.1 implementation
 
 - Implemented private `create-zass@0.1.0` under `create-zass/`; it is not published to npm.

@@ -33,7 +33,8 @@ CR-010 v0.4 ✅
 → CR-010 CLOSED — zass-cli v0.4.0 ✅
 → npm bootstrap CLI v0.1 contract ✅ LOCKED
 → npm bootstrap CLI v0.1 implementation ✅ Windows + CI PASS
-→ ZASS Project Bootstrap Core ← NEXT
+→ Bootstrap Core v0.1 contract ✅ LOCKED
+→ implement shared Bootstrap Core ← NEXT
 → field-test bootstrap
 → freeze stable Bootstrap Core contract
 ```
@@ -94,14 +95,16 @@ npm bootstrap CLI v0.1 contract ✅
         ↓
 npm bootstrap CLI v0.1 implementation ✅
         ↓
-ZASS Project Bootstrap Core ← NEXT
+Bootstrap Core v0.1 contract ✅
+        ↓
+implement shared Bootstrap Core ← NEXT
         ↓
 field test
         ↓
 stable core contract
 ```
 
-The Bootstrap Core owns ZASS project bootstrap semantics.
+The Bootstrap Core owns ZASS project bootstrap semantics. Its v0.1 implementation contract is LOCKED in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md).
 
 It must support a valid project without GitHub.
 
