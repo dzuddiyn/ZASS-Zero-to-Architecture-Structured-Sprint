@@ -1,6 +1,6 @@
 # CR-010 v0.4b — `zass diff` Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTATION IN PROGRESS  
+**Status:** LOCKED — IMPLEMENTED / CI PASS — REAL-PROJECT FIELD TEST PENDING  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -438,15 +438,25 @@ Not part of v0.4b:
 - Project Bootstrap Core implementation.
 
 
-## 20. Implementation progress
+## 20. Implementation receipt
 
-Implementation branch adds only the locked v0.4b slice:
+CR-010 v0.4b is implemented in the bounded locked slice:
 
-- a local baseline-file reader for the three primary Full ZASS files;
-- `cli/src/diff.js` with deterministic file-state and semantic-delta reporting;
-- reuse of `extractZassProjectSnapshot()` and `extractDecisionState()`;
-- `zass diff` CLI routing with no arguments;
-- focused `diff.test.js` coverage;
-- existing unsupported-usage regression updated for the newly supported command.
+- `cli/src/git.js` adds a local baseline-file reader for the three primary Full ZASS files;
+- `cli/src/diff.js` provides `runDiff()` and `formatDiff()`;
+- primary files are classified as `UNCHANGED / MODIFIED / ADDED / DELETED`;
+- canonical ZASS ID, LOCKED/SUPERSEDED state-set, declared readiness and critical-blocker deltas reuse existing parser semantics;
+- `cli/bin/zass.js` supports `zass diff` with no arguments;
+- `cli/test/diff.test.js` covers the locked acceptance behaviors;
+- existing unsupported-usage regression now recognizes `diff` as a valid command.
 
-No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, or methodology change is included.
+GitHub Actions ZASS CI passed on PR #37 after implementation:
+
+- CLI test step: PASS;
+- repository consistency check: PASS;
+- historical baseline resolution: PASS;
+- ZASS validator step: PASS.
+
+No custom baseline, raw patch mode, remote comparison, npm publication, Bootstrap Core work, methodology change, or real-project field-test claim is included.
+
+The CR-010 real-project field-test gate remains pending.
