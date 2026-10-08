@@ -124,12 +124,20 @@ Locked evidence classes, decision dimensions, final review outcomes, CR-006 scal
 
 No recorder schema, CLI command, rating scale, aggregation mechanism, or implementation architecture was selected in E2-T01.
 
+### E2-T02 — Define minimal evidence model + local receipt contract
+
+**Status:** PASS / LOCKED  
+**Contract:** [`ZASS_TRACK_E_LOCAL_EVIDENCE_RECEIPT_V01.md`](ZASS_TRACK_E_LOCAL_EVIDENCE_RECEIPT_V01.md)
+
+Locked a minimal local JSON evidence receipt with opaque receipt/evidence IDs, evidence-class tagging, Q1–Q10 linkage, bounded factual outcomes, privacy-safe tooling/workflow metadata, explicit consent boundaries for user ratings/feedback, and a recommended local `.zass/evidence/` location.
+
+The contract forbids raw semantic project content, private identifiers, hidden telemetry, automatic upload, and any receipt authority over Markdown/LOCKED decisions. Retention, Git tracking, cleanup, aggregation, exact rating scale, and implementation command/package remain deferred.
+
 ## 7. Deferred design decisions
 
 Not decided in E1-T01:
 
-- exact evidence JSON/CSV schema;
-- exact local receipt filename/location;
+- exact implementation-specific JSON encoder/validator details beyond the locked v0.1 contract;
 - whether evidence capture is a CLI command, helper script or separate small package;
 - exact rating scale;
 - exact aggregation workflow;
