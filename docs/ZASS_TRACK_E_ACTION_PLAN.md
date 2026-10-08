@@ -1,6 +1,6 @@
 # TRACK E — FIELD EVIDENCE & SCALE VALIDATION
 
-**Status:** E2 CLOSED / PASS / ARCHITECTURE v0.1 FROZEN  
+**Status:** E2 CLOSED / PASS / ARCHITECTURE v0.1 FROZEN — E3 PLANNED  
 **Date:** 2026-10-08  
 **Owner:** Project Owner  
 **Scope:** Lightweight field-evidence and scale-validation work for ZASS only.
@@ -204,7 +204,41 @@ Deferred beyond E2 as implementation/distribution choices:
 
 These do not block E3 local implementation planning.
 
-## 8. Exit condition for TRACK E
+## 9. E3 implementation plan
+
+**Status:** E3-T01 PASS / PLAN LOCKED  
+**Plan:** [`ZASS_TRACK_E_E3_IMPLEMENTATION_PLAN.md`](ZASS_TRACK_E_E3_IMPLEMENTATION_PLAN.md)
+
+Locked the bounded implementation strategy:
+
+```text
+cli/src/evidence/
+→ reusable local evidence module
+
+tools/track-e/
+→ repo-local field runner for E4
+```
+
+No public `zass evidence` command is added in the initial implementation. Existing `zass check/status/diff` semantics remain frozen.
+
+Atomic E3 queue:
+
+```text
+E3-T02  evidence constants + strict validator
+E3-T03  local receipt writer + safe store
+E3-T04  receipt reader + deterministic projector
+E3-T05  rating/feedback + privacy guards
+E3-T06  repo-local Track E field runner
+E3-T07  unit/negative/privacy fixtures
+E3-T08  Git-ignore/local-retention hygiene
+E3-T09  packed/cross-platform regression
+E3-T10  docs + implementation receipt
+E3-T11  E3 STOP / REVIEW
+```
+
+E3-T01 makes no implementation code change.
+
+## 10. Exit condition for TRACK E
 
 TRACK E can close only after:
 
