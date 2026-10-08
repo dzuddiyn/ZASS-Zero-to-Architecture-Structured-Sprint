@@ -121,6 +121,12 @@ Tasks execute strictly in order unless a task exposes a blocking contract defect
 
 ### E3-T02 — Implement frozen evidence constants + strict receipt validator
 
+**Status:** PASS  
+**Implementation:** `cli/src/evidence/constants.js`, `validator.js`, `index.js`  
+**Focused tests:** `cli/test/evidence-validator.test.js`
+
+Implemented frozen E2 receipt/rating vocabularies and a pure strict allow-list validator. No write/aggregation/public-CLI behavior was added. Focused tests cover canonical receipts, all evidence classes, unsupported version/source/question, unknown/private fields, cross-class field misuse, rating/feedback bounds/consent, evidence refs and non-mutation.
+
 **Scope:** code only the frozen E2 receipt/rating vocabularies and validation rules.
 
 Expected implementation:
