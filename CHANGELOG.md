@@ -1,3 +1,15 @@
+## 2026-10-08 — CR-011 A5-T05 Bootstrap integration/version contract LOCKED
+
+- Locked the next Bootstrap Core contract to `0.2` and private package version to `0.2.0`.
+- Locked the next public initializer candidate to `create-zass-project@0.2.0`; published `create-zass-project@0.1.0` remains immutable history.
+- Preserved the six frozen Bootstrap Core root export names and the existing `buildBootstrapPlan({ projectName, method, language })` call shape.
+- Versioned the semantic change explicitly: the deterministic bootstrap plan becomes four artifacts by adding `.zass/project.json`; CR-011 persisted schema remains `0.1`.
+- Locked nested materialization and recursive snapshot verification as required consumer changes for the new machine metadata path.
+- Kept vendored Bootstrap Core as a synchronized distribution artifact sourced from canonical `bootstrap-core/`, not a second independent implementation.
+- A5-T05 does not authorize a new public zass-cli release/version; that remains a separate release gate.
+- Canonical contract: [`docs/CR011_BOOTSTRAP_INTEGRATION_V02.md`](docs/CR011_BOOTSTRAP_INTEGRATION_V02.md).
+- **A5-T05 = PASS / LOCKED FOR A5-T06 IMPLEMENTATION.**
+
 ## 2026-10-08 — CR-011 A5-T04 fixtures + regression PASS
 
 - Added durable fixture families under `cli/test/fixtures/machine/`: legacy/no metadata, valid v0.1, malformed JSON, unsupported schema, unambiguous method conflict, and Full-ZASS Bahasa Melayu.
