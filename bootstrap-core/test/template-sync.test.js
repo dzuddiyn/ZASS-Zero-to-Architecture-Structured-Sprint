@@ -10,7 +10,11 @@ const MAP = [
   ['../templates/zassimple/en.md', '../../ZASSIMPLE/ZASSIMPLE_EN.md'],
   ['../templates/zassimple/my.md', '../../ZASSIMPLE/ZASSIMPLE_MY.md'],
   ['../templates/zass/en.md', '../../ZASS.md'],
-  ['../templates/zass/my.md', '../../ZASS_MY.md']
+  ['../templates/zass/my.md', '../../ZASS_MY.md'],
+  [
+    '../templates/shared/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md',
+    '../../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md'
+  ]
 ];
 
 for (const [template, canonical] of MAP) {
