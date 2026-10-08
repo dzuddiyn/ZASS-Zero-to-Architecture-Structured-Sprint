@@ -51,6 +51,24 @@ test('vendored Bootstrap Core runtime is byte-for-byte synchronized', async () =
   }
 });
 
+test('package metadata is publication-ready', async () => {
+  const metadata = JSON.parse(
+    await fs.readFile(path.join(packageDir, 'package.json'), 'utf8')
+  );
+
+  assert.equal(metadata.name, 'create-zass');
+  assert.equal(metadata.version, '0.1.0');
+  assert.equal(metadata.private, undefined);
+  assert.equal(
+    metadata.repository?.url,
+    'https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.git'
+  );
+  assert.equal(metadata.repository?.directory, 'create-zass');
+  assert.equal(metadata.publishConfig?.registry, 'https://registry.npmjs.org/');
+  assert.equal(metadata.publishConfig?.access, 'public');
+  assert.ok(Array.isArray(metadata.keywords) && metadata.keywords.includes('zass'));
+});
+
 test('packed create-zass installs and executes without monorepo sibling Core', async (t) => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-package-boundary-'));
   t.after(() => fs.rm(temp, { recursive: true, force: true }));
@@ -81,6 +99,21 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
   assert.ok(filePaths.has('vendor/bootstrap-core/src/index.js'));
   assert.ok(filePaths.has('vendor/bootstrap-core/templates/zassimple/en.md'));
   assert.ok(filePaths.has('vendor/bootstrap-core/templates/zass/my.md'));
+
+  const allowedTopLevel = new Set([
+    'LICENSE',
+    'README.md',
+    'package.json'
+  ]);
+  for (const file of filePaths) {
+    const allowed =
+      allowedTopLevel.has(file) ||
+      file.startsWith('bin/') ||
+      file.startsWith('src/') ||
+      file.startsWith('vendor/');
+    assert.equal(allowed, true, `unexpected packed artifact: ${file}`);
+    assert.equal(file.startsWith('test/'), false, `test file leaked into package: ${file}`);
+  }
 
   const tarball = path.join(packDir, packResult[0].filename);
   const installed = spawnSync(
@@ -120,5 +153,32 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
   assert.deepEqual(
     (await fs.readdir(target)).sort(),
     ['.gitignore', 'README.md', 'ZASSIMPLE_EN.md'].sort()
+  );
+
+  const execTarget = path.join(temp, 'generated-via-npm-exec');
+  const invoked = spawnSync(
+    process.execPath,
+    [
+      npmCli,
+      'exec',
+      '--yes',
+      '--package',
+      tarball,
+      '--',
+      'create-zass',
+      execTarget,
+      '--method',
+      'zass',
+      '--lang',
+      'my'
+    ],
+    { cwd: consumerDir, encoding: 'utf8' }
+  );
+
+  assert.equal(invoked.status, 0, invoked.stderr);
+  assert.match(invoked.stdout, /ZASS project created/);
+  assert.deepEqual(
+    (await fs.readdir(execTarget)).sort(),
+    ['.gitignore', 'README.md', 'ZASS.md'].sort()
   );
 });

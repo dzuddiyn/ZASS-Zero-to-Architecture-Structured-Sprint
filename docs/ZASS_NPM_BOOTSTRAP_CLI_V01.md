@@ -1,6 +1,6 @@
 # ZASS npm Bootstrap CLI v0.1 — Behavioral Contract
 
-**Status:** LOCKED — IMPLEMENTED LOCALLY / WINDOWS + CI PASS — NOT PUBLISHED  
+**Status:** LOCKED — NPM PUBLICATION READINESS PASS / READY TO PUBLISH — NOT PUBLISHED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -582,7 +582,7 @@ bootstrap-core/
 Implemented behavior:
 
 - package identity: `create-zass@0.1.0`;
-- package remains `private: true` to prevent accidental publication;
+- package publication guard has been intentionally opened for the publication candidate; `private:true` is removed and publish metadata is pinned to the public npm registry;
 - interactive method prompt exposes ZASSPILL / ZASSELECTION / ZASSIMPLE / Full ZASS with no silent default;
 - interactive language prompt exposes English / Bahasa Melayu;
 - non-interactive mode requires explicit `--method` and `--lang`;
@@ -638,4 +638,6 @@ npm pack
 
 That publication gate is now the **next TRACK B gate** and remains separate from the already-complete local v0.1 implementation.
 
-The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary has been remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass` and redirecting runtime imports to that snapshot, with byte-for-byte sync regression coverage. Publication readiness still requires the formal `npm pack` + clean-install smoke result, remaining package metadata/private/auth/name checks, and an explicit publish decision. CrossAI Bootstrap Core consumption remains later and separately gated.
+The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary is remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass`, with byte-for-byte sync regression coverage. Packed-artifact testing now covers `npm pack`, clean tarball install, direct installed-bin execution, and local-tarball `npm exec --package ... create-zass` invocation. The publication candidate removes `private:true`, adds public package metadata and an explicit manual publish workflow. Registry name availability and npm account credential/authority are verified as separate live publication-gate evidence before publish.
+
+Publication-readiness live evidence on 2026-10-08: exact registry-name probe returned `E404` (`create-zass` available), configured `NPM_TOKEN` authenticated successfully via `npm whoami`, package metadata tests passed, and packed-artifact/clean-install invocation tests passed. The readiness gate is therefore **PASS / READY TO PUBLISH**, while actual publication remains a separate explicit action.
