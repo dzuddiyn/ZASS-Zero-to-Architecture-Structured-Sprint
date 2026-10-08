@@ -318,6 +318,12 @@ Verify:
 
 ### E3-T10 — Documentation + E3 implementation receipt
 
+**Status:** PASS  
+**Operator guide:** `docs/ZASS_TRACK_E_E3_OPERATOR_GUIDE.md`  
+**Implementation receipt:** `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_RECEIPT.md`
+
+Documented the repo-local/test-only execution surface, receipt location/version, privacy/no-network boundary, explicit rating/feedback consent, deterministic projection meaning and limitations, factual failure states, local retention, public CLI boundary, cross-platform regression evidence, and verified implementation lineage from E3-T02 through E3-T09. No runtime behavior was added.
+
 **Scope:** truthful operator documentation and implementation lineage.
 
 Document:
