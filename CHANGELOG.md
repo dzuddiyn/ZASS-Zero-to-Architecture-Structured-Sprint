@@ -1,3 +1,14 @@
+## 2026-10-08 — CR-011 A5-T04 fixtures + regression PASS
+
+- Added durable fixture families under `cli/test/fixtures/machine/`: legacy/no metadata, valid v0.1, malformed JSON, unsupported schema, unambiguous method conflict, and Full-ZASS Bahasa Melayu.
+- Added `cli/test/machine-fixtures.test.js` to exercise those fixtures through the real loader/check seam instead of only synthetic in-test objects.
+- Added explicit Win32 path-semantics regression for `.zass/project.json`.
+- Linux GitHub Actions on fixture-suite SHA `c80e902cb1a7275cd70ef2e94bf37dec4b1b59a3` passed all repository gates.
+- Fresh Windows clone of the same SHA ran `npm --prefix cli test` with **99/99 PASS**, including packed-artifact smoke and all CR-010 + CR-011 tests.
+- Full-ZASS Bahasa Melayu remains valid without heuristic language inference; only deterministic conflicts are rejected.
+- Existing CR-010 validator, status, diff, drift and packed-artifact regressions remained PASS.
+- **A5-T04 = PASS.**
+
 ## 2026-10-08 — CR-011 A5-T03 bounded machine-layer validation PASS
 
 - Integrated the dedicated CR-011 loader into `zass check`; machine metadata is loaded once and reported through deterministic diagnostics.
