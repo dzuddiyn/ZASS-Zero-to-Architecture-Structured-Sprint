@@ -98,7 +98,7 @@ The method must not depend on any specific vendor. App capabilities may change o
 Target user experience:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 Then choose the ZASS method and language explicitly in the interactive bootstrap, or provide them through CLI flags for automation.
@@ -291,7 +291,7 @@ English default
 no method-selection question
 ```
 
-That default applied only to the planned npm onboarding path. It no longer governs `npm create zass`.
+That default applied only to the planned npm onboarding path. It no longer governs `npm create zass-project`.
 
 This supersession does **not** change ZASS SYSTEM routing: ZASSPILL remains DUMP, ZASSELECTION remains DECIDE, and ZASSIMPLE remains the default lightweight DESIGN path.
 
@@ -302,7 +302,7 @@ This supersession does **not** change ZASS SYSTEM routing: ZASSPILL remains DUMP
 Canonical target:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 Interactive bootstrap asks the user to choose explicitly from:
@@ -320,10 +320,10 @@ It then asks for:
 Automation bypasses prompts using explicit flags:
 
 ```bash
-npm create zass@latest my-project -- --method zasspill --lang en
-npm create zass@latest my-project -- --method zasselection --lang my
-npm create zass@latest my-project -- --method zassimple --lang en
-npm create zass@latest my-project -- --method zass --lang my
+npm create zass-project@latest my-project -- --method zasspill --lang en
+npm create zass-project@latest my-project -- --method zasselection --lang my
+npm create zass-project@latest my-project -- --method zassimple --lang en
+npm create zass-project@latest my-project -- --method zass --lang my
 ```
 
 Non-interactive bootstrap must not guess a missing method or language.
@@ -332,7 +332,7 @@ The complete locked behavioral contract is:
 
 - [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
-Implementation receipt: [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) — implemented locally as private `create-zass@0.1.0`; npm publication not yet performed.
+Implementation receipt: [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) — implemented locally under `create-zass/` with public candidate identity `create-zass-project@0.1.0`; npm publication not yet performed.
 
 The bootstrap remains local-first, create-new-only, and free of implicit Git/GitHub/CrossAI side effects.
 

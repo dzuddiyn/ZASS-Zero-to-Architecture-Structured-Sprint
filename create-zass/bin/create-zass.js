@@ -7,7 +7,7 @@ import { defaultPrompt } from '../src/prompts.js';
 
 const USAGE = [
   'Usage:',
-  '  create-zass <project> [--method <zasspill|zasselection|zassimple|zass>] [--lang <en|my>]'
+  '  create-zass-project <project> [--method <zasspill|zasselection|zassimple|zass>] [--lang <en|my>]'
 ].join('\n');
 
 async function main() {

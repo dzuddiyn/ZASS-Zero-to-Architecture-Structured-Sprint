@@ -43,7 +43,7 @@ CR-010 v0.4 ✅
 → stale docs/status cleanup ✅
 → npm publication readiness / packaging-boundary remediation ← NEXT
 → npm pack + clean-install smoke test
-→ publish create-zass@0.1.0 if PASS
+→ publish create-zass-project@0.1.0 if PASS
 → fresh registry verification
 → publication receipt + CHANGELOG
 → CrossAI Bootstrap Core consumption gate
@@ -94,7 +94,7 @@ Do not implement v0.4 commands before the behavioral contract is explicit.
 
 The CR-010 v0.4a contract for `zass status` is LOCKED, implemented and field-validated in [`CR010_V04A_ZASS_STATUS_SPEC.md`](CR010_V04A_ZASS_STATUS_SPEC.md).
 
-The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW passed and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md). It supersedes the earlier npm-only ZASSIMPLE default/no-wizard assumption. The private `create-zass@0.1.0` implementation is complete with Windows + CI PASS. Bootstrap Core v0.1 is now field-tested and **PUBLIC API FROZEN / PASS**. The next TRACK B gate is npm publication readiness for `create-zass@0.1.0`, including standalone package-boundary remediation and packed-artifact smoke testing.
+The CR-010 v0.4b contract for `zass diff` is LOCKED, implemented and field-validated in [`CR010_V04B_ZASS_DIFF_SPEC.md`](CR010_V04B_ZASS_DIFF_SPEC.md). The field receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). STOP/REVIEW passed and CR-010 is CLOSED. See [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md). It supersedes the earlier npm-only ZASSIMPLE default/no-wizard assumption. The local `create-zass/` implementation is complete with Windows + CI PASS; its public candidate identity is `create-zass-project@0.1.0`. Bootstrap Core v0.1 is now field-tested and **PUBLIC API FROZEN / PASS**. The next TRACK B gate is npm publication readiness for `create-zass-project@0.1.0`, including standalone package-boundary remediation and packed-artifact smoke testing.
 
 ## 5. Bootstrap boundary
 

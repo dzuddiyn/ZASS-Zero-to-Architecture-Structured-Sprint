@@ -1,3 +1,13 @@
+## 2026-10-08 — create-zass public identity renamed to create-zass-project
+
+- Recorded the failed first-publication evidence: npm rejected the unscoped `create-zass@0.1.0` name with `E403` because it was considered too similar to an existing package.
+- Owner selected the ZASS-centric replacement public identity `create-zass-project@0.1.0`; repository implementation directory remains `create-zass/`.
+- Revised the target initializer UX to `npm create zass-project@latest <project>`.
+- Changed the executable declaration to normalized object form `"create-zass-project": "bin/create-zass.js"` so npm 11 does not rewrite the leading `./` path or drop the intended public command during publish normalization.
+- Normalized `repository.url` to npm's canonical `git+https://...git` form.
+- Added an npm publish metadata dry-run gate before any future actual publish attempt.
+- No npm publication is claimed by this change; a fresh readiness audit is required before retrying publication.
+
 ## 2026-10-08 — Bootstrap stale-status cleanup
 
 - Removed current-facing Bootstrap Core HOLD/NEXT wording that had been superseded by the completed corrective API cleanup and public-API freeze.

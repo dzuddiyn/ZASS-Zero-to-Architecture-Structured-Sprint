@@ -56,12 +56,13 @@ test('package metadata is publication-ready', async () => {
     await fs.readFile(path.join(packageDir, 'package.json'), 'utf8')
   );
 
-  assert.equal(metadata.name, 'create-zass');
+  assert.equal(metadata.name, 'create-zass-project');
   assert.equal(metadata.version, '0.1.0');
   assert.equal(metadata.private, undefined);
+  assert.deepEqual(metadata.bin, { 'create-zass-project': 'bin/create-zass.js' });
   assert.equal(
     metadata.repository?.url,
-    'https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.git'
+    'git+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.git'
   );
   assert.equal(metadata.repository?.directory, 'create-zass');
   assert.equal(metadata.publishConfig?.registry, 'https://registry.npmjs.org/');
@@ -69,7 +70,7 @@ test('package metadata is publication-ready', async () => {
   assert.ok(Array.isArray(metadata.keywords) && metadata.keywords.includes('zass'));
 });
 
-test('packed create-zass installs and executes without monorepo sibling Core', async (t) => {
+test('packed create-zass-project installs and executes without monorepo sibling Core', async (t) => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-package-boundary-'));
   t.after(() => fs.rm(temp, { recursive: true, force: true }));
 
@@ -83,13 +84,21 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
     JSON.stringify({ name: 'create-zass-boundary-smoke', private: true }, null, 2)
   );
 
-  const npmCli = process.env.npm_execpath;
-  assert.ok(npmCli, 'npm_execpath is required for package-boundary smoke test');
+  const npmEnv = { ...process.env };
+  delete npmEnv.npm_config_dry_run;
+  delete npmEnv.NPM_CONFIG_DRY_RUN;
 
-  const packed = spawnSync(
-    process.execPath,
-    [npmCli, 'pack', '--json', '--pack-destination', packDir],
-    { cwd: packageDir, encoding: 'utf8' }
+  const runNpm = (args, cwd) =>
+    spawnSync('npm', args, {
+      cwd,
+      encoding: 'utf8',
+      env: npmEnv,
+      shell: process.platform === 'win32'
+    });
+
+  const packed = runNpm(
+    ['pack', '--json', '--pack-destination', packDir],
+    packageDir
   );
   assert.equal(packed.status, 0, packed.stderr);
 
@@ -116,17 +125,15 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
   }
 
   const tarball = path.join(packDir, packResult[0].filename);
-  const installed = spawnSync(
-    process.execPath,
+  const installed = runNpm(
     [
-      npmCli,
       'install',
       '--ignore-scripts',
       '--no-audit',
       '--no-fund',
       tarball
     ],
-    { cwd: consumerDir, encoding: 'utf8' }
+    consumerDir
   );
   assert.equal(installed.status, 0, installed.stderr);
 
@@ -138,7 +145,7 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
   const installedCli = path.join(
     consumerDir,
     'node_modules',
-    'create-zass',
+    'create-zass-project',
     'bin',
     'create-zass.js'
   );
@@ -156,23 +163,21 @@ test('packed create-zass installs and executes without monorepo sibling Core', a
   );
 
   const execTarget = path.join(temp, 'generated-via-npm-exec');
-  const invoked = spawnSync(
-    process.execPath,
+  const invoked = runNpm(
     [
-      npmCli,
       'exec',
       '--yes',
       '--package',
       tarball,
       '--',
-      'create-zass',
+      'create-zass-project',
       execTarget,
       '--method',
       'zass',
       '--lang',
       'my'
     ],
-    { cwd: consumerDir, encoding: 'utf8' }
+    consumerDir
   );
 
   assert.equal(invoked.status, 0, invoked.stderr);

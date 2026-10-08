@@ -1,10 +1,10 @@
-name: Publish create-zass
+name: Publish create-zass-project
 
 on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: 'Type create-zass@0.1.0 to publish this exact first release'
+        description: 'Type create-zass-project@0.1.0 to publish this exact first release'
         required: true
         type: string
 
@@ -14,15 +14,15 @@ permissions:
 
 jobs:
   publish:
-    name: publish-create-zass
+    name: publish-create-zass-project
     runs-on: ubuntu-latest
 
     steps:
       - name: Validate explicit release confirmation
         shell: bash
         run: |
-          if [[ "${{ inputs.confirm }}" != "create-zass@0.1.0" ]]; then
-            echo "::error::Release confirmation did not match create-zass@0.1.0"
+          if [[ "${{ inputs.confirm }}" != "create-zass-project@0.1.0" ]]; then
+            echo "::error::Release confirmation did not match create-zass-project@0.1.0"
             exit 1
           fi
 
@@ -43,7 +43,7 @@ jobs:
         run: |
           NAME="$(node -p "require('./create-zass/package.json').name")"
           VERSION="$(node -p "require('./create-zass/package.json').version")"
-          test "$NAME" = "create-zass"
+          test "$NAME" = "create-zass-project"
           test "$VERSION" = "0.1.0"
 
       - name: Verify npm publish credential
@@ -53,22 +53,22 @@ jobs:
           test -n "$NODE_AUTH_TOKEN"
           npm whoami --registry=https://registry.npmjs.org >/dev/null
 
-      - name: Verify create-zass name is still available
+      - name: Verify create-zass-project name is still available
         shell: bash
         run: |
           set +e
-          OUTPUT="$(npm view create-zass version --registry=https://registry.npmjs.org 2>&1)"
+          OUTPUT="$(npm view create-zass-project version --registry=https://registry.npmjs.org 2>&1)"
           STATUS=$?
           set -e
 
           if [[ "$STATUS" -eq 0 ]]; then
-            echo "::error::create-zass already exists on the npm registry"
+            echo "::error::create-zass-project already exists on the npm registry"
             echo "$OUTPUT"
             exit 1
           fi
 
           if grep -q "E404" <<<"$OUTPUT"; then
-            echo "create-zass is available for first publication"
+            echo "create-zass-project exact name is not registered; actual publish remains authoritative for npm naming policy"
             exit 0
           fi
 
@@ -76,10 +76,16 @@ jobs:
           echo "$OUTPUT"
           exit "$STATUS"
 
-      - name: Run create-zass release tests
+      - name: Run create-zass-project release tests
         run: npm --prefix create-zass test
 
-      - name: Publish create-zass@0.1.0
+      - name: Verify npm publish metadata dry-run
+        working-directory: create-zass
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --dry-run --access public
+
+      - name: Publish create-zass-project@0.1.0
         working-directory: create-zass
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

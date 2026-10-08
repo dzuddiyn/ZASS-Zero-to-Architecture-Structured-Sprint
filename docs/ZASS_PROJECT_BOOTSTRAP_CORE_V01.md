@@ -784,4 +784,4 @@ verifyBootstrapSnapshot
 
 Closure receipt: [`ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md`](ZASS_BOOTSTRAP_CORE_STOP_REVIEW.md).
 
-Next productization gate: npm publication readiness for `create-zass@0.1.0`; CrossAI consumption remains later and separately gated.
+Next productization gate: npm publication readiness for `create-zass-project@0.1.0`; CrossAI consumption remains later and separately gated.
