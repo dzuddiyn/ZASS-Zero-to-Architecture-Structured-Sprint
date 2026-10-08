@@ -740,3 +740,96 @@ CR-014 defines real-world case studies as a field-evidence priority.
 
 CR-015 is only a candidate mechanism for collecting and projecting the factual evidence needed to support those case studies more efficiently.
 
+
+
+---
+
+## CR-016 — ZASSPILL Interaction Continuity
+
+**Status:** ACCEPTED FUTURE-WORK ARCHITECTURE REFINEMENT — implementation pending field gate  
+**Source:** Real-world ZASSPILL forecasting-thread portability failure  
+**Scope:** Optional portable thread-specific interaction semantics  
+**Priority:** Non-blocking; ZASSPILL v1.0.0 remains frozen
+
+### Observed problem
+
+ZASSPILL preserved WHAT the conversation was about but failed to reliably preserve HOW the user and AI were intentionally working together.
+
+Observed forecasting mode:
+
+- user = instinct-based forecaster;
+- AI = evidence-based challenger;
+- relationship = friendly rival / “we bet”;
+- tone = sempoi, playful, curious, intellectually serious;
+- factual rigor remains;
+- avoid turning every exchange into a bureaucratic audit/report.
+
+The receiving AI preserved semantic content but became overly formal.
+
+### Architecture finding
+
+Current ZASSPILL v1.0 has partial ingredients in WHO, WHAT MATTERS, language routing, natural DUMP behavior, and privacy boundaries, but Portable Packet v2 and handoff minimum do not define a distinct portable interaction-continuity dimension.
+
+Recommended split:
+
+~~~text
+ZASSPILL
+= optional Thread Interaction Contract
+  when explicitly established by the user
+
+ASC / Context Assembly
+= transport, verify, and inject the compact contract
+
+Provider-local personalization
+= remains outside portable authority
+  unless intentionally introduced by the user
+~~~
+
+### Terminology
+
+Architectural dimension:
+
+**Interaction Continuity**
+
+Portable object:
+
+**Thread Interaction Contract**
+
+User-facing phrase may simply be:
+
+**How we work together**
+
+“Persona” is not preferred because the requirement is relational and thread-specific rather than merely AI personality.
+
+### Minimality rule
+
+Default candidate scope is:
+
+**THREAD-LEVEL + OPTIONAL + EXPLICIT USER AUTHORITY**
+
+Do not add global/project/session inheritance to the minimum design without further evidence.
+
+### Privacy boundary
+
+Existing rule remains unchanged:
+
+> Provider-specific personal memory/profile/private context remains outside portable ZASSPILL authority unless the user intentionally brings that context into the semantic thread.
+
+No hidden provider persona/profile may be exported merely to reproduce style.
+
+### Future gate
+
+Before any ZASSPILL v1.x method change:
+
+1. test the forecasting scenario across at least two compatible receivers;
+2. test one non-forecast interaction mode;
+3. verify current explicit user override;
+4. verify provider-memory isolation;
+5. measure packet/token overhead;
+6. decide whether an optional interaction field earns promotion into the method.
+
+Canonical future-work analysis:
+
+ZASSPILL_INTERACTION_CONTINUITY_FUTURE_DIRECTION.md
+
+ZASSPILL v1.0.0 remains unchanged until that gate passes.
