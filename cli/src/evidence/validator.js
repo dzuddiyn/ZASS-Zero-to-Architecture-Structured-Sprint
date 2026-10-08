@@ -12,6 +12,7 @@ import {
   MAX_FEEDBACK_LENGTH,
   METHODS,
   PROJECT_SHAPES,
+  PROHIBITED_PRIVACY_FIELDS,
   RATING_TARGETS,
   REPRODUCIBILITY_VALUES,
   TRACK_E_QUESTIONS
@@ -71,6 +72,7 @@ const CLASS_FIELDS = Object.freeze({
 const OPAQUE_ID = /^[A-Za-z][A-Za-z0-9._:-]{0,127}$/;
 const TOKEN = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const DIAGNOSTIC_CODE = /^[A-Z][A-Z0-9_-]{0,31}$/;
+const PROHIBITED_PRIVACY_FIELD_SET = new Set(PROHIBITED_PRIVACY_FIELDS);
 
 function isPlainObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -78,6 +80,26 @@ function isPlainObject(value) {
 
 function hasOwn(value, key) {
   return Object.prototype.hasOwnProperty.call(value, key);
+}
+
+function addProhibitedPrivacyFieldErrors(value, prefix, errors) {
+  if (!isPlainObject(value)) return;
+
+  for (const [key, child] of Object.entries(value)) {
+    if (PROHIBITED_PRIVACY_FIELD_SET.has(key)) {
+      errors.push(`${prefix}prohibited privacy field: ${key}`);
+    }
+
+    if (isPlainObject(child)) {
+      addProhibitedPrivacyFieldErrors(child, `${prefix}${key}.`, errors);
+    } else if (Array.isArray(child)) {
+      child.forEach((item, index) => {
+        if (isPlainObject(item)) {
+          addProhibitedPrivacyFieldErrors(item, `${prefix}${key}[${index}].`, errors);
+        }
+      });
+    }
+  }
 }
 
 function addUnknownFieldErrors(value, allowed, prefix, errors) {
@@ -319,6 +341,7 @@ export function validateEvidenceReceipt(value) {
     };
   }
 
+  addProhibitedPrivacyFieldErrors(value, '', errors);
   addUnknownFieldErrors(value, ROOT_FIELDS, '', errors);
 
   if (value.receiptVersion !== EVIDENCE_RECEIPT_VERSION) {
