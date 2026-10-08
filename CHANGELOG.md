@@ -1,3 +1,16 @@
+## 2026-10-08 — CR-011 A5-T03 bounded machine-layer validation PASS
+
+- Integrated the dedicated CR-011 loader into `zass check`; machine metadata is loaded once and reported through deterministic diagnostics.
+- Added factual error families for malformed metadata, unsupported schema, invalid v0.1 fields, missing declared method files, and unambiguous Full-ZASS/method conflicts.
+- `zass status` reuses the same `runCheck` validation result and now displays concise machine metadata state instead of reparsing independently.
+- Legacy Full-ZASS projects without `.zass/` remain valid.
+- Valid `.zass/project.json` metadata remains additive and read-only.
+- Full-ZASS language is not guessed from prose because `ZASS.md` alone cannot deterministically distinguish `en` from `my`.
+- `zass diff` remains CR-010 Markdown/Git semantic diff; metadata-only edits do not create decision/architecture drift.
+- Added bounded regression tests for absent, valid, malformed, unsupported schema, invalid fields, missing method file, deterministic method conflict, ambiguous language handling, and metadata-only diff behavior.
+- ZASS CI passed across zass-cli, Bootstrap Core, create-zass, repository consistency, historical baseline, and validator.
+- **A5-T03 = PASS.**
+
 ## 2026-10-08 — CR-011 A5-T02 machine metadata loader PASS
 
 - Added `cli/src/machine-metadata.js` as the single local read-only loader for `.zass/project.json`.
