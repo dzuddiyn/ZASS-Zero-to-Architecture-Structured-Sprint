@@ -19,23 +19,33 @@ async function pathExists(target) {
 }
 
 async function readBootstrapSnapshot(projectDir) {
-  const entries = await fs.readdir(projectDir);
   const files = [];
 
-  for (const name of entries) {
-    const fullPath = path.join(projectDir, name);
-    const stat = await fs.stat(fullPath);
-    if (!stat.isFile()) {
-      files.push({ path: name, content: null });
-      continue;
-    }
+  async function visit(relativeDir = '') {
+    const absoluteDir = path.join(projectDir, relativeDir);
+    const entries = await fs.readdir(absoluteDir, { withFileTypes: true });
 
-    files.push({
-      path: name,
-      content: await fs.readFile(fullPath, 'utf8')
-    });
+    for (const entry of entries) {
+      const relativePath = relativeDir
+        ? path.posix.join(relativeDir.split(path.sep).join('/'), entry.name)
+        : entry.name;
+      const absolutePath = path.join(projectDir, ...relativePath.split('/'));
+
+      if (entry.isDirectory()) {
+        await visit(path.join(relativeDir, entry.name));
+        continue;
+      }
+
+      if (entry.isFile()) {
+        files.push({
+          path: relativePath,
+          content: await fs.readFile(absolutePath, 'utf8')
+        });
+      }
+    }
   }
 
+  await visit();
   return { files };
 }
 
@@ -89,7 +99,9 @@ export async function bootstrapProject(
     }
 
     for (const file of plan.files) {
-      await writeFile(path.join(projectDir, file.path), file.content, 'utf8');
+      const targetPath = path.join(projectDir, ...file.path.split('/'));
+      await fs.mkdir(path.dirname(targetPath), { recursive: true });
+      await writeFile(targetPath, file.content, 'utf8');
     }
 
     const snapshot = await readBootstrapSnapshot(projectDir);
