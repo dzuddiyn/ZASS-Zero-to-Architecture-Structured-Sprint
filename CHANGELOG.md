@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E3-T09 packed/cross-platform regression PASS
+
+- Added persistent `cli-cross-platform` GitHub Actions matrix on `ubuntu-latest` and `windows-latest` while retaining the existing full `zass-check` job.
+- The matrix runs the full ZASS CLI regression suite, including `packed-artifact.test.js`, which performs `npm pack`, clean consumer install, installed executable discovery, and installed `zass check/status/diff` smoke tests.
+- Initial Windows run exposed shell-dependent npm test discovery: `node --test test/*.test.js` was not expanded by PowerShell. Changed the package test script to Node-native `node --test` discovery.
+- The next Windows run exposed a real CR-010 Git portability defect: temporary Windows short-path/canonical Git-root representations were compared as OS paths and valid project files were misclassified as outside the repository.
+- Fixed Git baseline path construction to use Git's own `rev-parse --show-prefix` repository-relative prefix rather than comparing filesystem root spellings.
+- Preserved traversal rejection using POSIX-normalized Git-relative names.
+- Added `cli/test/git-portability.test.js` covering nested project Git prefixes and parent-traversal rejection.
+- Final verification run `37777234166`: `zass-check` SUCCESS, Ubuntu cross-platform CLI SUCCESS, Windows cross-platform CLI SUCCESS.
+- Existing CR-011 metadata tests, bootstrap-core tests, create-zass tests, repository consistency, historical baseline and ZASS validator all passed.
+- Public npm bin remains only `zass`; no `zass evidence` command or publication occurred.
+- **E3-T09 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T08 Git-ignore/local-retention hygiene PASS
 
 - Added `cli/src/evidence/hygiene.js` with `ensureEvidenceGitIgnore(projectDir)`.
