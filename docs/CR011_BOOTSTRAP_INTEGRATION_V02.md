@@ -1,6 +1,6 @@
 # CR-011 — Bootstrap Integration / Version Contract
 
-**Status:** LOCKED FOR A5-T06 IMPLEMENTATION  
+**Status:** PASS / IMPLEMENTED — CR-011 v0.1 FROZEN  
 **Date:** 2026-10-08  
 **Track:** TRACK D — A5  
 **Task:** A5-T05  
