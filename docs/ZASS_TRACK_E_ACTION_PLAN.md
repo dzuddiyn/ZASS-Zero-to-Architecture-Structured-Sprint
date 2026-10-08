@@ -1,6 +1,6 @@
 # TRACK E — FIELD EVIDENCE & SCALE VALIDATION
 
-**Status:** OWNER-APPROVED / SCOPE LOCKED / E2 DECISION CONTRACT ACTIVE  
+**Status:** E2 CLOSED / PASS / ARCHITECTURE v0.1 FROZEN  
 **Date:** 2026-10-08  
 **Owner:** Project Owner  
 **Scope:** Lightweight field-evidence and scale-validation work for ZASS only.
@@ -100,7 +100,7 @@ E4  Field execution / evidence collection
 E5  STOP / REVIEW
 ```
 
-Only E1-T01 is completed by this scope-lock task.
+E1 is closed and E2-T01 through E2-T07 are completed. E3 is the next phase.
 
 ### E1-T01 — Clean evolution registry + lock TRACK E scope
 
@@ -182,15 +182,27 @@ Locked a trigger-based, same-work comparison between canonical single-file ZASS 
 
 CR-006 remains TEST-only. A prettier file tree is not evidence. Promotion to `SCALE-OUT CANDIDATE` requires every E2-T01 promotion criterion and still does not authorize canonical migration without a separate owner decision.
 
+### E2-T07 — E2 STOP / REVIEW + architecture lock
+
+**Status:** PASS / E2 CLOSED / ARCHITECTURE v0.1 FROZEN  
+**Closure:** [`ZASS_TRACK_E_E2_STOP_REVIEW_CLOSURE.md`](ZASS_TRACK_E_E2_STOP_REVIEW_CLOSURE.md)
+
+Cross-audited E2-T01 through E2-T06 and found no material architecture contradiction. Froze all six E2 contracts as TRACK E architecture v0.1, resolved stale current-facing defer wording, and confirmed authority/privacy/failure/aggregation/scale-out boundaries remain coherent.
+
+E3 may now plan a small local implementation against the frozen baseline. No E3 implementation was started by E2-T07.
+
 ## 7. Deferred design decisions
 
-Not decided in E1-T01:
+Deferred beyond E2 as implementation/distribution choices:
 
-- exact implementation-specific JSON encoder/validator details beyond the locked v0.1 contract;
-- whether evidence capture is a CLI command, helper script or separate small package;
-- whether any later opt-in network submission is justified.
+- exact module/file/API implementation details;
+- CLI command vs helper entrypoint exposure;
+- Git tracking vs ignore policy for `.zass/evidence/`;
+- receipt retention/cleanup policy;
+- exact derived-summary artifact filename/location;
+- any future explicit opt-in network submission mechanism.
 
-Those belong to E2 decision/design work.
+These do not block E3 local implementation planning.
 
 ## 8. Exit condition for TRACK E
 
