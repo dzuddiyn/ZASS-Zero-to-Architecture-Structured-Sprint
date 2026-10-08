@@ -190,6 +190,11 @@ Locked the next bootstrap boundary to Bootstrap Core contract `0.2` / private pa
 Define next-version integration with Bootstrap Core/create-zass-project. Do not mutate 0.1.0. Do not silently break frozen Bootstrap Core v0.1 public API.
 
 ### A5-T06 — Implement versioned bootstrap generation
+
+**Status:** PASS
+
+Implemented Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0` source behavior. All 4 × 2 plans now deterministically include `.zass/project.json` schema `0.1`; nested materialization and recursive snapshot verification are implemented; vendored Core remains synchronized; packed clean-install bootstrap smoke passes on Windows and Linux CI. Public `create-zass-project@0.1.0` remains the registry `latest` historical release and is not modified.
+
 Generate CR-011 metadata in next bootstrap release for all supported methods and EN/MY; GitHub remains optional; packed tests updated; old 0.1.0 remains reproducible.
 
 ### A5-T07 — Two-shape field test
