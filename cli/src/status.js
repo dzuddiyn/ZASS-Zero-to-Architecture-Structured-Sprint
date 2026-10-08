@@ -25,6 +25,7 @@ export async function runStatus(projectDir) {
       name,
       state: found.has(name) ? 'FOUND' : 'MISSING'
     })),
+    machineMetadata: validation.machineMetadata,
     validation: {
       state: validationState(validation),
       errorCount: validation.errorCount,
@@ -45,6 +46,8 @@ export function formatStatus(report) {
   if (report.surface) {
     lines.push(`Surface:     ${report.surface}`);
   }
+
+  lines.push(`Machine:     ${report.machineMetadata.state}`);
 
   lines.push('', 'Files:');
   for (const file of report.files) {
