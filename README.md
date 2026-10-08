@@ -59,6 +59,8 @@ Local tooling stays independently useful. AI-SYNC Web is the future UX / automat
 
 See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
+**Freeze boundary:** AISYNC/CrossAI runtime, human beta, provider continuity, and downstream Bootstrap Core consumption are owned downstream and do not keep ZASS SYSTEM development open. See [ZASS ↔ AISYNC Downstream Handoff Boundary](docs/ZASS_AISYNC_DOWNSTREAM_HANDOFF_BOUNDARY.md).
+
 **Global language UX:** ordinary conversation may follow the user, but structured method surfaces follow the active method file language. If a user speaks Bahasa Melayu while an English method file is active, ZASS notifies once that the matching Malay file is available; it never switches files automatically.
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
@@ -576,6 +578,8 @@ You normally do **not** need all of them at the beginning.
 **ZASSIMPLE:** v0.3.2
 **ZASSELECTION:** v0.2.4
 **ZASSPILL:** v1.0.0 method/protocol contract â€” PRODUCTION READY; global DUMP continuity route
+**Freeze distribution snapshot:** [ZASS SYSTEM Distribution & Version Truth](docs/ZASS_FINAL_FREEZE_DISTRIBUTION_TRUTH.md)
+
 **License:** [MIT](LICENSE)
 
 Current Full-ZASS commands:
