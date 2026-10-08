@@ -48,7 +48,8 @@ test('packed artifact installs cleanly and exposes standalone zass commands', { 
   const packed = run(
     npmCommand,
     ['pack', '--json', '--pack-destination', packDir],
-    cliDir
+    cliDir,
+    { shell: process.platform === 'win32' }
   );
 
   const packReport = JSON.parse(packed.stdout);
@@ -91,7 +92,8 @@ test('packed artifact installs cleanly and exposes standalone zass commands', { 
   run(
     npmCommand,
     ['install', tarball, '--no-audit', '--no-fund'],
-    consumerDir
+    consumerDir,
+    { shell: process.platform === 'win32' }
   );
 
   writeFileSync(
