@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E3-T06 repo-local field runner PASS
+
+- Added `tools/track-e/runner.js` as the thin repo-local/test-only Track E execution surface.
+- Added repo-local usage documentation under `tools/track-e/README.md`.
+- Runner supports bounded AUTOMATED and FIELD-OBSERVED recording, explicit USER-RATED and USER-FEEDBACK submission, and local factual projection.
+- Rating/feedback require the literal `--consent true`; missing/false consent fails before a receipt is built or written.
+- Runner uses existing internal evidence builders/writer/projector and does not require manual JSON editing for E4 operator flows.
+- Validation/write failures are emitted as factual JSON states and do not claim success.
+- Runner is non-interactive/explicit-argument by design to keep consent auditable.
+- Runner is not registered in npm `bin`, does not modify `cli/bin/zass.js`, and does not add a public `zass evidence` command.
+- Added focused `cli/test/evidence-runner.test.js` spawning the real runner process for automated/observed events, consent failure, explicit rating/feedback, projection, invalid event behavior, empty projection, and npm-bin isolation.
+- No network behavior, hidden telemetry, Git-ignore modification, or semantic-state mutation was added.
+- CI run `37775342161` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T06 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T05 rating/feedback validation + privacy guards PASS
 
 - Added frozen prohibited privacy-field vocabulary covering project/repository/path/user/device/account/provider-memory/credential/environment surfaces.
