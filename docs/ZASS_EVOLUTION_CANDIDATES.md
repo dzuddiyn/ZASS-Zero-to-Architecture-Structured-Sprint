@@ -535,7 +535,7 @@ zass status → factual current-state summary
 zass diff   → factual local-HEAD change summary
 ```
 
-The CLI is versioned as `zass-cli v0.4.0` and CR-010 is CLOSED after explicit STOP/REVIEW PASS. It remains private/not published to npm; npm onboarding/bootstrap is separate post-CR-010 productization work. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
+The CLI is versioned as `zass-cli v0.4.0`, publicly published/verified on npm, and CR-010 is CLOSED after explicit STOP/REVIEW PASS. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md).
 
 Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboard expansion, and other new validator semantics remain outside CR-010 unless separately promoted.
 
@@ -545,35 +545,33 @@ Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboa
 ## CR-011 — Machine-readable `.zass/` Layer
 
 **Status:** DONE — IMPLEMENTED / CR-011 v0.1 FROZEN  
-**Source:** External Copilot UX/automation review  
-**Decision date:** 2026-09-30
+**Source:** External Copilot UX/automation review + Track D implementation  
+**Decision date:** 2026-09-30  
+**Closure date:** 2026-10-08
 
-Candidate machine-only layer:
+Implemented persisted surface:
 
 ```text
 .zass/
-├── config.yml
-└── schema.yml
+└── project.json
 ```
 
-Purpose:
+Frozen rule:
 
-- give CLI / GitHub Actions a stable machine-readable contract;
-- keep human interaction centered on Markdown;
-- avoid forcing users to read automation configuration during onboarding.
-
-Example candidate fields:
-
-```yaml
-version: 1
-language: en
-approval_mode: explicit
-source_of_truth: github
+```text
+Markdown = semantic authority
+.zass/   = machine metadata companion
 ```
 
-Do not make `.zass/` mandatory until the validator/automation design proves that it adds value.
+CR-011 v0.1 is implemented, regression-tested, Windows field-tested, documented and STOP/REVIEW frozen. Legacy projects without `.zass/` remain valid.
 
-**Owner decision — 2026-10-08:** proceed directly to bounded implementation. The implementation must remain additive/backward-compatible, keep Markdown as semantic authority, and remain isolated from AISYNC/CrossAI runtime. Action plan and atomic task slicing are in `docs/ZASS_TRACK_B_ACTION_PLAN.md`.
+Canonical references:
+
+- [`CR011_ZASS_MACHINE_METADATA_V01.md`](CR011_ZASS_MACHINE_METADATA_V01.md)
+- [`CR011_MACHINE_METADATA_GUIDE.md`](CR011_MACHINE_METADATA_GUIDE.md)
+- [`CR011_STOP_REVIEW_CLOSURE.md`](CR011_STOP_REVIEW_CLOSURE.md)
+
+No active CR-011 candidate remains in this register.
 
 ---
 
