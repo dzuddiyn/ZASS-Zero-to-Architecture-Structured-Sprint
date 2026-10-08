@@ -82,6 +82,8 @@ Potential cost:
 
 Do not add this to the core template until real usage shows clear value.
 
+**Owner clarification — 2026-10-08:** CR-001 is not deferred. It remains a TEST candidate, but it is outside TRACK D and should only be evaluated through a separate explicit test decision.
+
 ---
 
 ## CR-002 — Decision Dependency Metadata
@@ -173,7 +175,7 @@ A general metrics ledger could push ZASS beyond Zero-to-Architecture into produc
 
 ## CR-006 — Scale-out Multi-file Structure
 
-**Status:** SCALE-OUT CANDIDATE  
+**Status:** DEFERRED UNTIL TRACK D CLOSES — SCALE-OUT TEST ONLY  
 **Source:** External Copilot review
 
 Possible future structure:
@@ -196,11 +198,13 @@ Current default remains a portable single project ZASS file because that simplic
 
 Do not fragment the default workflow merely to prepare for hypothetical scale.
 
+**Owner clarification — 2026-10-08:** defer CR-006 until TRACK D closes. After TRACK D, prepare only a bounded TEST protocol to determine when single-file ZASS truly needs scale-out. Do not implement or migrate the canonical single-file structure without separate owner approval.
+
 ---
 
 ## CR-007 — Operation / Post-mortem Lifecycle
 
-**Status:** OUT OF CURRENT SCOPE  
+**Status:** CLOSED FROM ZASS SCOPE — MOVED TO SEPARATE PROJECT  
 **Source:** External Copilot review
 
 Proposed extended lifecycle:
@@ -221,6 +225,7 @@ For now:
 - ZASS remains focused on discovery, evidence, decisions, and architecture.
 - ACTION PLAN handles execution.
 - Operational/post-mortem methodology should not be added without a separate scope decision.
+- **Owner decision — 2026-10-08:** keep this outside ZASS System. The separate post-production project thread has now been opened; CR-007 is closed from ZASS scope.
 
 ---
 
@@ -537,7 +542,7 @@ Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboa
 
 ## CR-011 — Machine-readable `.zass/` Layer
 
-**Status:** ACCEPTED — EXPLORATION / IMPLEMENTATION CANDIDATE  
+**Status:** ACCEPTED — IMPLEMENTATION GATE OPEN  
 **Source:** External Copilot UX/automation review  
 **Decision date:** 2026-09-30
 
@@ -565,6 +570,8 @@ source_of_truth: github
 ```
 
 Do not make `.zass/` mandatory until the validator/automation design proves that it adds value.
+
+**Owner decision — 2026-10-08:** proceed directly to bounded implementation. The implementation must remain additive/backward-compatible, keep Markdown as semantic authority, and remain isolated from AISYNC/CrossAI runtime. Action plan and atomic task slicing are in `docs/ZASS_TRACK_B_ACTION_PLAN.md`.
 
 ---
 

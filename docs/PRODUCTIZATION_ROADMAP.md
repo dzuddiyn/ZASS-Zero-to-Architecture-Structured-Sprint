@@ -103,7 +103,7 @@ The previous timing assumption that CR-010 v0.4 and later ZASS tooling must wait
 
 LOCKED sequencing refinement:
 
-> **ZASS tooling/productization work may proceed as an isolated parallel TRACK B before AISYNC T-020/T-021 completes, provided it does not modify or interrupt the active AISYNC runtime, Gate 6 acceptance, or CrossAI Production v1 critical path.**
+> **ZASS tooling/productization may continue as isolated TRACK D work before AISYNC T-020/T-021 completes, provided it does not modify or interrupt the active AISYNC runtime, Gate 6 acceptance, or CrossAI Production v1 critical path.**
 
 ```text
 TRACK A — AISYNC / CrossAI
@@ -115,7 +115,7 @@ T-020 Human Closed Beta
 → T-021 Production v1 release acceptance
 → DELIVERED !!
 
-TRACK B — ZASS tooling/productization
+TRACK B — historical bootstrap/tooling lineage
 CR-010 v0.4a: zass status — IMPLEMENTED / FIELD-VALIDATED
 → CR-010 v0.4b: zass diff — IMPLEMENTED / FIELD-VALIDATED
 → real-project field test ✅ PASS
@@ -131,23 +131,38 @@ CR-010 v0.4a: zass status — IMPLEMENTED / FIELD-VALIDATED
 → repeat STOP / REVIEW ✅ PASS
 → stable Bootstrap Core public API FROZEN ✅
 → stale docs/status cleanup ✅
-→ npm publication readiness / packaging-boundary remediation ← NEXT
-→ npm pack + clean-install smoke test
-→ publish create-zass-project@0.1.0 if PASS
-→ fresh registry verification
-→ publication receipt + CHANGELOG
-→ CrossAI Bootstrap Core consumption gate
+→ npm publication readiness / packaging-boundary remediation ✅
+→ npm pack + clean-install smoke test ✅
+→ publish create-zass-project@0.1.0 ✅
+→ fresh registry verification ✅
+→ publication receipt + CHANGELOG ✅
+→ npm bootstrap publication + receipt ✅ CLOSED
+→ TRACK B CLOSED
+
+TRACK D — ZASS PRODUCTIZATION ONLY ← CURRENT
+A1 documentation truth cleanup
+→ A2 public zass-cli readiness audit
+→ A3 public zass-cli package hardening
+→ A4 public zass-cli publication
+→ A5 CR-011 .zass/ implementation
+→ TRACK D STOP / REVIEW
+
+AFTER TRACK D
+CR-001 remains separate TEST candidate
+CR-006 deferred → scale-out TEST protocol only
+CR-007 closed from ZASS scope / moved to separate project
+CrossAI Bootstrap Core consumption gate ⏸ NOT OPEN
 ```
 
 TRACK B remains isolated. It must not modify AISYNC runtime, Apps Script production, T-020/T-021 acceptance, or Gate 6 evidence.
 
-CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and implemented locally under `create-zass/` with public candidate identity `create-zass-project@0.1.0` and Windows + CI PASS. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md); field testing passed, the deterministic public API seam was corrected, repeat STOP/REVIEW passed, and the six-symbol public consumer API is now **FROZEN / PASS**. npm publication remains a separate gate and is now the next TRACK B focus.
+CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and `create-zass-project@0.1.0` is now **PUBLISHED / VERIFIED / CLOSED** on npm with a fresh public-registry smoke PASS and publication receipt recorded. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md); field testing passed, the deterministic public API seam was corrected, repeat STOP/REVIEW passed, and the six-symbol public consumer API is **FROZEN / PASS**. Current isolated productization is governed by **TRACK D — ZASS PRODUCTIZATION ONLY**: documentation truth cleanup, public `zass-cli` productization, and CR-011 `.zass/` implementation. CR-006 is deferred until TRACK D closes and then may receive only a scale-out TEST protocol. CrossAI Bootstrap Core consumption remains intentionally NOT OPEN while Track A remains active.
 
-CrossAI Bootstrap Core consumption remains a later integration gate. Under the current owner-approved sequence, first close the `create-zass-project@0.1.0` npm publication gate with fresh-registry verification; then open CrossAI consumption, while preserving any still-applicable TRACK A / Production isolation requirements.
+CrossAI Bootstrap Core consumption remains a later integration gate. The `create-zass-project@0.1.0` publication gate is now CLOSED / PASS. CrossAI consumption is still intentionally NOT OPEN and must not begin merely because Track B is ready; Track A / T-020 / T-021 isolation requirements remain authoritative.
 
 The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md). The earlier mandatory-GitHub Create Project assumption remains superseded: a valid ZASS project must not require GitHub.
 
-See [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md).
+Historical lineage: [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md). Current execution: [`ZASS_TRACK_D_ACTION_PLAN.md`](ZASS_TRACK_D_ACTION_PLAN.md).
 
 ## Validation architecture
 
