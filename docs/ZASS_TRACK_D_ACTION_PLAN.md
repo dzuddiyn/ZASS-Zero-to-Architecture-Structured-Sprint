@@ -207,6 +207,12 @@ The initial field run exposed a Full-ZASS self-containment defect. A5-T07C corre
 Test one legacy project without .zass/ and one newly generated project with .zass/. Run zass check/status/diff and verify no authority or portability regression.
 
 ### A5-T08 — Documentation + migration guide
+
+**Status:** PASS  
+**Guide:** [`CR011_MACHINE_METADATA_GUIDE.md`](CR011_MACHINE_METADATA_GUIDE.md)
+
+Documented what `.zass/` is and is not, legacy/no-`.zass/` compatibility, schema v0.1, loader/validation states, Z300–Z304 behavior, deterministic conflict handling, manual-edit policy, optional migration, no-auto-migration rules, upgrade/version policy, read/write ownership, and the distinction between published `create-zass-project@0.1.0` and repository-source `0.2.0`.
+
 Document what .zass/ is/is not, legacy compatibility, schema version, error/conflict behavior, upgrade path and manual-edit policy.
 
 ### A5-T09 — CR-011 STOP / REVIEW
