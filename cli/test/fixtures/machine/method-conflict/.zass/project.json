@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "0.1",
+  "project": {
+    "name": "fixture-conflict",
+    "method": "zassimple",
+    "language": "en",
+    "methodFile": "ZASSIMPLE_EN.md"
+  }
+}
