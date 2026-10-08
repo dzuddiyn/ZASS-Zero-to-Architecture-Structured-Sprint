@@ -177,7 +177,7 @@ A general metrics ledger could push ZASS beyond Zero-to-Architecture into produc
 
 ## CR-006 — Scale-out Multi-file Structure
 
-**Status:** TRACK E — ACTIVE / SCALE-OUT TEST ONLY  
+**Status:** CLOSED FOR NOW — KEEP CURRENT / NO PROMOTION  
 **Source:** External Copilot review
 
 Possible future structure:
@@ -647,7 +647,7 @@ Related method change in v0.3.3:
 
 ## CR-014 — Real-world Case Studies
 
-**Status:** TRACK E — ACTIVE FIELD-EVIDENCE PRIORITY  
+**Status:** DEFERRED — INSUFFICIENT REAL-HUMAN EVIDENCE  
 **Source:** External Copilot review  
 **Decision date:** 2026-09-30
 
@@ -669,7 +669,7 @@ Case-study evidence should guide future method changes before new ceremony is ad
 
 ## CR-015 — P3 Field Evidence Recorder
 
-**Status:** TRACK E — ACTIVE CANDIDATE  
+**Status:** IMPLEMENTED INTERNALLY / NO PUBLIC PROMOTION  
 **Source:** Project Owner discussion during Gate 6 / T-020 preparation  
 **Scope:** P3 field evidence, adoption learning, case-study support  
 **Priority:** Non-blocking
