@@ -1,3 +1,19 @@
+## 2026-10-08 — CR-011 A5-T06 versioned bootstrap generation PASS
+
+- Advanced Bootstrap Core contract to `0.2` and private package source to `zass-bootstrap-core@0.2.0`.
+- Advanced initializer source to `create-zass-project@0.2.0`; no npm publication was performed in A5-T06.
+- Preserved the six frozen Bootstrap Core root export names and the existing `buildBootstrapPlan({ projectName, method, language })` input shape.
+- Every 4 × 2 method/language plan now contains exactly four deterministic artifacts: selected method file, `README.md`, `.gitignore`, and `.zass/project.json`.
+- Generated machine metadata uses CR-011 `schemaVersion: "0.1"` and exact project name/method/language/methodFile values from the same validated bootstrap input.
+- Added Core validation for the machine artifact and regressions that reject metadata tampering.
+- Upgraded `create-zass-project` materialization to create nested parent directories for plan paths and to recursively collect project-root-relative snapshot files for verification.
+- Synchronized the vendored Bootstrap Core runtime from canonical `bootstrap-core/`; package-boundary tests continue to enforce byte-for-byte runtime/template equality.
+- Linux GitHub CI passed including packed package-boundary smoke.
+- Fresh Windows evidence at SHA `ec3131ce1eda14d864514076c76440e24551aa7b`: Bootstrap Core 29/29 PASS; create-zass 27/27 PASS; packed clean-install/bootstrap smoke PASS.
+- Windows runtime verification confirmed Core contract `0.2`, the same six public root exports, and initializer source version `0.2.0`.
+- npm registry verification confirmed historical `create-zass-project@0.1.0` remains publicly resolvable and `latest = 0.1.0`; A5-T06 did not mutate or publish over it.
+- **A5-T06 = PASS.**
+
 ## 2026-10-08 — CR-011 A5-T05 Bootstrap integration/version contract LOCKED
 
 - Locked the next Bootstrap Core contract to `0.2` and private package version to `0.2.0`.
