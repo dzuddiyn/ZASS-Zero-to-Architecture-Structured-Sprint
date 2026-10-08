@@ -148,21 +148,30 @@ A1 documentation truth cleanup
 → TRACK D STOP / REVIEW ✅ PASS / CLOSED
 
 AFTER TRACK D
+TRACK E — FIELD EVIDENCE & SCALE VALIDATION ← CURRENT
+→ CR-006 scale-out TEST
+→ CR-015 lightweight field evidence recorder/projection
+→ CR-014 real-world case-study evidence
+→ TRACK E STOP / REVIEW
+
 CR-001 remains separate TEST candidate
-CR-006 deferred → scale-out TEST protocol only
+CR-002 remains TEST WHEN NEEDED
+CR-003 / CR-004 parked
+CR-005 deferred
 CR-007 closed from ZASS scope / moved to separate project
+CR-016 moved out of ZASS active scope → AISYNC future work
 CrossAI Bootstrap Core consumption gate ⏸ NOT OPEN
 ```
 
 TRACK B remains isolated. It must not modify AISYNC runtime, Apps Script production, T-020/T-021 acceptance, or Gate 6 evidence.
 
-CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and `create-zass-project@0.1.0` is now **PUBLISHED / VERIFIED / CLOSED** on npm with a fresh public-registry smoke PASS and publication receipt recorded. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md); field testing passed, the deterministic public API seam was corrected, repeat STOP/REVIEW passed, and the six-symbol public consumer API is **FROZEN / PASS**. **TRACK D — ZASS PRODUCTIZATION ONLY is CLOSED / PASS** after documentation truth cleanup, public `zass-cli@0.4.0` publication/verification, and CR-011 `.zass/` implementation + STOP/REVIEW freeze. CR-006 is deferred until TRACK D closes and then may receive only a scale-out TEST protocol. CrossAI Bootstrap Core consumption remains intentionally NOT OPEN while Track A remains active.
+CR-010 v0.4a `zass status` and v0.4b `zass diff` are IMPLEMENTED and FIELD-VALIDATED under their locked contracts. The real-project receipt is [`CR010_V04_REAL_PROJECT_FIELD_TEST.md`](CR010_V04_REAL_PROJECT_FIELD_TEST.md). The explicit STOP/REVIEW gate PASSED and CR-010 is CLOSED at zass-cli v0.4.0. Closure receipt: [`CR010_STOP_REVIEW_CLOSURE.md`](CR010_STOP_REVIEW_CLOSURE.md). The npm Bootstrap CLI v0.1 behavioral contract is LOCKED in [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md) and `create-zass-project@0.1.0` is now **PUBLISHED / VERIFIED / CLOSED** on npm with a fresh public-registry smoke PASS and publication receipt recorded. The ZASS Project Bootstrap Core v0.1 contract is LOCKED and implemented in [`ZASS_PROJECT_BOOTSTRAP_CORE_V01.md`](ZASS_PROJECT_BOOTSTRAP_CORE_V01.md); field testing passed, the deterministic public API seam was corrected, repeat STOP/REVIEW passed, and the six-symbol public consumer API is **FROZEN / PASS**. **TRACK D — ZASS PRODUCTIZATION ONLY is CLOSED / PASS** after documentation truth cleanup, public `zass-cli@0.4.0` publication/verification, and CR-011 `.zass/` implementation + STOP/REVIEW freeze. TRACK E is now the current bounded ZASS field-evidence/scale-validation track combining CR-006, CR-014 and CR-015. Its scope is locked in `docs/ZASS_TRACK_E_ACTION_PLAN.md`. CrossAI Bootstrap Core consumption remains intentionally NOT OPEN while Track A remains active.
 
 CrossAI Bootstrap Core consumption remains a later integration gate. The `create-zass-project@0.1.0` publication gate is now CLOSED / PASS. CrossAI consumption is still intentionally NOT OPEN and must not begin merely because Track B is ready; Track A / T-020 / T-021 isolation requirements remain authoritative.
 
 The shared bootstrap direction is defined in [`ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md`](ZASS_PROJECT_BOOTSTRAP_CORE_DIRECTION.md). The earlier mandatory-GitHub Create Project assumption remains superseded: a valid ZASS project must not require GitHub.
 
-Historical lineage: [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md). Current execution: [`ZASS_TRACK_D_ACTION_PLAN.md`](ZASS_TRACK_D_ACTION_PLAN.md).
+Historical lineage: [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md) and closed [`ZASS_TRACK_D_ACTION_PLAN.md`](ZASS_TRACK_D_ACTION_PLAN.md). Current execution: [`ZASS_TRACK_E_ACTION_PLAN.md`](ZASS_TRACK_E_ACTION_PLAN.md).
 
 ## Validation architecture
 
