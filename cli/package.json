@@ -4,7 +4,7 @@
   "description": "ZASS command-line validator and project-state tooling.",
   "type": "module",
   "bin": {
-    "zass": "./bin/zass.js"
+    "zass": "bin/zass.js"
   },
   "files": [
     "bin",
