@@ -1,0 +1,87 @@
+name: Publish create-zass
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type create-zass@0.1.0 to publish this exact first release'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: publish-create-zass
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate explicit release confirmation
+        shell: bash
+        run: |
+          if [[ "${{ inputs.confirm }}" != "create-zass@0.1.0" ]]; then
+            echo "::error::Release confirmation did not match create-zass@0.1.0"
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24 for npm release
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: false
+
+      - name: Pin npm release CLI
+        run: npm install --global npm@11.21.0
+
+      - name: Verify package identity
+        shell: bash
+        run: |
+          NAME="$(node -p "require('./create-zass/package.json').name")"
+          VERSION="$(node -p "require('./create-zass/package.json').version")"
+          test "$NAME" = "create-zass"
+          test "$VERSION" = "0.1.0"
+
+      - name: Verify npm publish credential
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          test -n "$NODE_AUTH_TOKEN"
+          npm whoami --registry=https://registry.npmjs.org >/dev/null
+
+      - name: Verify create-zass name is still available
+        shell: bash
+        run: |
+          set +e
+          OUTPUT="$(npm view create-zass version --registry=https://registry.npmjs.org 2>&1)"
+          STATUS=$?
+          set -e
+
+          if [[ "$STATUS" -eq 0 ]]; then
+            echo "::error::create-zass already exists on the npm registry"
+            echo "$OUTPUT"
+            exit 1
+          fi
+
+          if grep -q "E404" <<<"$OUTPUT"; then
+            echo "create-zass is available for first publication"
+            exit 0
+          fi
+
+          echo "::error::npm registry availability check was inconclusive"
+          echo "$OUTPUT"
+          exit "$STATUS"
+
+      - name: Run create-zass release tests
+        run: npm --prefix create-zass test
+
+      - name: Publish create-zass@0.1.0
+        working-directory: create-zass
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public

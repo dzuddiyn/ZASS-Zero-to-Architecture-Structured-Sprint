@@ -1,20 +1,24 @@
 # create-zass
 
-Local-first ZASS project bootstrapper.
+Bootstrap a new local ZASS project from one explicitly selected official method and language.
 
-Status: v0.1 implementation package. It is intentionally private and not published to npm yet.
+## Requirements
 
-Target npm UX:
+- Node.js 20 or newer
+- npm
+
+## Quick start
+
+Interactive:
 
 ```bash
 npm create zass@latest my-project
 ```
 
-Local development:
+Non-interactive:
 
 ```bash
-node bin/create-zass.js my-project --method zassimple --lang en
-npm test
+npm create zass@latest my-project -- --method zassimple --lang en
 ```
 
 Supported methods:
@@ -22,13 +26,58 @@ Supported methods:
 - `zasspill`
 - `zasselection`
 - `zassimple`
-- `zass` (Full ZASS)
+- `zass` — Full ZASS
 
 Supported languages:
 
-- `en`
-- `my`
+- `en` — English
+- `my` — Bahasa Melayu
 
-Shared project semantics come from the repository's private frozen `bootstrap-core/` module. For npm distribution, `create-zass` carries a byte-for-byte vendored runtime snapshot under `vendor/bootstrap-core/`; repository tests enforce synchronization with canonical Core `src/` and `templates/`. This CLI still owns only terminal/argv behavior plus local filesystem materialization, refusal, cleanup and factual console receipts.
+No method or language is silently selected. In a non-interactive environment, both `--method` and `--lang` are required.
 
-The bootstrap is create-new-only and does not initialize Git, connect GitHub, register CrossAI, install dependencies, or download templates at runtime.
+## What it creates
+
+A successful bootstrap creates exactly:
+
+- one selected ZASS method file;
+- `README.md`;
+- `.gitignore`.
+
+For Full ZASS, the project authority file is always `ZASS.md`, including when Bahasa Melayu is selected.
+
+## Safety and side effects
+
+v0.1 is create-new-only. If the target already exists, `create-zass` refuses to overwrite or merge it.
+
+It does **not**:
+
+- initialize Git;
+- create or connect a GitHub repository;
+- register CrossAI;
+- call Google Drive or an AI API;
+- send telemetry;
+- install dependencies inside the generated project;
+- download ZASS method templates at runtime.
+
+Generated `.gitignore` includes a baseline for common secret files. Do not put passwords, API keys, tokens, or sensitive personal data into tracked ZASS Markdown files.
+
+## Package architecture
+
+Project semantics come from the repository's frozen private Bootstrap Core. The npm package carries a byte-for-byte vendored runtime snapshot under `vendor/bootstrap-core/`, and repository tests enforce synchronization with canonical Core `src/` and `templates/`.
+
+## Development
+
+From this repository:
+
+```bash
+node create-zass/bin/create-zass.js my-project --method zassimple --lang en
+npm --prefix create-zass test
+```
+
+## Issues
+
+Report issues in the ZASS repository issue tracker.
+
+## License
+
+MIT

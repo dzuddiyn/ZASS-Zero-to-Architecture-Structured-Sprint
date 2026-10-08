@@ -1,8 +1,7 @@
 {
   "name": "create-zass",
   "version": "0.1.0",
-  "private": true,
-  "description": "Local-first bootstrap CLI for ZASS projects",
+  "description": "Bootstrap a local ZASS project with an explicitly selected official method and language",
   "type": "module",
   "bin": {
     "create-zass": "./bin/create-zass.js"
@@ -15,10 +14,32 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "npm test"
   },
   "engines": {
     "node": ">=20"
+  },
+  "keywords": [
+    "zass",
+    "cli",
+    "project-bootstrap",
+    "architecture",
+    "decision-making",
+    "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.git",
+    "directory": "create-zass"
+  },
+  "homepage": "https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/tree/main/create-zass#readme",
+  "bugs": {
+    "url": "https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "license": "MIT"
 }
