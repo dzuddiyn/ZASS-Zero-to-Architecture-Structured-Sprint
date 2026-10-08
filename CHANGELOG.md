@@ -1,3 +1,15 @@
+## 2026-10-08 — TRACK E E3-T02 frozen evidence constants + strict receipt validator PASS
+
+- Added internal reusable module boundary under `cli/src/evidence/`.
+- Added frozen Track E v0.1 constants for receipt version, evidence classes, Q1–Q10, producer sources, project shapes, supported methods/languages, machine-metadata states, bounded result vocabularies, rating targets, feedback categories and the 500-character feedback cap.
+- Implemented pure `validateEvidenceReceipt(value) → { valid, errors }` with strict allow-list validation.
+- Validator enforces one-or-more records, safe opaque IDs, valid timestamps, bounded producer source, class-specific result contracts, common factual metadata types, Q1–Q10 linkage, CASE-STUDY/INFERRED evidence refs, USER-RATED 1–5 + Q9 + consent, and USER-FEEDBACK consent/category/length rules.
+- Unknown fields are rejected, so private/non-contract fields such as project names/repository URLs cannot be silently added to receipts.
+- Added focused `cli/test/evidence-validator.test.js` covering canonical receipt acceptance, all six evidence classes, invalid version/source/question, strict private/unknown-field rejection, class-field misuse, rating/feedback bounds, evidence refs and validator purity.
+- No file writer, reader/projector, network behavior, public CLI command, or `zass check/status/diff` semantic change was introduced.
+- CI run `37772761067` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T02 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T01 implementation action plan + atomic slices LOCKED
 
 - Added `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_PLAN.md`.
