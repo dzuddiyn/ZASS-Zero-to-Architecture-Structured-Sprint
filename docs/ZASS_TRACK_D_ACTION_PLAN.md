@@ -157,6 +157,11 @@ Define purpose/non-purpose, authority, exact files, format, minimum fields, read
 **PASS:** implementation worker has no unresolved architecture decision.
 
 ### A5-T02 — Implement dedicated machine metadata loader
+
+**Status:** PASS
+
+Implemented one local read-only loader for `.zass/project.json` with explicit `ABSENT / VALID / MALFORMED / UNSUPPORTED_SCHEMA / INVALID` states. Missing metadata remains valid legacy state; no network, no writes, no Markdown semantic mutation.
+
 Add one local loader for .zass/. Missing layer is valid legacy state; malformed metadata is factual error/state; no semantic Markdown mutation; no network.
 
 ### A5-T03 — Integrate bounded machine-layer validation
