@@ -18,3 +18,7 @@ export {
   buildUserFeedbackRecord,
   buildUserRatingRecord
 } from './user-signals.js';
+export {
+  EVIDENCE_GITIGNORE_ENTRY,
+  ensureEvidenceGitIgnore
+} from './hygiene.js';
