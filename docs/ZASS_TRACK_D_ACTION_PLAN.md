@@ -137,7 +137,7 @@ Record source SHA, workflow run, npm version, registry result, fresh consumer sm
 # A5 — CR-011 .zass/ machine-readable layer
 
 **Priority:** P2  
-**Status:** OWNER-APPROVED / IMPLEMENTATION GATE OPEN
+**Status:** PASS / CR-011 v0.1 FROZEN / IMPLEMENTATION CLOSED
 
 Non-negotiable boundary:
 ```text
@@ -185,7 +185,7 @@ Cover legacy/no .zass/, valid v0.1, malformed metadata, unsupported schema, dete
 **Status:** PASS / LOCKED FOR A5-T06 IMPLEMENTATION  
 **Contract:** [`CR011_BOOTSTRAP_INTEGRATION_V02.md`](CR011_BOOTSTRAP_INTEGRATION_V02.md)
 
-Locked the next bootstrap boundary to Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0`. The same six frozen root export names and the same `buildBootstrapPlan({ projectName, method, language })` input shape are preserved, while the deterministic plan becomes four artifacts by adding `.zass/project.json` schema `0.1`. v0.1 remains immutable history.
+Locked the next bootstrap boundary to Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0`. The same six frozen root export names and the same `buildBootstrapPlan({ projectName, method, language })` input shape are preserved. The base plan adds `.zass/project.json` schema `0.1`; after A5-T07C, Full ZASS also includes the canonical local architecture-to-execution dependency. v0.1 remains immutable history.
 
 Define next-version integration with Bootstrap Core/create-zass-project. Do not mutate 0.1.0. Do not silently break frozen Bootstrap Core v0.1 public API.
 
@@ -193,7 +193,7 @@ Define next-version integration with Bootstrap Core/create-zass-project. Do not 
 
 **Status:** PASS
 
-Implemented Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0` source behavior. All 4 × 2 plans now deterministically include `.zass/project.json` schema `0.1`; nested materialization and recursive snapshot verification are implemented; vendored Core remains synchronized; packed clean-install bootstrap smoke passes on Windows and Linux CI. Public `create-zass-project@0.1.0` remains the registry `latest` historical release and is not modified.
+Implemented Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0` source behavior. All 4 × 2 plans deterministically include `.zass/project.json` schema `0.1`; after A5-T07C, Full ZASS plans additionally include the canonical local architecture-to-execution dependency. Nested materialization and recursive snapshot verification are implemented; vendored Core remains synchronized; packed clean-install bootstrap smoke passes on Windows and Linux CI. Public `create-zass-project@0.1.0` remains the registry `latest` historical release and is not modified.
 
 Generate CR-011 metadata in next bootstrap release for all supported methods and EN/MY; GitHub remains optional; packed tests updated; old 0.1.0 remains reproducible.
 
@@ -216,6 +216,12 @@ Documented what `.zass/` is and is not, legacy/no-`.zass/` compatibility, schema
 Document what .zass/ is/is not, legacy compatibility, schema version, error/conflict behavior, upgrade path and manual-edit policy.
 
 ### A5-T09 — CR-011 STOP / REVIEW
+
+**Status:** PASS / FREEZE v0.1  
+**Closure:** [`CR011_STOP_REVIEW_CLOSURE.md`](CR011_STOP_REVIEW_CLOSURE.md)
+
+Final review accepted the implemented CR-011 machine-readable layer after loader/CLI regression evidence, Bootstrap v0.2 source integration, A5-T07C portability correction, two-shape Windows field rerun, and migration/documentation completion. CR-011 schema `0.1` is frozen and implementation is closed.
+
 Outcome: PASS/FREEZE v0.1, CORRECTIVE PATCH, REWORK, or ROLLBACK. Only PASS closes CR-011 implementation.
 
 ## 4. TRACK D completion gate
