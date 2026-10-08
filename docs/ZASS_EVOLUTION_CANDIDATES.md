@@ -26,6 +26,8 @@
 - `SCALE-OUT CANDIDATE` — relevant only when project/team size exceeds the current single-file model.
 - `OUT OF CURRENT SCOPE` — not part of the present Zero-to-Architecture purpose.
 - `ACCEPTED` — approved for implementation, but implementation may still be pending.
+- `DONE` — accepted work is implemented/closed and no longer an active candidate.
+- `MOVED OUT` — retained only as lineage; active ownership moved to another project/repository.
 - `REJECTED` — explicitly not adopted.
 - `SUPERSEDED` — replaced by a newer candidate or decision.
 
@@ -175,7 +177,7 @@ A general metrics ledger could push ZASS beyond Zero-to-Architecture into produc
 
 ## CR-006 — Scale-out Multi-file Structure
 
-**Status:** DEFERRED UNTIL TRACK D CLOSES — SCALE-OUT TEST ONLY  
+**Status:** TRACK E — ACTIVE / SCALE-OUT TEST ONLY  
 **Source:** External Copilot review
 
 Possible future structure:
@@ -295,7 +297,7 @@ They remain candidates until the project owner explicitly approves a change thro
 
 ## CR-008 — One Writer, Many Brainstormers
 
-**Status:** ACCEPTED  
+**Status:** DONE — ACCEPTED / ONBOARDING BASELINE  
 **Source:** External Meta AI review  
 **Scope:** Cross-AI workflow, onboarding mental model, GitHub persistence
 
@@ -481,7 +483,7 @@ This candidate has been promoted into the LOCKED onboarding baseline. See `docs/
 
 ## CR-009 — Suggestion / Decision / Git Change Separation
 
-**Status:** ACCEPTED — LOCKED PHILOSOPHY  
+**Status:** DONE — LOCKED PHILOSOPHY  
 **Source:** External Copilot UX review + Project Owner decision  
 **Decision date:** 2026-09-30
 
@@ -504,7 +506,7 @@ No additional field or mandatory response block is required.
 
 ## CR-010 — `zass check / status / diff` Validator
 
-**Status:** ACCEPTED — CLOSED — zass-cli v0.4.0  
+**Status:** DONE — IMPLEMENTED / CLOSED — zass-cli v0.4.0  
 **Source:** External Copilot UX/automation review + Project Owner decision  
 **Decision date:** 2026-09-30
 
@@ -542,7 +544,7 @@ Optional Z206, machine-readable `.zass/` layers, remote comparison, SaaS/dashboa
 
 ## CR-011 — Machine-readable `.zass/` Layer
 
-**Status:** ACCEPTED — IMPLEMENTATION GATE OPEN  
+**Status:** DONE — IMPLEMENTED / CR-011 v0.1 FROZEN  
 **Source:** External Copilot UX/automation review  
 **Decision date:** 2026-09-30
 
@@ -577,7 +579,7 @@ Do not make `.zass/` mandatory until the validator/automation design proves that
 
 ## CR-012 — Architecture Readiness ≠ Evidence Confidence
 
-**Status:** ACCEPTED CONCEPT — TEST PASS  
+**Status:** DONE — ACCEPTED / TEST PASS  
 **Source:** External Copilot review + in-repo fixture test  
 **Test date:** 2026-09-30
 
@@ -627,7 +629,7 @@ Static documentation examples do not trigger this requirement. When no observed 
 
 ## CR-013 — One Primary Action Per Response
 
-**Status:** REJECTED  
+**Status:** CLOSED — REJECTED  
 **Source:** External Copilot UX review  
 **Decision date:** 2026-09-30
 
@@ -647,7 +649,7 @@ Related method change in v0.3.3:
 
 ## CR-014 — Real-world Case Studies
 
-**Status:** ACCEPTED — FIELD EVIDENCE PRIORITY  
+**Status:** TRACK E — ACTIVE FIELD-EVIDENCE PRIORITY  
 **Source:** External Copilot review  
 **Decision date:** 2026-09-30
 
@@ -669,7 +671,7 @@ Case-study evidence should guide future method changes before new ceremony is ad
 
 ## CR-015 — P3 Field Evidence Recorder
 
-**Status:** CANDIDATE  
+**Status:** TRACK E — ACTIVE CANDIDATE  
 **Source:** Project Owner discussion during Gate 6 / T-020 preparation  
 **Scope:** P3 field evidence, adoption learning, case-study support  
 **Priority:** Non-blocking
@@ -753,90 +755,33 @@ CR-015 is only a candidate mechanism for collecting and projecting the factual e
 
 ## CR-016 — ZASSPILL Interaction Continuity
 
-**Status:** ACCEPTED FUTURE-WORK ARCHITECTURE REFINEMENT — implementation pending field gate  
-**Source:** Real-world ZASSPILL forecasting-thread portability failure  
-**Scope:** Optional portable thread-specific interaction semantics  
-**Priority:** Non-blocking; ZASSPILL v1.0.0 remains frozen
+**Status:** MOVED OUT — AISYNC FUTURE WORK / ZASS SCOPE CLOSED  
+**Source:** Real-world ZASSPILL portability failure  
+**Move decision:** 2026-10-08
 
-### Observed problem
+The observed requirement remains valid, but active ownership no longer belongs in the ZASS evolution backlog.
 
-ZASSPILL preserved WHAT the conversation was about but failed to reliably preserve HOW the user and AI were intentionally working together.
+Reason:
 
-Observed forecasting mode:
-
-- user = instinct-based forecaster;
-- AI = evidence-based challenger;
-- relationship = friendly rival / “we bet”;
-- tone = sempoi, playful, curious, intellectually serious;
-- factual rigor remains;
-- avoid turning every exchange into a bureaucratic audit/report.
-
-The receiving AI preserved semantic content but became overly formal.
-
-### Architecture finding
-
-Current ZASSPILL v1.0 has partial ingredients in WHO, WHAT MATTERS, language routing, natural DUMP behavior, and privacy boundaries, but Portable Packet v2 and handoff minimum do not define a distinct portable interaction-continuity dimension.
-
-Recommended split:
-
-~~~text
+```text
 ZASSPILL
-= optional Thread Interaction Contract
-  when explicitly established by the user
+→ may define an optional thread interaction contract
 
-ASC / Context Assembly
-= transport, verify, and inject the compact contract
+AISYNC / ASC
+→ transport + verify + inject that contract between receivers
+```
 
-Provider-local personalization
-= remains outside portable authority
-  unless intentionally introduced by the user
-~~~
+The runtime/continuity mechanism is therefore tracked as AISYNC future work rather than as an active ZASS candidate.
 
-### Terminology
+ZASSPILL v1.0.0 remains frozen. No ZASS method change is authorized by this move.
 
-Architectural dimension:
+Canonical future-work owner:
 
-**Interaction Continuity**
+```text
+dzuddiyn/AISYNC
+docs/AISYNC_INTERACTION_CONTINUITY_FUTURE_WORK.md
+```
 
-Portable object:
+This tombstone is retained only for lineage and CR-number history.
 
-**Thread Interaction Contract**
-
-User-facing phrase may simply be:
-
-**How we work together**
-
-“Persona” is not preferred because the requirement is relational and thread-specific rather than merely AI personality.
-
-### Minimality rule
-
-Default candidate scope is:
-
-**THREAD-LEVEL + OPTIONAL + EXPLICIT USER AUTHORITY**
-
-Do not add global/project/session inheritance to the minimum design without further evidence.
-
-### Privacy boundary
-
-Existing rule remains unchanged:
-
-> Provider-specific personal memory/profile/private context remains outside portable ZASSPILL authority unless the user intentionally brings that context into the semantic thread.
-
-No hidden provider persona/profile may be exported merely to reproduce style.
-
-### Future gate
-
-Before any ZASSPILL v1.x method change:
-
-1. test the forecasting scenario across at least two compatible receivers;
-2. test one non-forecast interaction mode;
-3. verify current explicit user override;
-4. verify provider-memory isolation;
-5. measure packet/token overhead;
-6. decide whether an optional interaction field earns promotion into the method.
-
-Canonical future-work analysis:
-
-ZASSPILL_INTERACTION_CONTINUITY_FUTURE_DIRECTION.md
-
-ZASSPILL v1.0.0 remains unchanged until that gate passes.
+---
