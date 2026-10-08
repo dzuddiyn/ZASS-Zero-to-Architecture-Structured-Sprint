@@ -1,6 +1,6 @@
 # TRACK E — Field Evidence Questions & Decision Criteria v0.1
 
-**Status:** LOCKED FOR E2 DESIGN  
+**Status:** FROZEN — TRACK E ARCHITECTURE v0.1  
 **Date:** 2026-10-08  
 **Track:** TRACK E — FIELD EVIDENCE & SCALE VALIDATION  
 **Task:** E2-T01
@@ -178,7 +178,7 @@ If a rating mechanism is later approved:
 - it must be explicit opt-in;
 - it is a user-perceived-value signal, not objective product truth;
 - rating should be interpreted together with factual evidence and short optional feedback;
-- exact scale is deferred to later E2 design.
+- exact scale was subsequently locked by E2-T03 as the 1–5 usefulness scale.
 
 No hidden satisfaction score is authorized.
 
