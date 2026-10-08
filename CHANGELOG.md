@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E3-T05 rating/feedback validation + privacy guards PASS
+
+- Added frozen prohibited privacy-field vocabulary covering project/repository/path/user/device/account/provider-memory/credential/environment surfaces.
+- Hardened receipt validation with explicit prohibited-privacy-field errors in addition to the existing strict allow-list rejection.
+- Added dedicated `buildUserRatingRecord(...)` and `buildUserFeedbackRecord(...)` helpers.
+- Both helpers require explicit `consent: true`; ordinary text/chat input cannot be converted into USER-RATED or USER-FEEDBACK evidence merely by passing text to the module.
+- Rating builder enforces integer 1–5, bounded ratingTarget and mandatory Q9 linkage.
+- Feedback builder enforces explicit consent, non-empty ≤500-character text and bounded optional feedbackCategory.
+- Allowed user-authored feedback text remains local content and is not heuristically scanned/reclassified; privacy enforcement focuses on explicit prohibited structural metadata surfaces and consent boundaries.
+- Added focused `cli/test/evidence-privacy.test.js` covering missing consent, invalid rating/target/Q9, feedback length/category, explicit prohibited root/nested privacy fields, valid local feedback, and validator-compatible explicit user-signal builders.
+- No field runner, network submission, hidden telemetry, semantic-state mutation, or public CLI command was added.
+- CI run `37774981013` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T05 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T04 receipt reader + deterministic factual projector PASS
 
 - Added `cli/src/evidence/projector.js` and internal exports.
