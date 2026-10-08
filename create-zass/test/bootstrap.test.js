@@ -19,7 +19,7 @@ const CASES = [
 ];
 
 for (const [method, language, methodFile] of CASES) {
-  test(`v0.1 materializes Core ${method}/${language} plan`, async (t) => {
+  test(`v0.2 materializes Core ${method}/${language} plan`, async (t) => {
     const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-'));
     t.after(() => fs.rm(parent, { recursive: true, force: true }));
     const target = path.join(parent, `${method}-${language}`);
@@ -35,15 +35,28 @@ for (const [method, language, methodFile] of CASES) {
     assert.equal(report.methodFile, methodFile);
     assert.deepEqual(
       (await fs.readdir(target)).sort(),
-      plan.files.map((file) => file.path).sort()
+      ['.gitignore', '.zass', 'README.md', methodFile].sort()
     );
 
     for (const file of plan.files) {
       assert.equal(
-        await fs.readFile(path.join(target, file.path), 'utf8'),
+        await fs.readFile(path.join(target, ...file.path.split('/')), 'utf8'),
         file.content
       );
     }
+
+    const metadata = JSON.parse(
+      await fs.readFile(path.join(target, '.zass', 'project.json'), 'utf8')
+    );
+    assert.deepEqual(metadata, {
+      schemaVersion: '0.1',
+      project: {
+        name: path.basename(target),
+        method,
+        language,
+        methodFile
+      }
+    });
 
     const readme = await fs.readFile(path.join(target, 'README.md'), 'utf8');
     assert.match(readme, new RegExp(methodFile.replace('.', '\\.')));
@@ -61,7 +74,7 @@ for (const [method, language, methodFile] of CASES) {
   });
 }
 
-test('v0.1 refuses any existing target without invoking Core materialization', async (t) => {
+test('v0.2 refuses any existing target without invoking Core materialization', async (t) => {
   const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-existing-'));
   t.after(() => fs.rm(parent, { recursive: true, force: true }));
   const target = path.join(parent, 'existing');
@@ -94,7 +107,7 @@ test('v0.1 refuses any existing target without invoking Core materialization', a
   assert.deepEqual(await fs.readdir(target), ['sentinel.txt']);
 });
 
-test('v0.1 cleans up a partial target created by the current run', async (t) => {
+test('v0.2 cleans up a partial target created by the current run', async (t) => {
   const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-cleanup-'));
   t.after(() => fs.rm(parent, { recursive: true, force: true }));
   const target = path.join(parent, 'partial');
@@ -120,7 +133,7 @@ test('v0.1 cleans up a partial target created by the current run', async (t) => 
   );
 });
 
-test('v0.1 refuses a missing parent rather than creating parent trees', async (t) => {
+test('v0.2 refuses a missing parent rather than creating parent trees', async (t) => {
   const parent = await fs.mkdtemp(path.join(os.tmpdir(), 'create-zass-parent-'));
   t.after(() => fs.rm(parent, { recursive: true, force: true }));
   const target = path.join(parent, 'missing-parent', 'project');
