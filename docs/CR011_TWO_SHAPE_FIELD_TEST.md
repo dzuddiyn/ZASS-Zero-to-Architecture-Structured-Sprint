@@ -1,6 +1,6 @@
 # CR-011 A5-T07 — Two-Shape Field Test Receipt
 
-**Status:** HOLD — PORTABILITY DEFECT FOUND  
+**Status:** PASS — CORRECTIVE RERUN COMPLETE  
 **Date:** 2026-10-08  
 **Track:** TRACK D — A5  
 **Task:** A5-T07  
@@ -231,3 +231,89 @@ Defect: missing docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md target
 ```
 
 A5-T08 MUST NOT start until this corrective boundary is resolved and A5-T07 is rerun.
+
+
+## 11. A5-T07C corrective contract decision
+
+The corrective review selected:
+
+```text
+preserve CR-010 Z003
+preserve canonical Full-ZASS local link
+preserve CR-011 authority direction
+→ materialize the canonical local dependency for Full ZASS
+```
+
+The Bootstrap Core v0.2 contract was corrected before public 0.2.0 publication:
+
+- ZASSPILL / ZASSELECTION / ZASSIMPLE remain four-artifact plans;
+- Full ZASS becomes a five-artifact plan;
+- the fifth artifact is:
+  `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`;
+- role: `method-dependency`;
+- content is bundled from the canonical repository document and synchronization-tested;
+- no CR-010 validator rule was weakened;
+- no canonical ZASS link was rewritten.
+
+## 12. Corrective Windows rerun
+
+Corrective source SHA:
+
+```text
+db347c0f37ea12768d202b1da1afc9a3fa580792
+```
+
+### Legacy shape
+
+```text
+Machine:      ABSENT
+zass check:   exit 0
+zass status:  exit 0
+zass diff:    exit 0 / NO_CHANGE
+```
+
+### Generated Full-ZASS / Bahasa Melayu shape
+
+Materialized:
+
+```text
+ZASS.md
+README.md
+.gitignore
+.zass/project.json
+docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md
+```
+
+Observed:
+
+```text
+CREATE_EXIT=0
+MACHINE_EXISTS=True
+DEPENDENCY_EXISTS=True
+Machine: VALID
+zass check:  exit 0
+zass status: exit 0
+zass diff:   exit 0 / NO_CHANGE
+```
+
+`zass check` specifically reported:
+
+```text
+PASS Z003 — Local Markdown references resolve
+0 error(s), 0 warning(s)
+```
+
+## 13. Final A5-T07 verdict
+
+```text
+legacy compatibility               PASS
+CR-011 machine metadata            PASS
+Windows nested materialization     PASS
+Full-ZASS local dependency closure PASS
+CR-010 link validation preserved   PASS
+authority boundary                 PASS
+zass diff semantic boundary        PASS
+two-shape field gate               PASS
+```
+
+**A5-T07 = PASS after A5-T07C corrective patch and rerun.**
