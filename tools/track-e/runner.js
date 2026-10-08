@@ -5,6 +5,7 @@ import {
   buildUserFeedbackRecord,
   buildUserRatingRecord,
   generateEvidenceId,
+  ensureEvidenceGitIgnore,
   readAndProjectEvidence,
   writeEvidenceReceipt
 } from '../../cli/src/evidence/index.js';
@@ -45,6 +46,7 @@ function usage() {
     '  node tools/track-e/runner.js rate --project <dir> --rating <1-5> --consent true [--target <ratingTarget>] [--questions <Q9>]',
     '  node tools/track-e/runner.js feedback --project <dir> --feedback <text> --consent true [--category <feedbackCategory>] [--questions <Q9>]',
     '  node tools/track-e/runner.js project --project <dir>',
+    '  node tools/track-e/runner.js prepare --project <dir>',
     '',
     'This runner is not a public zass CLI command and performs no network activity.'
   ].join('\n');
@@ -222,6 +224,13 @@ async function main() {
     if (command === 'project') {
       const { projection } = await readAndProjectEvidence(projectDir);
       printJson(projection);
+      process.exitCode = 0;
+      return;
+    }
+
+    if (command === 'prepare') {
+      const result = await ensureEvidenceGitIgnore(projectDir);
+      printJson(result);
       process.exitCode = 0;
       return;
     }
