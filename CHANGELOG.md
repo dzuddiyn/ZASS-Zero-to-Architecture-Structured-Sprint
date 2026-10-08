@@ -1,3 +1,14 @@
+## 2026-10-08 — A5-T07C Full-ZASS portability defect corrected
+
+- Corrected the Bootstrap Core v0.2 contract before public 0.2.0 publication: Full ZASS now materializes the canonical local dependency `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`; ZASSPILL, ZASSELECTION and ZASSIMPLE remain four-artifact plans.
+- Preserved canonical Full-ZASS Markdown links and frozen CR-010 `Z003` link validation; no validator weakening or authority rewrite was used.
+- Added the canonical architecture-to-execution document as a synchronized bundled Core template and `method-dependency` artifact for Full ZASS only.
+- Updated plan validation, Core plan tests, template synchronization, create-zass materialization tests, packed package smoke, and vendored Core distribution.
+- Linux CI passed on the synchronized corrective implementation.
+- Corrective Windows field rerun at SHA `db347c0f37ea12768d202b1da1afc9a3fa580792`: legacy shape `check/status/diff` all exit 0; generated Full-ZASS / Bahasa Melayu created both `.zass/project.json` and the local dependency; `Machine: VALID`; `zass check/status/diff` all exit 0; `zass diff = NO_CHANGE`.
+- Updated receipt: [`docs/CR011_TWO_SHAPE_FIELD_TEST.md`](docs/CR011_TWO_SHAPE_FIELD_TEST.md).
+- **A5-T07C = PASS. A5-T07 = PASS.**
+
 ## 2026-10-08 — CR-011 A5-T07 two-shape field test HOLD
 
 - Ran a Windows two-shape field test at source SHA `2b73952917f38d7466cdd07e20597c2d07a4ffda`.
