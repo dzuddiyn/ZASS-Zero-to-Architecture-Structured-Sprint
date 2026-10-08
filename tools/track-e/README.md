@@ -12,8 +12,22 @@ node tools/track-e/runner.js observed --project . --result FRICTION --questions 
 node tools/track-e/runner.js rate --project . --rating 4 --consent true --target overall-workflow
 node tools/track-e/runner.js feedback --project . --feedback "Useful, but setup was confusing." --consent true --category documentation-onboarding
 node tools/track-e/runner.js project --project .
+node tools/track-e/runner.js prepare --project .
 ```
 
 Rating and feedback require the explicit literal flag `--consent true`. Absence, false, silence, or ordinary text does not count as consent.
 
 Receipts are written locally under `.zass/evidence/`.
+
+
+## Local evidence hygiene
+
+`prepare` is an explicit test-project hygiene action. It ensures this exact line exists in the selected project's `.gitignore`:
+
+```text
+.zass/evidence/
+```
+
+It preserves existing `.gitignore` content and is idempotent. Recording or projecting evidence does **not** run `prepare` automatically.
+
+Track E v0.1 performs no automatic receipt deletion, expiry, or cleanup.
