@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E3-T01 implementation action plan + atomic slices LOCKED
+
+- Added `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_PLAN.md`.
+- Chose `cli/src/evidence/` as the reusable local evidence implementation home; no separate npm package in E3 v0.1.
+- Chose a repo-local `tools/track-e/` field runner as the first execution surface for E4.
+- Explicitly deferred any public `zass evidence ...` command until field evidence justifies productization; `zass check/status/diff` remain unchanged.
+- Locked v0.1 evidence receipts as local/private artifacts, with explicit test-project Git-ignore hygiene and no automatic deletion/expiry.
+- Locked projection as in-memory/printed output first; no canonical persisted summary artifact is required in E3.
+- Locked no-network/no-uploader/no-account boundary.
+- Sliced E3 into E3-T02 through E3-T11: validator, writer, projector, consent/privacy hardening, field runner, regression fixtures, Git-ignore/retention hygiene, packed/cross-platform regression, docs/receipt, and E3 STOP/REVIEW.
+- Added strict agentic-coding discipline: smallest practical file set, focused tests, no adjacent refactors, stop on new architecture decision, never weaken frozen contracts to make tests pass.
+- No implementation code was changed by E3-T01.
+- **E3-T01 = PASS / PLAN LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T07 STOP / REVIEW PASS — architecture v0.1 FROZEN
 
 - Added `docs/ZASS_TRACK_E_E2_STOP_REVIEW_CLOSURE.md`.
