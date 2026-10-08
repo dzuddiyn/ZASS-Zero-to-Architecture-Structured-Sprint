@@ -1,15 +1,34 @@
 {
   "name": "zass-cli",
   "version": "0.4.0",
-  "private": true,
+  "description": "ZASS command-line validator and project-state tooling.",
   "type": "module",
   "bin": {
     "zass": "./bin/zass.js"
   },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js"
   },
   "engines": {
     "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint#readme",
+  "bugs": {
+    "url": "https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
