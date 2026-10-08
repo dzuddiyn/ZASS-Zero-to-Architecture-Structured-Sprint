@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E1-T01 scope lock
+
+- Cleaned `docs/ZASS_EVOLUTION_CANDIDATES.md` so completed/closed CRs are no longer presented as active work.
+- CR-008 → DONE / accepted onboarding baseline.
+- CR-009 → DONE / locked philosophy.
+- CR-010 → DONE / implemented / closed at public `zass-cli@0.4.0`.
+- CR-011 → DONE / implemented / CR-011 v0.1 frozen.
+- CR-012 → DONE / accepted / TEST PASS.
+- CR-013 → CLOSED / REJECTED.
+- CR-006, CR-014 and CR-015 are now the active TRACK E field-evidence family.
+- Moved former CR-016 active ownership out of the ZASS backlog into AISYNC future work while retaining a lineage tombstone in the CR register; ZASSPILL v1.0.0 remains unchanged.
+- Added `docs/ZASS_TRACK_E_ACTION_PLAN.md` and locked TRACK E purpose, privacy boundary, scope and non-goals.
+- TRACK E remains evidence-first: local/sanitized/opt-in evidence, no hidden telemetry, no raw semantic-content collection by default, no automatic upload, and no multi-file default change without a separate owner decision.
+- E1-T01 makes no architecture or implementation decision beyond the track scope lock.
+
 ## 2026-10-08 — TRACK D STOP / REVIEW PASS / CLOSED
 
 - Completed the final TRACK D consistency audit.
