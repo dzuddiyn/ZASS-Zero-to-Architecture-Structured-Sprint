@@ -231,8 +231,8 @@ E3-T05  rating/feedback + privacy guards ✅ PASS
 E3-T06  repo-local Track E field runner ✅ PASS
 E3-T07  unit/negative/privacy fixtures ✅ PASS
 E3-T08  Git-ignore/local-retention hygiene ✅ PASS
-E3-T09  packed/cross-platform regression ← NEXT
-E3-T10  docs + implementation receipt
+E3-T09  packed/cross-platform regression ✅ PASS
+E3-T10  docs + implementation receipt ← NEXT
 E3-T11  E3 STOP / REVIEW
 ```
 
