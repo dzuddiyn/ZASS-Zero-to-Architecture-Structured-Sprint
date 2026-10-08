@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E3-T04 receipt reader + deterministic factual projector PASS
+
+- Added `cli/src/evidence/projector.js` and internal exports.
+- Reader enumerates only canonical `zass-evidence-*.json` files under `.zass/evidence/`, sorts filenames deterministically, validates each parsed receipt, includes valid receipts, and isolates malformed/invalid receipts.
+- Missing evidence directory returns zero receipts with complete coverage rather than an error.
+- Projection reports receipts considered/included/excluded, evidence-record count, incomplete-coverage flag and excluded receipt filename/reason.
+- Projection aggregates only frozen factual fields: evidence-class counts, Q1–Q10 coverage, bounded result counts, diagnostic/observation-code frequencies, environment/tool-version coverage, project-shape/method/language coverage, severity and reproducibility counts.
+- Rating projection reports sample size, 1–5 distribution, median, arithmetic mean, rating-target counts and feedback-category counts.
+- USER-FEEDBACK raw text and INFERRED text are not converted into factual result counts.
+- Projector does not assign evidence confidence, product finding or Track E outcome.
+- Added focused `cli/test/evidence-projector.test.js` covering absent directory, canonical filename filtering/order, malformed+invalid isolation, deterministic projection, allowed statistics and incomplete coverage truth.
+- No field runner, Git-ignore behavior, retention cleanup, network behavior or public CLI command was added.
+- CI run `37774606739` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T04 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T03 local receipt writer + safe evidence store PASS
 
 - Added `cli/src/evidence/store.js` and internal exports.
