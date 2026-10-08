@@ -174,12 +174,9 @@ Automation may be explicit:
 npm create zass-project@latest my-project -- --method zassimple --lang en
 ```
 
-Every v0.1 bootstrap creates one selected method file plus:
+Public npm `latest` remains `create-zass-project@0.1.0`, which creates the historical v0.1 three-artifact bootstrap.
 
-```text
-README.md
-.gitignore
-```
+Repository source has advanced to the next `create-zass-project@0.2.0` candidate, which is **not yet published**. Source-generated projects now add `.zass/project.json` CR-011 machine metadata; Full ZASS source generation also carries `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` so its canonical local reference is self-contained.
 
 Full ZASS always uses `ZASS.md` as the generated project authority filename so current `zass check/status/diff` discovery remains compatible.
 
@@ -187,7 +184,7 @@ Full ZASS always uses `ZASS.md` as the generated project authority filename so c
 >
 > Contract: [`docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 >
-> **Developer tooling:** CR-010 is **CLOSED** at **zass-cli v0.4.0** under [`cli/`](cli/README.md): `zass check`, `zass status`, and `zass diff`. The CLI is still private/not published to npm, so use `npm link` for local development.
+> **Developer tooling:** CR-010 is **CLOSED** at **zass-cli v0.4.0** under [`cli/`](cli/README.md): `zass check`, `zass status`, and `zass diff`. CR-011 repository source now adds optional `.zass/project.json` machine-metadata validation while Markdown remains semantic authority. See [`docs/CR011_MACHINE_METADATA_GUIDE.md`](docs/CR011_MACHINE_METADATA_GUIDE.md).
 
 ---
 
