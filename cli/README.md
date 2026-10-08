@@ -1,18 +1,22 @@
-# ZASS CLI — v0.4.0
+# zass-cli
 
-This directory contains the first productized ZASS validator/tooling surface.
+Command-line validator and project-state tooling for Full ZASS projects.
 
-**CR-010 is CLOSED at zass-cli v0.4.0.** npm publication/bootstrap remains separate future productization work.
+**Current package version:** `0.4.0`  
+**Node.js:** 20 or newer  
+**License:** MIT
 
-## Local development
+CR-010 is closed at zass-cli v0.4.0. The CLI behavior for `zass check`, `zass status`, and `zass diff` is frozen; public packaging does not change their authority or semantics.
+
+## Install
+
+After the package is published to npm:
 
 ```bash
-cd cli
-npm test
-npm link
+npm install --global zass-cli
 ```
 
-Then run from a Full ZASS project directory:
+Then run the CLI from the root directory of a Full ZASS project:
 
 ```bash
 zass check
@@ -20,7 +24,15 @@ zass status
 zass diff
 ```
 
-Command boundaries:
+For local development from this repository:
+
+```bash
+cd cli
+npm test
+npm link
+```
+
+## Commands
 
 ```text
 zass check  → validate the current project under ZASS rules
@@ -28,21 +40,61 @@ zass status → show a compact factual current-state summary
 zass diff   → show a ZASS-aware working-tree delta against local HEAD
 ```
 
-For CI or another commit-to-commit comparison, provide the historical Git baseline explicitly:
+### `zass check`
+
+Runs the validation authority for the current project.
+
+```bash
+zass check
+```
+
+For CI or another historical comparison, an explicit Git baseline may be supplied:
 
 ```bash
 zass check --baseline <git-ref>
 ```
 
-The default remains `HEAD`, preserving the existing local working-tree behavior. `--baseline` changes only the historical source used by the existing Z101 LOCKED-drift rule; it does not introduce a second rule engine.
+The default historical baseline is local `HEAD`. The `--baseline` option changes only the historical source used by the existing Z101 LOCKED-drift rule; it does not create a second rule engine.
 
-Direct execution also works without global linking:
+### `zass status`
 
-```bash
-node /path/to/repo/cli/bin/zass.js check
+Reports factual current state only:
+
+- Full-ZASS primary-file presence;
+- validator summary;
+- local Git state as CLEAN, CHANGED, or UNKNOWN.
+
+It does not infer progress, lifecycle stage, readiness, or recommended next action.
+
+### `zass diff`
+
+Reports a bounded ZASS-aware delta against local `HEAD`, including:
+
+- primary-file ADDED / MODIFIED / DELETED / UNCHANGED state;
+- canonical ZASS identity changes;
+- LOCKED / SUPERSEDED decision-state deltas;
+- declared readiness and blocker deltas.
+
+`zass diff` is informational. `zass check` remains the validation authority.
+
+## Project expectations
+
+Run the CLI from the project directory being inspected.
+
+A Full ZASS project expects:
+
+```text
+project/
+├── ZASS.md            required
+├── ACTION_PLAN.md     optional
+└── ARCHITECTURE.md    optional
 ```
 
-## v0.1 + v0.2 rules
+Git is required for Git-aware behavior such as LOCKED-decision drift checks and local `HEAD` comparison. When usable Git history is unavailable, the CLI reports the corresponding factual warning/state rather than inventing history.
+
+The CLI reads the current working directory. It does not modify project files.
+
+## Validation rules
 
 | Code | Check | Severity |
 |---|---|---|
@@ -61,29 +113,44 @@ node /path/to/repo/cli/bin/zass.js check
 | Z204 | Missing explicitly referenced ZASS ID | ERROR |
 | Z205 | Conservative blocker inconsistency | WARNING |
 
-Z001 treats canonical headings and table-row ID positions as primary record definitions. Bold list entries used as summaries, ledgers, indexes, or D→L references do not become duplicate definitions merely by repeating an existing ID; decision authority is parsed separately from explicit Status/LOCKED-record structures.
+Warnings do not fail validation.
 
-Z100/Z101 are the CR-010 v0.2 Git-aware drift checks. They compare the current `ZASS.md` with the version at Git `HEAD` without modifying the worktree. For a LOCKED decision, the semantic heading/title and normalized body are authority-bearing; presentation-only formatting is normalized. An explicit `Supersedes: D-xxx` relation may authorize a replacement path when the old decision record is preserved.
+## Exit codes
 
-Z200–Z205 are the CR-010 v0.3 ACTION_PLAN consistency checks. `ZASS.md` remains authoritative; `ACTION_PLAN.md` is optional and is treated only as an execution/readiness snapshot. v0.3 compares explicit snapshot fields and explicit ZASS-ID relationships; it does not recalculate architecture readiness or infer semantic equivalence.
+| Exit code | Meaning |
+|---:|---|
+| `0` | Validation passes; warnings may exist |
+| `1` | One or more validation errors |
+| `2` | CLI misuse, runtime error, or system error |
 
-Warnings do not fail the command. Validation errors return exit code `1`; CLI/runtime misuse returns `2`.
+The same exit-code contract is used by the executable entry point.
 
-## v0.4 status / diff
+## Authority boundaries
 
-CR-010 v0.4 adds two read-only commands without creating a second authority model:
+`ZASS.md` remains the semantic authority for Full ZASS.
 
-- `zass status` reports factual Full-ZASS file presence, validator summary, and local Git CLEAN / CHANGED / UNKNOWN state;
-- `zass diff` compares the three primary Full-ZASS files against local `HEAD`, reports file ADDED / MODIFIED / DELETED / UNCHANGED states, and provides bounded ZASS-aware identity / decision-state / declared-readiness deltas.
+`ACTION_PLAN.md` is an optional execution/readiness snapshot. The CLI does not turn it into a second source of truth.
 
-`zass diff` is informational; `zass check` remains the validation authority.
+`zass status` and `zass diff` are read-only factual surfaces. They do not supersede `zass check`, infer architectural truth, or mutate project state.
 
-The Windows field correction normalizes only line-ending representation before file equality comparison so ordinary CRLF working trees do not become false `MODIFIED` results.
+## Non-goals in v0.4.0
 
-## Intentionally deferred
+This release does not provide:
 
-v0.4.0 does not implement npm publication, remote URL checking, `.zass/schema.yml`, dashboards, SaaS services, AI semantic comparison, custom `zass diff` baselines/ranges, or the optional Z206 working-tree atomic-sync heuristic. GitHub Actions orchestration is provided by the repository workflow, while validator semantics remain in this CLI.
+- remote URL validation;
+- mandatory `.zass/schema.yml`;
+- dashboards or SaaS services;
+- AI semantic comparison;
+- custom `zass diff` baselines or ranges;
+- the optional Z206 working-tree atomic-sync heuristic;
+- automatic project mutation or repair.
 
-See [`../docs/CR010_ZASS_CHECK_SPEC.md`](../docs/CR010_ZASS_CHECK_SPEC.md) for the locked implementation plan.
+GitHub Actions orchestration remains repository-level infrastructure; validator semantics stay in this CLI.
 
-For the recommended local verification sequence, see [`../docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md`](../docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md).
+## More documentation
+
+Canonical implementation and test documentation lives in the ZASS repository:
+
+- CR-010 implementation specification: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/CR010_ZASS_CHECK_SPEC.md
+- Local test guide: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md
+- Repository: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint
