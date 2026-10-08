@@ -188,6 +188,16 @@ test('packed create-zass-project installs and executes without monorepo sibling 
   assert.match(invoked.stdout, /ZASS project created/);
   assert.deepEqual(
     (await fs.readdir(execTarget)).sort(),
-    ['.gitignore', '.zass', 'README.md', 'ZASS.md'].sort()
+    ['.gitignore', '.zass', 'README.md', 'ZASS.md', 'docs'].sort()
+  );
+  assert.equal(
+    await fs.readFile(
+      path.join(execTarget, 'docs', 'ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md'),
+      'utf8'
+    ),
+    await fs.readFile(
+      path.join(canonicalCore, '..', 'docs', 'ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md'),
+      'utf8'
+    )
   );
 });
