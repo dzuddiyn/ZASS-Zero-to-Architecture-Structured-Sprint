@@ -1,3 +1,14 @@
+## 2026-10-08 — CR-011 A5-T02 machine metadata loader PASS
+
+- Added `cli/src/machine-metadata.js` as the single local read-only loader for `.zass/project.json`.
+- Loader states are explicit: `ABSENT`, `VALID`, `MALFORMED`, `UNSUPPORTED_SCHEMA`, and `INVALID`.
+- Implemented v0.1 structural validation for required fields, supported method/language values, unsupported fields, and deterministic method/methodFile mapping.
+- Missing metadata remains a valid legacy state; non-ENOENT filesystem failures are not mislabeled as absence.
+- Added dedicated loader unit tests covering valid, absent, malformed, unsupported schema, invalid values, unsupported fields, mapping mismatch, deterministic 4 × 2 method mapping, and read-only behavior.
+- No `zass check/status/diff` integration was added in A5-T02; that remains A5-T03.
+- ZASS CI passed across zass-cli, Bootstrap Core, create-zass, repository consistency, historical baseline, and validator.
+- **A5-T02 = PASS.**
+
 ## 2026-10-08 — CR-011 v0.1 machine metadata contract LOCKED
 
 - Locked the CR-011 v0.1 persisted surface to one local companion file: `.zass/project.json`.
