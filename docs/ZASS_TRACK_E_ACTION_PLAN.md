@@ -164,14 +164,21 @@ Locked separation of responsibilities, append-oriented local receipt storage, re
 
 No E3 implementation, package/API freeze, SaaS telemetry, remote submission, dashboard, or AISYNC/CrossAI integration was started.
 
+### E2-T05 — Lock aggregation + case-study contract
+
+**Status:** PASS / LOCKED  
+**Contract:** [`ZASS_TRACK_E_AGGREGATION_CASE_STUDY_V01.md`](ZASS_TRACK_E_AGGREGATION_CASE_STUDY_V01.md)
+
+Locked deterministic local aggregation outputs, coverage/completeness truth, reviewed finding structure, LOW/MEDIUM/HIGH evidence confidence, explicit `INSUFFICIENT EVIDENCE` handling, case-study structure, facts-vs-user-signal-vs-reviewer-interpretation-vs-decision separation, feedback quotation consent, publication boundary, cross-case aggregation rules, and CR-006/CR-014/CR-015 responsibility boundaries.
+
+The aggregator may summarize factual evidence but cannot assign final confidence, classify product outcomes, declare reviewed case studies, promote CR-006, or open implementation work. No case study was executed or published.
+
 ## 7. Deferred design decisions
 
 Not decided in E1-T01:
 
 - exact implementation-specific JSON encoder/validator details beyond the locked v0.1 contract;
 - whether evidence capture is a CLI command, helper script or separate small package;
-- exact aggregation workflow;
-- exact case-study template;
 - exact scale-out fixture count;
 - whether any later opt-in network submission is justified.
 
