@@ -57,7 +57,7 @@ test('package metadata is publication-ready', async () => {
   );
 
   assert.equal(metadata.name, 'create-zass-project');
-  assert.equal(metadata.version, '0.1.0');
+  assert.equal(metadata.version, '0.2.0');
   assert.equal(metadata.private, undefined);
   assert.deepEqual(metadata.bin, { 'create-zass-project': 'bin/create-zass.js' });
   assert.equal(
@@ -159,7 +159,11 @@ test('packed create-zass-project installs and executes without monorepo sibling 
   assert.match(result.stdout, /ZASS project created/);
   assert.deepEqual(
     (await fs.readdir(target)).sort(),
-    ['.gitignore', 'README.md', 'ZASSIMPLE_EN.md'].sort()
+    ['.gitignore', '.zass', 'README.md', 'ZASSIMPLE_EN.md'].sort()
+  );
+  assert.equal(
+    JSON.parse(await fs.readFile(path.join(target, '.zass', 'project.json'), 'utf8')).schemaVersion,
+    '0.1'
   );
 
   const execTarget = path.join(temp, 'generated-via-npm-exec');
@@ -184,6 +188,6 @@ test('packed create-zass-project installs and executes without monorepo sibling 
   assert.match(invoked.stdout, /ZASS project created/);
   assert.deepEqual(
     (await fs.readdir(execTarget)).sort(),
-    ['.gitignore', 'README.md', 'ZASS.md'].sort()
+    ['.gitignore', '.zass', 'README.md', 'ZASS.md'].sort()
   );
 });
