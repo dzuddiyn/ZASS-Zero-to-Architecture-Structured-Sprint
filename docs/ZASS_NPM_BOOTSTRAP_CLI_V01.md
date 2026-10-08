@@ -1,6 +1,6 @@
 # ZASS npm Bootstrap CLI v0.1 — Behavioral Contract
 
-**Status:** LOCKED — PUBLIC IDENTITY REVISED / FRESH NPM READINESS REQUIRED — NOT PUBLISHED  
+**Status:** HISTORICAL CONTRACT — `create-zass-project@0.1.0` LATER PUBLISHED / VERIFIED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
@@ -622,7 +622,7 @@ PR #42 ZASS CI passed with:
 
 ### Publication boundary
 
-This implementation is **not published to npm**.
+This sentence described the pre-publication state. The locked v0.1 behavior was later published and verified as `create-zass-project@0.1.0`; repository source subsequently advanced to an unpublished `0.2.0` candidate.
 
 A Windows `npm pack --dry-run` attempt during implementation did not produce a usable result and was terminated; therefore no package-artifact/publication proof is claimed.
 
@@ -641,3 +641,22 @@ That publication gate is now the **next TRACK B gate** and remains separate from
 The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary is remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass`, with byte-for-byte sync regression coverage. Packed-artifact testing now covers `npm pack`, clean tarball install, direct installed-bin execution, and local-tarball `npm exec --package ... create-zass-project` invocation. The publication candidate removes `private:true`, adds public package metadata and an explicit manual publish workflow. Registry name availability and npm account credential/authority are verified as separate live publication-gate evidence before publish.
 
 Publication-readiness evidence on 2026-10-08 proved package authentication, artifact integrity, and clean-install behavior, but actual publication of `create-zass@0.1.0` was rejected by npm with `E403` because the unscoped name was considered too similar to an existing package. The public candidate is therefore renamed to `create-zass-project@0.1.0`; a fresh readiness pass is required before any next publish attempt.
+
+
+---
+
+## Final freeze status note — 2026-10-08
+
+This document preserves the v0.1 contract and pre-publication lineage.
+
+Current distribution truth is maintained in:
+
+`docs/ZASS_FINAL_FREEZE_DISTRIBUTION_TRUTH.md`
+
+At final freeze:
+
+```text
+public npm latest = create-zass-project@0.1.0
+repository source candidate = create-zass-project@0.2.0
+0.2.0 publication = NOT AUTHORIZED by freeze
+```
