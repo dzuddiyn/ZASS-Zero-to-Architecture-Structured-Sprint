@@ -1,3 +1,14 @@
+## 2026-10-08 — CR-011 A5-T07 two-shape field test HOLD
+
+- Ran a Windows two-shape field test at source SHA `2b73952917f38d7466cdd07e20597c2d07a4ffda`.
+- Legacy Full-ZASS without `.zass/`: `zass check/status/diff` all exited `0`; status reported `Machine: ABSENT`, validation PASS and clean HEAD baseline.
+- Newly generated Full-ZASS / Bahasa Melayu from `create-zass-project@0.2.0` source successfully created `.zass/project.json` schema `0.1`; machine metadata reported VALID and `zass diff` reported `NO_CHANGE`.
+- The generated project failed `zass check/status` because canonical `ZASS.md` references `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`, but the locked four-artifact v0.2 bootstrap plan does not materialize that target.
+- This is classified as a generated-project self-containment/portability defect, not a CR-011 schema or authority-direction defect.
+- No silent patch was applied: adding an artifact would reopen A5-T05, weakening Z003 would reopen frozen CR-010 semantics, and changing canonical Full-ZASS content would alter method authority.
+- Receipt: [`docs/CR011_TWO_SHAPE_FIELD_TEST.md`](docs/CR011_TWO_SHAPE_FIELD_TEST.md).
+- **A5-T07 = HOLD pending bounded corrective contract review and rerun.**
+
 ## 2026-10-08 — CR-011 A5-T06 versioned bootstrap generation PASS
 
 - Advanced Bootstrap Core contract to `0.2` and private package source to `zass-bootstrap-core@0.2.0`.
