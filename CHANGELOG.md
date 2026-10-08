@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E2-T06 CR-006 scale-out TEST protocol LOCKED
+
+- Added `docs/CR006_SCALE_OUT_TEST_PROTOCOL_V01.md`.
+- Locked canonical single-file ZASS as baseline and a bounded experimental multi-file shape as test-only comparison.
+- Locked trigger-based testing: run CR-006 only when observable navigation/review/handoff/maintenance scale pain exists; aesthetics alone are insufficient.
+- Locked same-work comparison using equivalent tasks and controlled conditions.
+- Locked measurement dimensions for navigation/review friction, handoff/continuation, tooling reliability, portability, authority clarity and maintenance/ceremony cost.
+- Locked representative execution requirement: at least one reproducible large fixture and one real/realistically representative case when available; narrow single-fixture evidence cannot support high-confidence scale-out promotion.
+- Locked evidence recording through existing Track E receipt/architecture/aggregation contracts.
+- Locked promotion gate: every E2-T01 criterion must be supported before `SCALE-OUT CANDIDATE` is allowed.
+- Locked reviewed outcomes: KEEP SINGLE-FILE, DOCUMENT / ONBOARD, CORRECTIVE DEFECT, SCALE-OUT CANDIDATE, REJECT SCALE-OUT, INSUFFICIENT EVIDENCE.
+- Locked STOP conditions for authority conflict, comparison drift, privacy breach pressure, undefined validator semantics, non-comparable evidence and migration-scope creep.
+- No canonical multi-file migration, method bump, default folder change, new Source of Truth, remote telemetry or AISYNC/CrossAI work was authorized.
+- **E2-T06 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T05 aggregation + case-study contract LOCKED
 
 - Added `docs/ZASS_TRACK_E_AGGREGATION_CASE_STUDY_V01.md`.
