@@ -28,14 +28,21 @@ for (const [method, language, methodFile] of CASES) {
       language,
       methodFile
     });
+    const expectedFiles = [
+      [methodFile, 'method'],
+      ['README.md', 'readme'],
+      ['.gitignore', 'gitignore'],
+      ['.zass/project.json', 'machine-metadata']
+    ];
+    if (method === 'zass') {
+      expectedFiles.push([
+        'docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md',
+        'method-dependency'
+      ]);
+    }
     assert.deepEqual(
       first.files.map((file) => [file.path, file.role]),
-      [
-        [methodFile, 'method'],
-        ['README.md', 'readme'],
-        ['.gitignore', 'gitignore'],
-        ['.zass/project.json', 'machine-metadata']
-      ]
+      expectedFiles
     );
     assert.ok(first.files[0].content.trim().length > 0);
     assert.deepEqual(
