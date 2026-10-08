@@ -1,5 +1,7 @@
 # TRACK D — ZASS PRODUCTIZATION ONLY
 
+> **HISTORICAL / CLOSED.** This action plan preserves execution lineage. Any embedded phrases such as “TRACK D current” describe the state at that task's execution time and are not current roadmap status.
+
 **Status:** PASS / CLOSED  
 **Date:** 2026-10-08  
 **Owner:** Project Owner  
