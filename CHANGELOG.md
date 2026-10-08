@@ -1,3 +1,14 @@
+## 2026-10-08 — TRACK E E3-T10 documentation + implementation receipt PASS
+
+- Added canonical `docs/ZASS_TRACK_E_E3_OPERATOR_GUIDE.md`.
+- Added `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_RECEIPT.md` recording the delivered E3 implementation shape, boundaries, task lineage, focused tests, regression surfaces and successful cross-platform verification.
+- Operator guide documents the repo-local/test-only runner, local receipt path/version, explicit prepare behavior, AUTOMATED/FIELD-OBSERVED capture, explicit USER-RATED/USER-FEEDBACK consent, structural privacy boundary, deterministic projection, projection limitations, factual failure states, local retention, no-network behavior and the E3-T11 gate before E4.
+- Quick runner README now links to the canonical operator guide and implementation receipt.
+- Audited implementation lineage against live GitHub commit history and corrected the E3-T02 hashes before closure.
+- Documentation explicitly states that receipts do not replace semantic ZASS authority, projection does not assign confidence/final product findings, and no public `zass evidence` command exists.
+- No production/runtime behavior, package version or publication state was changed by E3-T10.
+- **E3-T10 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T09 packed/cross-platform regression PASS
 
 - Added persistent `cli-cross-platform` GitHub Actions matrix on `ubuntu-latest` and `windows-latest` while retaining the existing full `zass-check` job.
