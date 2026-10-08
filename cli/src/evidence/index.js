@@ -14,3 +14,7 @@ export {
   writeEvidenceReceipt
 } from './store.js';
 export { validateEvidenceReceipt } from './validator.js';
+export {
+  buildUserFeedbackRecord,
+  buildUserRatingRecord
+} from './user-signals.js';
