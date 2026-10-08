@@ -1,0 +1,1 @@
+# Legacy Full ZASS fixture
