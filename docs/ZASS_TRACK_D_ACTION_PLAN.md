@@ -1,0 +1,202 @@
+# TRACK D — ZASS PRODUCTIZATION ONLY
+
+**Status:** OWNER-APPROVED / READY FOR EXECUTION  
+**Date:** 2026-10-08  
+**Owner:** Project Owner  
+**Scope:** ZASS repository productization only. Isolated from AISYNC/CrossAI runtime, T-020/T-021, Gate 6 evidence, and Production v1 work.
+
+## 1. Track identity
+
+TRACK D is the successor to the earlier ZASS productization work previously referred to as TRACK B — ZASS PRODUCTIZATION ONLY.
+
+TRACK D contains only:
+
+```text
+A1  Documentation truth cleanup
+A2  Public zass-cli readiness audit
+A3  Public zass-cli package hardening
+A4  Public zass-cli publication
+A5  CR-011 .zass/ machine-readable layer implementation
+```
+
+Outside TRACK D:
+- CR-001 remains a TEST candidate for separate later evaluation.
+- CR-006 is deferred until TRACK D closes; after that only a scale-out TEST protocol may be prepared.
+- CR-007 is closed from ZASS scope and moved to a separate post-production project.
+
+## 2. Hard isolation boundary
+
+TRACK D MUST NOT:
+- modify the AISYNC repository;
+- modify Apps Script production;
+- modify T-020 or T-021;
+- alter ZASS Gate 6 acceptance criteria;
+- interfere with closed-beta evidence;
+- implement CrossAI Create Project;
+- open CrossAI Bootstrap Core consumption;
+- change auth/session/provider-routing runtime;
+- change ZASSPILL runtime persistence/retrieval;
+- duplicate AISYNC/CrossAI runtime semantics;
+- require any AISYNC/CrossAI deployment to prove TRACK D success.
+
+TRACK D MAY modify only the ZASS repository, local CLI packaging/validator integration, tests/fixtures, local npm tooling, versioned bootstrap behavior, CR-011 local machine metadata, documentation and receipts.
+
+If an atomic task requires AISYNC/CrossAI runtime work: STOP and move that work out of TRACK D.
+
+## 3. Full atomic execution queue
+
+```text
+A1-T01 → A1-T02 → A1-T03
+→ A2-T01 → A2-T02 → A2-T03 → A2-T04 → A2-T05 → A2-T06
+→ A3-T01 → A3-T02 → A3-T03 → A3-T04 → A3-T05
+→ A4-T01 → A4-T02 → A4-T03 → A4-T04 → A4-T05
+→ A5-T01 → A5-T02 → A5-T03 → A5-T04 → A5-T05 → A5-T06 → A5-T07 → A5-T08 → A5-T09
+→ TRACK D STOP / REVIEW
+```
+
+# A1 — Documentation truth cleanup
+
+**Priority:** P0
+
+### A1-T01 — README publication truth
+Update README so create-zass-project@0.1.0 is shown as published/verified and npm create zass-project@latest is live. Keep zass-cli local/private until A4 closes.
+
+**PASS:** no current-facing README publication claim is stale.
+
+### A1-T02 — Productization roadmap truth
+Update PRODUCTIZATION_ROADMAP: bootstrap readiness/pack/publish/registry/receipt all DONE; TRACK D current; CrossAI Bootstrap consumption NOT OPEN.
+
+**PASS:** roadmap matches current evidence.
+
+### A1-T03 — Historical Track B closure/current Track D handoff
+Update ZASS_TRACK_B_PARALLEL_TOOLING as historical lineage: bootstrap publication closed; subsequent isolated work continues under TRACK D; remove current CR-011 exploration-only wording.
+
+**PASS:** Track B is historical lineage, not current execution.
+
+# A2 — Public zass-cli readiness audit
+
+**Priority:** P1. Audit only; no validator semantic changes.
+
+### A2-T01 — Registry identity audit
+Check exact npm identity availability and naming-policy risk for zass-cli. Record exact-availability separately from similarity-policy risk.
+
+### A2-T02 — Package metadata audit
+Audit name, version, private flag, bin, files payload, license, repository, homepage, bugs, engines, publishConfig, and README public usage.
+
+### A2-T03 — CR-010 behavioral freeze verification
+Confirm packaging/publication cannot change semantics of zass check, zass status, zass diff, or reopen CR-010.
+
+### A2-T04 — npm pack + standalone boundary audit
+Run npm pack, inspect tarball, install in disposable external project, and execute all three commands outside the monorepo.
+
+### A2-T05 — Cross-platform packed-artifact smoke
+Verify packed artifact on Linux CI and Windows.
+
+### A2-T06 — Publication readiness decision
+Produce PASS or HOLD receipt. PASS opens A3. HOLD permits only bounded distribution corrections.
+
+# A3 — Public zass-cli package hardening
+
+**Priority:** P1. Distribution hardening only.
+
+### A3-T01 — Public package metadata
+Remove private:true only when release candidate is ready; normalize license/repository/homepage/bugs/publishConfig/files; make version decision explicit.
+
+### A3-T02 — Stable executable metadata
+Verify npm preserves public executable zass and installed tarball exposes it without normalization warnings.
+
+### A3-T03 — Public CLI README
+Document zass check/status/diff, factual scope, Git assumptions, exit codes, project expectations, and non-goals.
+
+### A3-T04 — Packed-artifact regression test
+Automate real npm pack → clean install → executable smoke; prove no hidden monorepo dependency and intended payload only.
+
+### A3-T05 — Manual release workflow
+Add explicit-confirmation workflow: identity → auth → registry state → tests → dry-run → actual publish. Actual publish still waits for A4 owner authorization.
+
+# A4 — Public zass-cli publication
+
+**Priority:** P1
+
+### A4-T01 — Fresh release readiness recheck
+From one current main SHA re-run identity, registry state, auth, tests, pack, clean install and dry-run.
+
+### A4-T02 — Explicit owner publish gate
+STOP and obtain exact owner authorization for exact package/version. No implicit publish.
+
+### A4-T03 — Actual publish + registry verification
+Run publication workflow, verify actual publish step, exact public version and dist-tag.
+
+### A4-T04 — Fresh public consumer smoke
+Install from registry into disposable Full-ZASS project and run zass check, zass status, zass diff.
+
+### A4-T05 — Publication receipt + closure
+Record source SHA, workflow run, npm version, registry result, fresh consumer smoke and CHANGELOG closure.
+
+# A5 — CR-011 .zass/ machine-readable layer
+
+**Priority:** P2  
+**Status:** OWNER-APPROVED / IMPLEMENTATION GATE OPEN
+
+Non-negotiable boundary:
+```text
+Markdown = semantic authority
+.zass/  = machine metadata companion
+```
+
+.zass/ cannot LOCK decisions, override architecture/ACTION_PLAN semantics, create a second Source of Truth, or require AISYNC/CrossAI/network/database runtime. Legacy projects without .zass/ remain valid. Published create-zass-project@0.1.0 remains immutable historical release.
+
+### A5-T01 — Lock CR-011 v0.1 contract
+Define purpose/non-purpose, authority, exact files, format, minimum fields, read/write ownership, missing/malformed/unsupported behavior, conflict rules, backward compatibility, migration/versioning, CLI seam and bootstrap version boundary.
+
+**PASS:** implementation worker has no unresolved architecture decision.
+
+### A5-T02 — Implement dedicated machine metadata loader
+Add one local loader for .zass/. Missing layer is valid legacy state; malformed metadata is factual error/state; no semantic Markdown mutation; no network.
+
+### A5-T03 — Integrate bounded machine-layer validation
+Validate schema version, required machine fields, supported values and detectable conflicts. Machine metadata never silently wins over Markdown.
+
+### A5-T04 — Fixtures + regression tests
+Cover legacy/no .zass/, valid v0.1, malformed metadata, unsupported schema, detectable method conflict, detectable language conflict where contract permits, and Windows paths. Existing CR-010 tests remain PASS.
+
+### A5-T05 — Bootstrap integration/version contract
+Define next-version integration with Bootstrap Core/create-zass-project. Do not mutate 0.1.0. Do not silently break frozen Bootstrap Core v0.1 public API.
+
+### A5-T06 — Implement versioned bootstrap generation
+Generate CR-011 metadata in next bootstrap release for all supported methods and EN/MY; GitHub remains optional; packed tests updated; old 0.1.0 remains reproducible.
+
+### A5-T07 — Two-shape field test
+Test one legacy project without .zass/ and one newly generated project with .zass/. Run zass check/status/diff and verify no authority or portability regression.
+
+### A5-T08 — Documentation + migration guide
+Document what .zass/ is/is not, legacy compatibility, schema version, error/conflict behavior, upgrade path and manual-edit policy.
+
+### A5-T09 — CR-011 STOP / REVIEW
+Outcome: PASS/FREEZE v0.1, CORRECTIVE PATCH, REWORK, or ROLLBACK. Only PASS closes CR-011 implementation.
+
+## 4. TRACK D completion gate
+
+TRACK D closes only when:
+```text
+A1 documentation truth        PASS
+A2 zass-cli readiness         PASS
+A3 zass-cli hardening         PASS
+A4 public zass-cli            PUBLISHED / VERIFIED / CLOSED
+A5 CR-011 .zass/              IMPLEMENTED / FIELD-TESTED / STOP-REVIEW PASS
+```
+
+Then run one final TRACK D consistency audit and record closure.
+
+## 5. After TRACK D
+
+### CR-001 — Critical Assumption Ledger
+Status: TEST candidate, NOT deferred by owner. It is not part of TRACK D. Evaluate separately only when explicitly chosen.
+
+### CR-006 — Scale-out Multi-file Structure
+Status: DEFERRED UNTIL TRACK D CLOSES.
+
+After TRACK D, build only a TEST protocol to determine when single-file ZASS truly needs scale-out. Allowed: measurable trigger criteria, real large fixture, single-file baseline, experimental split model, comparison of portability/authority/validator/review cost. Not allowed: canonical folder migration, default structure change, mandatory multi-file layout. Implementation requires later owner decision.
+
+### CR-007 — Operation / Post-production Lifecycle
+Status: CLOSED FROM ZASS SCOPE / MOVED TO SEPARATE PROJECT. The owner has already opened the separate project thread. No further CR-007 work belongs in ZASS.

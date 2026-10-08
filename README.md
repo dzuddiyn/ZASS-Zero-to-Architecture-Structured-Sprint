@@ -142,9 +142,9 @@ COMMIT
 
 ---
 
-## 3. CLI â€” coming soon
+## 3. CLI â€” available now
 
-**Bootstrap status: v0.1 IMPLEMENTED LOCALLY â€” Windows + CI PASS â€” not published to npm.**
+**Bootstrap status: `create-zass-project@0.1.0` PUBLISHED / VERIFIED â€” public npm bootstrap is live.**
 
 Target experience:
 
@@ -183,7 +183,7 @@ README.md
 
 Full ZASS always uses `ZASS.md` as the generated project authority filename so current `zass check/status/diff` discovery remains compatible.
 
-> **The project-bootstrap CLI is implemented in [`create-zass/`](create-zass/) but not released to npm yet. The public package candidate is now `create-zass-project@0.1.0`; the original `create-zass` identity was rejected by npm's similarity policy. The command above is the revised target registry UX pending a fresh readiness pass.**
+> **The project-bootstrap CLI is published as `create-zass-project@0.1.0`. The public command `npm create zass-project@latest` has passed fresh-registry smoke verification. The original `create-zass` identity was rejected by npm's similarity policy and is historical only.**
 >
 > Contract: [`docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 >
