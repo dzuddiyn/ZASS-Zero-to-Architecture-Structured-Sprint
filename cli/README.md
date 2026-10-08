@@ -10,7 +10,7 @@ CR-010 is closed at zass-cli v0.4.0. The CLI behavior for `zass check`, `zass st
 
 ## Install
 
-After the package is published to npm:
+Install the published package from npm:
 
 ```bash
 npm install --global zass-cli
