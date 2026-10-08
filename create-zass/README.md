@@ -37,17 +37,26 @@ No method or language is silently selected. In a non-interactive environment, bo
 
 ## What it creates
 
-A successful bootstrap creates exactly:
+The repository source for the next initializer line is `create-zass-project@0.2.0` (not yet published as npm `latest`).
+
+ZASSPILL, ZASSELECTION and ZASSIMPLE source-generated projects create:
 
 - one selected ZASS method file;
 - `README.md`;
-- `.gitignore`.
+- `.gitignore`;
+- `.zass/project.json`.
 
-For Full ZASS, the project authority file is always `ZASS.md`, including when Bahasa Melayu is selected.
+Full ZASS source-generated projects create those artifacts plus:
+
+- `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`.
+
+For Full ZASS, the project authority file is always `ZASS.md`, including when Bahasa Melayu is selected. The extra docs artifact closes the canonical local Markdown dependency so a fresh project remains self-contained for `zass check`.
+
+`.zass/project.json` is machine metadata only; it does not replace or override the selected Markdown method file.
 
 ## Safety and side effects
 
-v0.1 is create-new-only. If the target already exists, `create-zass-project` refuses to overwrite or merge it.
+Current source behavior remains create-new-only. If the target already exists, `create-zass-project` refuses to overwrite or merge it.
 
 It does **not**:
 
@@ -63,11 +72,13 @@ Generated `.gitignore` includes a baseline for common secret files. Do not put p
 
 ## Package architecture
 
-Project semantics come from the repository's frozen private Bootstrap Core. The npm package carries a byte-for-byte vendored runtime snapshot under `vendor/bootstrap-core/`, and repository tests enforce synchronization with canonical Core `src/` and `templates/`.
+Project semantics come from the repository's versioned private Bootstrap Core. The historical v0.1 contract remains frozen; current CR-011 source work uses Core contract `0.2`. The npm package carries a byte-for-byte vendored runtime snapshot under `vendor/bootstrap-core/`, and repository tests enforce synchronization with canonical Core `src/` and `templates/`.
 
 ## Development
 
-Public npm package candidate: `create-zass-project@0.1.0`.
+Published npm release: `create-zass-project@0.1.0` (`latest` at the time of this documentation).
+
+Repository source candidate: `create-zass-project@0.2.0` — not yet published.
 
 The repository implementation directory remains `create-zass/`.
 
@@ -81,6 +92,8 @@ npm --prefix create-zass test
 ## Issues
 
 Report issues in the ZASS repository issue tracker.
+
+CR-011 metadata and migration guide: [`../docs/CR011_MACHINE_METADATA_GUIDE.md`](../docs/CR011_MACHINE_METADATA_GUIDE.md).
 
 ## License
 
