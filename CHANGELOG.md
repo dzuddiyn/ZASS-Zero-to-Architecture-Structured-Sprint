@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E2-T05 aggregation + case-study contract LOCKED
+
+- Added `docs/ZASS_TRACK_E_AGGREGATION_CASE_STUDY_V01.md`.
+- Locked deterministic aggregation outputs for counts, distributions, diagnostic/observation frequencies, coverage, rating summaries and Q1–Q10 evidence coverage.
+- Locked explicit coverage truth: receipts considered/included/excluded, evidence count/classes/questions represented, and rating sample size.
+- Locked human-reviewed evidence confidence levels LOW / MEDIUM / HIGH and explicit `INSUFFICIENT EVIDENCE` outcome to prevent forced conclusions.
+- Locked reviewed finding lineage: outcome, questions, evidence refs/classes, confidence, rationale, limitations and optional bounded next action.
+- Locked minimum CR-014 case-study structure and mandatory separation of FACTUAL EVIDENCE, USER-PROVIDED SIGNAL, REVIEWER INTERPRETATION and TRACK E DECISION.
+- Local feedback-storage consent does not authorize quotation/publication; raw feedback requires separate permission to quote.
+- Case studies remain local/private by default; no automatic publication is authorized.
+- Locked cross-case aggregation safeguards and CR-006 baseline-vs-scale-out comparison dimensions.
+- CR-015 may automate factual projection only; final confidence/outcome/case-study review/promotion remain human responsibilities.
+- No aggregation implementation, case-study execution or publication was started.
+- **E2-T05 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T04 lightweight evidence architecture LOCKED
 
 - Added `docs/ZASS_TRACK_E_EVIDENCE_ARCHITECTURE_V01.md`.
