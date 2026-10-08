@@ -54,7 +54,7 @@ The handoff is NOT the Source of Truth.
 
 Return the handoff to the trusted writer before anything is committed.
 
-### 3. CLI — coming soon
+### 3. CLI — available now
 
 Target experience:
 
