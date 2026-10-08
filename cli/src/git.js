@@ -14,6 +14,7 @@ async function git(args, cwd) {
 
 export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
   let gitRoot;
+  let gitPrefix;
   let head;
   let baseline;
 
@@ -23,7 +24,7 @@ export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
 
   try {
     gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
-    const gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
+    gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
     head = (await git(['rev-parse', 'HEAD'], projectDir)).stdout.trim();
     baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
   } catch {
@@ -103,11 +104,12 @@ export async function readGitProjectBaselineFiles(projectDir, fileNames, baselin
   }
 
   let gitRoot;
+  let gitPrefix;
   let baseline;
 
   try {
     gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
-    const gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
+    gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
     await git(['rev-parse', 'HEAD'], projectDir);
     baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
   } catch {
