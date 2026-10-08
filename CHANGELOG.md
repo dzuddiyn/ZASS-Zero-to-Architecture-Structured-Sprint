@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E2-T03 rating + feedback contract LOCKED
+
+- Added `docs/ZASS_TRACK_E_RATING_FEEDBACK_CONTRACT_V01.md`.
+- Locked canonical rating question: “How useful was ZASS for this work?”
+- Locked integer 1–5 usefulness scale: 1 Not useful, 2 Slightly useful, 3 Mixed/somewhat useful, 4 Useful, 5 Very useful.
+- Locked bounded rating targets: overall-workflow, tooling, continuation-handoff, scale-out-experiment.
+- Locked canonical optional feedback prompt: “What helped most, or what got in the way?”
+- Locked feedback categories and 500-character maximum per feedback event.
+- USER-RATED and USER-FEEDBACK require explicit event-specific consent; ordinary chat sentiment, silence, continued use, provider memory/profile, or prior consent do not count.
+- Ratings are user-perceived-value evidence only; they cannot replace factual evidence or independently trigger ZASS changes.
+- Locked simple future aggregation limits: count, distribution, median, mean with sample size, rating-target counts and feedback-category counts; no hidden/proprietary satisfaction score.
+- Locked non-manipulative capture rules: no nagging, forced rating, favorable preselection, hidden skip, rewards for high ratings, or asymmetrical submission.
+- No UI, CLI prompt timing, network submission, dashboard or aggregation service was selected.
+- **E2-T03 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T02 minimal evidence model + local receipt LOCKED
 
 - Added `docs/ZASS_TRACK_E_LOCAL_EVIDENCE_RECEIPT_V01.md`.
