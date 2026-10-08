@@ -118,14 +118,18 @@ The v0.2 plan remains structurally compatible with the v0.1 envelope:
 }
 ```
 
-The deterministic `files` sequence becomes exactly:
+The deterministic base `files` sequence is:
 
 1. selected method file;
 2. `README.md`;
 3. `.gitignore`;
 4. `.zass/project.json`.
 
-The first three artifacts retain their existing semantics unless another explicit contract changes them.
+For Full ZASS (`method = zass`) only, the plan MUST also include the canonical local dependency referenced by `ZASS.md`:
+
+5. `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` with role `method-dependency`.
+
+ZASSPILL, ZASSELECTION and ZASSIMPLE remain four-artifact plans. Full ZASS is therefore a five-artifact plan. This corrective exception preserves the canonical local link and CR-010 Z003 semantics while making a generated Full-ZASS project self-contained.
 
 ## 6. Exact generated machine artifact
 
@@ -371,7 +375,7 @@ A5-T06 may close only after proving:
 - package source reports `bootstrap-core@0.2.0`;
 - `create-zass-project` source reports `0.2.0`;
 - same six frozen root API names remain exported;
-- every 4 × 2 bootstrap plan contains exactly four artifacts;
+- all non-Full-ZASS plans contain exactly four artifacts and both Full-ZASS plans contain exactly five artifacts including the canonical architecture-to-execution dependency;
 - every generated `.zass/project.json` matches CR-011 schema 0.1;
 - nested materialization works on Windows;
 - recursive snapshot verification passes;
@@ -403,7 +407,7 @@ Bootstrap Core v0.2 / 0.2.0
         ↓
 same public call shape + same six export names
         ↓
-deterministic four-artifact plan
+deterministic base plan + Full-ZASS local dependency closure
         ↓
 create-zass-project@0.2.0
         ↓
