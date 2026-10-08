@@ -1,11 +1,11 @@
 # ZASS npm Bootstrap CLI v0.1 — Behavioral Contract
 
-**Status:** LOCKED — NPM PUBLICATION READINESS PASS / READY TO PUBLISH — NOT PUBLISHED  
+**Status:** LOCKED — PUBLIC IDENTITY REVISED / FRESH NPM READINESS REQUIRED — NOT PUBLISHED  
 **Date:** 2026-10-07  
 **Owner:** Project Owner  
 **Track:** ZASS TRACK B  
-**Target npm UX:** `npm create zass@latest <project>`  
-**Target initializer package:** `create-zass`  
+**Target npm UX:** `npm create zass-project@latest <project>`  
+**Target initializer package:** `create-zass-project`  
 **Initial package version:** `0.1.0`
 
 > **No ZASS method is silently selected by the npm bootstrap. The user chooses the method; automation supplies it explicitly.**
@@ -53,12 +53,12 @@ The CLI is a project bootstrapper, not a project manager, AI runtime, GitHub cli
 Canonical target UX:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
-npm resolves this initializer UX to the `create-zass` package.
+npm resolves this initializer UX to the `create-zass-project` package.
 
-Registry-name availability must be verified before publication. If the package name is unavailable, registry naming may change at the publish gate without changing this behavioral contract.
+Registry-name availability and npm naming-policy acceptance must be verified before publication. The original unscoped identity `create-zass` returned E404 in lookup but was rejected by the registry at actual publish time as too similar to an existing package. The owner selected `create-zass-project` as the replacement public identity; this naming change does not alter the bootstrap behavior contract.
 
 The project target argument is required in v0.1.
 
@@ -93,10 +93,10 @@ No option is labelled as default or silently selected.
 Automation or an advanced user may bypass the method prompt:
 
 ```bash
-npm create zass@latest my-project -- --method zasspill
-npm create zass@latest my-project -- --method zasselection
-npm create zass@latest my-project -- --method zassimple
-npm create zass@latest my-project -- --method zass
+npm create zass-project@latest my-project -- --method zasspill
+npm create zass-project@latest my-project -- --method zasselection
+npm create zass-project@latest my-project -- --method zassimple
+npm create zass-project@latest my-project -- --method zass
 ```
 
 ### Non-interactive environment
@@ -134,8 +134,8 @@ No language is silently selected inside the interactive bootstrap flow.
 ### Explicit flag
 
 ```bash
-npm create zass@latest my-project -- --method zassimple --lang en
-npm create zass@latest my-project -- --method zassimple --lang my
+npm create zass-project@latest my-project -- --method zassimple --lang en
+npm create zass-project@latest my-project -- --method zassimple --lang my
 ```
 
 ### Non-interactive environment
@@ -336,14 +336,14 @@ The released package must contain or depend on versioned bootstrap templates/cor
 This preserves reproducibility:
 
 ```text
-create-zass release
+create-zass-project release
 → bundled/versioned bootstrap assets
 → generated project
 ```
 
 The exact template semantics are now owned by the **frozen ZASS Project Bootstrap Core v0.1**.
 
-The CLI consumes that shared Core without maintaining a second semantic engine. For npm distribution, `create-zass` carries a byte-for-byte vendored runtime snapshot of canonical Core `src/` + `templates/` under `create-zass/vendor/bootstrap-core/`. A repository sync test must fail on any drift. The packed artifact must still prove this snapshot is present and executable outside the monorepo.
+The CLI consumes that shared Core without maintaining a second semantic engine. For npm distribution, `create-zass-project` carries a byte-for-byte vendored runtime snapshot of canonical Core `src/` + `templates/` under `create-zass/vendor/bootstrap-core/`. A repository sync test must fail on any drift. The packed artifact must still prove this snapshot is present and executable outside the monorepo.
 
 ## 13. No external side effects
 
@@ -392,7 +392,7 @@ Future CrossAI Create Project may call the same Bootstrap Core with an explicit 
 The intended future convergence is:
 
 ```text
-create-zass ────────┐
+create-zass-project ─┐
                     ↓
              Bootstrap Core
                     ↑
@@ -581,7 +581,7 @@ bootstrap-core/
 
 Implemented behavior:
 
-- package identity: `create-zass@0.1.0`;
+- package identity: `create-zass-project@0.1.0`;
 - package publication guard has been intentionally opened for the publication candidate; `private:true` is removed and publish metadata is pinned to the public npm registry;
 - interactive method prompt exposes ZASSPILL / ZASSELECTION / ZASSIMPLE / Full ZASS with no silent default;
 - interactive language prompt exposes English / Bahasa Melayu;
@@ -638,6 +638,6 @@ npm pack
 
 That publication gate is now the **next TRACK B gate** and remains separate from the already-complete local v0.1 implementation.
 
-The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary is remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass`, with byte-for-byte sync regression coverage. Packed-artifact testing now covers `npm pack`, clean tarball install, direct installed-bin execution, and local-tarball `npm exec --package ... create-zass` invocation. The publication candidate removes `private:true`, adds public package metadata and an explicit manual publish workflow. Registry name availability and npm account credential/authority are verified as separate live publication-gate evidence before publish.
+The shared ZASS Project Bootstrap Core public API is now **FROZEN / PASS**. The standalone distribution boundary is remediated by vendoring canonical Core runtime `src/` + `templates/` inside `create-zass`, with byte-for-byte sync regression coverage. Packed-artifact testing now covers `npm pack`, clean tarball install, direct installed-bin execution, and local-tarball `npm exec --package ... create-zass-project` invocation. The publication candidate removes `private:true`, adds public package metadata and an explicit manual publish workflow. Registry name availability and npm account credential/authority are verified as separate live publication-gate evidence before publish.
 
-Publication-readiness live evidence on 2026-10-08: exact registry-name probe returned `E404` (`create-zass` available), configured `NPM_TOKEN` authenticated successfully via `npm whoami`, package metadata tests passed, and packed-artifact/clean-install invocation tests passed. The readiness gate is therefore **PASS / READY TO PUBLISH**, while actual publication remains a separate explicit action.
+Publication-readiness evidence on 2026-10-08 proved package authentication, artifact integrity, and clean-install behavior, but actual publication of `create-zass@0.1.0` was rejected by npm with `E403` because the unscoped name was considered too similar to an existing package. The public candidate is therefore renamed to `create-zass-project@0.1.0`; a fresh readiness pass is required before any next publish attempt.

@@ -123,7 +123,7 @@ Each factual state must remain separately visible.
 The target command remains:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 The earlier npm-only default (`ZASSIMPLE` + English + no method question) is SUPERSEDED.
@@ -137,7 +137,7 @@ The locked npm Bootstrap CLI v0.1 contract now requires explicit method/language
 
 See [`ZASS_NPM_BOOTSTRAP_CLI_V01.md`](ZASS_NPM_BOOTSTRAP_CLI_V01.md).
 
-The local `create-zass@0.1.0` implementation is complete and now consumes the frozen Bootstrap Core semantics in-repository. The package remains private and unpublished; npm publication is the next productization gate before CrossAI consumption.
+The local `create-zass/` implementation is complete and consumes the frozen Bootstrap Core semantics in-repository. Its public candidate identity is now `create-zass-project@0.1.0`; it remains unpublished, and a fresh npm publication-readiness gate is required before CrossAI consumption.
 
 The npm bootstrap and future CrossAI Create Project should call the same Project Bootstrap Core wherever practical. CrossAI may select the method explicitly from its own DUMP / DECIDE / DESIGN / Full-ZASS escalation UX rather than reproducing the npm prompt.
 
@@ -164,7 +164,7 @@ CR-010 v0.4: zass status + zass diff ✅
 → stale docs/status cleanup ✅
 → npm publication readiness / packaging-boundary remediation ← NEXT
 → npm pack + clean-install smoke test
-→ publish create-zass@0.1.0 if PASS
+→ publish create-zass-project@0.1.0 if PASS
 → fresh registry verification
 → publication receipt + CHANGELOG
 → CrossAI Bootstrap Core consumption gate
@@ -172,7 +172,7 @@ CR-010 v0.4: zass status + zass diff ✅
 
 This TRACK B may proceed before AISYNC/CrossAI T-020/T-021 finishes, provided it remains isolated from the active AISYNC runtime and Gate 6/Production v1 critical path.
 
-CrossAI consumption of the Bootstrap Core remains a separate later integration step. Under the current owner-approved sequence, it opens only after the `create-zass@0.1.0` npm publication gate is closed with fresh-registry verification; any existing AISYNC/Production isolation gate still applies.
+CrossAI consumption of the Bootstrap Core remains a separate later integration step. Under the current owner-approved sequence, it opens only after the `create-zass-project@0.1.0` npm publication gate is closed with fresh-registry verification; any existing AISYNC/Production isolation gate still applies.
 
 See [`ZASS_TRACK_B_PARALLEL_TOOLING.md`](ZASS_TRACK_B_PARALLEL_TOOLING.md).
 

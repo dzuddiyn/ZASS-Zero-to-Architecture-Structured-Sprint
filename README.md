@@ -149,7 +149,7 @@ COMMIT
 Target experience:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 If method/language flags are not supplied, the interactive bootstrap asks the user to choose:
@@ -171,7 +171,7 @@ There is **no silent npm method default**.
 Automation may be explicit:
 
 ```bash
-npm create zass@latest my-project -- --method zassimple --lang en
+npm create zass-project@latest my-project -- --method zassimple --lang en
 ```
 
 Every v0.1 bootstrap creates one selected method file plus:
@@ -183,7 +183,7 @@ README.md
 
 Full ZASS always uses `ZASS.md` as the generated project authority filename so current `zass check/status/diff` discovery remains compatible.
 
-> **The project-bootstrap CLI is implemented in [`create-zass/`](create-zass/) but not released to npm yet. The command above remains the target registry UX until the separate publish gate passes.**
+> **The project-bootstrap CLI is implemented in [`create-zass/`](create-zass/) but not released to npm yet. The public package candidate is now `create-zass-project@0.1.0`; the original `create-zass` identity was rejected by npm's similarity policy. The command above is the revised target registry UX pending a fresh readiness pass.**
 >
 > Contract: [`docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 >

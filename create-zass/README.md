@@ -1,4 +1,4 @@
-# create-zass
+# create-zass-project
 
 Bootstrap a new local ZASS project from one explicitly selected official method and language.
 
@@ -12,13 +12,13 @@ Bootstrap a new local ZASS project from one explicitly selected official method 
 Interactive:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 Non-interactive:
 
 ```bash
-npm create zass@latest my-project -- --method zassimple --lang en
+npm create zass-project@latest my-project -- --method zassimple --lang en
 ```
 
 Supported methods:
@@ -47,7 +47,7 @@ For Full ZASS, the project authority file is always `ZASS.md`, including when Ba
 
 ## Safety and side effects
 
-v0.1 is create-new-only. If the target already exists, `create-zass` refuses to overwrite or merge it.
+v0.1 is create-new-only. If the target already exists, `create-zass-project` refuses to overwrite or merge it.
 
 It does **not**:
 
@@ -66,6 +66,10 @@ Generated `.gitignore` includes a baseline for common secret files. Do not put p
 Project semantics come from the repository's frozen private Bootstrap Core. The npm package carries a byte-for-byte vendored runtime snapshot under `vendor/bootstrap-core/`, and repository tests enforce synchronization with canonical Core `src/` and `templates/`.
 
 ## Development
+
+Public npm package candidate: `create-zass-project@0.1.0`.
+
+The repository implementation directory remains `create-zass/`.
 
 From this repository:
 

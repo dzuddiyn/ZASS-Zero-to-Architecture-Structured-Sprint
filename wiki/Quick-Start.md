@@ -59,7 +59,7 @@ Return the handoff to the trusted writer before anything is committed.
 Target experience:
 
 ```bash
-npm create zass@latest my-project
+npm create zass-project@latest my-project
 ```
 
 **Status: npm Bootstrap CLI v0.1 IMPLEMENTED LOCALLY — Windows + CI PASS — not published.**
@@ -77,7 +77,7 @@ Every successful v0.1 bootstrap creates one selected method file plus `README.md
 
 Contract: [`../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
-The npm command remains the target registry UX. The implementation exists locally under `create-zass/` but is not yet published.
+The npm command above is the revised target registry UX. The implementation remains locally under `create-zass/`; the public package candidate is `create-zass-project@0.1.0` and is not yet published.
 
 ### 4. File — works now
 
