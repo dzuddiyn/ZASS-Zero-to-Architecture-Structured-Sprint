@@ -4,7 +4,7 @@
 **Locked by:** Project Owner  
 **Locked date:** 2026-09-30  
 **Scope:** Landing page, onboarding, cross-AI handoff, CLI bootstrap  
-**Implementation status:** npm Bootstrap CLI v0.1 is implemented locally and CI/Windows tested; npm publication remains a separate gate. The decisions in this document remain authoritative unless the owner explicitly revises them.
+**Implementation status:** `create-zass-project@0.1.0` is PUBLISHED / VERIFIED on npm; repository source has advanced to an unpublished `0.2.0` candidate. The decisions in this document remain authoritative unless the owner explicitly revises them.
 
 > **Think once. Keep the decisions. Continue with any AI.**
 
