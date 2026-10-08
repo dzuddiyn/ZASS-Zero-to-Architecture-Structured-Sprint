@@ -172,6 +172,12 @@ Prefer atomic temp-write → rename or equivalent safe local write pattern where
 
 ### E3-T04 — Implement receipt reader + deterministic factual projector
 
+**Status:** PASS  
+**Implementation:** `cli/src/evidence/projector.js` + internal exports  
+**Focused tests:** `cli/test/evidence-projector.test.js`
+
+Implemented deterministic canonical-receipt enumeration, validation/isolation, truthful coverage reporting, and factual projection for evidence classes, Q1–Q10, result counts, diagnostic/observation codes, environment/project coverage, severity/reproducibility, rating distribution/median/mean/sample size, rating targets and feedback categories. No confidence/finding/outcome logic was added.
+
 **Scope:** read/project only.
 
 Expected implementation:
