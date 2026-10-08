@@ -23,6 +23,7 @@ export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
 
   try {
     gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
+    const gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
     head = (await git(['rev-parse', 'HEAD'], projectDir)).stdout.trim();
     baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
   } catch {
@@ -32,10 +33,9 @@ export async function readGitBaseline(projectDir, baselineRef = 'HEAD') {
     };
   }
 
-  const zassPath = path.join(projectDir, 'ZASS.md');
-  const relativeZass = path.relative(gitRoot, zassPath).split(path.sep).join('/');
+  const relativeZass = `${gitPrefix}ZASS.md`;
 
-  if (!relativeZass || relativeZass.startsWith('../') || path.isAbsolute(relativeZass)) {
+  if (!relativeZass || relativeZass.startsWith('../') || path.posix.isAbsolute(relativeZass)) {
     return { available: false, reason: 'Project ZASS.md is outside the Git repository; LOCKED drift check skipped' };
   }
 
@@ -107,6 +107,7 @@ export async function readGitProjectBaselineFiles(projectDir, fileNames, baselin
 
   try {
     gitRoot = (await git(['rev-parse', '--show-toplevel'], projectDir)).stdout.trim();
+    const gitPrefix = (await git(['rev-parse', '--show-prefix'], projectDir)).stdout.trim();
     await git(['rev-parse', 'HEAD'], projectDir);
     baseline = (await git(['rev-parse', '--verify', `${baselineRef}^{commit}`], projectDir)).stdout.trim();
   } catch {
@@ -120,10 +121,18 @@ export async function readGitProjectBaselineFiles(projectDir, fileNames, baselin
   const files = {};
 
   for (const name of fileNames) {
-    const absolutePath = path.resolve(projectDir, name);
-    const relativePath = path.relative(gitRoot, absolutePath).split(path.sep).join('/');
+    const normalizedName = path.posix.normalize(String(name).replaceAll('\\', '/'));
+    const relativePath = `${gitPrefix}${normalizedName}`;
 
-    if (!relativePath || relativePath.startsWith('../') || path.isAbsolute(relativePath)) {
+    if (
+      !normalizedName ||
+      normalizedName === '..' ||
+      normalizedName.startsWith('../') ||
+      path.posix.isAbsolute(normalizedName) ||
+      !relativePath ||
+      relativePath.startsWith('../') ||
+      path.posix.isAbsolute(relativePath)
+    ) {
       return {
         available: false,
         baseline: 'N/A',
