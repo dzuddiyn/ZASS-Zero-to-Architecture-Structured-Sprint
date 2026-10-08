@@ -1,0 +1,97 @@
+name: Publish zass-cli
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type zass-cli@0.4.0 to publish this exact first public release'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: publish-zass-cli
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate explicit release confirmation
+        shell: bash
+        run: |
+          if [[ "${{ inputs.confirm }}" != "zass-cli@0.4.0" ]]; then
+            echo "::error::Release confirmation did not match zass-cli@0.4.0"
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24 for npm release
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Pin npm release CLI
+        run: npm install --global npm@11.21.0
+
+      - name: Verify package identity and public metadata
+        shell: bash
+        run: |
+          NAME="$(node -p "require('./cli/package.json').name")"
+          VERSION="$(node -p "require('./cli/package.json').version")"
+          PRIVATE="$(node -p "String(require('./cli/package.json').private ?? false)")"
+          ACCESS="$(node -p "require('./cli/package.json').publishConfig?.access ?? ''")"
+
+          test "$NAME" = "zass-cli"
+          test "$VERSION" = "0.4.0"
+          test "$PRIVATE" = "false"
+          test "$ACCESS" = "public"
+
+      - name: Verify npm publish credential
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          test -n "$NODE_AUTH_TOKEN"
+          npm whoami --registry=https://registry.npmjs.org >/dev/null
+
+      - name: Verify zass-cli registry state
+        shell: bash
+        run: |
+          set +e
+          OUTPUT="$(npm view zass-cli version --registry=https://registry.npmjs.org 2>&1)"
+          STATUS=$?
+          set -e
+
+          if [[ "$STATUS" -eq 0 ]]; then
+            echo "::error::zass-cli already exists on the npm registry"
+            echo "$OUTPUT"
+            exit 1
+          fi
+
+          if grep -q "E404" <<<"$OUTPUT"; then
+            echo "zass-cli exact name is not registered; actual publish remains authoritative for npm naming policy"
+            exit 0
+          fi
+
+          echo "::error::npm registry availability check was inconclusive"
+          echo "$OUTPUT"
+          exit "$STATUS"
+
+      - name: Run zass-cli release tests
+        run: npm --prefix cli test
+
+      - name: Verify npm publish metadata dry-run
+        working-directory: cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --dry-run --access public
+
+      - name: Publish zass-cli@0.4.0
+        working-directory: cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
