@@ -4,6 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// E4 bounded execution harness v0.1
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const cli = path.join(repoRoot, 'cli', 'bin', 'zass.js');
 const runner = path.join(repoRoot, 'tools', 'track-e', 'runner.js');
