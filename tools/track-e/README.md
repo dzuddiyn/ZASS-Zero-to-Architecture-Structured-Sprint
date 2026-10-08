@@ -41,3 +41,16 @@ For the full operating boundary, privacy rules, projection limitations, and E4 g
 - `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_RECEIPT.md`
 
 This README is only the quick command reference. The operator guide is the canonical E3 usage document.
+
+
+## Final-freeze status
+
+TRACK E is closed.
+
+The bounded E4 automation harness was archived to:
+
+`tools/track-e/archive/e4-execute.mjs`
+
+and its dedicated GitHub Actions workflow was removed during TRACK F. The archived harness is reproducibility evidence only and must not be treated as an active production workflow.
+
+The reusable evidence recorder/validator/projector and this repo-local runner remain intentionally available as an internal capability for future owner-approved real-human evidence collection.
