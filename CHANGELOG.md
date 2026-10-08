@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E3-T07 unit/negative/privacy regression matrix PASS
+
+- Added consolidated `cli/test/evidence-regression.test.js`.
+- Locked negative regression coverage for unknown evidence class, unknown bounded result, duplicate questions and invalid optional factual metadata.
+- Verified minimal valid evidence can be written/projected in a project with no `ZASS.md` and no raw semantic content dependency.
+- Verified one valid receipt remains usable while malformed JSON and unsupported-contract receipts are isolated and surfaced as incomplete coverage.
+- Verified duplicate receipt collision preserves original bytes exactly.
+- Verified USER-RATED/USER-FEEDBACK helpers fail closed without explicit consent and invalid related rating references are rejected by the validator.
+- Verified repo-local runner unknown command, invalid rating and oversized feedback fail without creating an evidence directory.
+- Verified prohibited privacy-field attempts return INVALID and do not mutate semantic `ZASS.md`.
+- Existing focused suites continue to cover canonical receipts, all six evidence classes, unsupported receipt version/source/question, malformed JSON isolation, rating/feedback bounds, privacy fields, collision handling and runner consent behavior.
+- No production-code patch was required; current implementation satisfied the expanded regression matrix as-is.
+- CI run `37775721044` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T07 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T06 repo-local field runner PASS
 
 - Added `tools/track-e/runner.js` as the thin repo-local/test-only Track E execution surface.
