@@ -1,3 +1,19 @@
+## 2026-10-08 — TRACK E E3-T03 local receipt writer + safe evidence store PASS
+
+- Added `cli/src/evidence/store.js` and internal exports.
+- Added opaque local ID generation for receipt/evidence IDs using UUID-backed safe tokens that do not encode user/project/device identity.
+- Added `buildEvidenceReceipt(...)` for deterministic v0.1 envelopes and `evidenceReceiptPath(...)` for bounded `.zass/evidence/` paths beneath an explicit project root.
+- Implemented `writeEvidenceReceipt(projectDir, receipt)` with validate-before-write behavior.
+- Invalid receipts return `INVALID` and create no evidence directory/file.
+- Valid writes create `.zass/evidence/` safely and use exclusive `wx` file creation so an existing receipt cannot be overwritten silently.
+- Collision returns `COLLISION`; directory/write failures return `WRITE_FAILED`; only actual successful persistence returns `SAVED`.
+- Existing evidence remains unchanged on collision.
+- Semantic files such as `ZASS.md` are never touched by the evidence store.
+- Added focused `cli/test/evidence-store.test.js` covering opaque IDs, envelope construction, one-time write, collision truthfulness, invalid-no-write behavior, write failure, semantic-file preservation, and bounded paths.
+- No reader/projector, aggregation, automatic `.gitignore` editing, retention cleanup, network behavior, or public CLI command was added.
+- CI run `37773169441` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T03 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T02 frozen evidence constants + strict receipt validator PASS
 
 - Added internal reusable module boundary under `cli/src/evidence/`.
