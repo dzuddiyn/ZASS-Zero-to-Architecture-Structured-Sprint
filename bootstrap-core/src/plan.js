@@ -21,6 +21,20 @@ export async function buildBootstrapPlan({ projectName, method, language }) {
     language
   });
 
+  const machineMetadataContent = JSON.stringify(
+    {
+      schemaVersion: '0.1',
+      project: {
+        name: projectName,
+        method,
+        language,
+        methodFile: descriptor.methodFile
+      }
+    },
+    null,
+    2
+  ) + '\n';
+
   const plan = {
     contractVersion: CORE_CONTRACT_VERSION,
     project: {
@@ -44,6 +58,11 @@ export async function buildBootstrapPlan({ projectName, method, language }) {
         path: '.gitignore',
         role: 'gitignore',
         content: GITIGNORE_CONTENT
+      },
+      {
+        path: '.zass/project.json',
+        role: 'machine-metadata',
+        content: machineMetadataContent
       }
     ]
   };
