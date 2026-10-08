@@ -74,10 +74,10 @@ Implemented:
 Key commits:
 
 ```text
-06a880b  implement frozen evidence constants
-c076b92  implement strict receipt validator
-5f789b0  export evidence module contract
-6cf4168  focused validator tests
+cd448ed  add frozen evidence contract constants
+dfdaa20  implement strict evidence receipt validator
+7eaf1ed  expose internal evidence validator module
+2b66c4f  add focused evidence validator tests
 ```
 
 ### E3-T03 — local receipt writer + safe store — PASS
