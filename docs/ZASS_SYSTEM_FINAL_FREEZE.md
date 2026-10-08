@@ -1,6 +1,6 @@
 # ZASS SYSTEM — Final Freeze Receipt
 
-**Status:** FINAL FREEZE CANDIDATE — CLOSURE CI REQUIRED  
+**Status:** FINAL FREEZE — TRACK F CLOSED / PASS  
 **Date:** 2026-10-08  
 **Track:** TRACK F — ZASS SYSTEM FINAL FREEZE & DOCUMENTATION HYGIENE
 
@@ -161,4 +161,4 @@ TRACK F closes only after the closure commit passes:
 - Ubuntu CLI cross-platform suite;
 - Windows CLI cross-platform suite.
 
-Until that CI passes, this receipt remains a freeze candidate.
+Pre-closure verification run `37786765603` passed the full gate on the closure candidate. A final post-closure CI is required on the exact closing commit; the freeze reference branch will point to that exact verified commit.
