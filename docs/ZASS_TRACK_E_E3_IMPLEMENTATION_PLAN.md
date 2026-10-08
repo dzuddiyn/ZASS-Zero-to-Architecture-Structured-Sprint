@@ -297,6 +297,12 @@ Expected behavior:
 
 ### E3-T09 — Run packed/cross-platform regression against existing zass-cli
 
+**Status:** PASS  
+**CI:** full `zass-check` + `cli-cross-platform` matrix on `ubuntu-latest` and `windows-latest`  
+**Regression coverage:** existing full CLI suite including `packed-artifact.test.js`, CR-011 metadata, `check/status/diff`, Track E internals, and new `git-portability.test.js`
+
+Added persistent Linux+Windows CLI regression coverage. The matrix exposed and fixed two pre-existing Windows portability defects: shell-dependent `test/*.test.js` expansion and OS-path comparison against Git canonical paths. Final cross-platform run passed all three jobs without changing public CLI semantics.
+
 **Scope:** distribution/regression proof, not publication.
 
 Verify:
