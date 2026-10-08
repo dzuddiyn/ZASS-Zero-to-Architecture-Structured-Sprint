@@ -148,6 +148,10 @@ Markdown = semantic authority
 .zass/ cannot LOCK decisions, override architecture/ACTION_PLAN semantics, create a second Source of Truth, or require AISYNC/CrossAI/network/database runtime. Legacy projects without .zass/ remain valid. Published create-zass-project@0.1.0 remains immutable historical release.
 
 ### A5-T01 — Lock CR-011 v0.1 contract
+
+**Status:** PASS / LOCKED FOR IMPLEMENTATION  
+**Contract:** [`CR011_ZASS_MACHINE_METADATA_V01.md`](CR011_ZASS_MACHINE_METADATA_V01.md)
+
 Define purpose/non-purpose, authority, exact files, format, minimum fields, read/write ownership, missing/malformed/unsupported behavior, conflict rules, backward compatibility, migration/versioning, CLI seam and bootstrap version boundary.
 
 **PASS:** implementation worker has no unresolved architecture decision.
