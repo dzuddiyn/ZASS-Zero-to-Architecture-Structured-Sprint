@@ -29,8 +29,14 @@ test('CLI creates an explicit non-interactive project with exit 0', async (t) =>
   assert.match(result.stdout, /CrossAI:\s+not registered/);
   assert.deepEqual(
     (await fs.readdir(target)).sort(),
-    ['.gitignore', 'README.md', 'ZASSELECTION_MY.md'].sort()
+    ['.gitignore', '.zass', 'README.md', 'ZASSELECTION_MY.md'].sort()
   );
+  const metadata = JSON.parse(
+    await fs.readFile(path.join(target, '.zass', 'project.json'), 'utf8')
+  );
+  assert.equal(metadata.schemaVersion, '0.1');
+  assert.equal(metadata.project.method, 'zasselection');
+  assert.equal(metadata.project.language, 'my');
 });
 
 test('CLI refuses an existing target with exit 1 and no overwrite', async (t) => {
