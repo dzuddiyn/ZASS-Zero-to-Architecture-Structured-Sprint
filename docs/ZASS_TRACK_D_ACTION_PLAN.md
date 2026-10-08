@@ -199,10 +199,10 @@ Generate CR-011 metadata in next bootstrap release for all supported methods and
 
 ### A5-T07 — Two-shape field test
 
-**Status:** HOLD — PORTABILITY DEFECT FOUND  
+**Status:** PASS — CORRECTIVE RERUN COMPLETE  
 **Receipt:** [`CR011_TWO_SHAPE_FIELD_TEST.md`](CR011_TWO_SHAPE_FIELD_TEST.md)
 
-Legacy/no-`.zass/` passed `check/status/diff`. A newly generated Full-ZASS Bahasa Melayu project produced valid CR-011 metadata and `diff = NO_CHANGE`, but `zass check/status` failed because canonical `ZASS.md` contains a local reference to `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` that the locked four-artifact bootstrap plan does not materialize. No silent fix was chosen because adding that document would reopen the locked A5-T05 artifact contract, while weakening Z003 would reopen frozen CR-010 semantics.
+The initial field run exposed a Full-ZASS self-containment defect. A5-T07C corrected the v0.2 bootstrap contract so Full ZASS also materializes the canonical local dependency `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` while preserving CR-010 Z003 and canonical Markdown links. Corrective Windows rerun: legacy/no-`.zass/` and generated Full-ZASS-with-`.zass/` both pass `zass check/status/diff`; generated machine metadata is VALID and diff remains `NO_CHANGE`.
 
 Test one legacy project without .zass/ and one newly generated project with .zass/. Run zass check/status/diff and verify no authority or portability regression.
 
