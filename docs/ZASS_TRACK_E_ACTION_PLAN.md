@@ -1,6 +1,6 @@
 # TRACK E — FIELD EVIDENCE & SCALE VALIDATION
 
-**Status:** OWNER-APPROVED / SCOPE LOCKED / DESIGN NOT STARTED  
+**Status:** OWNER-APPROVED / SCOPE LOCKED / E2 DECISION CONTRACT ACTIVE  
 **Date:** 2026-10-08  
 **Owner:** Project Owner  
 **Scope:** Lightweight field-evidence and scale-validation work for ZASS only.
@@ -112,6 +112,17 @@ Completed:
 - moved CR-016 active ownership out of ZASS into AISYNC future work while preserving lineage;
 - activated CR-006, CR-014 and CR-015 under TRACK E;
 - locked TRACK E purpose, scope and privacy/non-goal boundaries.
+
+### E2-T01 — Lock field-evidence questions and decision criteria
+
+**Status:** PASS / LOCKED  
+**Contract:** [`ZASS_TRACK_E_EVIDENCE_DECISION_CONTRACT_V01.md`](ZASS_TRACK_E_EVIDENCE_DECISION_CONTRACT_V01.md)
+
+Locked ten core evidence questions covering usefulness, continuation quality, authority integrity, tooling reliability, friction, scale threshold, multi-file value, recurring failure patterns, opt-in user-perceived value, and improvement priority.
+
+Locked evidence classes, decision dimensions, final review outcomes, CR-006 scale-out promotion criteria, CR-015 recorder promotion criteria, CR-014 case-study sufficiency, evidence-sufficiency rules, rating role, and privacy boundary.
+
+No recorder schema, CLI command, rating scale, aggregation mechanism, or implementation architecture was selected in E2-T01.
 
 ## 7. Deferred design decisions
 
