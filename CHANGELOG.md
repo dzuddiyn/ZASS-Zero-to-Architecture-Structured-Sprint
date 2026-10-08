@@ -1,3 +1,15 @@
+## 2026-10-08 — CR-011 A5-T08 documentation + migration guide PASS
+
+- Added canonical user/developer guide `docs/CR011_MACHINE_METADATA_GUIDE.md`.
+- Documented `.zass/project.json` schema v0.1, semantic-authority boundary, supported methods/languages, legacy/no-metadata compatibility, loader states, Z300–Z304 validation behavior, deterministic conflict handling, and manual-edit policy.
+- Documented optional migration for legacy projects with no automatic backfill, no schema guessing, no silent upgrade/downgrade, and no Markdown mutation.
+- Documented read/write ownership and privacy/security exclusions for machine metadata.
+- Updated `cli/README.md` to describe CR-011 optional metadata, machine diagnostics, and the rule that metadata never overrides Markdown.
+- Updated `create-zass/README.md` to distinguish published npm `0.1.0` from repository-source `0.2.0`, and to document CR-011 artifact generation plus the Full-ZASS local dependency.
+- Updated root `README.md` to remove the stale claim that zass-cli is unpublished and to distinguish public initializer `latest=0.1.0` from unpublised repository-source `0.2.0`.
+- No npm publication or release action was performed.
+- **A5-T08 = PASS.**
+
 ## 2026-10-08 — A5-T07C Full-ZASS portability defect corrected
 
 - Corrected the Bootstrap Core v0.2 contract before public 0.2.0 publication: Full ZASS now materializes the canonical local dependency `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`; ZASSPILL, ZASSELECTION and ZASSIMPLE remain four-artifact plans.
