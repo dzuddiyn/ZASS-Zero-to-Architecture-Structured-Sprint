@@ -1,6 +1,6 @@
 # CR-011 — `.zass/` Machine Metadata Contract v0.1
 
-**Status:** LOCKED FOR IMPLEMENTATION  
+**Status:** PASS / FROZEN v0.1  
 **Date:** 2026-10-08  
 **Track:** TRACK D — A5  
 **Change request:** CR-011  
