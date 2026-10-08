@@ -10,3 +10,12 @@ export async function loadBootstrapTemplate(method, language) {
   const url = new URL(`../templates/${descriptor.template}`, import.meta.url);
   return fs.readFile(url, 'utf8');
 }
+
+
+export async function loadFullZassArchitectureStandard() {
+  const url = new URL(
+    '../templates/shared/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md',
+    import.meta.url
+  );
+  return fs.readFile(url, 'utf8');
+}
