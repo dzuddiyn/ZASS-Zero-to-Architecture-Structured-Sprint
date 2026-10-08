@@ -275,6 +275,12 @@ Fixtures/tests must cover:
 
 ### E3-T08 — Add Git-ignore/local-retention helper behavior + tests
 
+**Status:** PASS  
+**Implementation:** `cli/src/evidence/hygiene.js`, explicit runner `prepare` command  
+**Focused tests:** `cli/test/evidence-hygiene.test.js`
+
+Implemented explicit, idempotent `.gitignore` hygiene for test projects. `prepare` ensures `.zass/evidence/` is ignored while preserving existing content; ordinary recording/projecting never invokes it automatically. No automatic receipt deletion, expiry, cleanup, or project-validity dependency was added.
+
 **Scope:** explicit field-test project hygiene only.
 
 Expected behavior:
