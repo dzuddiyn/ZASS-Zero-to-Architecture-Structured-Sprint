@@ -1,4 +1,4 @@
-export const CORE_CONTRACT_VERSION = '0.1';
+export const CORE_CONTRACT_VERSION = '0.2';
 
 export const METHOD_CHOICES = Object.freeze([
   Object.freeze({ value: 'zasspill', label: 'ZASSPILL', description: 'capture / continuity' }),
