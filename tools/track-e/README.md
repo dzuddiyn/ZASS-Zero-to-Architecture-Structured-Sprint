@@ -31,3 +31,13 @@ Receipts are written locally under `.zass/evidence/`.
 It preserves existing `.gitignore` content and is idempotent. Recording or projecting evidence does **not** run `prepare` automatically.
 
 Track E v0.1 performs no automatic receipt deletion, expiry, or cleanup.
+
+
+## Canonical E3 operator documentation
+
+For the full operating boundary, privacy rules, projection limitations, and E4 gate, see:
+
+- `docs/ZASS_TRACK_E_E3_OPERATOR_GUIDE.md`
+- `docs/ZASS_TRACK_E_E3_IMPLEMENTATION_RECEIPT.md`
+
+This README is only the quick command reference. The operator guide is the canonical E3 usage document.
