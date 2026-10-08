@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E2-T02 minimal evidence model + local receipt LOCKED
+
+- Added `docs/ZASS_TRACK_E_LOCAL_EVIDENCE_RECEIPT_V01.md`.
+- Locked local-first JSON receipt v0.1 with opaque receipt/evidence IDs, evidence class, Q1–Q10 linkage and bounded result values.
+- Locked privacy-safe factual metadata for OS family, versions, method/language, project shape, machine metadata state, command, exit code, diagnostic codes and optional duration when factually available.
+- Locked bounded evidence shapes for AUTOMATED, FIELD-OBSERVED, USER-RATED, USER-FEEDBACK, CASE-STUDY and INFERRED.
+- USER-RATED and USER-FEEDBACK require explicit consent; USER-RATED remains unavailable until an exact rating scale is separately locked.
+- Canonical filename pattern: `zass-evidence-<receiptId>.json`; recommended local directory: `.zass/evidence/`.
+- Receipts are evidence artifacts only; they cannot LOCK decisions, override Markdown, certify case studies, claim consent, or auto-promote any CR.
+- Prohibited by default: raw ZASS/Markdown content, chat transcript, LOCKED decision text, architecture text, real project name, private repo URL, local paths, user/device identifiers, provider memory/profile, tokens/secrets and arbitrary environment dumps.
+- No automatic upload/network path is authorized.
+- Retention, Git tracking/ignore behavior, cleanup, aggregation, exact rating scale and implementation command/package remain deferred.
+- **E2-T02 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T01 evidence questions + decision criteria LOCKED
 
 - Added `docs/ZASS_TRACK_E_EVIDENCE_DECISION_CONTRACT_V01.md`.
