@@ -227,8 +227,8 @@ Atomic E3 queue:
 E3-T02  evidence constants + strict validator ✅ PASS
 E3-T03  local receipt writer + safe store ✅ PASS
 E3-T04  receipt reader + deterministic projector ✅ PASS
-E3-T05  rating/feedback + privacy guards ← NEXT
-E3-T06  repo-local Track E field runner
+E3-T05  rating/feedback + privacy guards ✅ PASS
+E3-T06  repo-local Track E field runner ← NEXT
 E3-T07  unit/negative/privacy fixtures
 E3-T08  Git-ignore/local-retention hygiene
 E3-T09  packed/cross-platform regression
