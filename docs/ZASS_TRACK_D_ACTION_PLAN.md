@@ -198,6 +198,12 @@ Implemented Bootstrap Core contract `0.2` / private package `0.2.0` and `create-
 Generate CR-011 metadata in next bootstrap release for all supported methods and EN/MY; GitHub remains optional; packed tests updated; old 0.1.0 remains reproducible.
 
 ### A5-T07 — Two-shape field test
+
+**Status:** HOLD — PORTABILITY DEFECT FOUND  
+**Receipt:** [`CR011_TWO_SHAPE_FIELD_TEST.md`](CR011_TWO_SHAPE_FIELD_TEST.md)
+
+Legacy/no-`.zass/` passed `check/status/diff`. A newly generated Full-ZASS Bahasa Melayu project produced valid CR-011 metadata and `diff = NO_CHANGE`, but `zass check/status` failed because canonical `ZASS.md` contains a local reference to `docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md` that the locked four-artifact bootstrap plan does not materialize. No silent fix was chosen because adding that document would reopen the locked A5-T05 artifact contract, while weakening Z003 would reopen frozen CR-010 semantics.
+
 Test one legacy project without .zass/ and one newly generated project with .zass/. Run zass check/status/diff and verify no authority or portability regression.
 
 ### A5-T08 — Documentation + migration guide
