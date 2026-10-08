@@ -260,3 +260,39 @@ TRACK E can close only after:
 E3 implementation baseline is frozen for controlled E4 field use.
 
 E4 is authorized for bounded field execution/evidence collection only. The first E4 task should define the representative execution matrix/runbook before evidence collection begins.
+
+
+## 12. E4 field execution plan
+
+### E4-T01 — Define representative field execution matrix + runbook
+
+**Status:** PASS / LOCKED  
+**Runbook:** [`ZASS_TRACK_E_E4_FIELD_EXECUTION_RUNBOOK_V01.md`](ZASS_TRACK_E_E4_FIELD_EXECUTION_RUNBOOK_V01.md)
+
+Locked four bounded evidence paths:
+
+```text
+E4-A  tooling baseline
+E4-B  representative real-use single-file case
+E4-C  reproducible large single-file fixture
+E4-D  paired CR-006 experimental scale-out — trigger-gated
+```
+
+E4-A/B/C are the minimum execution paths. E4-D may run only after an observable scale trigger is demonstrated.
+
+Locked execution order, bounded task sets, Q1–Q10 intended coverage, operator checklist, privacy/authority/failure boundaries, corrective-defect handling, minimum evidence sufficiency before E5, and a conditional atomic E4 queue.
+
+No field evidence was collected by E4-T01.
+
+Atomic E4 queue:
+
+```text
+E4-T02  Execute tooling baseline E4-A ← NEXT
+E4-T03  Execute representative real-use case E4-B
+E4-T04  Build + execute reproducible large single-file fixture E4-C
+E4-T05  STOP / trigger review for CR-006
+E4-T06  Execute paired scale-out experiment E4-D if authorized
+E4-T07  Aggregate/project E4 evidence + coverage audit
+E4-T08  Produce human-reviewed CR-014 case study / findings
+E4-T09  E4 STOP / REVIEW → handoff to E5
+```
