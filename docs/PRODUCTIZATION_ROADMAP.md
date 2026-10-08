@@ -152,10 +152,13 @@ TRACK E — FIELD EVIDENCE & SCALE VALIDATION ← CURRENT
 → E1 scope/registry ✅
 → E2 decision + small architecture ✅ CLOSED / v0.1 FROZEN
 → E3 action plan + atomic implementation ✅ CLOSED / PASS
-→ E4 field execution / evidence collection ← ACTIVE
-   E4-T01 execution matrix/runbook ✅
-   E4-T02 tooling baseline E4-A ← NEXT
-→ E5 TRACK E STOP / REVIEW
+→ E4 field execution / evidence collection ✅ CLOSED
+   E4-A tooling baseline ✅
+   E4-B representative fixture ✅ factual / human signal insufficient
+   E4-C large fixture ✅
+   E4-D NOT RUN — trigger not met
+   coverage audit ✅ / CR-014 human case evidence insufficient
+→ E5 TRACK E STOP / REVIEW ← NEXT
 
 CR-001 remains separate TEST candidate
 CR-002 remains TEST WHEN NEEDED
