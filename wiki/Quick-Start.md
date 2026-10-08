@@ -62,7 +62,7 @@ Target experience:
 npm create zass-project@latest my-project
 ```
 
-**Status: npm Bootstrap CLI v0.1 IMPLEMENTED LOCALLY — Windows + CI PASS — not published.**
+**Status: `create-zass-project@0.1.0` PUBLISHED / VERIFIED — public npm bootstrap is live.**
 
 Interactive bootstrap asks for the method and language explicitly:
 
@@ -77,7 +77,7 @@ Every successful v0.1 bootstrap creates one selected method file plus `README.md
 
 Contract: [`../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md`](../docs/ZASS_NPM_BOOTSTRAP_CLI_V01.md)
 
-The npm command above is the revised target registry UX. The implementation remains locally under `create-zass/`; the public package candidate is `create-zass-project@0.1.0` and is not yet published.
+The npm command above is the verified public registry UX. Public npm `latest` is `create-zass-project@0.1.0`. Repository source has advanced to an unpublished `0.2.0` candidate; that source version is not implied to be public.
 
 ### 4. File — works now
 
