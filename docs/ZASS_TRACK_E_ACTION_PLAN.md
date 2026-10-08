@@ -133,13 +133,23 @@ Locked a minimal local JSON evidence receipt with opaque receipt/evidence IDs, e
 
 The contract forbids raw semantic project content, private identifiers, hidden telemetry, automatic upload, and any receipt authority over Markdown/LOCKED decisions. Retention, Git tracking, cleanup, aggregation, exact rating scale, and implementation command/package remain deferred.
 
+### E2-T03 — Lock rating + feedback contract
+
+**Status:** PASS / LOCKED  
+**Contract:** [`ZASS_TRACK_E_RATING_FEEDBACK_CONTRACT_V01.md`](ZASS_TRACK_E_RATING_FEEDBACK_CONTRACT_V01.md)
+
+Locked an explicit opt-in 1–5 usefulness rating for a specific reviewed work/session/case, bounded rating targets, an optional short feedback prompt, bounded feedback categories, event-specific consent, a 500-character feedback limit, interpretation safeguards, aggregation-safe statistics, and non-manipulative capture rules.
+
+Ratings remain user-perceived-value evidence only. They cannot replace factual field evidence, cannot be inferred from ordinary chat/provider memory, and cannot by themselves trigger ZASS method/architecture changes.
+
+No rating UI, CLI prompt timing, network submission, dashboard, or aggregation service was selected.
+
 ## 7. Deferred design decisions
 
 Not decided in E1-T01:
 
 - exact implementation-specific JSON encoder/validator details beyond the locked v0.1 contract;
 - whether evidence capture is a CLI command, helper script or separate small package;
-- exact rating scale;
 - exact aggregation workflow;
 - exact case-study template;
 - exact scale-out fixture count;
