@@ -1,6 +1,6 @@
 # TRACK E — Minimal Evidence Model & Local Receipt Contract v0.1
 
-**Status:** LOCKED FOR E2 DESIGN  
+**Status:** FROZEN — TRACK E ARCHITECTURE v0.1  
 **Date:** 2026-10-08  
 **Track:** TRACK E — FIELD EVIDENCE & SCALE VALIDATION  
 **Task:** E2-T02
@@ -96,7 +96,7 @@ Minimum:
 - result: explicit rating value under the later locked rating scale;
 - consent: true.
 
-Until a rating scale is locked, USER-RATED records must not be generated.
+The rating scale is locked by E2-T03 as integer 1–5; USER-RATED records must follow that contract.
 
 ### USER-FEEDBACK
 
