@@ -1,0 +1,25 @@
+name: Track E E4 Field Execution
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools/track-e/e4-execute.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  e4-field:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Execute bounded E4 A/B/C field matrix
+        run: node tools/track-e/e4-execute.mjs
