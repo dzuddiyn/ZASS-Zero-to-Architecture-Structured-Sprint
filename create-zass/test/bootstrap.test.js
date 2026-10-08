@@ -33,9 +33,11 @@ for (const [method, language, methodFile] of CASES) {
 
     assert.equal(report.ok, true);
     assert.equal(report.methodFile, methodFile);
+    const expectedRootEntries = ['.gitignore', '.zass', 'README.md', methodFile];
+    if (method === 'zass') expectedRootEntries.push('docs');
     assert.deepEqual(
       (await fs.readdir(target)).sort(),
-      ['.gitignore', '.zass', 'README.md', methodFile].sort()
+      expectedRootEntries.sort()
     );
 
     for (const file of plan.files) {
