@@ -6,7 +6,7 @@ Command-line validator and project-state tooling for Full ZASS projects.
 **Node.js:** 20 or newer  
 **License:** MIT
 
-CR-010 is closed at zass-cli v0.4.0. The CLI behavior for `zass check`, `zass status`, and `zass diff` is frozen; public packaging does not change their authority or semantics.
+CR-010 is closed at zass-cli v0.4.0. The CLI behavior for `zass check`, `zass status`, and `zass diff` remains authority-bounded. Repository source now also includes CR-011 machine-metadata reading/validation for `.zass/project.json`; this additive layer does not change Markdown semantic authority.
 
 ## Install
 
@@ -87,8 +87,12 @@ A Full ZASS project expects:
 project/
 ├── ZASS.md            required
 ├── ACTION_PLAN.md     optional
-└── ARCHITECTURE.md    optional
+├── ARCHITECTURE.md    optional
+└── .zass/
+    └── project.json   optional machine metadata
 ```
+
+Legacy projects without `.zass/project.json` remain valid. When present, CR-011 metadata is read-only companion state; it does not override canonical Markdown.
 
 Git is required for Git-aware behavior such as LOCKED-decision drift checks and local `HEAD` comparison. When usable Git history is unavailable, the CLI reports the corresponding factual warning/state rather than inventing history.
 
@@ -112,6 +116,11 @@ The CLI reads the current working directory. It does not modify project files.
 | Z203 | ACTION_PLAN stale ZASS source version | ERROR |
 | Z204 | Missing explicitly referenced ZASS ID | ERROR |
 | Z205 | Conservative blocker inconsistency | WARNING |
+| Z300 | CR-011 machine metadata malformed / valid-metadata pass family | ERROR when malformed |
+| Z301 | Unsupported CR-011 schema version | ERROR |
+| Z302 | Invalid CR-011 v0.1 field/value/mapping | ERROR |
+| Z303 | Declared method file missing | ERROR |
+| Z304 | Deterministic method/project-surface conflict | ERROR |
 
 Warnings do not fail validation.
 
@@ -129,6 +138,8 @@ The same exit-code contract is used by the executable entry point.
 
 `ZASS.md` remains the semantic authority for Full ZASS.
 
+`.zass/project.json` is a machine-readable companion only. Missing metadata is a supported legacy state; malformed/unsupported/invalid/conflicting metadata is reported factually and never silently repaired.
+
 `ACTION_PLAN.md` is an optional execution/readiness snapshot. The CLI does not turn it into a second source of truth.
 
 `zass status` and `zass diff` are read-only factual surfaces. They do not supersede `zass check`, infer architectural truth, or mutate project state.
@@ -143,7 +154,8 @@ This release does not provide:
 - AI semantic comparison;
 - custom `zass diff` baselines or ranges;
 - the optional Z206 working-tree atomic-sync heuristic;
-- automatic project mutation or repair.
+- automatic project mutation or repair;
+- automatic migration/backfill of legacy projects into `.zass/`.
 
 GitHub Actions orchestration remains repository-level infrastructure; validator semantics stay in this CLI.
 
@@ -153,4 +165,5 @@ Canonical implementation and test documentation lives in the ZASS repository:
 
 - CR-010 implementation specification: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/CR010_ZASS_CHECK_SPEC.md
 - Local test guide: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/ZASS_CHECK_LOCAL_TEST_GUIDE.md
+- CR-011 metadata + migration guide: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/blob/main/docs/CR011_MACHINE_METADATA_GUIDE.md
 - Repository: https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint
