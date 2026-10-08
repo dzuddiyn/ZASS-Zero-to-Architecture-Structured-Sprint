@@ -1,6 +1,6 @@
 import { CORE_CONTRACT_VERSION, getBootstrapDescriptor } from './catalog.js';
 import { buildProjectReadme, GITIGNORE_CONTENT } from './readme.js';
-import { loadBootstrapTemplate } from './templates.js';
+import { loadBootstrapTemplate, loadFullZassArchitectureStandard } from './templates.js';
 import { validateBootstrapInput, validateBootstrapPlan } from './validation.js';
 
 export async function buildBootstrapPlan({ projectName, method, language }) {
@@ -14,6 +14,9 @@ export async function buildBootstrapPlan({ projectName, method, language }) {
 
   const descriptor = getBootstrapDescriptor(method, language);
   const methodContent = await loadBootstrapTemplate(method, language);
+  const fullZassArchitectureStandard =
+    method === 'zass' ? await loadFullZassArchitectureStandard() : null;
+
   const readmeContent = buildProjectReadme({
     projectName,
     methodLabel: descriptor.methodLabel,
@@ -63,7 +66,14 @@ export async function buildBootstrapPlan({ projectName, method, language }) {
         path: '.zass/project.json',
         role: 'machine-metadata',
         content: machineMetadataContent
-      }
+      },
+      ...(method === 'zass'
+        ? [{
+            path: 'docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md',
+            role: 'method-dependency',
+            content: fullZassArchitectureStandard
+          }]
+        : [])
     ]
   };
 
