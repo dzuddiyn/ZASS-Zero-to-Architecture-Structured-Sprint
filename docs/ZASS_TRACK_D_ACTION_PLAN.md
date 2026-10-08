@@ -116,7 +116,8 @@ Add explicit-confirmation workflow: identity → auth → registry state → tes
 
 # A4 — Public zass-cli publication
 
-**Priority:** P1
+**Priority:** P1  
+**Status:** PUBLISHED / VERIFIED / CLOSED
 
 ### A4-T01 — Fresh release readiness recheck
 From one current main SHA re-run identity, registry state, auth, tests, pack, clean install and dry-run.
