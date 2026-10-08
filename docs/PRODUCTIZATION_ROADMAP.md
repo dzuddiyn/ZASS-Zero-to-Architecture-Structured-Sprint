@@ -149,10 +149,11 @@ A1 documentation truth cleanup
 
 AFTER TRACK D
 TRACK E — FIELD EVIDENCE & SCALE VALIDATION ← CURRENT
-→ CR-006 scale-out TEST
-→ CR-015 lightweight field evidence recorder/projection
-→ CR-014 real-world case-study evidence
-→ TRACK E STOP / REVIEW
+→ E1 scope/registry ✅
+→ E2 decision + small architecture ✅ CLOSED / v0.1 FROZEN
+→ E3 action plan + atomic implementation ← NEXT
+→ E4 field execution / evidence collection
+→ E5 TRACK E STOP / REVIEW
 
 CR-001 remains separate TEST candidate
 CR-002 remains TEST WHEN NEEDED
