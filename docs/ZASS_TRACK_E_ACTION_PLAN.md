@@ -144,6 +144,26 @@ Ratings remain user-perceived-value evidence only. They cannot replace factual f
 
 No rating UI, CLI prompt timing, network submission, dashboard, or aggregation service was selected.
 
+### E2-T04 — Define lightweight evidence architecture + collection flow
+
+**Status:** PASS / LOCKED  
+**Contract:** [`ZASS_TRACK_E_EVIDENCE_ARCHITECTURE_V01.md`](ZASS_TRACK_E_EVIDENCE_ARCHITECTURE_V01.md)
+
+Locked the local evidence pipeline:
+
+```text
+bounded producer
+→ contract validation / sanitization
+→ local JSON receipt
+→ read-only projection / aggregation
+→ human review
+→ case-study / Track E finding
+```
+
+Locked separation of responsibilities, append-oriented local receipt storage, read-only projection, human-only interpretation, failure behavior, no-network v0.1 boundary, CR-006 comparison seam, CR-014 case-study seam, and the rule that evidence machinery cannot mutate ZASS semantic authority.
+
+No E3 implementation, package/API freeze, SaaS telemetry, remote submission, dashboard, or AISYNC/CrossAI integration was started.
+
 ## 7. Deferred design decisions
 
 Not decided in E1-T01:
