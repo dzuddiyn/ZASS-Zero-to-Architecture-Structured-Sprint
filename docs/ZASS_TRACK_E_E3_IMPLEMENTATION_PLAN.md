@@ -248,6 +248,11 @@ Non-interactive or simple prompt implementation is acceptable; usability polish 
 
 ### E3-T07 — Add unit/negative/privacy regression fixtures
 
+**Status:** PASS  
+**Regression suite:** `cli/test/evidence-regression.test.js`
+
+Added a consolidated negative/privacy regression matrix across validator, writer, projector, user-signal builders and runner seams. No production-code change was required: existing implementation already failed closed for the tested contract/privacy cases.
+
 **Scope:** comprehensive contract tests for evidence module + runner seams.
 
 Fixtures/tests must cover:
