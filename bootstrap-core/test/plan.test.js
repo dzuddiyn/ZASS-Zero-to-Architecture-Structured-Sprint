@@ -21,7 +21,7 @@ for (const [method, language, methodFile] of CASES) {
     const second = await buildBootstrapPlan(input);
 
     assert.deepEqual(first, second);
-    assert.equal(first.contractVersion, '0.1');
+    assert.equal(first.contractVersion, '0.2');
     assert.deepEqual(first.project, {
       name: 'demo-project',
       method,
@@ -33,10 +33,23 @@ for (const [method, language, methodFile] of CASES) {
       [
         [methodFile, 'method'],
         ['README.md', 'readme'],
-        ['.gitignore', 'gitignore']
+        ['.gitignore', 'gitignore'],
+        ['.zass/project.json', 'machine-metadata']
       ]
     );
     assert.ok(first.files[0].content.trim().length > 0);
+    assert.deepEqual(
+      JSON.parse(first.files.find((file) => file.path === '.zass/project.json').content),
+      {
+        schemaVersion: '0.1',
+        project: {
+          name: 'demo-project',
+          method,
+          language,
+          methodFile
+        }
+      }
+    );
   });
 }
 
