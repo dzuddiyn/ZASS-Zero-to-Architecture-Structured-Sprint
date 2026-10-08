@@ -173,6 +173,11 @@ Integrated CR-011 machine metadata validation through the dedicated loader. `zas
 Validate schema version, required machine fields, supported values and detectable conflicts. Machine metadata never silently wins over Markdown.
 
 ### A5-T04 — Fixtures + regression tests
+
+**Status:** PASS
+
+Added durable CR-011 fixtures for legacy/no `.zass/`, valid v0.1, malformed metadata, unsupported schema, unambiguous method conflict, and Full-ZASS Bahasa Melayu ambiguity handling. Added fixture-driven regression coverage plus Windows path semantics. Full zass-cli regression passed on Linux CI and on Windows with 99/99 tests PASS; existing CR-010 behavior remained green.
+
 Cover legacy/no .zass/, valid v0.1, malformed metadata, unsupported schema, detectable method conflict, detectable language conflict where contract permits, and Windows paths. Existing CR-010 tests remain PASS.
 
 ### A5-T05 — Bootstrap integration/version contract
