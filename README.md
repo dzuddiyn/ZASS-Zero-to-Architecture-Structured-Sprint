@@ -570,7 +570,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE** pending only the final TRACK F closure CI. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
+**Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
 **ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
