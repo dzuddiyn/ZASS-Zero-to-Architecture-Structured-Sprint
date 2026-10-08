@@ -145,6 +145,12 @@ Expected implementation:
 
 ### E3-T03 — Implement local receipt writer + safe evidence-store behavior
 
+**Status:** PASS  
+**Implementation:** `cli/src/evidence/store.js` + internal exports  
+**Focused tests:** `cli/test/evidence-store.test.js`
+
+Implemented explicit-project-root local receipt storage with generated opaque IDs, validate-before-write behavior, safe `.zass/evidence/` directory creation, exclusive no-overwrite writes, factual `SAVED / INVALID / COLLISION / WRITE_FAILED` results, and semantic-file non-mutation. No reader/projector, Git-ignore automation, network behavior, or public CLI surface was added.
+
 **Scope:** local write path only.
 
 Expected implementation:
