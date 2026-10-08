@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E3-T08 Git-ignore/local-retention hygiene PASS
+
+- Added `cli/src/evidence/hygiene.js` with `ensureEvidenceGitIgnore(projectDir)`.
+- Locked the exact local evidence ignore entry as `.zass/evidence/`.
+- Helper is explicit and idempotent: creates a missing `.gitignore`, appends once to an existing file, preserves prior content, and recognizes an existing trimmed entry without duplication.
+- Added explicit repo-local runner command `prepare --project <dir>`; recording/projecting evidence does not run hygiene automatically.
+- Documented `prepare` as test-project hygiene only.
+- Confirmed no automatic receipt deletion, expiry, cleanup, or retention mutation.
+- Confirmed running hygiene does not create `.zass/evidence/` and evidence directory presence is not required for project validity.
+- Confirmed existing receipt bytes survive hygiene unchanged.
+- Added focused `cli/test/evidence-hygiene.test.js` covering missing/existing `.gitignore`, idempotency, preservation, explicit runner prepare, no auto-edit during recording, no cleanup, and no evidence-directory dependency.
+- No bootstrap contract change, public CLI command, network behavior, or semantic-state mutation was introduced.
+- CI run `37776079581` passed CLI tests, Bootstrap Core tests, create-zass tests, repository consistency, historical baseline and ZASS validator.
+- **E3-T08 = PASS.**
+
 ## 2026-10-08 — TRACK E E3-T07 unit/negative/privacy regression matrix PASS
 
 - Added consolidated `cli/test/evidence-regression.test.js`.
