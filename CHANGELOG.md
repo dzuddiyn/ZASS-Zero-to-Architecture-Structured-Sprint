@@ -1,3 +1,13 @@
+## 2026-10-08 — zass-cli@0.4.0 published to npm
+
+- Published `zass-cli@0.4.0` from source SHA `eb7e86e88d3a8dd1310400263497ac996057fe34` using manual workflow `Publish zass-cli` run ID `37747575173`.
+- Exact owner authorization was obtained before publication; the workflow passed package identity, npm auth, registry-state, full release tests, dry-run, and actual `npm publish --provenance --access public`.
+- npm recorded signed GitHub Actions provenance; registry processing briefly exposed `0.0.0-stage` before `zass-cli@0.4.0` became publicly resolvable.
+- Registry verification confirmed `zass-cli@0.4.0` is live and `latest = 0.4.0`.
+- Fresh public-registry smoke installed `zass-cli@0.4.0` into a disposable external Full-ZASS project and passed installed `zass check`, `zass status`, and `zass diff`, all with exit code `0`.
+- Publication receipt: [`docs/ZASS_CLI_NPM_PUBLICATION_RECEIPT.md`](docs/ZASS_CLI_NPM_PUBLICATION_RECEIPT.md).
+- **TRACK D A4 public zass-cli publication is PUBLISHED / VERIFIED / CLOSED.**
+
 ## 2026-10-08 — create-zass-project@0.1.0 published to npm
 
 - Published `create-zass-project@0.1.0` from `main` merge SHA `49110233aef61a44081ec240bdfaf4324e5a3b49` using manual workflow `Publish create-zass-project` run #4 (run ID `37727026988`).
