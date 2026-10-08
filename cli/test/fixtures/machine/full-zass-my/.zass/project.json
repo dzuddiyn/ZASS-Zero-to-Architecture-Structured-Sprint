@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "0.1",
+  "project": {
+    "name": "fixture-my",
+    "method": "zass",
+    "language": "my",
+    "methodFile": "ZASS.md"
+  }
+}
