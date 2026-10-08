@@ -100,7 +100,7 @@ E4  Field execution / evidence collection
 E5  STOP / REVIEW
 ```
 
-E1 is closed and E2-T01 through E2-T07 are completed. E3 is the next phase.
+Historical phase note: after E2 closure, E3 was the next phase. TRACK E has since completed through E5 and is now CLOSED / PASS — KEEP CURRENT.
 
 ### E1-T01 — Clean evolution registry + lock TRACK E scope
 
