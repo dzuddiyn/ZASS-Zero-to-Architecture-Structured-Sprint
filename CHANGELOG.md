@@ -1,3 +1,14 @@
+## 2026-10-08 — CR-011 v0.1 machine metadata contract LOCKED
+
+- Locked the CR-011 v0.1 persisted surface to one local companion file: `.zass/project.json`.
+- Locked the minimal schema to `schemaVersion` plus `project.name/method/language/methodFile`, reusing the frozen Bootstrap Core method/language catalog and filename mapping.
+- Preserved the non-negotiable authority direction: Markdown remains semantic authority; `.zass/` is additive machine metadata only and never silently overrides Markdown.
+- Locked legacy/no-`.zass/` as valid, deterministic malformed/unsupported/invalid/conflict behavior, no auto-repair/migration/network coupling, and read-only zass-cli behavior.
+- Kept current CR-010 Full-ZASS discovery semantics intact; CR-011 does not silently turn zass-cli into a universal validator for all ZASS methods.
+- Deferred the exact next Bootstrap/package version choice to A5-T05 while preserving published `create-zass-project@0.1.0` and frozen Bootstrap Core v0.1 historical contracts.
+- Canonical contract: [`docs/CR011_ZASS_MACHINE_METADATA_V01.md`](docs/CR011_ZASS_MACHINE_METADATA_V01.md).
+- **A5-T01 = PASS / LOCKED FOR IMPLEMENTATION.**
+
 ## 2026-10-08 — zass-cli@0.4.0 published to npm
 
 - Published `zass-cli@0.4.0` from source SHA `eb7e86e88d3a8dd1310400263497ac996057fe34` using manual workflow `Publish zass-cli` run ID `37747575173`.
