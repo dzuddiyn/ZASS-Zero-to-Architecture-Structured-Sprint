@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E4-T02–T09 automated field execution CLOSED
+
+- Added bounded repo-local E4 execution harness and dedicated CI workflow.
+- Field workflow run `37779727238` completed successfully.
+- E4-A tooling baseline: `zass check/status/diff` all exit 0; 4/4 receipts valid; no deterministic tooling defect.
+- E4-B representative single-file fixture: six declared orientation/state tasks passed and `check/status/diff` all exit 0; 9/9 receipts valid; no USER-RATED/USER-FEEDBACK evidence was fabricated.
+- E4-C reproducible large single-file fixture: 1,372 lines, 180 decisions, 90 risks, 45 experiments, deep targets beyond line 1,000; `zass check` exit 0; 5/5 receipts valid.
+- E4-T05 trigger review: size/deep positions alone were correctly rejected as proof of material human scale pain.
+- E4-T06: `NOT RUN — TRIGGER NOT MET`; no forced multi-file experiment.
+- E4-T07 coverage audit: Q3/Q4/Q8 covered; Q1/Q2/Q5/Q6/Q10 partial; Q7/Q9 not covered.
+- E4-T08: CR-014 human-reviewed real-world case study classified `INSUFFICIENT EVIDENCE`; no human/user signal was invented and no case study was published.
+- E4-T09: E4 CLOSED / PASS WITH INSUFFICIENT HUMAN & SCALE-OUT EVIDENCE.
+- Canonical single-file ZASS remains unchanged; no public evidence CLI, telemetry, scale-out migration or product-method change was authorized.
+- E5 TRACK E final STOP / REVIEW is now next.
+
 ## 2026-10-08 — TRACK E E4-T01 representative field execution matrix + runbook LOCKED
 
 - Added `docs/ZASS_TRACK_E_E4_FIELD_EXECUTION_RUNBOOK_V01.md`.
