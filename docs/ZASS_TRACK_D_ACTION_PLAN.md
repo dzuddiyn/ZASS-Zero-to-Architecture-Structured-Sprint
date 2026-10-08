@@ -165,6 +165,11 @@ Implemented one local read-only loader for `.zass/project.json` with explicit `A
 Add one local loader for .zass/. Missing layer is valid legacy state; malformed metadata is factual error/state; no semantic Markdown mutation; no network.
 
 ### A5-T03 — Integrate bounded machine-layer validation
+
+**Status:** PASS
+
+Integrated CR-011 machine metadata validation through the dedicated loader. `zass check` now reports deterministic machine-layer errors; `zass status` reuses the same validation result and surfaces machine state; `zass diff` remains Markdown/Git semantic-diff oriented and ignores metadata-only edits as semantic drift. Machine metadata never silently wins over Markdown.
+
 Validate schema version, required machine fields, supported values and detectable conflicts. Machine metadata never silently wins over Markdown.
 
 ### A5-T04 — Fixtures + regression tests
