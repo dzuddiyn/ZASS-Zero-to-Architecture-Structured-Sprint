@@ -158,7 +158,8 @@ TRACK E — FIELD EVIDENCE & SCALE VALIDATION ← CURRENT
    E4-C large fixture ✅
    E4-D NOT RUN — trigger not met
    coverage audit ✅ / CR-014 human case evidence insufficient
-→ E5 TRACK E STOP / REVIEW ← NEXT
+→ E5 TRACK E STOP / REVIEW ✅ PASS
+→ TRACK E CLOSED — KEEP CURRENT
 
 CR-001 remains separate TEST candidate
 CR-002 remains TEST WHEN NEEDED
