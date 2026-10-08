@@ -151,7 +151,9 @@ AFTER TRACK D
 TRACK E — FIELD EVIDENCE & SCALE VALIDATION ← CURRENT
 → E1 scope/registry ✅
 → E2 decision + small architecture ✅ CLOSED / v0.1 FROZEN
-→ E3 action plan + atomic implementation ← NEXT
+→ E3 action plan + atomic implementation ← ACTIVE
+   E3-T01 plan/task slicing ✅
+   E3-T02 implementation ← NEXT
 → E4 field execution / evidence collection
 → E5 TRACK E STOP / REVIEW
 
