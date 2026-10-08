@@ -1,3 +1,18 @@
+## 2026-10-08 — CR-011 A5-T09 STOP / REVIEW PASS / FREEZE v0.1
+
+- Completed final STOP / REVIEW for the CR-011 `.zass/` machine-readable layer.
+- Final disposition: **PASS / FREEZE v0.1**.
+- Frozen persisted surface remains exactly `.zass/project.json` with `schemaVersion: "0.1"` and required `project.name/method/language/methodFile` fields.
+- Preserved the authority rule: Markdown remains semantic authority; machine metadata is companion state only and never silently wins.
+- Legacy/no-`.zass/` projects remain valid; no automatic migration or repair was authorized.
+- Loader states, Z300–Z304 bounded validation, shared `check/status` seam, and metadata-neutral `diff` behavior were accepted.
+- Bootstrap source boundary accepted at Core contract `0.2` / private package `0.2.0` / `create-zass-project@0.2.0` source candidate; public `0.1.0` remains immutable historical npm release.
+- A5-T07C Full-ZASS portability correction is part of the accepted final implementation: Full ZASS includes the canonical local architecture-to-execution dependency while CR-010 Z003 remains unchanged.
+- Windows two-shape field rerun passed for both legacy `ABSENT` and generated `VALID` metadata shapes with `zass check/status/diff` all successful.
+- Documentation/migration guide completed at `docs/CR011_MACHINE_METADATA_GUIDE.md`.
+- Closure receipt: `docs/CR011_STOP_REVIEW_CLOSURE.md`.
+- **CR-011 implementation = CLOSED.**
+
 ## 2026-10-08 — CR-011 A5-T08 documentation + migration guide PASS
 
 - Added canonical user/developer guide `docs/CR011_MACHINE_METADATA_GUIDE.md`.
