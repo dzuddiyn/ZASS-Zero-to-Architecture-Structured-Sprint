@@ -96,3 +96,32 @@ export const FEEDBACK_CATEGORIES = Object.freeze([
 ]);
 
 export const MAX_FEEDBACK_LENGTH = 500;
+
+export const PROHIBITED_PRIVACY_FIELDS = Object.freeze([
+  'projectName',
+  'repositoryUrl',
+  'repoUrl',
+  'remoteUrl',
+  'filesystemPath',
+  'filePath',
+  'path',
+  'username',
+  'hostname',
+  'deviceName',
+  'email',
+  'accountId',
+  'ipAddress',
+  'providerMemory',
+  'providerProfile',
+  'providerPersona',
+  'apiKey',
+  'token',
+  'accessToken',
+  'refreshToken',
+  'credential',
+  'credentials',
+  'secret',
+  'secrets',
+  'environment',
+  'env'
+]);
