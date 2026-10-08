@@ -117,3 +117,43 @@ test('snapshot verifier rejects missing, unexpected and changed artifacts', asyn
   assert.ok(result.errors.some((entry) => entry.code === 'B204'));
   assert.ok(result.errors.some((entry) => entry.code === 'B206'));
 });
+
+
+test('v0.2 plan validator rejects machine metadata tampering', async () => {
+  const plan = await buildBootstrapPlan({
+    projectName: 'demo',
+    method: 'zassimple',
+    language: 'en'
+  });
+  const bad = clone(plan);
+  const metadata = bad.files.find((file) => file.path === '.zass/project.json');
+  metadata.content = JSON.stringify({
+    schemaVersion: '0.1',
+    project: {
+      name: 'demo',
+      method: 'zassimple',
+      language: 'my',
+      methodFile: 'ZASSIMPLE_MY.md'
+    }
+  }, null, 2) + '\n';
+
+  const result = validateBootstrapPlan(bad);
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((entry) => entry.code === 'B117'));
+});
+
+test('v0.2 snapshot verifier rejects materialized machine metadata tampering', async () => {
+  const plan = await buildBootstrapPlan({
+    projectName: 'demo',
+    method: 'zass',
+    language: 'my'
+  });
+  const snapshot = {
+    files: plan.files.map(({ path, content }) => ({ path, content }))
+  };
+  snapshot.files.find((file) => file.path === '.zass/project.json').content += ' ';
+
+  const result = verifyBootstrapSnapshot(plan, snapshot);
+  assert.equal(result.ok, false);
+  assert.ok(result.errors.some((entry) => entry.code === 'B205'));
+});
