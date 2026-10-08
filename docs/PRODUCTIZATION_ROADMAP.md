@@ -195,3 +195,18 @@ The GitHub Action should call the same validation engine rather than duplicate i
 **LOCKED: MIT License.**
 
 The MIT License applies to this repository. Reuse, modification, distribution, and commercial use are permitted subject to the terms in the root `LICENSE` file.
+
+
+---
+
+## Final ZASS SYSTEM freeze posture — TRACK F
+
+TRACK F closes current ZASS SYSTEM development after documentation/distribution hygiene.
+
+Canonical freeze references:
+
+- `ZASS_TRACK_F_FINAL_FREEZE_ACTION_PLAN.md`
+- `ZASS_AISYNC_DOWNSTREAM_HANDOFF_BOUNDARY.md`
+- `ZASS_FINAL_FREEZE_DISTRIBUTION_TRUTH.md`
+
+After TRACK F closure, reopen ZASS only for a critical defect, material real field evidence, or explicit owner decision.
