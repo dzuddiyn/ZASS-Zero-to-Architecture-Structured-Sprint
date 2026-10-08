@@ -1,5 +1,10 @@
 export * from './constants.js';
 export {
+  projectEvidence,
+  readAndProjectEvidence,
+  readEvidenceReceipts
+} from './projector.js';
+export {
   EVIDENCE_DIRECTORY_RELATIVE_PATH,
   EVIDENCE_FILENAME_PREFIX,
   buildEvidenceReceipt,
