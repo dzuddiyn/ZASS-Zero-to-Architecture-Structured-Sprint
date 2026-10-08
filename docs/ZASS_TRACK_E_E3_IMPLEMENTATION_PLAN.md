@@ -196,6 +196,12 @@ Expected implementation:
 
 ### E3-T05 — Add rating/feedback contract validation + privacy guards
 
+**Status:** PASS  
+**Implementation:** `cli/src/evidence/user-signals.js`, privacy vocabulary + validator hardening  
+**Focused tests:** `cli/test/evidence-privacy.test.js`
+
+Implemented explicit-consent user-signal builders and conservative structural privacy guards. USER-RATED/USER-FEEDBACK records can now be constructed only through dedicated builders requiring `consent: true`; prohibited privacy field names are explicitly detected in receipts, while ordinary allowed feedback text remains user-authored/local and is not heuristically rewritten or mined.
+
 **Scope:** harden explicit user-signal boundary.
 
 Expected implementation:
