@@ -1,6 +1,6 @@
 # TRACK E — Lightweight Evidence Architecture & Collection Flow v0.1
 
-**Status:** LOCKED FOR E2 DESIGN  
+**Status:** FROZEN — TRACK E ARCHITECTURE v0.1  
 **Date:** 2026-10-08  
 **Track:** TRACK E — FIELD EVIDENCE & SCALE VALIDATION  
 **Task:** E2-T04
