@@ -219,6 +219,12 @@ Expected implementation:
 
 ### E3-T06 — Implement repo-local Track E field runner
 
+**Status:** PASS  
+**Implementation:** `tools/track-e/runner.js` + repo-local README  
+**Focused tests:** `cli/test/evidence-runner.test.js`
+
+Implemented a non-interactive explicit-argument repo-local field runner for AUTOMATED, FIELD-OBSERVED, USER-RATED, USER-FEEDBACK and factual projection operations. Rating/feedback require the literal `--consent true`; validation/write failures are emitted factually; the runner is not registered in npm `bin` and does not modify `cli/bin/zass.js`.
+
 **Scope:** thin local wrapper over evidence module for E4 testing.
 
 Location:
