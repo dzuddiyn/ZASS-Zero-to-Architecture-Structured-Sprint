@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E2-T01 evidence questions + decision criteria LOCKED
+
+- Added `docs/ZASS_TRACK_E_EVIDENCE_DECISION_CONTRACT_V01.md`.
+- Locked ten core evidence questions: current usefulness, continuation quality, decision-control integrity, tooling reliability, friction/ceremony, scale threshold, multi-file value, recurring failure patterns, explicit user-perceived value, and improvement priority.
+- Locked evidence classes: AUTOMATED, FIELD-OBSERVED, USER-RATED, USER-FEEDBACK, CASE-STUDY and INFERRED.
+- Locked decision dimensions: frequency, severity, reproducibility, user impact, authority risk, privacy risk, portability impact, complexity/ceremony cost and evidence confidence.
+- Locked review outcomes: KEEP CURRENT, DOCUMENT / ONBOARD, CORRECTIVE DEFECT, CANDIDATE IMPROVEMENT, SCALE-OUT CANDIDATE, REJECT / NO ACTION.
+- Locked CR-006 promotion criteria so multi-file scale-out cannot be adopted merely because it looks cleaner.
+- Locked CR-015 promotion criteria around minimal/local-first/privacy-safe projection rather than broad telemetry.
+- Locked CR-014 case-study sufficiency and the rule that reviewer interpretation must remain separate from factual evidence.
+- Rating, if later approved, is explicit opt-in and only one signal; no hidden satisfaction score is authorized.
+- No evidence schema, CLI/recorder implementation, exact rating scale, upload path or aggregation architecture was selected.
+- **E2-T01 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E1-T01 scope lock
 
 - Cleaned `docs/ZASS_EVOLUTION_CANDIDATES.md` so completed/closed CRs are no longer presented as active work.
