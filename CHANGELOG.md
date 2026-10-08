@@ -1,3 +1,17 @@
+## 2026-10-08 — TRACK E E2-T04 lightweight evidence architecture LOCKED
+
+- Added `docs/ZASS_TRACK_E_EVIDENCE_ARCHITECTURE_V01.md`.
+- Locked v0.1 local pipeline: bounded producer → contract validation/sanitization → local JSON receipt → read-only projection/aggregation → human review → case-study/finding.
+- Locked producer, validator, receipt-store, projector, human-review and case-study responsibility boundaries.
+- Locked evidence writes as append-oriented evidence artifacts only; evidence machinery cannot write ZASS semantic authority.
+- Locked truthful failure behavior for invalid records, receipt write failures, parse failures, missing optional metadata and skipped user rating/feedback.
+- Locked local-only v0.1 architecture with no cloud collector, background upload, central telemetry database or network enrichment.
+- Locked deterministic/local aggregation boundary and prohibited arbitrary Markdown crawling, chat/provider-memory reads, hidden identity merging and proprietary scores.
+- Locked CR-006 baseline-vs-scale-out comparison seam and CR-014 receipt→projection→human-review case-study seam.
+- Git tracking/ignore and retention remain deferred; receipts are never required for project validity and cannot alter CR-010/CR-011 semantics.
+- No E3 implementation, package/API freeze, SaaS telemetry, dashboard, remote submission or AISYNC/CrossAI runtime work was started.
+- **E2-T04 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E2-T03 rating + feedback contract LOCKED
 
 - Added `docs/ZASS_TRACK_E_RATING_FEEDBACK_CONTRACT_V01.md`.
