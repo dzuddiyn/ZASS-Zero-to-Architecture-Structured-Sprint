@@ -212,4 +212,4 @@ Canonical freeze references:
 After TRACK F closure, reopen ZASS only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**TRACK F closure candidate:** F1–F5 PASS. Final CI gate and freeze reference remain before TRACK F is formally CLOSED.
+**TRACK F:** CLOSED / PASS — ZASS SYSTEM FEATURE FROZEN / STABLE. The final freeze reference is created only after CI passes on the exact closing commit.
