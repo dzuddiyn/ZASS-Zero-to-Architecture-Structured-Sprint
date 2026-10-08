@@ -181,6 +181,12 @@ Added durable CR-011 fixtures for legacy/no `.zass/`, valid v0.1, malformed meta
 Cover legacy/no .zass/, valid v0.1, malformed metadata, unsupported schema, detectable method conflict, detectable language conflict where contract permits, and Windows paths. Existing CR-010 tests remain PASS.
 
 ### A5-T05 — Bootstrap integration/version contract
+
+**Status:** PASS / LOCKED FOR A5-T06 IMPLEMENTATION  
+**Contract:** [`CR011_BOOTSTRAP_INTEGRATION_V02.md`](CR011_BOOTSTRAP_INTEGRATION_V02.md)
+
+Locked the next bootstrap boundary to Bootstrap Core contract `0.2` / private package `0.2.0` and `create-zass-project@0.2.0`. The same six frozen root export names and the same `buildBootstrapPlan({ projectName, method, language })` input shape are preserved, while the deterministic plan becomes four artifacts by adding `.zass/project.json` schema `0.1`. v0.1 remains immutable history.
+
 Define next-version integration with Bootstrap Core/create-zass-project. Do not mutate 0.1.0. Do not silently break frozen Bootstrap Core v0.1 public API.
 
 ### A5-T06 — Implement versioned bootstrap generation
