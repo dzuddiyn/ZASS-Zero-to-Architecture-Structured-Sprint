@@ -1,10 +1,24 @@
 # ZASS Evolution Candidates
 
-**Status:** CANDIDATE REGISTER — NOT LOCKED  
+**Status:** FROZEN EVOLUTION BACKLOG — NO ACTIVE ZASS DEVELOPMENT  
 **Purpose:** Keep potentially useful ZASS evolution ideas without changing the current method prematurely.  
 **Authority:** This file is an idea register only. It does not override `ZASS.md`, `ZASSIMPLE/ZASSIMPLE_EN.md`, `ZASSIMPLE/ZASSIMPLE_MY.md`, `ZASSELECTION/ZASSELECTION_EN.md`, `ZASSELECTION/ZASSELECTION_MY.md`, or any LOCKED decision.
 
 > New ideas about improving ZASS should be recorded here first unless the project owner explicitly decides otherwise.
+
+## Freeze posture
+
+As of TRACK F final freeze, this register is dormant.
+
+A listed candidate is **not active work** unless one of these reopen conditions is explicitly met:
+
+1. critical defect;
+2. material real field evidence;
+3. explicit owner decision.
+
+Dormant candidates may remain TEST / PARKED / DEFERRED for lineage, but they do not keep ZASS SYSTEM development open.
+
+---
 
 ## Rules
 
@@ -35,7 +49,7 @@
 
 ## CR-001 — First-class Critical Assumption Ledger
 
-**Status:** TEST  
+**Status:** FROZEN TEST — NOT ACTIVE / REOPEN BY OWNER  
 **Source:** External Copilot review  
 **Problem observed:** ZASS already records assumptions inside experiments and architecture readiness, but important assumptions that have not yet become experiments may remain implicit between questions, risks, and decisions.
 
@@ -90,7 +104,7 @@ Do not add this to the core template until real usage shows clear value.
 
 ## CR-002 — Decision Dependency Metadata
 
-**Status:** TEST WHEN NEEDED  
+**Status:** FROZEN TEST WHEN NEEDED — TRIGGER-BASED  
 **Source:** External Copilot review
 
 Candidate optional fields:
@@ -112,7 +126,7 @@ Do not require these fields by default. Test only when a real decision graph bec
 
 ## CR-003 — Decision Type
 
-**Status:** PARKED  
+**Status:** PARKED — FROZEN BACKLOG  
 **Source:** External Copilot review
 
 Candidate categories:
@@ -139,7 +153,7 @@ Keep parked until a real use case shows a clear need.
 
 ## CR-004 — Stakeholder Ledger
 
-**Status:** PARKED  
+**Status:** PARKED — FROZEN BACKLOG  
 **Source:** External Copilot review
 
 Possible model:
@@ -158,7 +172,7 @@ A dedicated ledger should only be added if repeated real projects show that stak
 
 ## CR-005 — Metrics Ledger
 
-**Status:** DEFERRED  
+**Status:** DEFERRED — FROZEN BACKLOG  
 **Source:** External Copilot review
 
 Possible examples:
@@ -284,7 +298,7 @@ The core differentiation to protect is:
 
 ## Register Policy
 
-**Current productization freeze:** core methodology is feature-frozen while consistency, validator implementation, automation, and real-world evidence take priority. New methodology candidates may still be recorded, but they should not be promoted without a critical defect or field evidence.
+**Final ZASS SYSTEM freeze:** core methodology and product surface are feature-frozen. This register is a dormant lineage/backlog surface only. New candidates may be recorded for preservation, but promotion requires a separate owner-approved reopen decision triggered by a critical defect or material field evidence.
 
 Use this file as the default holding area for future ZASS evolution ideas.
 
