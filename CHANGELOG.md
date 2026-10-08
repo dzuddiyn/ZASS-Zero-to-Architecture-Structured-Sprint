@@ -1,3 +1,12 @@
+## 2026-10-08 — create-zass-project@0.1.0 published to npm
+
+- Published `create-zass-project@0.1.0` from `main` merge SHA `49110233aef61a44081ec240bdfaf4324e5a3b49` using manual workflow `Publish create-zass-project` run #4 (run ID `37727026988`).
+- The actual `npm publish --provenance --access public` step passed and npm recorded a signed GitHub Actions provenance statement in the Sigstore transparency log (log index `3140824451`).
+- Registry verification confirmed `latest = 0.1.0`; npm briefly exposed `0.0.0-stage` during post-publish processing before `0.1.0` became publicly resolvable.
+- Fresh public-registry smoke passed with `npm create zass-project@latest smoke-project -- --method zassimple --lang en`, resolving `create-zass-project@0.1.0` and creating exactly `.gitignore`, `README.md`, and `ZASSIMPLE_EN.md`.
+- Publication receipt: [`docs/CREATE_ZASS_PROJECT_NPM_PUBLICATION_RECEIPT.md`](docs/CREATE_ZASS_PROJECT_NPM_PUBLICATION_RECEIPT.md).
+- **npm publication gate is CLOSED / PASS.** CrossAI / AISYNC Bootstrap Core consumption remains separately gated.
+
 ## 2026-10-08 — create-zass public identity renamed to create-zass-project
 
 - Recorded the failed first-publication evidence: npm rejected the unscoped `create-zass@0.1.0` name with `E403` because it was considered too similar to an existing package.
