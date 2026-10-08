@@ -570,7 +570,7 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
-**Development posture:** ZASS SYSTEM is entering final feature freeze. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
+**Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE** pending only the final TRACK F closure CI. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
 **ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
@@ -596,6 +596,10 @@ COMMIT
 `PARKED` remains a project state, but `PARK` is no longer a Full-ZASS command.
 
 ---
+
+## Final freeze
+
+Canonical final-freeze receipt: [ZASS SYSTEM Final Freeze](docs/ZASS_SYSTEM_FINAL_FREEZE.md).
 
 # Learn more
 
