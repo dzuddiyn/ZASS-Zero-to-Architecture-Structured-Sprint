@@ -173,13 +173,21 @@ Locked deterministic local aggregation outputs, coverage/completeness truth, rev
 
 The aggregator may summarize factual evidence but cannot assign final confidence, classify product outcomes, declare reviewed case studies, promote CR-006, or open implementation work. No case study was executed or published.
 
+### E2-T06 — Lock CR-006 scale-out TEST protocol
+
+**Status:** PASS / LOCKED  
+**Contract:** [`CR006_SCALE_OUT_TEST_PROTOCOL_V01.md`](CR006_SCALE_OUT_TEST_PROTOCOL_V01.md)
+
+Locked a trigger-based, same-work comparison between canonical single-file ZASS and a bounded experimental scale-out shape. The protocol requires representative fixture/field cases, comparable tasks, evidence across navigation/review, continuation, tooling, portability, authority clarity and ceremony cost, controlled comparison conditions, explicit STOP rules, and one reviewed outcome including `INSUFFICIENT EVIDENCE`.
+
+CR-006 remains TEST-only. A prettier file tree is not evidence. Promotion to `SCALE-OUT CANDIDATE` requires every E2-T01 promotion criterion and still does not authorize canonical migration without a separate owner decision.
+
 ## 7. Deferred design decisions
 
 Not decided in E1-T01:
 
 - exact implementation-specific JSON encoder/validator details beyond the locked v0.1 contract;
 - whether evidence capture is a CLI command, helper script or separate small package;
-- exact scale-out fixture count;
 - whether any later opt-in network submission is justified.
 
 Those belong to E2 decision/design work.
