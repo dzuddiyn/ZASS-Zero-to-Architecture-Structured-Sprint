@@ -568,6 +568,9 @@ You normally do **not** need all of them at the beginning.
 
 # Current status
 
+**Development posture:** ZASS SYSTEM is entering final feature freeze. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
+
+
 **ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
 **Full ZASS:** v0.3.10 â€” challenge → PRE-ARCH → evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
 **ZASSIMPLE:** v0.3.2
