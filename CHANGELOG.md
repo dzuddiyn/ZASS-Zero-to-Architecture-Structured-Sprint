@@ -1,3 +1,18 @@
+## 2026-10-08 — TRACK E E4-T01 representative field execution matrix + runbook LOCKED
+
+- Added `docs/ZASS_TRACK_E_E4_FIELD_EXECUTION_RUNBOOK_V01.md`.
+- Locked four distinct E4 evidence paths: E4-A tooling baseline, E4-B representative real-use single-file case, E4-C reproducible large single-file fixture, and E4-D paired CR-006 experimental scale-out.
+- E4-A/B/C are mandatory minimum evidence paths before E5; E4-D is conditional and may run only when E4-B/C establishes an observable CR-006 trigger.
+- Locked bounded task sets for each case and preserved same-work comparison for E4-D.
+- Locked intended Q1–Q10 coverage across the matrix.
+- Locked per-run operator checklist, non-sensitive run labels, explicit consent/privacy boundaries, local projection/coverage review, and no deletion of inconvenient evidence.
+- Locked STOP rules for privacy pressure, frozen-architecture modification, comparability drift, competing Sources of Truth, invalid measurement changes, truthful-evidence failure, deterministic tooling defects, and migration scope creep.
+- Locked corrective-defect handling so field evidence cannot become a moving target: stop, record, review, explicitly authorize any patch, then rerun affected evidence.
+- Locked minimum sufficiency before E5 and explicit allowance for `INSUFFICIENT EVIDENCE`.
+- Locked conditional E4 queue E4-T02 through E4-T09; E4-T06 becomes `NOT RUN — TRIGGER NOT MET` if CR-006 trigger review fails.
+- No field evidence was collected by E4-T01.
+- **E4-T01 = PASS / LOCKED.**
+
 ## 2026-10-08 — TRACK E E3-T11 STOP / REVIEW PASS — E4 OPEN
 
 - Added `docs/ZASS_TRACK_E_E3_STOP_REVIEW_CLOSURE.md`.
