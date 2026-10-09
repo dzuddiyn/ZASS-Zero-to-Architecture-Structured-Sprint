@@ -1,5 +1,7 @@
 # ZASS SYSTEM — Distribution & Version Truth at Final Freeze
 
+> **Historical 2026-10-08 freeze snapshot.** Current post-field-evidence patch versions are recorded in `docs/ZASS_SYSTEM_POST_FREEZE_PATCH_2026-10-09.md`. This file preserves the original freeze distribution truth.
+
 **Status:** LOCKED FREEZE SNAPSHOT  
 **Date:** 2026-10-08
 

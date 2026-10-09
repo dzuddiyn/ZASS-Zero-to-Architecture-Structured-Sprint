@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.10 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
-**ZASS SYSTEM:** v0.2.1
+**Version:** 0.3.11 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
+**ZASS SYSTEM:** v0.2.2
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -124,9 +124,13 @@ CONTROLLED REVISION
     ↓
 LOCK PRE-ARCH
     ↓
+EXECUTION REALITY CHECK
+    ↓
+REAL ARTIFACT / SAMPLE PACK + EXECUTION SURFACE MAP
+    ↓
 DETAILED ACTION PLAN ↔ PRE-ARCH
     ↓
-ATOMIC EVIDENCE LOOP
+EVIDENCE-BOUNDED VERTICAL ATOMIC TASK LOOP
     ↓
 BUILD / CONFIRM ARCHITECTURE
 ```
@@ -696,6 +700,8 @@ After PRE-ARCH lock, a capable Architect / Strong Reasoner and Planner must prod
 Only then derive detailed atomic task packets. A task is READY only when one primary outcome, scope, dependencies, inputs, allowed/forbidden change surface, acceptance criteria, tests/regressions, evidence and escalation rules are clear. If a coding worker still needs architecture judgment, return the item to planning.
 
 Every PRE-ARCH task result returns to review. `NO ARCH IMPACT` may PASS to the next evidence task; task/plan problems cause REWORK; material architecture findings trigger PRE-ARCH review/revision; any LOCKED-decision impact stops at the owner gate.
+
+Before detailed task slicing after PRE-ARCH lock, run the shared **EXECUTION REALITY CHECK** when real-world artifacts exist or can reasonably be obtained. Real messages/files/payloads/logs/workflow traces are architecture and execution evidence, not merely late-stage test data. Build a small reusable sample/fixture pack, map execution surfaces, mark synthetic-only assumptions as provisional, then slice evidence-bounded vertical tasks. After each reviewed result, use **delta planning** from current PRE-ARCH + ACTION_PLAN + receipts + real-sample corpus; do not rediscover or redo already-proven work without new evidence.
 
 When PRE-ARCH evidence is sufficient, run a **last architecture challenge** focused on what implementation evidence actually revealed: surviving assumptions, hidden coupling, runtime/deployment behavior, reliability/retry/idempotency, security/trust boundaries, operability/observability, migration/rollback, portability, and architecture debt. Apply any justified final improvement/revision before `BUILD ARCHITECTURE`.
 

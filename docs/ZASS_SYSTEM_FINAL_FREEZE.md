@@ -1,5 +1,7 @@
 # ZASS SYSTEM — Final Freeze Receipt
 
+> **Historical freeze snapshot.** On 2026-10-09 the owner explicitly reopened ZASS under allowed condition #2 (**material real field evidence**) for one bounded architecture-to-execution patch. See `docs/ZASS_SYSTEM_POST_FREEZE_PATCH_2026-10-09.md` for the current refrozen state. The 2026-10-08 receipt below remains historical evidence.
+
 **Status:** FINAL FREEZE — TRACK F CLOSED / PASS  
 **Date:** 2026-10-08  
 **Track:** TRACK F — ZASS SYSTEM FINAL FREEZE & DOCUMENTATION HYGIENE

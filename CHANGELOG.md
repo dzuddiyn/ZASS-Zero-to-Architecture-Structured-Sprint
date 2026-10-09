@@ -1,3 +1,14 @@
+## [ZASS SYSTEM v0.2.2 / Full ZASS v0.3.11 / ZASSIMPLE v0.3.3] — 2026-10-09
+
+- Reopened the 2026-10-08 freeze under the existing **material real field evidence** rule after OpsMate field execution exposed repeated work caused by real operational samples arriving only after task slicing.
+- Added the shared **Execution Reality Check** between PRE-ARCH lock and detailed task slicing for applicable real-world systems.
+- Locked **real artifacts/samples as architecture + execution evidence**; synthetic fixtures remain valid only when explicitly marked provisional if real evidence is unavailable.
+- Added **Execution Surface Map** (architecture says vs real evidence says vs gap vs execution need) before detailed planning.
+- Upgraded atomic work to **evidence-bounded vertical tasks** carrying real fixture/reference, expected real outcome, execution surface, and observed/provisional status where applicable.
+- Added **delta planning** after task review so the next task derives from current PRE-ARCH + ACTION_PLAN + completed receipts/proofs + reusable real-sample corpus instead of rediscovering or repeating settled work.
+- Core ZASS decision/LOCKED authority, PRE-ARCH owner gate, final challenge, architecture confirmation, and release acceptance semantics remain unchanged.
+- Refreeze target after CI: ZASS SYSTEM v0.2.2, Full ZASS v0.3.11, ZASSIMPLE v0.3.3.
+
 ## 2026-10-08 — TRACK F CLOSED / PASS — ZASS SYSTEM FEATURE FROZEN / STABLE
 
 - TRACK F F1–F6 completed.

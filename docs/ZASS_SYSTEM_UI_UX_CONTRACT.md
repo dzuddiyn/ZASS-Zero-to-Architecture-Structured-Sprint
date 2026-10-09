@@ -1,9 +1,9 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.1
-**Full ZASS surface alignment:** v0.3.10<br>
+**System version:** 0.2.2
+**Full ZASS surface alignment:** v0.3.11<br>
 **Status:** LOCKED WORKING CONTRACT
-**Date:** 2026-10-07
+**Date:** 2026-10-09
 **Owner:** Project Owner
 **Scope:** ZASS SYSTEM local/core boundary, AI-SYNC Web presentation, and human-facing UX
 
@@ -267,7 +267,7 @@ Ready to lock the execution baseline?
 [ðŸ”’ LOCK PRE-ARCH]   [ðŸ¥Š RE-CHALLENGE DESIGN ?!]
 ```
 
-`LOCK PRE-ARCH` requires explicit owner approval and creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`. Detailed planning and atomic-task evidence then feed PRE-ARCH review. Final CONFIRM DESIGN is surfaced only after the required evidence is sufficient.
+`LOCK PRE-ARCH` requires explicit owner approval and creates `PRE-ARCH BASELINE — LOCKED FOR EXECUTION`. For applicable real-world work, the next surface is **Execution Reality Check**: capture early real artifacts/samples, map execution surfaces, mark synthetic-only assumptions provisional, then build the detailed ACTION PLAN and evidence-bounded vertical atomic tasks. Each result feeds PRE-ARCH review plus delta planning so already-proven work is reused rather than rediscovered. Final CONFIRM DESIGN is surfaced only after the required evidence is sufficient.
 
 After PRE-ARCH evidence is sufficient, run a **LAST DESIGN / ARCHITECTURE CHALLENGE** before surfacing final confirmation. Apply justified final improvement/revision. After final confirmation, surface release-build progress from a rebuilt ACTION PLAN and fresh release atomic tasks until release acceptance; only then show `DELIVERED !!`.
 

@@ -1,7 +1,7 @@
-# Architecture-to-Execution
+# ZASS Architecture-to-Execution Standard
 
 **Status:** LOCKED — shared tool-agnostic execution contract  
-**Date:** 2026-10-07  
+**Date:** 2026-10-09  
 **Applies to:** Full ZASS and ZASSIMPLE technical/execution workflows
 
 > Strong reasoning challenges the design. Planning turns it into bounded work. Coding workers execute bounded work. Human authority remains explicit.
@@ -20,9 +20,12 @@ DUMP / DISCOVERY
 → CONTROLLED REVISION
 → OWNER REVIEW
 → LOCK PRE-ARCH BASELINE
+→ EXECUTION REALITY CHECK
+→ REAL ARTIFACT / SAMPLE PACK
+→ EXECUTION SURFACE MAP
 → CAPABLE REASONER / PLANNER
 → DETAILED ACTION PLAN ↔ PRE-ARCH
-→ DETAILED ATOMIC TASK SLICING
+→ EVIDENCE-BOUNDED VERTICAL ATOMIC TASK SLICING
 → EXECUTE ONE ATOMIC TASK
 → RESULT / EVIDENCE
 → PRE-ARCH REVIEW
@@ -161,12 +164,72 @@ PRE-ARCH locking freezes the current architectural hypothesis for controlled exe
 
 If challenge findings still contain an unresolved `OWNER DECISION REQUIRED`, critical architecture contradiction, or evidence gate that must be closed before bounded implementation, PRE-ARCH is **NOT READY**.
 
+## 5A. Execution Reality Check
+
+Before a locked PRE-ARCH is decomposed into a detailed implementation plan and atomic tasks, perform an **Execution Reality Check** whenever the system has real users, operators, external messages, files, API payloads, forms, logs, sensor data, business records, or other observable real-world inputs/outputs.
+
+> **Real samples are not merely testing data. They are architecture and execution evidence.**
+
+The purpose is to prevent a planner from creating a technically neat task queue around assumptions that real usage disproves only after substantial implementation has already been completed.
+
+Ask, at minimum:
+
+1. What does the system actually receive in the real world?
+2. What real output or outcome does the human/operator actually need?
+3. What variation, ambiguity, dirtiness, missing fields, mixed language, malformed structure, correction behavior, or context dependence appears in those artifacts?
+4. Which parts of the current PRE-ARCH are still assumptions rather than observed facts?
+
+### Real Artifact / Sample Pack
+
+Use the earliest real artifacts that can be obtained safely and legitimately. Examples include sanitized field messages, screenshots, spreadsheet rows, forms, API payloads, invoices, emails, sensor packets, logs, files, or actual workflow traces.
+
+Do not wait for a large dataset. Early execution may begin with a small representative pack, for example:
+
+- several ordinary real cases;
+- at least one ambiguous/edge case when available;
+- at least one failure/weird case when available;
+- the expected human/system outcome for each sample.
+
+If only one real sample exists on day one, use that one and mark coverage as limited.
+
+Synthetic fixtures remain valid when real samples are unavailable, unsafe, private, or not yet legally/operationally obtainable, but they must be labelled **PROVISIONAL / SYNTHETIC**. Do not invent synthetic evidence and present it as field truth.
+
+### Execution Surface Map
+
+Before detailed task slicing, map the relevant real execution surfaces. A generic form is:
+
+~~~text
+real input arrives
+→ meaning / classification / interpretation
+→ ambiguity / validation / clarification
+→ canonical state or action
+→ user/operator-visible output
+→ failure / retry / recovery
+~~~
+
+For each relevant surface record:
+
+~~~text
+Architecture says: what SHOULD happen
+Real evidence says: what ACTUALLY arrives / occurs
+Gap: what is still unknown or contradicted
+Execution need: what must be built, tested, or proven
+~~~
+
+If the work has no meaningful real-world input/output surface, record **NOT APPLICABLE** with a short reason rather than manufacturing a sample requirement.
+
+The Reality Check may expose a task/planning issue or a PRE-ARCH flaw. It does not silently rewrite architecture. Material architecture findings return through the normal PRE-ARCH review path; LOCKED-decision impact still returns to the owner.
+
 ## 6. Detailed ACTION_PLAN after PRE-ARCH
 
 After PRE-ARCH is locked, the capable Architect / Strong Reasoner and Planner build or refine a **detailed ACTION PLAN** against that baseline.
 
 The plan must make explicit where relevant:
 
+- Reality Check status and scope;
+- real artifact/sample references, or an explicit reason they are unavailable/not applicable;
+- execution-surface map and observed-vs-assumed gaps;
+- reusable fixture/corpus references for later tasks;
 - implementation sequence;
 - dependencies and ordering;
 - feasibility assumptions/findings;
@@ -227,6 +290,8 @@ A task is READY only when:
 - bounded scope;
 - dependencies are explicit;
 - inputs are known;
+- a real fixture/reference and expected outcome are attached when the task touches a real-world input/output surface and such evidence is reasonably available;
+- synthetic-only input is explicitly labelled provisional when real evidence is not yet available;
 - allowed files/modules or change surface are clear;
 - forbidden scope is clear;
 - acceptance criteria are observable;
@@ -246,6 +311,10 @@ Primary outcome
 Source / lineage
 Dependencies
 Inputs
+Real fixture / artifact reference
+Expected real outcome
+Execution surface
+Assumption status: OBSERVED / PROVISIONAL / NOT APPLICABLE
 Allowed scope
 Allowed files/modules
 Forbidden scope
@@ -366,6 +435,39 @@ LOCKED DECISION IMPACT
 
 Never allow a worker result to silently become a decision.
 
+## 13A. Delta planning — do not rediscover settled work
+
+After every reviewed task result, derive the next task from **current truth**, not from the original plan as if no work had happened.
+
+Before opening the next task, classify:
+
+~~~text
+Already proven / accepted
+→ preserve; do not redo without new contradictory evidence
+
+New evidence
+→ record and classify impact
+
+Still unknown
+→ investigate / experiment only if it blocks the next gate
+
+Still unimplemented
+→ eligible for task slicing
+
+Material contradiction
+→ return to PRE-ARCH / owner gate as required
+~~~
+
+The next atomic task should therefore be the smallest unresolved **delta** against:
+
+- current PRE-ARCH;
+- current ACTION_PLAN;
+- completed receipts/proofs;
+- reusable real-sample/fixture corpus;
+- current repository/product/runtime state.
+
+Do not regenerate or re-execute work that is already factually satisfied merely because a planner is rebuilding the queue. Rework requires a new diagnosis, changed requirement, failed evidence, or a justified dependency/architecture change.
+
 ## 14. Final architecture confirmation
 
 Do not confirm a material technical architecture merely because the challenged diagram and plan look coherent.
@@ -426,6 +528,7 @@ The release ACTION PLAN must derive from:
 
 - confirmed architecture;
 - current repository/product state;
+- reusable real artifact/sample corpus and execution-surface findings from PRE-ARCH work;
 - accepted release scope;
 - remaining dependencies/migrations;
 - integration and security gates;

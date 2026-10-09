@@ -16,6 +16,9 @@
 - **Plan mode:** [PRE-ARCH EVIDENCE / RELEASE BUILD / ORDINARY EXECUTION]
 - **Execution baseline:** [not applicable / PRE-ARCH not locked / PRE-ARCH locked]
 - **PRE-ARCH version/reference:** [reference]
+- **Execution Reality Check:** [NOT STARTED / ACTIVE / PASS / NOT APPLICABLE]
+- **Real artifact/sample pack:** [references / unavailable + reason / not applicable]
+- **Execution surface map:** [reference / summary / not applicable]
 - **Evidence required sebelum final architecture confirmation:** [list / none justified]
 - **Rule:** ZASS kekal authoritative untuk questions, risks, candidates, decisions, LOCKED decisions dan architecture readiness.
 - **Planning feedback rule:** ACTION_PLAN boleh surface implementation finding yang memerlukan architecture review, tetapi ia tidak boleh menentukan architecture atau mengubah keputusan LOCKED.
@@ -51,6 +54,21 @@
 | P2 | [useful later] | [...] | [...] |
 | P3 | [parked / optional] | [...] | [...] |
 
+## 2A. EXECUTION REALITY CHECK
+
+> Sebelum detailed task slicing bagi kerja yang menyentuh real-world input/output, semak realiti execution. Real sample ialah architecture + execution evidence.
+
+| Surface / artifact | Real evidence | Architecture expects | Gap / assumption | Execution need | Status |
+|---|---|---|---|---|---|
+| [message / file / API / form / log / workflow / other] | [sanitized ref] | [expected behavior] | [unknown / contradiction / none] | [build / test / prove] | [OBSERVED / PROVISIONAL / NOT APPLICABLE] |
+
+**Minimum rule:**
+- guna real artifacts seawal yang munasabah dan selamat;
+- satu real sample pada hari pertama lebih baik daripada menunggu corpus besar;
+- synthetic fixture mesti dilabel **PROVISIONAL / SYNTHETIC** jika real evidence belum ada;
+- jika domain benar-benar tiada real-world surface, rekod **NOT APPLICABLE** + sebab;
+- simpan fixture/corpus yang sama supaya task berikutnya reuse evidence, bukan cipta semula andaian.
+
 ## 3. NEXT ACTIONS
 
 **Work-item status:** \`OPEN\` · \`NEXT\` · \`ACTIVE\` · \`BLOCKED\` · \`DONE\` · \`PARKED\` · \`CANCELLED\`
@@ -84,6 +102,10 @@ Primary outcome:
 Source / lineage:
 Dependencies:
 Inputs:
+Real fixture / artifact reference:
+Expected real outcome:
+Execution surface:
+Assumption status: OBSERVED / PROVISIONAL / NOT APPLICABLE
 Allowed scope:
 Allowed files/modules:
 Forbidden scope:
@@ -106,7 +128,9 @@ Untuk substantial technical architecture, setiap atomic task yang siap mesti pul
 
 ```text
 NO ARCH IMPACT
-→ PASS → update ACTION_PLAN → NEXT TASK
+→ PASS → update ACTION_PLAN
+→ DELTA PLAN against current PRE-ARCH + receipts + real-sample corpus
+→ NEXT unresolved task only
 
 TASK-PLAN ISSUE
 → REWORK → task/ACTION_PLAN

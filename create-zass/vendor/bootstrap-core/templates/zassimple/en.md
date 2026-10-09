@@ -3,7 +3,7 @@
 > ## Got an idea? **Dump it.** 💬
 > Say it naturally. ZASSIMPLE handles the structure behind the scenes.
 
-**Version:** 0.3.2
+**Version:** 0.3.3
 **Status:** TEMPLATE — lightweight idea-to-delivery workflow  
 **Owner:** Project Owner
 
@@ -143,9 +143,13 @@ LOCK PRE-ARCH opens an owner review. Only the exact owner reply
 YA, LOCK PRE-ARCH creates PRE-ARCH BASELINE — LOCKED FOR EXECUTION.
 This is not final design confirmation.
 
-After PRE-ARCH lock, use a capable Architect / Strong Reasoner and Planner to
-build the detailed ACTION PLAN and atomic tasks. Each task result returns to
-PRE-ARCH review. NO ARCH IMPACT may PASS to the next task; TASK-PLAN ISSUE
+After PRE-ARCH lock, run an EXECUTION REALITY CHECK before detailed task slicing.
+Use real artifacts/samples as early as reasonably obtainable, build a reusable
+sample/fixture pack, map the real execution surfaces, and mark synthetic-only
+assumptions as provisional. Then use a capable Architect / Strong Reasoner and
+Planner to build the detailed ACTION PLAN and evidence-bounded vertical atomic
+tasks. Each task result returns to PRE-ARCH review and the next task is derived
+by delta planning from current truth rather than rebuilding already-proven work. NO ARCH IMPACT may PASS to the next task; TASK-PLAN ISSUE
 causes REWORK; material architecture impact triggers PRE-ARCH revision;
 LOCKED-decision impact STOPs at the owner gate.
 
@@ -297,9 +301,11 @@ ZASSIMPLE keeps implementation planning out of the user's way until it becomes u
 - Implementation thoughts discovered during DECIDE or DESIGN belong in the action-plan lineage.
 - Action planning and design inform each other: practical constraints, dependencies, sequencing, experiments, and feasibility findings may refine the design; design changes may refine the action plan.
 - Do not dump the whole action plan on the user by default.
-- For ordinary/non-technical work, confirmed design may proceed directly to execution as before. For **substantial technical architecture**, do not final-confirm the design before evidence: Challenge/revision → owner-approved PRE-ARCH → capable-reasoner detailed Action Plan → evidence atomic tasks → PRE-ARCH review → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation. After confirmation, rebuild a release Action Plan and fresh release atomic tasks through first-release acceptance → DELIVERED !!.
+- For ordinary/non-technical work, confirmed design may proceed directly to execution as before. For **substantial technical architecture**, do not final-confirm the design before evidence: Challenge/revision → owner-approved PRE-ARCH → Execution Reality Check → real artifact/sample pack + execution-surface map → capable-reasoner detailed Action Plan → evidence-bounded vertical atomic tasks → PRE-ARCH review/delta planning → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation. After confirmation, rebuild a release Action Plan and fresh release atomic tasks through first-release acceptance → DELIVERED !!.
+- Treat real samples as architecture/execution evidence, not merely final testing data. If real artifacts are unavailable, explicitly label synthetic fixtures PROVISIONAL rather than presenting them as field truth.
 - Preserve lineage from task → action-plan item → PRE-ARCH/design → decision source.
-- A task is READY only when it has one primary outcome, bounded scope, explicit dependencies/inputs, allowed and forbidden scope, observable acceptance criteria, tests/regressions, evidence expectation, commit expectation when relevant, and STOP & ESCALATE rules. If architecture judgment is still required, return to planning instead of executing.
+- Reuse completed receipts/proofs and the real-sample corpus. The next task should target the smallest unresolved delta; do not repeat settled work without new contradictory evidence or a changed dependency/requirement.
+- A task is READY only when it has one primary outcome, bounded scope, explicit dependencies/inputs, a real fixture/reference and expected outcome where relevant and reasonably available, allowed and forbidden scope, observable acceptance criteria, tests/regressions, evidence expectation, commit expectation when relevant, and STOP & ESCALATE rules. If architecture judgment is still required, return to planning instead of executing.
 - For substantial technical architecture, the existing Challenge checkpoint must examine hidden coupling/boundaries/failure/testability risks before major implementation. Use `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED` internally to preserve findings. A technical Challenge PASS means **ready for PRE-ARCH owner review**, not final confirmation.
 - Present only the **current task** by default. Reveal the next task after the current one is completed, blocked, or intentionally skipped.
 - Each task card should be tutorial-like and visually compact:
@@ -444,6 +450,7 @@ Ready to lock the execution baseline?
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.3 | 2026-10-09 | Controlled post-freeze real-field patch: added Execution Reality Check, real artifact/sample packs, execution-surface mapping, evidence-bounded vertical tasks, and delta planning before/through technical execution. |
 | 0.3.2 | 2026-10-07 | Canonicalized the technical architecture-to-execution loop: Challenge → owner-approved PRE-ARCH → capable-reasoner detailed ACTION PLAN → evidence atomic tasks → PRE-ARCH review → LAST CHALLENGE → final improvement/revision → final design/architecture confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!. Preserved lightweight direct confirmation for ordinary/non-technical design, while technical workers retain STOP & ESCALATE and tool-agnostic reasoning escalation. |
 | 0.3.1 | 2026-10-07 | LOCKED the pre-confirmation Draft Challenge loop: Design 4/4 means ready to challenge, CHALLENGE DESIGN uses an AI-selected thinking method, REFINE returns to DESIGN, PASS must offer RE-CHALLENGE DESIGN or CONFIRM DESIGN, and owner may explicitly skip the first challenge with CONTINUE TO CONFIRM. |
 | 0.3.0 | 2026-10-02 | LOCKED DESIGN-first semantic model: DESIGN is the universal ZASSIMPLE surface/output, architecture is an optional technical subtype, ARCHITECTURE.md became DESIGN.md, Design Progress/Forming/CONFIRM DESIGN replaced architecture-centric surface UX, and DECIDE or DESIGN routes DESIGN → ZASSIMPLE. |

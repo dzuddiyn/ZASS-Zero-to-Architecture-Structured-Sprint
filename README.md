@@ -573,11 +573,14 @@ You normally do **not** need all of them at the beginning.
 **Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**ZASS SYSTEM:** v0.2.1 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
-**Full ZASS:** v0.3.10 â€” challenge → PRE-ARCH → evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
-**ZASSIMPLE:** v0.3.2
+**ZASS SYSTEM:** v0.2.2 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
+**Full ZASS:** v0.3.11 â€” challenge → PRE-ARCH → Execution Reality Check → real-sample evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
+**ZASSIMPLE:** v0.3.3
 **ZASSELECTION:** v0.2.4
 **ZASSPILL:** v1.0.0 method/protocol contract â€” PRODUCTION READY; global DUMP continuity route
+
+> **2026-10-09 controlled post-freeze patch:** real-field OpsMate execution exposed repeated-work risk when real artifacts arrive only after task slicing. Full ZASS and ZASSIMPLE now require an Execution Reality Check, early real-sample/fixture reuse, execution-surface mapping, evidence-bounded vertical tasks, and delta planning for applicable technical work. Core decision authority is unchanged.
+
 **Freeze distribution snapshot:** [ZASS SYSTEM Distribution & Version Truth](docs/ZASS_FINAL_FREEZE_DISTRIBUTION_TRUTH.md)
 
 **License:** [MIT](LICENSE)

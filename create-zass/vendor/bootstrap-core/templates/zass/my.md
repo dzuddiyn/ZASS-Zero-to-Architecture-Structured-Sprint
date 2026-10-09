@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
-**Version:** 0.3.10 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
-**ZASS SYSTEM:** v0.2.1
+**Version:** 0.3.11 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
+**ZASS SYSTEM:** v0.2.2
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -119,9 +119,13 @@ CONTROLLED REVISION
     ↓
 LOCK PRE-ARCH
     ↓
+EXECUTION REALITY CHECK
+    ↓
+REAL ARTIFACT / SAMPLE PACK + EXECUTION SURFACE MAP
+    ↓
 DETAILED ACTION PLAN ↔ PRE-ARCH
     ↓
-ATOMIC EVIDENCE LOOP
+EVIDENCE-BOUNDED VERTICAL ATOMIC TASK LOOP
     ↓
 BUILD / CONFIRM ARCHITECTURE
 ```
@@ -691,6 +695,8 @@ Selepas PRE-ARCH lock, Architect / Strong Reasoner yang capable bersama Planner 
 Hanya selepas itu derive detailed atomic task packets. Task hanya READY apabila satu primary outcome, scope, dependencies, inputs, allowed/forbidden change surface, acceptance criteria, tests/regressions, evidence dan escalation rules jelas. Jika coding worker masih memerlukan architecture judgment, pulangkan item kepada planning.
 
 Setiap PRE-ARCH task result kembali ke review. `NO ARCH IMPACT` boleh PASS ke evidence task seterusnya; masalah task/plan menyebabkan REWORK; architecture finding material mencetuskan PRE-ARCH review/revision; sebarang impact kepada keputusan LOCKED berhenti pada owner gate.
+
+Sebelum detailed task slicing selepas PRE-ARCH lock, jalankan **EXECUTION REALITY CHECK** shared apabila real-world artifact wujud atau boleh diperoleh secara munasabah. Mesej/fail/payload/log/workflow trace sebenar ialah architecture dan execution evidence, bukan sekadar test data di hujung. Bina sample/fixture pack kecil yang boleh diguna semula, map execution surfaces, tandakan andaian synthetic-only sebagai provisional, kemudian slice evidence-bounded vertical tasks. Selepas setiap result direview, guna **delta planning** daripada PRE-ARCH + ACTION_PLAN + receipts + real-sample corpus semasa; jangan rediscover atau ulang kerja yang sudah terbukti tanpa evidence baharu.
 
 Apabila PRE-ARCH evidence mencukupi, jalankan **last architecture challenge** yang fokus pada apa yang implementation evidence benar-benar dedahkan: surviving assumptions, hidden coupling, runtime/deployment behavior, reliability/retry/idempotency, security/trust boundaries, operability/observability, migration/rollback, portability, dan architecture debt. Terapkan final improvement/revision yang justified sebelum `BUILD ARCHITECTURE`.
 

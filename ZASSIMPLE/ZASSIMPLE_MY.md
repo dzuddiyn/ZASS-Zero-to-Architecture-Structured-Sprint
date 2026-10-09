@@ -3,7 +3,7 @@
 > ## Ada idea? **DUMP saja.** 💬
 > Cakap seperti biasa. ZASSIMPLE urus struktur di belakang tabir.
 
-**Version:** 0.3.2
+**Version:** 0.3.3
 **Status:** TEMPLATE — workflow ringan dari idea ke delivery  
 **Owner:** Project Owner
 
@@ -141,9 +141,14 @@ LOCK PRE-ARCH membuka owner review. Hanya balasan tepat
 YA, LOCK PRE-ARCH mewujudkan PRE-ARCH BASELINE — LOCKED FOR EXECUTION.
 Ini bukan final design confirmation.
 
-Selepas PRE-ARCH lock, guna Architect / Strong Reasoner yang capable bersama
-Planner untuk bina detailed ACTION PLAN dan atomic tasks. Setiap task result
-kembali ke PRE-ARCH review. NO ARCH IMPACT boleh PASS ke task seterusnya;
+Selepas PRE-ARCH lock, jalankan EXECUTION REALITY CHECK sebelum detailed task
+slicing. Guna real artifact/sample seawal yang munasabah, bina sample/fixture
+pack yang boleh diguna semula, map real execution surfaces, dan tandakan
+andaian synthetic-only sebagai provisional. Kemudian guna Architect / Strong
+Reasoner yang capable bersama Planner untuk bina detailed ACTION PLAN dan
+evidence-bounded vertical atomic tasks. Setiap task result kembali ke PRE-ARCH
+review dan task seterusnya ditentukan melalui delta planning daripada current
+truth, bukan membina semula kerja yang sudah terbukti. NO ARCH IMPACT boleh PASS ke task seterusnya;
 TASK-PLAN ISSUE menyebabkan REWORK; architecture impact material mencetuskan
 PRE-ARCH revision; impact kepada keputusan LOCKED mesti STOP pada owner gate.
 
@@ -294,9 +299,11 @@ ZASSIMPLE menyimpan implementation planning daripada membebankan pengguna sehing
 - Implementation thought yang ditemui semasa DECIDE atau DESIGN masuk ke lineage action plan.
 - Action planning dan design saling memberi feed: constraint praktikal, dependency, sequencing, experiment, dan feasibility finding boleh refine design; perubahan design pula boleh refine action plan.
 - Jangan lambakkan keseluruhan action plan kepada pengguna secara default.
-- Untuk kerja biasa/non-technical, confirmed design boleh terus ke execution seperti sebelum ini. Untuk **substantial technical architecture**, jangan final-confirm design sebelum evidence: Challenge/revision → owner-approved PRE-ARCH → capable-reasoner detailed Action Plan → evidence atomic tasks → PRE-ARCH review → evidence mencukupi → LAST CHALLENGE → final improvement/revision → final confirmation. Selepas confirmation, rebuild release Action Plan dan fresh release atomic tasks hingga first-release acceptance → DELIVERED !!.
+- Untuk kerja biasa/non-technical, confirmed design boleh terus ke execution seperti sebelum ini. Untuk **substantial technical architecture**, jangan final-confirm design sebelum evidence: Challenge/revision → owner-approved PRE-ARCH → Execution Reality Check → real artifact/sample pack + execution-surface map → capable-reasoner detailed Action Plan → evidence-bounded vertical atomic tasks → PRE-ARCH review/delta planning → evidence mencukupi → LAST CHALLENGE → final improvement/revision → final confirmation. Selepas confirmation, rebuild release Action Plan dan fresh release atomic tasks hingga first-release acceptance → DELIVERED !!.
+- Anggap real sample sebagai architecture/execution evidence, bukan sekadar final testing data. Jika real artifact belum tersedia, label fixture synthetic sebagai PROVISIONAL dan jangan persembahkannya sebagai field truth.
 - Kekalkan lineage task → action-plan item → PRE-ARCH/design → decision source.
-- Task hanya READY apabila mempunyai satu primary outcome, bounded scope, dependencies/inputs explicit, allowed dan forbidden scope, acceptance criteria observable, tests/regressions, evidence expectation, commit expectation apabila relevan, serta STOP & ESCALATE rules. Jika architecture judgment masih diperlukan, kembali kepada planning dan jangan execute.
+- Reuse completed receipts/proofs dan real-sample corpus. Task seterusnya mesti mensasarkan unresolved delta terkecil; jangan ulang settled work tanpa contradictory evidence baharu atau dependency/requirement yang berubah.
+- Task hanya READY apabila mempunyai satu primary outcome, bounded scope, dependencies/inputs explicit, real fixture/reference dan expected outcome apabila relevan serta munasabah tersedia, allowed dan forbidden scope, acceptance criteria observable, tests/regressions, evidence expectation, commit expectation apabila relevan, serta STOP & ESCALATE rules. Jika architecture judgment masih diperlukan, kembali kepada planning dan jangan execute.
 - Untuk technical architecture yang material, checkpoint Challenge sedia ada mesti menilai hidden coupling/boundary/failure/testability risks sebelum implementation besar. Guna `KEEP / REVISE / QUESTION / EXPERIMENT / OWNER DECISION REQUIRED` secara internal untuk preserve findings. PASS bagi technical Challenge bermaksud **ready untuk PRE-ARCH owner review**, bukan final confirmation.
 - Paparkan hanya **task semasa** secara default. Buka task seterusnya selepas task semasa siap, blocked, atau sengaja di-skip.
 - Setiap task card perlu rasa seperti tutorial ringkas dan menarik:
@@ -441,6 +448,7 @@ Sedia lock execution baseline?
 
 | Version | Date | Change |
 |---|---|---|
+| 0.3.3 | 2026-10-09 | Controlled post-freeze real-field patch: tambah Execution Reality Check, real artifact/sample pack, execution-surface mapping, evidence-bounded vertical tasks, dan delta planning sebelum/sepanjang technical execution. |
 | 0.3.2 | 2026-10-07 | Canonicalized technical architecture-to-execution loop: Challenge → owner-approved PRE-ARCH → capable-reasoner detailed ACTION PLAN → evidence atomic tasks → PRE-ARCH review → LAST CHALLENGE → final improvement/revision → final design/architecture confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!. Kekalkan direct confirmation yang ringan untuk ordinary/non-technical design, sementara technical worker kekal dengan STOP & ESCALATE dan tool-agnostic reasoning escalation. |
 | 0.3.1 | 2026-10-07 | LOCKED loop Draft Challenge pra-confirmation: Design 4/4 bermaksud ready to challenge, CHALLENGE DESIGN guna thinking method pilihan AI, REFINE kembali ke DESIGN, PASS mesti tawarkan RE-CHALLENGE DESIGN atau CONFIRM DESIGN, dan owner boleh sengaja skip challenge pertama dengan CONTINUE TO CONFIRM. |
 | 0.3.0 | 2026-10-02 | LOCKED model semantic DESIGN-first: DESIGN ialah surface/output universal ZASSIMPLE, architecture ialah subtype teknikal optional, ARCHITECTURE.md menjadi DESIGN.md, Design Progress/Forming/CONFIRM DESIGN menggantikan UX architecture-centric, dan DECIDE or DESIGN route DESIGN → ZASSIMPLE. |

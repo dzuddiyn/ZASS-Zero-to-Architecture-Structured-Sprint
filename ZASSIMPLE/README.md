@@ -2,7 +2,7 @@
 
 > ## Got an idea? **Dump it.** 💬
 
-**Current version:** v0.3.2
+**Current version:** v0.3.3
 **Default landing:** [ZASSIMPLE_EN.md](ZASSIMPLE_EN.md)  
 **Bahasa Melayu:** [ZASSIMPLE_MY.md](ZASSIMPLE_MY.md)
 
@@ -34,4 +34,4 @@ These files support the method. Users should not need to manage them manually ju
 
 ## Architecture-to-execution standard
 
-For substantial technical work, ZASSIMPLE uses the compact flow `Challenge → owner-approved PRE-ARCH → capable-reasoner detailed ACTION PLAN → evidence atomic tasks → PRE-ARCH review → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!`. Ordinary/non-technical design keeps the lightweight direct-confirm path. See [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).
+For substantial technical work, ZASSIMPLE uses the compact flow `Challenge → owner-approved PRE-ARCH → Execution Reality Check → real artifact/sample pack + execution-surface map → capable-reasoner detailed ACTION PLAN → evidence-bounded vertical atomic tasks → PRE-ARCH review + delta planning → sufficient evidence → LAST CHALLENGE → final improvement/revision → final confirmation → rebuilt RELEASE ACTION PLAN → first-release atomic build → release acceptance → DELIVERED !!`. Ordinary/non-technical design keeps the lightweight direct-confirm path. See [`docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md`](../docs/ZASS_ARCHITECTURE_TO_EXECUTION_STANDARD.md).
