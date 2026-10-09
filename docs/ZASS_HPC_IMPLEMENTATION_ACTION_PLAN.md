@@ -1,6 +1,6 @@
 # ZASS HPC — Implementation Action Plan
 
-**Status:** IMPLEMENTED — VERIFICATION PENDING  
+**Status:** CLOSED / PASS — FINAL REFREEZE CANDIDATE  
 **Date:** 2026-10-09  
 **Decision:** LOCKED by Project Owner after architecture challenge  
 **Scope:** presentation governance only; no redesign of core ZASS reasoning/decision logic
@@ -21,8 +21,8 @@ HPC is mandatory for Full ZASS and ZASSIMPLE human-facing structured output and 
 | HPC-T04 | Align ZASS SYSTEM UI/UX contract and bump ZASS SYSTEM to v0.2.3 | DONE |
 | HPC-T05 | Update README/Wiki/CHANGELOG current-facing truth | DONE |
 | HPC-T06 | Add repository consistency guards for canonical HPC inheritance | DONE |
-| HPC-T07 | Run complete ZASS CI on implementation commit | PENDING |
-| HPC-T08 | Close receipt, rerun final CI, create refreeze reference | PENDING |
+| HPC-T07 | Run complete ZASS CI on implementation commit | DONE — run `37885040374` PASS at `3702571d7b6826f7632da535d50d1c1b86a2d18f` |
+| HPC-T08 | Close receipt, rerun final CI, create refreeze reference | CLOSURE COMMIT READY — final CI/ref creation follows this commit |
 
 ## Acceptance
 
@@ -37,3 +37,13 @@ PASS requires:
 - repository consistency detects missing HPC inheritance;
 - complete ZASS CI passes;
 - final refreeze reference points to the accepted closure SHA.
+
+## Pre-closure verification
+
+`ZASS CI` run `37885040374` passed all jobs on implementation SHA `3702571d7b6826f7632da535d50d1c1b86a2d18f`:
+
+- `zass-check` — PASS;
+- Ubuntu cross-platform CLI — PASS;
+- Windows cross-platform CLI — PASS.
+
+No method-version bump was required: Full ZASS remains v0.3.11 and ZASSIMPLE remains v0.3.3. ZASS SYSTEM is v0.2.3 because HPC changes user-visible system presentation governance.
