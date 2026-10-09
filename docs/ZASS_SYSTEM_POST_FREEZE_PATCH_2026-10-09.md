@@ -91,6 +91,18 @@ OPSLOOP, CrossAI/AISYNC, Kerani AI, and future projects using current Full ZASS 
 
 They should not rely on chat memory to remember this lesson.
 
+## 6A. Candidate verification note
+
+Candidate CI run `37863430607` on amended commit `575f2a521cb531464bf4442d1f402031365f56a1` established:
+
+- repository consistency: PASS / 0 errors;
+- Ubuntu CLI cross-platform suite: PASS;
+- Windows CLI cross-platform suite: PASS;
+- Bootstrap/create-zass test phases before baseline resolution: PASS;
+- workflow conclusion: FAIL only because the force-amend push event referenced the superseded intermediate SHA `f5f732e5...` as its historical baseline and that unreachable object could not be resolved.
+
+This is a workflow-event artifact, not acceptance. A normal forward commit must pass the complete CI gate before refreeze.
+
 ## 7. Refreeze gate
 
 Refreeze only after the exact patch commit passes the repository's current CI/validator contract.
