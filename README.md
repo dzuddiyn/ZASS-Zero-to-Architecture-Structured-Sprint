@@ -57,6 +57,8 @@ Local tooling stays independently useful. AI-SYNC Web is the future UX / automat
 
 **Primary UX rule:** show the user the **next meaningful human action**, not all internal framework complexity.
 
+**Human presentation rule:** structured output follows the [ZASS Human Presentation Contract (HPC)](docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md): **same truth, clearest faithful representation available**. Architecture/process flows should prefer a supported rendered/structured representation; wide ASCII art is not the default conceptual-diagram fallback.
+
 See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **Freeze boundary:** AISYNC/CrossAI runtime, human beta, provider continuity, and downstream Bootstrap Core consumption are owned downstream and do not keep ZASS SYSTEM development open. See [ZASS ↔ AISYNC Downstream Handoff Boundary](docs/ZASS_AISYNC_DOWNSTREAM_HANDOFF_BOUNDARY.md).
@@ -573,7 +575,7 @@ You normally do **not** need all of them at the beginning.
 **Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**ZASS SYSTEM:** v0.2.2 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
+**ZASS SYSTEM:** v0.2.3 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
 **Full ZASS:** v0.3.11 â€” challenge → PRE-ARCH → Execution Reality Check → real-sample evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
 **ZASSIMPLE:** v0.3.3
 **ZASSELECTION:** v0.2.4
@@ -581,7 +583,7 @@ You normally do **not** need all of them at the beginning.
 
 > **2026-10-09 controlled post-freeze patch:** real-field OpsMate execution exposed repeated-work risk when real artifacts arrive only after task slicing. Full ZASS and ZASSIMPLE now require an Execution Reality Check, early real-sample/fixture reuse, execution-surface mapping, evidence-bounded vertical tasks, and delta planning for applicable technical work. Core decision authority is unchanged.
 
-**Freeze distribution snapshot:** [ZASS SYSTEM Distribution & Version Truth](docs/ZASS_FINAL_FREEZE_DISTRIBUTION_TRUTH.md)
+**Current refinement receipt:** [ZASS SYSTEM HPC Presentation Governance Refinement](docs/ZASS_SYSTEM_HPC_REFINEMENT_2026-10-09.md)
 
 **License:** [MIT](LICENSE)
 
@@ -620,6 +622,7 @@ It includes:
 - Architecture Readiness + Evidence Confidence
 - ACTION PLAN
 - Architecture-to-Execution Standard
+- Human Presentation Contract (HPC)
 - cross-AI handoff
 - ZASSELECTION
 - ZASSPILL v1.0 continuity

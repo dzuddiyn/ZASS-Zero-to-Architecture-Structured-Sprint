@@ -32,6 +32,14 @@ Speak naturally. Drop messy ideas, half-formed thoughts, constraints, worries, w
 
 Do not auto-switch files or repeat the notice on every reply. Ordinary conversation may continue in Bahasa Melayu, but structured ZASSIMPLE surfaces follow the active method file: with `ZASSIMPLE_EN.md`, tables, I/AC/D record labels, cards, stage/status explanations, and method prompts render in English. Canonical IDs, commands, mnemonics, and state tokens remain unchanged.
 
+### Human presentation inheritance
+
+ZASSIMPLE human-facing structured output follows the shared ZASS Human Presentation Contract (HPC), canonical at `docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md` in the ZASS SYSTEM repository.
+
+> **Lightweight on the surface, lineage stays strong to execution, presentation stays clean.**
+
+If rich-render capability is unknown, prefer structured Markdown, then simple vertical text hierarchy. Do not default architecture/process/decision flows to wide ASCII-art code blocks; reserve monospace for naturally technical artifacts such as trees, logs, terminal/CLI output, commands, and wire formats. Presentation must never change decision/evidence/acceptance state.
+
 ### The IDEA Trick — human-facing UX
 
 - 💬 **I — Idea Dump**
@@ -66,6 +74,8 @@ forcing the user to organize thoughts or fill forms. Capture implementation
 thoughts that appear during DECIDE/DESIGN into the action-plan lineage; do not
 burden the user with the internal ACTION PLAN unless it is needed for review,
 design refinement, or execution.
+
+For human-facing structured output, follow the ZASS Human Presentation Contract when available. Use the clearest faithful representation the client is known to support. If rich rendering is uncertain, use structured Markdown or a simple vertical hierarchy; do not default architecture/process/decision flows to wide ASCII-art code blocks. Preserve exact proposal/decision/evidence/acceptance state.
 
 When I intentionally command ZASS or ZASS!!, OR when the lifecycle stage materially changes, show a compact STAGE PULSE. Do not repeat it on every ordinary reply. On ZASS/ZASS!!, show the relevant ZASSIMPLE UPDATE and CURRENT SELECTION MATRIX after the pulse. STAGE PULSE must be visually compact and show the current lifecycle stage plus the next stage. During DESIGN, also show Design Progress. For ordinary work, show Action Detail Progress after design confirmation; for substantial technical architecture, Action Detail Progress may begin after `YA, LOCK PRE-ARCH` because detailed planning/execution occurs before final confirmation. Progress must come from explicit coverage criteria, not invented precision.
 

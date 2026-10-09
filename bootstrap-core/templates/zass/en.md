@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
-**ZASS SYSTEM:** v0.2.2
+**ZASS SYSTEM:** v0.2.3
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.1
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.3
 
-Full ZASS is aligned with **ZASS SYSTEM v0.2.1** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
+Full ZASS is aligned with **ZASS SYSTEM v0.2.3** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
 
 When Full ZASS is used through ZASS SYSTEM:
 
@@ -30,6 +30,7 @@ When Full ZASS is used through ZASS SYSTEM:
 - DESIGN starts with ZASSIMPLE and escalates to Full ZASS only when stronger governance is needed;
 - the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
 - the UI/AI should **present only the next meaningful human action**;
+- human-facing structured output follows the shared **ZASS Human Presentation Contract (HPC)**;
 - SAVE/sync is successful only when real persistence occurs and a factual receipt/commit exists;
 - local CLI and AI-SYNC Web must reuse the same validator/core semantics rather than maintain separate rule engines.
 
@@ -49,6 +50,16 @@ The conversation may continue in Bahasa Melayu while `ZASS.md` remains the activ
 **Structured method surfaces follow the active method file, not the conversation language.** With English `ZASS.md`, user-facing ZASS tables, I/AC/D record labels, cards, matrix headings, stage/status explanations, and method prompts render in English. Canonical IDs, commands, and state tokens remain unchanged.
 
 This language choice applies to the **method template**. Git-backed project state continues to use canonical `ZASS.md` unless a project explicitly defines another contract, so existing validator/discovery behavior is preserved.
+
+# HUMAN PRESENTATION — SHARED HPC
+
+Human-facing structured Full ZASS output follows the canonical shared contract: `docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md`.
+
+> **Same truth, clearest faithful representation available.**
+
+Use the highest faithful representation that the current client is known to support. If rich-render capability is unknown, prefer structured Markdown; if that is unsuitable, use a simple vertical text hierarchy. Do not default architecture/process/decision flows to wide ASCII-art code blocks. ASCII/monospace remains appropriate for repo trees, terminal/CLI output, logs, commands, and protocol/wire formats.
+
+HPC changes presentation only. It cannot change evidence, decision authority, LOCKED state, acceptance, PASS/FAIL, or architecture semantics.
 
 ---
 
@@ -150,7 +161,7 @@ The trigger to move from CAPTURE into convergence is not a fixed number of ideas
 
 ## FULL ZASS RESPONSE MODE
 
-Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically.
+Reply to ordinary messages naturally. AI may record important information in the project file when it can edit it, but does not display ZASS reasoning blocks, IDs, or forms unless requested. Never claim a file changed when it did not. AI may suggest `DRAFT ARCH` when decisions are clear enough; the suggestion does not create architecture automatically. When structured output is shown, apply HPC so architecture, decisions, evidence, plans, and status use the clearest faithful supported representation without changing semantic authority.
 
 An intentional `ZASS` or `ZASS!!` replaces the former exploration command: explore the idea fully, show relevant records and actual file status, then ✨ AI Summary and Suggestions, 🧭 NEXT-DAY ACTION PROPOSAL, and PROCEED / PIVOT. `ZASS REVIEW` retains its own method and scope. `PROCEED` approves **only** the proposal set explicitly listed in the latest ZASS mapping under `PROPOSED FOR PROCEED`. Unlisted items are not approved. If the set changes, conflicts, or becomes ambiguous, AI must show the set again before PROCEED. Proposals clearly marked for LOCK become LOCKED; PROCEED does not commit or push. `COMMIT` and architecture instructions receive explicit action results without requiring `ZASS`. Examples, quotations, demos, negations, and the footer do not trigger commands.
 

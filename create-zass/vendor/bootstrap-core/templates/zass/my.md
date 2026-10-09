@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
-**ZASS SYSTEM:** v0.2.2
+**ZASS SYSTEM:** v0.2.3
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.1
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.3
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.2.1** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.2.3** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
@@ -30,6 +30,7 @@ Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 - DESIGN bermula dengan ZASSIMPLE dan naik ke Full ZASS hanya apabila governance lebih kuat diperlukan;
 - pengalaman pengguna mesti menggunakan **progressive disclosure** dan tidak memaparkan semua ID/ledger secara default;
 - UI/AI perlu **present only the next meaningful human action**;
+- output berstruktur yang dilihat manusia mesti ikut **ZASS Human Presentation Contract (HPC)** shared;
 - SAVE/sync hanya dianggap berjaya apabila persistence sebenar berlaku dan receipt/commit sebenar tersedia;
 - local CLI dan AI-SYNC Web mesti berkongsi semantics validator/core yang sama, bukan dua rule engine berasingan.
 
@@ -44,6 +45,16 @@ Jika pengguna menggunakan `ZASS.md` English tetapi bercakap dalam Bahasa Melayu,
 **Surface method berstruktur ikut bahasa fail method aktif, bukan bahasa perbualan.** Dengan `ZASS_MY.md`, semua jadual dan label yang dilihat pengguna — termasuk rekod I/AC/D (idea/calon/keputusan), kad, tajuk matriks, penerangan stage/status dan prompt method — mesti dipaparkan dalam Bahasa Melayu. ID canonical, command dan token state rasmi kekal seperti asal supaya lineage dan automation tidak pecah.
 
 Pilihan bahasa ini merujuk kepada **method template**. Project state berasaskan Git kekal menggunakan `ZASS.md` sebagai fail canonical kecuali projek menetapkan contract lain secara eksplisit, supaya validator/discovery sedia ada kekal serasi.
+
+# HUMAN PRESENTATION — SHARED HPC
+
+Output berstruktur Full ZASS yang dilihat manusia mesti ikut contract shared canonical: `docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md`.
+
+> **Same truth, clearest faithful representation available.**
+
+Guna representation paling jelas dan faithful yang memang diketahui disokong oleh client semasa. Jika capability rich-render tidak diketahui, utamakan structured Markdown; jika tidak sesuai, guna hierarchy text menegak yang ringkas. Jangan default architecture/process/decision flow kepada ASCII-art lebar dalam code block. ASCII/monospace kekal sesuai untuk repo tree, terminal/CLI output, log, command dan protocol/wire format.
+
+HPC hanya mengubah presentation. Ia tidak boleh mengubah evidence, decision authority, LOCKED state, acceptance, PASS/FAIL atau semantics architecture.
 
 ---
 

@@ -83,6 +83,7 @@ const [
   productRoadmap,
   productWiki,
   gatewayReference,
+  hpcContract,
   ciContract,
   ciWorkflow
 ] = await Promise.all([
@@ -103,6 +104,7 @@ const [
   read('docs/PRODUCTIZATION_ROADMAP.md'),
   read('wiki/Productization-and-zass-check.md'),
   read('ZASS_AI_SYNC_GOOGLE_DASHBOARD.md'),
+  read('docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md'),
   read('docs/ZASS_GITHUB_CI_CONTRACT.md'),
   read('.github/workflows/zass-ci.yml')
 ]);
@@ -131,6 +133,14 @@ equal('ZASSIMPLE version', [
   capture(wikiHome, /\|\s*ZASSIMPLE\s*\|\s*v([0-9]+\.[0-9]+\.[0-9]+)/, 'Wiki ZASSIMPLE version')
 ]);
 
+requireText('HPC canonical LOCKED', hpcContract, /\*\*Status:\*\*\s*LOCKED/i);
+requireText('HPC fallback hierarchy', hpcContract, /Native rendered UI[\s\S]*Structured Markdown[\s\S]*Simple text hierarchy/i);
+requireText('Full ZASS EN HPC inheritance', zassEn, /ZASS_HUMAN_PRESENTATION_CONTRACT\.md/);
+requireText('Full ZASS MY HPC inheritance', zassMy, /ZASS_HUMAN_PRESENTATION_CONTRACT\.md/);
+requireText('ZASSIMPLE EN HPC inheritance', zassimpleEn, /ZASS_HUMAN_PRESENTATION_CONTRACT\.md/);
+requireText('ZASSIMPLE MY HPC inheritance', zassimpleMy, /ZASS_HUMAN_PRESENTATION_CONTRACT\.md/);
+requireText('UI contract HPC inheritance', uiContract, /ZASS_HUMAN_PRESENTATION_CONTRACT\.md/);
+requireText('README HPC discoverability', rootReadme, /ZASS Human Presentation Contract/);
 equal('ZASSELECTION version', [
   capture(selectionEn, /\*\*Version:\*\*\s*([0-9]+\.[0-9]+\.[0-9]+)/, 'ZASSELECTION_EN version'),
   capture(selectionMy, /\*\*Version:\*\*\s*([0-9]+\.[0-9]+\.[0-9]+)/, 'ZASSELECTION_MY version'),

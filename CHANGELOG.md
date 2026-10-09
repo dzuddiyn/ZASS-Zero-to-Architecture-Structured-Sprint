@@ -1,3 +1,12 @@
+## [ZASS SYSTEM v0.2.3 / HPC v0.1] — 2026-10-09
+
+- LOCKED the **ZASS Human Presentation Contract (HPC)** as shared presentation-layer governance after architecture challenge and explicit owner approval.
+- Separated canonical semantic authority from human projection: presentation may improve readability but cannot alter decision, evidence, acceptance, PASS/FAIL, or LOCKED state.
+- Added capability-aware fallback: known native/rich rendering → structured Markdown → simple text hierarchy; ASCII/monospace is an exception path for naturally technical artifacts, not the default conceptual-architecture fallback.
+- Added mobile-first and accessibility requirements, including width reduction, text-labelled critical states, no colour-only semantics, and text-readable equivalents for important visuals.
+- Full ZASS remains v0.3.11 and ZASSIMPLE remains v0.3.3 because method reasoning/authority semantics are unchanged; both now inherit the shared HPC.
+- Bumped ZASS SYSTEM to v0.2.3 because presentation governance is a material user-visible system-level contract.
+
 ## [ZASS SYSTEM v0.2.2 / Full ZASS v0.3.11 / ZASSIMPLE v0.3.3] — 2026-10-09
 
 - Reopened the 2026-10-08 freeze under the existing **material real field evidence** rule after OpsMate field execution exposed repeated work caused by real operational samples arriving only after task slicing.

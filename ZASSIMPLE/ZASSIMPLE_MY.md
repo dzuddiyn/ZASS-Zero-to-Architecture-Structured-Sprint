@@ -29,6 +29,14 @@ Cakap seperti biasa. Lambakkan idea serabut, fikiran separuh masak, constraint, 
 
 Jika pengguna menggunakan `ZASSIMPLE_EN.md` tetapi bercakap dalam Bahasa Melayu, AI boleh terus berbual dalam Bahasa Melayu; versi Melayu hanya dimaklumkan sekali dan penukaran fail tidak berlaku secara automatik.
 
+### Human presentation inheritance
+
+Output berstruktur ZASSIMPLE yang dilihat manusia mesti ikut ZASS Human Presentation Contract (HPC) shared, canonical di `docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md` dalam repo ZASS SYSTEM.
+
+> **Lightweight di permukaan, lineage kuat sampai execution, presentation tetap kemas.**
+
+Jika capability rich-render tidak diketahui, utamakan structured Markdown, kemudian hierarchy text menegak yang ringkas. Jangan default architecture/process/decision flow kepada ASCII-art lebar dalam code block; monospace dikhaskan untuk artifact teknikal semula jadi seperti tree, log, terminal/CLI output, command dan wire format. Presentation tidak boleh mengubah state decision/evidence/acceptance.
+
 ### The IDEA Trick — UX manusia
 
 - 💬 **I — Idea Dump**
@@ -63,6 +71,8 @@ pengguna menyusun fikiran atau mengisi borang. Simpan implementation thought
 yang muncul semasa DECIDE/DESIGN ke lineage action plan; jangan bebankan
 pengguna dengan ACTION PLAN dalaman kecuali ia perlu untuk review, refine
 design, atau execution.
+
+Untuk output berstruktur yang dilihat manusia, ikut ZASS Human Presentation Contract apabila tersedia. Guna representation paling jelas dan faithful yang memang diketahui disokong oleh client. Jika rich rendering tidak pasti, guna structured Markdown atau hierarchy menegak ringkas; jangan default architecture/process/decision flow kepada ASCII-art lebar dalam code block. Kekalkan state proposal/decision/evidence/acceptance tepat seperti authority.
 
 Apabila saya sengaja mengarahkan ZASS atau ZASS!!, ATAU apabila lifecycle stage berubah secara material, paparkan STAGE PULSE ringkas. Jangan ulang pada setiap balasan biasa. Untuk ZASS/ZASS!!, paparkan ZASSIMPLE UPDATE dan CURRENT SELECTION MATRIX selepas pulse. STAGE PULSE mesti padat dan menarik: tunjuk stage semasa serta stage seterusnya. Semasa DESIGN, tunjuk juga Design Progress. Untuk kerja biasa, tunjuk Action Detail Progress selepas design disahkan; untuk substantial technical architecture, Action Detail Progress boleh bermula selepas `YA, LOCK PRE-ARCH` kerana detailed planning/execution berlaku sebelum final confirmation. Progress mesti datang daripada coverage criteria yang jelas, bukan ketepatan palsu.
 

@@ -59,7 +59,7 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.2.2 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate |
+| ZASS SYSTEM | v0.2.3 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate |
 | Full ZASS | v0.3.11 |
 | ZASSIMPLE | v0.3.3 |
 | ZASSELECTION | v0.2.4 |
@@ -108,3 +108,8 @@ The authoritative method files remain in the main repository. This Wiki is the l
 ---
 
 Repository: [ZASS-Zero-to-Architecture-Structured-Sprint](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint)
+
+
+## Human Presentation Contract
+
+ZASS SYSTEM human-facing structured output follows [`docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md`](../docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md): **Same truth, clearest faithful representation available.** Rich/native rendering is preferred only when known supported; otherwise use structured Markdown, then simple text hierarchy. ASCII is reserved for semantically natural monospace artifacts such as trees, logs, CLI output, commands, and wire formats.

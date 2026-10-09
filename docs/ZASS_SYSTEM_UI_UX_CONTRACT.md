@@ -1,6 +1,6 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.2
+**System version:** 0.2.3
 **Full ZASS surface alignment:** v0.3.11<br>
 **Status:** LOCKED WORKING CONTRACT
 **Date:** 2026-10-09
@@ -151,6 +151,23 @@ Expose details when:
 - an error/warning needs technical diagnosis;
 - traceability materially helps the current task.
 
+## 4A. Human Presentation Contract inheritance
+
+All human-facing structured ZASS SYSTEM output inherits the canonical [`ZASS Human Presentation Contract (HPC)`](ZASS_HUMAN_PRESENTATION_CONTRACT.md).
+
+HPC governs **representation choice**, not semantic authority. The UI/UX contract defines product surfaces and interactions; HPC defines how architecture, workflow, decision, plan, status, evidence, and technical artifacts should be represented clearly across capable clients.
+
+Required behavior:
+
+- use the highest faithful representation the current client is known to support;
+- if rich-render capability is unknown, prefer structured Markdown rather than speculative rich syntax;
+- optimize for mobile readability and reduce unnecessary horizontal scrolling;
+- preserve a text-readable equivalent for important visual meaning;
+- do not default conceptual architecture/process/decision flows to wide ASCII-art code blocks;
+- keep ASCII/monospace for naturally technical artifacts such as repo trees, logs, terminal/CLI output, commands, and wire formats;
+- never let visual simplification change proposal/decision/evidence/acceptance state.
+
+CrossAI/AI-SYNC may implement richer native HPC rendering later, but HPC compliance does not depend on CrossAI.
 ## 5. Five primary product surfaces
 
 AI-SYNC Web should prefer five stable surfaces.
@@ -483,7 +500,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.2.1
+ZASS SYSTEM v0.2.3
 DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract
@@ -497,7 +514,8 @@ Bump the **ZASS SYSTEM version** whenever a user-visible system-level contract c
 - local-core â†” AI-SYNC integration contract;
 - save/sync user-visible semantics;
 - escalation UX;
-- system-level automation behavior.
+- system-level automation behavior;
+- shared human-presentation governance.
 
 Do not require a Full ZASS/ZASSIMPLE/ZASSELECTION version bump when their own method semantics are unchanged.
 
