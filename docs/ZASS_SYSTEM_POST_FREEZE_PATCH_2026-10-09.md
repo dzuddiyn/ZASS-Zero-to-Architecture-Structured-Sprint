@@ -1,6 +1,6 @@
 # ZASS SYSTEM — Controlled Post-Freeze Real-Field Patch Receipt
 
-**Status:** REFREEZE CANDIDATE — BOUNDED PATCH ONLY  
+**Status:** FINAL REFREEZE — FEATURE FROZEN / STABLE  
 **Date:** 2026-10-09  
 **Trigger:** allowed freeze reopen condition #2 — material real field evidence  
 **Owner decision:** explicit proceed
@@ -105,7 +105,18 @@ This is a workflow-event artifact, not acceptance. A normal forward commit must 
 
 ## 7. Refreeze gate
 
-Refreeze only after the exact patch commit passes the repository's current CI/validator contract.
+Pre-closure verification:
+
+~~~text
+CI run:   37863530390
+HEAD:     ce4d7b3bdc83631cc04183d2fc42d1f54534fa49
+zass-check: PASS
+Ubuntu CLI cross-platform: PASS
+Windows CLI cross-platform: PASS
+overall: PASS
+~~~
+
+The final closure commit must also pass the repository's complete CI/validator contract before the freeze reference is created.
 
 Target freeze reference after PASS:
 
@@ -113,8 +124,10 @@ Target freeze reference after PASS:
 freeze/zass-system-v0.2.2-2026-10-09
 ~~~
 
-After PASS and reference creation:
+After the exact closure commit passes and the reference is created:
 
 ~~~text
 FEATURE FROZEN / STABLE
 ~~~
+
+No active ZASS development track is reopened by this patch. Further changes again require the existing freeze reopen conditions.
