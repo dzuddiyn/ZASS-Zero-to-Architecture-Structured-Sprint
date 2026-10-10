@@ -585,9 +585,9 @@ You normally do **not** need all of them at the beginning.
 
 > **2026-10-09 controlled post-freeze patch:** real-field OpsMate execution exposed repeated-work risk when real artifacts arrive only after task slicing. Full ZASS and ZASSIMPLE now require an Execution Reality Check, early real-sample/fixture reuse, execution-surface mapping, evidence-bounded vertical tasks, and delta planning for applicable technical work. Core decision authority is unchanged.
 
-**Current refinement receipt:** [ZASS SYSTEM HPC Presentation Governance Refinement](docs/ZASS_SYSTEM_HPC_REFINEMENT_2026-10-09.md)
+**Previous refinement receipt:** [ZASS SYSTEM HPC Presentation Governance Refinement](docs/ZASS_SYSTEM_HPC_REFINEMENT_2026-10-09.md)
 
-**Bounded integration candidate:** [ZASSCODE integration review](docs/ZASS_SYSTEM_ZASSCODE_INTEGRATION_2026-10-10.md). This candidate does not claim module runtime proof or application acceptance.
+**Current integration receipt:** [ZASSCODE integration and refreeze gate](docs/ZASS_SYSTEM_ZASSCODE_INTEGRATION_2026-10-10.md). The bounded bridge is merged and its complete CI passed. The separate module bootstrap is verified; application intake and all application stages remain NOT_RUN.
 
 **License:** [MIT](LICENSE)
 
@@ -608,7 +608,7 @@ COMMIT
 
 ## Final freeze
 
-Canonical final-freeze receipt: [ZASS SYSTEM Final Freeze](docs/ZASS_SYSTEM_FINAL_FREEZE.md).
+Original final-freeze receipt: [ZASS SYSTEM Final Freeze](docs/ZASS_SYSTEM_FINAL_FREEZE.md). Current bounded integration closure and exact refreeze gate: [ZASSCODE integration receipt](docs/ZASS_SYSTEM_ZASSCODE_INTEGRATION_2026-10-10.md). Historical freeze references are retained.
 
 # Learn more
 
