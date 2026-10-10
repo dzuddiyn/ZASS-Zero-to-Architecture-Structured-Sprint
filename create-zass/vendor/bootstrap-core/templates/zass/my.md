@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
-**ZASS SYSTEM:** v0.2.3
+**ZASS SYSTEM:** v0.2.4
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.3
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.4
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.2.3** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.2.4** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
@@ -35,6 +35,8 @@ Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 - local CLI dan AI-SYNC Web mesti berkongsi semantics validator/core yang sama, bukan dua rule engine berasingan.
 
 Perubahan ini ialah **surface/system alignment**. Authority Full ZASS, human LOCK, Evidence Confidence, convergence loop, dan architecture confirmation gate kekal seperti sebelumnya.
+
+Pelaksanaan downstream pilihan: `docs/ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md`. Penggunaan ZASSCODE mesti dinyatakan bagi projek; modul ini menggunakan kontrak pelaksanaan sedia ada dan mengekalkan kuasa keputusan/seni bina ZASS.
 
 # LANGUAGE ROUTING — BAHASA MELAYU
 
