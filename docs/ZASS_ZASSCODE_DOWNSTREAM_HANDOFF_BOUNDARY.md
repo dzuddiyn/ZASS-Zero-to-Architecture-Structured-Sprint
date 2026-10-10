@@ -1,10 +1,10 @@
 # ZASS ↔ ZASSCODE downstream handoff boundary
 
-**Contract:** 0.1
+**Contract:** 0.2
 
-**System alignment:** ZASS SYSTEM v0.2.4
+**System alignment:** ZASS SYSTEM v0.2.5
 
-**Consumer:** ZASSCODE v0.1, adopted explicitly per project
+**Consumer:** ZASSCODE v0.1, adopted explicitly per project and pinned at an actual commit/digest
 
 ZASSCODE is a separate downstream execution method. It consumes the existing
 ZASS architecture-to-execution contract; it is not a fourth top-level intent
@@ -23,6 +23,34 @@ The starting handoff is the actual approved PRE-ARCH baseline, basic ACTION_PLAN
 decision/scope references and next-operation mandate. Challenge PASS alone does
 not create execution approval. Applicable work retains `YA, LOCK PRE-ARCH`, the
 Execution Reality Check, real/sanitized sample pack and execution-surface map.
+
+## Stage Bootstrapper routing
+
+`HANDOFF_TO_ZASSCODE` first enters **Work Mode in the generic ZASSCODE Project**.
+It invokes `PREPARE_STAGE_PROJECT`; it is not sent directly to a Chat executor or
+local coding agent. The Bootstrapper verifies the handoff as planning input and
+returns a `STAGE_SETUP_PACKAGE`.
+
+The owner manually creates one fresh ChatGPT Project for exactly one application
+stage, for example `ZASSCODE — MyAgri_TEST`, then installs that package. The
+package contains the stage-specific Project instructions, source manifest,
+bootstrap state, intake prompt and executor gate. It does not create the Project
+UI, repository, deployment target, Apps Script/GCP resource, connector access,
+credential or owner approval.
+
+Within that fresh stage Project, **Work Mode** invokes `START_STAGE_INTAKE`,
+performs the Reality Check and slices one bounded atomic task. Only a persisted
+`TASK_READY` may be given to Chat/local execution. Results return through
+task review and `STAGE_RETURN`; a material architecture finding returns to
+ZASS before dependent work.
+
+Each successor stage requires a fresh ChatGPT Project, repository and mutable
+execution resources. Archive the predecessor Project as read-only context; do
+not inherit a predecessor PASS, approval, credentials, sessions, live data,
+target identities or mutable state merely by copying code or records. A ChatGPT
+Project is logical context isolation, not technical credential isolation:
+the actual active target, bindings and scoped permissions must still be named
+and inspected before mutation.
 
 ZASSCODE expands practical planning and projects bounded atomic tasks from the
 existing backend. Every result returns through PRE-ARCH impact review; material

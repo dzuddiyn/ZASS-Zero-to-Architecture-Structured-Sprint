@@ -1,6 +1,6 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.4
+**System version:** 0.2.5
 **Full ZASS surface alignment:** v0.3.11<br>
 **Status:** LOCKED WORKING CONTRACT
 **Date:** 2026-10-09
@@ -504,7 +504,7 @@ Projects may explicitly adopt [ZASSCODE](ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDA
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.2.4
+ZASS SYSTEM v0.2.5
 DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract

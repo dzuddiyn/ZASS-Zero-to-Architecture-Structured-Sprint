@@ -60,7 +60,7 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.2.4 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate + ZASSCODE boundary |
+| ZASS SYSTEM | v0.2.5 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate + ZASSCODE boundary |
 | Full ZASS | v0.3.11 |
 | ZASSIMPLE | v0.3.3 |
 | ZASSELECTION | v0.2.4 |

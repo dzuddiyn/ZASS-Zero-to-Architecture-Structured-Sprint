@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.4
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.5
 
-Full ZASS is aligned with **ZASS SYSTEM v0.2.4** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
+Full ZASS is aligned with **ZASS SYSTEM v0.2.5** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
 
 When Full ZASS is used through ZASS SYSTEM:
 
