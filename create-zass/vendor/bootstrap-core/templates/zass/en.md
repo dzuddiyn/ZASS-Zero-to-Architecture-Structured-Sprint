@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
-**ZASS SYSTEM:** v0.2.3
+**ZASS SYSTEM:** v0.2.4
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.3
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.4
 
-Full ZASS is aligned with **ZASS SYSTEM v0.2.3** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
+Full ZASS is aligned with **ZASS SYSTEM v0.2.4** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
 
 When Full ZASS is used through ZASS SYSTEM:
 
@@ -35,6 +35,8 @@ When Full ZASS is used through ZASS SYSTEM:
 - local CLI and AI-SYNC Web must reuse the same validator/core semantics rather than maintain separate rule engines.
 
 This is a **surface/system alignment** release. Full ZASS authority, human LOCK, Evidence Confidence, the convergence loop, and the architecture confirmation gate remain unchanged.
+
+Optional downstream execution: `docs/ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md`. Adopt ZASSCODE explicitly per project; it consumes the existing execution contract and preserves ZASS decision/architecture authority.
 
 # LANGUAGE ROUTING — ENGLISH DEFAULT
 

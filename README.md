@@ -63,6 +63,8 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **Freeze boundary:** AISYNC/CrossAI runtime, human beta, provider continuity, and downstream Bootstrap Core consumption are owned downstream and do not keep ZASS SYSTEM development open. See [ZASS ↔ AISYNC Downstream Handoff Boundary](docs/ZASS_AISYNC_DOWNSTREAM_HANDOFF_BOUNDARY.md).
 
+**ZASSCODE execution boundary:** projects may explicitly adopt the separate ZASSCODE module after the applicable PRE-ARCH approval and basic ACTION_PLAN handoff. ZASS retains architecture/decision authority; detailed coding and field-delivery mechanics remain downstream. See [ZASS ↔ ZASSCODE Downstream Handoff Boundary](docs/ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md).
+
 **Global language UX:** ordinary conversation may follow the user, but structured method surfaces follow the active method file language. If a user speaks Bahasa Melayu while an English method file is active, ZASS notifies once that the matching Malay file is available; it never switches files automatically.
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
@@ -575,7 +577,7 @@ You normally do **not** need all of them at the beginning.
 **Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**ZASS SYSTEM:** v0.2.3 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract
+**ZASS SYSTEM:** v0.2.4 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract + optional ZASSCODE downstream handoff
 **Full ZASS:** v0.3.11 â€” challenge → PRE-ARCH → Execution Reality Check → real-sample evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
 **ZASSIMPLE:** v0.3.3
 **ZASSELECTION:** v0.2.4
@@ -584,6 +586,8 @@ You normally do **not** need all of them at the beginning.
 > **2026-10-09 controlled post-freeze patch:** real-field OpsMate execution exposed repeated-work risk when real artifacts arrive only after task slicing. Full ZASS and ZASSIMPLE now require an Execution Reality Check, early real-sample/fixture reuse, execution-surface mapping, evidence-bounded vertical tasks, and delta planning for applicable technical work. Core decision authority is unchanged.
 
 **Current refinement receipt:** [ZASS SYSTEM HPC Presentation Governance Refinement](docs/ZASS_SYSTEM_HPC_REFINEMENT_2026-10-09.md)
+
+**Bounded integration candidate:** [ZASSCODE integration review](docs/ZASS_SYSTEM_ZASSCODE_INTEGRATION_2026-10-10.md). This candidate does not claim module runtime proof or application acceptance.
 
 **License:** [MIT](LICENSE)
 

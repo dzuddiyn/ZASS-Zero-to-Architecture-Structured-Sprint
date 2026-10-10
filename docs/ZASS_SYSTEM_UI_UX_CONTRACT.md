@@ -1,6 +1,6 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.3
+**System version:** 0.2.4
 **Full ZASS surface alignment:** v0.3.11<br>
 **Status:** LOCKED WORKING CONTRACT
 **Date:** 2026-10-09
@@ -493,6 +493,10 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 - reopen CR-010 or add new validator semantics;
 - authorize automatic Full-ZASS migration.
 
+### Separate ZASSCODE execution consumer
+
+Projects may explicitly adopt [ZASSCODE](ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md) from the existing approved PRE-ARCH and basic ACTION_PLAN interface. ZASS retains decisions, architecture and final gates; detailed execution mechanics remain downstream. This integration does not add a top-level intent route or require downstream runtime proof before existing ZASS use.
+
 ## 15. Versioning contract
 
 `ZASS SYSTEM` has its own version independent of Full ZASS, ZASSIMPLE, and ZASSELECTION.
@@ -500,7 +504,7 @@ This contract upgrades ZASS SYSTEM product direction. It does not by itself:
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.2.3
+ZASS SYSTEM v0.2.4
 DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract

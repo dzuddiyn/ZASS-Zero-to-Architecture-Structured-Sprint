@@ -33,6 +33,7 @@ AI suggestion ≠ Owner decision ≠ Git change
 - [Architecture & Evidence](Architecture-and-Evidence.md) — ZERO → ARCHITECTURE and Evidence Confidence.
 - [ACTION PLAN](ACTION-PLAN.md) — implementation planning/execution without creating a second decision ledger.
 - [Architecture-to-Execution](Architecture-to-Execution.md) — challenge, revision, atomic task and STOP/ESCALATE contract.
+- [ZASSCODE downstream execution](../docs/ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md) — optional coding/delivery consumer; ZASS retains architecture authority.
 - [Cross-AI Handoff](Cross-AI-Handoff.md) — use many AIs while keeping one authoritative project state.
 - [ZASSELECTION](ZASSELECTION.md) — structured choice when the problem is selecting, not architecture.
 - [ZASSPILL](ZASSPILL.md) — DUMP continuity across chats and AIs; the v1.0.0 method/protocol contract is production-ready.
@@ -59,7 +60,7 @@ Research follows candidate formation, not idea capture. Research findings return
 
 | Component | Current state |
 |---|---|
-| ZASS SYSTEM | v0.2.3 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate |
+| ZASS SYSTEM | v0.2.4 — DUMP / DECIDE / DESIGN + challenge/re-challenge gate + ZASSCODE boundary |
 | Full ZASS | v0.3.11 |
 | ZASSIMPLE | v0.3.3 |
 | ZASSELECTION | v0.2.4 |
