@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
-**ZASS SYSTEM:** v0.2.4
+**ZASS SYSTEM:** v0.2.5
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
