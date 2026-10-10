@@ -105,18 +105,20 @@ distribution copies in that revert. Reverting the bridge does not delete ZASSCOD
 pilot data, existing freeze references or unrelated work.
 
 
-## Contract 0.2 stage-bootstrapper alignment candidate
+## Contract 0.2 stage-bootstrapper alignment receipt
+
+**State:** MERGED / COMPLETE PR CI PASS / COMPLETE POST-MERGE CI PASS
 
 **Trigger:** owner direction on 2026-10-10 to align `HANDOFF_TO_ZASSCODE` with
 the verified ZASSCODE Stage Bootstrapper while preserving the frozen upstream
 method.
 
-This bounded candidate raises **ZASS SYSTEM to v0.2.5** and changes only
-downstream routing/documentation plus synchronized SYSTEM metadata. Full ZASS
-remains v0.3.11 and ZASSIMPLE remains v0.3.3; their method semantics, authority,
+This bounded change raised **ZASS SYSTEM to v0.2.5** and changed only downstream
+routing/documentation plus synchronized SYSTEM metadata. Full ZASS remains
+v0.3.11 and ZASSIMPLE remains v0.3.3; their method semantics, authority,
 templates and application gates are unchanged.
 
-The intended routing is:
+The established routing is:
 
 ```text
 HANDOFF_TO_ZASSCODE
@@ -128,17 +130,31 @@ HANDOFF_TO_ZASSCODE
   → Chat or local executor
 ```
 
-This candidate requires each application stage to use a fresh ChatGPT Project,
-repository and mutable execution resources. It states expressly that ChatGPT
-Project separation does not itself constrain connector credentials; target
-identity and scoped permissions remain runtime checks. No application, stage,
-credential, deployment or acceptance is created by this change.
+Each application stage uses a fresh ChatGPT Project, repository and mutable
+execution resources. ChatGPT Project separation does not itself constrain
+connector credentials; target identity and scoped permissions remain runtime
+checks. No application, stage, credential, deployment or acceptance was created
+by this system change.
 
 **Pinned downstream reference at preparation:** ZASSCODE
 `ca2b13da06ad4fbe002972ef46f17a7af754d7e7`, whose Stage Bootstrapper
 documentation and verification receipt are complete. That reference does not
 mean a consuming application has adopted or proven it.
 
-The candidate is submitted through a branch/PR. It is not a refreeze or final
-closure until the exact PR head passes the complete CI and is reviewed/merged.
-Recovery is a checked revert PR; do not reset shared history.
+## Exact implementation and verification
+
+- [PR #62](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/pull/62)
+  merged with expected-head protection.
+- Tested final PR head: `d0f96a2191226a81a8e7534bd45e7fb5bb017d0f`.
+- Merge commit: `c8932375359585b1e926780bbae6817fe74647dc`.
+- PR CI [run 38039177247](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/actions/runs/38039177247)
+  passed all three jobs: zass-check, Ubuntu CLI and Windows CLI.
+- Post-merge CI [run 38039248514](https://github.com/dzuddiyn/ZASS-Zero-to-Architecture-Structured-Sprint/actions/runs/38039248514)
+  also passed all three jobs at the exact merge commit.
+
+The v0.2.5 freeze reference is
+`freeze/zass-system-v0.2.5-2026-10-10`, initially created at the verified
+merge commit. After this receipt-closure commit is merged and its normal push
+CI passes, advance that reference with an expected-SHA guard to the exact
+closure commit. Preserve historical freeze references and do not reset shared
+history.
