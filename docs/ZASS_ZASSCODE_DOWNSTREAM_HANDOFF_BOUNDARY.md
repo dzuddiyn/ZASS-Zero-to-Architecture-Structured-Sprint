@@ -43,9 +43,13 @@ and OPSLOOP handover; it cannot fabricate `PASS PILOT` or `DELIVERED !!`.
 ## Adoption and independence
 
 Resolve the actual ZASSCODE distribution and pin its version plus commit/digest
-in the consuming project. The planned separate repository is
+in the consuming project. The separate repository is
 [dzuddiyn/ZASSCODE](https://github.com/dzuddiyn/ZASSCODE); its availability and
 installed tools must be checked at adoption, not inferred from this link.
+
+The module bootstrap and upstream integration receipts are recorded in
+[the bounded integration receipt](ZASS_SYSTEM_ZASSCODE_INTEGRATION_2026-10-10.md).
+They do not select an application, approve its baseline or prove its runtime.
 
 Project-specific control records and exchange packets are projections. They must
 not create a second task queue, decision ledger or Source of Truth. Project
