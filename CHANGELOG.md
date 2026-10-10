@@ -1,5 +1,12 @@
 ## [ZASS SYSTEM v0.2.3 / HPC v0.1] — 2026-10-09
 
+## [ZASS SYSTEM v0.2.5] — 2026-10-10
+
+- Aligned the optional ZASSCODE downstream handoff with the verified Stage Bootstrapper flow: `HANDOFF_TO_ZASSCODE` first enters generic ZASSCODE Work Mode, which produces `STAGE_SETUP_PACKAGE`; a fresh ChatGPT Project then performs stage intake and Reality Check before any `TASK_READY` reaches an executor.
+- Required a separate ChatGPT Project, repository and mutable execution resources for every application stage. Project separation is logical context isolation only; runtime target identity and scoped credentials still require inspection.
+- Kept Full ZASS and ZASSIMPLE method semantics, decision authority, canonical ACTION_PLAN/backend and all application acceptance gates unchanged.
+
+
 - LOCKED the **ZASS Human Presentation Contract (HPC)** as shared presentation-layer governance after architecture challenge and explicit owner approval.
 - Separated canonical semantic authority from human projection: presentation may improve readability but cannot alter decision, evidence, acceptance, PASS/FAIL, or LOCKED state.
 - Added capability-aware fallback: known native/rich rendering → structured Markdown → simple text hierarchy; ASCII/monospace is an exception path for naturally technical artifacts, not the default conceptual-architecture fallback.

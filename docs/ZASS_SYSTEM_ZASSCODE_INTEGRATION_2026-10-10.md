@@ -103,3 +103,42 @@ Use a checked revert PR for the specific integration and its closure if recovery
 is needed; do not reset shared history. Reconcile restored version metadata and
 distribution copies in that revert. Reverting the bridge does not delete ZASSCODE,
 pilot data, existing freeze references or unrelated work.
+
+
+## Contract 0.2 stage-bootstrapper alignment candidate
+
+**Trigger:** owner direction on 2026-10-10 to align `HANDOFF_TO_ZASSCODE` with
+the verified ZASSCODE Stage Bootstrapper while preserving the frozen upstream
+method.
+
+This bounded candidate raises **ZASS SYSTEM to v0.2.5** and changes only
+downstream routing/documentation plus synchronized SYSTEM metadata. Full ZASS
+remains v0.3.11 and ZASSIMPLE remains v0.3.3; their method semantics, authority,
+templates and application gates are unchanged.
+
+The intended routing is:
+
+```text
+HANDOFF_TO_ZASSCODE
+  → generic ZASSCODE Work / PREPARE_STAGE_PROJECT
+  → STAGE_SETUP_PACKAGE
+  → fresh one-stage ChatGPT Project
+  → Work Reality Check and atomic slicing
+  → TASK_READY
+  → Chat or local executor
+```
+
+This candidate requires each application stage to use a fresh ChatGPT Project,
+repository and mutable execution resources. It states expressly that ChatGPT
+Project separation does not itself constrain connector credentials; target
+identity and scoped permissions remain runtime checks. No application, stage,
+credential, deployment or acceptance is created by this change.
+
+**Pinned downstream reference at preparation:** ZASSCODE
+`ca2b13da06ad4fbe002972ef46f17a7af754d7e7`, whose Stage Bootstrapper
+documentation and verification receipt are complete. That reference does not
+mean a consuming application has adopted or proven it.
+
+The candidate is submitted through a branch/PR. It is not a refreeze or final
+closure until the exact PR head passes the complete CI and is reviewed/merged.
+Recovery is a checked revert PR; do not reset shared history.

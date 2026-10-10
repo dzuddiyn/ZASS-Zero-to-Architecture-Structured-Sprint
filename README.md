@@ -577,7 +577,7 @@ You normally do **not** need all of them at the beginning.
 **Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**ZASS SYSTEM:** v0.2.4 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract + optional ZASSCODE downstream handoff
+**ZASS SYSTEM:** v0.2.5 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract + ZASSCODE stage-project-factory handoff
 **Full ZASS:** v0.3.11 â€” challenge → PRE-ARCH → Execution Reality Check → real-sample evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
 **ZASSIMPLE:** v0.3.3
 **ZASSELECTION:** v0.2.4
