@@ -2,12 +2,15 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Version:** 1.0.0  
-**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
+**Version:** 1.1.0-rc.1 (candidate; not released)  
+**Status:** v1.1.0-rc.1 REVIEW CANDIDATE; historical v1.0.0 Phase 1–6 proof preserved  
 **Language:** English — default method  
 **Owner:** User / Continuity Owner
 
 ZASSPILL is the DUMP continuity method in the ZASS family.
+
+**Release distinction:** This branch is a proposed opt-in TDesk routing extension. v1.0.0 Phase 1–6 retains its historical proof, not proof of v1.1.0-rc.1 or standalone persistence. The archived references to v1.0.0 below describe historical artifacts. For new packets produced specifically under this candidate, report the actual candidate method version; never relabel an old packet or invent a persisted receipt.
+
 
 In this repository, `PRODUCTION READY` refers to the frozen ZASSPILL method/protocol contract. Runtime persistence, retrieval, authorization, and transport are implemented outside this method layer by AI-SYNC/ASC.
 
@@ -2159,4 +2162,4 @@ Overall proof covers:
 
 Phase 3, Phase 4, and Phase 5 compatibility remain proven.
 
-> **ZASSPILL v1.0.0 is PRODUCTION READY. Phases 1–6 are frozen as the core continuity contract. New features after this point belong in v1.x compatibility/polish or v2 advanced continuity intelligence; only critical fixes should change the core v1.0 contract without versioned evolution.**
+> **Historical v1.0.0 release proof:** ZASSPILL v1.0.0 is PRODUCTION READY. Phases 1–6 are frozen as the core continuity contract. New features after this point belong in v1.x compatibility/polish or v2 advanced continuity intelligence; only critical fixes should change the core v1.0 contract without versioned evolution.**
