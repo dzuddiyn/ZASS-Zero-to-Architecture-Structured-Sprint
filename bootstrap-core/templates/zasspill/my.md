@@ -2,12 +2,15 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 1.0.0  
-**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
+**Version:** 1.1.0-rc.1 (candidate; not released)  
+**Status:** v1.1.0-rc.1 REVIEW CANDIDATE; historical v1.0.0 Phase 1–6 proof preserved  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
 ZASSPILL ialah method continuity DUMP dalam keluarga ZASS.
+
+**Pembezaan release:** Branch ini ialah calon peluasan routing TDesk yang opt-in. Proof Phase 1–6 v1.0.0 kekal sebagai bukti sejarah, bukan bukti v1.1.0-rc.1 atau persistence standalone. Rujukan v1.0.0 di bawah ialah artifact sejarah. Packet baharu yang benar-benar dihasilkan di bawah candidate ini mesti melaporkan versi calon yang digunakan; jangan relabel packet lama atau mereka receipt penyimpanan.
+
 
 Dalam repository ini, `PRODUCTION READY` merujuk kepada kontrak method/protocol ZASSPILL yang telah dibekukan. Runtime persistence, retrieval, authorization dan transport dilaksanakan di luar layer method ini oleh AI-SYNC/ASC.
 
@@ -2208,4 +2211,4 @@ Proof keseluruhan meliputi:
 
 Phase 3, Phase 4 dan Phase 5 compatibility kekal lulus.
 
-> **ZASSPILL v1.0.0 ialah PRODUCTION READY. Phase 1–6 telah dibekukan sebagai core continuity contract. Feature baharu selepas ini masuk v1.x compatibility/polish atau v2 advanced continuity intelligence; hanya critical fixes patut mengubah core v1.0 contract tanpa versioned evolution.**
+> **Bukti release v1.0.0 (sejarah):** ZASSPILL v1.0.0 ialah PRODUCTION READY. Phase 1–6 telah dibekukan sebagai core continuity contract. Feature baharu selepas ini masuk v1.x compatibility/polish atau v2 advanced continuity intelligence; hanya critical fixes patut mengubah core v1.0 contract tanpa versioned evolution.**
