@@ -2,8 +2,8 @@
 
 > **Kekal serabut. Simpan konteks. Sambung di mana-mana.**
 
-**Version:** 1.1.0-rc.1 (candidate; not released)  
-**Status:** v1.1.0-rc.1 REVIEW CANDIDATE; historical v1.0.0 Phase 1–6 proof preserved  
+**Version:** 1.0.0  
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — PHASE 6 RELIABILITY PROOF PASSED  
 **Language:** Bahasa Melayu  
 **Owner:** User / Continuity Owner
 
