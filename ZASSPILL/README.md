@@ -2,8 +2,9 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Current version:** v1.0.0  
-**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — Phase 1–6 frozen  
+**Released baseline:** v1.0.0 (frozen)  
+**Candidate on this branch:** v1.1.0-rc.1 (NOT released)  
+**Status:** v1.0.0 method/protocol proof preserved; v1.1.0-rc.1 review only  
 **Default English:** [ZASSPILL_EN.md](ZASSPILL_EN.md)  
 **Bahasa Melayu:** [ZASSPILL_MY.md](ZASSPILL_MY.md)
 
@@ -70,7 +71,7 @@ Current release metadata:
 
 ~~~yaml
 method: ZASSPILL
-method_version: 1.0.0
+method_version: 1.0.0 # released baseline; candidate use v1.1.0-rc.1 if actually executed
 packet_format_version: 2
 ~~~
 
