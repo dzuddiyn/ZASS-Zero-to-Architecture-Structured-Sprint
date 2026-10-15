@@ -2,9 +2,10 @@
 
 > **Stay messy. Keep the context. Continue anywhere.**
 
-**Released baseline:** v1.0.0 (frozen)  
-**Candidate on this branch:** v1.1.0-rc.1 (NOT released)  
-**Status:** v1.0.0 method/protocol proof preserved; v1.1.0-rc.1 review only  
+**Current version:** v1.0.0  
+**Proposed next version on review branch:** v1.1.0-rc.1 (NOT released)  
+**Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — Phase 1–6 frozen  
+**TDesk extension:** Review candidate only  
 **Default English:** [ZASSPILL_EN.md](ZASSPILL_EN.md)  
 **Bahasa Melayu:** [ZASSPILL_MY.md](ZASSPILL_MY.md)
 
