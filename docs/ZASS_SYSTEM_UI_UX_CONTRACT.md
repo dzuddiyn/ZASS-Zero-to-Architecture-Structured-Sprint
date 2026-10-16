@@ -1,6 +1,6 @@
 # ZASS SYSTEM â€” UI/UX & Product Surface Contract
 
-**System version:** 0.2.5
+**System version:** 0.2.6
 **Full ZASS surface alignment:** v0.3.11<br>
 **Status:** LOCKED WORKING CONTRACT
 **Date:** 2026-10-09
@@ -168,6 +168,14 @@ Required behavior:
 - never let visual simplification change proposal/decision/evidence/acceptance state.
 
 CrossAI/AI-SYNC may implement richer native HPC rendering later, but HPC compliance does not depend on CrossAI.
+## 4B. ChatGPT capability-first / plugin-first routing
+
+ZASS SYSTEM adopts the owner-directed [ChatGPT Capability-First / Plugin-First Contract](ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md).
+
+Before recommending that a user build a website, portal, drawing tool, workflow or system from scratch, the AI must proactively inspect relevant native ChatGPT capabilities, available apps/plugins/connectors and established reusable solutions. Offer the shortest practical route first: use an existing tool, prototype, configure/integrate, or write only the missing code. For an interactive web portal, evaluate a tool such as MagicPath when available; for visual brainstorming, offer a drawing tool such as tldraw rather than forcing text-only interpretation.
+
+Never claim unverified tool capabilities, actual project-data access, or production readiness from a prototype. External data sharing, integrations, publication and writes still require appropriate consent; LOCKED decisions, Git Source of Truth and acceptance evidence are unaffected. Keep this discovery lightweight and do not flood the user with irrelevant plugin lists.
+
 ## 5. Five primary product surfaces
 
 AI-SYNC Web should prefer five stable surfaces.
@@ -504,7 +512,7 @@ Projects may explicitly adopt [ZASSCODE](ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDA
 Current baseline:
 
 ```text
-ZASS SYSTEM v0.2.5
+ZASS SYSTEM v0.2.6
 DUMP / DECIDE / DESIGN
 Local First-Class Core + AI-SYNC Web
 UI/UX Product Surface Contract

@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge dan atomic-task contract; decision authority teras tidak berubah)
-**ZASS SYSTEM:** v0.2.5
+**ZASS SYSTEM:** v0.2.6
 **Language:** Bahasa Melayu — localization of the default `ZASS.md` English method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.5
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.6
 
-Full ZASS kini selari dengan **ZASS SYSTEM v0.2.5** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
+Full ZASS kini selari dengan **ZASS SYSTEM v0.2.6** supaya pengguna dan AI boleh mengesan perubahan routing/UI/UX sistem tanpa mengubah semantics keputusan Full ZASS.
 
 Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 
@@ -31,6 +31,7 @@ Apabila Full ZASS digunakan melalui ZASS SYSTEM:
 - pengalaman pengguna mesti menggunakan **progressive disclosure** dan tidak memaparkan semua ID/ledger secara default;
 - UI/AI perlu **present only the next meaningful human action**;
 - output berstruktur yang dilihat manusia mesti ikut **ZASS Human Presentation Contract (HPC)** shared;
+- sebelum menyarankan pembangunan dari kosong, AI mesti menyemak capability natif ChatGPT dan plugin/apps/connectors yang relevan dan benar-benar tersedia, termasuk prototaip pantas serta alat lakaran visual, mengikut `docs/ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md`;
 - SAVE/sync hanya dianggap berjaya apabila persistence sebenar berlaku dan receipt/commit sebenar tersedia;
 - local CLI dan AI-SYNC Web mesti berkongsi semantics validator/core yang sama, bukan dua rule engine berasingan.
 

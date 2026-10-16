@@ -1,7 +1,7 @@
 # ZASS — Zero-to-Architecture Structured Sprint
 
 **Version:** 0.3.11 (architecture-to-execution challenge and atomic-task contract; core decision authority unchanged)
-**ZASS SYSTEM:** v0.2.5
+**ZASS SYSTEM:** v0.2.6
 **Language:** English — default Full ZASS method
 
 **Status:** BASELINE LOCKED  
@@ -18,9 +18,9 @@
 
 ---
 
-# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.5
+# ZASS SYSTEM SURFACE ALIGNMENT — ZASS SYSTEM v0.2.6
 
-Full ZASS is aligned with **ZASS SYSTEM v0.2.5** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
+Full ZASS is aligned with **ZASS SYSTEM v0.2.6** so users and AI can detect system-level routing/UI/UX changes without changing Full ZASS decision semantics.
 
 When Full ZASS is used through ZASS SYSTEM:
 
@@ -31,6 +31,7 @@ When Full ZASS is used through ZASS SYSTEM:
 - the user experience must use **progressive disclosure** instead of exposing every ID/ledger by default;
 - the UI/AI should **present only the next meaningful human action**;
 - human-facing structured output follows the shared **ZASS Human Presentation Contract (HPC)**;
+- before proposing custom work, proactively check suitable native ChatGPT capabilities and verified plugins/apps/connectors, including rapid prototyping and visual drawing tools, under `docs/ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md`;
 - SAVE/sync is successful only when real persistence occurs and a factual receipt/commit exists;
 - local CLI and AI-SYNC Web must reuse the same validator/core semantics rather than maintain separate rule engines.
 

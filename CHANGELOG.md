@@ -1,3 +1,9 @@
+## [ZASS SYSTEM v0.2.6] — 2026-10-16
+
+- Owner-directed system refinement: LOCKED the ChatGPT Capability-First / Plugin-First Contract. Before recommending custom development, actively check available ChatGPT-native features, apps/plugins/connectors, reusable templates and quick prototypes; recommend the simplest safe capable route and build only missing gaps.
+- Added explicit MagicPath-style interactive portal prototyping and tldraw-style visual brainstorming examples, with factual access/permission, private-data, cost and prototype-versus-production boundaries.
+- Propagated lightweight discovery guidance to ZASS SYSTEM UI/UX, Full ZASS EN/MY and ZASSIMPLE EN/MY. No change to method semantic versions, human LOCK/approval, source-of-truth or architecture/evidence/acceptance gates. No portal or integration was built.
+
 ## [ZASS SYSTEM v0.2.3 / HPC v0.1] — 2026-10-09
 
 ## [ZASS SYSTEM v0.2.5] — 2026-10-10

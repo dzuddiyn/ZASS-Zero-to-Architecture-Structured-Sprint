@@ -59,6 +59,8 @@ Local tooling stays independently useful. AI-SYNC Web is the future UX / automat
 
 **Human presentation rule:** structured output follows the [ZASS Human Presentation Contract (HPC)](docs/ZASS_HUMAN_PRESENTATION_CONTRACT.md): **same truth, clearest faithful representation available**. Architecture/process flows should prefer a supported rendered/structured representation; wide ASCII art is not the default conceptual-diagram fallback.
 
+**Capability-first rule:** before recommending custom development, proactively check whether available ChatGPT features, apps/plugins/connectors, or proven reusable tools can achieve the goal more easily. For web ideas, offer suitable rapid prototypes (e.g. MagicPath); for visual brainstorming, offer drawing tools (e.g. tldraw). Verify tool availability, data access, security, and production gaps. See [ChatGPT Capability-First / Plugin-First Contract](docs/ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md).
+
 See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **Freeze boundary:** AISYNC/CrossAI runtime, human beta, provider continuity, and downstream Bootstrap Core consumption are owned downstream and do not keep ZASS SYSTEM development open. See [ZASS ↔ AISYNC Downstream Handoff Boundary](docs/ZASS_AISYNC_DOWNSTREAM_HANDOFF_BOUNDARY.md).
@@ -577,7 +579,7 @@ You normally do **not** need all of them at the beginning.
 **Development posture:** ZASS SYSTEM is **FEATURE FROZEN / STABLE**. TRACK F final hygiene is CLOSED / PASS. New methodology/product work is not active; reopen only for a critical defect, material real field evidence, or explicit owner decision.
 
 
-**ZASS SYSTEM:** v0.2.5 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract + ZASSCODE stage-project-factory handoff
+**ZASS SYSTEM:** v0.2.6 â€” ZASSIMPLE challenge/re-challenge gate + global DUMP / DECIDE / DESIGN routing + global EN/MY method-surface routing + AI-SYNC integration contract + ZASSCODE stage-project-factory handoff
 **Full ZASS:** v0.3.11 â€” challenge → PRE-ARCH → Execution Reality Check → real-sample evidence loop → LAST CHALLENGE → final architecture confirmation → rebuilt release plan → first release → DELIVERED !!<br>
 **ZASSIMPLE:** v0.3.3
 **ZASSELECTION:** v0.2.4

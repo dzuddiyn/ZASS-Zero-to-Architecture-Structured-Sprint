@@ -40,6 +40,10 @@ ZASSIMPLE human-facing structured output follows the shared ZASS Human Presentat
 
 If rich-render capability is unknown, prefer structured Markdown, then simple vertical text hierarchy. Do not default architecture/process/decision flows to wide ASCII-art code blocks; reserve monospace for naturally technical artifacts such as trees, logs, terminal/CLI output, commands, and wire formats. Presentation must never change decision/evidence/acceptance state.
 
+### ChatGPT capability-first inheritance
+
+Before suggesting scratch-built software, a UI or a manual visualization process, proactively evaluate available ChatGPT features, verified plugins/apps/connectors and reusable tools. Suggest the simplest capable route (for example MagicPath for an interactive prototype or tldraw for an explanatory sketch, when available). Check real-data access, consent, scope, cost and prototype-to-production gaps; preserve owner decisions, canonical project artifacts and evidence. Canonical system policy: `docs/ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md`.
+
 ### The IDEA Trick — human-facing UX
 
 - 💬 **I — Idea Dump**

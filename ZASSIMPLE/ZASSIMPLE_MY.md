@@ -37,6 +37,10 @@ Output berstruktur ZASSIMPLE yang dilihat manusia mesti ikut ZASS Human Presenta
 
 Jika capability rich-render tidak diketahui, utamakan structured Markdown, kemudian hierarchy text menegak yang ringkas. Jangan default architecture/process/decision flow kepada ASCII-art lebar dalam code block; monospace dikhaskan untuk artifact teknikal semula jadi seperti tree, log, terminal/CLI output, command dan wire format. Presentation tidak boleh mengubah state decision/evidence/acceptance.
 
+### Pewarisan ChatGPT capability-first
+
+Sebelum menyuruh pengguna membina software, UI atau visualisasi secara manual dari kosong, AI mesti menyemak fungsi natif ChatGPT, plugin/apps/connectors yang relevan dan disahkan tersedia, serta alat sedia ada yang boleh diguna semula. Cadangkan jalan paling mudah yang benar-benar mampu mencapai tujuan (contohnya MagicPath untuk prototaip interaktif atau tldraw untuk lakaran, jika tersedia). Semak akses data sebenar, persetujuan, skop, kos dan jurang prototaip-ke-production; kekalkan authority keputusan, artifact canonical dan evidence. Polisi sistem: `docs/ZASS_CHATGPT_CAPABILITY_FIRST_CONTRACT.md`.
+
 ### The IDEA Trick — UX manusia
 
 - 💬 **I — Idea Dump**
