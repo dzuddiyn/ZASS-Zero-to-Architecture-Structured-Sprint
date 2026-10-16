@@ -3,13 +3,19 @@
 > **Stay messy. Keep the context. Continue anywhere.**
 
 **Current version:** v1.0.0  
+**Proposed next version on review branch:** v1.1.0-rc.1 (NOT released)  
 **Status:** METHOD / PROTOCOL CONTRACT PRODUCTION READY — Phase 1–6 frozen  
+**TDesk extension:** Review candidate only  
 **Default English:** [ZASSPILL_EN.md](ZASSPILL_EN.md)  
 **Bahasa Melayu:** [ZASSPILL_MY.md](ZASSPILL_MY.md)
 
 ZASSPILL is the first-class **DUMP** continuity method in the ZASS family.
 
 It preserves enough human context to continue thinking across chats and AIs without forcing a decision, design, plan, task list, or project structure too early.
+
+## Optional TDesk compatibility (review candidate)
+
+The optional [TDesk thinking contract](../TDesk/TDESK.md) is proposed for ordinary thinking, planning, learning and comparison without automatic ZASSELECTION/ZASSIMPLE escalation. It is not active merely because this README is read. The user or an authoritative workspace instruction must explicitly activate it. Existing formal ZASS DECIDE/DESIGN flows and ZASSPILL handoff semantics remain unchanged. This is **not a released ZASSPILL v1.0.0 feature**; see review branch/PR until owner-approved versioning and regression evidence are complete. No AISYNC runtime dependency is created.
 
 ## Global ZASS SYSTEM routing
 
@@ -66,7 +72,7 @@ Current release metadata:
 
 ~~~yaml
 method: ZASSPILL
-method_version: 1.0.0
+method_version: 1.0.0 # released baseline; candidate use v1.1.0-rc.1 if actually executed
 packet_format_version: 2
 ~~~
 
