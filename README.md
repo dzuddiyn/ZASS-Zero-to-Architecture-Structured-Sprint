@@ -67,6 +67,8 @@ See [ZASS SYSTEM UI/UX Contract](docs/ZASS_SYSTEM_UI_UX_CONTRACT.md).
 
 **ZASSCODE execution boundary:** projects may explicitly adopt the separate ZASSCODE module after the applicable PRE-ARCH approval and basic ACTION_PLAN handoff. ZASS retains architecture/decision authority; detailed coding and field-delivery mechanics remain downstream. See [ZASS ↔ ZASSCODE Downstream Handoff Boundary](docs/ZASS_ZASSCODE_DOWNSTREAM_HANDOFF_BOUNDARY.md).
 
+**Three-layer agentic-coding principle (LOCKED v1.0):** ZASS SYSTEM owns Thinking & Governance; ZASSCODE owns Execution Management; AI Provider Capacity is an external constraint, never decision authority. See the [canonical Three-Layer ZASS & Agentic Coding Principle](docs/ZASS_THREE_LAYER_AGENTIC_CODING_PRINCIPLE.md).
+
 **Global language UX:** ordinary conversation may follow the user, but structured method surfaces follow the active method file language. If a user speaks Bahasa Melayu while an English method file is active, ZASS notifies once that the matching Malay file is available; it never switches files automatically.
 
 **System versioning rule:** user-visible ZASS SYSTEM routing, UI/UX, product-surface, or integration-contract changes bump the ZASS SYSTEM version even when individual method semantics do not change.
