@@ -10,6 +10,18 @@ ZASSCODE is a separate downstream execution method. It consumes the existing
 ZASS architecture-to-execution contract; it is not a fourth top-level intent
 route and does not replace DUMP / DECIDE / DESIGN.
 
+## Three-layer principle
+
+This handoff is governed by the locked [Three-Layer ZASS & Agentic Coding Principle](ZASS_THREE_LAYER_AGENTIC_CODING_PRINCIPLE.md):
+
+| Layer | Responsibility | Boundary |
+|---|---|---|
+| **1 — Thinking & Governance** | ZASS SYSTEM | Owns requirements, decisions, scope, architecture and acceptance/owner gates |
+| **2 — Execution Management** | ZASSCODE | Plans and manages bounded tasks, verification, evidence, recovery and returns within approved scope |
+| **3 — AI Provider Capacity** | External constraint | Context, tokens, model/reasoning, usage limits and costs constrain execution but never own decisions |
+
+Provider/model limits do not relax acceptance or approval gates. ZASSCODE must preserve checkpoints and use context deliberately; material architecture or LOCKED-decision impact returns to ZASS before dependent work continues.
+
 ## Ownership and exchange
 
 | Responsibility | Authority |
