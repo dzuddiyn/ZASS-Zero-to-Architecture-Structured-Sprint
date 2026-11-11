@@ -1,3 +1,10 @@
+## 2026-11-11 — OWNER-AUTHORIZED THREE-LAYER AGENTIC-CODING PRINCIPLE LOCK (DOC-ONLY)
+
+- Locked the cross-layer principle: ZASS SYSTEM = Thinking & Governance; ZASSCODE = Execution Management; AI Provider Capacity = external operating constraint.
+- Defined provider-agnostic agentic-coding rules for bounded tasks, acceptance criteria, evidence, persistent recovery state, deliberate context use, retry/escalation and explicit owner authority.
+- Added the canonical principle and aligned the ZASS ↔ ZASSCODE downstream boundary. ZASSCODE receives a module-level adoption contract.
+- This is a narrow, owner-authorized post-freeze governance/documentation clarification. It does not change DUMP / DECIDE / DESIGN, Full ZASS or ZASSIMPLE method semantics, runtime behavior, existing handoff gates or the current ZASS SYSTEM version. FEATURE FROZEN / STABLE posture remains in force.
+
 ## [ZASS SYSTEM v0.2.6] — 2026-10-16
 
 - Owner-directed system refinement: LOCKED the ChatGPT Capability-First / Plugin-First Contract. Before recommending custom development, actively check available ChatGPT-native features, apps/plugins/connectors, reusable templates and quick prototypes; recommend the simplest safe capable route and build only missing gaps.
